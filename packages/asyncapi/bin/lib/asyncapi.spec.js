@@ -1,20 +1,36 @@
 /** What the shared specification tooling needs to know about asyncapi. */
 
+import { contents } from 'utils/source/source.github'
 import { schemaRoot } from 'utils/spec/spec.descriptor'
 
 /** @import { SpecDescriptor } from 'utils/spec/spec.descriptor' */
 
+const REPOSITORY = 'asyncapi/spec-json-schemas'
+
 /**
- * AsyncAPI publishes each version twice. The `-without-$id` variant is the one
- * worth vendoring: its twin stamps an `$id` on every definition, which turns
- * all 434 internal references into absolute `http://asyncapi.com/...` URLs and
- * leaves nothing a local pointer can resolve.
+ * AsyncAPI publishes each version twice, and this is the suffix of the half
+ * worth vendoring.
  *
- * The `asyncapi.com/definitions/<version>.json` URL the repo README recommends
- * serves that same `$id` variant, so this reads the schema repository instead.
+ * Its twin stamps an `$id` on every definition, which turns all 434 internal
+ * references into absolute `http://asyncapi.com/...` URLs and leaves nothing a
+ * local pointer can resolve. The `asyncapi.com/definitions/<version>.json` URL
+ * the repository README recommends serves that same `$id` variant, so both the
+ * release listing and the fetch read the schema repository instead.
  */
+const VARIANT = '-without-$id.json'
+
 function url(version) {
-  return `https://raw.githubusercontent.com/asyncapi/spec-json-schemas/master/schemas/${version}-without-$id.json`
+  return `https://raw.githubusercontent.com/${REPOSITORY}/master/schemas/${version}${VARIANT}`
+}
+
+/** Every version the schema repository carries, newest first. */
+async function releases() {
+  const files = await contents(REPOSITORY, 'schemas', { type: 'file' })
+
+  return files
+    .filter(name => name.endsWith(VARIANT))
+    .map(name => ({ version: name.slice(0, -VARIANT.length) }))
+    .sort((a, b) => b.version.localeCompare(a.version, undefined, { numeric: true }))
 }
 
 /** @type {SpecDescriptor} */
@@ -24,6 +40,7 @@ export const asyncapi = {
 
   root: schemaRoot(import.meta.url),
   url,
+  releases,
 
   versionHint: '3.1.0',
 }

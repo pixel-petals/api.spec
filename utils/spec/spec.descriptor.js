@@ -14,6 +14,8 @@ import { fileURLToPath } from 'node:url'
  * @property {string}   description    one line, shown in `--help`
  * @property {string}   root           absolute path to the schema directory
  * @property {Function} url            (version, date) => the release URL
+ * @property {Function} releases       () => the releases upstream publishes
+ * @property {Function} [releaseOf]    (document) => which release a vendored copy holds
  * @property {boolean}  [dated]        true when a release is addressed by date
  * @property {string}   [componentsKey] root key naming the reusable-object map
  * @property {string}   [sourceFormat] the encoding upstream publishes, defaulting to JSON

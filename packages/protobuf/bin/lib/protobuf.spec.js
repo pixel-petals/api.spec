@@ -5,7 +5,13 @@
  * a source file in the compiler's own repository, addressed by release tag.
  */
 
+import { tags } from 'utils/source/source.github'
 import { schemaRoot } from 'utils/spec/spec.descriptor'
+
+import { IDL } from '#lib/source/source.paths'
+
+/** The repository both the release list and every source file come from. */
+const REPOSITORY = 'protocolbuffers/protobuf'
 
 /**
  * The self-describing schema.
@@ -51,7 +57,21 @@ function ref(version) {
 }
 
 export function sourceUrl(version, file) {
-  return `https://raw.githubusercontent.com/protocolbuffers/protobuf/${ref(version)}/src/google/protobuf/${file}`
+  return `https://raw.githubusercontent.com/${REPOSITORY}/${ref(version)}/src/google/protobuf/${file}`
+}
+
+/**
+ * Every release tag the repository carries, newest first.
+ *
+ * Only `vMAJOR.MINOR` tags are releases; the repository also carries release
+ * candidates and language-specific tags that publish no descriptor.
+ */
+async function releases() {
+  const found = await tags(REPOSITORY)
+
+  return found
+    .filter(tag => /^v\d+\.\d+$/.test(tag))
+    .map(tag => ({ version: tag.slice(1) }))
 }
 
 export const protobuf = {
@@ -59,6 +79,10 @@ export const protobuf = {
   description: 'Vendor the protobuf descriptor schema and split it into per-declaration fragments',
 
   root: schemaRoot(import.meta.url),
+  releases,
+
+  // a release is vendored the moment its IDL is on disk; the JSON is derived
+  sourceFormat: IDL,
 
   versionHint: '36.1',
 }

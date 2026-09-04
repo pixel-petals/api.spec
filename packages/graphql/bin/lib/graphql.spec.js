@@ -1,5 +1,6 @@
 /** Where a release of the GraphQL introspection schema comes from. */
 
+import { tags } from 'utils/source/source.github'
 import { schemaRoot } from 'utils/spec/spec.descriptor'
 
 /** @import { SpecDescriptor } from 'utils/spec/spec.descriptor' */
@@ -47,6 +48,38 @@ function tag(version) {
  */
 const AT_ROOT = new Set([ '2015-07' ])
 
+const REPOSITORY = 'graphql/graphql-spec'
+
+/** The identifier for an upstream tag: the inverse of `tag()`. */
+function versionOf(name) {
+  const [ , month, year ] = /^([A-Za-z]+)(\d{4})$/.exec(name) ?? []
+  const index = MONTHS.indexOf(month)
+
+  if (index < 0) return null
+
+  return `${year}-${String(index + 1).padStart(2, '0')}`
+}
+
+/**
+ * Every release upstream publishes, newest first.
+ *
+ * The tags are read rather than reported from `RELEASES`, so a release
+ * published after this file was written shows up as missing instead of being
+ * invisible.
+ */
+async function releases() {
+  const published = (await tags(REPOSITORY))
+    .map(versionOf)
+    .filter(Boolean)
+    .sort((a, b) => b.localeCompare(a))
+    .map(version => ({
+      version,
+      note: RELEASES.includes(version) ? '' : 'published upstream, not yet known to this package',
+    }))
+
+  return [ { version: DRAFT, note: `tracks ${DRAFT_REF}` }, ...published ]
+}
+
 /**
  * Rejects an identifier that names no release.
  *
@@ -79,6 +112,10 @@ export const graphql = {
 
   root: schemaRoot(import.meta.url),
   url,
+  releases,
+
+  // SDL is what is fetched; the introspection result beside it is derived
+  sourceFormat: 'graphql',
 
   versionHint: '2025-09',
 }

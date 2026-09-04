@@ -9,6 +9,8 @@
 
 import { Command } from 'commander'
 
+import { releasesCommand } from 'utils/spec/spec.releases'
+
 import { fetchCommand, listCommand, splitCommand } from '#lib/graphql.commands'
 
 /** @import { SpecDescriptor } from 'utils/spec/spec.descriptor' */
@@ -50,6 +52,10 @@ export function createCli(spec) {
   program.command('list')
     .description('the versions already vendored')
     .action(listCommand(spec))
+
+  program.command('releases')
+    .description('the versions upstream publishes, and which are vendored')
+    .action(releasesCommand(spec))
 
   return program
 }

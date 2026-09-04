@@ -1,5 +1,6 @@
 /** What the shared specification tooling needs to know about arazzo. */
 
+import { oaiReleases } from 'utils/source/source.registry'
 import { schemaRoot } from 'utils/spec/spec.descriptor'
 
 /** @import { SpecDescriptor } from 'utils/spec/spec.descriptor' */
@@ -16,6 +17,19 @@ function url(version, date) {
   return `https://spec.openapis.org/arazzo/${version}/schema/${date}`
 }
 
+/**
+ * The release a vendored copy holds, read from its own `$id`.
+ *
+ * Arazzo 1.0's 2024-12-16 document is the known exception — it identifies
+ * itself as `.../2024-08-01`, a URL that does not resolve — so that copy
+ * reports a release the registry never lists, and shows as an unrecognised
+ * one rather than being silently mislabelled.
+ */
+function releaseOf(document) {
+  // draft-04 documents spell it `id`; 2.0 carries no date in either
+  return (document.$id ?? document.id)?.match(/(\d{4}-\d{2}-\d{2})$/)?.[ 1 ] ?? null
+}
+
 /** @type {SpecDescriptor} */
 export const arazzo = {
   name: 'arazzo',
@@ -23,6 +37,8 @@ export const arazzo = {
 
   root: schemaRoot(import.meta.url),
   url,
+  releases: () => oaiReleases('arazzo'),
+  releaseOf,
 
   dated: true,
   versionHint: '1.1',

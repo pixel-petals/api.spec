@@ -1,6 +1,27 @@
 /** Where the TypeAPI specification lives. */
 
+import { fetchDocument } from 'utils/source/source.fetch'
 import { schemaRoot } from 'utils/spec/spec.descriptor'
+
+/** TypeHub is where TypeAPI's versions are registered, though not served. */
+const TAGS = 'https://api.typehub.cloud/document/typehub/typeapi/tag'
+
+/**
+ * The versions TypeHub registers, newest first.
+ *
+ * Every one of them reports the same note: TypeHub records that a version
+ * exists but exposes no way to fetch it, so only whatever the default branch
+ * currently holds can actually be vendored.
+ */
+async function releases() {
+  const { entry = [] } = await fetchDocument(TAGS)
+
+  return entry.map(tag => ({
+    version: tag.version,
+    date: String(tag.insertDate).slice(0, 10),
+    note: 'registered only — TypeHub serves no document export',
+  }))
+}
 
 /**
  * TypeAPI publishes no per-version URL.
@@ -18,6 +39,8 @@ export const typeapi = {
 
   url: () => 'https://raw.githubusercontent.com/apioo/typeapi/main/specification/typeapi.json',
   baseUrl: 'https://raw.githubusercontent.com/apioo/typeschema/master/specification/typeschema.json',
+
+  releases,
 
   versionHint: '0.1.1',
 }

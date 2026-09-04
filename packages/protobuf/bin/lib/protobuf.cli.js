@@ -8,6 +8,8 @@
 
 import { Command } from 'commander'
 
+import { releasesCommand } from 'utils/spec/spec.releases'
+
 import { fetchCommand, listCommand, splitCommand } from '#lib/protobuf.commands'
 import { protobuf } from '#lib/protobuf.spec'
 
@@ -45,6 +47,10 @@ export function createCli() {
   program.command('list')
     .description('the versions already vendored')
     .action(listCommand)
+
+  program.command('releases')
+    .description('the versions upstream publishes, and which are vendored')
+    .action(releasesCommand(protobuf))
 
   return program
 }

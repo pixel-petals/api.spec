@@ -8,6 +8,7 @@
 import { Command } from 'commander'
 
 import { fetchCommand, listCommand, splitCommand } from '#spec/spec.commands'
+import { releasesCommand } from '#spec/spec.releases'
 
 /** @import { SpecDescriptor } from '#spec/spec.descriptor' */
 
@@ -54,6 +55,10 @@ export function createCli(spec) {
   program.command('list')
     .description('the versions already vendored')
     .action(listCommand(spec))
+
+  program.command('releases')
+    .description('the versions upstream publishes, and which are vendored')
+    .action(releasesCommand(spec))
 
   return program
 }

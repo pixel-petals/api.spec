@@ -12,6 +12,8 @@
 
 import { Command } from 'commander'
 
+import { releasesCommand } from 'utils/spec/spec.releases'
+
 import { fetchCommand, listCommand, splitCommand } from '#lib/typeapi.commands'
 import { typeapi } from '#lib/typeapi.spec'
 
@@ -47,6 +49,10 @@ program.command('generate')
 program.command('list')
   .description('the versions already vendored')
   .action(listCommand)
+
+program.command('releases')
+  .description('the versions upstream publishes, and which are vendored')
+  .action(releasesCommand(typeapi))
 
 program.parseAsync().catch(error => {
   console.error(error.message)

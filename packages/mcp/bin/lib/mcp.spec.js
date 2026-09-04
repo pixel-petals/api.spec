@@ -1,6 +1,18 @@
 /** What the shared specification tooling needs to know about mcp. */
 
+import { contents } from 'utils/source/source.github'
 import { schemaRoot } from 'utils/spec/spec.descriptor'
+
+const REPOSITORY = 'modelcontextprotocol/modelcontextprotocol'
+
+/** Every dated schema directory the repository carries, newest first. */
+async function releases() {
+  const dirs = await contents(REPOSITORY, 'schema', { type: 'dir' })
+
+  return dirs
+    .sort((a, b) => b.localeCompare(a))
+    .map(version => ({ version, note: version === 'draft' ? 'tracks main' : '' }))
+}
 
 /** @import { SpecDescriptor } from 'utils/spec/spec.descriptor' */
 
@@ -23,6 +35,7 @@ export const mcp = {
 
   root: schemaRoot(import.meta.url),
   url,
+  releases,
 
   versionHint: '2026-07-28',
 }
