@@ -13,12 +13,12 @@ openapi list                     # versions already vendored
 
 ## Versions
 
-| version | release | fragments |
-| --- | --- | --- |
-| 2.0 | 2017-08-27 | 46 |
-| 3.0 | 2024-10-18 | 36 |
-| 3.1 | 2025-11-23 | 28 |
-| 3.2 | 2025-11-23 | 29 |
+| version | release | fragments | placed by shape |
+| --- | --- | --- | --- |
+| 2.0 | 2017-08-27 | 46 | 16 |
+| 3.0 | 2024-10-18 | 36 | 20 |
+| 3.1 | 2025-11-23 | 28 | 16 |
+| 3.2 | 2025-11-23 | 29 | 17 |
 
 One dated release is vendored per version — the newest at the time of writing. `openapi fetch 3.1 2022-10-07` replaces it with any other; the spec lists them under [Schema Iterations](https://spec.openapis.org/oas/).
 
@@ -26,7 +26,7 @@ One dated release is vendored per version — the newest at the time of writing.
 
 ```text
 schema/3.2/
-  schema.json                        the published schema, verbatim
+  schema.json  schema.yaml         the published schema, verbatim
   defs/
     info.json  paths.json  components.json  externalDocs.json
     servers/server.json
@@ -42,9 +42,9 @@ schema/3.2/
       responses.json  oauthFlows.json  reference.json  mapOfStrings.json
 ```
 
-`schema.json` is the only fetched file, and it sits alone at the version root. Everything under `defs/` is generated.
+The fetched schema sits alone at the version root, written in both formats. Everything under `defs/` is generated, also in both, with each format pointing at its own copy of the source.
 
-Directories mirror the document: a fragment sits where a bundle author could point at that location and say the file goes there. An object with no such location — or with several, like a Path Item, which is equally at home under `webhooks` and `components.pathItems` — sits flat in `fragments/` instead. One file per object, always. The full rule is in [bin/lib/fragments/fragments.md](bin/lib/fragments/fragments.md).
+Directories mirror the document: a fragment sits where a bundle author could point at that location and say the file goes there. An object with no such location — or with several, like a Path Item, which is equally at home under `webhooks` and `components.pathItems` — sits flat in `fragments/` instead. One file per object, always. The full rule is in [the shared docs](../../utils/README.md).
 
 Everything is derived from the schema — root keys, component groups, which objects tolerate a `$ref`, and the dialect. A version bump changes the list upstream rather than drifting against a literal here.
 
@@ -65,7 +65,7 @@ Each wrapper points at the vendored copy rather than the published URL, so edito
 }
 ```
 
-A bundle file is often itself a bare `{"$ref": "./other.json"}`, so fragments use whichever reference-tolerant form their version offers — a `-or-reference` def in 3.1+, an inline `oneOf` against the Reference Object in 3.0. In 3.1+, `components/schemas.json` is a further exception: its def is a deliberately empty stub, because those versions let a document pick its own dialect, so the fragment targets the dialect URL instead. See [bin/lib/normalize/normalize.md](bin/lib/normalize/normalize.md).
+A bundle file is often itself a bare `{"$ref": "./other.json"}`, so fragments use whichever reference-tolerant form their version offers — a `-or-reference` def in 3.1+, an inline `oneOf` against the Reference Object in 3.0. In 3.1+, `components/schemas.json` is a further exception: its def is a deliberately empty stub, because those versions let a document pick its own dialect, so the fragment targets the dialect URL instead. See [the shared docs](../../utils/README.md).
 
 ## Use
 
@@ -79,18 +79,9 @@ Generated files are overwritten without asking. Nothing in them is hand-written,
 
 ## Layout of the tool
 
-`external source -> normalize -> process`, one directory per stage:
+There is barely any. Fetching, normalizing, laying out fragments and the CLI all live in [utils](../../utils/README.md); this package is a descriptor naming the release URL, and a `schema/` directory.
 
-```text
-bin/
-  cmd.js                 commander wiring
-  commands/              one file per subcommand, plus output formatting
-  lib/source/            fetching, locating and reading a vendored schema
-  lib/normalize/         per-draft modules, to one version-agnostic shape
-  lib/fragments/         deciding where files go, and writing them
-```
-
-Only `lib/normalize/` knows that 2.0 and 3.0 are draft-04 while 3.1 and 3.2 are 2020-12. Everything downstream works on the normalized shape, which is why the same layout code serves Swagger 2.0 and OpenAPI 3.2. Adding a version means adding a normalizer, or often nothing at all — see [normalize.md](bin/lib/normalize/normalize.md).
+Only `utils/schema/` knows that 2.0 and 3.0 are draft-04 while 3.1 and 3.2 are 2020-12. Everything downstream works on the normalized shape, which is why the same code serves Swagger 2.0, AsyncAPI and MCP.
 
 ## Limits
 
