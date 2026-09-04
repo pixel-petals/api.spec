@@ -1,0 +1,3 @@
+$kind: collection
+description: The `SummarizeNearby` operation find features within a specified distance of other feature data and returns new feature data from the analysis. The distnce measure can be a straight line or defined by travel mode.
+order: 3000

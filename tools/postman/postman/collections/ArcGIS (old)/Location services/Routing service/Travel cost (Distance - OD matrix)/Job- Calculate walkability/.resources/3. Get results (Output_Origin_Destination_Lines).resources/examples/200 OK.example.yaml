@@ -1,0 +1,252 @@
+$kind: http-example
+request:
+  url: https://{{logistics-service}}.arcgis.com/arcgis/rest/services/World/OriginDestinationCostMatrix/GPServer/GenerateOriginDestinationCostMatrix/jobs/:job_id/results/Output_Origin_Destination_Lines
+  method: POST
+  pathVariables:
+    job_id: "{{job_id}}"
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 08:19:56 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "1104"
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 08:20:38 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"a83bd05a"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "paramName": "Output_Origin_Destination_Lines",
+          "dataType": "GPFeatureRecordSetLayer",
+          "value": {
+              "displayFieldName": "",
+              "geometryType": "esriGeometryPolyline",
+              "spatialReference": {
+                  "wkid": 4326,
+                  "latestWkid": 4326
+              },
+              "fields": [
+                  {
+                      "name": "ObjectID",
+                      "type": "esriFieldTypeOID",
+                      "alias": "ObjectID"
+                  },
+                  {
+                      "name": "DestinationRank",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "DestinationRank"
+                  },
+                  {
+                      "name": "Total_Time",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Total_Time"
+                  },
+                  {
+                      "name": "Total_Distance",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Total_Distance"
+                  },
+                  {
+                      "name": "OriginOID",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "OriginOID"
+                  },
+                  {
+                      "name": "OriginName",
+                      "type": "esriFieldTypeString",
+                      "alias": "OriginName",
+                      "length": 500
+                  },
+                  {
+                      "name": "DestinationOID",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "DestinationOID"
+                  },
+                  {
+                      "name": "DestinationName",
+                      "type": "esriFieldTypeString",
+                      "alias": "DestinationName",
+                      "length": 500
+                  },
+                  {
+                      "name": "Shape_Length",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Shape_Length"
+                  }
+              ],
+              "features": [
+                  {
+                      "attributes": {
+                          "ObjectID": 1,
+                          "DestinationRank": 1,
+                          "Total_Time": 0.11971298133015928,
+                          "Total_Distance": 0.0099760817775132737,
+                          "OriginOID": 1,
+                          "OriginName": "2200 6th Ave, Seattle, WA, 98121, USA",
+                          "DestinationOID": 2,
+                          "DestinationName": "Bank of America, 2200 6th Ave, Seattle, WA, 98121, USA",
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 2,
+                          "DestinationRank": 2,
+                          "Total_Time": 1.1702233937864959,
+                          "Total_Distance": 0.097518616148874637,
+                          "OriginOID": 1,
+                          "OriginName": "2200 6th Ave, Seattle, WA, 98121, USA",
+                          "DestinationOID": 7,
+                          "DestinationName": "Elm Coffee Roasters Doppler, 2121 7th Ave, Seattle, WA, 98121, USA",
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 3,
+                          "DestinationRank": 3,
+                          "Total_Time": 1.1732386856735211,
+                          "Total_Distance": 0.097769890472793414,
+                          "OriginOID": 1,
+                          "OriginName": "2200 6th Ave, Seattle, WA, 98121, USA",
+                          "DestinationOID": 8,
+                          "DestinationName": "Amazon Go, 2131 7th Ave, Seattle, WA, 98121, USA",
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 4,
+                          "DestinationRank": 4,
+                          "Total_Time": 1.6665215472490993,
+                          "Total_Distance": 0.13887679560409161,
+                          "OriginOID": 1,
+                          "OriginName": "2200 6th Ave, Seattle, WA, 98121, USA",
+                          "DestinationOID": 1,
+                          "DestinationName": "Wells Fargo, 2121 6th Ave, Seattle, WA, 98121, USA",
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 5,
+                          "DestinationRank": 5,
+                          "Total_Time": 2.4334554080152184,
+                          "Total_Distance": 0.20278795066793487,
+                          "OriginOID": 1,
+                          "OriginName": "2200 6th Ave, Seattle, WA, 98121, USA",
+                          "DestinationOID": 9,
+                          "DestinationName": "General Porpoise, 2101 7th Ave, Seattle, WA, 98121, USA",
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 6,
+                          "DestinationRank": 6,
+                          "Total_Time": 4.4645160719724082,
+                          "Total_Distance": 0.37204300599770074,
+                          "OriginOID": 1,
+                          "OriginName": "2200 6th Ave, Seattle, WA, 98121, USA",
+                          "DestinationOID": 3,
+                          "DestinationName": "Sound Community Bank, 2001 5th Ave, Seattle, WA, 98121, USA",
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 7,
+                          "DestinationRank": 7,
+                          "Total_Time": 4.4960050829241176,
+                          "Total_Distance": 0.37466709024367639,
+                          "OriginOID": 1,
+                          "OriginName": "2200 6th Ave, Seattle, WA, 98121, USA",
+                          "DestinationOID": 10,
+                          "DestinationName": "Denny Park, 800 Denny Way, Seattle, WA, 98109, USA",
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 8,
+                          "DestinationRank": 8,
+                          "Total_Time": 4.7458635207011799,
+                          "Total_Distance": 0.39548862672509827,
+                          "OriginOID": 1,
+                          "OriginName": "2200 6th Ave, Seattle, WA, 98121, USA",
+                          "DestinationOID": 11,
+                          "DestinationName": "Westlake Square, Westlake Ave, Seattle, WA, 98101, USA",
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 9,
+                          "DestinationRank": 9,
+                          "Total_Time": 4.8923753133411045,
+                          "Total_Distance": 0.40769794277842542,
+                          "OriginOID": 1,
+                          "OriginName": "2200 6th Ave, Seattle, WA, 98121, USA",
+                          "DestinationOID": 6,
+                          "DestinationName": "Dans Belltown Grocery, 2221 3rd Ave, Seattle, WA, 98121, USA",
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 10,
+                          "DestinationRank": 10,
+                          "Total_Time": 5.3507033599995077,
+                          "Total_Distance": 0.44589194666662568,
+                          "OriginOID": 1,
+                          "OriginName": "2200 6th Ave, Seattle, WA, 98121, USA",
+                          "DestinationOID": 4,
+                          "DestinationName": "Whole Foods Market, 2210 Westlake Ave, Seattle, WA, 98121, USA",
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 11,
+                          "DestinationRank": 11,
+                          "Total_Time": 5.8748307271622027,
+                          "Total_Distance": 0.48956922726351698,
+                          "OriginOID": 1,
+                          "OriginName": "2200 6th Ave, Seattle, WA, 98121, USA",
+                          "DestinationOID": 5,
+                          "DestinationName": "District H, 101 Terry Ave N, Seattle, WA, 98109, USA",
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 12,
+                          "DestinationRank": 12,
+                          "Total_Time": 6.3096603022479636,
+                          "Total_Distance": 0.52580502518733019,
+                          "OriginOID": 1,
+                          "OriginName": "2200 6th Ave, Seattle, WA, 98121, USA",
+                          "DestinationOID": 12,
+                          "DestinationName": "McGraw Square, 5th Ave, Seattle, WA, 98101, USA",
+                          "Shape_Length": 0
+                      }
+                  }
+              ],
+              "exceededTransferLimit": false
+          }
+      }
+order: 1000

@@ -1,0 +1,13 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/users-and-groups/users/#update-user-information)
+url: https://www.arcgis.com/sharing/rest/community/users/:ORG_ID/update?username={{USERNAME}}&description=A new description of user&f=pjson&token={{ACCESS_TOKEN}}
+method: POST
+queryParams:
+  username: "{{USERNAME}}"
+  description: A new description of user
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+pathVariables:
+  ORG_ID: "{{ORG_ID}}"
+examples: ./.resources/Update user information.resources/examples
+order: 3000

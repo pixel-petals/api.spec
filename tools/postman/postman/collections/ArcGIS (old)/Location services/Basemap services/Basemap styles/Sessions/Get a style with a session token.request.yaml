@@ -1,0 +1,14 @@
+$kind: http-request
+description: Access a style from the ArcGIS Basemap Styles service using session token authentication.
+url: https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/:VERSION/:STYLE_RESPONSE/:STYLE_FAMILY/:STYLE_NAME/?token={{SESSION_TOKEN}}&echoToken=false
+method: GET
+queryParams:
+  token: "{{SESSION_TOKEN}}"
+  echoToken: "false"
+pathVariables:
+  VERSION: v2
+  STYLE_RESPONSE: styles
+  STYLE_FAMILY: arcgis
+  STYLE_NAME: community
+examples: ./.resources/Get a style with a session token.resources/examples
+order: 2000

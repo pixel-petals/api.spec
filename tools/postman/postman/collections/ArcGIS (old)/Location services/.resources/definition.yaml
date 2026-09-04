@@ -1,0 +1,12 @@
+$kind: collection
+description: |-
+  <img src="https://developers.arcgis.com/static/developer_guide-mapping-apis-and-location-services-240-753aecd26e983d7a6e27567b6d2caf3a.png" height="150" >
+
+  Location services, also known as ArcGIS Location Services, are services with geospatial functionality and data hosted by Esri for developers. They include the ArcGIS Basemap Styles service, ArcGIS Static Basemap Tiles service, ArcGIS Places service, ArcGIS Geocoding service, ArcGIS Routing service, ArcGIS GeoEnrichment service, and ArcGIS Elevation service. All service operations and parameters are defined by the ArcGIS REST APIs. Some services support both standard endpoint and enhanced endpoints. An access token is required to use the services.
+
+  To learn more, go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/)
+auth:
+  - id: ""
+    type: noauth
+    name: No Auth
+order: 2000

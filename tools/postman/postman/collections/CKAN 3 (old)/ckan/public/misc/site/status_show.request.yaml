@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{CKAN_API}}/status_show"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+order: 5000

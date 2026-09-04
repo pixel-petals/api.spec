@@ -1,0 +1,15 @@
+$kind: http-request
+name: "Direct: Snap GPS points to road"
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/snap-to-roads/)
+url: https://route-api.arcgis.com/arcgis/rest/services/World/SnapToRoadsSync/GPServer/SnapToRoads/execute
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    points: '{"features":[{"attributes":{"OBJECTID":1,"location_timestamp":1704522159000},"geometry":{"x":-122.43410099956145,"y":37.800155000053394}},{"attributes":{"OBJECTID":2,"location_timestamp":1704522171000},"geometry":{"x":-122.43459799999755,"y":37.800737999958812}},{"attributes":{"OBJECTID":3,"location_timestamp":1704522183000},"geometry":{"x":-122.43539199974094,"y":37.800955000073259}},{"attributes":{"OBJECTID":4,"location_timestamp":1704522195000},"geometry":{"x":-122.43629900019869,"y":37.800787999566637}},{"attributes":{"OBJECTID":5,"location_timestamp":1704522231000},"geometry":{"x":-122.43627299989902,"y":37.800661000005221}},{"attributes":{"OBJECTID":6,"location_timestamp":1704522247000},"geometry":{"x":-122.43612999959976,"y":37.800168999799666}}]}'
+    token: "{{ACCESS_TOKEN}}"
+auth:
+  type: noauth
+examples: ./.resources/Direct- Snap GPS points to road.resources/examples
+order: 1000

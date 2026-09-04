@@ -1,0 +1,24 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/enrich
+method: POST
+body:
+  type: urlencoded
+  content:
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      description: (Required) You need a valid access token. To learn more, read the collection's documentation.
+    - key: f
+      value: pjson
+      description: (Required) The format of the data returned. The value can be json, pjson (formatted), or html (not supported by all requests).
+    - key: studyAreas
+      value: "[{'geometry':{'x': -74.0060, 'y': 40.7128}}]"
+      description: (Required) An array of input points, polygons, administrative boundaries, or addresses.
+    - key: dataCollections
+      value: Health
+      description: An array of data collection names to query for. The names contain pre-defined set of attributes to return for the world or different countries.
+    - key: addDerivativeVariables
+      value: average
+      description: "Optional parameter to specify a comma separated array of values that describe what derivative variables to include in the output. Valid values are: percent, index, average, all"
+examples: ./.resources/Find normalized facts (1 mile radius).resources/examples
+order: 3000

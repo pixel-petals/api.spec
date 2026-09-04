@@ -1,0 +1,80 @@
+$kind: http-example
+request:
+  url: https://{{logistics-service}}.arcgis.com/arcgis/rest/services/World/LocationAllocation/GPServer/SolveLocationAllocation/jobs/:job-id
+  method: POST
+  pathVariables:
+    job-id: "{{job_id}}"
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 08:22:59 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "323"
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 08:23:41 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"80af0ed1"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "jobId": "je4151c1309bd4b549bf90188bd779298",
+          "jobStatus": "esriJobSucceeded",
+          "results": {
+              "Solve_Succeeded": {
+                  "paramUrl": "results/Solve_Succeeded"
+              },
+              "Output_Allocation_Lines": {
+                  "paramUrl": "results/Output_Allocation_Lines"
+              },
+              "Output_Facilities": {
+                  "paramUrl": "results/Output_Facilities"
+              },
+              "Output_Demand_Points": {
+                  "paramUrl": "results/Output_Demand_Points"
+              },
+              "Output_Network_Analysis_Layer": {
+                  "paramUrl": "results/Output_Network_Analysis_Layer"
+              },
+              "Output_Result_File": {
+                  "paramUrl": "results/Output_Result_File"
+              },
+              "Output_Network_Analysis_Layer_Package": {
+                  "paramUrl": "results/Output_Network_Analysis_Layer_Package"
+              }
+          },
+          "inputs": {
+              "Facilities": {
+                  "paramUrl": "inputs/Facilities"
+              },
+              "Demand_Points": {
+                  "paramUrl": "inputs/Demand_Points"
+              },
+              "Problem_Type": {
+                  "paramUrl": "inputs/Problem_Type"
+              },
+              "Number_of_Facilities_to_Find": {
+                  "paramUrl": "inputs/Number_of_Facilities_to_Find"
+              },
+              "Travel_Direction": {
+                  "paramUrl": "inputs/Travel_Direction"
+              },
+              "Travel_Mode": {
+                  "paramUrl": "inputs/Travel_Mode"
+              }
+          },
+          "messages": []
+      }
+order: 2000

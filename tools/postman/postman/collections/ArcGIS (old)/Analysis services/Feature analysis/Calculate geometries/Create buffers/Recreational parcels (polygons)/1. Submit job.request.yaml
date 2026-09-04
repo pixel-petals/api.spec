@@ -1,0 +1,31 @@
+$kind: http-request
+description: |-
+  Submits a CreateBuffers analysis job. Use this endpoint to generate buffer polygons around input features at a specified distance.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-apis-and-services/spatial-analysis/feature-analysis/calculate-geometries/create-buffers/#recreational-parcels-polygons)
+url: "{{ANALYSIS_URL}}/CreateBuffers/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    inputLayer: "{\"url\":\"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Santa_Monica_Mountains_Parcels/FeatureServer/0\",\"filter\":\"UseType = 'Recreational'\"}"
+    dissolveType: Dissolve
+    distances: "[1]"
+    units: Miles
+    outputName: '{"serviceProperties":{"name":"{{UNIQUE_NAME}}"}}'
+    context: '{"extent":{"xmin":-13241162.787695415,"ymin":4029393.2145536076,"xmax":-13208887.252502043,"ymax":4049992.993676435,"spatialReference":{"wkid":102100,"latestWkid":3857}}}'
+scripts:
+  - type: beforeRequest
+    code: |
+      // Creates a unique name for the output service
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/[^A-Z0-9]/gi, "_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+  - type: afterResponse
+    code: |
+      pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

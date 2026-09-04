@@ -1,0 +1,8 @@
+$kind: collection
+description: |-
+  <img src="https://developers.arcgis.com/static/developer_guide-content-layer-data-services-600x600-ec67268583ba484003dd298f9ab964e3.png" alt="" height="150" width="150" alt="Portal and data services">
+
+  An ArcGIS portal contains tools, apps, and functionality to create and manage geospatial content and data. As a developer, you use your portal to perform essential development tasks such as creating API key and OAuth 2.0 developer credentials, creating content such as web maps and hosted layers, and hosting your data as data services. Data services play an important role in application development as they allow you to easily build applications that can access, display, and edit geospatial data. Portals also support a portal service API for automating workflows and building custom portal applications.
+
+  To learn more, go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/)
+order: 3000

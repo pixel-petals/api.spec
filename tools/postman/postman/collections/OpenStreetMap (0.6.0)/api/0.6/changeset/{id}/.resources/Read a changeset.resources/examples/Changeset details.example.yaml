@@ -1,0 +1,175 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/changeset/:id?include_discussion=string"
+  method: GET
+  headers:
+    Accept: application/xml
+  queryParams:
+    - key: include_discussion
+      value: string
+      description: If set to any value, includes discussion comments in the response
+  pathVariables:
+    - key: id
+      value: "6776"
+      description: The numeric ID of the changeset
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "version": "string",
+        "generator": "string",
+        "changeset": {
+          "id": 1790,
+          "created_at": "1984-04-24T09:48:23.816Z",
+          "closed_at": "1947-01-15T00:22:18.230Z",
+          "open": true,
+          "user": "string",
+          "uid": 7557,
+          "min_lon": 7422.358551576208,
+          "min_lat": 4776.627233866352,
+          "max_lon": 5192.333612506321,
+          "max_lat": 8278.959143709453,
+          "comments_count": 3362,
+          "changes_count": 1898,
+          "created_count": 9671,
+          "modified_count": 4406,
+          "deleted_count": 6695,
+          "tags": {
+            "key_0": "string",
+            "key_1": "string",
+            "key_2": "string"
+          },
+          "comments": [
+            {
+              "id": 1061,
+              "visible": true,
+              "date": "2001-12-13T19:19:42.950Z",
+              "uid": 4452,
+              "user": "string",
+              "text": "string"
+            },
+            {
+              "id": 3370,
+              "visible": true,
+              "date": "2011-02-26T02:29:11.291Z",
+              "uid": 4586,
+              "user": "string",
+              "text": "string"
+            }
+          ]
+        }
+      }
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "generator": {
+            "type": "string"
+          },
+          "changeset": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "closed_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "open": {
+                "type": "boolean"
+              },
+              "user": {
+                "type": "string"
+              },
+              "uid": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "min_lon": {
+                "type": "number",
+                "format": "double"
+              },
+              "min_lat": {
+                "type": "number",
+                "format": "double"
+              },
+              "max_lon": {
+                "type": "number",
+                "format": "double"
+              },
+              "max_lat": {
+                "type": "number",
+                "format": "double"
+              },
+              "comments_count": {
+                "type": "integer"
+              },
+              "changes_count": {
+                "type": "integer"
+              },
+              "created_count": {
+                "type": "integer",
+                "description": "Number of elements created in this changeset"
+              },
+              "modified_count": {
+                "type": "integer",
+                "description": "Number of elements modified in this changeset"
+              },
+              "deleted_count": {
+                "type": "integer",
+                "description": "Number of elements deleted in this changeset"
+              },
+              "tags": {
+                "type": "object"
+              },
+              "comments": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "visible": {
+                      "type": "boolean"
+                    },
+                    "date": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "uid": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "user": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+order: 1000

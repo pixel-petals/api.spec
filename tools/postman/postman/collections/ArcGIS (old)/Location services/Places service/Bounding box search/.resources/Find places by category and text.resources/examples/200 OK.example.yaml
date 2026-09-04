@@ -1,0 +1,288 @@
+$kind: http-example
+request:
+  url: https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/within-extent?xmin=-0.107&ymin=51.513&xmax=-0.148&ymax=51.502&searchText=sports&categoryids=13018, 13051, 18065&pageSize=20&f=pjson&token={{placesToken}}
+  method: GET
+  queryParams:
+    xmin: "-0.107"
+    ymin: "51.513"
+    xmax: "-0.148"
+    ymax: "51.502"
+    searchText: sports
+    categoryids: 13018, 13051, 18065
+    pageSize: "20"
+    f: pjson
+    token: "{{placesToken}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    access-control-allow-credentials: "true"
+    access-control-allow-headers: "*"
+    access-control-allow-methods: OPTIONS, GET
+    access-control-allow-origin: "*"
+    Content-Type: application/json
+    Date: Mon, 08 May 2023 18:30:34 GMT
+    permissions-policy: interest-cohort=()
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    Content-Length: "5306"
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      {
+          "results": [
+              {
+                  "placeId": "22a25084338d14aa48e41a2387880c44",
+                  "location": {
+                      "x": -0.12833,
+                      "y": 51.50711
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "News Sports"
+              },
+              {
+                  "placeId": "c37f9d7946964078b530d2c7eeb64d2f",
+                  "location": {
+                      "x": -0.126172,
+                      "y": 51.507999
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Social Media"
+              },
+              {
+                  "placeId": "439d77a6bd75f70f212dd823fa099ebf",
+                  "location": {
+                      "x": -0.12583,
+                      "y": 51.50804
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Buy Instagram Followers"
+              },
+              {
+                  "placeId": "4b8962295377a7d46e7acea54dab3198",
+                  "location": {
+                      "x": -0.12721,
+                      "y": 51.50643
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Ireland Wales Rugby"
+              },
+              {
+                  "placeId": "de7c041f5dbceda826eef6c9dd8b02e4",
+                  "location": {
+                      "x": -0.136067,
+                      "y": 51.5121
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "400 Films"
+              },
+              {
+                  "placeId": "a554d20a8282e76847b5e282343b0e9c",
+                  "location": {
+                      "x": -0.12583,
+                      "y": 51.50804
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Buy Instagram Followers"
+              },
+              {
+                  "placeId": "880dff4f3f4bcab8e697778e6b8408a8",
+                  "location": {
+                      "x": -0.125896,
+                      "y": 51.508796
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "OMFC - Official Maradona Fan Club"
+              },
+              {
+                  "placeId": "0803ec374ec61374706e125de69f3ec7",
+                  "location": {
+                      "x": -0.137439,
+                      "y": 51.505568
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Commonwealth Games Federation"
+              },
+              {
+                  "placeId": "79ee5ae429f58a02d1469566bf45ea72",
+                  "location": {
+                      "x": -0.139831,
+                      "y": 51.506755
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Racehorse Owners Association"
+              },
+              {
+                  "placeId": "01be9c443afa33c0e9a540e212bb2326",
+                  "location": {
+                      "x": -0.119244,
+                      "y": 51.511548
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Immerse Swimming - Covent Garden"
+              },
+              {
+                  "placeId": "533d319240a256763dadee2526b17d89",
+                  "location": {
+                      "x": -0.137685,
+                      "y": 51.510587
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13018",
+                          "label": "Pub"
+                      },
+                      {
+                          "categoryId": "13022",
+                          "label": "Sports Bar"
+                      },
+                      {
+                          "categoryId": "13065",
+                          "label": "Restaurant"
+                      }
+                  ],
+                  "name": "Leicester Arms"
+              },
+              {
+                  "placeId": "606dfda3a6914fa032276aa5e63009ca",
+                  "location": {
+                      "x": -0.122839,
+                      "y": 51.511058
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13018",
+                          "label": "Pub"
+                      },
+                      {
+                          "categoryId": "13022",
+                          "label": "Sports Bar"
+                      },
+                      {
+                          "categoryId": "13065",
+                          "label": "Restaurant"
+                      }
+                  ],
+                  "name": "Maple Leaf"
+              },
+              {
+                  "placeId": "2a8bf9d979ccfc9b066bc0234538dd97",
+                  "location": {
+                      "x": -0.127233,
+                      "y": 51.510909
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13018",
+                          "label": "Pub"
+                      },
+                      {
+                          "categoryId": "13022",
+                          "label": "Sports Bar"
+                      },
+                      {
+                          "categoryId": "13057",
+                          "label": "Gastropub"
+                      }
+                  ],
+                  "name": "The Salisbury Pub"
+              },
+              {
+                  "placeId": "d36cbe9b56cb519a10dd32faf1de21d3",
+                  "location": {
+                      "x": -0.108032,
+                      "y": 51.503032
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13018",
+                          "label": "Pub"
+                      },
+                      {
+                          "categoryId": "13022",
+                          "label": "Sports Bar"
+                      },
+                      {
+                          "categoryId": "13352",
+                          "label": "Thai Restaurant"
+                      }
+                  ],
+                  "name": "Windmill Tavern"
+              },
+              {
+                  "placeId": "70ad6acfcc2c35b41cb828589b182ccb",
+                  "location": {
+                      "x": -0.119428,
+                      "y": 51.510945
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10000",
+                          "label": "Arts and Entertainment"
+                      },
+                      {
+                          "categoryId": "13018",
+                          "label": "Pub"
+                      },
+                      {
+                          "categoryId": "13022",
+                          "label": "Sports Bar"
+                      }
+                  ],
+                  "name": "The Savoy Tup"
+              }
+          ],
+          "maxResultsExceeded": false
+      }
+order: 1000

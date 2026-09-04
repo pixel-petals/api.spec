@@ -1,0 +1,107 @@
+$kind: http-example
+request:
+  url: https://logistics.arcgis.com/arcgis/rest/services/World/VehicleRoutingProblem/GPServer/SolveLastMileDelivery/jobs/{{LMD_JOB_ID}}
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 03 Oct 2025 21:06:00 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "483"
+    Connection: keep-alive
+    Content-Security-Policy: script-src 'self';
+    X-Content-Type-Options: nosniff
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=sym-gcm|1|_cimGhspQstELb8oGuRnbA==|tQK-uyN7mpIr_NhjgxDHxriVypvuvrqSMS58QOmZN2P48USc13ys0fsxVpFxNxmYIxfH4kyU7c55xdbtkARuYeTeQlAxFVwo7Z3j7SQmghg89yXJg38w82bvLG6j2kb9K034NHz1Zk8bjjcvT_nxGaC1ehMbgD4VH0OBetdX5CCHZmerVisd71CTCWJnaOsxOuBtSj6k1KgRnLAFWuJaECZDEDRfo0nDzsilFQE8PV595ot2nHmifbBizkWcR1RDgo6rkVylDRT7c1DxXju_n3RcojSnSaHAr5Hve90lij2DDCitC7IadsIvIZDzMun5lILuSuM9qRE5FSsrzQen9afD_h9S3VOC9_fq49rTSvUOWFKV1yXcqdiDunLq4CcVKC8L3gj4k9kUaNTzuZz3bWAD8mHY7f4PdBZ0PUf00V094GZU3D7KAPEWTFMbQAQMPDp4M3k6dPsqB9z-I2q2jxuRRcNDWSdKapJjhW6G5JFCTYRaYkjnq-jl8jnSQn4J73Fj4cz0UJAyOOMnmqoPnQPUBrSNmqNTmlKNRx7sj8e2BFwqdK2EbZCVV6mYevXMEt_UmyZTMrMaLNEk7y1CGkV16t3WWEipIExbNHMM1xXeayEznlGeZaSWYdCkvN_zQHSUzIWoJBB_agukDzBK-Di0DH3L6XO6vHJ3ZgsvlLROQJAbgRaEtGWodNvWTpBjaQn7uI6URo7g4GNoBBCKFOIFa5LuBFa9lqqmELK0bUNIp83Q8uD9vZ8su0XQBbSPE8LsPWKP8dCUdSdwYrrLxJs90SjXcnP1mjrb_QY8f4kQmHcUnpDnk_SFMeYRwCoiao1N4iDVpXaUbj0PeYVaTfQb3LT4SB3qJ8THL_Sh7nUZl81di_GzWuhFdC_y_NjPNp4wNPcHsc3TotGZX8HS9GlcRNUNB8R3n0j_5UMOoAY_8g64Ic5CKnyh7GAUTFdocqoNSUzQy9uHQ_FnSdu_XA2HikvJLpFLxf3gqa9bQw8I-_Y_BbY_3lsyrTFIEbVy6V8-_OfqVJD-qHHYfWo78gf1Rhx1Q1za72ZSfnPMoNXnyvAAg514C0QUZ_MidIn1VIKHPu18Tj0SaYU-eLmUr_jurdQUlEy-u4DI_N8Im3RIfQWe43dcTRBOmmWp210JtjAoyaNgx9agUlF0VX2OKHP9XSVXHh3EeNPedVAGIKTK74JekGZmty1JF35BwH9thCm4KKCRTJayvL5RD8KH1JLnqH2aoaIRY3Lc94riTT5OeIX-434f6biC1jQfuoINYf7Eyx0d2y91og-xTAvSC6HbMljQRmVQGN1bXp0S8_qdNBGPH0qijnh44fVXK3ee9fxOmzDKSPPtPlMd4x-koCZzWJYHyNSwpTtalGhN3IoZ2RCSnuKWa2su5S1GsliIKmQ7wyK21SQXigE7_1MtK1cl1CqKWTtdo8mskLgiUIBIdLDAJmcZg2NLPuxoqNsYPqQyrKax2GvwjPJObv2zC35vI_IijMhJxfB1D_b8QkO-X4qeS2U8j1t52NTvbzVoJi22IqkSeFBzBhyVbnsa-c5sbSIGQmDMl126d6boXhbY2QuQllAjMrkFmRR5gZSNIK-2ngPvSamyfsE8wtnPQ74NI2rBWlIjbpE=; Max-Age=60; Expires=Fri, 03 Oct 2025 21:06:59 GMT; Path=/arcgis/rest; HttpOnly; SameSite=Lax
+    ETag: '"40a4f05"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+          "jobId": "jb9d510d374ec4d7bba21a14f4b0f3101",
+          "jobStatus": "esriJobSucceeded",
+          "results": {
+              "output_orders": {
+                  "paramUrl": "results/output_orders"
+              },
+              "output_routes": {
+                  "paramUrl": "results/output_routes"
+              },
+              "output_depots": {
+                  "paramUrl": "results/output_depots"
+              },
+              "output_depot_visits": {
+                  "paramUrl": "results/output_depot_visits"
+              },
+              "output_direction_points": {
+                  "paramUrl": "results/output_direction_points"
+              },
+              "output_direction_lines": {
+                  "paramUrl": "results/output_direction_lines"
+              },
+              "output_route_data": {
+                  "paramUrl": "results/output_route_data"
+              },
+              "output_result_file": {
+                  "paramUrl": "results/output_result_file"
+              },
+              "output_network_analysis_layer_package": {
+                  "paramUrl": "results/output_network_analysis_layer_package"
+              },
+              "usage_cost": {
+                  "paramUrl": "results/usage_cost"
+              }
+          },
+          "inputs": {
+              "orders": {
+                  "paramUrl": "inputs/orders"
+              },
+              "depots": {
+                  "paramUrl": "inputs/depots"
+              },
+              "routes": {
+                  "paramUrl": "inputs/routes"
+              },
+              "travel_mode": {
+                  "paramUrl": "inputs/travel_mode"
+              },
+              "earliest_route_start_date": {
+                  "paramUrl": "inputs/earliest_route_start_date"
+              },
+              "earliest_route_start_time": {
+                  "paramUrl": "inputs/earliest_route_start_time"
+              },
+              "max_route_total_time": {
+                  "paramUrl": "inputs/max_route_total_time"
+              },
+              "time_units": {
+                  "paramUrl": "inputs/time_units"
+              },
+              "zones": {
+                  "paramUrl": "inputs/zones"
+              },
+              "route_shape": {
+                  "paramUrl": "inputs/route_shape"
+              },
+              "analysis_region": {
+                  "paramUrl": "inputs/analysis_region"
+              }
+          },
+          "messages": [
+              {
+                  "type": "esriJobMessageTypeWarning",
+                  "description": "WARNING 030194: Data values longer than 500 characters for field [Orders:Name] are truncated."
+              }
+          ]
+      }
+order: 2000

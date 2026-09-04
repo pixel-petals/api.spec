@@ -1,0 +1,15 @@
+$kind: http-example
+request:
+  url: https://example.com/api/download/12345
+  method: GET
+  headers:
+    Authorization: Bearer <ACCESS_TOKEN>
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Authorization: Bearer <ACCESS_TOKEN>
+  body:
+    type: json
+    content: '{"status":"success","fileUrl":"https://example.com/results/12345.zip","message":"Result file is ready for download."}'
+order: 1000

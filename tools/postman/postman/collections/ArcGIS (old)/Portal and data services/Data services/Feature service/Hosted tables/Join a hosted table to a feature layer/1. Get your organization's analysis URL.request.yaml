@@ -1,0 +1,15 @@
+$kind: http-request
+description: Retrieves your organization's analysis URL and related portal information. Use this endpoint to obtain details about your ArcGIS Online or Enterprise portal, including URLs needed for analysis services.
+url: https://arcgis.com/sharing/rest/portals/self
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+scripts:
+  - type: afterResponse
+    code: pm.collectionVariables.set("ANALYSIS_URL", pm.response.json().helperServices.analysis.url)
+    language: text/javascript
+examples: ./.resources/1. Get your organization's analysis URL.resources/examples
+order: 1000

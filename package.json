@@ -1,4 +1,17 @@
 {
   "name": "@pixel-petals/org.template",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "workspaces": [
+    "utils",
+    "packages/*",
+    "plugins/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "@types/node": "26.4.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
 }

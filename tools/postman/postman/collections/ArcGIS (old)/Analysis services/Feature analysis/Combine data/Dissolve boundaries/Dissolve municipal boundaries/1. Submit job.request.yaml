@@ -1,0 +1,29 @@
+$kind: http-request
+description: |-
+  Submits a DissolveBoundaries analysis job. Use this endpoint to start the process of merging adjacent or overlapping features in a layer based on specified criteria.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/combine-data/dissolve-boundaries/#dissolve-boundaries-by-attribute-value)
+url: "{{ANALYSIS_URL}}/DissolveBoundaries/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    token: "{{ACCESS_TOKEN}}"
+    f: json
+    inputLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Delaware_County_Municipal_Boundaries/FeatureServer/0"}'
+    multiPartFeatures: "true"
+    dissolveFields: '["Class"]'
+    outputName: '{"serviceProperties":{"name":"{{UNIQUE_NAME}}"}}'
+scripts:
+  - type: beforeRequest
+    code: |-
+      // Creates a unique name for the output service
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/ /g, "_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+  - type: afterResponse
+    code: |
+      pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

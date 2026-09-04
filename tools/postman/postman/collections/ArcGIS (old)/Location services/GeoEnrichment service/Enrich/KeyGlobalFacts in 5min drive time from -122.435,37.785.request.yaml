@@ -1,0 +1,14 @@
+$kind: http-request
+description: |-
+  Key global facts 5min drive time from -122.435,37.785 ([Post St, San Francisco, California, 94115](https://www.arcgis.com/apps/mapviewer/index.html?marker=-122.435,37.785&level=15))
+
+  [![](https://developers.arcgis.com/rest/geoenrichment/api-reference/GUID-59359962-052A-41BD-B1C2-90C45CC8A386-web.png)](https://www.arcgis.com/apps/mapviewer/index.html?marker=-122.435,37.785&level=15)
+url: 'https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/enrich?f=pjson&token={{ACCESS_TOKEN}}&studyareas=[{"geometry":{"x": -122.435, "y": 37.785},"areaType": "NetworkServiceArea","bufferUnits": "Minutes","bufferRadii": [5],"travel_mode":"Driving"}]&returngeometry=true'
+method: GET
+queryParams:
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+  studyareas: '[{"geometry":{"x": -122.435, "y": 37.785},"areaType": "NetworkServiceArea","bufferUnits": "Minutes","bufferRadii": [5],"travel_mode":"Driving"}]'
+  returngeometry: "true"
+examples: ./.resources/KeyGlobalFacts in 5min drive time from -122.435,37.785.resources/examples
+order: 8000

@@ -1,0 +1,13 @@
+$kind: http-request
+description: |-
+  Retrieves available demographic and geographic information for a specified country code (e.g., JP for Japan) using the GeoEnrichment service. Use this endpoint to discover supported data collections and variables for the country.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/how-to-build-a-data-enrichment-app/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/countries/:country-code?f=json
+method: GET
+queryParams:
+  f: json
+pathVariables:
+  country-code: JP
+examples: ./.resources/Available info (for JP).resources/examples
+order: 4000

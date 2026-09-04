@@ -1,0 +1,672 @@
+$kind: http-example
+request:
+  url: https://{{geoenrich-service}}.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/enrich
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      - key: token
+        value: "{{ACCESS_TOKEN}}"
+        description: (Required) You need a valid access token. To learn more, read the collection's documentation.
+      - key: f
+        value: pjson
+        description: (Required) The format of the data returned. The value can be json, pjson (formatted), or html (not supported by all requests).
+      - key: studyAreas
+        value: "[{'geometry':{'x': -74.0060, 'y': 40.7128}}]"
+        description: (Required) An array of input points, polygons, administrative boundaries, or addresses.
+      - key: dataCollections
+        value: "[educationalattainment]"
+        description: An array of data collection names to query for. The names contain pre-defined set of attributes to return for the world or different countries.
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 08:26:00 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    ETag: '"-1621569537"'
+    Content-Language: en
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+        "results" : [ {
+          "paramName" : "GeoEnrichmentResult",
+          "dataType" : "GeoEnrichmentResult",
+          "value" : {
+            "version" : "2.0",
+            "FeatureSet" : [ {
+              "displayFieldName" : "",
+              "fieldAliases" : {
+                "ID" : "Id",
+                "OBJECTID" : "Object ID",
+                "sourceCountry" : "Country code",
+                "areaType" : "Area type",
+                "bufferUnits" : "Buffer units",
+                "bufferUnitsAlias" : "Buffer units alias",
+                "bufferRadii" : "Buffer radii",
+                "aggregationMethod" : "Aggregation method",
+                "populationToPolygonSizeRating" : "Population to polygon size rating for the country",
+                "apportionmentConfidence" : "Apportionment confidence for the country",
+                "HasData" : "Has data",
+                "NOHS_CY" : "2021 Pop Age 25+: < 9th Grade",
+                "SOMEHS_CY" : "2021 Pop Age 25+: High School/No Diploma",
+                "HSGRAD_CY" : "2021 Pop Age 25+: High School Diploma",
+                "GED_CY" : "2021 Pop Age 25+: GED",
+                "SMCOLL_CY" : "2021 Pop Age 25+: Some College/No Degree",
+                "ASSCDEG_CY" : "2021 Pop Age 25+: Associate's Degree",
+                "BACHDEG_CY" : "2021 Pop Age 25+: Bachelor's Degree",
+                "GRADDEG_CY" : "2021 Pop Age 25+: Grad/Professional Degree",
+                "EDUCBASECY" : "2021 Educational Attainment Base",
+                "ACSEDUCBAS" : "2019 Pop 25+ (Educ Base) (ACS 5-Yr)",
+                "MOEEDUCBAS" : "2019 Pop 25+ (Educ Base) MOE (ACS 5-Yr)",
+                "RELEDUCBAS" : "2019 Pop 25+ (Educ Base) REL (ACS 5-Yr)",
+                "ACSEDNOSCH" : "2019 Pop 25+: No Schooling (ACS 5-Yr)",
+                "MOEEDNOSCH" : "2019 Pop 25+: No Schooling MOE (ACS 5-Yr)",
+                "RELEDNOSCH" : "2019 Pop 25+: No Schooling REL (ACS 5-Yr)",
+                "ACSEDNURS" : "2019 Pop 25+: Nursery Sch (ACS 5-Yr)",
+                "MOEEDNURS" : "2019 Pop 25+: Nursery Sch MOE (ACS 5-Yr)",
+                "RELEDNURS" : "2019 Pop 25+: Nursery Sch REL (ACS 5-Yr)",
+                "ACSEDKIND" : "2019 Pop 25+: Kindergarten (ACS 5-Yr)",
+                "MOEEDKIND" : "2019 Pop 25+: Kindergarten MOE (ACS 5-Yr)",
+                "RELEDKIND" : "2019 Pop 25+: Kindergarten REL (ACS 5-Yr)",
+                "ACSED1TO4" : "2019 Pop 25+: 1-4th Grade (ACS 5-Yr)",
+                "MOEED1TO4" : "2019 Pop 25+: 1-4th Grade MOE (ACS 5-Yr)",
+                "RELED1TO4" : "2019 Pop 25+: 1-4th Grade REL (ACS 5-Yr)",
+                "ACSED5TO8" : "2019 Pop 25+: 5-8th Grade (ACS 5-Yr)",
+                "MOEED5TO8" : "2019 Pop 25+: 5-8th Grade MOE (ACS 5-Yr)",
+                "RELED5TO8" : "2019 Pop 25+: 5-8th Grade REL (ACS 5-Yr)",
+                "ACSSOMEHS" : "2019 Pop 25+: Some HS (ACS 5-Yr)",
+                "MOESOMEHS" : "2019 Pop 25+: Some HS MOE (ACS 5-Yr)",
+                "RELSOMEHS" : "2019 Pop 25+: Some HS REL (ACS 5-Yr)",
+                "ACSHSGRAD" : "2019 Pop 25+: HS Diploma (ACS 5-Yr)",
+                "MOEHSGRAD" : "2019 Pop 25+: HS Diploma MOE (ACS 5-Yr)",
+                "RELHSGRAD" : "2019 Pop 25+: HS Diploma REL (ACS 5-Yr)",
+                "ACSGED" : "2019 Pop 25+: GED (ACS 5-Yr)",
+                "MOEGED" : "2019 Pop 25+: GED MOE (ACS 5-Yr)",
+                "RELGED" : "2019 Pop 25+: GED REL (ACS 5-Yr)",
+                "ACSSMCOLL" : "2019 Pop 25+: Some College (ACS 5-Yr)",
+                "MOESMCOLL" : "2019 Pop 25+: Some College MOE (ACS 5-Yr)",
+                "RELSMCOLL" : "2019 Pop 25+: Some College REL (ACS 5-Yr)",
+                "ACSASSCDEG" : "2019 Pop 25+: Assoc Degree (ACS 5-Yr)",
+                "MOEASSCDEG" : "2019 Pop 25+: Assoc Degree MOE (ACS 5-Yr)",
+                "RELASSCDEG" : "2019 Pop 25+: Assoc Degree REL (ACS 5-Yr)",
+                "ACSBACHDEG" : "2019 Pop 25+: Bach Degree (ACS 5-Yr)",
+                "MOEBACHDEG" : "2019 Pop 25+: Bach Degree MOE (ACS 5-Yr)",
+                "RELBACHDEG" : "2019 Pop 25+: Bach Degree REL (ACS 5-Yr)",
+                "ACSMASTDEG" : "2019 Pop 25+: Master`s Deg (ACS 5-Yr)",
+                "MOEMASTDEG" : "2019 Pop 25+: Master`s Deg MOE (ACS 5-Yr)",
+                "RELMASTDEG" : "2019 Pop 25+: Master`s Deg REL (ACS 5-Yr)",
+                "ACSPROFDEG" : "2019 Pop 25+: Prof Sch Deg (ACS 5-Yr)",
+                "MOEPROFDEG" : "2019 Pop 25+: Prof Sch Deg MOE (ACS 5-Yr)",
+                "RELPROFDEG" : "2019 Pop 25+: Prof Sch Deg REL (ACS 5-Yr)",
+                "ACSDOCTDEG" : "2019 Pop 25+: Doctorate (ACS 5-Yr)",
+                "MOEDOCTDEG" : "2019 Pop 25+: Doctorate MOE (ACS 5-Yr)",
+                "RELDOCTDEG" : "2019 Pop 25+: Doctorate REL (ACS 5-Yr)"
+              },
+              "spatialReference" : {
+                "wkid" : 4326,
+                "latestWkid" : 4326
+              },
+              "fields" : [ {
+                "name" : "ID",
+                "alias" : "Id",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "OBJECTID",
+                "alias" : "Object ID",
+                "type" : "esriFieldTypeOID"
+              }, {
+                "name" : "sourceCountry",
+                "alias" : "Country code",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "areaType",
+                "alias" : "Area type",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferUnits",
+                "alias" : "Buffer units",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferUnitsAlias",
+                "alias" : "Buffer units alias",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferRadii",
+                "alias" : "Buffer radii",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "aggregationMethod",
+                "alias" : "Aggregation method",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "populationToPolygonSizeRating",
+                "alias" : "Population to polygon size rating for the country",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "apportionmentConfidence",
+                "alias" : "Apportionment confidence for the country",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "HasData",
+                "alias" : "Has data",
+                "type" : "esriFieldTypeInteger"
+              }, {
+                "name" : "NOHS_CY",
+                "alias" : "2021 Pop Age 25+: < 9th Grade",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.NOHS_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "SOMEHS_CY",
+                "alias" : "2021 Pop Age 25+: High School/No Diploma",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.SOMEHS_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "HSGRAD_CY",
+                "alias" : "2021 Pop Age 25+: High School Diploma",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.HSGRAD_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "GED_CY",
+                "alias" : "2021 Pop Age 25+: GED",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.GED_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "SMCOLL_CY",
+                "alias" : "2021 Pop Age 25+: Some College/No Degree",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.SMCOLL_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ASSCDEG_CY",
+                "alias" : "2021 Pop Age 25+: Associate's Degree",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ASSCDEG_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "BACHDEG_CY",
+                "alias" : "2021 Pop Age 25+: Bachelor's Degree",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.BACHDEG_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "GRADDEG_CY",
+                "alias" : "2021 Pop Age 25+: Grad/Professional Degree",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.GRADDEG_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "EDUCBASECY",
+                "alias" : "2021 Educational Attainment Base",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.EDUCBASECY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ACSEDUCBAS",
+                "alias" : "2019 Pop 25+ (Educ Base) (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ACSEDUCBAS",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MOEEDUCBAS",
+                "alias" : "2019 Pop 25+ (Educ Base) MOE (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.MOEEDUCBAS",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RELEDUCBAS",
+                "alias" : "2019 Pop 25+ (Educ Base) REL (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.RELEDUCBAS",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ACSEDNOSCH",
+                "alias" : "2019 Pop 25+: No Schooling (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ACSEDNOSCH",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MOEEDNOSCH",
+                "alias" : "2019 Pop 25+: No Schooling MOE (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.MOEEDNOSCH",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RELEDNOSCH",
+                "alias" : "2019 Pop 25+: No Schooling REL (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.RELEDNOSCH",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ACSEDNURS",
+                "alias" : "2019 Pop 25+: Nursery Sch (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ACSEDNURS",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MOEEDNURS",
+                "alias" : "2019 Pop 25+: Nursery Sch MOE (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.MOEEDNURS",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RELEDNURS",
+                "alias" : "2019 Pop 25+: Nursery Sch REL (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.RELEDNURS",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ACSEDKIND",
+                "alias" : "2019 Pop 25+: Kindergarten (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ACSEDKIND",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MOEEDKIND",
+                "alias" : "2019 Pop 25+: Kindergarten MOE (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.MOEEDKIND",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RELEDKIND",
+                "alias" : "2019 Pop 25+: Kindergarten REL (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.RELEDKIND",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ACSED1TO4",
+                "alias" : "2019 Pop 25+: 1-4th Grade (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ACSED1TO4",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MOEED1TO4",
+                "alias" : "2019 Pop 25+: 1-4th Grade MOE (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.MOEED1TO4",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RELED1TO4",
+                "alias" : "2019 Pop 25+: 1-4th Grade REL (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.RELED1TO4",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ACSED5TO8",
+                "alias" : "2019 Pop 25+: 5-8th Grade (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ACSED5TO8",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MOEED5TO8",
+                "alias" : "2019 Pop 25+: 5-8th Grade MOE (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.MOEED5TO8",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RELED5TO8",
+                "alias" : "2019 Pop 25+: 5-8th Grade REL (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.RELED5TO8",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ACSSOMEHS",
+                "alias" : "2019 Pop 25+: Some HS (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ACSSOMEHS",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MOESOMEHS",
+                "alias" : "2019 Pop 25+: Some HS MOE (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.MOESOMEHS",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RELSOMEHS",
+                "alias" : "2019 Pop 25+: Some HS REL (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.RELSOMEHS",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ACSHSGRAD",
+                "alias" : "2019 Pop 25+: HS Diploma (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ACSHSGRAD",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MOEHSGRAD",
+                "alias" : "2019 Pop 25+: HS Diploma MOE (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.MOEHSGRAD",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RELHSGRAD",
+                "alias" : "2019 Pop 25+: HS Diploma REL (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.RELHSGRAD",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ACSGED",
+                "alias" : "2019 Pop 25+: GED (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ACSGED",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MOEGED",
+                "alias" : "2019 Pop 25+: GED MOE (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.MOEGED",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RELGED",
+                "alias" : "2019 Pop 25+: GED REL (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.RELGED",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ACSSMCOLL",
+                "alias" : "2019 Pop 25+: Some College (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ACSSMCOLL",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MOESMCOLL",
+                "alias" : "2019 Pop 25+: Some College MOE (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.MOESMCOLL",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RELSMCOLL",
+                "alias" : "2019 Pop 25+: Some College REL (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.RELSMCOLL",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ACSASSCDEG",
+                "alias" : "2019 Pop 25+: Assoc Degree (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ACSASSCDEG",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MOEASSCDEG",
+                "alias" : "2019 Pop 25+: Assoc Degree MOE (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.MOEASSCDEG",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RELASSCDEG",
+                "alias" : "2019 Pop 25+: Assoc Degree REL (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.RELASSCDEG",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ACSBACHDEG",
+                "alias" : "2019 Pop 25+: Bach Degree (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ACSBACHDEG",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MOEBACHDEG",
+                "alias" : "2019 Pop 25+: Bach Degree MOE (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.MOEBACHDEG",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RELBACHDEG",
+                "alias" : "2019 Pop 25+: Bach Degree REL (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.RELBACHDEG",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ACSMASTDEG",
+                "alias" : "2019 Pop 25+: Master`s Deg (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ACSMASTDEG",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MOEMASTDEG",
+                "alias" : "2019 Pop 25+: Master`s Deg MOE (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.MOEMASTDEG",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RELMASTDEG",
+                "alias" : "2019 Pop 25+: Master`s Deg REL (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.RELMASTDEG",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ACSPROFDEG",
+                "alias" : "2019 Pop 25+: Prof Sch Deg (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ACSPROFDEG",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MOEPROFDEG",
+                "alias" : "2019 Pop 25+: Prof Sch Deg MOE (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.MOEPROFDEG",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RELPROFDEG",
+                "alias" : "2019 Pop 25+: Prof Sch Deg REL (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.RELPROFDEG",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "ACSDOCTDEG",
+                "alias" : "2019 Pop 25+: Doctorate (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.ACSDOCTDEG",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MOEDOCTDEG",
+                "alias" : "2019 Pop 25+: Doctorate MOE (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.MOEDOCTDEG",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RELDOCTDEG",
+                "alias" : "2019 Pop 25+: Doctorate REL (ACS 5-Yr)",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "educationalattainment.RELDOCTDEG",
+                "component" : "USA_ACS_2021_calc",
+                "decimals" : 0,
+                "units" : "count"
+              } ],
+              "features" : [ {
+                "attributes" : {
+                  "ID" : "0",
+                  "OBJECTID" : 1,
+                  "sourceCountry" : "US",
+                  "areaType" : "RingBuffer",
+                  "bufferUnits" : "esriMiles",
+                  "bufferUnitsAlias" : "Miles",
+                  "bufferRadii" : 1,
+                  "aggregationMethod" : "BlockApportionment:US.BlockGroups;PointsLayer:US.BlockPoints",
+                  "populationToPolygonSizeRating" : 2.191,
+                  "apportionmentConfidence" : 2.576,
+                  "HasData" : 1,
+                  "NOHS_CY" : 12432,
+                  "SOMEHS_CY" : 8014,
+                  "HSGRAD_CY" : 8972,
+                  "GED_CY" : 1725,
+                  "SMCOLL_CY" : 6368,
+                  "ASSCDEG_CY" : 3192,
+                  "BACHDEG_CY" : 39746,
+                  "GRADDEG_CY" : 28186,
+                  "EDUCBASECY" : 108635,
+                  "ACSEDUCBAS" : 105460,
+                  "MOEEDUCBAS" : 2912,
+                  "RELEDUCBAS" : 1,
+                  "ACSEDNOSCH" : 3833,
+                  "MOEEDNOSCH" : 553,
+                  "RELEDNOSCH" : 1,
+                  "ACSEDNURS" : 20,
+                  "MOEEDNURS" : 31,
+                  "RELEDNURS" : 3,
+                  "ACSEDKIND" : 73,
+                  "MOEEDKIND" : 90,
+                  "RELEDKIND" : 3,
+                  "ACSED1TO4" : 1895,
+                  "MOEED1TO4" : 456,
+                  "RELED1TO4" : 2,
+                  "ACSED5TO8" : 6744,
+                  "MOEED5TO8" : 934,
+                  "RELED5TO8" : 1,
+                  "ACSSOMEHS" : 8429,
+                  "MOESOMEHS" : 973,
+                  "RELSOMEHS" : 1,
+                  "ACSHSGRAD" : 8493,
+                  "MOEHSGRAD" : 897,
+                  "RELHSGRAD" : 1,
+                  "ACSGED" : 1633,
+                  "MOEGED" : 348,
+                  "RELGED" : 2,
+                  "ACSSMCOLL" : 6580,
+                  "MOESMCOLL" : 662,
+                  "RELSMCOLL" : 1,
+                  "ACSASSCDEG" : 2967,
+                  "MOEASSCDEG" : 486,
+                  "RELASSCDEG" : 1,
+                  "ACSBACHDEG" : 37482,
+                  "MOEBACHDEG" : 1664,
+                  "RELBACHDEG" : 1,
+                  "ACSMASTDEG" : 17784,
+                  "MOEMASTDEG" : 1105,
+                  "RELMASTDEG" : 1,
+                  "ACSPROFDEG" : 7557,
+                  "MOEPROFDEG" : 749,
+                  "RELPROFDEG" : 1,
+                  "ACSDOCTDEG" : 1968,
+                  "MOEDOCTDEG" : 342,
+                  "RELDOCTDEG" : 1
+                }
+              } ]
+            } ]
+          }
+        } ],
+        "messages" : [ ]
+      }
+order: 1000

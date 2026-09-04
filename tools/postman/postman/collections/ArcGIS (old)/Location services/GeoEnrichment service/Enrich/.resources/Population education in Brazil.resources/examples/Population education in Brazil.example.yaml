@@ -1,0 +1,266 @@
+$kind: http-example
+request:
+  url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/enrich
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      - key: f
+        value: json
+        description: (Required) Specify the response format.
+      - key: token
+        value: "{{ACCESS_TOKEN}}"
+        description: (Required) You need a valid access token. To learn more, read the collection's documentation.
+      - key: studyAreas
+        value: '[ { "geometry": { "rings": [ [ [ -45.13427734376267, -22.921864697924345 ], [ -44.892578125012584, -22.82443615799114 ], [ -44.58084106446558, -23.273035376461706 ], [ -45.319671630872115, -23.35375006543189 ], [ -45.13427734376267, -22.921864697924345 ] ] ], "spatialReference": { "wkid": 4326 } }, "attributes": { "id": "1", "name": "Somewhere near Sao Paulo" } } ]'
+        description: (Required) Study areas may be defined by input points, polygons, administrative boundaries or addresses.
+      - key: dataCollections
+        value: '["EducationalAttainment"]'
+        description: Specify a list of Data Collections.
+      - key: analysisVariables
+        value: '["EDUC03_CY","EDUC04_CY"]'
+        description: Specify a subset of variables to be returned from one or more data collections. Check the documentation of this Postman request for more info.
+      - key: addDerivativeVariables
+        value: <string>
+        disabled: true
+        description: Specify an array of string values that describe what derivative variables to include in the output.
+      - key: studyAreasOptions
+        value: <StudyAreasOptions>
+        disabled: true
+        description: Specify the properties for the study area buffer.
+      - key: useData
+        value: <UseData>
+        disabled: true
+        description: Specify the country or dataset to query.
+      - key: intersectingGeographies
+        value: <string>
+        disabled: true
+        description: Define the geographic layers used to provide geographic context during the enrichment process.
+      - key: returnGeometry
+        value: "true"
+        description: Request the output geometries in the response.
+      - key: inSR
+        value: <integer>
+        disabled: true
+        description: Input geometries in the studyAreas parameter in a specified spatial reference system.
+      - key: outSR
+        value: <integer>
+        disabled: true
+        description: Output geometries in a specified spatial reference system
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 03 Oct 2025 18:07:03 GMT
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    ETag: '"-753072723"'
+    Content-Language: en
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+          "results": [
+              {
+                  "paramName": "GeoEnrichmentResult",
+                  "dataType": "GeoEnrichmentResult",
+                  "value": {
+                      "version": "2.0",
+                      "FeatureSet": [
+                          {
+                              "displayFieldName": "",
+                              "fieldAliases": {
+                                  "ID_0": "Id",
+                                  "OBJECTID": "Object ID",
+                                  "sourceCountry": "Country code",
+                                  "name": "name",
+                                  "id": "id",
+                                  "aggregationMethod": "Aggregation method",
+                                  "populationToPolygonSizeRating": "Population to polygon size rating for the country",
+                                  "apportionmentConfidence": "Apportionment confidence for the country",
+                                  "HasData": "Has data",
+                                  "SEDUC01_CY": "2024 Pop: No Education/Illiterate",
+                                  "SEDUC02_CY": "2024 Pop: Primary Education (ISCED 1 and 2)",
+                                  "SEDUC03_CY": "2024 Pop: Upper Secondary Education (ISCED 3)",
+                                  "SEDUC04_CY": "2024 Pop: Post Secondary Education (ISCED 4 and 5)",
+                                  "SEDUC05_CY": "2024 Pop: Tertiary Education (ISCED 6 to 8)",
+                                  "SEDUC06_CY": "2024 Pop: Education Unknown"
+                              },
+                              "geometryType": "esriGeometryPolygon",
+                              "spatialReference": {
+                                  "wkid": 4326,
+                                  "latestWkid": 4326
+                              },
+                              "fields": [
+                                  {
+                                      "name": "ID_0",
+                                      "alias": "Id",
+                                      "type": "esriFieldTypeString",
+                                      "length": 256
+                                  },
+                                  {
+                                      "name": "OBJECTID",
+                                      "alias": "Object ID",
+                                      "type": "esriFieldTypeOID"
+                                  },
+                                  {
+                                      "name": "sourceCountry",
+                                      "alias": "Country code",
+                                      "type": "esriFieldTypeString",
+                                      "length": 256
+                                  },
+                                  {
+                                      "name": "name",
+                                      "alias": "name",
+                                      "type": "esriFieldTypeString",
+                                      "length": 256
+                                  },
+                                  {
+                                      "name": "id",
+                                      "alias": "id",
+                                      "type": "esriFieldTypeString",
+                                      "length": 256
+                                  },
+                                  {
+                                      "name": "aggregationMethod",
+                                      "alias": "Aggregation method",
+                                      "type": "esriFieldTypeString",
+                                      "length": 256
+                                  },
+                                  {
+                                      "name": "populationToPolygonSizeRating",
+                                      "alias": "Population to polygon size rating for the country",
+                                      "type": "esriFieldTypeDouble"
+                                  },
+                                  {
+                                      "name": "apportionmentConfidence",
+                                      "alias": "Apportionment confidence for the country",
+                                      "type": "esriFieldTypeDouble"
+                                  },
+                                  {
+                                      "name": "HasData",
+                                      "alias": "Has data",
+                                      "type": "esriFieldTypeInteger"
+                                  },
+                                  {
+                                      "name": "SEDUC01_CY",
+                                      "alias": "2024 Pop: No Education/Illiterate",
+                                      "type": "esriFieldTypeDouble",
+                                      "fullName": "EducationalAttainment.SEDUC01_CY",
+                                      "component": "demographics",
+                                      "decimals": 0,
+                                      "units": "count"
+                                  },
+                                  {
+                                      "name": "SEDUC02_CY",
+                                      "alias": "2024 Pop: Primary Education (ISCED 1 and 2)",
+                                      "type": "esriFieldTypeDouble",
+                                      "fullName": "EducationalAttainment.SEDUC02_CY",
+                                      "component": "demographics",
+                                      "decimals": 0,
+                                      "units": "count"
+                                  },
+                                  {
+                                      "name": "SEDUC03_CY",
+                                      "alias": "2024 Pop: Upper Secondary Education (ISCED 3)",
+                                      "type": "esriFieldTypeDouble",
+                                      "fullName": "EducationalAttainment.SEDUC03_CY",
+                                      "component": "demographics",
+                                      "decimals": 0,
+                                      "units": "count"
+                                  },
+                                  {
+                                      "name": "SEDUC04_CY",
+                                      "alias": "2024 Pop: Post Secondary Education (ISCED 4 and 5)",
+                                      "type": "esriFieldTypeDouble",
+                                      "fullName": "EducationalAttainment.SEDUC04_CY",
+                                      "component": "demographics",
+                                      "decimals": 0,
+                                      "units": "count"
+                                  },
+                                  {
+                                      "name": "SEDUC05_CY",
+                                      "alias": "2024 Pop: Tertiary Education (ISCED 6 to 8)",
+                                      "type": "esriFieldTypeDouble",
+                                      "fullName": "EducationalAttainment.SEDUC05_CY",
+                                      "component": "demographics",
+                                      "decimals": 0,
+                                      "units": "count"
+                                  },
+                                  {
+                                      "name": "SEDUC06_CY",
+                                      "alias": "2024 Pop: Education Unknown",
+                                      "type": "esriFieldTypeDouble",
+                                      "fullName": "EducationalAttainment.SEDUC06_CY",
+                                      "component": "demographics",
+                                      "decimals": 0,
+                                      "units": "count"
+                                  }
+                              ],
+                              "features": [
+                                  {
+                                      "attributes": {
+                                          "ID_0": "0",
+                                          "OBJECTID": 1,
+                                          "sourceCountry": "BR",
+                                          "name": "Somewhere near Sao Paulo",
+                                          "id": "1",
+                                          "aggregationMethod": "BlockApportionment:BR.StatisticalAreasLevel1;PointsLayer:BR.BlockPoints",
+                                          "populationToPolygonSizeRating": -1,
+                                          "apportionmentConfidence": -1,
+                                          "HasData": 1,
+                                          "SEDUC01_CY": 46608,
+                                          "SEDUC02_CY": 5743,
+                                          "SEDUC03_CY": 8173,
+                                          "SEDUC04_CY": 0,
+                                          "SEDUC05_CY": 3740,
+                                          "SEDUC06_CY": 45
+                                      },
+                                      "geometry": {
+                                          "rings": [
+                                              [
+                                                  [
+                                                      -45.13427734376267,
+                                                      -22.921864697924345
+                                                  ],
+                                                  [
+                                                      -44.892578125012584,
+                                                      -22.82443615799114
+                                                  ],
+                                                  [
+                                                      -44.58084106446558,
+                                                      -23.273035376461703
+                                                  ],
+                                                  [
+                                                      -45.319671630872115,
+                                                      -23.353750065431875
+                                                  ],
+                                                  [
+                                                      -45.13427734376267,
+                                                      -22.921864697924345
+                                                  ]
+                                              ]
+                                          ]
+                                      }
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              }
+          ],
+          "messages": [
+              {
+                  "type": "esriJobMessageTypeError",
+                  "id": 10050024,
+                  "description": "Variables [EDUC03_CY, EDUC04_CY] are not defined for country 'BR'."
+              }
+          ]
+      }
+order: 1000

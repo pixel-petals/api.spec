@@ -1,0 +1,16 @@
+$kind: http-request
+description: |-
+  Use the [<code>/suggest</code>](https://developers.arcgis.com/rest/geocode/suggest/) operation of the [geocoding service](https://developers.arcgis.com/rest/geocode/) to find suggestions with Subaddresses.
+
+  ---
+
+  See this example in the [ArcGIS REST API](https://developers.arcgis.com/rest/geocode/suggest/#show-subaddresses-at-an-address)
+url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?text=424 Church St, Nashville, TN&subaddressAfterBaseAddress=true&f=pjson&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  text: 424 Church St, Nashville, TN
+  subaddressAfterBaseAddress: "true"
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/List subaddresses.resources/examples
+order: 2000

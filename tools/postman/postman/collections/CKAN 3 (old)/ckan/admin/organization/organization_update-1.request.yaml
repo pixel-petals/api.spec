@@ -1,0 +1,19 @@
+$kind: http-request
+name: organization_update
+url: "{{CKAN_API}}/organization_update"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: id
+      value: ""
+      description: (string) – the name or id of the organization to update
+    - type: text
+      key: packages
+      value: ""
+      description: ignored. use package_owner_org_update() to change package ownership
+order: 7000

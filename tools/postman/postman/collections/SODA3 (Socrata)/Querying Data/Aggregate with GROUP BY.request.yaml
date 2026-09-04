@@ -1,0 +1,12 @@
+$kind: http-request
+description: Aggregate data using GROUP BY with functions like COUNT, SUM, AVG, MIN, MAX. Replace column names with actual columns from your dataset.
+url: "{{baseUrl}}/api/v3/views/{{datasetId}}/query.json"
+method: POST
+headers:
+  X-App-Token: "{{appToken}}"
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: '{"query":"SELECT category_column, COUNT(*) as count, SUM(numeric_column) as total GROUP BY category_column ORDER BY count DESC","page":{"pageNumber":1,"pageSize":100}}'
+order: 1000

@@ -1,0 +1,148 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/user/details"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/xml
+    - key: Authorization
+      value: <token>
+      description: "Added as a part of security scheme: oauth2"
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "version": "string",
+        "user": {
+          "id": 8374,
+          "display_name": "string",
+          "account_created": "1964-11-24T20:39:07.246Z",
+          "description": "string",
+          "contributor_terms": {
+            "agreed": false
+          },
+          "img": {
+            "href": "https://TNiwMQSvzKqylfpjiz.znyXJwuWAsa8e8JikYfxr9wjT.BJjFZ9Ug60PvlaiOabvE"
+          },
+          "roles": [
+            "string",
+            "string"
+          ],
+          "changesets": {
+            "count": 34
+          },
+          "traces": {
+            "count": 977
+          },
+          "blocks": {
+            "received": {
+              "count": 3147,
+              "active": 4877
+            }
+          },
+          "company": "string",
+          "social_links": {
+            "key_0": "string",
+            "key_1": "string",
+            "key_2": "string"
+          }
+        }
+      }
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "user": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "display_name": {
+                "type": "string"
+              },
+              "account_created": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "description": {
+                "type": "string"
+              },
+              "contributor_terms": {
+                "type": "object",
+                "properties": {
+                  "agreed": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "img": {
+                "type": "object",
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                }
+              },
+              "roles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "changesets": {
+                "type": "object",
+                "properties": {
+                  "count": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "traces": {
+                "type": "object",
+                "properties": {
+                  "count": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "blocks": {
+                "type": "object",
+                "properties": {
+                  "received": {
+                    "type": "object",
+                    "properties": {
+                      "count": {
+                        "type": "integer"
+                      },
+                      "active": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              },
+              "company": {
+                "type": "string"
+              },
+              "social_links": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+order: 1000

@@ -1,0 +1,604 @@
+$kind: http-example
+request:
+  url: https://{{logistics-service}}.arcgis.com/arcgis/rest/services/World/LocationAllocation/GPServer/SolveLocationAllocation/jobs/:job-id/results/Output_Allocation_Lines
+  method: POST
+  pathVariables:
+    job-id: "{{job_id}}"
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 08:23:44 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "2478"
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 08:24:26 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"7b4d88c9"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "paramName": "Output_Allocation_Lines",
+          "dataType": "GPFeatureRecordSetLayer",
+          "value": {
+              "displayFieldName": "",
+              "geometryType": "esriGeometryPolyline",
+              "spatialReference": {
+                  "wkid": 4326,
+                  "latestWkid": 4326
+              },
+              "fields": [
+                  {
+                      "name": "ObjectID",
+                      "type": "esriFieldTypeOID",
+                      "alias": "ObjectID"
+                  },
+                  {
+                      "name": "Name",
+                      "type": "esriFieldTypeString",
+                      "alias": "Name",
+                      "length": 1024
+                  },
+                  {
+                      "name": "Weight",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Weight"
+                  },
+                  {
+                      "name": "Total_Minutes",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Total_Minutes"
+                  },
+                  {
+                      "name": "Total_Miles",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Total_Miles"
+                  },
+                  {
+                      "name": "Total_Kilometers",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Total_Kilometers"
+                  },
+                  {
+                      "name": "TotalWeighted_Minutes",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "TotalWeighted_Minutes"
+                  },
+                  {
+                      "name": "FacilityOID",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "FacilityOID"
+                  },
+                  {
+                      "name": "DemandOID",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "DemandOID"
+                  },
+                  {
+                      "name": "Shape_Length",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Shape_Length"
+                  }
+              ],
+              "features": [
+                  {
+                      "attributes": {
+                          "ObjectID": 1,
+                          "Name": "1201 Third Avenue - Existing Location",
+                          "Weight": 1775.9501536367545,
+                          "Total_Minutes": 3.5404668893131155,
+                          "Total_Miles": 0.18332831101675257,
+                          "Total_Kilometers": 0.29503890744275957,
+                          "TotalWeighted_Minutes": 6287.69271602147,
+                          "FacilityOID": 1,
+                          "DemandOID": 6,
+                          "Shape_Length": 0.0029814011806231244
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33616299999994,
+                                      47.607204000000081
+                                  ],
+                                  [
+                                      -122.33390599999996,
+                                      47.609152000000051
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 2,
+                          "Name": "Puget Sound Plaza - Existing Location",
+                          "Weight": 2159.2293664643553,
+                          "Total_Minutes": 2.7796459713622013,
+                          "Total_Miles": 0.1439323730699309,
+                          "Total_Kilometers": 0.23163716428018344,
+                          "TotalWeighted_Minutes": 6001.8932097396037,
+                          "FacilityOID": 1,
+                          "DemandOID": 7,
+                          "Shape_Length": 0.0019684003657754029
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33579599999996,
+                                      47.608602000000076
+                                  ],
+                                  [
+                                      -122.33390599999996,
+                                      47.609152000000051
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 3,
+                          "Name": "Rainier Square - Existing Location",
+                          "Weight": 1312.5286001294855,
+                          "Total_Minutes": 2.7508863271141051,
+                          "Total_Miles": 0.14244317484543653,
+                          "Total_Kilometers": 0.22924052725950878,
+                          "TotalWeighted_Minutes": 3610.6169800424182,
+                          "FacilityOID": 1,
+                          "DemandOID": 8,
+                          "Shape_Length": 0.00098376114985743819
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33488099999994,
+                                      47.609021000000041
+                                  ],
+                                  [
+                                      -122.33390599999996,
+                                      47.609152000000051
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 4,
+                          "Name": "Century Square - Existing Location",
+                          "Weight": 1965.5049321176357,
+                          "Total_Minutes": 4.4879043915385664,
+                          "Total_Miles": 0.23238741042570671,
+                          "Total_Kilometers": 0.37399203262821384,
+                          "TotalWeighted_Minutes": 8820.9982164414487,
+                          "FacilityOID": 1,
+                          "DemandOID": 9,
+                          "Shape_Length": 0.0037676318822468689
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33750299999997,
+                                      47.610273000000063
+                                  ],
+                                  [
+                                      -122.33390599999996,
+                                      47.609152000000051
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 5,
+                          "Name": "Miken Building - Existing Location",
+                          "Weight": 3908.5618264234613,
+                          "Total_Minutes": 3.0429478312760363,
+                          "Total_Miles": 0.15756636168631311,
+                          "Total_Kilometers": 0.25357898593966977,
+                          "TotalWeighted_Minutes": 11893.549733123575,
+                          "FacilityOID": 1,
+                          "DemandOID": 10,
+                          "Shape_Length": 0.0026344380805071242
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33651599999996,
+                                      47.609510000000057
+                                  ],
+                                  [
+                                      -122.33390599999996,
+                                      47.609152000000051
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 6,
+                          "Name": "Westlake Park - Existing Location",
+                          "Weight": 2458.6612436754313,
+                          "Total_Minutes": 3.5249748654429678,
+                          "Total_Miles": 0.18252612117593861,
+                          "Total_Kilometers": 0.29374790545358065,
+                          "TotalWeighted_Minutes": 8666.7190865946432,
+                          "FacilityOID": 1,
+                          "DemandOID": 11,
+                          "Shape_Length": 0.0030947242462198623
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33635299999997,
+                                      47.611046600000066
+                                  ],
+                                  [
+                                      -122.33390599999996,
+                                      47.609152000000051
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 7,
+                          "Name": "U.S. Bank Centre - Existing Location",
+                          "Weight": 3984.4771602632677,
+                          "Total_Minutes": 3.2673267279559797,
+                          "Total_Miles": 0.16918488699445883,
+                          "Total_Kilometers": 0.27227722732966503,
+                          "TotalWeighted_Minutes": 13018.588722658316,
+                          "FacilityOID": 1,
+                          "DemandOID": 12,
+                          "Shape_Length": 0.0014959361617758106
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33457099999998,
+                                      47.610492000000079
+                                  ],
+                                  [
+                                      -122.33390599999996,
+                                      47.609152000000051
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 8,
+                          "Name": "Westlake Center - Existing Location",
+                          "Weight": 2428.3001320795697,
+                          "Total_Minutes": 5.0005183322017226,
+                          "Total_Miles": 0.25893098529406278,
+                          "Total_Kilometers": 0.41670986101681029,
+                          "TotalWeighted_Minutes": 12142.759326551753,
+                          "FacilityOID": 1,
+                          "DemandOID": 13,
+                          "Shape_Length": 0.0044997315475861829
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33740599999999,
+                                      47.611980000000074
+                                  ],
+                                  [
+                                      -122.33390599999996,
+                                      47.609152000000051
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 9,
+                          "Name": "Nordstrom Flagship Store - Existing Location",
+                          "Weight": 2427.1531896009124,
+                          "Total_Minutes": 4.6397249812228356,
+                          "Total_Miles": 0.24024880643774066,
+                          "Total_Kilometers": 0.38664374843523619,
+                          "TotalWeighted_Minutes": 11261.323287046038,
+                          "FacilityOID": 1,
+                          "DemandOID": 14,
+                          "Shape_Length": 0.0039556084601344984
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33629499999995,
+                                      47.612304700000038
+                                  ],
+                                  [
+                                      -122.33390599999996,
+                                      47.609152000000051
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 10,
+                          "Name": "Washington State Convention Center - Existing Location",
+                          "Weight": 1070.6400550593389,
+                          "Total_Minutes": 5.1948372764106745,
+                          "Total_Miles": 0.26899298133981508,
+                          "Total_Kilometers": 0.43290310636755619,
+                          "TotalWeighted_Minutes": 5561.8008676406307,
+                          "FacilityOID": 1,
+                          "DemandOID": 18,
+                          "Shape_Length": 0.0034645548054733234
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33151999999995,
+                                      47.611664000000076
+                                  ],
+                                  [
+                                      -122.33390599999996,
+                                      47.609152000000051
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 11,
+                          "Name": "Colman Building - Candidate 1",
+                          "Weight": 1568.0361516434323,
+                          "Total_Minutes": 3.2908923338014393,
+                          "Total_Miles": 0.17040513360395976,
+                          "Total_Kilometers": 0.27424102781678666,
+                          "TotalWeighted_Minutes": 5160.2381505668827,
+                          "FacilityOID": 2,
+                          "DemandOID": 1,
+                          "Shape_Length": 0.0022369711665509418
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33558299999999,
+                                      47.603495000000066
+                                  ],
+                                  [
+                                      -122.33358499999997,
+                                      47.604501000000027
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 12,
+                          "Name": "Norton Parking Garage - Candidate 1",
+                          "Weight": 1258.6401427699518,
+                          "Total_Minutes": 2.7764212487911872,
+                          "Total_Miles": 0.14376539426150706,
+                          "Total_Kilometers": 0.2313684373992656,
+                          "TotalWeighted_Minutes": 3494.5152369680677,
+                          "FacilityOID": 2,
+                          "DemandOID": 2,
+                          "Shape_Length": 0.0014480196821765967
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33481999999998,
+                                      47.60374500000006
+                                  ],
+                                  [
+                                      -122.33358499999997,
+                                      47.604501000000027
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 13,
+                          "Name": "DocuSign Tower - Candidate 1",
+                          "Weight": 2379.6865487900109,
+                          "Total_Minutes": 2.3233369786204081,
+                          "Total_Miles": 0.12030431508875926,
+                          "Total_Kilometers": 0.19361141488503397,
+                          "TotalWeighted_Minutes": 5528.8137563294104,
+                          "FacilityOID": 2,
+                          "DemandOID": 3,
+                          "Shape_Length": 0.00079551052790137391
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33415099999996,
+                                      47.605060000000037
+                                  ],
+                                  [
+                                      -122.33358499999997,
+                                      47.604501000000027
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 14,
+                          "Name": "Fourth and Madison Building - Candidate 1",
+                          "Weight": 1093.665056876366,
+                          "Total_Minutes": 2.2217216293088158,
+                          "Total_Miles": 0.11504258804962128,
+                          "Total_Kilometers": 0.18514346910906795,
+                          "TotalWeighted_Minutes": 2429.8193120814785,
+                          "FacilityOID": 2,
+                          "DemandOID": 4,
+                          "Shape_Length": 0.0010546222072903486
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33322699999997,
+                                      47.605493000000081
+                                  ],
+                                  [
+                                      -122.33358499999997,
+                                      47.604501000000027
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 15,
+                          "Name": "Safeco Plaza - Candidate 1",
+                          "Weight": 3606.7054493249389,
+                          "Total_Minutes": 3.2555493781980891,
+                          "Total_Miles": 0.16857504605910506,
+                          "Total_Kilometers": 0.27129578151650741,
+                          "TotalWeighted_Minutes": 11741.807682893465,
+                          "FacilityOID": 2,
+                          "DemandOID": 5,
+                          "Shape_Length": 0.0017179397544728771
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33389899999997,
+                                      47.606190000000026
+                                  ],
+                                  [
+                                      -122.33358499999997,
+                                      47.604501000000027
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 16,
+                          "Name": "Columbia Center - Candidate 1",
+                          "Weight": 5382.6780812398265,
+                          "Total_Minutes": 3.3452311230207439,
+                          "Total_Miles": 0.173218841163361,
+                          "Total_Kilometers": 0.2787692602517286,
+                          "TotalWeighted_Minutes": 18006.302242565049,
+                          "FacilityOID": 2,
+                          "DemandOID": 15,
+                          "Shape_Length": 0.00283900017611283
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33074599999998,
+                                      47.604502000000025
+                                  ],
+                                  [
+                                      -122.33358499999997,
+                                      47.604501000000027
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 17,
+                          "Name": "800 Fifth Avenue - Candidate 1",
+                          "Weight": 3682.4670595243138,
+                          "Total_Minutes": 4.0994721019401972,
+                          "Total_Miles": 0.21227406441154459,
+                          "Total_Kilometers": 0.34162267516168315,
+                          "TotalWeighted_Minutes": 15096.170976833675,
+                          "FacilityOID": 2,
+                          "DemandOID": 16,
+                          "Shape_Length": 0.0035640227272105899
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.33022799999998,
+                                      47.605698000000075
+                                  ],
+                                  [
+                                      -122.33358499999997,
+                                      47.604501000000027
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 18,
+                          "Name": "Seattle Municipal Tower - Candidate 1",
+                          "Weight": 2016.0953569457263,
+                          "Total_Minutes": 4.5858028388918806,
+                          "Total_Miles": 0.23745667319967026,
+                          "Total_Kilometers": 0.38215023657432329,
+                          "TotalWeighted_Minutes": 9245.4158113584508,
+                          "FacilityOID": 2,
+                          "DemandOID": 17,
+                          "Shape_Length": 0.0040314468866818635
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.32960499999996,
+                                      47.605143000000055
+                                  ],
+                                  [
+                                      -122.33358499999997,
+                                      47.604501000000027
+                                  ]
+                              ]
+                          ]
+                      }
+                  }
+              ],
+              "exceededTransferLimit": false
+          }
+      }
+order: 1000

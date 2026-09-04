@@ -1,0 +1,16 @@
+{
+  "name": "@pixelpetals/openapi",
+  "type": "module",
+  "bin": {
+    "openapi": "bin/cmd.js"
+  },
+  "exports": {
+    "./*": "./schema/*"
+  },
+  "dependencies": {
+    "utils": "*"
+  },
+  "imports": {
+    "#lib/*": "./bin/lib/*.js"
+  }
+}

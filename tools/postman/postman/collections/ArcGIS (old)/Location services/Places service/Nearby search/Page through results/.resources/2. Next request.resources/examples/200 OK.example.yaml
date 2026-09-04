@@ -1,0 +1,337 @@
+$kind: http-example
+request:
+  url: "{{nearbyNextURL}}"
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Encoding: gzip
+    Content-Type: application/json
+    Date: Wed, 05 Jul 2023 16:45:15 GMT
+    permissions-policy: interest-cohort=()
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    Content-Length: "1787"
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      {
+          "results": [
+              {
+                  "placeId": "5033830b234649aac9c9fe974c97518d",
+                  "location": {
+                      "x": 174.777517,
+                      "y": -41.292323
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13002",
+                          "label": "Bakery"
+                      },
+                      {
+                          "categoryId": "13035",
+                          "label": "Coffee Shop"
+                      }
+                  ],
+                  "name": "Lashings",
+                  "distance": 54
+              },
+              {
+                  "placeId": "d6c39a82cf7777117bfbacb765878a07",
+                  "location": {
+                      "x": 174.778645,
+                      "y": -41.292131
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13199",
+                          "label": "Indian Restaurant"
+                      }
+                  ],
+                  "name": "Great India Restaurant",
+                  "distance": 55.8
+              },
+              {
+                  "placeId": "ca801c97f313bbce5c33cbc8a6bb5b69",
+                  "location": {
+                      "x": 174.777741,
+                      "y": -41.291528
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "17058",
+                          "label": "Beer Store"
+                      },
+                      {
+                          "categoryId": "17076",
+                          "label": "Liquor Store"
+                      }
+                  ],
+                  "name": "Capital Liquor",
+                  "distance": 56.8
+              },
+              {
+                  "placeId": "245660a3ab828e27d3a816e42fed6016",
+                  "location": {
+                      "x": 174.777333,
+                      "y": -41.292106
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13288",
+                          "label": "Kebab Restaurant"
+                      }
+                  ],
+                  "name": "Camel Grill",
+                  "distance": 57
+              },
+              {
+                  "placeId": "fa1357801ba7982c302dd4d8a6beee5b",
+                  "location": {
+                      "x": 174.778242,
+                      "y": -41.292484
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13019",
+                          "label": "Rooftop Bar"
+                      }
+                  ],
+                  "name": "Dirty Little Secret",
+                  "distance": 57.5
+              },
+              {
+                  "placeId": "9fec98cd75986574f8882c4bb5e98e0c",
+                  "location": {
+                      "x": 174.777894,
+                      "y": -41.291467
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "17043",
+                          "label": "Clothing Store"
+                      }
+                  ],
+                  "name": "Jay Jays",
+                  "distance": 59.9
+              },
+              {
+                  "placeId": "eb90a04973d6e4290f920eb75b72a613",
+                  "location": {
+                      "x": 174.778389,
+                      "y": -41.292489
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11000",
+                          "label": "Business and Professional Services"
+                      }
+                  ],
+                  "name": "Designworks",
+                  "distance": 63.3
+              },
+              {
+                  "placeId": "815ea25bc101081f9dee15607c501f66",
+                  "location": {
+                      "x": 174.778389,
+                      "y": -41.292489
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11003",
+                          "label": "Architecture Firm"
+                      }
+                  ],
+                  "name": "Tennent Brown Architects",
+                  "distance": 63.3
+              },
+              {
+                  "placeId": "731ec104309a1a4bd7a09bd5b65021f0",
+                  "location": {
+                      "x": 174.778313,
+                      "y": -41.29252
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10052",
+                          "label": "Strip Club"
+                      }
+                  ],
+                  "name": "Calendar Girls",
+                  "distance": 63.5
+              },
+              {
+                  "placeId": "f62d70f02dc1b1d02488cd71f85b21c4",
+                  "location": {
+                      "x": 174.778313,
+                      "y": -41.29252
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11169",
+                          "label": "Website Designer"
+                      }
+                  ],
+                  "name": "Springload Web Design",
+                  "distance": 63.5
+              },
+              {
+                  "placeId": "8e72360ef1734823f574ed0e5c483439",
+                  "location": {
+                      "x": 174.777747,
+                      "y": -41.291461
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "17029",
+                          "label": "Convenience Store"
+                      }
+                  ],
+                  "name": "City Stop Manners St",
+                  "distance": 63.6
+              },
+              {
+                  "placeId": "f7899835c2b3d14c159975f405ac12cc",
+                  "location": {
+                      "x": 174.778011,
+                      "y": -41.292575
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13065",
+                          "label": "Restaurant"
+                      }
+                  ],
+                  "name": "Egmont Street Eatery",
+                  "distance": 63.9
+              },
+              {
+                  "placeId": "05df96d46ef9bc04537c79f07f1053f4",
+                  "location": {
+                      "x": 174.7776,
+                      "y": -41.2915
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "19013",
+                          "label": "Hostel"
+                      }
+                  ],
+                  "name": "Laneqay Backpacker",
+                  "distance": 64.9
+              },
+              {
+                  "placeId": "0e9875fc1d49e2664cf1885d948fc276",
+                  "location": {
+                      "x": 174.777434,
+                      "y": -41.29242
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "12089",
+                          "label": "Youth Organization"
+                      }
+                  ],
+                  "name": "Evolve/Wellington Youth Service",
+                  "distance": 66.5
+              },
+              {
+                  "placeId": "6dd935bd60f9cb0dcaadb4445ad8500d",
+                  "location": {
+                      "x": 174.778793,
+                      "y": -41.292136
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11128",
+                          "label": "Coworking Space"
+                      }
+                  ],
+                  "name": "Credenza",
+                  "distance": 68
+              },
+              {
+                  "placeId": "92fe7aaebdcd5ea2ff0115e6a1dfa6f1",
+                  "location": {
+                      "x": 174.778812,
+                      "y": -41.291936
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11000",
+                          "label": "Business and Professional Services"
+                      }
+                  ],
+                  "name": "Thomson Reuters New Zealand",
+                  "distance": 68.2
+              },
+              {
+                  "placeId": "0164370fe431bd5a7d5193ed21b5f455",
+                  "location": {
+                      "x": 174.778812,
+                      "y": -41.291936
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11006",
+                          "label": "Audiovisual Service"
+                      }
+                  ],
+                  "name": "Nec New Zealand",
+                  "distance": 68.2
+              },
+              {
+                  "placeId": "7e828a1b4a9e35d64ff5c56c0dd1e32c",
+                  "location": {
+                      "x": 174.778812,
+                      "y": -41.291936
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11000",
+                          "label": "Business and Professional Services"
+                      }
+                  ],
+                  "name": "Nec Business Solutions",
+                  "distance": 68.2
+              },
+              {
+                  "placeId": "47504761d83a7b821a979c23ca32c6ec",
+                  "location": {
+                      "x": 174.778484,
+                      "y": -41.291489
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "15016",
+                          "label": "Medical Center"
+                      }
+                  ],
+                  "name": "Wellington Peoples Centre",
+                  "distance": 69.7
+              },
+              {
+                  "placeId": "b479327a6f83367957a0150379ad8939",
+                  "location": {
+                      "x": 174.777171,
+                      "y": -41.292075
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11075",
+                          "label": "Tattoo Parlor"
+                      }
+                  ],
+                  "name": "Tattoo Machine",
+                  "distance": 69.8
+              }
+          ],
+          "pagination": {
+              "previousUrl": "https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/near-point?x=174.77800000&y=-41.29200000&f=pjson&offset=0&pageSize=20",
+              "nextUrl": "https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/near-point?x=174.77800000&y=-41.29200000&f=pjson&offset=40&pageSize=20"
+          }
+      }
+order: 1000

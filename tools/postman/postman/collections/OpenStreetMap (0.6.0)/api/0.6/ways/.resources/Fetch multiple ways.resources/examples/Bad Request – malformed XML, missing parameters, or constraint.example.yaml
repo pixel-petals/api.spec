@@ -1,0 +1,19 @@
+$kind: http-example
+name: Bad Request – malformed XML, missing parameters, or constraint violation
+request:
+  url: "{{baseUrl}}/api/0.6/ways?ways=string"
+  method: GET
+  queryParams:
+    - key: ways
+      value: string
+      description: Comma-separated list of way IDs, optionally versioned
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: text
+    content: ""
+order: 2000

@@ -1,0 +1,1173 @@
+$kind: http-example
+request:
+  url: https://{{geoenrich-service}}.arcgis.com/arcgis/rest/services/World/GeoEnrichmentServer/Geoenrichment/reports/:country-code?f=pjson&token={{access_token}}
+  method: GET
+  queryParams:
+    f: pjson
+    token: "{{access_token}}"
+  pathVariables:
+    country-code: US
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 17:28:12 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    ETag: '"-584089462"'
+    Content-Language: en
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+        "reports" : [ {
+          "reportID" : "census2010_profile",
+          "metadata" : {
+            "title" : "2010 Census Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "2010 Census Profile",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2000,2010",
+            "dataVintageDescription" : "This report contains Census 2000 and 2010 data.",
+            "keywords" : "Households, Family, Population, Housing Units, Race, White, Black, Asian, Hispanic",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622129393700",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "acs_housing",
+          "metadata" : {
+            "title" : "ACS Housing Summary",
+            "categories" : [ "Demographics" ],
+            "name" : "ACS Housing Summary",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2021",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Tiger 2019 boundaries.",
+            "dataVintage" : "2015-2019",
+            "dataVintageDescription" : "This report contains ACS 2015-2019 data.",
+            "keywords" : "American Community Survey (ACS), Households, Housing Units, Housing",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1613517626376",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ACS_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "acs_keyfacts",
+          "metadata" : {
+            "title" : "ACS Key Population & Household Facts",
+            "categories" : [ "Demographics" ],
+            "name" : "ACS Key Population & Household Facts",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2021",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2015-2019",
+            "dataVintageDescription" : "This report contains ACS 2015-2019 data.",
+            "keywords" : "American Community Survey (ACS), Households, Housing Units, Housing",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1614380445270",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ACS_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "acs_population",
+          "metadata" : {
+            "title" : "ACS Population Summary",
+            "categories" : [ "Demographics" ],
+            "name" : "ACS Population Summary",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2021",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Tiger 2019 boundaries.",
+            "dataVintage" : "2015-2019",
+            "dataVintageDescription" : "This report contains ACS 2015-2019 data.",
+            "keywords" : "American Community Survey (ACS), Population",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1613511080784",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ACS_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "55plus",
+          "metadata" : {
+            "title" : "Age 50+ Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "Age 50+ Profile",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics and Census 2010 data.",
+            "keywords" : "Age, Population, 50, Plus",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622129408524",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "agesexrace",
+          "metadata" : {
+            "title" : "Age by Sex by Race Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "Age by Sex by Race Profile",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics and Census 2010 data.",
+            "keywords" : "Age, Population, Race, Sex",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1528733081666",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ASR_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "agesex",
+          "metadata" : {
+            "title" : "Age by Sex Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "Age by Sex Profile",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics and Census 2010 data.",
+            "keywords" : "Age, Population, Sex",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622129422721",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "cex_auto",
+          "metadata" : {
+            "title" : "Automotive Aftermarket Expenditures",
+            "categories" : [ "Consumer Spending" ],
+            "name" : "Automotive Aftermarket Expenditures",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Consumer Spending data are derived from the 2017 and 2018 Consumer Expenditure Surveys, Bureau of Labor Statistics and Esri 2021/2026 Updated Demographics.",
+            "keywords" : "Automotive, Vehicles, Expenditures",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622129474102",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "business_loc",
+          "metadata" : {
+            "title" : "Business Locator",
+            "categories" : [ "Business" ],
+            "name" : "Business Locator",
+            "type" : "esriReportTemplateFusion",
+            "boundaryVintage" : "N/A",
+            "boundaryVintageDescription" : "N/A",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains business data provided by Data Axle.  The vintage of the data is January 2021.",
+            "keywords" : "Businesses, Sales, Employees",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1429124296772",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "business_summary",
+          "metadata" : {
+            "title" : "Business Summary",
+            "categories" : [ "Business" ],
+            "name" : "Business Summary",
+            "type" : "esriReportTemplateMultiColumn",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains business data provided by Data Axle.  The vintage of the data is January 2021.",
+            "keywords" : "Businesses, employees, SIC",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622129548831",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "laborforce_profile",
+          "metadata" : {
+            "title" : "Civilian Labor Force Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "Civilian Labor Force Profile",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : null,
+            "boundaryVintageDescription" : null,
+            "dataVintage" : null,
+            "dataVintageDescription" : null,
+            "keywords" : null,
+            "creationDate" : "1590771168069",
+            "lastRevisionDate" : "1625172744331",
+            "coverage" : null,
+            "author" : null,
+            "countries" : null,
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "community_profile",
+          "metadata" : {
+            "title" : "Community Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "Community Profile",
+            "type" : "esriReportTemplateMultiColumn",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics and Census 2010 data.",
+            "keywords" : "Community, Profile, Age, Population, Race, Sex",
+            "creationDate" : "1476374817633",
+            "lastRevisionDate" : "1622731409241",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "crime_summary",
+          "metadata" : {
+            "title" : "Crime Summary",
+            "categories" : [ "Crime" ],
+            "name" : "Crime Summary",
+            "type" : "esriReportTemplateMultiColumn",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "The crime indexes provide an assessment of the relative risk of seven major crime types: murder, rape, robbery, assault, burglary, larceny, and motor vehicle theft. It is modeled using data from the FBI Uniform Crime Report and demographic data from the Census and AGS.",
+            "keywords" : "Crime, AGS, Murder, Rape, Robbery, Assault, Burglary, Larceny, Motor Vehicle, Theft",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1526646175647",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_CRM_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "Custom_Map_Landscape",
+          "metadata" : {
+            "title" : "Custom Map Landscape",
+            "categories" : [ "Maps" ],
+            "name" : "Custom Map Landscape",
+            "type" : "esriReportTemplateMapReport",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : null,
+            "dataVintageDescription" : null,
+            "keywords" : "Custom Map Landscape",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1355468400000",
+            "coverage" : "North America, Europe, and the rest of the world",
+            "author" : "Esri",
+            "countries" : null,
+            "dataset" : "",
+            "hierarchy" : null
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf" ]
+        }, {
+          "reportID" : "Custom_Map_Portrait",
+          "metadata" : {
+            "title" : "Custom Map Portrait",
+            "categories" : [ "Maps" ],
+            "name" : "Custom Map Portrait",
+            "type" : "esriReportTemplateMapReport",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : null,
+            "dataVintageDescription" : null,
+            "keywords" : "Custom Map Portrait",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1355468400000",
+            "coverage" : "North America, Europe, and the rest of the world",
+            "author" : "Esri",
+            "countries" : null,
+            "dataset" : "",
+            "hierarchy" : null
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf" ]
+        }, {
+          "reportID" : "dandicomparison",
+          "metadata" : {
+            "title" : "Demographic and Income Comparison Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "Demographic and Income Comparison Profile",
+            "type" : "esriReportTemplateMultiColumn",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics and Census 2010 data.",
+            "keywords" : "Demographic, Income, Comparison",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1400034578000",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "dandi",
+          "metadata" : {
+            "title" : "Demographic and Income Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "Demographic and Income Profile",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics and Census 2010 data.",
+            "keywords" : "Age, Population, Income, Household, Race",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622129612316",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "agedet",
+          "metadata" : {
+            "title" : "Detailed Age Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "Detailed Age Profile",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics and Census 2010 data.",
+            "keywords" : "Age, Population, Sex",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1625590064021",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "dispinc",
+          "metadata" : {
+            "title" : "Disposable Income Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "Disposable Income Profile",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics and Census 2010 data.",
+            "keywords" : "Age, Population, Income",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622129656366",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "tapestry_map",
+          "metadata" : {
+            "title" : "Dominant Tapestry Map",
+            "categories" : [ "Maps" ],
+            "name" : "Dominant Tapestry Map",
+            "type" : "esriReportTemplateMapReport",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics",
+            "keywords" : "Tapestry, Segmentation, 2021",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1429119852346",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf" ]
+        }, {
+          "reportID" : "mpi_pc",
+          "metadata" : {
+            "title" : "Electronics and Internet Market Potential",
+            "categories" : [ "Market Potential" ],
+            "name" : "Electronics and Internet Market Potential",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains data that is based upon national propensities to use various products and services, applied to local demographic composition.  Usage data is collected by GfK MRI in a nationally representative survey of U.S. households. This report also contains Esri forecasts for 2021 and 2026.",
+            "keywords" : "Population, Households, Internet, Computers, Electronics, Software, Website, Video Games, TV, Camera",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1624913152285",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "execsummary",
+          "metadata" : {
+            "title" : "Executive Summary",
+            "categories" : [ "Demographics" ],
+            "name" : "Executive Summary",
+            "type" : "esriReportTemplateMultiColumn",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics and Census 2010 data.",
+            "keywords" : "Demographic, Executive, Summary",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622129681700",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "mpi_investment",
+          "metadata" : {
+            "title" : "Finances Market Potential",
+            "categories" : [ "Market Potential" ],
+            "name" : "Finances Market Potential",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains data that is based upon national propensities to use various products and services, applied to local demographic composition.  Usage data is collected by GfK MRI in a nationally representative survey of U.S. households. This report also contains Esri forecasts for 2021 and 2026.",
+            "keywords" : "Population, Households, Tax, Credit Card, Mortgage, Bank, Financial",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622724270639",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "cex_financial",
+          "metadata" : {
+            "title" : "Financial Expenditures",
+            "categories" : [ "Consumer Spending" ],
+            "name" : "Financial Expenditures",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Consumer Spending data are derived from the 2017 and 2018 Consumer Expenditure Surveys, Bureau of Labor Statistics and Esri 2021/2026 Updated Demographics.",
+            "keywords" : "Population, Household, Expenditures, Financial, Mortgage, Loan, Checking, Savings",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1623073366997",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "graphic",
+          "metadata" : {
+            "title" : "Graphic Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "Graphic Profile",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics and Census 2010 data.",
+            "keywords" : "Age, Population, Household, Race, Housing, Income",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622129771098",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "mpi_health",
+          "metadata" : {
+            "title" : "Health and Beauty Market Potential",
+            "categories" : [ "Market Potential" ],
+            "name" : "Health and Beauty Market Potential",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains data that is based upon national propensities to use various products and services, applied to local demographic composition.  Usage data is collected by GfK MRI in a nationally representative survey of U.S. households. This report also contains Esri forecasts for 2021 and 2026.",
+            "keywords" : "Population, Households, Health, Beauty, Dietary, Exercise, Diet, Doctor, Hygiene",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1623076840346",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "cex_home",
+          "metadata" : {
+            "title" : "House and Home Expenditures",
+            "categories" : [ "Consumer Spending" ],
+            "name" : "House and Home Expenditures",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Consumer Spending data are derived from the 2017 and 2018 Consumer Expenditure Surveys, Bureau of Labor Statistics and Esri 2021/2026 Updated Demographics.",
+            "keywords" : "Population, Household, House, Home, Expenditures, Owned, Rented, Furniture, Appliances, Utilities, Vacation",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622129817517",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "cex_budget",
+          "metadata" : {
+            "title" : "Household Budget Expenditures",
+            "categories" : [ "Consumer Spending" ],
+            "name" : "Household Budget Expenditures",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Consumer Spending data are derived from the 2017 and 2018 Consumer Expenditure Surveys, Bureau of Labor Statistics and Esri 2021/2026 Updated Demographics.",
+            "keywords" : "Household, Budget, Housekeeping, Utilities, Food, Expenditures",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622129832654",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "hh_income",
+          "metadata" : {
+            "title" : "Household Income Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "Household Income Profile",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics and Census 2010 data.",
+            "keywords" : "Age, Population, Household, Income",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622129849489",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "housing",
+          "metadata" : {
+            "title" : "Housing Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "Housing Profile",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics and Census 2010 data.",
+            "keywords" : "Age, Population, Housing",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622129864546",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "LandscapeSummaryReport",
+          "metadata" : {
+            "title" : "Landscape Summary Report",
+            "categories" : [ "Landscape" ],
+            "name" : "Landscape Summary Report",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : null,
+            "boundaryVintageDescription" : null,
+            "dataVintage" : null,
+            "dataVintageDescription" : null,
+            "keywords" : null,
+            "creationDate" : "1495200053140",
+            "lastRevisionDate" : "1495200053140",
+            "coverage" : null,
+            "author" : null,
+            "countries" : null,
+            "dataset" : "Landscape",
+            "hierarchy" : "landscape"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "market_profile",
+          "metadata" : {
+            "title" : "Market Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "Market Profile",
+            "type" : "esriReportTemplateMultiColumn",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics and Census 2010 data.",
+            "keywords" : "Community, Profile, Age, Population, Race, Sex",
+            "creationDate" : "1476374817633",
+            "lastRevisionDate" : "1622731409241",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "cex_medical",
+          "metadata" : {
+            "title" : "Medical Expenditures",
+            "categories" : [ "Consumer Spending" ],
+            "name" : "Medical Expenditures",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Consumer Spending data are derived from the 2017 and 2018 Consumer Expenditure Surveys, Bureau of Labor Statistics and Esri 2021/2026 Updated Demographics.",
+            "keywords" : "Age, Population, Household, Health, Medical, Expenditures, Insurance",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622130074149",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "networth",
+          "metadata" : {
+            "title" : "Net Worth Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "Net Worth Profile",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics and Census 2010 data.",
+            "keywords" : "Age, Population, Household, Income, Net Worth",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622130091566",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "mpi_pet",
+          "metadata" : {
+            "title" : "Pets and Products Market Potential",
+            "categories" : [ "Market Potential" ],
+            "name" : "Pets and Products Market Potential",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains data that is based upon national propensities to use various products and services, applied to local demographic composition.  Usage data is collected by GfK MRI in a nationally representative survey of U.S. households. This report also contains Esri forecasts for 2021 and 2026",
+            "keywords" : "Population, Households, Pets, Pet Food,",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622130365528",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "cex_recreation",
+          "metadata" : {
+            "title" : "Recreation Expenditures",
+            "categories" : [ "Consumer Spending" ],
+            "name" : "Recreation Expenditures",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Consumer Spending data are derived from the 2017 and 2018 Consumer Expenditure Surveys, Bureau of Labor Statistics and Esri 2021/2026 Updated Demographics.",
+            "keywords" : "Age, Population, Household, Expenditures, Recreation, Entertainment, Games, Sports, Exercise, Photography, Reading",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622130111709",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "mpi_restaurant",
+          "metadata" : {
+            "title" : "Restaurant Market Potential",
+            "categories" : [ "Market Potential" ],
+            "name" : "Restaurant Market Potential",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains data that is based upon national propensities to use various products and services, applied to local demographic composition.  Usage data is collected by GfK MRI in a nationally representative survey of U.S. households. This report also contains Esri forecasts for 2021 and 2026.",
+            "keywords" : "Population, Household, Income, Food, Restaurant, Expenditures",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622130132249",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "retail_demand",
+          "metadata" : {
+            "title" : "Retail Demand Outlook",
+            "categories" : [ "Consumer Spending" ],
+            "name" : "Retail Demand Outlook",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Consumer Spending data are derived from the 2017 and 2018 Consumer Expenditure Surveys, Bureau of Labor Statistics and Esri 2021/2026 Updated Demographics.",
+            "keywords" : "Population, Expenditures, Retail, Services, Food Travel, Recreation. Apparel, Computer, Entertainment, Food, Health, Insurance, Transportation, Travel, Financial",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622130339041",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "cex_retail",
+          "metadata" : {
+            "title" : "Retail Goods and Services Expenditures",
+            "categories" : [ "Consumer Spending" ],
+            "name" : "Retail Goods and Services Expenditures",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Consumer Spending data are derived from the 2017 and 2018 Consumer Expenditure Surveys, Bureau of Labor Statistics and Esri 2021/2026 Updated Demographics.",
+            "keywords" : "Population, Expenditures, Retail, Services, Food Travel, Recreation. Apparel, Computer, Entertainment, Food, Health, Insurance, Transportation, Travel, Financial",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1622130168165",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "mpi_retail",
+          "metadata" : {
+            "title" : "Retail Market Potential",
+            "categories" : [ "Market Potential" ],
+            "name" : "Retail Market Potential",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains data that is based upon national propensities to use various products and services, applied to local demographic composition.  Usage data is collected by GfK MRI in a nationally representative survey of U.S. households. This report also contains Esri forecasts for 2021 and 2026.",
+            "keywords" : "Population, Households, Video Game, Travel, TV, Electronics, Restaurants, Reading, Pets, Insurance, Grocery, Financial, Convenience Stores, Grocery, Computers, Automotive, Apparel",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1625172032597",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "retail_market",
+          "metadata" : {
+            "title" : "Retail MarketPlace Profile",
+            "categories" : [ "Business" ],
+            "name" : "Retail MarketPlace Profile",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2017",
+            "dataVintageDescription" : "This report contains Esri 2017 Retail MarketPlace data.",
+            "keywords" : "Retail, Marketplace, Supply, Demand, Leakage, Surplus, NAICS. Retail Gap, Retail Potential, Retail Sales",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1592322479730",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_RMP_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "site_details_map",
+          "metadata" : {
+            "title" : "Site Details Map",
+            "categories" : [ "Maps" ],
+            "name" : "Site Details Map",
+            "type" : "esriReportTemplateMapReport",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : null,
+            "dataVintageDescription" : null,
+            "keywords" : "Site Details Map",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1355468400000",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf" ]
+        }, {
+          "reportID" : "site_map_imagery04",
+          "metadata" : {
+            "title" : "Site Map on Satellite Imagery - 0.4 Miles Wide",
+            "categories" : [ "Maps" ],
+            "name" : "Site Map on Satellite Imagery - 0.4 Miles Wide",
+            "type" : "esriReportTemplateMapReport",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : null,
+            "dataVintageDescription" : null,
+            "keywords" : "Site Map",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1355468400000",
+            "coverage" : "North America, Europe, and the rest of the world",
+            "author" : "Esri",
+            "countries" : null,
+            "dataset" : "",
+            "hierarchy" : null
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf" ]
+        }, {
+          "reportID" : "site_map_imagery08",
+          "metadata" : {
+            "title" : "Site Map on Satellite Imagery - 0.8 Miles Wide",
+            "categories" : [ "Maps" ],
+            "name" : "Site Map on Satellite Imagery - 0.8 Miles Wide",
+            "type" : "esriReportTemplateMapReport",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : null,
+            "dataVintageDescription" : null,
+            "keywords" : "Site Map",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1355468400000",
+            "coverage" : "North America, Europe, and the rest of the world",
+            "author" : "Esri",
+            "countries" : null,
+            "dataset" : "",
+            "hierarchy" : null
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf" ]
+        }, {
+          "reportID" : "site_map_imagery16",
+          "metadata" : {
+            "title" : "Site Map on Satellite Imagery - 1.6 Miles Wide",
+            "categories" : [ "Maps" ],
+            "name" : "Site Map on Satellite Imagery - 1.6 Miles Wide",
+            "type" : "esriReportTemplateMapReport",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : null,
+            "dataVintageDescription" : null,
+            "keywords" : "Site Map",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1355468400000",
+            "coverage" : "North America, Europe, and the rest of the world",
+            "author" : "Esri",
+            "countries" : null,
+            "dataset" : "",
+            "hierarchy" : null
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf" ]
+        }, {
+          "reportID" : "site_map",
+          "metadata" : {
+            "title" : "Site Map",
+            "categories" : [ "Maps" ],
+            "name" : "Site Map Report",
+            "type" : "esriReportTemplateMapReport",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "N/A",
+            "dataVintageDescription" : "N/A",
+            "keywords" : "Site Map",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1355468400000",
+            "coverage" : "North America, Europe, and the rest of the world",
+            "author" : "Esri",
+            "countries" : null,
+            "dataset" : "",
+            "hierarchy" : null
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf" ]
+        }, {
+          "reportID" : "mpi_sports",
+          "metadata" : {
+            "title" : "Sports and Leisure Market Potential",
+            "categories" : [ "Market Potential" ],
+            "name" : "Sports and Leisure Market Potential",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains data that is based upon national propensities to use various products and services, applied to local demographic composition.  Usage data is collected by GfK MRI in a nationally representative survey of U.S. households. This report also contains Esri forecasts for 2021 and 2026.",
+            "keywords" : "Population, Households, Books, Toys, Games, Movies, DVDs, TV, Sports Event, Gamble Dancing, Cooking",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1623072789625",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "tapestry_profileNEW",
+          "metadata" : {
+            "title" : "Tapestry Segmentation Area Profile",
+            "categories" : [ "Tapestry Segmentation" ],
+            "name" : "Tapestry Segmentation Area Profile",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri 2021/2026 Updated Demographics.",
+            "keywords" : "Tapestry, Population, Household",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1625171130400",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "time_series",
+          "metadata" : {
+            "title" : "Time Series Profile",
+            "categories" : [ "Demographics" ],
+            "name" : "Time Series Profile",
+            "type" : "esriReportTemplateStandard",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains Esri Vintage 2021 Time Series (2010 thru 2021) representing July 1 annual estimates in 2021 geography.",
+            "keywords" : null,
+            "creationDate" : "1558894252659",
+            "lastRevisionDate" : "1623075730042",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_ESRI_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "traffic",
+          "metadata" : {
+            "title" : "Traffic Count Profile",
+            "categories" : [ "Traffic" ],
+            "name" : "Traffic Count Profile",
+            "type" : "esriReportTemplateFusion",
+            "boundaryVintage" : "N/A",
+            "boundaryVintageDescription" : "N/A",
+            "dataVintage" : "2021",
+            "dataVintageDescription" : "This report contains data from Kalibrate.",
+            "keywords" : "Traffic, Vehicles",
+            "creationDate" : "1527175538146",
+            "lastRevisionDate" : "1527175538146",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_TRFCNT_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf", "xlsx" ]
+        }, {
+          "reportID" : "traffic_map",
+          "metadata" : {
+            "title" : "Traffic Count Map",
+            "categories" : [ "Maps" ],
+            "name" : "Traffic Map",
+            "type" : "esriReportTemplateMapReport",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : null,
+            "dataVintageDescription" : null,
+            "keywords" : "Site Map",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1355468400000",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_TRFCNT_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf" ]
+        }, {
+          "reportID" : "traffic_map08",
+          "metadata" : {
+            "title" : "Traffic Count Map - Close Up",
+            "categories" : [ "Maps" ],
+            "name" : "Traffic Map - Close Up",
+            "type" : "esriReportTemplateMapReport",
+            "boundaryVintage" : "2010",
+            "boundaryVintageDescription" : "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+            "dataVintage" : null,
+            "dataVintageDescription" : null,
+            "keywords" : "Site Map",
+            "creationDate" : "1355122800000",
+            "lastRevisionDate" : "1355468400000",
+            "coverage" : "US",
+            "author" : "Esri",
+            "countries" : "US",
+            "dataset" : "USA_TRFCNT_2021",
+            "hierarchy" : "census"
+          },
+          "headers" : [ "locationname", "address", "latitude", "longitude", "areadesc2", "reportstyle", "binarylogo", "logo", "title" ],
+          "formats" : [ "pdf" ]
+        } ]
+      }
+order: 1000

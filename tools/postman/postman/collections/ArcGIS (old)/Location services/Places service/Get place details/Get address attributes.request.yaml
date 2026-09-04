@@ -1,0 +1,10 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/place-finding/get-place-details/#get-address-attributes)
+url: https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/bd5f5dfa788b7c5f59f3bfe2cc3d9c60?requestedFields=address:adminRegion,address:country, address:extended, address:locality, address:poBox, address:postcode, address:postTown, address:region, address:streetAddress&f=pjson&token={{Token}}
+method: GET
+queryParams:
+  requestedFields: address:adminRegion,address:country, address:extended, address:locality, address:poBox, address:postcode, address:postTown, address:region, address:streetAddress
+  f: pjson
+  token: "{{Token}}"
+examples: ./.resources/Get address attributes.resources/examples
+order: 3000

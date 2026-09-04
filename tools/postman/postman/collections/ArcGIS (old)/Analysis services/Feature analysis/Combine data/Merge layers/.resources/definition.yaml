@@ -1,0 +1,3 @@
+$kind: collection
+description: The `MergeLayers` operation combines two feature datasets and returns new feature data. The input data must contain the same type of geometry (point, polyline, or polygon).
+order: 3000

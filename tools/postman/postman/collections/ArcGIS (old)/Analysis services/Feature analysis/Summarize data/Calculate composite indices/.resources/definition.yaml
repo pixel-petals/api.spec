@@ -1,0 +1,8 @@
+$kind: collection
+description: |+
+  Composite indices combine multiple variables to create a single index variable, otherwise known as a composite indicator. Indices can provide an interpretable metric for subjects that are difficult to measure, such as social vulnerability or entrepreneurial innovation. Indices are widely used across social and environmental domains to
+  help measure progress towards a goal and facilitate decisions.
+
+  [Learn more](https://developers.arcgis.com/rest/analysis/tasks/sa-calculate-composite-index/)
+
+order: 5000

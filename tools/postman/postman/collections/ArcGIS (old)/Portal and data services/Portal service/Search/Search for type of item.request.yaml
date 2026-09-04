@@ -1,0 +1,9 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/search/search-items/#search-for-a-type-of-item)
+url: https://www.arcgis.com/sharing/rest/search?q=title:"London Map" AND type:"Web Map"&f=json
+method: GET
+queryParams:
+  q: title:"London Map" AND type:"Web Map"
+  f: json
+examples: ./.resources/Search for type of item.resources/examples
+order: 3000

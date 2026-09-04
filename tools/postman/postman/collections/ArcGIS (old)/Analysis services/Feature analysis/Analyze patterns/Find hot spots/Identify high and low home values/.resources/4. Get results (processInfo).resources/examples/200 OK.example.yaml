@@ -1,0 +1,52 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/FindHotSpots/jobs/:JOB_ID/results/processInfo"
+  method: POST
+  pathVariables:
+    JOB_ID: "{{JOB_ID}}"
+  body:
+    type: urlencoded
+    content:
+      f: json
+      returnType: data
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 31 Jan 2025 19:11:50 GMT
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: no-cache
+    ETag: '"-2062667479"'
+    Vary: Origin,Accept-Encoding,Authorization,X-Esri-Authorization
+    Server: Microsoft-IIS/10.0
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    X-Powered-By: ASP.NET
+  body:
+    type: json
+    content: |-
+      {
+          "paramName": "processInfo",
+          "dataType": "GPString",
+          "value": [
+              "{\"messageCode\": \"SS_00002\", \"message\": \"The following report outlines the workflow used to optimize your Find Hot Spots result:\", \"params\": {}, \"style\": \"<b></b><br/>\"}",
+              "{\"message\": \"There are ${NumFeatures} valid input features.\", \"messageCode\": \"SS_84485\", \"params\": {\"NumFeatures\": \"183\"}, \"style\": \"<ul><li></li></ul>\"}",
+              "{\"message\": \"${VarName} Properties:\", \"messageCode\": \"SS_84446\", \"params\": {\"VarName\": \"2022 Average Home Value\"}, \"style\": \"<ul><li></li></ul>\"}",
+              "{\"message\": [\"Min::\", \"${MinValue}\"], \"messageCode\": \"SS_84271\", \"params\": {\"MinValue\": \"131548.0000\"}, \"style\": \"<table style='width: 200px;margin-left: 2.5em;border: none;' class='table-plain'><tbody><tr><td style='border: none;'></td><td style='float:right;border: none;'></td></tr>\"}",
+              "{\"message\": [\"Max::\", \"${MaxValue}\"], \"messageCode\": \"SS_84272\", \"params\": {\"MaxValue\": \"1010345.0000\"}, \"style\": \"<tr><td style='border: none;'></td><td style='float: right;border: none;'></td></tr>\"}",
+              "{\"message\": [\"Mean::\", \"${AvgValue}\"], \"messageCode\": \"SS_84261\", \"params\": {\"AvgValue\": \"577577.2951\"}, \"style\": \"<tr><td style='border: none;'></td><td style='float: right;border: none;'></td></tr>\"}",
+              "{\"message\": [\"Std. Dev.::\", \"${StdValue}\"], \"messageCode\": \"SS_84262\", \"params\": {\"StdValue\": \"161152.4243\"}, \"style\": \"<tr><td style='border: none;'></td><td style='float: right;border: none;'></td></tr></tbody></table>\"}",
+              "{\"message\": \"There was 1 outlier location; it will not be used to compute the optimal fixed distance band.\", \"messageCode\": \"SS_84496_0\", \"params\": {}, \"style\": \"<ul><li></li></ul>\"}",
+              "{\"message\": \"Scale of Analysis\", \"messageCode\": \"SS_84459\", \"params\": {}, \"style\": \"<u><b></b></u><br/>\"}",
+              "{\"message\": \"The optimal fixed distance band is based on peak clustering found at ${DistanceInfo}\", \"messageCode\": \"SS_84461\", \"params\": {\"DistanceInfo\": \"9656.7100 meters\"}, \"style\": \"<ul><li></li></ul><br/>\"}",
+              "{\"message\": \"Hot Spot Analysis\", \"messageCode\": \"SS_84466\", \"params\": {}, \"style\": \"<u><b></b></u><br/>\"}",
+              "{\"message\": \"There are ${NumSignificant} output features statistically significant based on an FDR correction for multiple testing and spatial dependence.\", \"messageCode\": \"SS_84470\", \"params\": {\"NumSignificant\": \"160\"}, \"style\": \"<ul><li></li></ul><br/>\"}",
+              "{\"message\": \"Output\", \"messageCode\": \"SS_84471\", \"params\": {}, \"style\": \"<u><b></b></u><br/>\"}",
+              "{\"message\": \"Red output features represent hot spots where high ${FieldName} cluster.\", \"messageCode\": \"SS_84476\", \"params\": {\"FieldName\": \"2022 Average Home Value\"}, \"style\": \"<ul><li></li></ul>\"}",
+              "{\"message\": \"Blue output features represent cold spots where low ${FieldName} cluster.\", \"messageCode\": \"SS_84477\", \"params\": {\"FieldName\": \"2022 Average Home Value\"}, \"style\": \"<ul><li></li></ul><br/>\"}"
+          ]
+      }
+order: 1000

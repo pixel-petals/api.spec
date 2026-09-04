@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{CKAN_API}}/job_cancel"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: id
+      value: ""
+      description: (string) – The ID of the background job
+order: 1000

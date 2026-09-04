@@ -1,0 +1,16 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/combine-data/overlay-layers/#overlay-parks-with-bike-paths)
+url: "{{ANALYSIS_URL}}/OverlayLayers/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    inputLayer: '{url:"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Park_Polygons/FeatureServer/0"}'
+    overlayLayer: '{url:"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Bike_routes_500_ft_buffer/FeatureServer/0"}'
+    overlayType: intersect
+    outputType: Input
+    outputName: '{"serviceProperties":{"name":"Overlay layers results"}}'
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

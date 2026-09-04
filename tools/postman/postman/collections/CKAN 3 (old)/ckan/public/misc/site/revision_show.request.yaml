@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{CKAN_API}}/revision_show"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: id
+    value: null
+    disabled: true
+    description: (string) – the id of the revision
+order: 4000

@@ -1,0 +1,75 @@
+$kind: http-example
+request:
+  url: https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/webmaps/{{STYLE_TYPE}}/{{STYLE}}?token={{ACCESS_TOKEN}}
+  method: GET
+  queryParams:
+    token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Content-Type
+      value: application/json
+    - key: Content-Length
+      value: "496"
+    - key: Connection
+      value: keep-alive
+    - key: Date
+      value: Fri, 17 Jan 2025 14:38:18 GMT
+    - key: Cache-Control
+      value: max-age=600
+    - key: ETag
+      value: "15431265300583917520"
+    - key: permissions-policy
+      value: interest-cohort=()
+    - key: Strict-Transport-Security
+      value: max-age=31536000; includeSubDomains; preload
+    - key: x-content-type-options
+      value: nosniff
+    - key: x-frame-options
+      value: SAMEORIGIN
+    - key: Vary
+      value: Accept-Encoding,Authorization,X-Esri-Authorization
+    - key: Vary
+      value: Origin
+    - key: X-Cache
+      value: Miss from cloudfront
+    - key: Via
+      value: 1.1 41bf1cdea51df206da3445c53743512e.cloudfront.net (CloudFront)
+    - key: X-Amz-Cf-Pop
+      value: LAX50-C4
+    - key: X-Amz-Cf-Id
+      value: SyvXMKxYlIivORdG7rui8xJT4fLxIgTZZfA31Hgh1I0sRrhaQiYqzw==
+    - key: Referrer-Policy
+      value: no-referrer-when-downgrade
+    - key: Content-Security-Policy
+      value: upgrade-insecure-requests
+  body:
+    type: json
+    content: |-
+      {
+          "authoringApp": "ArcGIS Basemap Style API",
+          "authoringAppVersion": "2.0",
+          "version": "2.17",
+          "operationalLayers": [],
+          "baseMap": {
+              "title": "ArcGIS Outdoor",
+              "baseMapLayers": [
+                  {
+                      "id": "659e7c1b1e374f6c8a89eefe17b23380",
+                      "title": "World_Basemap_v2",
+                      "type": "VectorTileLayer",
+                      "isReference": false,
+                      "styleUrl": "https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/layers/arcgis/outdoor",
+                      "opacity": 1,
+                      "visibility": true,
+                      "layerType": "VectorTileLayer"
+                  }
+              ]
+          },
+          "spatialReference": {
+              "latestWkid": 3857,
+              "wkid": 102100
+          }
+      }
+order: 1000

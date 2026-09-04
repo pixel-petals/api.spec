@@ -1,0 +1,21 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/users-and-groups/groups/#invite-users-to-a-group)
+url: https://www.arcgis.com/sharing/rest/community/groups/:GROUP_ID/invite?users={{USERNAME}}&role=group member&expiration=20160&f=json&token={{ACCESS_TOKEN}}
+method: POST
+queryParams:
+  - key: users
+    value: "{{USERNAME}}"
+    description: User to invite.
+  - key: role
+    value: group member
+  - key: expiration
+    value: "20160"
+    description: "14 days "
+  - key: f
+    value: json
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+pathVariables:
+  GROUP_ID: "{{CREATED_GROUP_ID}}"
+examples: ./.resources/Invite users to a group.resources/examples
+order: 4000

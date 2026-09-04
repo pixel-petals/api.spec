@@ -1,0 +1,30 @@
+$kind: http-request
+url: "{{baseUrl}}/api/0.6/user/preferences/:key"
+method: DELETE
+pathVariables:
+  - key: key
+    value: string
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: text
+  content: ""
+auth:
+  type: oauth2
+  credentials:
+    scope: read_prefs write_prefs write_api write_changeset_comments read_gpx write_gpx write_notes write_redactions write_blocks consume_messages send_messages
+    accessTokenUrl: https://www.openstreetmap.org/oauth2/token
+    authUrl: https://www.openstreetmap.org/oauth2/authorize
+    grant_type: authorization_code
+examples: ./.resources/Delete a single user preference.resources/examples
+order: 3000

@@ -1,0 +1,901 @@
+$kind: http-example
+request:
+  url: https://{{logistics-service}}.arcgis.com/arcgis/rest/services/World/ClosestFacility/GPServer/FindClosestFacilities/jobs/:job-id/results/Output_Directions
+  method: POST
+  pathVariables:
+    job-id: "{{job_id}}"
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 08:14:04 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "2609"
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 08:15:04 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"41a7c8cc"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "paramName": "Output_Directions",
+          "dataType": "GPFeatureRecordSetLayer",
+          "value": {
+              "displayFieldName": "",
+              "geometryType": "esriGeometryPolyline",
+              "spatialReference": {
+                  "wkid": 4326,
+                  "latestWkid": 4326
+              },
+              "fields": [
+                  {
+                      "name": "ObjectID",
+                      "type": "esriFieldTypeOID",
+                      "alias": "ObjectID"
+                  },
+                  {
+                      "name": "RouteName",
+                      "type": "esriFieldTypeString",
+                      "alias": "RouteName",
+                      "length": 1024
+                  },
+                  {
+                      "name": "ArriveTime",
+                      "type": "esriFieldTypeDate",
+                      "alias": "ArriveTime",
+                      "length": 16
+                  },
+                  {
+                      "name": "Type",
+                      "type": "esriFieldTypeSmallInteger",
+                      "alias": "Type"
+                  },
+                  {
+                      "name": "SubItemType",
+                      "type": "esriFieldTypeSmallInteger",
+                      "alias": "SubItemType"
+                  },
+                  {
+                      "name": "Text",
+                      "type": "esriFieldTypeString",
+                      "alias": "Text",
+                      "length": 1024
+                  },
+                  {
+                      "name": "ElapsedTime",
+                      "type": "esriFieldTypeSingle",
+                      "alias": "ElapsedTime"
+                  },
+                  {
+                      "name": "DriveDistance",
+                      "type": "esriFieldTypeSingle",
+                      "alias": "DriveDistance"
+                  },
+                  {
+                      "name": "Shape_Length",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Shape_Length"
+                  }
+              ],
+              "features": [
+                  {
+                      "attributes": {
+                          "ObjectID": 1,
+                          "RouteName": "Station 21 - Eastbank/Hawthrone - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676800000,
+                          "Type": 18,
+                          "SubItemType": 1,
+                          "Text": "Start at Station 21 - Eastbank/Hawthrone",
+                          "ElapsedTime": 0,
+                          "DriveDistance": 0,
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 2,
+                          "RouteName": "Station 21 - Eastbank/Hawthrone - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676800000,
+                          "Type": 2,
+                          "SubItemType": 1,
+                          "Text": "Go east on Ft of SE Madison St toward SE Water Ave / SE Madison St",
+                          "ElapsedTime": 0.35284638404846191,
+                          "DriveDistance": 0.055129863321781158,
+                          "Shape_Length": 0.0011354360000268571
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.66823543599997,
+                                      45.512980000000027
+                                  ],
+                                  [
+                                      -122.66709999999995,
+                                      45.512980000000027
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 3,
+                          "RouteName": "Station 21 - Eastbank/Hawthrone - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676821171,
+                          "Type": 2,
+                          "SubItemType": 1,
+                          "Text": "Continue forward on SE Madison St",
+                          "ElapsedTime": 0.34528747200965881,
+                          "DriveDistance": 0.060970209538936615,
+                          "Shape_Length": 0.0012511929677497795
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.66709999999995,
+                                      45.512980000000027
+                                  ],
+                                  [
+                                      -122.66651999999999,
+                                      45.512980000000027
+                                  ],
+                                  [
+                                      -122.66584999999998,
+                                      45.512940000000071
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 4,
+                          "RouteName": "Station 21 - Eastbank/Hawthrone - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676841888,
+                          "Type": 5,
+                          "SubItemType": 1,
+                          "Text": "At the stop sign, turn left on SE Water Ave",
+                          "ElapsedTime": 0.1591716855764389,
+                          "DriveDistance": 0.051100660115480423,
+                          "Shape_Length": 0.00074006756449030613
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.66584999999998,
+                                      45.512940000000071
+                                  ],
+                                  [
+                                      -122.66585999999995,
+                                      45.513680000000079
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 5,
+                          "RouteName": "Station 21 - Eastbank/Hawthrone - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676851438,
+                          "Type": 6,
+                          "SubItemType": 1,
+                          "Text": "Turn right on SE Main St",
+                          "ElapsedTime": 0.77470487356185913,
+                          "DriveDistance": 0.14762036502361298,
+                          "Shape_Length": 0.0030402434355335556
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.66585999999995,
+                                      45.513680000000079
+                                  ],
+                                  [
+                                      -122.66536999999994,
+                                      45.513670000000047
+                                  ],
+                                  [
+                                      -122.66481999999996,
+                                      45.513660000000073
+                                  ],
+                                  [
+                                      -122.66382999999996,
+                                      45.513670000000047
+                                  ],
+                                  [
+                                      -122.66281999999995,
+                                      45.513670000000047
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 6,
+                          "RouteName": "Station 21 - Eastbank/Hawthrone - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676866712,
+                          "Type": 0,
+                          "SubItemType": 3,
+                          "Text": "Cross over the railroad track",
+                          "ElapsedTime": 0,
+                          "DriveDistance": 0,
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 7,
+                          "RouteName": "Station 21 - Eastbank/Hawthrone - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676897921,
+                          "Type": 5,
+                          "SubItemType": 1,
+                          "Text": "At the stop sign, turn left on SE 3rd Ave",
+                          "ElapsedTime": 0.1708211749792099,
+                          "DriveDistance": 0.04973568394780159,
+                          "Shape_Length": 0.00072027772421610426
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.66281999999995,
+                                      45.513670000000047
+                                  ],
+                                  [
+                                      -122.66279999999995,
+                                      45.514390000000049
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 8,
+                          "RouteName": "Station 21 - Eastbank/Hawthrone - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676908170,
+                          "Type": 6,
+                          "SubItemType": 1,
+                          "Text": "At the stop sign, turn right on SE Salmon St",
+                          "ElapsedTime": 0.80975353717803955,
+                          "DriveDistance": 0.14857764542102814,
+                          "Shape_Length": 0.0030600694411003844
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.66279999999995,
+                                      45.514390000000049
+                                  ],
+                                  [
+                                      -122.66181999999998,
+                                      45.514390000000049
+                                  ],
+                                  [
+                                      -122.66076999999996,
+                                      45.514390000000049
+                                  ],
+                                  [
+                                      -122.66004999999996,
+                                      45.514380000000074
+                                  ],
+                                  [
+                                      -122.65973999999994,
+                                      45.514380000000074
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 9,
+                          "RouteName": "Station 21 - Eastbank/Hawthrone - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676956755,
+                          "Type": 5,
+                          "SubItemType": 1,
+                          "Text": "At the stop sign, turn left on SE 6th Ave",
+                          "ElapsedTime": 0.22812163829803467,
+                          "DriveDistance": 0.049045488238334656,
+                          "Shape_Length": 0.00071024984391330711
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.65973999999994,
+                                      45.514380000000074
+                                  ],
+                                  [
+                                      -122.65973999999994,
+                                      45.514540000000068
+                                  ],
+                                  [
+                                      -122.65972999999997,
+                                      45.514740000000074
+                                  ],
+                                  [
+                                      -122.65972999999997,
+                                      45.514950000000056
+                                  ],
+                                  [
+                                      -122.65972999999997,
+                                      45.515090000000043
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 10,
+                          "RouteName": "Station 21 - Eastbank/Hawthrone - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676970442,
+                          "Type": 6,
+                          "SubItemType": 1,
+                          "Text": "At the stop sign, turn right on SE Taylor St",
+                          "ElapsedTime": 0.42249107360839844,
+                          "DriveDistance": 0.084486491978168488,
+                          "Shape_Length": 0.0017400833275305421
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.65972999999997,
+                                      45.515090000000043
+                                  ],
+                                  [
+                                      -122.65912999999995,
+                                      45.515080000000069
+                                  ],
+                                  [
+                                      -122.65890999999999,
+                                      45.515080000000069
+                                  ],
+                                  [
+                                      -122.65867999999995,
+                                      45.515080000000069
+                                  ],
+                                  [
+                                      -122.65844999999996,
+                                      45.515080000000069
+                                  ],
+                                  [
+                                      -122.65798999999998,
+                                      45.515080000000069
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 11,
+                          "RouteName": "Station 21 - Eastbank/Hawthrone - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676995792,
+                          "Type": 5,
+                          "SubItemType": 1,
+                          "Text": "Turn left",
+                          "ElapsedTime": 0.23763240873813629,
+                          "DriveDistance": 0.024609606713056564,
+                          "Shape_Length": 0.0003563500000041131
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.65798999999998,
+                                      45.515080000000069
+                                  ],
+                                  [
+                                      -122.65798999999998,
+                                      45.515436350000073
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 12,
+                          "RouteName": "Station 21 - Eastbank/Hawthrone - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676995792,
+                          "Type": 0,
+                          "SubItemType": 3,
+                          "Text": "Restriction: Through Traffic Prohibited",
+                          "ElapsedTime": 0,
+                          "DriveDistance": 0,
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 13,
+                          "RouteName": "Station 21 - Eastbank/Hawthrone - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611677010050,
+                          "Type": 1,
+                          "SubItemType": 1,
+                          "Text": "Finish at 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ElapsedTime": 0,
+                          "DriveDistance": 0,
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 14,
+                          "RouteName": " Station 01 - Old Town - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676800000,
+                          "Type": 18,
+                          "SubItemType": 1,
+                          "Text": "Start at Station 01 - Old Town",
+                          "ElapsedTime": 0,
+                          "DriveDistance": 0,
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 15,
+                          "RouteName": " Station 01 - Old Town - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676800000,
+                          "Type": 2,
+                          "SubItemType": 1,
+                          "Text": "Go east on SW Ash St toward SW Naito Pkwy",
+                          "ElapsedTime": 0.090896263718605042,
+                          "DriveDistance": 0.01409770455211401,
+                          "Shape_Length": 0.00028137167506891953
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.67076347099999,
+                                      45.521576209000045
+                                  ],
+                                  [
+                                      -122.67048999999997,
+                                      45.521510000000035
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 16,
+                          "RouteName": " Station 01 - Old Town - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676805454,
+                          "Type": 6,
+                          "SubItemType": 1,
+                          "Text": "At the traffic light, turn right on SW Naito Pkwy",
+                          "ElapsedTime": 1.1655441522598267,
+                          "DriveDistance": 0.29359734058380127,
+                          "Shape_Length": 0.004458257265606589
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.67048999999997,
+                                      45.521510000000035
+                                  ],
+                                  [
+                                      -122.67081999999999,
+                                      45.520800000000065
+                                  ],
+                                  [
+                                      -122.67085999999995,
+                                      45.520730000000071
+                                  ],
+                                  [
+                                      -122.67140999999998,
+                                      45.519710000000032
+                                  ],
+                                  [
+                                      -122.67159999999996,
+                                      45.519380000000069
+                                  ],
+                                  [
+                                      -122.67174999999997,
+                                      45.519090000000062
+                                  ],
+                                  [
+                                      -122.67206999999996,
+                                      45.518560000000036
+                                  ],
+                                  [
+                                      -122.67215999999996,
+                                      45.518390000000068
+                                  ],
+                                  [
+                                      -122.67225999999999,
+                                      45.518200000000036
+                                  ],
+                                  [
+                                      -122.67240999999996,
+                                      45.517910000000029
+                                  ],
+                                  [
+                                      -122.67258999999996,
+                                      45.517580000000066
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 17,
+                          "RouteName": " Station 01 - Old Town - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676875386,
+                          "Type": 6,
+                          "SubItemType": 1,
+                          "Text": "Turn right toward I-5 N / Seattle / I-84 E / The Dalles",
+                          "ElapsedTime": 0.30775031447410583,
+                          "DriveDistance": 0.10187647491693497,
+                          "Shape_Length": 0.0018224329445749882
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.67258999999996,
+                                      45.517580000000066
+                                  ],
+                                  [
+                                      -122.67314999999996,
+                                      45.517790000000048
+                                  ],
+                                  [
+                                      -122.67320999999998,
+                                      45.518080000000054
+                                  ],
+                                  [
+                                      -122.67300999999998,
+                                      45.518280000000061
+                                  ],
+                                  [
+                                      -122.67237999999998,
+                                      45.518420000000049
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 18,
+                          "RouteName": " Station 01 - Old Town - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676893851,
+                          "Type": 2,
+                          "SubItemType": 1,
+                          "Text": "Continue forward on Morrison Brg",
+                          "ElapsedTime": 0.40816253423690796,
+                          "DriveDistance": 0.22418004274368286,
+                          "Shape_Length": 0.0044845211978803597
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.67237999999998,
+                                      45.518420000000049
+                                  ],
+                                  [
+                                      -122.67215999999996,
+                                      45.518390000000068
+                                  ],
+                                  [
+                                      -122.67196999999999,
+                                      45.51836000000003
+                                  ],
+                                  [
+                                      -122.67170999999996,
+                                      45.51834000000008
+                                  ],
+                                  [
+                                      -122.67153999999999,
+                                      45.518330000000049
+                                  ],
+                                  [
+                                      -122.67120999999997,
+                                      45.518240000000048
+                                  ],
+                                  [
+                                      -122.67107999999996,
+                                      45.518200000000036
+                                  ],
+                                  [
+                                      -122.67061999999999,
+                                      45.518080000000054
+                                  ],
+                                  [
+                                      -122.66861999999998,
+                                      45.517530000000079
+                                  ],
+                                  [
+                                      -122.66830999999996,
+                                      45.517450000000053
+                                  ],
+                                  [
+                                      -122.66802999999999,
+                                      45.517370000000028
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 19,
+                          "RouteName": " Station 01 - Old Town - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676918341,
+                          "Type": 22,
+                          "SubItemType": 1,
+                          "Text": "Keep left to I-84 E toward I-5 N",
+                          "ElapsedTime": 0.044946346431970596,
+                          "DriveDistance": 0.025141535326838493,
+                          "Shape_Length": 0.00048472717143596916
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.66802999999999,
+                                      45.517370000000028
+                                  ],
+                                  [
+                                      -122.66773999999998,
+                                      45.517250000000047
+                                  ],
+                                  [
+                                      -122.66757999999999,
+                                      45.517190000000028
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 20,
+                          "RouteName": " Station 01 - Old Town - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676921038,
+                          "Type": 16,
+                          "SubItemType": 1,
+                          "Text": "Keep right at the fork to Belmont St. toward OR-99E",
+                          "ElapsedTime": 0.69014257192611694,
+                          "DriveDistance": 0.24548539519309998,
+                          "Shape_Length": 0.004935556435271867
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.66757999999999,
+                                      45.517190000000028
+                                  ],
+                                  [
+                                      -122.66746999999998,
+                                      45.517130000000066
+                                  ],
+                                  [
+                                      -122.66720999999995,
+                                      45.516980000000046
+                                  ],
+                                  [
+                                      -122.66707999999994,
+                                      45.516920000000027
+                                  ],
+                                  [
+                                      -122.66682999999995,
+                                      45.516820000000052
+                                  ],
+                                  [
+                                      -122.66615999999999,
+                                      45.516600000000039
+                                  ],
+                                  [
+                                      -122.66579999999999,
+                                      45.516560000000027
+                                  ],
+                                  [
+                                      -122.66481999999996,
+                                      45.516550000000052
+                                  ],
+                                  [
+                                      -122.66377999999997,
+                                      45.516530000000046
+                                  ],
+                                  [
+                                      -122.66276999999997,
+                                      45.516530000000046
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 21,
+                          "RouteName": " Station 01 - Old Town - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676962447,
+                          "Type": 16,
+                          "SubItemType": 1,
+                          "Text": "Keep left at the fork to SE Belmont St",
+                          "ElapsedTime": 0.53009432554244995,
+                          "DriveDistance": 0.098072744905948639,
+                          "Shape_Length": 0.002020000000015898
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.66276999999997,
+                                      45.516530000000046
+                                  ],
+                                  [
+                                      -122.66180999999995,
+                                      45.516530000000046
+                                  ],
+                                  [
+                                      -122.66148999999996,
+                                      45.516530000000046
+                                  ],
+                                  [
+                                      -122.66074999999995,
+                                      45.516530000000046
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 22,
+                          "RouteName": " Station 01 - Old Town - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611676994252,
+                          "Type": 2,
+                          "SubItemType": 1,
+                          "Text": "At the traffic light, continue forward on SE Belmont St",
+                          "ElapsedTime": 0.59742569923400879,
+                          "DriveDistance": 0.10051091760396957,
+                          "Shape_Length": 0.0020701229219929418
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.66074999999995,
+                                      45.516530000000046
+                                  ],
+                                  [
+                                      -122.66008999999997,
+                                      45.516520000000071
+                                  ],
+                                  [
+                                      -122.65973999999994,
+                                      45.516520000000071
+                                  ],
+                                  [
+                                      -122.65867999999995,
+                                      45.516530000000046
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 23,
+                          "RouteName": " Station 01 - Old Town - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611677030098,
+                          "Type": 6,
+                          "SubItemType": 1,
+                          "Text": "At the traffic light, turn right on SE 7th Ave",
+                          "ElapsedTime": 0.17834916710853577,
+                          "DriveDistance": 0.049645666033029556,
+                          "Shape_Length": 0.00072006944109660102
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.65867999999995,
+                                      45.516530000000046
+                                  ],
+                                  [
+                                      -122.65866999999997,
+                                      45.515810000000045
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 24,
+                          "RouteName": " Station 01 - Old Town - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611677040799,
+                          "Type": 23,
+                          "SubItemType": 1,
+                          "Text": "Turn left on SE Yamhill St, then turn right",
+                          "ElapsedTime": 0.41630345582962036,
+                          "DriveDistance": 0.058829020708799362,
+                          "Shape_Length": 0.0010536499999602711
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.65866999999997,
+                                      45.515810000000045
+                                  ],
+                                  [
+                                      -122.65798999999998,
+                                      45.515810000000045
+                                  ],
+                                  [
+                                      -122.65798999999998,
+                                      45.515810000000045
+                                  ],
+                                  [
+                                      -122.65798999999998,
+                                      45.515436350000073
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 25,
+                          "RouteName": " Station 01 - Old Town - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611677050827,
+                          "Type": 0,
+                          "SubItemType": 3,
+                          "Text": "Restriction: Through Traffic Prohibited",
+                          "ElapsedTime": 0,
+                          "DriveDistance": 0,
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 26,
+                          "RouteName": " Station 01 - Old Town - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ArriveTime": 1611677065777,
+                          "Type": 1,
+                          "SubItemType": 1,
+                          "Text": "Finish at 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "ElapsedTime": 0,
+                          "DriveDistance": 0,
+                          "Shape_Length": 0
+                      }
+                  }
+              ],
+              "exceededTransferLimit": false
+          }
+      }
+order: 1000

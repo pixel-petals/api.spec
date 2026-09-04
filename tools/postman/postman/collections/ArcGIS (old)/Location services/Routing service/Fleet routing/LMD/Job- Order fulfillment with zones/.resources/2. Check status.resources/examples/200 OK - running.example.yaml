@@ -1,0 +1,48 @@
+$kind: http-example
+request:
+  url: https://logistics.arcgis.com/arcgis/rest/services/World/VehicleRoutingProblem/GPServer/SolveLastMileDelivery/jobs/{{LMD_JOB_ID}}
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 03 Oct 2025 21:05:42 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "178"
+    Connection: keep-alive
+    Content-Security-Policy: script-src 'self';
+    X-Content-Type-Options: nosniff
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=sym-gcm|1|cgyIamxgUQt8-h2oRPb_sA==|6cg9lpN0i5Zv2pDiHnDD1NlMr8vprAvbnwwZ6S-WGeZ9spL9X-ynTH71WinSlS_aE-OCYbvuBLPhPqA8mZWoGhBIV7s0kNi4l-adjijErTZW1EsmskpsqLodqGt9zFG7jfRGhv6Mo9SauaUE_sfz-xqNh7CAPL2JxfrcOdQe71Ci_hsXXJXfGB1i1prYLZ0RL-xXeKj0pRPY1IqR30g5uhmQa4U-_HxSJ9AG6F_KFTtJQ82r--UjyMrwG6grhMx72SK01brDlSpZdTGaU2PB2Hkv8jcWKISFSLd_ZO-XbCOceg62m74y6dddpCb0tjcZqEnOl7j2QHup49Eafud_oKar75DDGBYL5p_L_BuKdNjMadR8ASDl2yhPSItgjZp9_Y12McALCc4KzfYfGfPGUnwS0f85lsMyWpdpJRV5gBR5ptj2EAJZ8G_bz6oBE4s22BjQJxGRt67ZhTKGt7n-xJA3C9bit3q0r6zOXS5GkZZW8PzHHknGDTiOZdZkQexOOCiXAZjOauCQFfWeakinDGe665RWmpRvEFWqhe5eVZHHIqTv9fT9B-8Kv-qPzVtoU0HUuOGYAy9824W6v1cwDES6stTan3LsXYl3SYERIAuD-rJAekpElWWg6K1_-34FiPV5jwI1xst_Jcp9qvFNQ5DOvFbgi9pzF9VtDRrKo4XgYMdA6-hYiH2jOq1irSG2zsMSaRG0Uimc32iNifrqMW7MTJnuiFpVumC3IUQFcj_Wg6eKjQUmBzm7-QtdKsIZGnwaluw-vreOiAGEdsG-ozp_LUFqI8gTKpd9w8axRuGSNxOjy55EiNNZVZfuJq5qJ2c1wnK8mprtdeJSOupD5g0_uituYjU2uU1IVXgThACH3jdXL1NH1ZAE8d-qeOZlJZ8yDFkWpA9UjTyajY4v-GcJ4rwtIWJu3hBlfKlQmjdcmF0lIU_vBKCyChvgYhDN9ab7uQAc7WP7IxWKtwGjZT-sJdkGoGu4oX9dg4D_2Yd4ivfU92NRZjzTIOykNBoTp_muBIr1ppGR6usvR77T4GSoh_fYLfgwwKdIjPIv26Ha1fpGMV4CffT65fOTOTDgYPrEbTWBJvSUy5l4I1tD6z_-mSgTF9bEyKHM3hsnm0SqnOqr5j4z1GuDaURTtyV523fri-n9y2pH3PZAg2WArLHoh9OvKJCqK7GGRVC-H96u_5k_bWrL0GhGgpVhjb469niTDox116lpMAA9FHMrBToELbPGhDxP2K02jLN2wVU97MwTKYi6gzHetkUpS82BtJTHCdCeX3t--JTHcYFhWmdkX3Mgbi1ByBtVc6RrtY8JgkkdO7V76WqTFPyqUT-e-bsdYhnmfcWXXeJ5DfIXItLU0OCFhHhsMv-NmLWxYoYBuCPaca6ZVLUEGehEiZWeRSUp20vszrPWLrePlyWX7O8z1VWTwtITFgcAAYJ_vE-E9cy5Agy3ZuivrNW-7u-436i7qHa8TrpT9GORG1Ot16KGA1wmgGVoGIdsNYqlbmQyKJVKIeZwhBvo3oSah_atwk0Ze0CnXWLsFxEKzCKlpFt35HIz3fwUGRRf8yVX10qZABzlGz9XexcKpCC3LXbEMS7cugwyiWThLq3oxAK38W4JXzBPQCXGB_s=; Max-Age=60; Expires=Fri, 03 Oct 2025 21:06:42 GMT; Path=/arcgis/rest; HttpOnly; SameSite=Lax
+    ETag: '"8eb28ffb"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+          "jobId": "jb9d510d374ec4d7bba21a14f4b0f3101",
+          "jobStatus": "esriJobExecuting",
+          "progress": {
+              "type": "default",
+              "message": "Executing..."
+          },
+          "messages": [
+              {
+                  "type": "esriJobMessageTypeInformative",
+                  "description": "Submitted."
+              },
+              {
+                  "type": "esriJobMessageTypeInformative",
+                  "description": "Executing..."
+              }
+          ]
+      }
+order: 1000

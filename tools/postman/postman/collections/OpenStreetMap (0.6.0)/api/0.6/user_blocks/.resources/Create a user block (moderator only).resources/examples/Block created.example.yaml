@@ -1,0 +1,43 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/user_blocks"
+  method: POST
+  headers:
+    - key: Content-Type
+      value: application/x-www-form-urlencoded
+    - key: Accept
+      value: application/xml
+    - key: Authorization
+      value: <token>
+      description: "Added as a part of security scheme: oauth2"
+  body:
+    type: urlencoded
+    content:
+      - key: user
+        value: "1493"
+        description: ID of user to block
+      - key: reason
+        value: string
+        description: Reason for the block (displayed to the user)
+      - key: period
+        value: "2423"
+        description: Duration of the block in hours
+      - key: needs_view
+        value: "false"
+        description: If true, user must view the block before they can edit
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/xml
+  body:
+    type: xml
+    content: |-
+      <?xml version="1.0" encoding="UTF-8"?>
+      <element>(string)</element>
+    $type: |-
+      {
+        "type": "string",
+        "description": "OSM XML document, content wrapped in an <osm> root element"
+      }
+order: 1000

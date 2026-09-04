@@ -1,0 +1,3 @@
+$kind: collection
+description: The `AggregatePoints` operation determines which points fall inside polygons using a point-in-polygon spatial relationship and returns new feature data based on the analysis.
+order: 1000

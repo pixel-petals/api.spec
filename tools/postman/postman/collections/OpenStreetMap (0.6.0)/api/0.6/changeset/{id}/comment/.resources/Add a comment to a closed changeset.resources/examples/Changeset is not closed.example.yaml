@@ -1,0 +1,27 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/changeset/:id/comment"
+  method: POST
+  headers:
+    - key: Content-Type
+      value: application/x-www-form-urlencoded
+    - key: Authorization
+      value: <token>
+      description: "Added as a part of security scheme: oauth2"
+  pathVariables:
+    - key: id
+      value: "6776"
+      description: The numeric ID of the changeset
+  body:
+    type: urlencoded
+    content:
+      - key: text
+        value: string
+        description: The comment text
+response:
+  statusCode: 409
+  statusText: Conflict
+  body:
+    type: text
+    content: ""
+order: 4000

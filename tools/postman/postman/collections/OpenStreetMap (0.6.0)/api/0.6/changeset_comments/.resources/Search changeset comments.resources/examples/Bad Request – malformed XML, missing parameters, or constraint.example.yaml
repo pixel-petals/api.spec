@@ -1,0 +1,28 @@
+$kind: http-example
+name: Bad Request – malformed XML, missing parameters, or constraint violation
+request:
+  url: "{{baseUrl}}/api/0.6/changeset_comments?display_name=string&user=6776&from=1994-08-13T16:27:31.733Z&to=1994-08-13T16:27:31.733Z"
+  method: GET
+  queryParams:
+    - key: display_name
+      value: string
+      description: Filter by user display name
+    - key: user
+      value: "6776"
+      description: Filter by user ID. display_name takes priority if both are supplied.
+    - key: from
+      value: 1994-08-13T16:27:31.733Z
+      description: Beginning of date range (ISO 8601 preferred)
+    - key: to
+      value: 1994-08-13T16:27:31.733Z
+      description: End of date range (ISO 8601 preferred). Requires from.
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: text
+    content: ""
+order: 2000

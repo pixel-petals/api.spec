@@ -1,0 +1,81 @@
+$kind: http-example
+request:
+  url: https://{{logistics-service}}.arcgis.com/arcgis/rest/services/World/?f=json
+  method: POST
+  queryParams:
+    f: json
+  body:
+    type: urlencoded
+    content:
+      - key: token
+        value: "{{ACCESS_TOKEN}}"
+        disabled: true
+        description: Automatically sent by "Params"
+      - key: f
+        value: json
+      - key: stops
+        value: "{'features':[{'geometry':{'x':-118.268579,'y':34.052291},'attributes':{'Name':'Los Angeles, CA','RouteName':'Route A'}},{'geometry':{'x':-74.009023,'y':40.709975},'attributes':{'Name':'New York, NY','RouteName':'Route A'}},{'geometry':{'x':-87.648549,'y':41.758688},'attributes':{'Name':'Chicago, IL','RouteName':'Route B'}},{'geometry':{'x':-122.320028,'y':47.591046},'attributes':{'Name':'Seattle, WA','RouteName':'Route B'}},{'geometry':{'x':-71.057477,'y':42.359483},'attributes':{'Name':'Boston, MA','RouteName':'Route C'}},{'geometry':{'x':-95.368848,'y':29.759222},'attributes':{'Name':'Houston, TX','RouteName':'Route C'}},{'geometry':{'x':-80.220762,'y':25.761156},'attributes':{'Name':'Miami, FL','RouteName':'Route D'}},{'geometry':{'x':-122.651334,'y':45.51567},'attributes':{'Name':'Portland, OR','RouteName':'Route D'}},{'geometry':{'x':-112.074247,'y':33.446554},'attributes':{'Name':'Phoenix, AZ','RouteName':'Route E'}},{'geometry':{'x':-75.161557,'y':39.952057},'attributes':{'Name':'Philadelphia, PA','RouteName':'Route E'}}]}"
+      - key: travel_mode
+        value: "{'attributeParameterValues':[{'attributeName':'Use Preferred Truck Routes','parameterName':'Restriction Usage','value':'PREFER_HIGH'},{'attributeName':'Avoid Unpaved Roads','parameterName':'Restriction Usage','value':'AVOID_HIGH'},{'attributeName':'Avoid Private Roads','parameterName':'Restriction Usage','value':'AVOID_MEDIUM'},{'attributeName':'Driving a Truck','parameterName':'Restriction Usage','value':'PROHIBITED'},{'attributeName':'Roads Under Construction Prohibited','parameterName':'Restriction Usage','value':'PROHIBITED'},{'attributeName':'Avoid Gates','parameterName':'Restriction Usage','value':'AVOID_MEDIUM'},{'attributeName':'Avoid Express Lanes','parameterName':'Restriction Usage','value':'PROHIBITED'},{'attributeName':'Avoid Carpool Roads','parameterName':'Restriction Usage','value':'PROHIBITED'},{'attributeName':'Avoid Truck Restricted Roads','parameterName':'Restriction Usage','value':'AVOID_HIGH'},{'attributeName':'TruckTravelTime','parameterName':'Vehicle Maximum Speed (km/h)','value':0}],'description':'Models basic truck travel by preferring designated truck routes, and finds solutions that optimize travel time. Routes must obey one-way roads, avoid illegal turns, and so on. When you specify a start time, dynamic travel speeds based on traffic are used where it is available, up to the legal truck speed limit.','distanceAttributeName':'Kilometers','id':'ZzzRtYcPLjXFBKwr','impedanceAttributeName':'TruckTravelTime','name':'Trucking Time','restrictionAttributeNames':['Avoid Carpool Roads','Avoid Express Lanes','Avoid Gates','Avoid Private Roads','Avoid Truck Restricted Roads','Avoid Unpaved Roads','Driving a Truck','Roads Under Construction Prohibited','Use Preferred Truck Routes'],'simplificationTolerance':10,'simplificationToleranceUnits':'esriMeters','timeAttributeName':'TruckTravelTime','type':'TRUCK','useHierarchy':true,'uturnAtJunctions':'esriNFSBNoBacktrack'}"
+      - key: populate_directions
+        value: "false"
+      - key: route_shape
+        value: None
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 17 Nov 2021 07:53:27 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "195"
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 17-Nov-2021 07:54:14 GMT; Path=/arcgis/rest; HttpOnly
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "currentVersion": 10.9,
+          "folders": [],
+          "services": [
+              {
+                  "name": "World/ClosestFacility",
+                  "type": "GPServer"
+              },
+              {
+                  "name": "World/LocationAllocation",
+                  "type": "GPServer"
+              },
+              {
+                  "name": "World/OriginDestinationCostMatrix",
+                  "type": "GPServer"
+              },
+              {
+                  "name": "World/Route",
+                  "type": "GPServer"
+              },
+              {
+                  "name": "World/ServiceAreas",
+                  "type": "GPServer"
+              },
+              {
+                  "name": "World/Utilities",
+                  "type": "GPServer"
+              },
+              {
+                  "name": "World/VehicleRoutingProblem",
+                  "type": "GPServer"
+              },
+              {
+                  "name": "World/VehicleRoutingProblemSync",
+                  "type": "GPServer"
+              }
+          ]
+      }
+order: 1000

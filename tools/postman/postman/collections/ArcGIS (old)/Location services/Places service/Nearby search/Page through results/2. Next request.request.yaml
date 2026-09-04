@@ -1,0 +1,21 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/place-finding/nearby-search/#page-through-results)
+url: "{{nearbyNextURL}}"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      const response = pm.response.json();
+
+      const token = pm.globals.get('ACCESS_TOKEN')
+
+      if (response.pagination.nextUrl) {
+          const nextRequest = `${response.pagination.nextUrl}&token=${token}`
+          pm.collectionVariables.set("nearbyNextURL", nextRequest);
+      } else {
+          console.log(`This is the last page. Stopping execution`);
+          pm.collectionVariables.unset("nearbyNextURL");
+      }
+    language: text/javascript
+examples: ./.resources/2. Next request.resources/examples
+order: 2000

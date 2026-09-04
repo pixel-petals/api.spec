@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{CKAN_API}}/config_option_show?key"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: key
+    value: null
+    description: (string) – The configuration option key
+order: 2000

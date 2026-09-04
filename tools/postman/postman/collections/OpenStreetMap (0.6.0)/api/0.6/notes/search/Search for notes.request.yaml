@@ -1,0 +1,125 @@
+$kind: http-request
+url: "{{baseUrl}}/api/0.6/notes/search?q=string&limit=100&closed=7&display_name=string&user=6776&bbox=string&from=1994-08-13T16:27:31.733Z&to=1994-08-13T16:27:31.733Z&sort=updated_at&order=newest"
+method: GET
+headers:
+  Accept: application/xml
+queryParams:
+  - key: q
+    value: string
+    description: Full-text search query
+    $type: string
+  - key: limit
+    value: "100"
+    description: Max results (default 100, max 10000)
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "default": 100,
+            "maximum": 10000
+          }
+        }
+      }
+  - key: closed
+    value: "7"
+    description: Days since closed (-1=all, 0=open only)
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "default": 7
+          }
+        }
+      }
+  - key: display_name
+    value: string
+    description: Filter by author display name
+    $type: string
+  - key: user
+    value: "6776"
+    description: Filter by author user ID
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+  - key: bbox
+    value: string
+    description: Bounding box as left,bottom,right,top
+    $type: string
+  - key: from
+    value: 1994-08-13T16:27:31.733Z
+    description: Filter notes created on or after this date
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+  - key: to
+    value: 1994-08-13T16:27:31.733Z
+    description: Filter notes created before this date
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+  - key: sort
+    value: updated_at
+    description: Sort field
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "default": "updated_at",
+            "enum": [
+              "created_at",
+              "updated_at"
+            ]
+          }
+        }
+      }
+  - key: order
+    value: newest
+    description: Sort order
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "default": "newest",
+            "enum": [
+              "oldest",
+              "newest"
+            ]
+          }
+        }
+      }
+body:
+  type: text
+  content: ""
+auth:
+  type: noauth
+examples: ./.resources/Search for notes.resources/examples
+order: 1000

@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{CKAN_API}}/term_translation_update_many"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: data
+      value: ""
+      description: (list of dictionaries) – the term translation dictionaries to create or update, for the format of term translation dictionaries see term_translation_update()
+order: 2000

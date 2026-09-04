@@ -1,0 +1,18 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/map?bbox=-0.489,51.28,0.236,51.686"
+  method: GET
+  queryParams:
+    - key: bbox
+      value: -0.489,51.28,0.236,51.686
+      description: Bounding box as left,bottom,right,top (min_lon,min_lat,max_lon,max_lat)
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 509
+  statusText: Bandwidth Limit Exceeded (Apache bw/limited extension)
+  body:
+    type: text
+    content: ""
+order: 3000

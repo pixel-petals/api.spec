@@ -1,0 +1,14 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/content-items/access/get-an-item/)
+url: https://www.arcgis.com/sharing/rest/content/items/:ITEM_ID/?f=json
+method: GET
+queryParams:
+  f: json
+pathVariables:
+  ITEM_ID: 5a5147abe878444cbac68dea9f2f64e7
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/Get an item (Header auth).resources/examples
+order: 2000

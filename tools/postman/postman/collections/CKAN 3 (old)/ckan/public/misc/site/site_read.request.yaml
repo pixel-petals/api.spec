@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{CKAN_API}}/site_read"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+order: 1000

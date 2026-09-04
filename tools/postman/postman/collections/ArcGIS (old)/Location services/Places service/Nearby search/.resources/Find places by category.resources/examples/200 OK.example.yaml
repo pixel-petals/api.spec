@@ -1,0 +1,336 @@
+$kind: http-example
+request:
+  url: https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/near-point?x=24.938&y=60.169&radius=500&categoryIds=16026, 16041, 10027&pageSize=20&f=pjson&token={{ACCESS_TOKEN}}
+  method: GET
+  queryParams:
+    x: "24.938"
+    y: "60.169"
+    radius: "500"
+    categoryIds: 16026, 16041, 10027
+    pageSize: "20"
+    f: pjson
+    token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Encoding: gzip
+    Content-Type: application/json
+    Date: Wed, 05 Jul 2023 16:54:33 GMT
+    permissions-policy: interest-cohort=()
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    transfer-encoding: chunked
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      {
+          "results": [
+              {
+                  "placeId": "ab756a46cd59b2998f386367fd11e7cd",
+                  "location": {
+                      "x": 24.937485,
+                      "y": 60.168314
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10027",
+                          "label": "Museum"
+                      }
+                  ],
+                  "name": "Amos Andersonin taidemuseo",
+                  "distance": 81.4
+              },
+              {
+                  "placeId": "cc8b3eb4e906e8d3e1fbf0d9413e2b74",
+                  "location": {
+                      "x": 24.939931,
+                      "y": 60.169082
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16041",
+                          "label": "Plaza"
+                      }
+                  ],
+                  "name": "Ylioppilasaukio",
+                  "distance": 107.2
+              },
+              {
+                  "placeId": "f2d596520a4f05db44fe3ee6dea0f8fe",
+                  "location": {
+                      "x": 24.93724,
+                      "y": 60.167773
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10027",
+                          "label": "Museum"
+                      }
+                  ],
+                  "name": "Finnish Music Hall of Fame Oy",
+                  "distance": 142.8
+              },
+              {
+                  "placeId": "e3df2bfb2a175f495a704f4913af13ee",
+                  "location": {
+                      "x": 24.936258,
+                      "y": 60.170065
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16041",
+                          "label": "Plaza"
+                      }
+                  ],
+                  "name": "Lasipalatsinaukio",
+                  "distance": 152.7
+              },
+              {
+                  "placeId": "712a970149d27a1b8e2c77d86390ba92",
+                  "location": {
+                      "x": 24.936714,
+                      "y": 60.170523
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10028",
+                          "label": "Art Museum"
+                      }
+                  ],
+                  "name": "Amos Rex",
+                  "distance": 183.7
+              },
+              {
+                  "placeId": "47330490bf55cb2fbc3b019cdba34704",
+                  "location": {
+                      "x": 24.939242,
+                      "y": 60.167426
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16026",
+                          "label": "Monument"
+                      }
+                  ],
+                  "name": "Tursas ja merenneito",
+                  "distance": 188
+              },
+              {
+                  "placeId": "f7e10a46c97dff63142c72c8b611c0c5",
+                  "location": {
+                      "x": 24.934757,
+                      "y": 60.169585
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16041",
+                          "label": "Plaza"
+                      }
+                  ],
+                  "name": "Street Hockey Tournament",
+                  "distance": 190.8
+              },
+              {
+                  "placeId": "83d693763a5520efda1630a66c05de07",
+                  "location": {
+                      "x": 24.935906,
+                      "y": 60.17063
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16026",
+                          "label": "Monument"
+                      }
+                  ],
+                  "name": "Paasikiven Patsas",
+                  "distance": 215.1
+              },
+              {
+                  "placeId": "4dc4f353afdc0fdca03af8dc7616d3bb",
+                  "location": {
+                      "x": 24.94198,
+                      "y": 60.168701
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16026",
+                          "label": "Monument"
+                      }
+                  ],
+                  "name": "Stockan Kello",
+                  "distance": 222.6
+              },
+              {
+                  "placeId": "3a36f4662cec89a9ddd93c65cb94b349",
+                  "location": {
+                      "x": 24.934102,
+                      "y": 60.169887
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16041",
+                          "label": "Plaza"
+                      }
+                  ],
+                  "name": "Narinkkatori",
+                  "distance": 237.1
+              },
+              {
+                  "placeId": "f2b7fa7fdeafe4fdffbff7d35347248e",
+                  "location": {
+                      "x": 24.939822,
+                      "y": 60.167042
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10027",
+                          "label": "Museum"
+                      }
+                  ],
+                  "name": "Galerie Forsblom",
+                  "distance": 239.9
+              },
+              {
+                  "placeId": "af2a983917978f9f1eda396959bfe004",
+                  "location": {
+                      "x": 24.936347,
+                      "y": 60.171288
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16041",
+                          "label": "Plaza"
+                      }
+                  ],
+                  "name": "Mannerheiminaukio",
+                  "distance": 270.3
+              },
+              {
+                  "placeId": "8ecf9724df3bdaf6a7fda050ab0b16d2",
+                  "location": {
+                      "x": 24.936634,
+                      "y": 60.171516
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16026",
+                          "label": "Monument"
+                      }
+                  ],
+                  "name": "Marsalkka Mannerheimin ratsastajapatsas",
+                  "distance": 289.8
+              },
+              {
+                  "placeId": "2e83606bf165624a1a4d6b540c13d11f",
+                  "location": {
+                      "x": 24.941972,
+                      "y": 60.170748
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16026",
+                          "label": "Monument"
+                      }
+                  ],
+                  "name": "Lyhdynkantajat",
+                  "distance": 293.3
+              },
+              {
+                  "placeId": "9276bce0627396831f8741ecf3e4fc02",
+                  "location": {
+                      "x": 24.939616,
+                      "y": 60.171756
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16041",
+                          "label": "Plaza"
+                      }
+                  ],
+                  "name": "Elielinaukio",
+                  "distance": 319.2
+              },
+              {
+                  "placeId": "b560dd0725ca4e5657ec53386c9968c4",
+                  "location": {
+                      "x": 24.936697,
+                      "y": 60.171835
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10027",
+                          "label": "Museum"
+                      }
+                  ],
+                  "name": "Nykytaiteen museo Kiasma",
+                  "distance": 323.4
+              },
+              {
+                  "placeId": "2e1db6db03311c3898fd5a5e81729582",
+                  "location": {
+                      "x": 24.944317,
+                      "y": 60.170212
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10027",
+                          "label": "Museum"
+                      }
+                  ],
+                  "name": "Ateneum",
+                  "distance": 374.5
+              },
+              {
+                  "placeId": "c12794c8d7c2ccf16df44e2538748d22",
+                  "location": {
+                      "x": 24.93164,
+                      "y": 60.167737
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16041",
+                          "label": "Plaza"
+                      }
+                  ],
+                  "name": "Kampintori",
+                  "distance": 378.8
+              },
+              {
+                  "placeId": "96e4e1b800d7cd2dd8b9c0e2154e5cbc",
+                  "location": {
+                      "x": 24.931134,
+                      "y": 60.169543
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10028",
+                          "label": "Art Museum"
+                      }
+                  ],
+                  "name": "Helsinki Art Museum",
+                  "distance": 384.5
+              },
+              {
+                  "placeId": "025523512024d5511ec2c3eee6d06626",
+                  "location": {
+                      "x": 24.943968,
+                      "y": 60.171241
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16026",
+                          "label": "Monument"
+                      }
+                  ],
+                  "name": "Aleksis Kiven patsas",
+                  "distance": 413.6
+              }
+          ],
+          "pagination": {
+              "nextUrl": "https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/near-point?x=24.93800000&y=60.16900000&radius=500.00000000&categoryIds=16026,16041,10027&f=pjson&offset=20&pageSize=20"
+          }
+      }
+order: 1000

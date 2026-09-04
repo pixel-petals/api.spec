@@ -1,0 +1,4 @@
+$kind: collection
+name: "Direct: Find optimized routes and directions"
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/vehicle-routing-problem/#direct-multi-vehicle-routing-and-delivery)
+order: 1000

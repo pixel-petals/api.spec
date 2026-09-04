@@ -1,0 +1,16 @@
+$kind: http-request
+description: |-
+  Retrieves the output routes from a completed routing or location-allocation analysis job. Required: JOB_ID and service URL. Response: Returns the calculated routes as spatial features.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/location-allocation/#job-find-new-restaurant-location)
+url: https://logistics.arcgis.com/arcgis/rest/services/World/LocationAllocation/GPServer/SolveLocationAllocation/jobs/:JOB_ID/results/Output_Facilities
+method: POST
+pathVariables:
+  JOB_ID: "{{JOB_ID}}"
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/3a. Get results (output_facilities).resources/examples
+order: 3000

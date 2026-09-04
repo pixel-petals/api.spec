@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{baseUrl}}/api/0.6/capabilities"
+method: GET
+headers:
+  Accept: application/xml
+body:
+  type: text
+  content: ""
+auth:
+  type: noauth
+examples: ./.resources/Get API capabilities and limitations.resources/examples
+order: 1000

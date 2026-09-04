@@ -1,0 +1,28 @@
+$kind: http-request
+description: |-
+  Submits a FindCentroids analysis job. Use this endpoint to initiate the process of calculating the geometric center (centroid) for each feature in a layer.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/calculate-geometries/find-centroids/#find-centroids-for-census-blocks)
+url: "{{ANALYSIS_URL}}/FindCentroids/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    inputLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/ArcGIS/rest/services/Intersect_of_U_S__Census_Blocks_and_SF_Neighborhoods/FeatureServer/0"}'
+    pointLocation: "true"
+    outputName: '{"serviceProperties":{"name":"{{UNIQUE_NAME}}"}}'
+scripts:
+  - type: beforeRequest
+    code: |-
+      // Creates a unique name for the output service
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/[^A-Z0-9]/gi, "_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+  - type: afterResponse
+    code: |
+      pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

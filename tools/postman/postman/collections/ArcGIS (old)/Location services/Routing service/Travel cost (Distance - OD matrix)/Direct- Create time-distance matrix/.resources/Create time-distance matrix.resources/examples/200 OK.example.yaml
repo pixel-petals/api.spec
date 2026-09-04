@@ -1,0 +1,177 @@
+$kind: http-example
+request:
+  url: https://{{route-service}}.arcgis.com/arcgis/rest/services/World/OriginDestinationCostMatrix/NAServer/OriginDestinationCostMatrix_World/solveODCostMatrix
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      token: "{{ACCESS_TOKEN}}"
+      f: json
+      origins: "{'spatialReference':{'wkid':4326},'features':[{'geometry':{'x':153.03660,'y':-27.486320},'attributes':{'ObjectID':101}},{'geometry':{'x':144.983120,'y':-37.817870},'attributes':{'ObjectID':102}},{'geometry':{'x':151.223490,'y':-33.891220},'attributes':{'ObjectID':103}},{'geometry':{'x':149.133490,'y':-35.316850},'attributes':{'ObjectID':104}},{'geometry':{'x':138.596810,'y':-34.917470},'attributes':{'ObjectID':105}}]}"
+      destinations: "{'spatialReference':{'wkid':4326},'features':[{'geometry':{'x':153.03660,'y':-27.486320},'attributes':{'ObjectID':101}},{'geometry':{'x':144.983120,'y':-37.817870},'attributes':{'ObjectID':102}},{'geometry':{'x':151.223490,'y':-33.891220},'attributes':{'ObjectID':103}},{'geometry':{'x':149.133490,'y':-35.316850},'attributes':{'ObjectID':104}},{'geometry':{'x':138.596810,'y':-34.917470},'attributes':{'ObjectID':105}}]}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 08:18:49 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "798"
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 08:19:47 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"1febae6c"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "messages": [],
+          "odCostMatrix": {
+              "101": {
+                  "101": [
+                      0,
+                      0,
+                      0
+                  ],
+                  "102": [
+                      1074.6607710480741,
+                      1102.5706729086712,
+                      1774.41549702153
+                  ],
+                  "103": [
+                      565.32542386251055,
+                      564.47909191603549,
+                      908.44103970052026
+                  ],
+                  "104": [
+                      724.89072850170601,
+                      738.18184623853108,
+                      1187.9885251529049
+                  ],
+                  "105": [
+                      1286.2573848996622,
+                      1256.0104569067976,
+                      2021.3528927602135
+                  ]
+              },
+              "102": {
+                  "101": [
+                      1082.7812932835052,
+                      1106.5189358403475,
+                      1780.7696102810394
+                  ],
+                  "102": [
+                      0,
+                      0,
+                      0
+                  ],
+                  "103": [
+                      536.53410303065289,
+                      548.37208135168032,
+                      882.51931889083528
+                  ],
+                  "104": [
+                      413.96715735210387,
+                      421.99393969932476,
+                      679.13341489146796
+                  ],
+                  "105": [
+                      474.92204315367479,
+                      454.46442713187332,
+                      731.38959901811768
+                  ]
+              },
+              "103": {
+                  "101": [
+                      572.2658325112609,
+                      569.43402959026241,
+                      916.4152389169094
+                  ],
+                  "102": [
+                      531.52322699909018,
+                      544.68641488109131,
+                      876.58781367039489
+                  ],
+                  "103": [
+                      0,
+                      0,
+                      0
+                  ],
+                  "104": [
+                      181.75318445272518,
+                      180.29758821095066,
+                      290.16084180176426
+                  ],
+                  "105": [
+                      860.41527415558119,
+                      854.5884911891568,
+                      1375.3268607643258
+                  ]
+              },
+              "104": {
+                  "101": [
+                      730.64194553727805,
+                      738.79721961320195,
+                      1188.9788726011855
+                  ],
+                  "102": [
+                      411.60671059099747,
+                      418.46039698080932,
+                      673.44672911868292
+                  ],
+                  "103": [
+                      184.39475528442497,
+                      180.65036512453543,
+                      290.72858121098119
+                  ],
+                  "104": [
+                      0,
+                      0,
+                      0
+                  ],
+                  "105": [
+                      740.49875774748728,
+                      728.36247328887418,
+                      1172.1857762126131
+                  ]
+              },
+              "105": {
+                  "101": [
+                      1287.0234116008482,
+                      1256.0463019615554,
+                      2021.4105797840173
+                  ],
+                  "102": [
+                      473.50061094042331,
+                      454.53809684244862,
+                      731.50815892481671
+                  ],
+                  "103": [
+                      861.25669328323795,
+                      854.74785611620666,
+                      1375.5833337534782
+                  ],
+                  "104": [
+                      738.68974760468757,
+                      728.36971446385041,
+                      1172.1974297541108
+                  ],
+                  "105": [
+                      0,
+                      0,
+                      0
+                  ]
+              },
+              "costAttributeNames": [
+                  "TravelTime",
+                  "Miles",
+                  "Kilometers"
+              ]
+          }
+      }
+order: 1000

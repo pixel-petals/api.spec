@@ -1,0 +1,4 @@
+$kind: collection
+description: |
+  Access the metadata for the ArcGIS Geocoding service.
+order: 5000

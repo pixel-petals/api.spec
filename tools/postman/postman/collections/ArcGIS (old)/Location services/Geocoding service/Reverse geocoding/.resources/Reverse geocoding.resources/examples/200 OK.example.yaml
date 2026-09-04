@@ -1,0 +1,70 @@
+$kind: http-example
+request:
+  url: https://{{geocode-service}}.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?token={{access_token}}&f=pjson&location=-79.3871,43.6426
+  method: GET
+  queryParams:
+    - key: token
+      value: "{{access_token}}"
+      description: "(Required) How to create an API key: https://youtu.be/Q1x4NZPK8Ws"
+    - key: f
+      value: pjson
+      description: "(Required) Format of the response: json, pjson, html, ..."
+    - key: location
+      value: -79.3871,43.6426
+      description: (Required) The point from which to search for the closest address. The point can be represented as a simple, comma-separated syntax (long, lat) or as a JSON point object.
+  body:
+    type: urlencoded
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 20 Sep 2021 08:11:10 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Vary: Origin
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Mon, 20-Sep-2021 08:12:10 GMT; Path=/arcgis/rest; Secure; HttpOnly
+    ETag: 5f7e1d0b
+    x-esri-ftiles-cache-compress: "true"
+    Content-Encoding: gzip
+    X-Region: eu-west-1
+  body:
+    type: text
+    content: |-
+      {
+       "address": {
+        "Match_addr": "CN Tower",
+        "LongLabel": "CN Tower, 301 Front St W, Toronto, Ontario, M5V, CAN",
+        "ShortLabel": "CN Tower",
+        "Addr_type": "POI",
+        "Type": "Tourist Attraction",
+        "PlaceName": "CN Tower",
+        "AddNum": "301",
+        "Address": "301 Front St W",
+        "Block": "",
+        "Sector": "",
+        "Neighborhood": "Waterfront Communities-the Island",
+        "District": "Toronto",
+        "City": "Toronto",
+        "MetroArea": "Greater Toronto Metro Area",
+        "Subregion": "Toronto",
+        "Region": "Ontario",
+        "Territory": "",
+        "Postal": "M5V",
+        "PostalExt": "",
+        "CountryCode": "CAN"
+       },
+       "location": {
+        "x": -79.387149999999963,
+        "y": 43.642630000000054,
+        "spatialReference": {
+         "wkid": 4326,
+         "latestWkid": 4326
+        }
+       }
+      }
+order: 1000

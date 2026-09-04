@@ -1,0 +1,278 @@
+$kind: http-example
+request:
+  url: https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/self
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Content-Type
+      value: application/json
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Date
+      value: Fri, 17 Jan 2025 14:44:18 GMT
+    - key: Cache-Control
+      value: max-age=600
+    - key: permissions-policy
+      value: interest-cohort=()
+    - key: Strict-Transport-Security
+      value: max-age=31536000; includeSubDomains; preload
+    - key: x-content-type-options
+      value: nosniff
+    - key: x-frame-options
+      value: SAMEORIGIN
+    - key: Content-Encoding
+      value: br
+    - key: Vary
+      value: Accept-Encoding,Authorization,X-Esri-Authorization
+    - key: Vary
+      value: Origin
+    - key: X-Cache
+      value: Miss from cloudfront
+    - key: Via
+      value: 1.1 9cbfacb11e33d0d7f13ab9759d432fb6.cloudfront.net (CloudFront)
+    - key: X-Amz-Cf-Pop
+      value: LAX50-C4
+    - key: X-Amz-Cf-Id
+      value: vVXos0ORclkkNeN_wSc-8g15zPbvR7joB6HbvG1DKmwIZKRLO5HZBw==
+    - key: Referrer-Policy
+      value: no-referrer-when-downgrade
+    - key: Content-Security-Policy
+      value: upgrade-insecure-requests
+  body:
+    type: json
+    content: |-
+      {
+          "description": "The basemap styles service is a ready-to-use location service that serves vector and image tiles that represent geographic features around the world. It includes styles that represent topographic features, road networks, footpaths, building footprints, water features, administrative boundaries, and satellite imagery. The styles are returned as JSON based on the Mapbox Style Specification or the ArcGIS Web Map Specification. The service also supports localized language place labels. It can also access custom styles stored in ArcGIS.",
+          "languages": [
+              {
+                  "code": "global",
+                  "name": "Global"
+              },
+              {
+                  "code": "local",
+                  "name": "Local"
+              },
+              {
+                  "code": "ar",
+                  "name": "Arabic"
+              },
+              {
+                  "code": "bs",
+                  "name": "Bosnian"
+              },
+              {
+                  "code": "bg",
+                  "name": "Bulgarian"
+              },
+              {
+                  "code": "ca",
+                  "name": "Catalan"
+              },
+              {
+                  "code": "zh-HK",
+                  "name": "Chinese (Hong Kong)"
+              },
+              {
+                  "code": "zh-CN",
+                  "name": "Chinese (Simplified)"
+              },
+              {
+                  "code": "zh-TW",
+                  "name": "Chinese (Taiwan)"
+              },
+              {
+                  "code": "hr",
+                  "name": "Croatian"
+              },
+              {
+                  "code": "cs",
+                  "name": "Czech"
+              },
+              {
+                  "code": "da",
+                  "name": "Danish"
+              },
+              {
+                  "code": "nl",
+                  "name": "Dutch"
+              },
+              {
+                  "code": "en",
+                  "name": "English"
+              },
+              {
+                  "code": "et",
+                  "name": "Estonian"
+              },
+              {
+                  "code": "fi",
+                  "name": "Finnish"
+              },
+              {
+                  "code": "fr",
+                  "name": "French"
+              },
+              {
+                  "code": "de",
+                  "name": "German"
+              },
+              {
+                  "code": "el",
+                  "name": "Greek"
+              },
+              {
+                  "code": "he",
+                  "name": "Hebrew"
+              },
+              {
+                  "code": "hu",
+                  "name": "Hungarian"
+              },
+              {
+                  "code": "id",
+                  "name": "Indonesian"
+              },
+              {
+                  "code": "it",
+                  "name": "Italian"
+              },
+              {
+                  "code": "ja",
+                  "name": "Japanese"
+              },
+              {
+                  "code": "ko",
+                  "name": "Korean"
+              },
+              {
+                  "code": "lv",
+                  "name": "Latvian"
+              },
+              {
+                  "code": "lt",
+                  "name": "Lithuanian"
+              },
+              {
+                  "code": "nb",
+                  "name": "Norwegian"
+              },
+              {
+                  "code": "pl",
+                  "name": "Polish"
+              },
+              {
+                  "code": "pt-BR",
+                  "name": "Portuguese (Brazil)"
+              },
+              {
+                  "code": "pt-PT",
+                  "name": "Portuguese (Portugal)"
+              },
+              {
+                  "code": "ro",
+                  "name": "Romanian"
+              },
+              {
+                  "code": "ru",
+                  "name": "Russian"
+              },
+              {
+                  "code": "sr",
+                  "name": "Serbian"
+              },
+              {
+                  "code": "sk",
+                  "name": "Slovak"
+              },
+              {
+                  "code": "sl",
+                  "name": "Slovenian"
+              },
+              {
+                  "code": "es",
+                  "name": "Spanish"
+              },
+              {
+                  "code": "sv",
+                  "name": "Swedish"
+              },
+              {
+                  "code": "th",
+                  "name": "Thai"
+              },
+              {
+                  "code": "tr",
+                  "name": "Turkish"
+              },
+              {
+                  "code": "uk",
+                  "name": "Ukrainian"
+              },
+              {
+                  "code": "vi",
+                  "name": "Vietnamese"
+              }
+          ],
+          "name": "Basemap Styles",
+          "places": [
+              {
+                  "code": "all",
+                  "name": "All"
+              },
+              {
+                  "code": "attributed",
+                  "name": "Attributed"
+              },
+              {
+                  "code": "none",
+                  "name": "None"
+              }
+          ],
+          "selfUrl": "https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/self",
+          "stylesUrl": "https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/styles/self",
+          "version": "2.4.10",
+          "webmapsUrl": "https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/webmaps/self",
+          "worldviews": [
+              {
+                  "code": "china",
+                  "name": "China"
+              },
+              {
+                  "code": "india",
+                  "name": "India"
+              },
+              {
+                  "code": "israel",
+                  "name": "Israel"
+              },
+              {
+                  "code": "japan",
+                  "name": "Japan"
+              },
+              {
+                  "code": "morocco",
+                  "name": "Morocco"
+              },
+              {
+                  "code": "pakistan",
+                  "name": "Pakistan"
+              },
+              {
+                  "code": "southKorea",
+                  "name": "South Korea"
+              },
+              {
+                  "code": "unitedArabEmirates",
+                  "name": "United Arab Emirates"
+              },
+              {
+                  "code": "vietnam",
+                  "name": "Vietnam"
+              }
+          ]
+      }
+order: 1000

@@ -1,0 +1,50 @@
+$kind: http-request
+description: The [<code>findAddressCandidates</code>](https://developers.arcgis.com/rest/geocode/find-address-candidates/) operation geocodes one location per request; the input address can be combined into a single input field or divided among multiple parameters.
+url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?f=json&token={{ACCESS_TOKEN}}&singleLine=1600 Pennsylvania Ave NW, DC
+method: GET
+queryParams:
+  - key: f
+    value: json
+    description: "(Required) Format of the response: json, pjson, html, ..."
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "html",
+              "json",
+              "pjson"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    description: (Required on Platform) You need a valid access token. To learn more, read the collection's documentation.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: singleLine
+    value: 1600 Pennsylvania Ave NW, DC
+    description: Search for an address, POI category, intersection, etc.
+    $type: string
+auth:
+  type: noauth
+examples: ./.resources/Search address.resources/examples
+order: 1000

@@ -1,0 +1,14 @@
+$kind: http-request
+description: Retrieves the description of a specific data collection (such as EducationalAttainment) for a given country code. Use this endpoint to understand the available variables and metadata for the data collection.
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/dataCollections/:country-code/:data-collection-id?f=json
+method: GET
+queryParams:
+  f: json
+pathVariables:
+  - key: country-code
+    value: se
+    description: SE=Sweeden
+  - key: data-collection-id
+    value: EducationalAttainment
+examples: ./.resources/Data collection description (EducationalAttainment within SE).resources/examples
+order: 1000

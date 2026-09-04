@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{CKAN_API}}/followee_list?id"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: id
+    value: null
+    description: (string) – the id of the user
+  - key: q
+    value: null
+    disabled: true
+    description: (string) – a query string to limit results by, only objects whose display name begins with the given string (case-insensitive) wil be returned (optional)
+order: 9000

@@ -1,0 +1,17 @@
+$kind: http-request
+description: Combine Basic Auth (username + password or API key + secret) with an app token for authenticated access to private or write-protected datasets. All requests must use HTTPS.
+url: "{{baseUrl}}/api/v3/views/{{datasetId}}/query.json"
+method: POST
+headers:
+  X-App-Token: "{{appToken}}"
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: '{"query":"SELECT *","page":{"pageNumber":1,"pageSize":100}}'
+auth:
+  type: basic
+  credentials:
+    username: "{{socrataUsername}}"
+    password: "{{socrataPassword}}"
+order: 1000

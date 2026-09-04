@@ -1,0 +1,25 @@
+$kind: http-request
+description: |-
+  Use the [`/reverseGeocode`](https://developers.arcgis.com/rest/geocode/reverse-geocode/) operation to determine the address at a particular x/y location. 
+
+  --- 
+
+  Go to this example in the [Developer guide](https://local.arcgis.com:8000/mapping-and-location-services/geocoding/reverse-geocoding/#find-an-address-near-a-location)
+url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&token={{ACCESS_TOKEN}}&location=-79.3871,43.6426
+method: GET
+queryParams:
+  - key: f
+    value: pjson
+    description: "(Required) Format of the response: json, pjson, html, ..."
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    description: (Required on Platform) You need a valid access token. To learn more, read the collection's documentation.
+  - key: location
+    value: -79.3871,43.6426
+    description: (Required) The point from which to search for the closest address. The point can be represented as a simple, comma-separated syntax (long, lat) or as a JSON point object.
+body:
+  type: urlencoded
+auth:
+  type: noauth
+examples: ./.resources/Reverse geocoding.resources/examples
+order: 1000

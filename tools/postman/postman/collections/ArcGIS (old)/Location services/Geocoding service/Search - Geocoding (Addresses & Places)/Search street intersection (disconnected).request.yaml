@@ -1,0 +1,103 @@
+$kind: http-request
+description: The [<code>findAddressCandidates</code>](https://developers.arcgis.com/rest/geocode/find-address-candidates/) operation geocodes one location per request; the input address can be combined into a single input field or divided among multiple parameters. This example demonstrates how to find the coordinates at street intersections.
+url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?f=pjson&token={{ACCESS_TOKEN}}&category=intersection&singleLine=shawn and lugonia, redlands, ca
+method: GET
+queryParams:
+  - key: f
+    value: pjson
+    description: "(Required) Format of the response: json, pjson, html, ..."
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    description: (Required on Platform) You need a valid access token. To learn more, read the collection's documentation.
+  - key: address
+    value: Cambie St and W King Edward Ave
+    disabled: true
+    description: Search for an address, POI category, intersection, etc.
+  - key: City
+    value: Vancouver
+    disabled: true
+  - key: Region
+    value: British Columbia
+    disabled: true
+  - key: category
+    value: intersection
+  - key: singleLine
+    value: shawn and lugonia, redlands, ca
+auth:
+  type: noauth
+scripts:
+  - type: afterResponse
+    code: |-
+      
+      let t = `
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v10.6.0/ol.css" type="text/css" />
+          <script src="https://cdn.jsdelivr.net/npm/ol@v10.6.0/dist/ol.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@13.1.0/dist/olms.js"></script>
+
+          <style>
+            body,
+            html,
+            #map {
+              height: 100%;
+              width: 100%;
+              padding: 0;
+              margin: 0;
+            }
+          </style>
+
+          <div id="map"></div>
+
+          <script>
+
+              pm.getData((err,data)=>{
+                  const accessToken = data.token
+                  const map = new ol.Map({target:"map"})
+                  map.setView(new ol.View({
+                      center: ol.proj.fromLonLat([-98.5795, 39.8283]),
+                      zoom: 4
+                  }))
+                  const basemapId = "arcgis/imagery";
+                  const basemapURL = "https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/styles/"+basemapId+"?token="+accessToken;
+
+                  const styleLocation = (feature)=>{
+                      console.log("StyleLocation")
+                      const type = feature.get("Type")
+                      const fillColor = type === "R" ? 'black' : 'blue';
+                      return new ol.style.Style({
+                          image: new ol.style.Circle({
+                              radius: 7,
+                              fill: new ol.style.Fill({color: fillColor}),
+                              stroke: new ol.style.Stroke({color: 'white', width: 2})
+                          })
+                      })
+                  }
+
+                  olms.apply(map, basemapURL).then(()=>{
+                      const features = data.data.map(c=>{
+                          const f = new ol.Feature({
+                              geometry: new ol.geom.Point(ol.proj.fromLonLat([c.location.x, c.location.y])),  
+                          });
+                          f.setProperties(c.attributes)
+                          return f
+                      })
+                      
+                      const vs = new ol.source.Vector({features:[features[0]]})
+                      const layer = new ol.layer.Vector({source:vs, style: styleLocation})
+                      map.addLayer(layer)
+                      
+                      if (features.length > 0) {
+                         // const extent = vs.getExtent();
+                          map.getView().setCenter(features[0].getGeometry().getCoordinates())
+                          map.getView().setZoom(18);
+                      }
+                  })
+              })
+          
+          </script>
+      `
+      const candidates = pm.response.json().candidates
+      // console.log(`Token: ${pm.request.url.query.get('token')}`)
+      pm.visualizer.set(t, { data: candidates, token: pm.request.url.query.get('token') })
+    language: text/javascript
+examples: ./.resources/Search street intersection (disconnected).resources/examples
+order: 5000

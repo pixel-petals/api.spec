@@ -1,0 +1,220 @@
+$kind: http-example
+request:
+  url: https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads_data/FeatureServer/0/query?where=TRL_NAME LIKE '%Medea%'&outFields=*&f=json
+  method: GET
+  queryParams:
+    where: TRL_NAME LIKE '%Medea%'
+    outFields: "*"
+    f: json
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json; charset=utf-8
+    Content-Length: "662"
+    Connection: keep-alive
+    Date: Tue, 07 Feb 2023 17:08:58 GMT
+    Cache-Control: public, max-age=30, s-maxage=30
+    Content-Encoding: br
+    Last-Modified: Fri, 03 Feb 2023 15:31:10 GMT
+    ETag: sd2194_-1511978645
+    X-ArcGIS-Trace-Id: a0465fd9abe7d477823c630a388cdd65
+    x-esri-query-request-units: "2"
+    x-esri-tiles-basic-query-mode: "true"
+    x-esri-tiles-basic-query-type: Basic
+    x-esri-org-request-units-per-min: usage=2;max=6000
+    X-ArcGIS-Correlation-Id: 00-a0465fd9abe7d477823c630a388cdd65-93d4b7203fba2061-00
+    X-ArcGIS-Instance: 2hyjso3px00000D
+    Strict-Transport-Security: max-age=63072000
+    Access-Control-Allow-Origin: "*"
+    X-Cache: Miss from cloudfront
+    Via: 1.1 4abbc8dea2f611b4eb50afc252d13326.cloudfront.net (CloudFront)
+    X-Amz-Cf-Pop: IAD66-C2
+    X-Amz-Cf-Id: S693wkYZ77U8kZCXnvtJqCQu5XZ7mdgA7s4TP6BiSNwA25aKOMk_Pw==
+  body:
+    type: json
+    content: |-
+      {
+          "objectIdFieldName": "ObjectId2",
+          "uniqueIdField": {
+              "name": "ObjectId2",
+              "isSystemMaintained": true
+          },
+          "globalIdFieldName": "",
+          "fields": [
+              {
+                  "name": "OBJECTID",
+                  "type": "esriFieldTypeString",
+                  "alias": "OBJECTID",
+                  "sqlType": "sqlTypeNVarchar",
+                  "length": 256,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "TRL_NAME",
+                  "type": "esriFieldTypeString",
+                  "alias": "TRL_NAME",
+                  "sqlType": "sqlTypeNVarchar",
+                  "length": 4000,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "PARK_NAME",
+                  "type": "esriFieldTypeString",
+                  "alias": "PARK_NAME",
+                  "sqlType": "sqlTypeNVarchar",
+                  "length": 4000,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "TRL_ID",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "TRL_ID",
+                  "sqlType": "sqlTypeInteger",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SEG_ID",
+                  "type": "esriFieldTypeString",
+                  "alias": "SEG_ID",
+                  "sqlType": "sqlTypeNVarchar",
+                  "length": 256,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "FEATURE",
+                  "type": "esriFieldTypeString",
+                  "alias": "FEATURE",
+                  "sqlType": "sqlTypeNVarchar",
+                  "length": 4000,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "FEAT_CMNT",
+                  "type": "esriFieldTypeString",
+                  "alias": "FEAT_CMNT",
+                  "sqlType": "sqlTypeNVarchar",
+                  "length": 4000,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "ELEV_FT",
+                  "type": "esriFieldTypeString",
+                  "alias": "ELEV_FT",
+                  "sqlType": "sqlTypeNVarchar",
+                  "length": 256,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "CITY_JUR",
+                  "type": "esriFieldTypeString",
+                  "alias": "CITY_JUR",
+                  "sqlType": "sqlTypeNVarchar",
+                  "length": 4000,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "ZIP_CODE",
+                  "type": "esriFieldTypeString",
+                  "alias": "ZIP_CODE",
+                  "sqlType": "sqlTypeNVarchar",
+                  "length": 256,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SUP_DIST",
+                  "type": "esriFieldTypeString",
+                  "alias": "SUP_DIST",
+                  "sqlType": "sqlTypeNVarchar",
+                  "length": 4000,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "X_STREET",
+                  "type": "esriFieldTypeString",
+                  "alias": "X_STREET",
+                  "sqlType": "sqlTypeNVarchar",
+                  "length": 4000,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "PARKING",
+                  "type": "esriFieldTypeString",
+                  "alias": "PARKING",
+                  "sqlType": "sqlTypeNVarchar",
+                  "length": 4000,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "PHOTO",
+                  "type": "esriFieldTypeString",
+                  "alias": "PHOTO",
+                  "sqlType": "sqlTypeNVarchar",
+                  "length": 4000,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "ObjectId2",
+                  "type": "esriFieldTypeOID",
+                  "alias": "ObjectId2",
+                  "sqlType": "sqlTypeInteger",
+                  "domain": null,
+                  "defaultValue": null
+              }
+          ],
+          "features": [
+              {
+                  "attributes": {
+                      "OBJECTID": "7769",
+                      "TRL_NAME": "Medea Creek Trail",
+                      "PARK_NAME": "National Parks Service",
+                      "TRL_ID": 20082,
+                      "SEG_ID": "200820000",
+                      "FEATURE": "TAPO",
+                      "FEAT_CMNT": "Auto Generated and Verified",
+                      "ELEV_FT": "831",
+                      "CITY_JUR": "Unincorporated Los Angeles County",
+                      "ZIP_CODE": "91301",
+                      "SUP_DIST": "3rd District",
+                      "X_STREET": "28825 Lake Vista Dr",
+                      "PARKING": "SA",
+                      "PHOTO": null,
+                      "ObjectId2": 1
+                  }
+              },
+              {
+                  "attributes": {
+                      "OBJECTID": "7768",
+                      "TRL_NAME": "Medea Creek - Racetrack Connector",
+                      "PARK_NAME": "National Parks Service",
+                      "TRL_ID": 20081,
+                      "SEG_ID": "200810000",
+                      "FEATURE": "TAPO",
+                      "FEAT_CMNT": "Auto Generated and Verified",
+                      "ELEV_FT": "809",
+                      "CITY_JUR": "Unincorporated Los Angeles County",
+                      "ZIP_CODE": "91301",
+                      "SUP_DIST": "3rd District",
+                      "X_STREET": "29015 Mulholland Hwy",
+                      "PARKING": "SA",
+                      "PHOTO": null,
+                      "ObjectId2": 108
+                  }
+              }
+          ]
+      }
+order: 1000

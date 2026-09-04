@@ -1,0 +1,10 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/users-and-groups/users/#get-a-user)
+url: https://www.arcgis.com/sharing/rest/community/users/:USER_NAME?f=pjson
+method: GET
+queryParams:
+  f: pjson
+pathVariables:
+  USER_NAME: "{{USERNAME}}"
+examples: ./.resources/Get a user.resources/examples
+order: 2000

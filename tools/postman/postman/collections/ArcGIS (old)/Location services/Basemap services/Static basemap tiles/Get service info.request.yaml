@@ -1,0 +1,10 @@
+$kind: http-request
+description: Returns the ArcGIS Static Basemap Tiles service metadata in a JSON structure.
+url: https://static-map-tiles-api.arcgis.com/arcgis/rest/services/static-basemap-tiles-service/:VERSION/self?token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  token: "{{ACCESS_TOKEN}}"
+pathVariables:
+  VERSION: v1
+examples: ./.resources/Get service info.resources/examples
+order: 2000

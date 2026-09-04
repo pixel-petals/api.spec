@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{CKAN_API}}/tag_delete"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: id
+      value: ""
+      description: (string) – the id or name of the tag
+    - type: text
+      key: vocabulary_id
+      value: ""
+      description: "(string) – the id or name of the vocabulary that the tag belongs to (optional, default: None)"
+order: 2000

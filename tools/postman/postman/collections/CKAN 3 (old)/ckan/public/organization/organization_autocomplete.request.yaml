@@ -1,0 +1,17 @@
+$kind: http-request
+description: "[API Documentation 2.6.3](http://docs.ckan.org/en/ckan-2.6.3/api/index.html#ckan.logic.action.get.organization_list_for_user)"
+url: "{{CKAN_API}}/organization_autocomplete"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: q
+    value: null
+    disabled: true
+    description: (string) – the string to search for
+  - key: limit
+    value: null
+    disabled: true
+    description: "(int) – the maximum number of organizations to return (optional, default: 20)"
+order: 5000

@@ -1,0 +1,6 @@
+$kind: collection
+description: |
+  Feature analysis is the process of using the [Spatial analysis service](https://developers.arcgis.com/rest/services-reference/enterprise/spatial-analysis/overview/spatial-analysis-tools/) to perform server-side geometric and analytic operations on feature data.
+
+  To learn more go to the [Developer guide > Introduction to feature analysis](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/introduction/).
+order: 1000

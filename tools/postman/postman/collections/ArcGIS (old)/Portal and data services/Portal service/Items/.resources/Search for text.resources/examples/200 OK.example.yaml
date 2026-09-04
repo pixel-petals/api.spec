@@ -1,0 +1,113 @@
+$kind: http-example
+request:
+  url: https://www.arcgis.com/sharing/rest/search?q=title:"Seven Natural Wonders of the World" AND type:"web map" AND owner:"esri_devlabs"&f=pjson
+  method: GET
+  queryParams:
+    - key: q
+      value: title:"Seven Natural Wonders of the World" AND type:"web map" AND owner:"esri_devlabs"
+    - key: f
+      value: pjson
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      disabled: true
+      description: If accessing a private item.
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Wed, 12 Jan 2022 21:53:40 GMT
+    - key: Content-Type
+      value: text/plain;charset=utf-8
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Origin
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Cache-Control
+      value: no-cache
+    - key: Pragma
+      value: no-cache
+    - key: Expires
+      value: "-1"
+    - key: Strict-Transport-Security
+      value: max-age=31536000
+    - key: Content-Encoding
+      value: gzip
+  body:
+    type: json
+    content: |-
+      {
+          "query": "title:\"Seven Natural Wonders of the World\" AND type:\"web map\" AND owner:\"esri_devlabs\"",
+          "total": 1,
+          "start": 1,
+          "num": 10,
+          "nextStart": -1,
+          "results": [
+              {
+                  "id": "5a5147abe878444cbac68dea9f2f64e7",
+                  "owner": "esri_devlabs",
+                  "created": 1569537110000,
+                  "modified": 1569537111000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Seven Natural Wonders of the World Map",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "map"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -180,
+                          -68.6081
+                      ],
+                      [
+                          180,
+                          82.5122
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 134,
+                  "scoreCompleteness": 33,
+                  "groupDesignations": null
+              }
+          ]
+      }
+order: 1000

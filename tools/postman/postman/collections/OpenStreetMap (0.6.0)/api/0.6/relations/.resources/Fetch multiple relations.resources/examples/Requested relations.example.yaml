@@ -1,0 +1,29 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/relations?relations=string"
+  method: GET
+  headers:
+    Accept: application/xml
+  queryParams:
+    - key: relations
+      value: string
+      description: Comma-separated list of relation IDs, optionally versioned
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/xml
+  body:
+    type: xml
+    content: |-
+      <?xml version="1.0" encoding="UTF-8"?>
+      <element>(string)</element>
+    $type: |-
+      {
+        "type": "string",
+        "description": "OSM XML document, content wrapped in an <osm> root element"
+      }
+order: 1000

@@ -1,0 +1,667 @@
+$kind: http-example
+request:
+  url: https://www.arcgis.com/sharing/rest/search?q=title:"London Map" AND type:"Web Map"&f=pjson
+  method: GET
+  queryParams:
+    q: title:"London Map" AND type:"Web Map"
+    f: pjson
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Thu, 13 Jan 2022 15:49:09 GMT
+    - key: Content-Type
+      value: text/plain;charset=utf-8
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Origin
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Cache-Control
+      value: no-cache
+    - key: Pragma
+      value: no-cache
+    - key: Expires
+      value: "-1"
+    - key: Strict-Transport-Security
+      value: max-age=31536000
+    - key: Content-Encoding
+      value: gzip
+  body:
+    type: json
+    content: |-
+      {
+          "query": "title:\"London Map\" AND type:\"Web Map\"",
+          "total": 57,
+          "start": 1,
+          "num": 10,
+          "nextStart": 11,
+          "results": [
+              {
+                  "id": "1c0ae668422341f298b72d08c1a6ddfe",
+                  "owner": "alexhhorton",
+                  "created": 1533078795000,
+                  "modified": 1533658274000,
+                  "guid": null,
+                  "name": null,
+                  "title": "London Map",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": "The London Underground map, first developed by Harry Beck in 1931, is world famous as being an iconic schematic diagram, however as many know it isn't geographically accurate. This map shows the real route of the Tube and its stations.<div><br /></div><div>At closer zoom scales you can also turn on 5 minute average walk times (please note, these are off by default) around each underground station. This distance is based on an average walking speed of 5 km/hr. These were calculated by generating geodesic buffers using ArcGIS for Desktop.<br /><div><br /></div><div><br /></div></div>",
+                  "tags": [
+                      "United Kingdom",
+                      "UK",
+                      "Great Britain",
+                      "GB",
+                      "GBR",
+                      "England",
+                      "London",
+                      "Tube",
+                      "Underground",
+                      "train",
+                      "transportation",
+                      "places"
+                  ],
+                  "snippet": "A geographically accurate representation of the London Underground network. The web map displays a true representation of the London Undersground network.",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -0.1992,
+                          51.4895
+                      ],
+                      [
+                          -0.0724,
+                          51.5341
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "Map data (c) OpenStreetMap contributors, CC-BY-SA",
+                  "licenseInfo": "<font size='3' style='background-color: rgb(255, 255, 255);'>Line routes and station locations were manually digitised. More recent stations and lines were taken from OpenStreetMap.  </font><div><font size='3'><br /></font><div>OpenStreetMap<font size='3'><a href='http://www.openstreetmap.org/copyright#trademarks'>®</a><span style='background-color: rgb(255, 255, 255); font-family: &quot;Times New Roman&quot;, serif;'> is </span></font><i>open\ndata</i><font size='3'><span style='background-color: rgb(255, 255, 255); font-family: &quot;Times New Roman&quot;, serif;'>, </span></font>licensed under the <a href='http://opendatacommons.org/licenses/odbl/' style=''>Open\nData Commons  Open Database License</a> (ODbL) by the <a href='http://osmfoundation.org/' style=''>OpenStreetMap Foundation</a> (OSMF).</div><div>The\nfull <a href='http://opendatacommons.org/licenses/odbl/1.0/' style=''>legal code</a>\nexplains your rights and responsibilities.</div><div>The\ncartography in our map tiles, and our documentation, are licenced under the <a href='http://creativecommons.org/licenses/by-sa/2.0/' style=''>Creative Commons\nAttribution-ShareAlike 2.0</a> licence (CC BY-SA).<div><div><br /></div></div></div></div>",
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 267,
+                  "scoreCompleteness": 98,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "31770189aae943b59bdab7c77b510191",
+                  "owner": "raphael.heath",
+                  "created": 1393797407000,
+                  "modified": 1393815407000,
+                  "guid": null,
+                  "name": null,
+                  "title": "London map layers",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "rhsb",
+                      "London",
+                      "land use",
+                      "landuse",
+                      "data"
+                  ],
+                  "snippet": "Map with various layers of imported data focused on London - land use - economic data - social data pollution data",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -0.5046,
+                          51.3622
+                      ],
+                      [
+                          0.2136,
+                          51.6068
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-gb",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 1,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 3255,
+                  "scoreCompleteness": 66,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "da072f01577141eab8ea91420546a182",
+                  "owner": "student_4106_007_015",
+                  "created": 1603892511000,
+                  "modified": 1603976604000,
+                  "guid": null,
+                  "name": null,
+                  "title": "London map  of Cholera outbreak In Soho",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": "<p style='margin-bottom: 0.0001pt; padding: 0px;'><font color='#4d4d4d' size='2'><span style='line-height: 1.5em;'>Dr. John Snow is regarded as one of the founding fathers of modern epidemiology. In the 1850s cholera was generally believed to be spread by miasma (noxious bad air), but Dr. John Snow believed it was a water-borne disease. During a serious outbreak in London's Soho </span><span style='line-height: 19.5px;'>district</span><span style='line-height: 1.5em;'> in 1854,  John Snow recorded cholera deaths on a simple map to test his theory, and it become obvious that they were clustered around the Broad Street public water pump. The local council was convinced to disable the pump by removing it's handle and the number of new cases sharply declined, thus confirming Snow's theory. Although this version of events has been scrutinized and challenged in years since, it is still widely regarded as a watershed case and the first epidemiological and geographical analysis of disease. Doctor Snow's map and cholera data have been digitized to allow exploration in a GIS.</span></font><br /></p>",
+                  "tags": [
+                      "cholera",
+                      "john snow",
+                      "lmalone",
+                      "LearnResource",
+                      "teachwithgis"
+                  ],
+                  "snippet": "Locations of cholera cases and public water pumps in the Soho District of London, 1854",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -0.1467,
+                          51.5097
+                      ],
+                      [
+                          -0.1254,
+                          51.517
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "Rusty Dodson of NCGIA Santa Barbara. Professor Waldo Tobler, UC Santa Barbara.",
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 17,
+                  "scoreCompleteness": 83,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "d86e6ab4dcaa4629b5c6ed3805852004",
+                  "owner": "jeckmannGA",
+                  "created": 1462565312000,
+                  "modified": 1462566815000,
+                  "guid": null,
+                  "name": null,
+                  "title": "London Map with Stamford Bridge",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": "<div><div style='color: rgb(0, 0, 0); font-family: '>The game of football is played on a <a href='https://en.wikipedia.org/wiki/Football_pitch' target='_blank'>pitch</a> set out with dimensions and markings originally defined by the four British football associations and specified in imperial units of measurement.</div><div style='color: rgb(0, 0, 0); font-family: '><br /></div><div style='color: rgb(0, 0, 0); font-family: '>Yet all pitches are different as the rectangular pitch boundary has both minimum and maximum dimensions in length and width as well as different orientations. Here, pitches of 92 professional football clubs in England and Wales have been accurately mapped from high resolution aerial imagery.</div><div style='color: rgb(0, 0, 0); font-family: '><br /></div><div style='color: rgb(0, 0, 0); font-family: '><b>Here you can download the data itself to use in your own work</b>. You can also download a high-resolution poster of the pitches (seen below) from <a href='http://carto.maps.arcgis.com/home/item.html?id=7d4dabb9a71c44aabdcf3d4444e451d4' target='_blank'>here</a> and see a web map version of the pitches <a href='http://carto.maps.arcgis.com/apps/webappviewer/index.html?id=b159a7936f9742f6a5e5a4723af80d1c' target='_blank'>here</a>. </div><div style='color: rgb(0, 0, 0); font-family: '><br /></div><div style='color: rgb(0, 0, 0); font-family: '><img alt='' src='http://downloads.esri.com/kfmaps/football/pitchperfect_small.png' /><br /></div><div style='color: rgb(0, 0, 0); font-family: '><br /></div><div style='color: rgb(0, 0, 0); font-family: '>Please contact @kennethfield for further information. Comments, criticisms and suggestions welcome!</div></div><div><br /></div>",
+                  "tags": [
+                      "Stamford Bridge",
+                      "Lancaster Gate",
+                      "London"
+                  ],
+                  "snippet": "London Map with Stamford Bridge",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -0.2123,
+                          51.4835
+                      ],
+                      [
+                          -0.1527,
+                          51.5042
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "@kennethfield, OS Open Data Local",
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 99,
+                  "scoreCompleteness": 75,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "88669af1389e4e34b3c69e474dd79875",
+                  "owner": "haseebm_irisradgroup",
+                  "created": 1607973269000,
+                  "modified": 1612275991000,
+                  "guid": null,
+                  "name": null,
+                  "title": "London_Map",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "#london"
+                  ],
+                  "snippet": "London MMS map",
+                  "thumbnail": "thumbnail/_7BAED5B983-47E5-4777-A743-77E9CB539542_7D.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -81.4437,
+                          42.8253
+                      ],
+                      [
+                          -80.9367,
+                          43.0736
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "english (united states)",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 2903,
+                  "scoreCompleteness": 38,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "623a678a8e854ea0895e7e598751f591",
+                  "owner": "wienfung",
+                  "created": 1589967808000,
+                  "modified": 1593520994000,
+                  "guid": null,
+                  "name": null,
+                  "title": "LCM London Map",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Presentation Map",
+                      "Web Map"
+                  ],
+                  "description": "<b>Church of England churches and parishes, showing deprivation and census information</b><div><br /></div><div>This map was produced by the Church of England Research &amp; Statistics Unit. Comments and feedback would be welcome: please email statistics.unit@churchofengland.org</div><div><br /></div><div>You may reuse this information. Users should include a source accreditation to the Church of England Research &amp; Statistics unit - &quot;Source: Church of England Research &amp; Statistics unit&quot; - and other accreditation as appropriate from the information below.</div><div><br /></div><div><b>Data sources:</b></div><div><br /></div><div>1. Parish, Benefice, Deanery, Archdeaconry, and Diocese boundaries as of January 2020. Data supplied by the Church Commissioners. It is important to note that parish boundaries change over time so these data will eventually become out of date. The data may not be used for profit. Users should include a source accreditation to the Church of England Church Commissioners - &quot;Source: Church of England Church Commissioners&quot;.</div><div><br /></div><div>2. Church locations taken from A Church Near You: https://www.achurchnearyou.com/ (updated January 2020)</div><div><br /></div><div>3. Church heritage web pages from the Church of England Online Faculty System and Church Heritage (updated January 2020) Record: https://facultyonline.churchofengland.org/</div><div><br /></div><div>4. 2011 Census information taken from the Office for National Statistics: http://www.ons.gov.uk/census/2011census . Source: Office for National Statistics licensed under the Open Government Licence.</div><div><br /></div><div>5. 2019 Deprivation Statistics taken from the English Indices of Deprivation, produced by the Department for Communities and Local Government: https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019. Note: Archive layers contain deprivation figures based on the 2015 Indices of Deprivation.</div><div><br /></div><div>Census and deprivation statistics have been mapped onto parish boundaries. Since the boundaries of the administrative units for which census and deprivation statistics are provided do not necessarily coincide with those of parishes, all values should be treated as approximations. Data are not available for all parishes, e.g. those in the Isle of Man and the Channel Islands.</div><div><font size='3' style='font-family:&quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; background-color:rgb(255, 255, 255);'><br /></font></div><div><font size='3'><font style='font-family:&quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; background-color:rgb(255, 255, 255);'>6. Schools. </font><span style='background-color: rgb(255, 255, 255); font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'>School location data taken from </span><span style='font-family: Arial, Helvetica, san-serif;'>The Department for Education's register of educational establishments in England and Wales, available via the Edubase public portal:</span><span style='background-color: rgb(255, 255, 255); font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'> http://www.education.gov.uk/edubase/home.xhtml</span></font></div><div><div style='font-family: &quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; background-color: rgb(255, 255, 255);'><font size='3'>Data accessed <span style='font-family: &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;'>January 2020</span>. For each school, whether or not the Church of England has a role in the running of the school, the Church of England Parish, Benefice, Deanery, Archdeaconry, and Diocese in which it is located are shown.</font></div></div><div style='font-family:&quot;Avenir Next W01&quot;, &quot;Avenir Next W00&quot;, &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size:17px; background-color:rgb(255, 255, 255);'><font size='3'><br /></font></div><div>For more information, see the <b>Research and Statistics unit</b> web pages: https://www.churchofengland.org/more/policy-and-thinking/research-and-statistics</div><div><br /></div><div><div>Map produced: 19th May 2016.</div></div><div>Map updated: 5th September 2017.</div><div><div>Map updated: 30th January 2018.</div></div><div><div><div>Map updated: 3rd September 2018.</div></div></div><div><div><div>Map updated: 7th February 2019.</div><div><div>Map updated: 31st July 2019.</div><div>Map updated: 30th January 2020.</div><div><br /></div></div></div></div>",
+                  "tags": [
+                      "London"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -0.3236,
+                          51.5086
+                      ],
+                      [
+                          -0.1341,
+                          51.5769
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-gb",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 89,
+                  "scoreCompleteness": 50,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "efaba3c441a049b4bedf4afe12b471b3",
+                  "owner": "lybauer",
+                  "created": 1541081851000,
+                  "modified": 1542901799000,
+                  "guid": null,
+                  "name": null,
+                  "title": "My \"Rivers of London\" map",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Presentation Map",
+                      "Web Map"
+                  ],
+                  "description": "Rivers of London :)",
+                  "tags": [
+                      "mapping"
+                  ],
+                  "snippet": "Mapping Ben Aaronovitch's \"Rivers of London\":\nThis map shows all places mentioned in the novel, trying to show the main character's and suspects' movements throughout the story line and the city of London. ",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -0.1346,
+                          51.5099
+                      ],
+                      [
+                          -0.1121,
+                          51.5165
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "All quotations at the locations refer to:\n\nAaronovitch, Ben. Rivers of London. London: Gollancz, 2011. Print. ",
+                  "licenseInfo": null,
+                  "culture": "de",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 484,
+                  "scoreCompleteness": 55,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "00064326d7634233bc5945fdcc329433",
+                  "owner": "NewLondonsewer",
+                  "created": 1551454712000,
+                  "modified": 1572533698000,
+                  "guid": null,
+                  "name": null,
+                  "title": "New_London_map",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Collector",
+                      "Data Editing",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "New London",
+                      "sewer"
+                  ],
+                  "snippet": "Sam's map",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -71.984,
+                          43.4211
+                      ],
+                      [
+                          -71.98,
+                          43.4228
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 295,
+                  "scoreCompleteness": 45,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "73ba498e2f1742b8b71445dee242d223",
+                  "owner": "amkinnen",
+                  "created": 1511273848000,
+                  "modified": 1513128392000,
+                  "guid": null,
+                  "name": null,
+                  "title": "London Map",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "History 661"
+                  ],
+                  "snippet": "map for history 661",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -0.1526,
+                          51.4882
+                      ],
+                      [
+                          -0.0689,
+                          51.5298
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 251,
+                  "scoreCompleteness": 40,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "281009891177428baa327a03fe8f12f6",
+                  "owner": "chris_albert_fed",
+                  "created": 1460749844000,
+                  "modified": 1461637713000,
+                  "guid": null,
+                  "name": null,
+                  "title": "London Map",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Offline",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "London",
+                      "Europe",
+                      "2016"
+                  ],
+                  "snippet": "Map of Major London Sites",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -0.5396,
+                          51.385
+                      ],
+                      [
+                          -0.0706,
+                          51.5459
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 178,
+                  "scoreCompleteness": 58,
+                  "groupDesignations": null
+              }
+          ]
+      }
+order: 1000

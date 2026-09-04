@@ -1,0 +1,16 @@
+{
+  "name": "@pixelpetals/mcp",
+  "type": "module",
+  "bin": {
+    "mcp": "bin/cmd.js"
+  },
+  "exports": {
+    "./*": "./schema/*"
+  },
+  "dependencies": {
+    "utils": "*"
+  },
+  "imports": {
+    "#lib/*": "./bin/lib/*.js"
+  }
+}

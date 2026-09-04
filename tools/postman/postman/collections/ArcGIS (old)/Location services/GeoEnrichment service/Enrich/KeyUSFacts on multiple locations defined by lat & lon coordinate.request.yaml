@@ -1,0 +1,12 @@
+$kind: http-request
+name: KeyUSFacts on multiple locations defined by lat & lon coordinates use varying buffer areas around each location (1 and 5 miles radious)
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/enrich?f=pjson&token={{ACCESS_TOKEN}}&studyareas=[{"geometry":{"x":-73.270588,"y":45.599518},"areaType":"RingBuffer","bufferUnits":"esriMiles","bufferRadii":[1]},{"geometry":{"x":-75.320576,"y":40.048835},"areaType":"RingBuffer","bufferUnits":"esriMiles","bufferRadii":[5]}]&dataCollections=["KeyUSFacts"]
+method: GET
+queryParams:
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+  studyareas: '[{"geometry":{"x":-73.270588,"y":45.599518},"areaType":"RingBuffer","bufferUnits":"esriMiles","bufferRadii":[1]},{"geometry":{"x":-75.320576,"y":40.048835},"areaType":"RingBuffer","bufferUnits":"esriMiles","bufferRadii":[5]}]'
+  dataCollections: '["KeyUSFacts"]'
+examples: ./.resources/KeyUSFacts on multiple locations defined by lat & lon coordinate.resources/examples
+order: 12000

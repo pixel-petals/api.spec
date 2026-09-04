@@ -1,0 +1,12 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/search/search-items/#search-for-text)
+url: https://www.arcgis.com/sharing/rest/search?q=title:"Seven Natural Wonders of the World" OR description:"Seven Natural Wonders of the World"&f=pjson
+method: GET
+queryParams:
+  - key: q
+    value: title:"Seven Natural Wonders of the World" OR description:"Seven Natural Wonders of the World"
+    description: Query parameters to search for an item (title, tags, etc.)
+  - key: f
+    value: pjson
+examples: ./.resources/Search for text.resources/examples
+order: 1000

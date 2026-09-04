@@ -1,0 +1,14 @@
+$kind: http-request
+description: |-
+  Retrieves a list of data collections available for a specific country, identified by its country code. Requires an access token for authentication. Use this endpoint to explore the types of geographic and demographic data collections you can query for a given country.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/how-to-build-a-data-enrichment-app/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/GeoEnrichmentServer/Geoenrichment/datacollections/:country-code?f=json&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  f: json
+  token: "{{ACCESS_TOKEN}}"
+pathVariables:
+  country-code: GB
+examples: ./.resources/Data collections (by country).resources/examples
+order: 4000

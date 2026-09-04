@@ -1,0 +1,119 @@
+$kind: http-example
+request:
+  url: https://{{geoenrich-service}}.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/countries/:country-code?f=pjson
+  method: GET
+  queryParams:
+    f: pjson
+  pathVariables:
+    - key: country-code
+      value: ES
+      description: ES=Spain
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 17:27:27 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    ETag: '"405929158"'
+    Content-Language: en
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+        "messages" : [ ],
+        "childResources" : [ ],
+        "countries" : [ {
+          "id" : "ES",
+          "name" : "Spain",
+          "abbr3" : "ESP",
+          "altName" : "SPAIN",
+          "continent" : "Europe",
+          "distanceUnits" : "Kilometers",
+          "esriUnits" : "esriKilometers",
+          "defaultExtent" : {"xmin":-18.1619463996,"ymin":27.6359561557,"ymax":43.7899476821,"xmax":4.32782393179},
+          "defaultDatasetID" : "ESP_AIS_2021",
+          "datasets" : [ "ESP_AIS_2021", "ESP_MBR_2020" ],
+          "hierarchies" : [ {
+            "ID" : "ESP_AIS",
+            "alias" : "AIS Group",
+            "shortDescription" : "This data source for the premium ES data is AIS Group. Vintage 2021.",
+            "default" : true,
+            "longDescription" : "<p>This data source is provided by AIS Group.</p><p>Habits® is a database that contains a full description of the Spanish population and its precise geographical location. This information provides a wide range of possibilities in developing marketing and sales strategies, vastly improving decision-making in many areas.</p><p>Habits® segments the Spanish families typologies based on their demographic and economic characteristics, offering a large amount of economic indicators of Spanish households as income, expenses and property value.</p><p>Habits® can know the presence and expenses profile of each type of household in each geographic micro area of Spain, facilitating precise calculation of the business opportunities in the territory. Habits® also enables information to be assigned to your own databases for enrichment and segmentation.</p><p>Habits® variables are built on public databases, mostly provided by the INE1. All data used are suitably anonymised and therefore comply scrupulously the LOPD. The use of information from INE guarantees the reliability and consistency of the data, in addition to its completeness and regular updating.</p><p><a href='http://doc.arcgis.com/en/esri-demographics/data/europe.htm#GUID-A5E797E5-4CC1-4E16-830F-6EE0700EA5CB' target='_blank'>Learn more.</a></p>",
+            "locales" : [ "en" ],
+            "datasets" : [ "ESP_AIS_2021" ],
+            "levelsInfo" : {
+              "geographyLevels" : [ "Country", "Autonomous Communities", "Provinces", "Municipalities", "Census Districts", "Census Sections" ]
+            },
+            "variablesInfo" : {
+              "categories" : [ "Age", "Households", "Housing", "Income", "Jobs", "Population", "Spending" ],
+              "dataBrowserVariableCount" : 634
+            },
+            "populationToPolygonSizeRating" : 1.708,
+            "apportionmentConfidence" : 1.717,
+            "apportionmentThresholds" : [ {
+              "method" : "BlockApportion",
+              "dataLayer" : "ES.CensusSections",
+              "pointsLayer" : "ES.BlockPoints",
+              "maximumSize" : 150.0
+            }, {
+              "method" : "CentroidsInPolygon",
+              "dataLayer" : "ES.CensusSections",
+              "maximumSize" : 250.0
+            }, {
+              "method" : "CentroidsInPolygon",
+              "dataLayer" : "ES.CensusDistricts",
+              "maximumSize" : 400.0
+            }, {
+              "method" : "CentroidsInPolygon",
+              "dataLayer" : "ES.Municipalities"
+            } ]
+          }, {
+            "ID" : "census",
+            "alias" : "ES Standard Data",
+            "shortDescription" : "This data source for the standard ES data is Michael Bauer Research (MBR). Vintage 2020.",
+            "default" : false,
+            "longDescription" : "<p>This data source is provided by Michael Bauer Research (MBR).</p><p>Data are available on internationally comparable geographical levels. Data are compiled on administrative, postcode and micro levels compatible to existing available boundaries.</p><p>To furnish users with a broad variety of data, various indicators for regional demand are compiled:</p><ul><li>Population</li><li>Extended Sociodemographics (households, household size, households by type, sex and age, education, marital status and unemployed)</li><li>Households by Income</li><li>Purchasing Power (disposable household income)</li><li>Consumer Spending data by product groups</li></ul><p><a href='http://downloads.esri.com/esri_content_doc/dbl/int/mb-research_notes.pdf' target='_blank'>Learn more.</a></p>",
+            "locales" : [ "en" ],
+            "datasets" : [ "ESP_MBR_2020" ],
+            "levelsInfo" : {
+              "geographyLevels" : [ "Country", "Autonomous Communities", "Provinces", "Postcodes2", "Municipalities", "Postcodes5", "Census Sections" ]
+            },
+            "variablesInfo" : {
+              "categories" : [ "Age", "Education", "Households", "Income", "Jobs", "Key Facts", "Marital Status", "Population", "Spending" ],
+              "dataBrowserVariableCount" : 131
+            },
+            "populationToPolygonSizeRating" : 1.62,
+            "apportionmentConfidence" : 2.33,
+            "apportionmentThresholds" : [ {
+              "method" : "BlockApportion",
+              "dataLayer" : "ES.CensusSections",
+              "pointsLayer" : "ES.BlockPoints",
+              "maximumSize" : 150.0
+            }, {
+              "method" : "CentroidsInPolygon",
+              "dataLayer" : "ES.CensusSections",
+              "maximumSize" : 250.0
+            }, {
+              "method" : "CentroidsInPolygon",
+              "dataLayer" : "ES.Postcodes5",
+              "maximumSize" : 400.0
+            }, {
+              "method" : "CentroidsInPolygon",
+              "dataLayer" : "ES.Municipalities"
+            } ]
+          } ],
+          "defaultDataCollection" : "KeyGlobalFacts",
+          "dataCollections" : "",
+          "defaultReportTemplate" : "Spain Population Summary (AIS)",
+          "currencyCode" : "EUR",
+          "currencyName" : "Euro",
+          "currencySymbol" : "€",
+          "currencyFormat" : "€0;-€0"
+        } ]
+      }
+order: 1000

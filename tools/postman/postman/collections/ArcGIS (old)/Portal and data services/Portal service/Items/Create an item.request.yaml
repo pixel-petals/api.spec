@@ -1,0 +1,17 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/content-items/create/create-an-item/)
+url: https://www.arcgis.com/sharing/rest/content/users/:USER_NAME/addItem
+method: POST
+pathVariables:
+  USER_NAME: "{{USERNAME}}"
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    title: World geography
+    description: This is the map of the world
+    type: Web Map
+    tags: map, world, geography
+examples: ./.resources/Create an item.resources/examples
+order: 8000

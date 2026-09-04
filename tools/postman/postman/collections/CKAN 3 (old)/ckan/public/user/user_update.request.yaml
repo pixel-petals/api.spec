@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{CKAN_API}}/user_update"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: text
+  content: |-
+    {
+    	"id": "ec1285a1-55e8-496d-9d0b-10e9f2d33d17",
+    	"state": "active",
+    	"email": "default@ckan-sandbox.nrelcloud.org"
+    }
+order: 27000

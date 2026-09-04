@@ -1,0 +1,18 @@
+$kind: http-request
+name: Travel Spending (2021 Airline Fares) around 1 mile radius -117.1042,32.7671 (4218 Biona Pl, San Diego)
+description: |-
+  The Travel Spending data collection (TravelCEX) includes expenditures on travel including airfare, ground transportation, hotels, entertainment and meals on trips.  Consumer Spending data are derived from the 2017 and 2018 Consumer Expenditure Surveys, Bureau of Labor Statistics. Data is reported by product or service and includes total expenditures, average spending per household, and a Spending Potential Index (SPI).  This collection contains data from Esri's 2021 Consumer Spending database
+
+  2021 Airline Fares (X7003_X)
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/Enrich?f=pjson&token={{ACCESS_TOKEN}}&studyareas=[{"geometry":{"x":-117.1042,"y":32.7671}}]&analysisvariables=["TravelCEX.X7003_X"]&addDerivativeVariables=index
+method: GET
+queryParams:
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+  studyareas: '[{"geometry":{"x":-117.1042,"y":32.7671}}]'
+  analysisvariables: '["TravelCEX.X7003_X"]'
+  addDerivativeVariables: index
+examples: ./.resources/Travel Spending (2021 Airline Fares) around 1 mile radius -117.1.resources/examples
+order: 16000

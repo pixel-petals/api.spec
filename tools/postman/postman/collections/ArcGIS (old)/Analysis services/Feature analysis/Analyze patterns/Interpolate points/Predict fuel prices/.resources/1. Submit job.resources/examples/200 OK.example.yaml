@@ -1,0 +1,32 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/InterpolatePoints/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+      inputLayer: '{"url":"https://services1.arcgis.com/nCKYwcSONQTkPA4K/arcgis/rest/services/Gasolineras_Pro/FeatureServer/0"}'
+      field: Precio_gas
+      interpolateOption: "5"
+      classificationType: GeometricInterval
+      numClasses: "10"
+      outputPredictionError: "false"
+      returnFeatureCollection: "false"
+      outputName: '{"serviceProperties":{"name":"Interpolate points results"}}'
+      context: '{"extent":{"xmin":-439205.7832022423,"ymin":4903730.811446736,"xmax":-375075.11647106585,"ymax":4945924.051060095,"spatialReference":{"wkid":102100,"latestWkid":3857}}}'
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+        "jobId": "<JOB_ID>",
+        "jobStatus": "esriJobSubmitted",
+        "results": {},
+        "inputs": {},
+        "messages": []
+      }
+order: 1000

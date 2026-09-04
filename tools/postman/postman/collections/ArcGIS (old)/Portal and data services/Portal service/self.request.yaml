@@ -1,0 +1,16 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/how-to-work-with-the-portal-service/)
+url: https://www.arcgis.com/sharing/rest/portals/self?f=json
+method: GET
+queryParams:
+  - key: f
+    value: json
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    disabled: true
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/self.resources/examples
+order: 5000

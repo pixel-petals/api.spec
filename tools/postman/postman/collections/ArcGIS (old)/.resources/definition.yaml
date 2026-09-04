@@ -1,0 +1,38 @@
+$kind: collection
+name: ArcGIS (old)
+description: |-
+  An ArcGIS service is software that supports an ArcGIS REST API and provides geospatial functionality or data. ArcGIS provides many types of services. The main groups are location services, data services and spatial analysis services.
+
+  This collection contains examples of how to access ArcGIS Services that provide mapping, analysis, content, and data functionality.
+
+  ---
+
+  To learn how to use the collection, go to [Get started](https://www.postman.com/esridevs/workspace/esri-arcgis-services/folder/15786767-ee875b30-04c3-4de7-9dd1-15a9fd538037).
+
+  ---
+
+  For additional developer resources, see the following:
+
+  - [Developer guides](https://developers.arcgis.com/documentation)
+      
+  - [Open source mapping libraries](https://developers.arcgis.com/documentation/#open-source-mapping-libraries)
+      
+  - [REST API documentation](https://developers.arcgis.com/rest)
+variables:
+  JOB_ID: ""
+  LMD_JOB_ID: ""
+  ANALYSIS_URL: YOUR_ANALYSIS_URL
+  UNIQUE_NAME: ""
+  ORG_ID: pixelpetals
+  LAYER_ID: "0"
+  SERVICE_NAME: Santa_Monica_parcels
+  CREATED_GROUP_ID: ""
+  ORG_URL_KEY: https://pixelpetals.maps.arcgis.com/
+  ORG_BASE_URL: https://pixelpetals.maps.arcgis.com/
+  BATCH_GEOCODE_ADDITEM_ID: ""
+  RASTER_ANALYSIS_URL: ""
+  SESSION_TOKEN: ""
+  FS_HOST: ""
+  FS_NAME: ""
+  FS_LYR_ID: ""
+  ORG_URL: ""

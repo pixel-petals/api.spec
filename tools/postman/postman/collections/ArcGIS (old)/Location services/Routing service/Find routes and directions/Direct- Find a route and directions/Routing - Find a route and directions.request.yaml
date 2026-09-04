@@ -1,0 +1,28 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/route-and-directions/)
+url: https://route-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/solve?f=json&token={{ACCESS_TOKEN}}&stops=-122.68782,45.51238;-122.690176,45.522054;-122.614995,45.526201&startTime=now&returnDirections=true&directionsLanguage=es
+method: GET
+queryParams:
+  f: json
+  token: "{{ACCESS_TOKEN}}"
+  stops: -122.68782,45.51238;-122.690176,45.522054;-122.614995,45.526201
+  startTime: now
+  returnDirections: "true"
+  directionsLanguage: es
+body:
+  type: urlencoded
+auth:
+  type: oauth2
+  credentials:
+    tokenType: ""
+    clientSecret: "{{client_secret}}"
+    clientId: "{{client_id}}"
+    useBrowser: true
+    tokenName: ArcGIS token
+    accessTokenUrl: https://www.arcgis.com/sharing/rest/oauth2/token/
+    authUrl: https://www.arcgis.com/sharing/rest/oauth2/authorize
+    redirect_uri: https://www.arcgis.com/sharing/rest/oauth2/token/
+    grant_type: authorization_code
+    addTokenTo: header
+examples: ./.resources/Routing - Find a route and directions.resources/examples
+order: 1000

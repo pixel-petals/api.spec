@@ -1,0 +1,53 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/CalculateComponsiteIndex/jobs/:JOB_ID"
+  method: POST
+  pathVariables:
+    JOB_ID: "{{JOB_ID}}"
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Tue, 06 Jan 2026 15:26:20 GMT
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: no-cache
+    ETag: '"1241758985"'
+    Vary: Origin,Accept-Encoding,Authorization,X-Esri-Authorization
+    Server: Microsoft-IIS/10.0
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    X-Powered-By: ASP.NET
+  body:
+    type: text
+    content: |-
+      {
+          "jobId": "j50cac4370dbf4feabe9c0d5c979c1b8a",
+          "jobStatus": "esriJobSucceeded",
+          "results": {
+              "indexResultLayer": {
+                  "paramUrl": "results/indexResultLayer"
+              },
+              "processInfo": {
+                  "paramUrl": "results/processInfo"
+              }
+          },
+          "inputs": {},
+          "messages": [
+              {
+                  "type": "esriJobMessageTypeWarning",
+                  "description": "WARNING 001605: Distances for Geographic Coordinates (degrees, minutes, seconds) are analyzed using Chordal Distances in meters."
+              },
+              {
+                  "type": "esriJobMessageTypeWarning",
+                  "description": "{\"cost\": 0.01}"
+              }
+          ]
+      }
+order: 2000

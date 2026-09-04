@@ -1,0 +1,4 @@
+$kind: collection
+name: "Direct: Create time-distance matrix"
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/travel-cost-matrix/#direct-create-time-distance-matrix).
+order: 1000

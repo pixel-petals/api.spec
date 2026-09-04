@@ -1,0 +1,22 @@
+$kind: http-example
+name: Forbidden – authenticated but not permitted (e.g. blocked user or missing OAuth scope)
+request:
+  url: "{{baseUrl}}/api/0.6/way/:id/:version"
+  method: GET
+  pathVariables:
+    - key: id
+      value: "6776"
+      description: The numeric ID of the element
+    - key: version
+      value: "6776"
+      description: The version number of the element
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 403
+  statusText: Forbidden
+  body:
+    type: text
+    content: ""
+order: 2000

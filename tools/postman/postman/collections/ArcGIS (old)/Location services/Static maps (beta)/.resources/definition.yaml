@@ -1,0 +1,16 @@
+$kind: collection
+description: |-
+  The ArcGIS Static Maps service enables you to build standalone, static map images generated from ArcGIS Basemap styles. The service is best utilized for use cases and experiences such as ride-hailing, delivery receipts, news articles, or summaries of activities, like a recap of your latest run. There are four core types of use cases:
+
+  - Highlight a location in the center of a map
+  - Display many locations on a map
+  - Show a path on a map
+  - Display a polygon on a map
+      
+
+  To enhance your experience, you can customize the color, labels, and style of symbols to match your company brand. To make these maps, explore the simple GET requests and use POST requests to deliver more functionality and increased privacy.
+
+  Static map images can be formatted in jpg, png, and webp. They look like embedded maps, but they do not have controls or support user interaction. You can easily display them on websites or apps without the need for an API or mapping library.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/rest/static-maps/)
+order: 7000

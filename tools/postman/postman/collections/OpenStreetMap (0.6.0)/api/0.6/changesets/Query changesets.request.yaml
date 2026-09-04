@@ -1,0 +1,109 @@
+$kind: http-request
+description: Returns changesets matching the given filters, ordered by creation time (newest first by default). Returns at most 100 results.
+url: "{{baseUrl}}/api/0.6/changesets?bbox=string&user=6776&display_name=string&time=string&from=1994-08-13T16:27:31.733Z&to=1994-08-13T16:27:31.733Z&open=true&closed=true&changesets=string&order=newest&limit=100"
+method: GET
+headers:
+  Accept: application/xml
+queryParams:
+  - key: bbox
+    value: string
+    description: Bounding box as min_lon,min_lat,max_lon,max_lat
+    $type: string
+  - key: user
+    value: "6776"
+    description: Filter by user ID. Cannot be combined with display_name.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+  - key: display_name
+    value: string
+    description: Filter by user display name. Cannot be combined with user.
+    $type: string
+  - key: time
+    value: string
+    description: T1 to find changesets closed after T1, or T1,T2 to find changesets open during that interval
+    $type: string
+  - key: from
+    value: 1994-08-13T16:27:31.733Z
+    description: Find changesets created at or after this time
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+  - key: to
+    value: 1994-08-13T16:27:31.733Z
+    description: Find changesets created before this time (requires from)
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+  - key: open
+    value: "true"
+    description: If true, return only open changesets
+    $type: boolean
+  - key: closed
+    value: "true"
+    description: If true, return only closed changesets
+    $type: boolean
+  - key: changesets
+    value: string
+    description: Comma-separated list of changeset IDs to return
+    $type: string
+  - key: order
+    value: newest
+    description: Sort order (newest or oldest)
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "default": "newest",
+            "enum": [
+              "newest",
+              "oldest"
+            ]
+          }
+        }
+      }
+  - key: limit
+    value: "100"
+    description: Maximum number of results (1–100, default 100)
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 100
+          }
+        }
+      }
+body:
+  type: text
+  content: ""
+auth:
+  type: noauth
+examples: ./.resources/Query changesets.resources/examples
+order: 1000

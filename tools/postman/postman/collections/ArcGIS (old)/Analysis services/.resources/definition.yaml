@@ -1,0 +1,8 @@
+$kind: collection
+description: |-
+  <img src="https://developers.arcgis.com/static/developer_guide-spatial-analysis-services-600x600-20e00ea221367fcd6f862c78790597bd.png" alt="" height="150" width="150" alt="Portal and data services">
+
+  Spatial analysis is the process of using analytical techniques to find relationships, discover patterns, and solve problems with geographic data. The goal of every analysis is to turn data into information. Most analyses involve using your data as input, executing one or more operations, and then visualizing the output data on a map.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/).
+order: 4000

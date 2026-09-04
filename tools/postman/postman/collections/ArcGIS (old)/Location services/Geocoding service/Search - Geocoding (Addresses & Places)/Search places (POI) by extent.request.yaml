@@ -1,0 +1,110 @@
+$kind: http-request
+description: Find places inside a bounding box
+url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?token={{ACCESS_TOKEN}}&f=json&category=Nightlife Spot&searchExtent=%7B%20%22spatialReference%22%3A%20%7B%20%22wkid%22%3A%204326%20%7D%2C%20%22xmin%22%3A%20-116.58935746093749%2C%20%22ymin%22%3A%2033.78284249053006%2C%20%22xmax%22%3A%20-116.42456253906249%2C%20%22ymax%22%3A%2033.873308036184355%20%7D
+method: GET
+queryParams:
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    description: (Required) You need a valid access token. To learn more, read the collection's documentation.
+  - key: f
+    value: json
+    description: (Required) Format of the response
+  - key: address
+    value: Palm Springs
+    disabled: true
+    description: A string that represents the first line of a street address. In most cases this field will be used for street name and house number input, but it can also be used to input building name or place name.
+  - key: address2
+    value: <string>
+    disabled: true
+    description: A string that represents the second line of a street address. This can include street name/house number, building name, place name, or subunit.
+  - key: address3
+    value: <string>
+    disabled: true
+    description: A string that represents the third line of a street address. This can include street name/house number, building name, place name, or subunit.
+  - key: category
+    value: Nightlife Spot
+    description: A place or address type that can be used to filter findAddressCandidates results. The parameter supports input of single category values or multiple comma-separated values. The category parameter can be passed in a request with the SingleLine or address parameters. It can also be passed in a request on its own without the singleline or address parameters. See Category filtering for complete details about the category parameter.
+  - key: city
+    value: <string>
+    disabled: true
+    description: The next largest administrative division associated with an address. Depending on the country, a subregion can represent a county, state, or province.
+  - key: countryCode
+    value: <string>
+    disabled: true
+    description: "A value representing the country. Providing this value increases geocoding speed. Acceptable values include the full country name in English or the official language of the country, the 2-character country code, or the 3-character country code. Valid country codes: https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm"
+  - key: forStorage
+    value: <boolean>
+    disabled: true
+    description: Specifies whether the results of the operation will be persisted
+  - key: langCode
+    value: <string>
+    disabled: true
+    description: "Sets the language in which geocode results are returned. Addresses and places in many countries are available in more than one language; in these cases the langCode parameter can be used to specify which language should be used for results returned by the findAddressCandidates operation. This is useful for ensuring that results are returned in the expected language. For example, a web application could be designed to get the browser language and pass it as the langCode parameter value in a findAddressCandidates request. Valid country codes: https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm"
+  - key: location
+    value: <string> | <Point>
+    disabled: true
+    description: Defines an origin point that is used to prefer or boost geocoding candidates based on their proximity to the location. Candidates near the location are prioritized relative to those further away. This is useful in mobile applications where a user wants to search for places in the vicinity of their current GPS location, or in mapping applications where users want to search for places near the center of the map.
+  - key: locationType
+    value: <string>
+    disabled: true
+    description: Specifies if the output geometry of PointAddress and Subaddress matches should be the rooftop point or street entrance location. Valid values are rooftop and street. The default value is rooftop.
+  - key: magicKey
+    value: <string>
+    disabled: true
+    description: The findAddressCandidates operation retrieves results quicker when you pass in valid SingleLine and magicKey values than when you don't pass in magicKey. However, to get these advantages, you need to make a prior request to suggest, which provides a magicKey. This may or may not be relevant to your workflow.
+  - key: matchOutOfRange
+    value: <boolean>
+    disabled: true
+    description: A Boolean which specifies if StreetAddress matches should be returned even when the input house number is outside of the house number range defined for the input street. Out-of-range matches have Addr_type=StreetAddressExt. The geometry of such matches is a point corresponding to the end of the street segment where the range value is closest to the input house number. If matchOutOfRange is not specified in a request, its value is set to true by default.
+  - key: maxLocations
+    value: <integer>
+    disabled: true
+    description: The maximum number of locations to be returned by a search, up to the maximum number allowed by the service. If not specified, then all matching candidates up to the service maximum are returned.
+  - key: neighborhood
+    value: <string>
+    disabled: true
+    description: The smallest administrative division associated with an address, typically, a neighborhood or a section of a larger populated place. A neighborhood is a subdivision of a city.
+  - key: outFields
+    value: <string>
+    disabled: true
+    description: "The list of fields to be returned within the attributes object of the response. Descriptions for each of these fields are available in the Output fields section of this document. Check all possible outFields: https://developers.arcgis.com/rest/geocode/api-reference/geocoding-service-output.htm"
+  - key: outSR
+    value: <integer>
+    disabled: true
+    description: The maximum number of locations to be returned by a search, up to the maximum number allowed by the service. If not specified, then all matching candidates up to the service maximum are returned.
+  - key: postal
+    value: <integer>
+    disabled: true
+    description: A postal code extension, such as the United States Postal Service ZIP+4 code, provides finer resolution or higher accuracy when also passing postal.
+  - key: postalExt
+    value: <integer>
+    disabled: true
+    description: A value representing the country. Providing this value increases geocoding speed. Acceptable values include the full country name in English or the official language of the country, the 2-character country code, or the 3-character country code. A list of supported countries and codes is available in the Geocode coverage topic.
+  - key: preferredLabelValues
+    value: <string>
+    disabled: true
+    description: |
+      Allows simple configuration of output fields returned in a response from the ArcGIS World Geocoding Service by specifying which address component values should be included in output fields. Supports a single value or a comma-delimited collection of values as input. If the parameter is blank or excluded from a request then default address label formats will be used.
+  - key: region
+    value: <string>
+    disabled: true
+    description: The standard postal code for an address, typically, a 3–6-digit alphanumeric code.
+  - key: searchExtent
+    value: "%7B%20%22spatialReference%22%3A%20%7B%20%22wkid%22%3A%204326%20%7D%2C%20%22xmin%22%3A%20-116.58935746093749%2C%20%22ymin%22%3A%2033.78284249053006%2C%20%22xmax%22%3A%20-116.42456253906249%2C%20%22ymax%22%3A%2033.873308036184355%20%7D"
+    description: Helper to get search extent with https://arcgis-js-api-extent-helper.gavinr.com/
+  - key: singleLine
+    value: <string>
+    disabled: true
+    description: Search for an address, POI category, intersection, etc.
+  - key: sourceCountry
+    value: <string>
+    disabled: true
+    description: "Limits the candidates returned by the findAddressCandidates operation to the specified country or countries. For example, if sourceCountry=USA is included in the request, it is assumed that the address is in the United States, so only matching addresses in USA are returned. Using this parameter prevents potential unexpected results in other countries for ambiguous searches. Valid country codes: https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm"
+  - key: subregion
+    value: <string>
+    disabled: true
+    description: The largest administrative division associated with an address, typically, a state or province.
+auth:
+  type: noauth
+examples: ./.resources/Search places (POI) by extent.resources/examples
+order: 10000

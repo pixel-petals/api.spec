@@ -1,0 +1,12 @@
+$kind: http-request
+name: KeyGlobalFacts around the union of multiple areas within the same administrative boundary data layer (San Jose & San Diego)
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/enrich?f=pjson&token={{ACCESS_TOKEN}}&StudyAreas=[{"sourceCountry":"US","layer":"US.ZIP5","ids":["95123,92123"]}]&dataCollections=["KeyGlobalFacts"]
+method: GET
+queryParams:
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+  StudyAreas: '[{"sourceCountry":"US","layer":"US.ZIP5","ids":["95123,92123"]}]'
+  dataCollections: '["KeyGlobalFacts"]'
+examples: ./.resources/KeyGlobalFacts around the union of multiple areas within the sam.resources/examples
+order: 11000

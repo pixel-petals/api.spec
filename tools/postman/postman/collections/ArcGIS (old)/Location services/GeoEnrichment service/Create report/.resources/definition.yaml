@@ -1,0 +1,9 @@
+$kind: collection
+description: Example requests using the [`/createReport`](https://developers.arcgis.com/rest/geoenrichment/create-report/) endpoint.
+scripts:
+  - type: http:beforeRequest
+    code: |-
+      // utils.requiredParameters(['f', 'token', 'studyAreas']);
+      // utils.checkSupportedValues("f", ["json", "pjson"]);
+    language: text/javascript
+order: 2000

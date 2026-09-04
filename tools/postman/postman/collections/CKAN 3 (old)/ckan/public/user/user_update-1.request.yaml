@@ -1,0 +1,15 @@
+$kind: http-request
+name: user_update
+url: "{{CKAN_API}}/user_update"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: id
+      value: ""
+      description: (string) – the name or id of the user to update
+order: 28000

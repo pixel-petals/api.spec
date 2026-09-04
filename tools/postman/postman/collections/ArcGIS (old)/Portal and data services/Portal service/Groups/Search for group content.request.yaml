@@ -1,0 +1,11 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/users-and-groups/groups/#search-for-group-content)
+url: https://www.arcgis.com/sharing/rest/content/groups/:GROUP_ID/search?q=bike&f=json
+method: GET
+queryParams:
+  q: bike
+  f: json
+pathVariables:
+  GROUP_ID: d6340748701d4ccfb18ad3c42b7feb9e
+examples: ./.resources/Search for group content.resources/examples
+order: 6000

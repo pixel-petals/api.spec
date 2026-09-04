@@ -1,0 +1,93 @@
+$kind: collection
+description: |-
+  Follow the steps below to set up Postman so you can make requests to [ArcGIS services](https://developers.arcgis.com/rest/). If you want to learn more about the services, or how to access them with other ArcGIS and open source APIs, go to the [Developer guides](https://developers.arcgis.com/documentation).
+
+  ## Prerequisites
+
+  Before starting you will need the following:
+
+  - A free [ArcGIS account](https://developers.arcgis.com/documentation/security-and-authentication/get-started/)
+      
+  - A free [postman account](https://www.postman.com/postman-account/)
+      
+
+  Before you run the postman requests, you need to get an [ArcGIS access token](https://developers.arcgis.com/documentation/security-and-authentication/reference/access-tokens/). There are several ways to do this depending on the [authentication type](https://developers.arcgis.com/documentation/security-and-authentication/types-of-authentication/) you want to use:
+
+  - Create a short-lived token with your account credentials.
+      
+      - Go to [Generate token flow](https://developers.arcgis.com/documentation/security-and-authentication/user-authentication/flows/generate-token-flow/) to learn more.
+          
+  - Create an API Key access token.
+      
+      - Complete the [Create an API key](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/tutorials/create-an-api-key/) tutorial to generate a new API key token.
+          
+  - Create an OAuth 2.0 App credential token.
+      
+      - Complete the [Create OAuth credentials for app authentication](https://developers.arcgis.com/documentation/security-and-authentication/app-authentication/tutorials/create-oauth-credentials-app-auth/) tutorial.
+          
+
+  Go to the [Security and authentication developer guide &gt; Get started](https://developers.arcgis.com/documentation/security-and-authentication/get-started/) page to learn more.
+
+  ## Steps
+
+  The general steps to run these examples in your workspace are:
+
+  1. [Fork collection](#fork-collection-and-clone-global-environment)
+      
+  2. [Set your access token](#2-set-your-access-token)
+      
+  3. [Run the examples](#3-run-the-examples)
+      
+
+  ### Fork collection and clone global environment.
+
+  To run these requests in your workspace you must create a fork of the collection. To utilize preset variables, such as `ACCESS_TOKEN`, clone the Globals environment.
+
+  1. Click the ellipse next to each collection name and then click **Create a fork**.
+      
+  2. Clone the Globals environment. In the left side bar, click **environments > Globals > Export**. Import the exported file into your workspace containing the forked collections from step 1 by clicking **Import** in the top left corner.
+      
+
+  > Go to [Fork Postman collections and environments](https://) to learn more. 
+    
+
+  ### Set your access token
+
+  Based on the type of authentication you chose in the prerequisites section above. Run one of the following requests in the Get started folder.
+
+  #### Account credentials
+
+  Run the `Create a short-lived token with your account credentials` request in the _Get started_ folder by entering in your ArcGIS username and password in the appropriate request parameters.
+
+  #### API Key credentials
+
+  Run the `Create and set an API Key access token` request in the _Get started_ folder by entering in your API Key in the request parameters.
+
+  #### App Credentials
+
+  Run the `Create and set app credentials` request in the _Get started_ folder by entering in your CLIENT_ID and ClIENT_SECRET in the request parameters.
+
+  Running any of these requests will populate the `ACCESS_TOKEN` global variable and be used in all subsequent requests.
+
+  ### Run the examples
+
+  Go to the workspace where you forked the collections.  
+  Expand Collections to find the request you would like to run.
+
+  Run the desired example by clicking the `send` button.
+
+  In each one you will find the following:
+
+  1. GET/POST: Service request with preset parameters.
+      
+  2. 200 OK: Sample response result.
+      
+
+  > **NOTE:** Ensure the `ACCESS_TOKEN` global variable is correctly set. 
+    
+
+  ## Community & feedback
+
+  For issues regarding the Postman collections, open an issue on Github: github.com/Esri/awesome-arcgis-developer.  
+  For general support issues, use Postman comments feature or use the #arcgis-rest-api channel on The Spatial Community on Slack.
+order: 1000

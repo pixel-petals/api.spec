@@ -1,0 +1,30 @@
+$kind: http-request
+name: package_update
+url: "{{CKAN_API}}/package_update"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: id
+      value: 6e4bccfd-0228-4569-aafa-583b4e3cbbee
+      description: (string) – the name or id of the dataset to update
+    - type: text
+      key: name
+      value: postman-test-0
+      disabled: true
+    - type: text
+      key: title
+      value: postman-update-0
+      disabled: true
+    - type: text
+      key: private
+      value: "False"
+      disabled: true
+    - type: text
+      key: state
+      value: active
+order: 12000

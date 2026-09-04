@@ -1,0 +1,22 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/feature-services/query-features/#query-features-with-paging)
+url: https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Santa_Monica_public_parcels/FeatureServer/0/query?f=json&token={{ACCESS_TOKEN}}&where=1=1&outFields=FID, ain, situsfulla, usetype&orderByFields=FID ASC&resultRecordCount=1000&resultOffset=0
+method: GET
+queryParams:
+  - key: f
+    value: json
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    description: "If your layer is not public, you will need an access token to access it. "
+  - key: where
+    value: 1=1
+  - key: outFields
+    value: FID, ain, situsfulla, usetype
+  - key: orderByFields
+    value: FID ASC
+  - key: resultRecordCount
+    value: "1000"
+  - key: resultOffset
+    value: "0"
+examples: ./.resources/Query features with paging.resources/examples
+order: 6000

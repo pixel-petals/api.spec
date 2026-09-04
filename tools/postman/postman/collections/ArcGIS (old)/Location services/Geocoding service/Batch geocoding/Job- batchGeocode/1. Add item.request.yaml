@@ -1,0 +1,37 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/batch-geocoding/#job-geocode-a-file-of-addresses)
+url: https://www.arcgis.com/sharing/rest/content/users/{{USERNAME}}/addItem
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: f
+      value: json
+    - type: text
+      key: token
+      value: "{{ACCESS_TOKEN}}"
+    - type: file
+      key: file
+      src: /Users/mark4582/_esri/python/batchGeocode/data/addresses.csv
+    - type: text
+      key: title
+      value: Postman batchGeocode address file upload {{UNIQUE_NAME}}
+    - type: text
+      key: type
+      value: CSV
+    - type: text
+      key: typeKeywords
+      value: CSV, Text, Data
+    - type: text
+      key: description
+      value: This is a csv file uploaded programmatically for use with the batchGeocode(beta) service
+    - type: text
+      key: tags
+      value: postman, batchGeocode, csv, addresses
+scripts:
+  - type: afterResponse
+    code: pm.collectionVariables.set("BATCH_GEOCODE_ADDITEM_ID", pm.response.json().id)
+    language: text/javascript
+examples: ./.resources/1. Add item.resources/examples
+order: 1000

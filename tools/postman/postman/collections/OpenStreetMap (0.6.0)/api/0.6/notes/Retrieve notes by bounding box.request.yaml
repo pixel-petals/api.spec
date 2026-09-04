@@ -1,0 +1,57 @@
+$kind: http-request
+description: Returns notes within the given bounding box. Max area is 25 square degrees.
+url: "{{baseUrl}}/api/0.6/notes?bbox=string&limit=100&closed=7"
+method: GET
+headers:
+  Accept: application/xml
+queryParams:
+  - key: bbox
+    value: string
+    description: Bounding box as left,bottom,right,top
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: limit
+    value: "100"
+    description: Max number of results (default 100, max 10000)
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "default": 100,
+            "minimum": 1,
+            "maximum": 10000
+          }
+        }
+      }
+  - key: closed
+    value: "7"
+    description: Number of days a closed note is still returned (-1=all, 0=open only, default=7)
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "default": 7
+          }
+        }
+      }
+body:
+  type: text
+  content: ""
+auth:
+  type: noauth
+examples: ./.resources/Retrieve notes by bounding box.resources/examples
+order: 1000

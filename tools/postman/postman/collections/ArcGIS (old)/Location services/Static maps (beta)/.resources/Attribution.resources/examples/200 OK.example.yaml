@@ -1,0 +1,33 @@
+$kind: http-example
+request:
+  url: https://static-maps-api.arcgis.com/arcgis/rest/services/static-maps-service/:VERSION/static-maps/arcgis/:ARCGIS-STYLE/attribution
+  method: GET
+  pathVariables:
+    - key: VERSION
+      value: beta
+      description: Version
+    - key: ARCGIS-STYLE
+      value: streets
+      description: ArcGIS Basemap style
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 16 Mar 2026 12:19:46 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    cache-control: max-age=86400, s-maxage=2419200
+    permissions-policy: interest-cohort={}
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    Vary: Origin, Accept-Encoding, Authorization, X-Esri-Authorization
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    Content-Encoding: gzip
+  body:
+    type: text
+    content: |-
+      {
+          "attribution": "Sources: Esri, TomTom, Garmin, FAO, NOAA, USGS, © OpenStreetMap contributors, and the GIS User Community"
+      }
+order: 1000

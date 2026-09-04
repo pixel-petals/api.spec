@@ -1,0 +1,49 @@
+$kind: http-example
+request:
+  url: https://www.arcgis.com/sharing/rest/oauth2/token
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      - key: client_id
+        value: "{{CLIENT_ID}}"
+      - key: client_secret
+        value: "{{CLIENT_SECRET}}"
+      - key: grant_type
+        value: client_credentials
+      - key: expiration
+        value: "1800"
+      - key: redirect_uri
+        value: <url>
+        disabled: true
+      - key: code
+        value: <string>
+        disabled: true
+      - key: refresh_token
+        value: <string>
+        disabled: true
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Tue, 25 Mar 2025 18:18:29 GMT
+    Content-Type: application/json;charset=utf-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Vary: Origin
+    X-XSS-Protection: 1; mode=block
+    X-Frame-Options: SAMEORIGIN
+    X-Content-Type-Options: nosniff
+    Strict-Transport-Security: max-age=31536000
+    Cache-Control: no-cache, no-store, must-revalidate
+    Pragma: no-cache
+    Expires: "0"
+    Content-Encoding: gzip
+  body:
+    type: json
+    content: |-
+      {
+          "access_token": "3NKHt6i2urmWtqOuugvr9Wx1DZgNmru5hEqciNWsh_HCISvOcKygtIoX7iru0nkGvYGkYyYZKM4Gb5k-llh2EAVK6PTmuBDqYuT6xKfwk9Pozbf1RLp-ADvrf9TSvkPW",
+          "expires_in": 108000
+      }
+order: 1000

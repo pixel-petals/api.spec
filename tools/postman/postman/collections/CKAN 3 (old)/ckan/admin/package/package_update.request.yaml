@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{CKAN_API}}/package_update"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "id": "a464c77a-0f4b-4e7d-a429-59d61cb3bfc6",
+      "name": "test0-e"
+    }
+order: 2000

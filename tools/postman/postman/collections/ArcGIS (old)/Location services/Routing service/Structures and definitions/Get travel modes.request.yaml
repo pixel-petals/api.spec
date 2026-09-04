@@ -1,0 +1,9 @@
+$kind: http-request
+description: To learn more go to the [REST API](https://developers.arcgis.com/rest/routing/getTravelModes-direct/)
+url: https://logistics.arcgis.com/arcgis/rest/services/World/Utilities/GPServer/GetTravelModes/execute?f=json&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  f: json
+  token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/Get travel modes.resources/examples
+order: 5000

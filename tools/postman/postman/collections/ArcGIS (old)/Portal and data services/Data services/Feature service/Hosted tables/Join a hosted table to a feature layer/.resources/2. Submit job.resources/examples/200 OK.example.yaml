@@ -1,0 +1,33 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/JoinFeatures/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      token: "{{ACCESS_TOKEN}}"
+      f: json
+      targetLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/nc_regions/FeatureServer/0"}'
+      joinLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/nc_resource_table/FeatureServer/0"}'
+      joinOperation: joinOneToOne
+      attributeRelationship: '[{"targetField":"county","operator":"equal","joinField":"Area_Name"}]'
+      outputName: '{"serviceProperties":"name":"Join features sql result"}}'
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: "{\r
+
+      \  \"jobId\": \"<JOB_ID>\",\r
+
+      \  \"jobStatus\": \"esriJobSubmitted\",\r
+
+      \  \"results\": {},\r
+
+      \  \"inputs\": {},\r
+
+      \  \"messages\": []\r
+
+      }"
+order: 1000

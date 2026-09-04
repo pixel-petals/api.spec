@@ -1,0 +1,109 @@
+$kind: http-example
+request:
+  url: https://{{geoenrich-service}}.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/countries/:country-code?f=pjson
+  method: GET
+  queryParams:
+    f: pjson
+  pathVariables:
+    country-code: JP
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 17:28:44 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    ETag: '"549255939"'
+    Content-Language: en
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+        "messages" : [ ],
+        "childResources" : [ ],
+        "countries" : [ {
+          "id" : "JP",
+          "name" : "Japan",
+          "abbr3" : "JPN",
+          "altName" : "JAPAN",
+          "continent" : "Asia",
+          "distanceUnits" : "Kilometers",
+          "esriUnits" : "esriKilometers",
+          "defaultExtent" : {"xmin":122.933197974,"ymin":24.0456424114,"ymax":45.5227846887,"xmax":145.817456443},
+          "defaultDatasetID" : "JPN_EsriJapan_2020",
+          "datasets" : [ "JPN_EsriJapan_2020", "JPN_MBR_2020" ],
+          "hierarchies" : [ {
+            "ID" : "EsriJapan",
+            "alias" : "Esri Japan",
+            "shortDescription" : "The source of the Esri Japan data is Japan's Ministry of Internal Affairs and Communications. Vintage 2020.",
+            "default" : true,
+            "longDescription" : "<p>The source of the Esri Japan data is Japan's Ministry of Internal Affairs and Communications and is based on the 2015 Census, 2013 Housing and Land Survey, 2017 Family Income and Expenditure Survey, and Tokei De Miru Shiku Choson No Sugata 2018.</p><p><a href='https://doc.arcgis.com/en/esri-demographics/data/asia.htm' target='_blank'>Learn more.</a></p>",
+            "locales" : [ "en", "ja" ],
+            "datasets" : [ "JPN_EsriJapan_2020" ],
+            "levelsInfo" : {
+              "geographyLevels" : [ "Country", "Prefecture", "Municipality", "Block" ]
+            },
+            "variablesInfo" : {
+              "categories" : [ "Age", "Education", "Households", "Housing", "Income", "Jobs", "Marital Status", "Population", "Spending" ],
+              "dataBrowserVariableCount" : 2197
+            },
+            "populationToPolygonSizeRating" : -1.0,
+            "apportionmentConfidence" : -1.0,
+            "apportionmentThresholds" : [ {
+              "method" : "BlockApportion",
+              "dataLayer" : "JP.Blocks",
+              "pointsLayer" : "JP.BlockPoints",
+              "maximumSize" : 150.0
+            }, {
+              "method" : "CentroidsInPolygon",
+              "dataLayer" : "JP.Blocks",
+              "maximumSize" : 250.0
+            }, {
+              "method" : "CentroidsInPolygon",
+              "dataLayer" : "JP.Municipalities"
+            } ]
+          }, {
+            "ID" : "census",
+            "alias" : "Standard",
+            "shortDescription" : "This data source for the standard Japan data is MBR. Vintage 2020.",
+            "default" : false,
+            "longDescription" : "<p>This data source is provided by Michael Bauer Research (MBR).</p><p>Data are available on internationally comparable geographical levels. Data are compiled on administrative, postcode and micro levels compatible to existing available boundaries.</p><p>To furnish users with a broad variety of data, various indicators for regional demand are compiled:</p><ul><li>Population</li><li>Extended Sociodemographics (households, household size, households by type, sex and age, education, marital status and unemployed)</li><li>Households by Income</li><li>Purchasing Power (disposable household income)</li><li>Consumer Spending data by product groups</li></ul><p><a href='http://downloads.esri.com/esri_content_doc/dbl/int/mb-research_notes.pdf' target='_blank'>Learn more.</a></p>",
+            "locales" : [ "en" ],
+            "datasets" : [ "JPN_MBR_2020" ],
+            "levelsInfo" : {
+              "geographyLevels" : [ "Country", "Prefectures", "Municipalities", "Blocks" ]
+            },
+            "variablesInfo" : {
+              "categories" : [ "Age", "Education", "Households", "Income", "Key Facts", "Marital Status", "Population", "Spending" ],
+              "dataBrowserVariableCount" : 121
+            },
+            "populationToPolygonSizeRating" : 1.11,
+            "apportionmentConfidence" : 1.41,
+            "apportionmentThresholds" : [ {
+              "method" : "BlockApportion",
+              "dataLayer" : "JP.Blocks",
+              "pointsLayer" : "JP.BlockPoints",
+              "maximumSize" : 150.0
+            }, {
+              "method" : "CentroidsInPolygon",
+              "dataLayer" : "JP.Blocks",
+              "maximumSize" : 250.0
+            }, {
+              "method" : "CentroidsInPolygon",
+              "dataLayer" : "JP.Municipalities"
+            } ]
+          } ],
+          "defaultDataCollection" : "KeyGlobalFacts",
+          "dataCollections" : "",
+          "defaultReportTemplate" : "Japan Population Summary (Esri Japan)",
+          "currencyCode" : "JPY",
+          "currencyName" : "Japanese Yen",
+          "currencySymbol" : "¥",
+          "currencyFormat" : "¥0;-¥0"
+        } ]
+      }
+order: 1000

@@ -1,0 +1,11 @@
+$kind: http-request
+description: "[API Documentation 2.6.3](http://docs.ckan.org/en/ckan-2.6.3/api/index.html#ckan.logic.action.get.organization_list_for_user)"
+url: "{{CKAN_API}}/group_revision_list?id=proj-0"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: id
+    value: proj-0
+    description: REQUIRED (string) – the name or id of the group
+order: 2000

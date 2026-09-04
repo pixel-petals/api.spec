@@ -1,0 +1,26 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/last-mile-delivery/#last-mile-delivery-with-zones)
+url: https://logistics.arcgis.com/arcgis/rest/services/World/VehicleRoutingProblem/GPServer/SolveLastMileDelivery/submitJob
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    orders: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/LMD_Dublin_orders/FeatureServer/0"}'
+    depots: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/LMD_Dublin_depots/FeatureServer/0"}'
+    routes: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/LMD_Dublin_Routes/FeatureServer/0"}'
+    zones: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/LMD_Dublin_zones/FeatureServer/0"}'
+    earliest_route_start_time: 17:00:00
+    earliest_route_start_date: 2025-01-22
+    max_route_total_time: "1"
+    time_units: Hours
+    analysis_region: Europe
+    travel_mode: '{"attributeParameterValues": [{"attributeName": "TruckTravelTime", "parameterName": "Vehicle Maximum Speed (km/h)", "value": 0}, {"attributeName": "Avoid Carpool Roads", "parameterName": "Restriction Usage", "value": "PROHIBITED"}, {"attributeName": "Avoid Express Lanes", "parameterName": "Restriction Usage", "value": "PROHIBITED"}, {"attributeName": "Avoid Gates", "parameterName": "Restriction Usage", "value": "AVOID_MEDIUM"}, {"attributeName": "Avoid Private Roads", "parameterName": "Restriction Usage", "value": "AVOID_MEDIUM"}, {"attributeName": "Avoid Truck Restricted Roads", "parameterName": "Restriction Usage", "value": "AVOID_HIGH"}, {"attributeName": "Avoid Unpaved Roads", "parameterName": "Restriction Usage", "value": "AVOID_HIGH"}, {"attributeName": "Driving a Truck", "parameterName": "Restriction Usage", "value": "PROHIBITED"}, {"attributeName": "Roads Under Construction Prohibited", "parameterName": "Restriction Usage", "value": "PROHIBITED"}, {"attributeName": "Through Traffic Prohibited", "parameterName": "Restriction Usage", "value": "AVOID_HIGH"}, {"attributeName": "Use Preferred Truck Routes", "parameterName": "Restriction Usage", "value": "PREFER_HIGH"}], "description": "Models basic truck travel by preferring designated truck routes, and finds solutions that optimize travel time. Routes must obey one-way roads, avoid illegal turns, and so on. When you specify a start time, dynamic travel speeds based on traffic are used where it is available, up to the legal truck speed limit.", "distanceAttributeName": "Kilometers", "id": "ZzzRtYcPLjXFBKwr", "impedanceAttributeName": "TruckTravelTime", "name": "Trucking Time", "restrictionAttributeNames": ["Avoid Carpool Roads", "Avoid Express Lanes", "Avoid Gates", "Avoid Private Roads", "Avoid Truck Restricted Roads", "Avoid Unpaved Roads", "Driving a Truck", "Roads Under Construction Prohibited", "Through Traffic Prohibited", "Use Preferred Truck Routes"], "simplificationTolerance": 10, "simplificationToleranceUnits": "esriMeters", "timeAttributeName": "TruckTravelTime", "type": "TRUCK", "useHierarchy": true, "uturnAtJunctions": "esriNFSBNoBacktrack"}'
+    route_shape: True Shape with Measures
+scripts:
+  - type: afterResponse
+    code: pm.collectionVariables.set("LMD_JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

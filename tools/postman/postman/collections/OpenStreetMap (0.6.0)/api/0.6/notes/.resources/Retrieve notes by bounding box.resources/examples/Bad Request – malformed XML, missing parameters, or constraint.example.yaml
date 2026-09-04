@@ -1,0 +1,25 @@
+$kind: http-example
+name: Bad Request – malformed XML, missing parameters, or constraint violation
+request:
+  url: "{{baseUrl}}/api/0.6/notes?bbox=string&limit=100&closed=7"
+  method: GET
+  queryParams:
+    - key: bbox
+      value: string
+      description: Bounding box as left,bottom,right,top
+    - key: limit
+      value: "100"
+      description: Max number of results (default 100, max 10000)
+    - key: closed
+      value: "7"
+      description: Number of days a closed note is still returned (-1=all, 0=open only, default=7)
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: text
+    content: ""
+order: 2000

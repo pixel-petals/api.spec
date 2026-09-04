@@ -1,0 +1,21 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/search/search-items/#search-by-date)
+url: "https://www.arcgis.com/sharing/rest/search?f=json&q=modified: [1259692864000 TO 1260384065000]&num=10&sort_field=modified&sort_order=desc"
+method: GET
+queryParams:
+  - key: f
+    value: json
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    disabled: true
+    description: If accessing a private item.
+  - key: q
+    value: "modified: [1259692864000 TO 1260384065000]"
+  - key: num
+    value: "10"
+  - key: sort_field
+    value: modified
+  - key: sort_order
+    value: desc
+examples: ./.resources/Search by date.resources/examples
+order: 7000

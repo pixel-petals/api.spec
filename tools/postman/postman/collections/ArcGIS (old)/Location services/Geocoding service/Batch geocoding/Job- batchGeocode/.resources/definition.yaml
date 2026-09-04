@@ -1,0 +1,4 @@
+$kind: collection
+name: "Job: batchGeocode"
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/batch-geocoding/#job-geocode-a-file-of-addresses)
+order: 2000

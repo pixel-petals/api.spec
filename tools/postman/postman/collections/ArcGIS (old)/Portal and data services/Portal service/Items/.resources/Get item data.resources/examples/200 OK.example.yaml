@@ -1,0 +1,74 @@
+$kind: http-example
+request:
+  url: https://www.arcgis.com/sharing/rest/content/items/5a5147abe878444cbac68dea9f2f64e7/data?f=pjson
+  method: GET
+  queryParams:
+    - key: f
+      value: pjson
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      disabled: true
+      description: If accessing a private item.
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Wed, 12 Jan 2022 21:50:52 GMT
+    - key: Content-Type
+      value: text/plain;charset=utf-8
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Origin
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Strict-Transport-Security
+      value: max-age=31536000
+    - key: ETag
+      value: 16d6fb3b3d8--gzip
+    - key: Cache-Control
+      value: max-age=0, must-revalidate
+    - key: Content-Encoding
+      value: gzip
+  body:
+    type: json
+    content: |-
+      {
+          "operationalLayers": [
+              {
+                  "id": "Seven_Natural_Wonders_of_the_World_6051",
+                  "layerType": "ArcGISFeatureLayer",
+                  "url": "https://services.arcgis.com/uCXeTVveQzP4IIcx/arcgis/rest/services/Seven_Natural_Wonders_of_the_World/FeatureServer/0",
+                  "visibility": true,
+                  "opacity": 1,
+                  "title": "Seven Natural Wonders of the World",
+                  "itemId": "da7cda8d38224b368bc74cc7d6f05d0f"
+              }
+          ],
+          "baseMap": {
+              "baseMapLayers": [
+                  {
+                      "id": "defaultBasemap",
+                      "layerType": "ArcGISTiledMapServiceLayer",
+                      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer",
+                      "visibility": true,
+                      "opacity": 1,
+                      "title": "Topographic"
+                  }
+              ],
+              "title": "Topographic"
+          },
+          "spatialReference": {
+              "wkid": 102100,
+              "latestWkid": 3857
+          },
+          "authoringApp": "WebMapViewer",
+          "authoringAppVersion": "5.4",
+          "version": "2.11"
+      }
+order: 1000

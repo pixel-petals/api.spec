@@ -1,0 +1,10 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/feature-services/query-table-features/#sql-query-for-features)
+url: https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads_data/FeatureServer/0/query?where=TRL_NAME LIKE '%Medea%'&outFields=*&f=json
+method: GET
+queryParams:
+  where: TRL_NAME LIKE '%Medea%'
+  outFields: "*"
+  f: json
+examples: ./.resources/Filter a hosted table.resources/examples
+order: 2000

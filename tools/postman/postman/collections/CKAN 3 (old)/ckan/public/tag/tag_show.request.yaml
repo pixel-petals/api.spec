@@ -1,0 +1,20 @@
+$kind: http-request
+description: "[API Documentation 2.6.3](http://docs.ckan.org/en/ckan-2.6.3/api/index.html#ckan.logic.action.get.organization_list_for_user)"
+url: "{{CKAN_API}}/tag_show?id=color"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: id
+    value: color
+    description: (string) – the name or id of the tag
+  - key: vocabulary_id
+    value: null
+    disabled: true
+    description: (string) – the id or name of the tag vocabulary that the tag is in - if it is not specified it will assume it is a free tag. (optional)
+  - key: include_datasets
+    value: null
+    disabled: true
+    description: "(bool) – include a list of the tag’s datasets. (Up to a limit of 1000 - for more flexibility, use package_search - see package_search() for an example.) (optional, default: False)"
+order: 2000

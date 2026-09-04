@@ -1,0 +1,1769 @@
+$kind: http-example
+request:
+  url: https://{{logistics-service}}.arcgis.com/arcgis/rest/services/World/Route/GPServer/FindRoutes/?f=json
+  method: POST
+  queryParams:
+    f: json
+  body:
+    type: urlencoded
+    content:
+      token: "{{ACCESS_TOKEN}}"
+      f: json
+      stops: "{'features':[{'geometry':{'x':-118.268579,'y':34.052291},'attributes':{'Name':'Los Angeles, CA','RouteName':'Route A'}},{'geometry':{'x':-74.009023,'y':40.709975},'attributes':{'Name':'New York, NY','RouteName':'Route A'}},{'geometry':{'x':-87.648549,'y':41.758688},'attributes':{'Name':'Chicago, IL','RouteName':'Route B'}},{'geometry':{'x':-122.320028,'y':47.591046},'attributes':{'Name':'Seattle, WA','RouteName':'Route B'}},{'geometry':{'x':-71.057477,'y':42.359483},'attributes':{'Name':'Boston, MA','RouteName':'Route C'}},{'geometry':{'x':-95.368848,'y':29.759222},'attributes':{'Name':'Houston, TX','RouteName':'Route C'}},{'geometry':{'x':-80.220762,'y':25.761156},'attributes':{'Name':'Miami, FL','RouteName':'Route D'}},{'geometry':{'x':-122.651334,'y':45.51567},'attributes':{'Name':'Portland, OR','RouteName':'Route D'}},{'geometry':{'x':-112.074247,'y':33.446554},'attributes':{'Name':'Phoenix, AZ','RouteName':'Route E'}},{'geometry':{'x':-75.161557,'y':39.952057},'attributes':{'Name':'Philadelphia, PA','RouteName':'Route E'}}]}"
+      travel_mode: "{'attributeParameterValues':[{'attributeName':'Use Preferred Truck Routes','parameterName':'Restriction Usage','value':'PREFER_HIGH'},{'attributeName':'Avoid Unpaved Roads','parameterName':'Restriction Usage','value':'AVOID_HIGH'},{'attributeName':'Avoid Private Roads','parameterName':'Restriction Usage','value':'AVOID_MEDIUM'},{'attributeName':'Driving a Truck','parameterName':'Restriction Usage','value':'PROHIBITED'},{'attributeName':'Roads Under Construction Prohibited','parameterName':'Restriction Usage','value':'PROHIBITED'},{'attributeName':'Avoid Gates','parameterName':'Restriction Usage','value':'AVOID_MEDIUM'},{'attributeName':'Avoid Express Lanes','parameterName':'Restriction Usage','value':'PROHIBITED'},{'attributeName':'Avoid Carpool Roads','parameterName':'Restriction Usage','value':'PROHIBITED'},{'attributeName':'Avoid Truck Restricted Roads','parameterName':'Restriction Usage','value':'AVOID_HIGH'},{'attributeName':'TruckTravelTime','parameterName':'Vehicle Maximum Speed (km/h)','value':0}],'description':'Models basic truck travel by preferring designated truck routes, and finds solutions that optimize travel time. Routes must obey one-way roads, avoid illegal turns, and so on. When you specify a start time, dynamic travel speeds based on traffic are used where it is available, up to the legal truck speed limit.','distanceAttributeName':'Kilometers','id':'ZzzRtYcPLjXFBKwr','impedanceAttributeName':'TruckTravelTime','name':'Trucking Time','restrictionAttributeNames':['Avoid Carpool Roads','Avoid Express Lanes','Avoid Gates','Avoid Private Roads','Avoid Truck Restricted Roads','Avoid Unpaved Roads','Driving a Truck','Roads Under Construction Prohibited','Use Preferred Truck Routes'],'simplificationTolerance':10,'simplificationToleranceUnits':'esriMeters','timeAttributeName':'TruckTravelTime','type':'TRUCK','useHierarchy':true,'uturnAtJunctions':'esriNFSBNoBacktrack'}"
+      populate_directions: "false"
+      route_shape: None
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 17 Nov 2021 10:25:33 GMT
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 17-Nov-2021 10:26:20 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"57069d83"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "name": "FindRoutes",
+          "displayName": "FindRoutes",
+          "description": "Determines the shortest paths to visit the input stops and returns the driving directions, information about the visited stops, and the route paths, including travel time and distance., The tool is capable of finding routes that visit several input stops in a sequence you predetermine or in the sequence that minimizes overall travel. You can group the input stops into different routes using the RouteName field, and the tool will output one route for each group of stops, allowing you to generate routes for many vehicles in a single solve operation., para, For up-to-date information about this tool, see the most recent edition of this topic in the web help. ArcGIS Online makes regular functional updates to services such as this, so the installed help may become outdated.",
+          "category": "",
+          "helpUrl": "https://localhost:6443/arcgis/rest/directories/arcgisoutput/World/Route_GPServer/World_Route/FindRoutes.htm",
+          "executionType": "esriExecutionTypeAsynchronous",
+          "parameters": [
+              {
+                  "name": "Stops",
+                  "dataType": "GPFeatureRecordSetLayer",
+                  "displayName": "Stops",
+                  "description": "Specifies the locations the output route or routes will visit. You can add up to \n10,000 stops and assign up to 150 stops to a single route. (Assign stops to routes using the RouteName attribute.)When specifying the stops, you can set properties for each—such as its name or service time— using the following attributes:NameThe name of the stop. The name is used in the driving\ndirections. If the name is not specified, a unique name prefixed\nwith Location is automatically generated in the output stops, routes, and\ndirections.RouteNameThe name of the route to which the stop is assigned. Assigning the same route name to different stops causes those stops to be grouped together and visited by the same route. You can generate many routes in a single solve by assigning unique route names to different groups of stops. You can group up to 150 stops into one route.SequenceThe output routes will visit the stops in the order you specify with this attribute. In a group of stops that have the same RouteName value, the sequence number should be greater than 0 but not greater than the total number of stops. Also, the sequence number should not be duplicated. If Reorder Stops To Find Optimal Routes is checked (True), all but possibly the first and last sequence values for each route name are ignored so the tool can find the sequence that minimizes overall travel for each route. (The settings for Preserve Ordering of Stops and Return to Start determine whether the first or last sequence values for each route are ignored.)AdditionalTimeThe amount of time spent at the stop, which is added to the total time of the route. The default value is 0. The units for this attribute value are specified by the Measurement Units parameter. The attribute value is included in the analysis only when the measurement units are time based.  You can account for the extra time it takes at the stop to complete a task, such as to repair an appliance, deliver a package, or inspect the premises.AdditionalDistanceThe extra distance traveled at the stops, which is added to the total distance of the route. The default value is 0.The units for this attribute value are specified by the Measurement Units parameter. The attribute value is included in the analysis only when the measurement units are distance based. Generally, the location of a stop, such as a home, isn't exactly on the street; it is set back somewhat from the road. This attribute value can be used to model the distance between the actual stop location and its location on the street if it is important to include that distance in the total travel distance.AdditionalCostThe extra cost spent at the stop, which is added to the total cost of the route. The default value is 0. This attribute value should be used when the travel mode for the analysis uses an impedance attribute that is neither time based nor distance based. The units for the attribute values are interpreted to be in unknown units. TimeWindowStartThe earliest time the stop can be visited. By specifying a start and end time for a stop's time window, you are defining when a route should visit the stop. When the travel mode for the analysis uses an impedance attribute that is time based, by specifying time-window values the analysis will find a solution that minimizes overall travel and reaches the stop within the prescribed time window.  Make sure you specify the value as a date and time value, such as 8/12/2015 12:15 PM.  When solving a problem that spans multiple time zones, time-window values refer to the time zone in which the stop is located.This field can contain a null value; a null value\nindicates that a route can arrive at any time before the time indicated in the TimeWindowEnd attribute. If a null value is also present in TimeWindowEnd, a route can visit the stop at any time.TimeWindowEndThe latest time the stop can be visited. By specifying a start and end time for a stop's time window, you are defining when a route will visit the stop. When the travel mode for the analysis uses an impedance attribute that is time based, specifying time-window values will cause the analysis to find a solution that minimizes overall travel and reaches the stop within the prescribed time window.   Make sure you specify the value as a date and time value, such as 8/12/2015 12:15 PM. When solving a problem that spans multiple time zones, time-window values refer to the time zone in which the stop is located.This field can contain a null value; a null value\nindicates that a route can arrive at any time after the time indicated in the TimeWindowStart attribute. If a null value is also present in TimeWindowStart, a route can visit the stop at any time.CurbApproachSpecifies the direction a vehicle may arrive at and depart\nfrom the stop. The field value is specified as one of the\nfollowing integers (use the numeric code, not the name in parentheses):  0 (Either side of vehicle)—The vehicle can approach and depart the stop in either direction, so a U-turn is allowed at the stop. This setting can be chosen if it is possible and practical for a vehicle to turn around at the stop. This decision may depend on the width of the road and the amount of traffic or whether the stop has a parking lot where vehicles can enter and turn around. 1 (Right side of vehicle)—When the vehicle approaches and departs the stop, the curb must be on the right side of the vehicle. A U-turn is prohibited. This is typically used for vehicles such as buses that must arrive with the bus stop on the right-hand side. 2 (Left side of vehicle)—When the vehicle approaches and departs\nthe stop, the curb must be on the left side of the vehicle. A\nU-turn is prohibited. This is typically used for vehicles such as buses that must arrive with the bus stop on the left-hand side.  3 (No U-Turn)—When\nthe vehicle approaches the stop, the curb can be on either side\nof the vehicle, however, the vehicle must depart without turning\naround. The CurbApproach attribute is designed to work with both kinds of national driving standards: right-hand traffic (United States) and left-hand traffic (United Kingdom). First, consider a stop on the left side of a vehicle. It is always on the left side regardless of whether the vehicle travels on the left or right half of the road. What may change with national driving standards is your decision to approach a stop from one of two directions, that is, so it ends up on the right or left side of the vehicle. For example, if you want to arrive at a stop and not have a lane of traffic between the vehicle and the stop, choose 1 (Right side of vehicle)  in the United States and 2 (Left side of vehicle)  in the United Kingdom.LocationType Specifies the stop type. The field value is specified as one of the following integers (use the numeric code, not the name in the parentheses): 0 (Stop)—A location that the route will visit. This is the default.1 (Waypoint)—A location that the route will travel through without making a stop. Waypoints can be used to force the route to take a specific path (to go through the waypoint) without being considered an actual stop. Waypoints do not appear in directions.BearingThe direction in which a point is moving. The units are degrees and are measured clockwise from true north. This field is used in conjunction with the BearingTol field. Bearing data is usually sent automatically from a mobile device equipped with a GPS receiver. Try to include bearing data if you are loading an input location that is moving, such as a pedestrian or a vehicle. Using this field tends to prevent adding locations to the wrong edges, which can occur when a vehicle is near an intersection or an overpass, for example. Bearing also helps the tool determine on which side of the street the point is. BearingTolThe bearing tolerance value creates a range of acceptable bearing values when locating moving points on an edge using the Bearing field. If the Bearing field value is within the range of acceptable values that are generated from the bearing tolerance on an edge, the point can be added as a network location there; otherwise, the closest point on the next-nearest edge is evaluated. The units are in degrees, and the default value is 30. Values must be greater than 0 and less than 180. A value of 30 means that when Network Analyst  attempts to add a network location on an edge, a range of acceptable bearing values is generated 15 degrees to either side of the edge (left and right) and in both digitized directions of the edge. NavLatencyThis field is only used in the solve process if the Bearing and BearingTol fields also have values; however, entering a NavLatency field value is optional, even when values are present in Bearing and BearingTol. NavLatency indicates how much cost is expected to elapse from the moment GPS information is sent from a moving vehicle to a server and the moment the processed route is received by the vehicle's navigation device. The units of NavLatency are the same as the units of the impedance attribute.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": {
+                      "displayFieldName": "",
+                      "geometryType": "esriGeometryPoint",
+                      "spatialReference": {
+                          "wkid": 4326,
+                          "latestWkid": 4326
+                      },
+                      "fields": [
+                          {
+                              "name": "OBJECTID",
+                              "type": "esriFieldTypeOID",
+                              "alias": "OBJECTID"
+                          },
+                          {
+                              "name": "Name",
+                              "type": "esriFieldTypeString",
+                              "alias": "Name",
+                              "length": 500
+                          },
+                          {
+                              "name": "RouteName",
+                              "type": "esriFieldTypeString",
+                              "alias": "Route Name",
+                              "length": 1024
+                          },
+                          {
+                              "name": "Sequence",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "Sequence"
+                          },
+                          {
+                              "name": "AdditionalTime",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Additional Time"
+                          },
+                          {
+                              "name": "AdditionalDistance",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Additional Distance"
+                          },
+                          {
+                              "name": "TimeWindowStart",
+                              "type": "esriFieldTypeDate",
+                              "alias": "Time Window Start",
+                              "length": 8
+                          },
+                          {
+                              "name": "TimeWindowEnd",
+                              "type": "esriFieldTypeDate",
+                              "alias": "Time Window End",
+                              "length": 8
+                          },
+                          {
+                              "name": "CurbApproach",
+                              "type": "esriFieldTypeSmallInteger",
+                              "alias": "Curb Approach"
+                          },
+                          {
+                              "name": "LocationType",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "Location Type"
+                          },
+                          {
+                              "name": "AdditionalCost",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Additional Cost"
+                          }
+                      ],
+                      "features": [],
+                      "exceededTransferLimit": false
+                  },
+                  "parameterType": "esriGPParameterTypeRequired",
+                  "category": ""
+              },
+              {
+                  "name": "Measurement_Units",
+                  "dataType": "GPString",
+                  "displayName": "Measurement Units",
+                  "description": "Specifies the units that will be used to measure and report the total travel time or travel distance for the output routes. The units you choose for this parameter determine whether the tool will measure distance or time to find the best routes. Choose a time unit to minimize travel time for your chosen travel mode (driving or walking time, for instance). To minimize travel distance for the given travel mode, choose a distance unit. Your choice also determines in which units the tool will report total time or distance in the results. Meters—The linear unit is meters.Kilometers—The linear unit is kilometers.Feet—The linear unit is feet.Yards—The linear unit is yards.Miles—The linear unit is miles.Nautical Miles—The linear unit is nautical miles.Seconds—The time unit is seconds.Minutes—The time unit is minutes.Hours—The time unit is hours.Days—The time unit is days.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "Minutes",
+                  "parameterType": "esriGPParameterTypeRequired",
+                  "category": "",
+                  "choiceList": [
+                      "Meters",
+                      "Kilometers",
+                      "Feet",
+                      "Yards",
+                      "Miles",
+                      "NauticalMiles",
+                      "Seconds",
+                      "Minutes",
+                      "Hours",
+                      "Days"
+                  ]
+              },
+              {
+                  "name": "Analysis_Region",
+                  "dataType": "GPString",
+                  "displayName": "Analysis Region",
+                  "description": "The region in which the analysis will be performed. If a value is not specified for this parameter, the tool\nwill automatically calculate the region name based on the location\nof the input points. Setting the name of the region is required only if the automatic detection of the region name is not accurate for your inputs.To specify a region, use one of\nthe following values:\n\t\t\t\t\t\tEurope—The analysis region is Europe.Japan—The analysis region is Japan.Korea—The analysis region is Korea.Middle East And Africa—The analysis region is Middle East and Africa.North America—The analysis region is North America.South America—The analysis region is South America.South Asia—The analysis region is South Asia.Thailand—The analysis region is Thailand.The following region names are no longer supported and will be removed in future releases. If you specify one of the deprecated region names, the tool automatically assigns a supported region name for your region.Greece redirects to EuropeIndia redirects to SouthAsiaOceania redirects to SouthAsiaSouthEastAsia redirects to SouthAsiaTaiwan redirects to SouthAsia",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "",
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Advanced Analysis",
+                  "choiceList": [
+                      "Europe",
+                      "Japan",
+                      "Korea",
+                      "MiddleEastAndAfrica",
+                      "NorthAmerica",
+                      "SouthAmerica",
+                      "SouthAsia",
+                      "Thailand"
+                  ]
+              },
+              {
+                  "name": "Reorder_Stops_to_Find_Optimal_Routes",
+                  "dataType": "GPBoolean",
+                  "displayName": "Reorder Stops to Find Optimal Routes",
+                  "description": "Specifies whether to visit the stops in the order you define or the order the tool determines will minimize overall travel. Checked (True)—Stops will be visited in the order determined by the tool to minimize overall travel distance or time. It can reorder stops and account for time windows at stops. Additional parameters allow you to preserve the first or last stops while allowing the tool to reorder the intermediary stops.Unchecked (False)—Stops are visited in the order you define. You can set the order of stops using a Sequence attribute in the input stops features or let the sequence be determined by the Object ID of the stops. This is the default.  Finding the optimal stop order and the best routes is commonly known as solving the traveling salesperson problem (TSP).",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": false,
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": ""
+              },
+              {
+                  "name": "Preserve_Terminal_Stops",
+                  "dataType": "GPString",
+                  "displayName": "Preserve Terminal Stops",
+                  "description": "Specifies how terminal stops will be preserved. When Reorder Stops to Find Optimal Routes is checked (or True), you can preserve the starting or ending stops, and the tool can reorder the rest. The first and last stops are determined by their Sequence attribute values or, if the Sequence values are null, by their Object ID values.Preserve First—The tool won't reorder the first stop. Choose this option if you are starting from a known location, such as your home, headquarters, or current location.Preserve Last—The tool won't reorder the last stop. The output routes may start from any stop feature but must end at the predetermined last stop.Preserve First and Last—The tool won't reorder the first and last stops.Preserve None—The tool may reorder any stop, including the first and last stops. The route may start or end at any of the stop features.Preserve Terminal Stops is ignored when Reorder Stops to Find Optimal Routes is unchecked (or False).",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "Preserve First",
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "",
+                  "choiceList": [
+                      "Preserve First",
+                      "Preserve Last",
+                      "Preserve First and Last",
+                      "Preserve None"
+                  ]
+              },
+              {
+                  "name": "Return_to_Start",
+                  "dataType": "GPBoolean",
+                  "displayName": "Return to Start",
+                  "description": "Specifies whether routes will start and end at the same location. With this option, you can avoid duplicating the first stop feature and sequencing the duplicate stop at the end.The starting location of the route is the stop feature with the lowest value in the Sequence attribute. If the Sequence values are null, it is the stop feature with the lowest Object ID value.Checked (True)—The route will start and end at the first stop feature. When Reorder Stops to Find Optimal Routes and Return to Start are both checked (or True), Preserve Terminal Stops must be set to Preserve First. This is the default value.Unchecked (False)—The route won't start and end at the first stop feature.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": false,
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": ""
+              },
+              {
+                  "name": "Use_Time_Windows",
+                  "dataType": "GPBoolean",
+                  "displayName": "Use Time Windows",
+                  "description": "Specifies whether time windows will be honored. Check this option (or set it to True) if any input stops have time windows that specify when the route will reach the stop. You can add time windows to input stops by entering time values in the TimeWindowStart and TimeWindowEnd attributes.Checked (True)—The input stops have time windows, and you want the tool to try to honor them.Unchecked (False)—The input stops don't have time windows, or if they do, you don't want the tool to try to honor them. This is the default value.The tool will take slightly longer to run when Use Time Windows is checked (or True), even when none of the input stops have time windows, so it is recommended that you uncheck this option (set to False) if possible.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": false,
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Advanced Analysis"
+              },
+              {
+                  "name": "Time_of_Day",
+                  "dataType": "GPDate",
+                  "displayName": "Time of Day",
+                  "description": "The time and date the routes will\nbegin. If you are modeling the driving travel mode and specify the current date and time as the value\nfor this parameter, the tool will use live traffic conditions to\nfind the best routes, and the total travel time will be based\non traffic conditions. Specifying a time of day results in more accurate\nroutes and estimations of travel times because the\ntravel times account for the traffic conditions that are applicable\nfor that date and time.The Time Zone for Time of Day parameter specifies whether this time and date refer to UTC or the time zone in which the stop is located.The tool ignores this parameter when Measurement Units isn't set to a time-based unit.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": null,
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": ""
+              },
+              {
+                  "name": "Time_Zone_for_Time_of_Day",
+                  "dataType": "GPString",
+                  "displayName": "Time Zone for Time of Day",
+                  "description": "Specifies the time zone of the Time of Day parameter.Geographically Local—The Time of Day parameter refers to the time zone in which the first stop of a route is located. If you are generating many routes that start in multiple time zones, the start times are staggered in coordinated universal time (UTC). For example, a Time of Day value of 10:00 a.m., 2 January, means a start time of 10:00 a.m. eastern standard time (UTC-3:00) for routes beginning in the eastern time zone and 10:00 a.m. central standard time (UTC-4:00) for routes beginning in the central time zone. The start times are offset by one hour in UTC. The arrive and depart times and dates recorded in the output Stops feature class will refer to the local time zone of the first stop for each route.UTC—The Time of Day parameter refers to UTC. Choose this option if you want to generate a route for a specific time, such as now, but aren't certain in which time zone the first stop will be located. If you are generating many routes spanning multiple time zones, the start times in UTC are simultaneous. For example, a Time of Day value of 10:00 a.m., 2 January, means a start time of 5:00 a.m. eastern standard time (UTC-5:00) for routes beginning in the eastern time zone and 4:00 a.m. central standard time (UTC-6:00) for routes beginning in the central time zone. Both routes start at 10:00 a.m. UTC. The arrive and depart times and dates recorded in the output Stops feature class will refer to UTC.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "Geographically Local",
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "",
+                  "choiceList": [
+                      "Geographically Local",
+                      "UTC"
+                  ]
+              },
+              {
+                  "name": "UTurn_at_Junctions",
+                  "dataType": "GPString",
+                  "displayName": "UTurn at Junctions",
+                  "description": "Specifies the U-turn policy at junctions. Allowing U-turns implies the solver can turn around at a junction and double back on the same street.\n\n Given that junctions represent street intersections and dead ends, different vehicles  may be able to turn around at some junctions but not at others—it depends on whether the junction represents an intersection or dead end. To accommodate this, the U-turn policy parameter is implicitly specified by the number of edges that connect to the junction, which is known as junction valency. The acceptable values for this parameter are listed below; each is followed by a description of its meaning in terms of junction valency. \nAllowed—U-turns are permitted at junctions with any number of connected edges. This is the default value.Not Allowed—U-turns are prohibited at all junctions, regardless of junction valency. Note, however, that U-turns are still permitted at network locations even when this option is chosen; however, you can set the individual network locations' CurbApproach attribute to prohibit U-turns there as well.Allowed only at Dead Ends—U-turns are prohibited at all junctions except those that have only one adjacent edge (a dead end).Allowed only at Intersections and Dead Ends—U-turns are prohibited at junctions where exactly two adjacent edges meet but are permitted at intersections (junctions with three or more adjacent edges) and dead ends (junctions with exactly one adjacent edge).  Often, networks have extraneous junctions in the middle of road segments. This option prevents vehicles from making U-turns at these locations.This parameter is ignored unless Travel Mode is set to Custom.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "Allowed Only at Intersections and Dead Ends",
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Custom Travel Mode",
+                  "choiceList": [
+                      "Allowed",
+                      "Not Allowed",
+                      "Allowed Only at Dead Ends",
+                      "Allowed Only at Intersections and Dead Ends"
+                  ]
+              },
+              {
+                  "name": "Point_Barriers",
+                  "dataType": "GPFeatureRecordSetLayer",
+                  "displayName": "Point Barriers",
+                  "description": "Use this parameter to specify one or more points that will act as temporary\nrestrictions or represent additional time or distance that may be\nrequired to travel on the underlying streets. For example, a point\nbarrier can be used to represent a fallen tree along a street or\na time delay spent at a railroad crossing. The tool imposes a limit of 250 points that can be added\nas barriers.When specifying point barriers, you can set properties for each, such as its name or barrier type, using the following attributes:\n\t\t\t\t\t\t\tName The name of the barrier. BarrierType Specifies whether the point barrier restricts travel\ncompletely or adds time or distance when it is crossed. The value\nfor this attribute is specified as one of the following\nintegers (use the numeric code, not the name in parentheses): 0 (Restriction)—Prohibits travel through the barrier. The barrier\nis referred to as a restriction point barrier since it acts as a\nrestriction. 2 (Added Cost)—Traveling through the barrier increases the travel\ntime or distance by the amount specified in the\nAdditional_Time, Additional_Distance, or Additional_Cost field. This barrier type is\nreferred to as an added cost point barrier.  Additional_Time The added travel time when the\nbarrier is traversed. This field is applicable only for added-cost\nbarriers and when the Measurement Units parameter value is time based. This field\nvalue must be greater than or equal to zero, and its units must be the same as those specified in the\nMeasurement Units parameter. Additional_DistanceThe added distance when the\nbarrier is traversed. This field is applicable only for added-cost\nbarriers and when the Measurement Units parameter value  is distance based. The field value\nmust be greater than or equal to zero, and its units must be the same as those specified in the\nMeasurement Units parameter.Additional_CostThe added cost when the\nbarrier is traversed. This field is applicable only for added-cost\nbarriers when the Measurement Units parameter value is neither time based nor distance based. FullEdgeSpecifies how the restriction point barriers are applied to the edge elements during the analysis. The field value is specified as one of the following integers (use the numeric code, not the name in parentheses):  0 (False)—Permits travel on the edge up to the barrier but not through it. This is the default value.1 (True)—Restricts travel anywhere on the associated edge. CurbApproachSpecifies the direction of traffic that is affected by the barrier. The field value is specified as one of the following integers (use the numeric code, not the name in parentheses): 0 (Either side of vehicle)—The barrier affects travel over the edge in both directions.1 (Right side of vehicle)—Vehicles are only affected if the barrier is on their right side during the approach. Vehicles that traverse the same edge but approach the barrier on their left side are not affected by the barrier. 2 (Left side of vehicle)—Vehicles are only affected if the barrier is on their left side during the approach. Vehicles that traverse the same edge but approach the barrier on their right side are not affected by the barrier. Because junctions are points and don't have a side, barriers on junctions affect all vehicles regardless of the curb approach. The CurbApproach attribute works with both types of national driving standards: right-hand traffic (United States) and left-hand traffic (United Kingdom). First, consider a facility on the left side of a vehicle. It is always on the left side regardless of whether the vehicle travels on the left or right half of the road. What may change with national driving standards is your decision to approach a facility from one of two directions, that is, so it ends up on the right or left side of the vehicle. For example, to arrive at a facility and not have a lane of traffic between the vehicle and the facility, choose 1 (Right side of vehicle) in the United States and 2 (Left side of vehicle) in the United Kingdom.BearingThe direction in which a point is moving. The units are degrees and are measured clockwise from true north. This field is used in conjunction with the BearingTol field. Bearing data is usually sent automatically from a mobile device equipped with a GPS receiver. Try to include bearing data if you are loading an input location that is moving, such as a pedestrian or a vehicle. Using this field tends to prevent adding locations to the wrong edges, which can occur when a vehicle is near an intersection or an overpass, for example. Bearing also helps the tool determine on which side of the street the point is. BearingTolThe bearing tolerance value creates a range of acceptable bearing values when locating moving points on an edge using the Bearing field. If the Bearing field value is within the range of acceptable values that are generated from the bearing tolerance on an edge, the point can be added as a network location there; otherwise, the closest point on the next-nearest edge is evaluated. The units are in degrees, and the default value is 30. Values must be greater than 0 and less than 180. A value of 30 means that when Network Analyst  attempts to add a network location on an edge, a range of acceptable bearing values is generated 15 degrees to either side of the edge (left and right) and in both digitized directions of the edge. NavLatencyThis field is only used in the solve process if the Bearing and BearingTol fields also have values; however, entering a NavLatency field value is optional, even when values are present in Bearing and BearingTol. NavLatency indicates how much cost is expected to elapse from the moment GPS information is sent from a moving vehicle to a server and the moment the processed route is received by the vehicle's navigation device. The units of NavLatency are the same as the units of the impedance attribute.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": {
+                      "displayFieldName": "",
+                      "geometryType": "esriGeometryPoint",
+                      "spatialReference": {
+                          "wkid": 4326,
+                          "latestWkid": 4326
+                      },
+                      "fields": [
+                          {
+                              "name": "OBJECTID",
+                              "type": "esriFieldTypeOID",
+                              "alias": "OBJECTID"
+                          },
+                          {
+                              "name": "Name",
+                              "type": "esriFieldTypeString",
+                              "alias": "Name",
+                              "length": 500
+                          },
+                          {
+                              "name": "BarrierType",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "Barrier Type"
+                          },
+                          {
+                              "name": "Additional_Time",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Additional Time"
+                          },
+                          {
+                              "name": "Additional_Distance",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Additional Distance"
+                          },
+                          {
+                              "name": "AdditionalCost",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Additional Cost"
+                          },
+                          {
+                              "name": "CurbApproach",
+                              "type": "esriFieldTypeSmallInteger",
+                              "alias": "Curb Approach"
+                          },
+                          {
+                              "name": "FullEdge",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "Full Edge"
+                          }
+                      ],
+                      "features": [],
+                      "exceededTransferLimit": false
+                  },
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Barriers"
+              },
+              {
+                  "name": "Line_Barriers",
+                  "dataType": "GPFeatureRecordSetLayer",
+                  "displayName": "Line Barriers",
+                  "description": "Use this parameter to specify one or more lines that prohibit travel anywhere\nthe lines intersect the streets. For example, a parade or protest\nthat blocks traffic across several street segments can be modeled\nwith a line barrier. A line barrier can also quickly fence off\nseveral roads from being traversed, thereby channeling possible\nroutes away from undesirable parts of the street\nnetwork. The tool imposes a limit on the number of streets you can\nrestrict using the Line Barriers parameter. While there is no limit to\nthe number of lines you can specify as line barriers, the combined\nnumber of streets intersected by all the lines cannot exceed\n500.When specifying the line barriers, you can set name and barrier type properties for each using the following attributes:\n\t\t\t\t\t\t\tName The name of the barrier.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": {
+                      "displayFieldName": "",
+                      "geometryType": "esriGeometryPolyline",
+                      "spatialReference": {
+                          "wkid": 4326,
+                          "latestWkid": 4326
+                      },
+                      "fields": [
+                          {
+                              "name": "OBJECTID",
+                              "type": "esriFieldTypeOID",
+                              "alias": "OBJECTID"
+                          },
+                          {
+                              "name": "Name",
+                              "type": "esriFieldTypeString",
+                              "alias": "Name",
+                              "length": 500
+                          },
+                          {
+                              "name": "SHAPE_Length",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "SHAPE_Length"
+                          }
+                      ],
+                      "features": [],
+                      "exceededTransferLimit": false
+                  },
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Barriers"
+              },
+              {
+                  "name": "Polygon_Barriers",
+                  "dataType": "GPFeatureRecordSetLayer",
+                  "displayName": "Polygon Barriers",
+                  "description": "Use this parameter to specify polygons that either completely restrict travel or\nproportionately scale the time or distance required to travel on\nthe streets intersected by the polygons. The service imposes a limit on the number of streets you\ncan restrict using the Polygon Barriers parameter. While there is\nno limit to the number of polygons you can specify as polygon\nbarriers, the combined number of streets intersected by all the\npolygons cannot exceed 2,000.When specifying the polygon barriers, you can set properties for each, such as its name or barrier type, using the following attributes:\n\t\t\t\t\t\t\tName The name of the barrier. BarrierType Specifies whether the barrier restricts travel completely\nor scales the cost (such as time or distance) for traveling through it. The field\nvalue is specified as one of the following integers (use the numeric code, not the name in parentheses): 0 (Restriction)—Prohibits traveling through any part of the barrier.\nThe barrier is referred to as a restriction polygon barrier since it\nprohibits traveling on streets intersected by the barrier. One use\nof this type of barrier is to model floods covering areas of the\nstreet that make traveling on those streets impossible. 1 (Scaled Cost)—Scales the cost (such as travel time or distance) required to travel the\nunderlying streets by a factor specified using the ScaledTimeFactor or ScaledDistanceFactor field. If the streets are partially\ncovered by the barrier, the travel time or distance is apportioned\nand then scaled. For example, a factor of 0.25 means that travel\non underlying streets is expected to be four times faster than\nnormal. A factor of 3.0 means it is expected to take three\ntimes longer than normal to travel on underlying streets. This\nbarrier type is referred to as a scaled-cost polygon barrier. It\ncan be used to model storms that reduce travel speeds in specific\nregions. ScaledTimeFactor This is the factor by which the travel time of the streets\nintersected by the barrier is multiplied. The field value must be greater than zero. This field is applicable only for scaled-cost\nbarriers and when the Measurement Units parameter is time-based. ScaledDistanceFactor This is the factor by which the distance of the streets\nintersected by the barrier is multiplied. The field value must be greater than zero.This field is applicable only for scaled-cost\nbarriers and when the Measurement Units parameter is distance-based.  ScaledCostFactor This is the factor by which the cost of the streets\nintersected by the barrier is multiplied. The field value must be greater than zero. This field is applicable only for scaled-cost\nbarriers when the Measurement Units parameter is neither time-based nor distance-based.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": {
+                      "displayFieldName": "",
+                      "geometryType": "esriGeometryPolygon",
+                      "spatialReference": {
+                          "wkid": 4326,
+                          "latestWkid": 4326
+                      },
+                      "fields": [
+                          {
+                              "name": "OBJECTID",
+                              "type": "esriFieldTypeOID",
+                              "alias": "OBJECTID"
+                          },
+                          {
+                              "name": "Name",
+                              "type": "esriFieldTypeString",
+                              "alias": "Name",
+                              "length": 500
+                          },
+                          {
+                              "name": "BarrierType",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "Barrier Type"
+                          },
+                          {
+                              "name": "ScaledTimeFactor",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Scaled Time Factor"
+                          },
+                          {
+                              "name": "ScaledDistanceFactor",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Scaled Distance Factor"
+                          },
+                          {
+                              "name": "ScaledCostFactor",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Scaled Cost Factor"
+                          },
+                          {
+                              "name": "SHAPE_Length",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "SHAPE_Length"
+                          },
+                          {
+                              "name": "SHAPE_Area",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "SHAPE_Area"
+                          }
+                      ],
+                      "features": [],
+                      "exceededTransferLimit": false
+                  },
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Barriers"
+              },
+              {
+                  "name": "Use_Hierarchy",
+                  "dataType": "GPBoolean",
+                  "displayName": "Use Hierarchy",
+                  "description": "Specifies whether hierarchy will be used when finding the shortest paths between stops. Checked (True in Python)—Hierarchy will be used when finding routes. When\nhierarchy is used, the tool identifies higher-order streets (such as\nfreeways) before lower-order streets (such as local roads) and can be used\nto simulate the driver preference of traveling on freeways instead\nof local roads even if that means a longer trip. This is especially\nuseful when finding routes to faraway locations, because drivers on long-distance trips tend to prefer traveling on freeways, where stops, intersections, and turns can be avoided. Using hierarchy is computationally faster,\nespecially for long-distance routes, as the tool identifies the\nbest route from a relatively smaller subset of streets.   Unchecked (False in Python)—Hierarchy will not be used when finding routes. If\nhierarchy is not used, the tool considers all the streets and doesn't\nnecessarily identify higher-order streets when finding the route. This is often\nused when finding short routes within a city.  The tool automatically reverts to using hierarchy if the\nstraight-line distance between facilities and demand points is\ngreater than 50 miles (80.46\nkilometers), even if this parameter is unchecked (set to False in Python).This parameter is ignored unless Travel Mode is set to Custom. When modeling a custom walking mode, it is recommended that you turn off hierarchy since hierarchy is designed for motorized vehicles.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": true,
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Custom Travel Mode"
+              },
+              {
+                  "name": "Restrictions",
+                  "dataType": "GPMultiValue:GPString",
+                  "displayName": "Restrictions",
+                  "description": "The restrictions that will be honored by the tool when finding the best routes.A restriction represents a driving\npreference or requirement. In most cases, restrictions cause roads\nto be prohibited. For instance, using the Avoid Toll Roads restriction will result in a route that will include toll roads only when it is required to travel on toll roads to visit an incident or a facility. Height Restriction makes it possible to route around any clearances that are lower than the height of your vehicle. If you are carrying corrosive materials on your vehicle, using the Any Hazmat Prohibited restriction prevents hauling the materials along roads where it is marked illegal to do so. The values you provide for this parameter are ignored unless Travel Mode is set to Custom.Some restrictions require an additional value to be\nspecified for their use. This value must be associated\nwith the restriction name and a specific parameter intended to work\nwith the restriction. You can identify such restrictions if their\nnames appear in the AttributeName column in the Attribute\nParameter Values parameter. The ParameterValue field should be\nspecified in the Attribute Parameter Values parameter for the\nrestriction to be correctly used when finding traversable roads.Some restrictions are supported only in certain countries; their availability is stated by region in the list below. Of the restrictions that have limited availability within a region, you can determine whether the restriction is available in a particular country by reviewing the table in the Country list section of Network analysis coverage. If a country has a value of  Yes in the Logistics Attribute column, the restriction with select availability in the region is supported in that country. If you specify restriction names that are not available in the country where your incidents are located, the service ignores the invalid restrictions. The service also ignores restrictions when the Restriction Usage attribute parameter value is between 0 and 1 (see the Attribute Parameter Value parameter). It prohibits all restrictions when the Restriction Usage parameter value is greater than 0.The tool supports the following restrictions:Any Hazmat Prohibited—The results will not include roads\nwhere transporting any kind of hazardous material is\nprohibited. Availability: Select countries in North America and EuropeAvoid Carpool Roads—The results will avoid roads that are\ndesignated exclusively for car pool (high-occupancy)\nvehicles. Availability: All countriesAvoid Express Lanes—The results will avoid roads designated\nas express lanes. Availability: All countriesAvoid Ferries—The results will avoid ferries. Availability: All countriesAvoid Gates—The results will avoid roads where there are\ngates, such as keyed access or guard-controlled\nentryways.Availability: All countriesAvoid Limited Access Roads—The results will avoid roads\nthat are limited-access highways.Availability: All countriesAvoid Private Roads—The results will avoid roads that are\nnot publicly owned and maintained.Availability: All countriesAvoid Roads Unsuitable for Pedestrians—The results will avoid roads that are\nunsuitable for pedestrians.Availability: All countriesAvoid Stairways—The results will avoid all stairways on a pedestrian-suitable route.Availability: All countriesAvoid Toll Roads—The results will avoid all toll\nroads for automobiles.Availability: All countriesAvoid Toll Roads for Trucks—The results will avoid all toll\nroads for trucks.Availability: All countriesAvoid Truck Restricted Roads—The results will avoid roads where trucks are not allowed, except when making deliveries.Availability: All countriesAvoid Unpaved Roads—The results will avoid roads that are\nnot paved (for example, dirt, gravel, and so on). Availability: All countriesAxle Count Restriction—The results will not include roads\nwhere trucks with the specified number of axles are prohibited. The\nnumber of axles can be specified using the Number of Axles\nrestriction parameter.Availability: Select countries in North America and EuropeDriving a Bus—The results will not include roads where\nbuses are prohibited. Using this restriction will also ensure that\nthe results will honor one-way streets. Availability: All countriesDriving a Taxi—The results will not include roads where\ntaxis are prohibited. Using this restriction will also ensure that\nthe results will honor one-way streets. Availability: All countriesDriving a Truck—The results will not include roads where\ntrucks are prohibited. Using this restriction will also ensure that\nthe results will honor one-way streets. Availability: All countriesDriving an Automobile—The results will not include roads\nwhere automobiles are prohibited. Using this restriction will also\nensure that the results will honor one-way streets. Availability: All countriesDriving an Emergency Vehicle—The results will not include\nroads where emergency vehicles are prohibited. Using this\nrestriction will also ensure that the results will honor one-way\nstreets.Availability: All countriesHeight Restriction—The results will not include roads\nwhere the vehicle height exceeds the maximum allowed height for the\nroad. The vehicle height can be specified using the Vehicle Height\n(meters) restriction parameter. Availability: Select countries in North America and EuropeKingpin to Rear Axle Length Restriction—The results will\nnot include roads where the vehicle length exceeds the maximum\nallowed kingpin to rear axle for all trucks on the road. The length\nbetween the vehicle kingpin and the rear axle can be specified\nusing the Vehicle Kingpin to Rear Axle Length (meters) restriction\nparameter. Availability: Select countries in North America and EuropeLength Restriction—The results will not include roads\nwhere the vehicle length exceeds the maximum allowed length for the\nroad. The vehicle length can be specified using the Vehicle Length\n(meters) restriction parameter. Availability: Select countries in North America and EuropePreferred for Pedestrians—The results will use preferred routes suitable for pedestrian navigation. Availability: Select countries in North America and EuropeRiding a Motorcycle—The results will not include roads\nwhere motorcycles are prohibited. Using this restriction will also\nensure that the results will honor one-way streets.Availability: All countriesRoads Under Construction Prohibited—The results will not\ninclude roads that are under construction.Availability: All countriesSemi or Tractor with One or More Trailers Prohibited—The\nresults will not include roads where semis or tractors with one or\nmore trailers are prohibited. Availability: Select countries in North America and EuropeSingle Axle Vehicles Prohibited—The results will not\ninclude roads where vehicles with single axles are\nprohibited.Availability: Select countries in North America and EuropeTandem Axle Vehicles Prohibited—The results will not\ninclude roads where vehicles with tandem axles are\nprohibited.Availability: Select countries in North America and EuropeThrough Traffic Prohibited—The results will not include\nroads where through traffic (nonlocal) is prohibited.Availability: All countriesTruck with Trailers Restriction—The results will not\ninclude roads where trucks with the specified number of trailers on\nthe truck are prohibited. The number of trailers on the truck can\nbe specified using the Number of Trailers on Truck restriction\nparameter.Availability: Select countries in North America and EuropeUse Preferred Hazmat Routes—The results will prefer roads\nthat are designated for transporting any kind of hazardous\nmaterials. Availability: Select countries in North America and EuropeUse Preferred Truck Routes—The results will prefer roads\nthat are designated as truck routes, such as the roads that are\npart of the national network as specified by the National Surface\nTransportation Assistance Act in the United States, or roads that\nare designated as truck routes by the state or province, or roads\nthat are preferred by truckers when driving in an\narea.Availability: Select countries in North America and EuropeWalking—The results will not include roads where\npedestrians are prohibited.Availability: All countriesWeight Restriction—The results will not include roads\nwhere the vehicle weight exceeds the maximum allowed weight for the\nroad. The vehicle weight can be specified using the Vehicle Weight\n(kilograms) restriction parameter.Availability: Select countries in North America and EuropeWeight per Axle Restriction—The results will not include\nroads where the vehicle weight per axle exceeds the maximum allowed\nweight per axle for the road. The vehicle weight per axle can be\nspecified using the Vehicle Weight per Axle (kilograms) restriction\nparameter.Availability: Select countries in North America and EuropeWidth Restriction—The results will not include roads where\nthe vehicle width exceeds the maximum allowed width for the road.\nThe vehicle width can be specified using the Vehicle Width (meters)\nrestriction parameter.Availability: Select countries in North America and Europe",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": [
+                      "Avoid Carpool Roads",
+                      "Avoid Express Lanes",
+                      "Avoid Gates",
+                      "Avoid Private Roads",
+                      "Avoid Unpaved Roads",
+                      "Driving an Automobile",
+                      "Roads Under Construction Prohibited",
+                      "Through Traffic Prohibited"
+                  ],
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Custom Travel Mode",
+                  "choiceList": [
+                      "Any Hazmat Prohibited",
+                      "Avoid Carpool Roads",
+                      "Avoid Express Lanes",
+                      "Avoid Ferries",
+                      "Avoid Gates",
+                      "Avoid Limited Access Roads",
+                      "Avoid Private Roads",
+                      "Avoid Roads Unsuitable for Pedestrians",
+                      "Avoid Stairways",
+                      "Avoid Toll Roads",
+                      "Avoid Toll Roads for Trucks",
+                      "Avoid Truck Restricted Roads",
+                      "Avoid Unpaved Roads",
+                      "Axle Count Restriction",
+                      "Driving a Bus",
+                      "Driving a Taxi",
+                      "Driving a Truck",
+                      "Driving an Automobile",
+                      "Driving an Emergency Vehicle",
+                      "Height Restriction",
+                      "Kingpin to Rear Axle Length Restriction",
+                      "Length Restriction",
+                      "Preferred for Pedestrians",
+                      "Riding a Motorcycle",
+                      "Roads Under Construction Prohibited",
+                      "Semi or Tractor with One or More Trailers Prohibited",
+                      "Single Axle Vehicles Prohibited",
+                      "Tandem Axle Vehicles Prohibited",
+                      "Through Traffic Prohibited",
+                      "Truck with Trailers Restriction",
+                      "Use Preferred Hazmat Routes",
+                      "Use Preferred Truck Routes",
+                      "Walking",
+                      "Weight Restriction",
+                      "Weight per Axle Restriction",
+                      "Width Restriction"
+                  ]
+              },
+              {
+                  "name": "Attribute_Parameter_Values",
+                  "dataType": "GPRecordSet",
+                  "displayName": "Attribute Parameter Values",
+                  "description": "Use this parameter to specify additional values required by an attribute or restriction, such as to specify whether the restriction prohibits, avoids, or prefers travel on restricted roads. If the restriction is\nmeant to avoid or prefer roads, you can further specify the degree\nto which they are avoided or preferred using this\nparameter. For example, you can choose to never use toll roads, avoid them as much as possible, or prefer them.The values you provide for this parameter are ignored unless Travel Mode is set to Custom. If you specify the Attribute Parameter Values parameter from a\nfeature class, the field names on the feature class must match the fields as follows:AttributeName—The name of the restriction.ParameterName—The name of the parameter associated with the\nrestriction. A restriction can have one or more ParameterName field\nvalues based on its intended use.ParameterValue—The value for ParameterName used by the tool\nwhen evaluating the restriction. The Attribute Parameter Values parameter is dependent on the\nRestrictions parameter. The ParameterValue field is applicable only\nif the restriction name is specified as the value for the\nRestrictions parameter. In Attribute Parameter Values, each\nrestriction (listed as AttributeName) has a ParameterName field\nvalue, Restriction Usage, that specifies whether the restriction\nprohibits, avoids, or prefers travel on the roads associated with\nthe restriction as well as the degree to which the roads are avoided or\npreferred. The Restriction Usage ParameterName can be assigned any of\nthe following string values or their equivalent numeric values\nlisted in the parentheses:  PROHIBITED (-1)—Travel on the roads using the restriction is completely\nprohibited.  AVOID_HIGH (5)—It\nis highly unlikely the tool will include in the route the roads\nthat are associated with the restriction.  AVOID_MEDIUM (2)—It\nis unlikely the tool will include in the route the roads that are\nassociated with the restriction.  AVOID_LOW (1.3)—It\nis somewhat unlikely the tool will include in the route the roads\nthat are associated with the restriction.  PREFER_LOW (0.8)—It\nis somewhat likely the tool will include in the route the roads\nthat are associated with the restriction.  PREFER_MEDIUM (0.5)—It is likely the tool will include in the route the roads that\nare associated with the restriction.  PREFER_HIGH (0.2)—It is highly likely the tool will include in the route the roads\nthat are associated with the restriction.  In most cases, you can use the default value, PROHIBITED,\nas the Restriction Usage value if the restriction is dependent on a\nvehicle characteristic such as vehicle height. However, in some\ncases, the Restriction Usage value depends on your routing\npreferences. For example, the Avoid Toll Roads restriction has the\ndefault value of AVOID_MEDIUM for the Restriction Usage attribute.\nThis means that when the restriction is used, the tool will try to\nroute around toll roads when it can. AVOID_MEDIUM also indicates\nhow important it is to avoid toll roads when finding the best\nroute; it has a medium priority. Choosing AVOID_LOW puts lower\nimportance on avoiding tolls; choosing AVOID_HIGH instead gives it a higher importance and thus makes it more acceptable for\nthe service to generate longer routes to avoid tolls. Choosing\nPROHIBITED entirely disallows travel on toll roads, making it\nimpossible for a route to travel on any portion of a toll road.\nKeep in mind that avoiding or prohibiting toll roads, and thus\navoiding toll payments, is the objective for some. In contrast,\nothers prefer to drive on toll roads, because avoiding traffic is\nmore valuable to them than the money spent on tolls. In the latter\ncase, choose PREFER_LOW, PREFER_MEDIUM, or PREFER_HIGH as\nthe value for Restriction Usage. The higher the preference, the\nfarther the tool will go out of its way to travel on the roads\nassociated with the restriction.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": {
+                      "displayFieldName": "",
+                      "fields": [
+                          {
+                              "name": "OBJECTID",
+                              "type": "esriFieldTypeOID",
+                              "alias": "ObjectID"
+                          },
+                          {
+                              "name": "AttributeName",
+                              "type": "esriFieldTypeString",
+                              "alias": "AttributeName",
+                              "length": 255
+                          },
+                          {
+                              "name": "ParameterName",
+                              "type": "esriFieldTypeString",
+                              "alias": "ParameterName",
+                              "length": 255
+                          },
+                          {
+                              "name": "ParameterValue",
+                              "type": "esriFieldTypeString",
+                              "alias": "ParameterValue",
+                              "length": 25
+                          }
+                      ],
+                      "features": [
+                          {
+                              "attributes": {
+                                  "OBJECTID": 1,
+                                  "AttributeName": "Any Hazmat Prohibited",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 2,
+                                  "AttributeName": "Avoid Carpool Roads",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 3,
+                                  "AttributeName": "Avoid Express Lanes",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 4,
+                                  "AttributeName": "Avoid Ferries",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "AVOID_MEDIUM"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 5,
+                                  "AttributeName": "Avoid Gates",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "AVOID_MEDIUM"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 6,
+                                  "AttributeName": "Avoid Limited Access Roads",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "AVOID_MEDIUM"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 7,
+                                  "AttributeName": "Avoid Private Roads",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "AVOID_MEDIUM"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 8,
+                                  "AttributeName": "Avoid Roads Unsuitable for Pedestrians",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "AVOID_HIGH"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 9,
+                                  "AttributeName": "Avoid Stairways",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "AVOID_HIGH"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 10,
+                                  "AttributeName": "Avoid Toll Roads",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "AVOID_MEDIUM"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 11,
+                                  "AttributeName": "Avoid Toll Roads for Trucks",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "AVOID_MEDIUM"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 12,
+                                  "AttributeName": "Avoid Truck Restricted Roads",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "AVOID_HIGH"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 13,
+                                  "AttributeName": "Avoid Unpaved Roads",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "AVOID_HIGH"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 14,
+                                  "AttributeName": "Axle Count Restriction",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 15,
+                                  "AttributeName": "Axle Count Restriction",
+                                  "ParameterName": "Number of Axles",
+                                  "ParameterValue": "0"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 16,
+                                  "AttributeName": "Driving a Bus",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 17,
+                                  "AttributeName": "Driving a Taxi",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 18,
+                                  "AttributeName": "Driving a Truck",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 19,
+                                  "AttributeName": "Driving an Automobile",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 20,
+                                  "AttributeName": "Driving an Emergency Vehicle",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 21,
+                                  "AttributeName": "Height Restriction",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 22,
+                                  "AttributeName": "Height Restriction",
+                                  "ParameterName": "Vehicle Height (meters)",
+                                  "ParameterValue": "0"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 23,
+                                  "AttributeName": "Kingpin to Rear Axle Length Restriction",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 24,
+                                  "AttributeName": "Kingpin to Rear Axle Length Restriction",
+                                  "ParameterName": "Vehicle Kingpin to Rear Axle Length (meters)",
+                                  "ParameterValue": "0"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 25,
+                                  "AttributeName": "Length Restriction",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 26,
+                                  "AttributeName": "Length Restriction",
+                                  "ParameterName": "Vehicle Length (meters)",
+                                  "ParameterValue": "0"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 27,
+                                  "AttributeName": "Preferred for Pedestrians",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PREFER_LOW"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 28,
+                                  "AttributeName": "Riding a Motorcycle",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 29,
+                                  "AttributeName": "Roads Under Construction Prohibited",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 30,
+                                  "AttributeName": "Semi or Tractor with One or More Trailers Prohibited",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 31,
+                                  "AttributeName": "Single Axle Vehicles Prohibited",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 32,
+                                  "AttributeName": "Tandem Axle Vehicles Prohibited",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 33,
+                                  "AttributeName": "Through Traffic Prohibited",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "AVOID_HIGH"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 34,
+                                  "AttributeName": "TravelTime",
+                                  "ParameterName": "Vehicle Maximum Speed (km/h)",
+                                  "ParameterValue": "0"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 35,
+                                  "AttributeName": "Truck with Trailers Restriction",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 36,
+                                  "AttributeName": "Truck with Trailers Restriction",
+                                  "ParameterName": "Number of Trailers on Truck",
+                                  "ParameterValue": "0"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 37,
+                                  "AttributeName": "TruckTravelTime",
+                                  "ParameterName": "Vehicle Maximum Speed (km/h)",
+                                  "ParameterValue": "0"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 38,
+                                  "AttributeName": "Use Preferred Hazmat Routes",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PREFER_MEDIUM"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 39,
+                                  "AttributeName": "Use Preferred Truck Routes",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PREFER_MEDIUM"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 40,
+                                  "AttributeName": "WalkTime",
+                                  "ParameterName": "Walking Speed (km/h)",
+                                  "ParameterValue": "5"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 41,
+                                  "AttributeName": "Walking",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 42,
+                                  "AttributeName": "Weight Restriction",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 43,
+                                  "AttributeName": "Weight Restriction",
+                                  "ParameterName": "Vehicle Weight (kilograms)",
+                                  "ParameterValue": "0"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 44,
+                                  "AttributeName": "Weight per Axle Restriction",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 45,
+                                  "AttributeName": "Weight per Axle Restriction",
+                                  "ParameterName": "Vehicle Weight per Axle (kilograms)",
+                                  "ParameterValue": "0"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 46,
+                                  "AttributeName": "Width Restriction",
+                                  "ParameterName": "Restriction Usage",
+                                  "ParameterValue": "PROHIBITED"
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "OBJECTID": 47,
+                                  "AttributeName": "Width Restriction",
+                                  "ParameterName": "Vehicle Width (meters)",
+                                  "ParameterValue": "0"
+                              }
+                          }
+                      ],
+                      "exceededTransferLimit": false
+                  },
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Custom Travel Mode"
+              },
+              {
+                  "name": "Route_Shape",
+                  "dataType": "GPString",
+                  "displayName": "Route Shape",
+                  "description": "Specifies the type of route features that are output by the\ntool. True Shape—Return the exact shape of the resulting route\nthat is based on the underlying streets.True Shape with Measures—Return the exact shape of the resulting route that is based on the underlying streets. Additionally, construct measures so the shape can be used in linear referencing. The measurements increase from the first stop and record the cumulative travel time or travel distance in the units specified by the Measurement Units parameter.  Straight Line—Return a straight line between two stops. None—Do not return any shapes for the routes. This value\ncan be useful, and return results quickly, in cases where you are only interested in determining\nthe total travel time or travel distance of a route. When the Route Shape parameter is set to True Shape or True Shape with Measures, the\ngeneralization of the route shape can be further controlled using\nthe appropriate value for the Route Line Simplification Tolerance parameter. No matter which value you choose for the Route Shape \nparameter, the best route is always determined by minimizing the\ntravel time or the travel distance, never using the straight-line\ndistance between stops. This means that only the route shapes are different,\nnot the underlying streets that are searched when finding the\nroute.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "True Shape",
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Output",
+                  "choiceList": [
+                      "True Shape",
+                      "True Shape with Measures",
+                      "Straight Line",
+                      "None"
+                  ]
+              },
+              {
+                  "name": "Route_Line_Simplification_Tolerance",
+                  "dataType": "GPLinearUnit",
+                  "displayName": "Route Line Simplification Tolerance",
+                  "description": "Specify by how much you want to simplify the geometry of the output lines for routes, directions, and route edges.The tool ignores this parameter if the Route Shape parameter isn't set to True Shape. Simplification maintains critical\npoints on a route, such as turns at intersections, to define the\nessential shape of the route and removes other points. The\nsimplification distance you specify is the maximum allowable offset\nthat the simplified line can deviate from the original line.\nSimplifying a line reduces the number of vertices that are part of\nthe route geometry. This improves the tool execution\ntime.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": {
+                      "distance": 10,
+                      "units": "esriMeters"
+                  },
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Custom Travel Mode"
+              },
+              {
+                  "name": "Populate_Route_Edges",
+                  "dataType": "GPBoolean",
+                  "displayName": "Populate Route Edges",
+                  "description": "Specifies whether the tool will generate edges for each route. Route edges represent the individual street features or other similar features that are traversed by a route. The output Route Edges layer is commonly used to see which streets or paths are traveled on the most or least by the resultant routes. Checked (True)—Route edges will be generated. The output Route Edges layer is populated with line features.   Unchecked (False)—Route edges will not be generated. The output Route Edges layer is returned, but it is empty.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": false,
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Output"
+              },
+              {
+                  "name": "Populate_Directions",
+                  "dataType": "GPBoolean",
+                  "displayName": "Populate Directions",
+                  "description": "Specifies whether the tool will generate driving directions for\neach route.  Checked (True in Python)—Directions will be generated\nand configured based on the values of the Directions Language,\nDirections Style Name, and Directions Distance Units parameters.  Unchecked (False in Python)—Directions will not be generated, and the tool\nwill return an empty Directions layer.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": true,
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Output"
+              },
+              {
+                  "name": "Directions_Language",
+                  "dataType": "GPString",
+                  "displayName": "Directions Language",
+                  "description": "The language that will be used when generating\ntravel directions. This parameter is used only when the Populate\nDirections parameter is checked (True in Python). The parameter value can be\nspecified using one of the following two- or five-character language codes:  ar—Arabic  bs—Bosnian ca—Catalancs—Czech da—Danish de—German  el—Greek en—English  es—Spanish et—Estonian fi—Finnish fr—French  he—Hebrew  hr—Croatian hu—Hungarian id—Indonesian it—Italian  ja—Japanese  ko—Korean  lt—Lithuanian lv—Latvian nb—Norwegian nl—Dutch  pl—Polish  pt-BR—Brazilian\nPortuguese  pt-PT—European\nPortuguese  ro—Romanian ru—Russian  sl—Slovenian sr—Serbian sv—Swedish  th—Thaitr—Turkishuk—Ukrainian vi—Vietnamese zh-CN—Simplified\nChinese  zh-HK—Traditional Chinese (Hong Kong)\n zh-TW—Traditional Chinese (Taiwan)\nThe tool first searches for an exact match for the specified language including any language localization. If an exact match is not found, it tries to match the language family. If a match is still not found, the tool returns the directions using the default language, English. For example, if the directions language is specified as  es-MX (Mexican Spanish), the tool will return the directions in Spanish, as it supports the es language code but not es-MX.If a language supports localization, such as Brazilian Portuguese (pt-BR) and European Portuguese (pt-PT), specify the language family and   the localization. If you only specify the language family, the tool will not match the language family and instead return directions in the default language, English. For example, if the directions language specified is pt, the tool will return the directions in English since it cannot determine whether the directions should be returned in pt-BR or pt-PT.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "en",
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Output"
+              },
+              {
+                  "name": "Directions_Distance_Units",
+                  "dataType": "GPString",
+                  "displayName": "Directions Distance Units",
+                  "description": "Specifies the units that will display travel distance in the\ndriving directions. This parameter is used only when the Populate\nDirections parameter is checked (True in Python).Miles—The linear unit is miles.Kilometers—The linear unit is kilometers.Meters—The linear unit is meters.Feet—The linear unit is feet.Yards—The linear unit is yards.Nautical Miles—The linear unit is nautical miles.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "Miles",
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Output",
+                  "choiceList": [
+                      "Meters",
+                      "Kilometers",
+                      "Feet",
+                      "Yards",
+                      "Miles",
+                      "NauticalMiles"
+                  ]
+              },
+              {
+                  "name": "Directions_Style_Name",
+                  "dataType": "GPString",
+                  "displayName": "Directions Style Name",
+                  "description": "Specifies the name of the formatting style for the\ndirections. This parameter is used only when the Populate Directions parameter is checked (True in Python). Network Analyst Desktop—Turn-by-turn directions suitable\nfor printing.Network Analyst Navigation—Turn-by-turn directions designed\nfor an in-vehicle navigation device.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "NA Desktop",
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Output",
+                  "choiceList": [
+                      "NA Desktop",
+                      "NA Navigation"
+                  ]
+              },
+              {
+                  "name": "Travel_Mode",
+                  "dataType": "GPString",
+                  "displayName": "Travel Mode",
+                  "description": "The mode of transportation to model in the analysis. Travel modes are managed in ArcGIS Online and can be configured by the administrator of your organization to reflect your organization's workflows. You need to specify the name of a travel mode that is supported by your organization. To get a list of supported travel mode names, use the same GIS server connection you used to access this tool, and run the GetTravelModes tool in  the Utilities toolbox. The GetTravelModes tool adds the Supported Travel Modes table to the application. Any value in the Travel Mode Name field from the Supported Travel Modes table can be specified as input. You can also specify the value from the Travel Mode Settings field as input. This reduces the tool execution time because the tool does not have to find the settings based on the travel mode name. The default value, Custom, allows you to configure your own travel mode using the custom travel mode parameters (UTurn at Junctions, Use Hierarchy, Restrictions, Attribute Parameter Values,  and Impedance). The default values of the custom travel mode parameters model traveling by car. You can also choose Custom and set the custom travel mode parameters listed above to model a pedestrian with a fast walking speed or a truck with a given height, weight, and cargo of certain hazardous materials. You can try different settings to get the analysis results you want. Once you have identified the analysis settings, work with your organization's administrator and save these settings as part of a new or existing travel mode so that everyone in your organization can run the analysis with the same settings. When you choose Custom, the values you set for the custom travel mode parameters are included in the analysis. Specifying  another travel mode, as defined by your organization, causes any values you set for the custom travel mode parameters to be ignored; the tool overrides them with values from your specified travel mode.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "Custom",
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": ""
+              },
+              {
+                  "name": "Impedance",
+                  "dataType": "GPString",
+                  "displayName": "Impedance",
+                  "description": "Specifies the \nimpedance, which is a value that represents the effort or cost of traveling along road segments or on other parts of the transportation network. Travel time is an impedance: a car may take 1 minute to travel a mile along an empty road. Travel times can vary by travel mode—a pedestrian may take more than 20  minutes to walk the same mile, so it is important to choose the right impedance for the travel mode you are modeling. Travel distance can also be an impedance; the length of a road in kilometers can be thought of as impedance. Travel distance in this sense is the same for all modes—a kilometer for a pedestrian is also a kilometer for a car. (What may change is the pathways on which the different modes are allowed to travel, which affects distance between points, and this is modeled by travel mode settings.)The value you provide for this parameter is ignored unless Travel Mode is set to Custom, which is the default value.Choose from the following impedance values:Travel Time—Historical and live traffic data is used. This option is good for modeling the time it takes automobiles to travel along roads at a specific time of day using live traffic speed data where available. When using TravelTime, you can optionally set the TravelTime::Vehicle Maximum Speed (km/h) attribute parameter to specify the physical limitation of the speed the vehicle is capable of traveling.Minutes—Live traffic data is not used, but historical average speeds for automobiles data is used.Truck Travel Time—Historical and live traffic data is used, but the speed is capped at the posted truck speed limit. This is good for modeling the time it takes for the trucks to travel along roads at a specific time. When using TruckTravelTime, you can optionally set the TruckTravelTime::Vehicle Maximum Speed (km/h) attribute parameter to specify the physical limitation of the speed the truck is capable of traveling.Truck Minutes—Live traffic data is not used, but the smaller of the historical average speeds for automobiles and the posted speed limits for trucks is used.Walk Time—The default is a speed of 5 km/hr on all roads and paths, but this can be configured through the WalkTime::Walking Speed (km/h) attribute parameter.Miles—Length measurements along roads are stored in miles and can be used for performing analysis based on shortest distance.Kilometers—Length measurements along roads are stored in kilometers and can be used for performing analysis based on shortest distance.Time At One Kilometer Per Hour—The default is a speed of 1 km/hr on all roads and paths. The speed cannot be changed using any attribute parameter.Drive Time—Models travel times for a car. These travel times are dynamic and fluctuate according to traffic flows in areas where traffic data is available. This is the default value.Truck Time—Models travel times for a truck.  These travel times are static for each road and don't fluctuate with traffic.Walk Time—Models travel times for a pedestrian.Travel Distance—Stores  length measurements along roads and paths. To model walk distance, choose this option and ensure Walking is  set in the Restriction parameter. Similarly, to model drive or truck distance, choose Travel Distance here and set the appropriate restrictions so your vehicle travels only on roads where it is permitted to do so.If you choose a time-based impedance, such as TravelTime, TruckTravelTime, Minutes, TruckMinutes, or WalkTime, the Measurement Units parameter must be set to a time-based value. If you choose a distance-based impedance, such as  Miles or Kilometers, Measurement Units must be distance based.Drive Time, Truck Time, Walk Time, and Travel Distance impedance values are no longer supported and will be removed in a future release.   If you use one of these values, the tool uses the value of the  Time Impedance parameter for time-based values and the Distance Impedance parameter for distance-based values.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "Drive Time",
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Custom Travel Mode",
+                  "choiceList": [
+                      "Drive Time",
+                      "Truck Time",
+                      "Walk Time",
+                      "Travel Distance",
+                      "Minutes",
+                      "TravelTime",
+                      "TimeAt1KPH",
+                      "WalkTime",
+                      "TruckMinutes",
+                      "TruckTravelTime",
+                      "Miles",
+                      "Kilometers"
+                  ]
+              },
+              {
+                  "name": "Time_Zone_for_Time_Windows",
+                  "dataType": "GPString",
+                  "displayName": "Time Zone for Time Windows",
+                  "description": "Specifies the time zone for the time window values on stops. The time windows are specified as part of TimeWindowStart and TimeWindowEnd fields on stops. This parameter is applicable only when the Use Time Windows parameter is checked (or set to True).\n Geographically Local—The time window values associated with the stops are in the time zone in which the stops are located. For example, if the stop is located in an area that follows eastern standard time and has time window values of 8 AM and 10 AM, the time window values will be treated as 8 a.m. and 10 a.m eastern standard time. This is the default.UTC—The time window values associated with the stops are in coordinated universal time (UTC). For example, if the stop is located in an area that follows eastern standard time and has time window values of 8 AM and 10 AM, the time window values will be treated as 12 p.m and 2 p.m eastern standard time, assuming eastern standard time is obeying daylight saving time. Specifying the time window values in UTC is useful if you do not know the time zone in which the stops are located or if you have stops in multiple time zones and you want all the time windows to start simultaneously.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "Geographically Local",
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Advanced Analysis",
+                  "choiceList": [
+                      "Geographically Local",
+                      "UTC"
+                  ]
+              },
+              {
+                  "name": "Save_Output_Network_Analysis_Layer",
+                  "dataType": "GPBoolean",
+                  "displayName": "Save Output Network Analysis Layer",
+                  "description": "Specifies whether the analysis settings will be saved as a network analysis layer file. You cannot directly work with this file even when you open the file in an ArcGIS Desktop application such as ArcMap. It is meant to be sent to Esri Technical Support to diagnose the quality of results returned from the tool.\nChecked (True in Python)—The output will be saved as a network analysis layer file. The file will be downloaded to a temporary directory on your machine. In ArcGIS Pro, the location of the downloaded file can be determined  by viewing the value for the Output Network Analysis Layer parameter in the entry corresponding to the tool execution in the geoprocessing history of your project. In ArcMap, the location of the file can be determined by accessing the Copy Location option in the shortcut menu on the Output Network Analysis Layer parameter in the entry corresponding to the tool execution in the Geoprocessing Results window.   Unchecked (False in Python)—The output will not be saved as a network analysis layer file. This is the default.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": false,
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Output"
+              },
+              {
+                  "name": "Overrides",
+                  "dataType": "GPString",
+                  "displayName": "Overrides",
+                  "description": "Additional settings that can influence the behavior of the solver when finding solutions for the network analysis problems.\n The value for this parameter must be specified in JavaScript Object Notation (JSON). For example, a valid value is of the following form:  {\"overrideSetting1\" : \"value1\", \"overrideSetting2\" : \"value2\"}. The override setting name is always enclosed in double quotation marks. The values can be a number, Boolean, or string. The default value for this parameter is no\nvalue, which indicates not to override any solver\nsettings. Overrides are advanced settings that should be\nused only after careful analysis of the results obtained before and\nafter applying the settings. For a list of supported override settings\nfor each solver and their acceptable values, contact Esri Technical Support.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "",
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Advanced Analysis"
+              },
+              {
+                  "name": "Save_Route_Data",
+                  "dataType": "GPBoolean",
+                  "displayName": "Save Route Data",
+                  "description": "Specifies whether the output will include a .zip file\nthat contains a file geodatabase with the inputs and outputs of\nthe analysis in a format that can be used to share route layers\nwith ArcGIS Online or Portal for ArcGIS.Checked (True in Python)—The route data will be saved as a .zip file. The file is downloaded to a temporary directory on your machine. In ArcGIS Pro, the location of the downloaded file can be determined by viewing the value for the Output Route Data parameter in the entry corresponding to the tool execution in the geoprocessing history of your project. In ArcMap, the location of the file can be determined by accessing the Copy Location option in the shortcut menu on the Output Route Data  parameter in the entry corresponding to the tool execution in the Geoprocessing Results window.   Unchecked (False in Python)—The route data will not be saved as a .zip file. This is the default.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": false,
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Output"
+              },
+              {
+                  "name": "Time_Impedance",
+                  "dataType": "GPString",
+                  "displayName": "Time Impedance",
+                  "description": "The time-based impedance is a value that represents the travel time along road segments or on other parts of the transportation network.If the impedance for the travel mode, as specified using the Impedance parameter, is time based, the values for the Time Impedance and Impedance parameters must be identical. Otherwise, the service will return an error.Minutes—Time impedance  is minutes.Travel Time—Time impedance  is travel time.Time At One Kilometer Per Hour—Time impedance  is time at one kilometer per hour.Walk Time—Time impedance  is walk time.Truck Minutes—Time impedance  is truck minutes.Truck Travel Time—Time impedance  is truck travel time.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "TravelTime",
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Custom Travel Mode",
+                  "choiceList": [
+                      "Minutes",
+                      "TravelTime",
+                      "TimeAt1KPH",
+                      "WalkTime",
+                      "TruckMinutes",
+                      "TruckTravelTime"
+                  ]
+              },
+              {
+                  "name": "Distance_Impedance",
+                  "dataType": "GPString",
+                  "displayName": "Distance Impedance",
+                  "description": "The distance-based impedance is a value that represents the travel distance along road segments or on other parts of the transportation network.If the impedance for the travel mode, as specified using the Impedance parameter, is distance based, the values for the Distance Impedance and Impedance parameters must be identical. Otherwise, the service will return an error.Miles—Distance impedance is miles.Kilometers—Distance impedance is kilometers.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "Kilometers",
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Custom Travel Mode",
+                  "choiceList": [
+                      "Miles",
+                      "Kilometers"
+                  ]
+              },
+              {
+                  "name": "Output_Format",
+                  "dataType": "GPString",
+                  "displayName": "Output Format",
+                  "description": "Specifies the format in which the output features will be created. \nFeature Set—The output features will be returned as feature classes and tables. This is the default.JSON File—The output features will be returned as a compressed file containing the JSON representation of the outputs. When this option is specified, the output is a single file (with a .zip extension) that contains one or more JSON files (with a .json extension) for each of the outputs created by the service. GeoJSON File—The output features will be returned as a compressed file containing the GeoJSON representation of the outputs. When this option is specified, the output is a single file (with a .zip extension) that contains one or more GeoJSON files (with a .geojson extension) for each of the outputs created by the service.When a file-based output format, such as JSON File or GeoJSON File, is specified,  no outputs will be added to the display because the application, such as ArcMap or ArcGIS Pro,  cannot draw the contents of the result file. Instead, the result file is downloaded to a temporary directory on your machine. In ArcGIS Pro, the location of the downloaded file can be determined by viewing the value for the Output Result File parameter in the entry corresponding to the tool execution in the geoprocessing history of your project. In ArcMap, the location of the file can be determined by accessing the Copy Location option in the shortcut menu on the Output Result File  parameter in the entry corresponding to the tool execution in the Geoprocessing Results window.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": "Feature Set",
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Output",
+                  "choiceList": [
+                      "Feature Set",
+                      "JSON File",
+                      "GeoJSON File"
+                  ]
+              },
+              {
+                  "name": "Ignore_Invalid_Locations",
+                  "dataType": "GPBoolean",
+                  "displayName": "Ignore Invalid Locations",
+                  "description": "Specifies whether invalid input locations will be ignored.\n Checked—Network locations that are unlocated will be ignored and the analysis will run using valid network locations only. The analysis will also continue if locations are on nontraversable elements or have other errors. This is useful if you know your network locations are not all correct, but you want to run the analysis with the network locations that are valid. This is the default. Unchecked—Invalid locations will not be ignored. Do not run the analysis if there are invalid locations. Correct the invalid locations and rerun the analysis.",
+                  "direction": "esriGPParameterDirectionInput",
+                  "defaultValue": true,
+                  "parameterType": "esriGPParameterTypeOptional",
+                  "category": "Network Locations"
+              },
+              {
+                  "name": "Solve_Succeeded",
+                  "dataType": "GPBoolean",
+                  "displayName": "Solve Succeeded",
+                  "description": "",
+                  "direction": "esriGPParameterDirectionOutput",
+                  "defaultValue": null,
+                  "parameterType": "esriGPParameterTypeDerived",
+                  "category": ""
+              },
+              {
+                  "name": "Output_Routes",
+                  "dataType": "GPFeatureRecordSetLayer",
+                  "displayName": "Output Routes",
+                  "description": "",
+                  "direction": "esriGPParameterDirectionOutput",
+                  "defaultValue": {
+                      "displayFieldName": "",
+                      "hasM": true,
+                      "geometryType": "esriGeometryPolyline",
+                      "spatialReference": {
+                          "wkid": 4326,
+                          "latestWkid": 4326
+                      },
+                      "fields": [
+                          {
+                              "name": "ObjectID",
+                              "type": "esriFieldTypeOID",
+                              "alias": "ObjectID"
+                          },
+                          {
+                              "name": "Name",
+                              "type": "esriFieldTypeString",
+                              "alias": "Name",
+                              "length": 1024
+                          },
+                          {
+                              "name": "StopCount",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "StopCount"
+                          },
+                          {
+                              "name": "StartTime",
+                              "type": "esriFieldTypeDate",
+                              "alias": "StartTime",
+                              "length": 16
+                          },
+                          {
+                              "name": "EndTime",
+                              "type": "esriFieldTypeDate",
+                              "alias": "EndTime",
+                              "length": 16
+                          },
+                          {
+                              "name": "StartTimeUTC",
+                              "type": "esriFieldTypeDate",
+                              "alias": "StartTimeUTC",
+                              "length": 16
+                          },
+                          {
+                              "name": "EndTimeUTC",
+                              "type": "esriFieldTypeDate",
+                              "alias": "EndTimeUTC",
+                              "length": 16
+                          },
+                          {
+                              "name": "Total_Miles",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Total_Miles"
+                          },
+                          {
+                              "name": "Total_Kilometers",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Total_Kilometers"
+                          },
+                          {
+                              "name": "Total_Minutes",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Total_Minutes"
+                          },
+                          {
+                              "name": "TotalWait_Minutes",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "TotalWait_Minutes"
+                          },
+                          {
+                              "name": "TotalViolation_Minutes",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "TotalViolation_Minutes"
+                          },
+                          {
+                              "name": "FirstStopOID",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "FirstStopOID"
+                          },
+                          {
+                              "name": "LastStopOID",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "LastStopOID"
+                          },
+                          {
+                              "name": "Shape_Length",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Shape_Length"
+                          }
+                      ],
+                      "features": [],
+                      "exceededTransferLimit": false
+                  },
+                  "parameterType": "esriGPParameterTypeDerived",
+                  "category": ""
+              },
+              {
+                  "name": "Output_Route_Edges",
+                  "dataType": "GPFeatureRecordSetLayer",
+                  "displayName": "Output Route Edges",
+                  "description": "",
+                  "direction": "esriGPParameterDirectionOutput",
+                  "defaultValue": {
+                      "displayFieldName": "",
+                      "geometryType": "esriGeometryPolyline",
+                      "spatialReference": {
+                          "wkid": 4326,
+                          "latestWkid": 4326
+                      },
+                      "fields": [
+                          {
+                              "name": "ObjectID",
+                              "type": "esriFieldTypeOID",
+                              "alias": "ObjectID"
+                          },
+                          {
+                              "name": "Shape_Length",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Shape_Length"
+                          }
+                      ],
+                      "features": [],
+                      "exceededTransferLimit": false
+                  },
+                  "parameterType": "esriGPParameterTypeDerived",
+                  "category": ""
+              },
+              {
+                  "name": "Output_Directions",
+                  "dataType": "GPFeatureRecordSetLayer",
+                  "displayName": "Output Directions",
+                  "description": "",
+                  "direction": "esriGPParameterDirectionOutput",
+                  "defaultValue": {
+                      "displayFieldName": "",
+                      "hasM": true,
+                      "geometryType": "esriGeometryPolyline",
+                      "spatialReference": {
+                          "wkid": 4326,
+                          "latestWkid": 4326
+                      },
+                      "fields": [
+                          {
+                              "name": "ObjectID",
+                              "type": "esriFieldTypeOID",
+                              "alias": "ObjectID"
+                          },
+                          {
+                              "name": "RouteName",
+                              "type": "esriFieldTypeString",
+                              "alias": "RouteName",
+                              "length": 1024
+                          },
+                          {
+                              "name": "ArriveTime",
+                              "type": "esriFieldTypeDate",
+                              "alias": "ArriveTime",
+                              "length": 16
+                          },
+                          {
+                              "name": "Type",
+                              "type": "esriFieldTypeSmallInteger",
+                              "alias": "Type"
+                          },
+                          {
+                              "name": "SubItemType",
+                              "type": "esriFieldTypeSmallInteger",
+                              "alias": "SubItemType"
+                          },
+                          {
+                              "name": "Text",
+                              "type": "esriFieldTypeString",
+                              "alias": "Text",
+                              "length": 1024
+                          },
+                          {
+                              "name": "ElapsedTime",
+                              "type": "esriFieldTypeSingle",
+                              "alias": "ElapsedTime"
+                          },
+                          {
+                              "name": "DriveDistance",
+                              "type": "esriFieldTypeSingle",
+                              "alias": "DriveDistance"
+                          },
+                          {
+                              "name": "Shape_Length",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Shape_Length"
+                          }
+                      ],
+                      "features": [],
+                      "exceededTransferLimit": false
+                  },
+                  "parameterType": "esriGPParameterTypeDerived",
+                  "category": ""
+              },
+              {
+                  "name": "Output_Stops",
+                  "dataType": "GPFeatureRecordSetLayer",
+                  "displayName": "Output Stops",
+                  "description": "",
+                  "direction": "esriGPParameterDirectionOutput",
+                  "defaultValue": {
+                      "displayFieldName": "",
+                      "geometryType": "esriGeometryPoint",
+                      "spatialReference": {
+                          "wkid": 4326,
+                          "latestWkid": 4326
+                      },
+                      "fields": [
+                          {
+                              "name": "ObjectID",
+                              "type": "esriFieldTypeOID",
+                              "alias": "ObjectID"
+                          },
+                          {
+                              "name": "Name",
+                              "type": "esriFieldTypeString",
+                              "alias": "Name",
+                              "length": 500
+                          },
+                          {
+                              "name": "RouteName",
+                              "type": "esriFieldTypeString",
+                              "alias": "RouteName",
+                              "length": 1024
+                          },
+                          {
+                              "name": "Sequence",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "Sequence"
+                          },
+                          {
+                              "name": "TimeWindowStart",
+                              "type": "esriFieldTypeDate",
+                              "alias": "TimeWindowStart",
+                              "length": 16
+                          },
+                          {
+                              "name": "TimeWindowEnd",
+                              "type": "esriFieldTypeDate",
+                              "alias": "TimeWindowEnd",
+                              "length": 16
+                          },
+                          {
+                              "name": "ArriveCurbApproach",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "ArriveCurbApproach"
+                          },
+                          {
+                              "name": "DepartCurbApproach",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "DepartCurbApproach"
+                          },
+                          {
+                              "name": "ArriveTime",
+                              "type": "esriFieldTypeDate",
+                              "alias": "ArriveTime",
+                              "length": 16
+                          },
+                          {
+                              "name": "DepartTime",
+                              "type": "esriFieldTypeDate",
+                              "alias": "DepartTime",
+                              "length": 16
+                          },
+                          {
+                              "name": "ArriveTimeUTC",
+                              "type": "esriFieldTypeDate",
+                              "alias": "ArriveTimeUTC",
+                              "length": 16
+                          },
+                          {
+                              "name": "DepartTimeUTC",
+                              "type": "esriFieldTypeDate",
+                              "alias": "DepartTimeUTC",
+                              "length": 16
+                          },
+                          {
+                              "name": "LocationType",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "LocationType"
+                          },
+                          {
+                              "name": "SourceID",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "SourceID"
+                          },
+                          {
+                              "name": "SourceOID",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "SourceOID"
+                          },
+                          {
+                              "name": "PosAlong",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "PosAlong"
+                          },
+                          {
+                              "name": "SideOfEdge",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "SideOfEdge"
+                          },
+                          {
+                              "name": "CurbApproach",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "CurbApproach"
+                          },
+                          {
+                              "name": "Status",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "Status"
+                          },
+                          {
+                              "name": "SnapX",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "SnapX"
+                          },
+                          {
+                              "name": "SnapY",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "SnapY"
+                          },
+                          {
+                              "name": "SnapZ",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "SnapZ"
+                          },
+                          {
+                              "name": "DistanceToNetworkInMeters",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "DistanceToNetworkInMeters"
+                          },
+                          {
+                              "name": "AdditionalDistance",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "AdditionalDistance"
+                          },
+                          {
+                              "name": "AdditionalTime",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "AdditionalTime"
+                          },
+                          {
+                              "name": "Cumul_Miles",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Cumul_Miles"
+                          },
+                          {
+                              "name": "Cumul_Kilometers",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Cumul_Kilometers"
+                          },
+                          {
+                              "name": "Cumul_Minutes",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Cumul_Minutes"
+                          },
+                          {
+                              "name": "Wait_Minutes",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Wait_Minutes"
+                          },
+                          {
+                              "name": "CumulWait_Minutes",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "CumulWait_Minutes"
+                          },
+                          {
+                              "name": "Violation_Minutes",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Violation_Minutes"
+                          },
+                          {
+                              "name": "CumulViolation_Minutes",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "CumulViolation_Minutes"
+                          },
+                          {
+                              "name": "ORIG_FID",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "ORIG_FID"
+                          },
+                          {
+                              "name": "Bearing",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Bearing"
+                          },
+                          {
+                              "name": "BearingTol",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "BearingTol"
+                          },
+                          {
+                              "name": "NavLatency",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "NavLatency"
+                          }
+                      ],
+                      "features": [],
+                      "exceededTransferLimit": false
+                  },
+                  "parameterType": "esriGPParameterTypeDerived",
+                  "category": ""
+              },
+              {
+                  "name": "Output_Network_Analysis_Layer",
+                  "dataType": "GPDataFile",
+                  "displayName": "Output Network Analysis Layer",
+                  "description": "",
+                  "direction": "esriGPParameterDirectionOutput",
+                  "defaultValue": null,
+                  "parameterType": "esriGPParameterTypeDerived",
+                  "category": ""
+              },
+              {
+                  "name": "Output_Route_Data",
+                  "dataType": "GPDataFile",
+                  "displayName": "Output Route Data",
+                  "description": "",
+                  "direction": "esriGPParameterDirectionOutput",
+                  "defaultValue": null,
+                  "parameterType": "esriGPParameterTypeDerived",
+                  "category": ""
+              },
+              {
+                  "name": "Output_Result_File",
+                  "dataType": "GPDataFile",
+                  "displayName": "Output Result File",
+                  "description": "",
+                  "direction": "esriGPParameterDirectionOutput",
+                  "defaultValue": null,
+                  "parameterType": "esriGPParameterTypeDerived",
+                  "category": ""
+              },
+              {
+                  "name": "Output_Network_Analysis_Layer_Package",
+                  "dataType": "GPDataFile",
+                  "displayName": "Output Network Analysis Layer Package",
+                  "description": "",
+                  "direction": "esriGPParameterDirectionOutput",
+                  "defaultValue": null,
+                  "parameterType": "esriGPParameterTypeDerived",
+                  "category": ""
+              },
+              {
+                  "name": "Output_Direction_Points",
+                  "dataType": "GPFeatureRecordSetLayer",
+                  "displayName": "Output Direction Points",
+                  "description": "",
+                  "direction": "esriGPParameterDirectionOutput",
+                  "defaultValue": {
+                      "displayFieldName": "",
+                      "hasM": true,
+                      "geometryType": "esriGeometryPoint",
+                      "spatialReference": {
+                          "wkid": 4326,
+                          "latestWkid": 4326
+                      },
+                      "fields": [
+                          {
+                              "name": "ObjectID",
+                              "type": "esriFieldTypeOID",
+                              "alias": "ObjectID"
+                          },
+                          {
+                              "name": "RouteID",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "Route ID"
+                          },
+                          {
+                              "name": "Sequence",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "Sequence"
+                          },
+                          {
+                              "name": "DirectionPointType",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "Direction Point Type"
+                          },
+                          {
+                              "name": "StopID",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "Stop ID"
+                          },
+                          {
+                              "name": "DisplayText",
+                              "type": "esriFieldTypeString",
+                              "alias": "Display Text",
+                              "length": 1024
+                          },
+                          {
+                              "name": "ArrivalTime",
+                              "type": "esriFieldTypeDate",
+                              "alias": "Arrival Time"
+                          },
+                          {
+                              "name": "ArrivalUTCOffset",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Arrival Time: Offset from UTC in Minutes"
+                          },
+                          {
+                              "name": "Name",
+                              "type": "esriFieldTypeString",
+                              "alias": "Primary Name",
+                              "length": 1024
+                          },
+                          {
+                              "name": "ExitName",
+                              "type": "esriFieldTypeString",
+                              "alias": "Highway Exit Name"
+                          },
+                          {
+                              "name": "AlternateName",
+                              "type": "esriFieldTypeString",
+                              "alias": "Alternate Name"
+                          },
+                          {
+                              "name": "IntersectingName",
+                              "type": "esriFieldTypeString",
+                              "alias": "Intersecting Name"
+                          },
+                          {
+                              "name": "BranchName",
+                              "type": "esriFieldTypeString",
+                              "alias": "Signpost Branch Name"
+                          },
+                          {
+                              "name": "TowardName",
+                              "type": "esriFieldTypeString",
+                              "alias": "Signpost Toward Name"
+                          },
+                          {
+                              "name": "Level",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "Level"
+                          },
+                          {
+                              "name": "ShortVoiceInstruction",
+                              "type": "esriFieldTypeString",
+                              "alias": "Short Voice Instruction",
+                              "length": 1024
+                          },
+                          {
+                              "name": "VoiceInstruction",
+                              "type": "esriFieldTypeString",
+                              "alias": "Voice Instruction",
+                              "length": 1024
+                          },
+                          {
+                              "name": "Azimuth",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Azimuth"
+                          }
+                      ],
+                      "features": [],
+                      "exceededTransferLimit": false
+                  },
+                  "parameterType": "esriGPParameterTypeDerived",
+                  "category": ""
+              },
+              {
+                  "name": "Output_Direction_Lines",
+                  "dataType": "GPFeatureRecordSetLayer",
+                  "displayName": "Output Direction Lines",
+                  "description": "",
+                  "direction": "esriGPParameterDirectionOutput",
+                  "defaultValue": {
+                      "displayFieldName": "",
+                      "hasM": true,
+                      "geometryType": "esriGeometryPolyline",
+                      "spatialReference": {
+                          "wkid": 4326,
+                          "latestWkid": 4326
+                      },
+                      "fields": [
+                          {
+                              "name": "ObjectID",
+                              "type": "esriFieldTypeOID",
+                              "alias": "ObjectID"
+                          },
+                          {
+                              "name": "DirectionPointID",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "Direction Point ID"
+                          },
+                          {
+                              "name": "RouteID",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "Route ID"
+                          },
+                          {
+                              "name": "DirectionLineType",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "Direction Line Type"
+                          },
+                          {
+                              "name": "Meters",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Meters"
+                          },
+                          {
+                              "name": "Minutes",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Minutes"
+                          },
+                          {
+                              "name": "FromLevel",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "From Level"
+                          },
+                          {
+                              "name": "ToLevel",
+                              "type": "esriFieldTypeInteger",
+                              "alias": "To Level"
+                          },
+                          {
+                              "name": "Shape_Length",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "Shape_Length"
+                          }
+                      ],
+                      "features": [],
+                      "exceededTransferLimit": false
+                  },
+                  "parameterType": "esriGPParameterTypeDerived",
+                  "category": ""
+              }
+          ]
+      }
+order: 1000

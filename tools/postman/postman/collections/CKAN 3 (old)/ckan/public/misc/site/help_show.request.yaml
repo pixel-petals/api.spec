@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{CKAN_API}}/help_show?name=user_create"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: name
+    value: user_create
+    description: Action function name (eg user_create, package_search)
+order: 2000

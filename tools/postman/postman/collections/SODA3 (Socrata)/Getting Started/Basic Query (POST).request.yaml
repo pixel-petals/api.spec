@@ -1,0 +1,12 @@
+$kind: http-request
+description: SODA3 prefers POST for queries. Send a SoQL query in the request body. The 'query' field accepts SQL-like SoQL syntax.
+url: "{{baseUrl}}/api/v3/views/{{datasetId}}/query.json"
+method: POST
+headers:
+  X-App-Token: "{{appToken}}"
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: '{"query":"SELECT *","page":{"pageNumber":1,"pageSize":10},"includeSynthetic":false}'
+order: 2000

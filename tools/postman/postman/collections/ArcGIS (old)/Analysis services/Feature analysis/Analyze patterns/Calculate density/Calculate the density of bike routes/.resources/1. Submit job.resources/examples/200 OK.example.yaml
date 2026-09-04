@@ -1,0 +1,31 @@
+$kind: http-example
+request:
+  url: https://https/analysis.arcgis.com/arcgis/rest/services/tasks/GPServer/CalculateDensity/submitJob
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: " json"
+      token: ""
+      inputLayer: ' {"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Portland Bike Routes/FeatureServer/0","name":"Portland Bike Routes"}'
+      areaUnits: " SquareMiles"
+      boundingPolygonLayer: ' {"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Portland_boundary/FeatureServer/0","name":"Portland_boundary-DissolvedFeatures"}'
+      classificationType: " EqualInterval"
+      numClasses: " 10"
+      outputName: ' {"serviceProperties":{"name":"Portland_Bike_Routes_Density","serviceUrl":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Portland_Bike_Routes_Density/FeatureServer"}}'
+      returnFeatureCollection: " false"
+      context: " {}"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+        "jobId": "<JOB_ID>",
+        "jobStatus": "esriJobSubmitted",
+        "results": {},
+        "inputs": {},
+        "messages": []
+      }
+order: 1000

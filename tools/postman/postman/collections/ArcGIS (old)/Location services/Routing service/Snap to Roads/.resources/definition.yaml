@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  The snap to roads operation allows you to align GPS track points with the nearest routable road segments in a transportation network. The operation is designed to work with GPS data which can be imprecise. By snapping the GPS points to the nearest road segments, the operation improves accuracy of GPS data and provides a more reliable representation of the actual route taken.
+
+  To learn more go to the [Developer guide](https://https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/)
+order: 9000

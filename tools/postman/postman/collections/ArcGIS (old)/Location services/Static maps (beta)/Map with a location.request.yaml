@@ -1,0 +1,150 @@
+$kind: http-request
+description: "[Check the documentation](https://developers.arcgis.com/rest/static-maps/arcgis-arcgis-style-centered-at-get/)"
+url: https://static-maps-api.arcgis.com/arcgis/rest/services/static-maps-service/:VERSION/static-maps/arcgis/:ARCGIS-STYLE/with-point?symbolLabel=A&imageFormat=jpeg&imageHeight=600&imageWidth=600&imagePadding=[0,20,0,0]&mapRadius=500&symbolColor=FF0000&symbolScale=2&symbolStyle=pin&pointX=-0.127758&pointY=51.507351
+method: GET
+queryParams:
+  - key: symbolLabel
+    value: A
+    description: The label to be displayed on the marker symbol.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "minLength": "1",
+            "maxLength": "2",
+            "pattern": "^[A-Za-z0-9]{0,2}$"
+          }
+        }
+      }
+  - key: imageFormat
+    value: jpeg
+    description: The format of the map image, such as png, jpeg, webp.
+  - key: imageHeight
+    value: "600"
+    description: The height of the requested map image in pixels at 96 DPI between 64 and 1024 pixels.
+  - key: imageWidth
+    value: "600"
+    description: The width of the requested map image in pixels at 96 DPI between 64 and 1024 pixels.
+  - key: imagePadding
+    value: "[0,20,0,0]"
+    description: The padding applied to the static map adds extra map content between the static map's extent and the edge of the image.
+  - key: mapRadius
+    value: "500"
+    description: The radius (in meters), defines the minimum geographical area around a specified point that is shown on the static map.
+  - key: symbolColor
+    value: FF0000
+    description: The hexadecimal color code for the marker symbol.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "pattern": "[0-9a-f]",
+            "default": "007AC2",
+            "minLength": "6",
+            "maxLength": "6"
+          }
+        }
+      }
+  - key: symbolScale
+    value: "2"
+    description: The scale of the marker symbol as a multiplier of the symbol's dimensions.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "default": "1",
+            "minimum": "0.1",
+            "maximum": "4"
+          }
+        }
+      }
+  - key: symbolStyle
+    value: pin
+    description: The style of the marker symbol.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "default": "pin",
+            "enum": [
+              "pin",
+              "circle"
+            ]
+          }
+        }
+      }
+  - key: mapCenterX
+    value: "-0.12"
+    disabled: true
+    description: The x-coordinate, or longitude value, of the point expressed in WGS84 decimal degrees
+  - key: mapCenterY
+    value: "51.5"
+    disabled: true
+    description: The y-coordinate, or latitude value, of the point expressed in WGS84 decimal degrees.
+  - key: pointX
+    value: "-0.127758"
+    description: The x-coordinate, or longitude value, of the point expressed in WGS84 decimal degrees.
+  - key: pointY
+    value: "51.507351"
+    description: The y-coordinate, or latitude value, of the point expressed in WGS84 decimal degrees.
+  - key: mapZoom
+    value: "12"
+    disabled: true
+    description: Specifies the map zoom level, which controls the level of detail (LOD) displayed.
+pathVariables:
+  - key: VERSION
+    value: beta
+    description: API Version
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "default": "beta",
+            "enum": [
+              "beta"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: ARCGIS-STYLE
+    value: navigation-night
+    description: ArcGIS Basemap style
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "navigation",
+              "navigation-night",
+              "streets",
+              "streets-night",
+              "imagery"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+order: 2000

@@ -1,0 +1,37 @@
+$kind: http-example
+request:
+  url: https://{{logistics-service}}.arcgis.com/arcgis/rest/services/World/ServiceAreas/GPServer/GenerateServiceAreas/submitJob
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+      facilities: "{'displayFieldName':'','fieldAliases':{'StoreName':'Store Name','Address':'Address','StoreId':'Store ID'},'geometryType':'esriGeometryPoint','spatialReference':{'wkid':4326,'latestWkid':4326},'fields':[{'name':'StoreName','type':'esriFieldTypeString','alias':'Name','length':50},{'name':'Address','type':'esriFieldTypeString','alias':'Name','length':256},{'name':'StoreId','type':'esriFieldTypeString','alias':'Store ID','length':16}],'features':[{'attributes':{'StoreName':'Store 1','Address':'1775 E Lugonia Ave, Redlands, CA 92374','StoreId':'120'},'geometry':{'x':-117.14002999994386,'y':34.071219999994128}},{'attributes':{'StoreName':'Store 2','Address':'1536 Barton Rd, Redlands, CA 92373','StoreId':'130'},'geometry':{'x':-117.207329999671,'y':34.047980000203609}},{'attributes':{'StoreName':'Store 3','Address':'11 E Colton Ave, Redlands, CA 92374','StoreId':'121'},'geometry':{'x':-117.18194000041973,'y':34.06351999976232}}]}"
+      break_values: 5 10 15
+      travel_direction: Towards Facility
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 08:16:10 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "91"
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 08:17:23 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"1a500c9b"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "jobId": "je5202eda0fdb4882b58ada3c478743d0",
+          "jobStatus": "esriJobSubmitted"
+      }
+order: 1000

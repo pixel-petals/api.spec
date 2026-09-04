@@ -1,0 +1,3 @@
+$kind: collection
+description: This subfolder contains example requests that demonstrate how to use the GeoEnrichment APIs for discovering country-specific geographic and demographic data. Use these examples as references for constructing your own API calls.
+order: 1000

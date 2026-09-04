@@ -1,0 +1,227 @@
+$kind: http-example
+request:
+  url: https://logistics.arcgis.com/arcgis/rest/services/World/Route/GPServer/FindRoutes/jobs/:JOB_ID/results/Output_Routes
+  method: POST
+  pathVariables:
+    JOB_ID: "{{JOB_ID}}"
+  body:
+    type: urlencoded
+    content:
+      - key: token
+        value: "{{ACCESS_TOKEN}}"
+        description: Automatically sent by "Params"
+      - key: f
+        value: json
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 07:31:27 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "774"
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 07:32:18 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"3448f8f4"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "paramName": "Output_Routes",
+          "dataType": "GPFeatureRecordSetLayer",
+          "value": {
+              "displayFieldName": "",
+              "geometryType": "esriGeometryPolyline",
+              "spatialReference": {
+                  "wkid": 4326,
+                  "latestWkid": 4326
+              },
+              "fields": [
+                  {
+                      "name": "ObjectID",
+                      "type": "esriFieldTypeOID",
+                      "alias": "ObjectID"
+                  },
+                  {
+                      "name": "Name",
+                      "type": "esriFieldTypeString",
+                      "alias": "Name",
+                      "length": 1024
+                  },
+                  {
+                      "name": "StopCount",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "StopCount"
+                  },
+                  {
+                      "name": "StartTime",
+                      "type": "esriFieldTypeDate",
+                      "alias": "StartTime",
+                      "length": 16
+                  },
+                  {
+                      "name": "EndTime",
+                      "type": "esriFieldTypeDate",
+                      "alias": "EndTime",
+                      "length": 16
+                  },
+                  {
+                      "name": "StartTimeUTC",
+                      "type": "esriFieldTypeDate",
+                      "alias": "StartTimeUTC",
+                      "length": 16
+                  },
+                  {
+                      "name": "EndTimeUTC",
+                      "type": "esriFieldTypeDate",
+                      "alias": "EndTimeUTC",
+                      "length": 16
+                  },
+                  {
+                      "name": "Total_Miles",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Total_Miles"
+                  },
+                  {
+                      "name": "Total_Kilometers",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Total_Kilometers"
+                  },
+                  {
+                      "name": "Total_Minutes",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Total_Minutes"
+                  },
+                  {
+                      "name": "TotalWait_Minutes",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "TotalWait_Minutes"
+                  },
+                  {
+                      "name": "TotalViolation_Minutes",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "TotalViolation_Minutes"
+                  },
+                  {
+                      "name": "FirstStopOID",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "FirstStopOID"
+                  },
+                  {
+                      "name": "LastStopOID",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "LastStopOID"
+                  },
+                  {
+                      "name": "Shape_Length",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Shape_Length"
+                  }
+              ],
+              "features": [
+                  {
+                      "attributes": {
+                          "ObjectID": 1,
+                          "Name": "Route A",
+                          "StopCount": 2,
+                          "StartTime": null,
+                          "EndTime": null,
+                          "StartTimeUTC": null,
+                          "EndTimeUTC": null,
+                          "Total_Miles": 2807.5200490350212,
+                          "Total_Kilometers": 4518.2745823433825,
+                          "Total_Minutes": 2584.4098531815134,
+                          "TotalWait_Minutes": null,
+                          "TotalViolation_Minutes": null,
+                          "FirstStopOID": 1,
+                          "LastStopOID": 2,
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 2,
+                          "Name": "Route B",
+                          "StopCount": 2,
+                          "StartTime": null,
+                          "EndTime": null,
+                          "StartTimeUTC": null,
+                          "EndTimeUTC": null,
+                          "Total_Miles": 2123.606970136163,
+                          "Total_Kilometers": 3417.6209709887557,
+                          "Total_Minutes": 1939.5100127556573,
+                          "TotalWait_Minutes": null,
+                          "TotalViolation_Minutes": null,
+                          "FirstStopOID": 3,
+                          "LastStopOID": 4,
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 3,
+                          "Name": "Route C",
+                          "StopCount": 2,
+                          "StartTime": null,
+                          "EndTime": null,
+                          "StartTimeUTC": null,
+                          "EndTimeUTC": null,
+                          "Total_Miles": 1858.4461490619763,
+                          "Total_Kilometers": 2990.8851410862794,
+                          "Total_Minutes": 1740.3827734675385,
+                          "TotalWait_Minutes": null,
+                          "TotalViolation_Minutes": null,
+                          "FirstStopOID": 5,
+                          "LastStopOID": 6,
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 4,
+                          "Name": "Route D",
+                          "StopCount": 2,
+                          "StartTime": null,
+                          "EndTime": null,
+                          "StartTimeUTC": null,
+                          "EndTimeUTC": null,
+                          "Total_Miles": 3270.1001167174209,
+                          "Total_Kilometers": 5262.7265276915368,
+                          "Total_Minutes": 2985.43363777472,
+                          "TotalWait_Minutes": null,
+                          "TotalViolation_Minutes": null,
+                          "FirstStopOID": 7,
+                          "LastStopOID": 8,
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 5,
+                          "Name": "Route E",
+                          "StopCount": 2,
+                          "StartTime": null,
+                          "EndTime": null,
+                          "StartTimeUTC": null,
+                          "EndTimeUTC": null,
+                          "Total_Miles": 2394.245258399651,
+                          "Total_Kilometers": 3853.1719474778229,
+                          "Total_Minutes": 2134.087437753195,
+                          "TotalWait_Minutes": null,
+                          "TotalViolation_Minutes": null,
+                          "FirstStopOID": 9,
+                          "LastStopOID": 10,
+                          "Shape_Length": 0
+                      }
+                  }
+              ],
+              "exceededTransferLimit": false
+          }
+      }
+order: 1000

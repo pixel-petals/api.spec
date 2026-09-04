@@ -1,0 +1,321 @@
+$kind: http-example
+request:
+  url: https://geoenrich.arcgis.com/arcgis/rest/services/World/GeoEnrichmentServer/Geoenrichment/reports/:country-code?f=pjson&token={{ACCESS_TOKEN}}
+  method: GET
+  queryParams:
+    f: pjson
+    token: "{{ACCESS_TOKEN}}"
+  pathVariables:
+    country-code: GB
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 03 Oct 2025 21:08:53 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    ETag: '"1704778441"'
+    Content-Language: en
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+          "reports": [
+              {
+                  "reportID": "Custom_Map_Landscape",
+                  "metadata": {
+                      "name": "Custom Map Landscape",
+                      "title": "Custom Map Landscape",
+                      "styles": [
+                          "classic",
+                          "modern"
+                      ],
+                      "categories": [
+                          "Maps"
+                      ],
+                      "type": "esriReportTemplateMapReport",
+                      "boundaryVintage": "2010",
+                      "boundaryVintageDescription": "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+                      "dataVintage": null,
+                      "dataVintageDescription": null,
+                      "keywords": "Custom Map Landscape",
+                      "creationDate": "1355122800000",
+                      "lastRevisionDate": "1355468400000",
+                      "coverage": "North America, Europe, and the rest of the world",
+                      "author": "Esri",
+                      "countries": null,
+                      "dataset": "",
+                      "hierarchy": null
+                  },
+                  "headers": [
+                      "locationname",
+                      "address",
+                      "latitude",
+                      "longitude",
+                      "areadesc2",
+                      "reportstyle",
+                      "binarylogo",
+                      "logo",
+                      "title"
+                  ],
+                  "formats": [
+                      "pdf"
+                  ]
+              },
+              {
+                  "reportID": "Custom_Map_Portrait",
+                  "metadata": {
+                      "name": "Custom Map Portrait",
+                      "title": "Custom Map Portrait",
+                      "styles": [
+                          "classic",
+                          "modern"
+                      ],
+                      "categories": [
+                          "Maps"
+                      ],
+                      "type": "esriReportTemplateMapReport",
+                      "boundaryVintage": "2010",
+                      "boundaryVintageDescription": "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+                      "dataVintage": null,
+                      "dataVintageDescription": null,
+                      "keywords": "Custom Map Portrait",
+                      "creationDate": "1355122800000",
+                      "lastRevisionDate": "1355468400000",
+                      "coverage": "North America, Europe, and the rest of the world",
+                      "author": "Esri",
+                      "countries": null,
+                      "dataset": "",
+                      "hierarchy": null
+                  },
+                  "headers": [
+                      "locationname",
+                      "address",
+                      "latitude",
+                      "longitude",
+                      "areadesc2",
+                      "reportstyle",
+                      "binarylogo",
+                      "logo",
+                      "title"
+                  ],
+                  "formats": [
+                      "pdf"
+                  ]
+              },
+              {
+                  "reportID": "site_map",
+                  "metadata": {
+                      "name": "Site Map",
+                      "title": "Site Map",
+                      "styles": [
+                          "classic",
+                          "modern"
+                      ],
+                      "categories": [
+                          "Maps"
+                      ],
+                      "type": "esriReportTemplateMapReport",
+                      "boundaryVintage": "2010",
+                      "boundaryVintageDescription": "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+                      "dataVintage": null,
+                      "dataVintageDescription": null,
+                      "keywords": "Site Map",
+                      "creationDate": "1355122800000",
+                      "lastRevisionDate": "1355468400000",
+                      "coverage": "North America, Europe, and the rest of the world",
+                      "author": "Esri",
+                      "countries": null,
+                      "dataset": "",
+                      "hierarchy": null
+                  },
+                  "headers": [
+                      "locationname",
+                      "address",
+                      "latitude",
+                      "longitude",
+                      "areadesc2",
+                      "reportstyle",
+                      "binarylogo",
+                      "logo",
+                      "title"
+                  ],
+                  "formats": [
+                      "pdf"
+                  ]
+              },
+              {
+                  "reportID": "site_map_imagery04",
+                  "metadata": {
+                      "name": "Site Map on Satellite Imagery - 0.4 Miles Wide",
+                      "title": "Site Map on Satellite Imagery - 0.4 Miles Wide",
+                      "styles": [
+                          "classic",
+                          "modern"
+                      ],
+                      "categories": [
+                          "Maps"
+                      ],
+                      "type": "esriReportTemplateMapReport",
+                      "boundaryVintage": "2010",
+                      "boundaryVintageDescription": "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+                      "dataVintage": null,
+                      "dataVintageDescription": null,
+                      "keywords": "Site Map",
+                      "creationDate": "1355122800000",
+                      "lastRevisionDate": "1355468400000",
+                      "coverage": "North America, Europe, and the rest of the world",
+                      "author": "Esri",
+                      "countries": null,
+                      "dataset": "",
+                      "hierarchy": null
+                  },
+                  "headers": [
+                      "locationname",
+                      "address",
+                      "latitude",
+                      "longitude",
+                      "areadesc2",
+                      "reportstyle",
+                      "binarylogo",
+                      "logo",
+                      "title"
+                  ],
+                  "formats": [
+                      "pdf"
+                  ]
+              },
+              {
+                  "reportID": "site_map_imagery08",
+                  "metadata": {
+                      "name": "Site Map on Satellite Imagery - 0.8 Miles Wide",
+                      "title": "Site Map on Satellite Imagery - 0.8 Miles Wide",
+                      "styles": [
+                          "classic",
+                          "modern"
+                      ],
+                      "categories": [
+                          "Maps"
+                      ],
+                      "type": "esriReportTemplateMapReport",
+                      "boundaryVintage": "2010",
+                      "boundaryVintageDescription": "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+                      "dataVintage": null,
+                      "dataVintageDescription": null,
+                      "keywords": "Site Map",
+                      "creationDate": "1355122800000",
+                      "lastRevisionDate": "1355468400000",
+                      "coverage": "North America, Europe, and the rest of the world",
+                      "author": "Esri",
+                      "countries": null,
+                      "dataset": "",
+                      "hierarchy": null
+                  },
+                  "headers": [
+                      "locationname",
+                      "address",
+                      "latitude",
+                      "longitude",
+                      "areadesc2",
+                      "reportstyle",
+                      "binarylogo",
+                      "logo",
+                      "title"
+                  ],
+                  "formats": [
+                      "pdf"
+                  ]
+              },
+              {
+                  "reportID": "site_map_imagery16",
+                  "metadata": {
+                      "name": "Site Map on Satellite Imagery - 1.6 Miles Wide",
+                      "title": "Site Map on Satellite Imagery - 1.6 Miles Wide",
+                      "styles": [
+                          "classic",
+                          "modern"
+                      ],
+                      "categories": [
+                          "Maps"
+                      ],
+                      "type": "esriReportTemplateMapReport",
+                      "boundaryVintage": "2010",
+                      "boundaryVintageDescription": "Data displayed and aggregated on these reports is based on Census 2010 boundaries.",
+                      "dataVintage": null,
+                      "dataVintageDescription": null,
+                      "keywords": "Site Map",
+                      "creationDate": "1355122800000",
+                      "lastRevisionDate": "1355468400000",
+                      "coverage": "North America, Europe, and the rest of the world",
+                      "author": "Esri",
+                      "countries": null,
+                      "dataset": "",
+                      "hierarchy": null
+                  },
+                  "headers": [
+                      "locationname",
+                      "address",
+                      "latitude",
+                      "longitude",
+                      "areadesc2",
+                      "reportstyle",
+                      "binarylogo",
+                      "logo",
+                      "title"
+                  ],
+                  "formats": [
+                      "pdf"
+                  ]
+              },
+              {
+                  "reportID": "UnitedKingdomSummaryReport",
+                  "metadata": {
+                      "name": "United Kingdom Summary Report",
+                      "title": "United Kingdom Summary Report",
+                      "styles": [
+                          "classic",
+                          "modern"
+                      ],
+                      "categories": [
+                          "Summary Reports"
+                      ],
+                      "type": "esriReportTemplateMultiColumn",
+                      "boundaryVintage": "2024",
+                      "boundaryVintageDescription": "© Michael Bauer Research GmbH, Nuremberg, Germany, 2024. Data Source for Digital Boundaries: 2024 Michael Bauer Research GmbH based on © Data Source NISRA © Office for National Statistics licensed under the Open Government Licence v.3.0 2024 Michael Bauer Research GmbH contains © NRS data © Crown copyright and database right 2024 © Ordnance Survey data © Crown copyright and database right 2023/2024, updated to vintage 2024 by Michael Bauer Research GmbH. © Royal Mail data © Royal Mail copyright and database right 2024.",
+                      "dataVintage": "2023,2024",
+                      "dataVintageDescription": "© Michael Bauer Research GmbH 2024 based on © Office for National Statistics (ONS)/UK Statistics Authority, Scottish Government, Northern Ireland Statistics and Research Agency, UN.",
+                      "keywords": "15 Year Increments,Age,Average Households,Clothing,Couple,Demographics,Divorced,Education,Educational Attainment,Employment,Expenditures,Family,Female,Food,Furniture,Gender,High School,Household Size,Households,Households by Income,Households by Type,Income,Indicators,Male,Marital Status,Marriage,Married,Per Capita,Per Mill,Personal Care,Population,Population Totals,Primary,Purchasing,Purchasing Power,Recreation,School,Secondary,Single,Spending,Total Population,Unemployment,United Kingdom,University,Vocational,Widowed",
+                      "creationDate": "1738920299006",
+                      "lastRevisionDate": "1738920299006",
+                      "coverage": "GB",
+                      "author": "Esri",
+                      "countries": "GB",
+                      "dataset": "GBR_MBR_2024",
+                      "hierarchy": "census"
+                  },
+                  "headers": [
+                      "locationname",
+                      "address",
+                      "latitude",
+                      "longitude",
+                      "areadesc2",
+                      "reportstyle",
+                      "binarylogo",
+                      "logo",
+                      "title"
+                  ],
+                  "formats": [
+                      "pdf",
+                      "xlsx"
+                  ]
+              }
+          ],
+          "messages": []
+      }
+order: 1000

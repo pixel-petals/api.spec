@@ -1,0 +1,12 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/batch-geocoding/#direct-geocode-a-set-of-addresses)
+url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/geocodeAddresses
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    addresses: '{ "records": [ { "attributes": { "objectid": 1, "address": "Buckingham Palace" } }, { "attributes": { "objectid": 2, "address": "Bernardis Restaurant London" } }, { "attributes": { "objectid": 3, "address": "58 Brewer Street, London, England" } } ] }'
+examples: ./.resources/Geocode a set of addresses.resources/examples
+order: 1000

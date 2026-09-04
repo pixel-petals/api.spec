@@ -1,0 +1,23 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/CalculateDensity/jobs/{{job_id}}"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+        "jobId": "<JOB_ID>",
+        "jobStatus": "esriJobExecuting",
+        "results": {},
+        "inputs": {},
+        "messages": []
+      }
+order: 1000

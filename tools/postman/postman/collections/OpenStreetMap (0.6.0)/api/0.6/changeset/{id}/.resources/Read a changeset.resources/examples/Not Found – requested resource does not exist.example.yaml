@@ -1,0 +1,22 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/changeset/:id?include_discussion=string"
+  method: GET
+  queryParams:
+    - key: include_discussion
+      value: string
+      description: If set to any value, includes discussion comments in the response
+  pathVariables:
+    - key: id
+      value: "6776"
+      description: The numeric ID of the changeset
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

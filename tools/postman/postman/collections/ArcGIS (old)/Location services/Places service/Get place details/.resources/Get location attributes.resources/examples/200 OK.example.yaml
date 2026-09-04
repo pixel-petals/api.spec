@@ -1,0 +1,50 @@
+$kind: http-example
+request:
+  url: https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/4ad742a1406729af9304724c76214e5c?requestedFields=location, additionalLocations:dropOff, additionalLocations:frontDoor, additionalLocations:road, additionalLocations:roof&f=pjson&token={{placesToken}}
+  method: GET
+  queryParams:
+    requestedFields: location, additionalLocations:dropOff, additionalLocations:frontDoor, additionalLocations:road, additionalLocations:roof
+    f: pjson
+    token: "{{placesToken}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    access-control-allow-credentials: "true"
+    access-control-allow-headers: "*"
+    access-control-allow-methods: OPTIONS, GET
+    access-control-allow-origin: "*"
+    Content-Encoding: gzip
+    Content-Type: application/json
+    Date: Tue, 13 Jun 2023 15:14:47 GMT
+    permissions-policy: interest-cohort=()
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    Content-Length: "217"
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      {
+          "placeDetails": {
+              "placeId": "4ad742a1406729af9304724c76214e5c",
+              "location": {
+                  "x": -88.069999,
+                  "y": 41.679227
+              },
+              "additionalLocations": {
+                  "dropOff": {
+                      "x": -88.070319,
+                      "y": 41.68032
+                  },
+                  "frontDoor": null,
+                  "road": null,
+                  "roof": {
+                      "x": -88.069835,
+                      "y": 41.678865
+                  }
+              }
+          }
+      }
+order: 1000

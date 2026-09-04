@@ -1,0 +1,15 @@
+$kind: http-request
+description: |-
+  Deletes a point feature from a hosted feature layer. Provide the object ID of the feature to remove it from the layer. The response confirms the deletion status and any errors encountered.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/feature-services/edit-features/#delete-features-from-a-feature-layer)
+url: https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/my_points/FeatureServer/0/deleteFeatures
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    objectIds: "[6]"
+examples: ./.resources/Delete a point feature.resources/examples
+order: 1000

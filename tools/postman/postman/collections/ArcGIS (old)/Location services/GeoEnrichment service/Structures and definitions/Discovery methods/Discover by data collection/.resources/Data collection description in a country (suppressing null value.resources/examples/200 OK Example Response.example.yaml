@@ -1,0 +1,17 @@
+$kind: http-example
+request:
+  url: https://example.com/api/data-collection/USA?suppressNulls=true
+  method: GET
+  headers:
+    Authorization: Bearer <ACCESS_TOKEN>
+  queryParams:
+    suppressNulls: "true"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Authorization: Bearer <ACCESS_TOKEN>
+  body:
+    type: json
+    content: '{"country":"USA","data_collections":[{"name":"Population","description":"Total population data for the country.","year":2023,"value":331002651}],"note":"Null values are suppressed in this response."}'
+order: 1000

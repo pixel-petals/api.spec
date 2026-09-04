@@ -1,0 +1,9 @@
+$kind: collection
+description: Example requests using the [`/enrich`](https://developers.arcgis.com/rest/geoenrichment/enrich/) endpoint.
+scripts:
+  - type: http:beforeRequest
+    code: |-
+      // utils.requiredParameters(['f', 'token', 'studyAreas']);
+      // utils.checkSupportedValues("f", ["json", "pjson"]);
+    language: text/javascript
+order: 1000

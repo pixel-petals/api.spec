@@ -1,0 +1,28 @@
+$kind: http-request
+url: "{{baseUrl}}/api/0.6/users?users=1,2,3"
+method: GET
+headers:
+  Accept: application/xml
+queryParams:
+  - key: users
+    value: 1,2,3
+    description: Comma-separated list of user IDs
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: text
+  content: ""
+auth:
+  type: noauth
+examples: ./.resources/Get details of multiple users.resources/examples
+order: 1000

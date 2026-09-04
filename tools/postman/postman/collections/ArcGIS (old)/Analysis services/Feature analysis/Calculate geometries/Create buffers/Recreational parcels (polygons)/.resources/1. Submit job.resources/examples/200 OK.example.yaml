@@ -1,0 +1,32 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/CreateBuffers/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+      inputLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Portland Bike Routes/FeatureServer/0","name":"Portland Bike Routes"}'
+      dissolveType: Dissolve
+      distances: "200"
+      units: Feet
+      ringType: Rings
+      sideType: Full
+      endType: Round
+      outputName: '{"serviceProperties":{"name":"Create buffer results"}}'
+      context: '{"extent":{"xmin":-13662729.567933429,"ymin":5698255.281363884,"xmax":-13646142.732795566,"ymax":5708813.1458957605,"spatialReference":{"wkid":102100,"latestWkid":3857}}}'
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+        "jobId": "<JOB_ID>",
+        "jobStatus": "esriJobSubmitted",
+        "results": {},
+        "inputs": {},
+        "messages": []
+      }
+order: 1000

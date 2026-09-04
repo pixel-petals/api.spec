@@ -1,0 +1,131 @@
+$kind: http-example
+request:
+  url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/countries/:country-code?f=json
+  method: GET
+  queryParams:
+    f: json
+  pathVariables:
+    country-code: UA
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 03 Oct 2025 21:08:25 GMT
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    ETag: '"-1367053841"'
+    Content-Language: en
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+          "countries": [
+              {
+                  "id": "UA",
+                  "name": "Ukraine",
+                  "abbr3": "UKR",
+                  "altName": "UKRAINE",
+                  "altNames": [
+                      "UKRAINE"
+                  ],
+                  "continent": "Europe",
+                  "distanceUnits": "Kilometers",
+                  "esriUnits": "esriKilometers",
+                  "defaultExtent": {
+                      "xmin": 22.1373901591,
+                      "ymin": 44.3859744245,
+                      "xmax": 40.2294015907,
+                      "ymax": 52.3812511478,
+                      "spatialReference": {
+                          "wkid": 4326,
+                          "latestWkid": 4326
+                      }
+                  },
+                  "defaultDatasetID": "UKR_MBR_2022",
+                  "datasets": [
+                      "UKR_MBR_2022"
+                  ],
+                  "hierarchies": [
+                      {
+                          "ID": "census",
+                          "alias": "Standard",
+                          "shortDescription": "This data source for the standard UA data is Michael Bauer Research (MBR). Vintage 2022.",
+                          "default": true,
+                          "longDescription": "This data source for the standard UA data is Michael Bauer Research (MBR). Vintage 2022.",
+                          "locales": [
+                              "en"
+                          ],
+                          "datasets": [
+                              "UKR_MBR_2022"
+                          ],
+                          "levelsInfo": {
+                              "geographyLevels": [
+                                  "Country",
+                                  "Regions",
+                                  "Postcodes2",
+                                  "Districts",
+                                  "Postcodes5"
+                              ]
+                          },
+                          "variablesInfo": {
+                              "dataBrowserVariableCount": 107,
+                              "categories": [
+                                  "Age",
+                                  "Households",
+                                  "Income",
+                                  "Jobs",
+                                  "Key Facts",
+                                  "Population",
+                                  "Spending"
+                              ]
+                          },
+                          "dataVintage": "2022",
+                          "populationToPolygonSizeRating": 1.3,
+                          "apportionmentConfidence": 2.13,
+                          "apportionmentThresholds": [
+                              {
+                                  "method": "BlockApportion",
+                                  "dataLayer": "UA.Postcodes5",
+                                  "pointsLayer": "UA.BlockPoints",
+                                  "maximumSize": 150
+                              },
+                              {
+                                  "method": "CentroidsInPolygon",
+                                  "dataLayer": "UA.Postcodes5",
+                                  "maximumSize": 250
+                              },
+                              {
+                                  "method": "CentroidsInPolygon",
+                                  "dataLayer": "UA.Districts"
+                              }
+                          ],
+                          "hasInterestingFactsStatistics": true,
+                          "semanticCapabilityLanguages": [
+                              "en"
+                          ],
+                          "reportStyles": [
+                              "classic"
+                          ]
+                      }
+                  ],
+                  "defaultDataCollection": "KeyGlobalFacts",
+                  "defaultReport": "UkraineSummaryReport",
+                  "defaultReportTemplate": "Ukraine Summary Report",
+                  "defaultInfographic": "key-facts-global",
+                  "defaultInfographicTemplate": "Key Facts (Standard)",
+                  "currencyCode": "UAH",
+                  "currencyName": "Ukrainian Hryvnia",
+                  "currencySymbol": "UAH",
+                  "currencyFormat": "UAH 0;-UAH 0",
+                  "dataCollections": ""
+              }
+          ],
+          "messages": []
+      }
+order: 1000

@@ -1,0 +1,3 @@
+$kind: collection
+description: Calculate geometries operations allow you to perform different types of geometric calculations on feature data and to create new feature data such as grids, tessellations, and bins.
+order: 8000

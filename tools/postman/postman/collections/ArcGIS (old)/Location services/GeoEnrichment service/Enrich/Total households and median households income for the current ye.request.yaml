@@ -1,0 +1,17 @@
+$kind: http-request
+name: Total households and median households income for the current year (within 5min drive time)
+description: |-
+  ![](https://developers.arcgis.com/rest/geoenrichment/api-reference/GUID-2ABC49BE-818F-43AF-8357-2D46D366CF2B-web.png)
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/Enrich?f=pjson&token={{ACCESS_TOKEN}}&studyAreas=[{"geometry":{"x":-117.2459,"y":32.8307}}]&studyAreasOptions={"areaType":"DriveTimeBuffer","bufferUnits":"esriDriveTimeUnitsMinutes","bufferRadii":[5]}& analysisVariables=["KeyUSFacts.TOTHH_CY","KeyUsFacts.MEDHINC_CY"]&returngeometry=true
+method: GET
+queryParams:
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+  studyAreas: '[{"geometry":{"x":-117.2459,"y":32.8307}}]'
+  studyAreasOptions: '{"areaType":"DriveTimeBuffer","bufferUnits":"esriDriveTimeUnitsMinutes","bufferRadii":[5]}'
+  " analysisVariables": '["KeyUSFacts.TOTHH_CY","KeyUsFacts.MEDHINC_CY"]'
+  returngeometry: "true"
+examples: ./.resources/Total households and median households income for the current ye.resources/examples
+order: 15000

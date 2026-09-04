@@ -1,0 +1,19 @@
+$kind: http-request
+description: |-
+  Updates the properties of an ArcGIS group, such as the title or description. Use this endpoint to programmatically modify group details by specifying the group ID and new property values in the request body. Requires authentication with an access token.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/users-and-groups/groups/#update-properties)
+url: https://www.arcgis.com/sharing/rest/community/groups/:GROUP_ID/update?title=Title update programmatically {{$timestamp}}&f=json&token={{ACCESS_TOKEN}}
+method: POST
+queryParams:
+  - key: title
+    value: Title update programmatically {{$timestamp}}
+    description: The new name for the group.
+  - key: f
+    value: json
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+pathVariables:
+  GROUP_ID: "{{CREATED_GROUP_ID}}"
+examples: ./.resources/Update group properties.resources/examples
+order: 3000

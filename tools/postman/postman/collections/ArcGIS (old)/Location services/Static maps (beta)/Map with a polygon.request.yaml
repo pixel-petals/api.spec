@@ -1,0 +1,66 @@
+$kind: http-request
+description: "[Check the documentation](https://developers.arcgis.com/rest/static-maps/arcgis-arcgis-style-along-a-route-get/)"
+url: https://static-maps-api.arcgis.com/arcgis/rest/services/static-maps-service/:VERSION/static-maps/arcgis/:ARCGIS-STYLE/with-polygon?fillColor=007AC240&fillStyle=solid&imageFormat=png&imageHeight=400&imageWidth=400&outlineColor=FFFFFF80&outlineStyle=dash&outlineWidth=3&imagePadding=[10]&polygon=[[-69.9633907,43.9106519],[-69.9586439,43.9098859],[-69.9589097,43.9075604],[-69.9562135,43.9044961],[-69.9669223,43.9025535],[-69.9633907,43.9106519]]&mapZoom=13
+method: GET
+queryParams:
+  - key: fillColor
+    value: 007AC240
+    description: The color of the fill in hexadecimal format.
+  - key: fillStyle
+    value: solid
+    description: The style of the fill.
+  - key: imageFormat
+    value: png
+    description: The format of the map image, such as png, jpeg, webp.
+  - key: imageHeight
+    value: "400"
+    description: The height of the requested map image in pixels at 96 DPI between 64 and 1024 pixels.
+  - key: imageWidth
+    value: "400"
+    description: The width of the requested map image in pixels at 96 DPI between 64 and 1024 pixels.
+  - key: outlineColor
+    value: FFFFFF80
+    description: The color of the line symbol in hexadecimal format.
+  - key: outlineStyle
+    value: dash
+    description: The style, or stroke, of the outline of the polygon.
+  - key: outlineWidth
+    value: "3"
+    description: The width of the line in device-independent pixels.
+  - key: imagePadding
+    value: "[10]"
+    description: The padding applied to the static map adds extra map content between the static map's extent and the edge of the image.
+  - key: polygon
+    value: "[[-69.9633907,43.9106519],[-69.9586439,43.9098859],[-69.9589097,43.9075604],[-69.9562135,43.9044961],[-69.9669223,43.9025535],[-69.9633907,43.9106519]]"
+    description: A route contains an array of x,y coordinate pairs in the WGS84 spatial reference.
+  - key: token
+    value: string
+    disabled: true
+    description: The authentication token, used to access the static maps service.
+  - key: mapRadius
+    value: "5000"
+    disabled: true
+    description: The radius, in meters, that defines the minimum geographic area shown around the specified point on the static map.
+  - key: mapCenterX
+    value: ""
+    disabled: true
+    description: The x-coordinate, or longitude value, of the point expressed in WGS84 decimal degrees.
+  - key: mapCenterY
+    value: ""
+    disabled: true
+    description: The y-coordinate, or latitude value, of the point expressed in WGS84 decimal degrees.
+  - key: mapZoom
+    value: "13"
+    description: Specifies the map zoom level, which controls the level of detail (LOD) displayed.
+pathVariables:
+  - key: VERSION
+    value: beta
+    description: API Version
+  - key: ARCGIS-STYLE
+    value: imagery
+    description: ArcGIS Basemap style
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+order: 11000

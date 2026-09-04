@@ -1,0 +1,57 @@
+$kind: http-example
+request:
+  url: https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/:VERSION/sessions/start?styleFamily=arcgis&durationSeconds=30
+  method: GET
+  queryParams:
+    styleFamily: arcgis
+    durationSeconds: "30"
+  pathVariables:
+    VERSION: v2
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Content-Type
+      value: application/json
+    - key: Content-Length
+      value: "311"
+    - key: Connection
+      value: keep-alive
+    - key: Date
+      value: Mon, 25 Aug 2025 15:51:01 GMT
+    - key: Strict-Transport-Security
+      value: max-age=31536000; includeSubDomains; preload
+    - key: esri-internal-basemap-session-token
+      value: AASTeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6ImJrMSJ9.eyJleHAiOjE3NTYxMzcwOTEsImF1ZCI6WyJiYXNlbWFwcyIsImliYXNlbWFwcyJdLCJqdGkiOiJKQ2FQRDlFZWFyTSIsInNjb3BlIjpbImFyY2dpcyJdfQ.5URYtGze5gCuRIgmXj_RuWvS-e-hE7Sl5cHjtGuw8Zo
+    - key: x-content-type-options
+      value: nosniff
+    - key: permissions-policy
+      value: interest-cohort=()
+    - key: x-frame-options
+      value: SAMEORIGIN
+    - key: Vary
+      value: Origin, Accept-Encoding, Authorization, X-Esri-Authorization
+    - key: Vary
+      value: Origin
+    - key: X-Cache
+      value: Miss from cloudfront
+    - key: Via
+      value: 1.1 f03ced384777449538f7af55da0e2760.cloudfront.net (CloudFront)
+    - key: X-Amz-Cf-Pop
+      value: IAD55-P5
+    - key: X-Amz-Cf-Id
+      value: 4-cS01ZjhyY5Q4oGDl5L7UftkPdo6FyWMSW16vjzxQ4jN4_JQrIs4Q==
+    - key: Referrer-Policy
+      value: no-referrer-when-downgrade
+    - key: Content-Security-Policy
+      value: upgrade-insecure-requests
+  body:
+    type: json
+    content: |-
+      {
+          "sessionToken": "YOUR_SESSION_TOKEN",
+          "startTime": 1756137061557,
+          "endTime": 1756137091557,
+          "styleFamily": "arcgis"
+      }
+order: 1000

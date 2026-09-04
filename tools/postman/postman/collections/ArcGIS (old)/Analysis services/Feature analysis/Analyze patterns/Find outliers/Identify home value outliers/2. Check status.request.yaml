@@ -1,0 +1,13 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/analyze-patterns/find-outliers/#identify-home-value-outliers)
+url: "{{ANALYSIS_URL}}/FindOutliers/jobs/:JOB_ID"
+method: POST
+pathVariables:
+  JOB_ID: "{{JOB_ID}}"
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/2. Check status.resources/examples
+order: 2000

@@ -1,0 +1,19 @@
+$kind: http-request
+description: Returns a static tile at the provided level, row, and column.
+url: https://static-map-tiles-api.arcgis.com/arcgis/rest/services/static-basemap-tiles-service/:VERSION/:STYLE_FAMILY/:STYLE_NAME/static/tile/:LEVEL/:ROW/:COLUMN?token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    description: An access token from an ArcGIS Location Platform account.
+pathVariables:
+  VERSION: v1
+  STYLE_FAMILY: arcgis
+  STYLE_NAME: navigation
+  LEVEL: "17"
+  ROW: "52333"
+  COLUMN: "22866"
+auth:
+  type: noauth
+examples: ./.resources/Get a tile.resources/examples
+order: 1000

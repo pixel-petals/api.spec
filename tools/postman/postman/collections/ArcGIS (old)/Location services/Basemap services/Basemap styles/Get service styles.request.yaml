@@ -1,0 +1,11 @@
+$kind: http-request
+description: Returns the list of styles provided by the ArcGIS Basemap styles service.
+url: https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/:VERSION/:STYLE_RESPONSE/self?token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  token: "{{ACCESS_TOKEN}}"
+pathVariables:
+  VERSION: v2
+  STYLE_RESPONSE: styles
+examples: ./.resources/Get service styles.resources/examples
+order: 6000

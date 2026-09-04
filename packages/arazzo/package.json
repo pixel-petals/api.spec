@@ -1,0 +1,16 @@
+{
+  "name": "@pixelpetals/arazzo",
+  "type": "module",
+  "bin": {
+    "arazzo": "bin/cmd.js"
+  },
+  "exports": {
+    "./*": "./schema/*"
+  },
+  "dependencies": {
+    "utils": "*"
+  },
+  "imports": {
+    "#lib/*": "./bin/lib/*.js"
+  }
+}

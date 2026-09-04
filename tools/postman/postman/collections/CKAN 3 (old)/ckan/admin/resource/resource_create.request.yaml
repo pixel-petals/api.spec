@@ -1,0 +1,101 @@
+$kind: http-request
+url: "{{CKAN_API}}/resource_create"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: package_id
+      value: "{{package-admin}}"
+      description: REQUIRED (string) – id of package that the resource should be added to.
+      disabled: true
+    - type: text
+      key: package_id
+      value: "{{package-editor}}"
+      disabled: true
+    - type: text
+      key: package_id
+      value: "{{package-member}}"
+      disabled: true
+    - type: text
+      key: package_id
+      value: "{{package-no-role}}"
+    - type: text
+      key: url
+      value: postman-test-resource-0
+      description: REQUIRED (string) – url of resource
+      disabled: true
+    - type: text
+      key: revision_id
+      value: ""
+      description: (string) – (optional)
+      disabled: true
+    - type: text
+      key: description
+      value: ""
+      description: (string) – (optional)
+      disabled: true
+    - type: text
+      key: format
+      value: ""
+      description: (string) – (optional)
+      disabled: true
+    - type: text
+      key: hash
+      value: ""
+      description: (string) – (optional)
+      disabled: true
+    - type: text
+      key: name
+      value: ""
+      description: (string) – (optional)
+      disabled: true
+    - type: text
+      key: resource_type
+      value: ""
+      description: (string) – (optional)
+      disabled: true
+    - type: text
+      key: mimetype
+      value: ""
+      description: (string) – (optional)
+      disabled: true
+    - type: text
+      key: mimetype_inner
+      value: ""
+      description: (string) – (optional)
+      disabled: true
+    - type: text
+      key: cache_url
+      value: ""
+      description: (string) – (optional)
+      disabled: true
+    - type: text
+      key: size
+      value: ""
+      description: (int) – (optional)
+      disabled: true
+    - type: text
+      key: created
+      value: ""
+      description: (iso date string) – (optional)
+      disabled: true
+    - type: text
+      key: last_modified
+      value: ""
+      description: (iso date string) – (optional)
+      disabled: true
+    - type: text
+      key: cache_last_updated
+      value: ""
+      description: (iso date string) – (optional)
+      disabled: true
+    - type: file
+      key: upload
+      src: ""
+      description: (FieldStorage (optional) needs multipart/form-data) – (optional)
+      disabled: true
+order: 1000

@@ -1,0 +1,163 @@
+$kind: http-request
+description: "[Check the documentation](https://developers.arcgis.com/rest/static-maps/arcgis-arcgis-style-using-many-points-get/)"
+url: https://static-maps-api.arcgis.com/arcgis/rest/services/static-maps-service/:VERSION/static-maps/arcgis/:ARCGIS-STYLE/with-many-points?labelOption=letter&imageFormat=jpeg&imageHeight=400&imageWidth=400&points=[[-117.1601,32.7055],[-117.1570, 32.7076],[-117.1643,32.7039],[-117.1643, 32.7099]]&imagePadding=[20,20,20,20]&symbolColor=007AC2&symbolScale=1&symbolStyle=circle
+method: GET
+queryParams:
+  - key: labelOption
+    value: letter
+    description: The marker symbol can have a label showing a single letter or number.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "default": "none",
+            "enum": [
+              "none",
+              "letter",
+              "number"
+            ]
+          }
+        }
+      }
+  - key: imageFormat
+    value: jpeg
+    description: The format of the map image, such as png, jpeg, webp.
+  - key: imageHeight
+    value: "400"
+    description: The height of the requested map image in pixels at 96 DPI between 64 and 1024 pixels.
+  - key: imageWidth
+    value: "400"
+    description: The width of the requested map image in pixels at 96 DPI between 64 and 1024 pixels.
+  - key: points
+    value: "[[-117.1601,32.7055],[-117.1570, 32.7076],[-117.1643,32.7039],[-117.1643, 32.7099]]"
+    description: An array of points to be displayed on the static map.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "pattern": "^\\[\\s*\\[\\s*-?(?:180(?:\\.0+)?|(?:1[0-7]\\d|\\d?\\d)(?:\\.\\d+)?)\\s*,\\s*-?(?:90(?:\\.0+)?|(?:[1-8]?\\d)(?:\\.\\d+)?)\\s*\\](?:\\s*,\\s*\\[\\s*-?(?:180(?:\\.0+)?|(?:1[0-7]\\d|\\d?\\d)(?:\\.\\d+)?)\\s*,\\s*-?(?:90(?:\\.0+)?|(?:[1-8]?\\d)(?:\\.\\d+)?)\\s*\\]){0,9}\\s*\\]$"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: imagePadding
+    value: "[20,20,20,20]"
+    description: The padding applied to the static map adds extra map content between the static map's extent and the edge of the image.
+  - key: mapRadius
+    value: "100"
+    disabled: true
+    description: The radius, in meters, that defines the minimum geographic area shown around the specified point on the static map.
+  - key: symbolColor
+    value: 007AC2
+    description: The hexadecimal color code for the marker symbol.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "pattern": "[0-9a-f]",
+            "minLength": "6",
+            "maxLength": "6"
+          }
+        }
+      }
+  - key: symbolScale
+    value: "1"
+    description: The scale of the marker symbol as a multiplier of the symbol's dimensions.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "minimum": "0.1",
+            "maximum": "4",
+            "default": "1"
+          }
+        }
+      }
+  - key: symbolStyle
+    value: circle
+    description: The style of the marker symbol.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "enum": [
+              "pin",
+              "circle"
+            ]
+          }
+        }
+      }
+  - key: mapCenterX
+    value: ""
+    disabled: true
+    description: The x-coordinate, or longitude value, of the point expressed in WGS84 decimal degrees.
+  - key: mapCenterY
+    value: ""
+    disabled: true
+    description: The y-coordinate, or latitude value, of the point expressed in WGS84 decimal degrees.
+  - key: mapZoom
+    value: ""
+    disabled: true
+    description: Specifies the map zoom level, which controls the level of detail (LOD) displayed.
+pathVariables:
+  - key: VERSION
+    value: beta
+    description: API Version
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "default": "beta",
+            "deprecated": false,
+            "enum": [
+              "beta"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: ARCGIS-STYLE
+    value: streets
+    description: ArcGIS Basemap style
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "navigation",
+              "navigation-night",
+              "streets",
+              "streets-night",
+              "imagery"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+order: 5000

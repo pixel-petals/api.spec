@@ -1,0 +1,14 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/combine-data/merge-layers/#merge-school-layers)
+url: "{{ANALYSIS_URL}}/MergeLayers/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    inputLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/SA_Merge_Public_Schools/FeatureServer/0"}'
+    mergeLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/SA_Merge_Private_School/FeatureServer/0"}'
+    outputName: '{"serviceProperties":{"name":"Merge layers results"}}'
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

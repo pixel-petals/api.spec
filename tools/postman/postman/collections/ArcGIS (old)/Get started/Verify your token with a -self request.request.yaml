@@ -1,0 +1,21 @@
+$kind: http-request
+name: Verify your token with a /self request
+description: |-
+  This request verifies an ArcGIS access token by calling the `/self` endpoint of the ArcGIS Portal REST API. It sends a GET request to `https://www.arcgis.com/sharing/rest/portals/self?f=json`, passing the `{{ACCESS_TOKEN}}` variable as a **Bearer token in the Authorization header**.
+
+  A successful **200 OK** response confirms that the token is valid. The response body contains detailed information about the authenticated user's portal or organization, including the user's profile, organization settings, and available resources.
+
+  Use this request after generating a token (e.g., via the `generateToken` endpoint) to confirm that authentication was successful before making further API calls.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/how-to-work-with-the-portal-service/).
+url: "{{ORG_URL}}/sharing/rest/portals/self?f=json&token={{ACCESS_TOKEN}}"
+method: GET
+queryParams:
+  f: json
+  token: "{{ACCESS_TOKEN}}"
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/Verify your token with a -self request.resources/examples
+order: 4000

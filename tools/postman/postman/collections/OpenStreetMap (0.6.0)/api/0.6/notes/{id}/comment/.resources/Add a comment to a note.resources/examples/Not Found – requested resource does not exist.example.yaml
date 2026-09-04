@@ -1,0 +1,21 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/notes/:id/comment"
+  method: POST
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  pathVariables:
+    - key: id
+      value: "6776"
+      description: The numeric ID of the element
+  body:
+    type: urlencoded
+    content:
+      text: string
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 3000

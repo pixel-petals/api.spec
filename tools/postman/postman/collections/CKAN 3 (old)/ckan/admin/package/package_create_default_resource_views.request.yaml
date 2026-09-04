@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{CKAN_API}}/package_create_default_resource_views"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: package
+      value: ""
+      description: (dict) – full dataset dict (ie the one obtained calling package_show())
+      disabled: true
+    - type: text
+      key: create_datastore_views
+      value: ""
+      description: (bool) – whether to create views that rely on data being on the DataStore (optional, defaults to False)
+      disabled: true
+order: 18000

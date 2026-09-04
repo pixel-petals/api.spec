@@ -1,0 +1,33 @@
+$kind: http-example
+request:
+  url: "{{RASTER_ANALYSIS_URL}}/SummarizeRasterWithin/jobs/:JOBID/results/outputRaster"
+  method: POST
+  pathVariables:
+    JOBID: "{{RASTER_ANALYSIS_JOBID}}"
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 24 Mar 2025 17:17:21 GMT
+    Content-Type: text/plain
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Content-Encoding: br
+    Vary: Accept-Encoding
+    Server: Microsoft-IIS/10.0
+    X-Powered-By: ASP.NET
+  body:
+    type: text
+    content: "{\"paramName\":\"outputRaster\",\"dataType\":\"GPString\",\"value\":{\r
+
+      \  \"itemId\": \"9e293d4cd4b643e8bd19713670d27dbf\",\r
+
+      \  \"url\": \"https://tiledimageservices3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Calculate_zonal_statistics__raster_operation__1742836318/ImageServer\"\r
+
+      }}"
+order: 1000

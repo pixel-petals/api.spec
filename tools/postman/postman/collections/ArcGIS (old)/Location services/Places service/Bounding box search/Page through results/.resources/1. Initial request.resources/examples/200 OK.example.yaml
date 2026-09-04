@@ -1,0 +1,320 @@
+$kind: http-example
+request:
+  url: https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/within-extent?xmin=-122.3216485977173&ymin=47.60912874706993&xmax=-122.34233379364015&ymax=47.602864405717575&pageSize=20&f=pjson&token={{Token}}
+  method: GET
+  queryParams:
+    xmin: "-122.3216485977173"
+    ymin: "47.60912874706993"
+    xmax: "-122.34233379364015"
+    ymax: "47.602864405717575"
+    pageSize: "20"
+    f: pjson
+    token: "{{Token}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Encoding: gzip
+    Content-Type: application/json
+    Date: Wed, 05 Jul 2023 17:12:53 GMT
+    permissions-policy: interest-cohort=()
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    Content-Length: "1828"
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      {
+          "results": [
+              {
+                  "placeId": "05b7c72200226dacb7cbad191bbeb84b",
+                  "location": {
+                      "x": -122.336331,
+                      "y": 47.605422
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11093",
+                          "label": "Mover"
+                      }
+                  ],
+                  "name": "Livible"
+              },
+              {
+                  "placeId": "1841f22e4bbf76052fe95b915b04d859",
+                  "location": {
+                      "x": -122.324251,
+                      "y": 47.603846
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "15031",
+                          "label": "Doctor's Office"
+                      }
+                  ],
+                  "name": "UW Medicine Infectious Disease & Travel Medicine Clinic at Harborview"
+              },
+              {
+                  "placeId": "18b401d1caf13489fa1a3e30758bed59",
+                  "location": {
+                      "x": -122.338353,
+                      "y": 47.609112
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "19020",
+                          "label": "Parking"
+                      }
+                  ],
+                  "name": "West Edge"
+              },
+              {
+                  "placeId": "22a42493d5b087f4ea8ba524a627dc2a",
+                  "location": {
+                      "x": -122.333156,
+                      "y": 47.605642
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11147",
+                          "label": "Commercial Real Estate Developer"
+                      }
+                  ],
+                  "name": "Fourth & Madison"
+              },
+              {
+                  "placeId": "37f0d4889a16408f523b32a578ad51ce",
+                  "location": {
+                      "x": -122.334608,
+                      "y": 47.605866
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11000",
+                          "label": "Business and Professional Services"
+                      }
+                  ],
+                  "name": "Expeditors International Ocean"
+              },
+              {
+                  "placeId": "3939d20dc6cf036401697e0c02f0144e",
+                  "location": {
+                      "x": -122.337083,
+                      "y": 47.603685
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "12086",
+                          "label": "Non-Profit Organization"
+                      }
+                  ],
+                  "name": "Mountains To Sound Greenway Trust"
+              },
+              {
+                  "placeId": "46be769035fecb373b7874154b8c257a",
+                  "location": {
+                      "x": -122.335477,
+                      "y": 47.603533
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11112",
+                          "label": "Attorney / Law Office"
+                      }
+                  ],
+                  "name": "Emerald Law Group"
+              },
+              {
+                  "placeId": "56b9a97d4d365325011576c2b9ebd86a",
+                  "location": {
+                      "x": -122.330399,
+                      "y": 47.603921
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "19051",
+                          "label": "Transportation Service"
+                      }
+                  ],
+                  "name": "Dreamteamdrive Seattle"
+              },
+              {
+                  "placeId": "0b548e60197750641a5f9bbd7d63da2d",
+                  "location": {
+                      "x": -122.324105,
+                      "y": 47.604035
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "15010",
+                          "label": "Emergency Room"
+                      }
+                  ],
+                  "name": "Harborview Emergency Department"
+              },
+              {
+                  "placeId": "3837374aae34a7ba6797b96a0c627b60",
+                  "location": {
+                      "x": -122.327591,
+                      "y": 47.608125
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11064",
+                          "label": "Hair Salon"
+                      }
+                  ],
+                  "name": "Microblading Seattle"
+              },
+              {
+                  "placeId": "3c68cf91d7454b764b82af186fcbd365",
+                  "location": {
+                      "x": -122.330208,
+                      "y": 47.605696
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11107",
+                          "label": "Insurance Agency"
+                      }
+                  ],
+                  "name": "Sav-On Insurange Agencies"
+              },
+              {
+                  "placeId": "519b9c865b062c02ae4ed9cb202220fb",
+                  "location": {
+                      "x": -122.33614,
+                      "y": 47.607197
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11034",
+                          "label": "Engineer"
+                      }
+                  ],
+                  "name": "Hargis Engineers"
+              },
+              {
+                  "placeId": "62f73346fef4ebc374024cff090ba6e6",
+                  "location": {
+                      "x": -122.333148,
+                      "y": 47.605526
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11124",
+                          "label": "Office"
+                      }
+                  ],
+                  "name": "UBS Financial"
+              },
+              {
+                  "placeId": "753a33947be68fd3418fe72b4b81ed1c",
+                  "location": {
+                      "x": -122.333357,
+                      "y": 47.606211
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "17023",
+                          "label": "Computers and Electronics Retail"
+                      }
+                  ],
+                  "name": "SALVAGEDATA Recovery Services"
+              },
+              {
+                  "placeId": "9a07813cdce291ee3c2f0c28a8de8378",
+                  "location": {
+                      "x": -122.332059,
+                      "y": 47.605915
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11112",
+                          "label": "Attorney / Law Office"
+                      }
+                  ],
+                  "name": "Meridian Family Law"
+              },
+              {
+                  "placeId": "cbc0cc8676df4965bb2da77817c58e8d",
+                  "location": {
+                      "x": -122.335296,
+                      "y": 47.607652
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11033",
+                          "label": "Employment Agency"
+                      }
+                  ],
+                  "name": "Randstad"
+              },
+              {
+                  "placeId": "e1249309e8ff9160e4a2bca23f52edec",
+                  "location": {
+                      "x": -122.329682,
+                      "y": 47.605039
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "12082",
+                          "label": "Organization"
+                      }
+                  ],
+                  "name": "Seattle Department of Construction and Inspections"
+              },
+              {
+                  "placeId": "101092cf2ccad113338b62f35d763c08",
+                  "location": {
+                      "x": -122.333041,
+                      "y": 47.608466
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "15020",
+                          "label": "Psychologist"
+                      }
+                  ],
+                  "name": "Evidence Based Treatment Centers of Seattle"
+              },
+              {
+                  "placeId": "20f38aa18bf565da0b0ffa54bccfe3ac",
+                  "location": {
+                      "x": -122.333909,
+                      "y": 47.606133
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11086",
+                          "label": "General Contractor"
+                      }
+                  ],
+                  "name": "Superlative Construction & Remodeling Co"
+              },
+              {
+                  "placeId": "520cfb2d5ae81c5191d14b05ee6d0201",
+                  "location": {
+                      "x": -122.321743,
+                      "y": 47.604477
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11145",
+                          "label": "Real Estate Service"
+                      },
+                      {
+                          "categoryId": "12094",
+                          "label": "Residential Building"
+                      }
+                  ],
+                  "name": "Hilltop House"
+              }
+          ],
+          "pagination": {
+              "nextUrl": "https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/within-extent?xmin=-122.32164860&ymin=47.60912875&xmax=-122.34233379&ymax=47.60286441&f=pjson&offset=20&pageSize=20"
+          }
+      }
+order: 1000

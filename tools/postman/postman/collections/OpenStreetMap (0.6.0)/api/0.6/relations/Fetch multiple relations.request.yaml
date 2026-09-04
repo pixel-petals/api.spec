@@ -1,0 +1,28 @@
+$kind: http-request
+url: "{{baseUrl}}/api/0.6/relations?relations=string"
+method: GET
+headers:
+  Accept: application/xml
+queryParams:
+  - key: relations
+    value: string
+    description: Comma-separated list of relation IDs, optionally versioned
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: text
+  content: ""
+auth:
+  type: noauth
+examples: ./.resources/Fetch multiple relations.resources/examples
+order: 1000

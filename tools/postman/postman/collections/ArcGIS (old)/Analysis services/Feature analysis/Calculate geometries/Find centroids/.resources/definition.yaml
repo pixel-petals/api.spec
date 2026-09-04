@@ -1,0 +1,3 @@
+$kind: collection
+description: The `FindCentroids` operation allows you to find the representative center of each multipoint, polyline, or polygon feature and returns new feature data.
+order: 2000

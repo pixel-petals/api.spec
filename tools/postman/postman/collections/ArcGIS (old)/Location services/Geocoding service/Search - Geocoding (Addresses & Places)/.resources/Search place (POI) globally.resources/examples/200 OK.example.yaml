@@ -1,0 +1,584 @@
+$kind: http-example
+request:
+  url: https://{{geocode-service}}.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?token={{access_token}}&f=pjson&address=grand canyon
+  method: GET
+  queryParams:
+    token: "{{access_token}}"
+    f: pjson
+    address: grand canyon
+  body:
+    type: urlencoded
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 07:08:07 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Vary: Origin
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 07:09:07 GMT; Path=/arcgis/rest; Secure; HttpOnly
+    ETag: 29f1de84
+    x-esri-ftiles-cache-compress: "true"
+    Content-Encoding: gzip
+    X-Region: eu-central-1
+  body:
+    type: text
+    content: |-
+      {
+       "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+       },
+       "candidates": [
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -113.76891999999998,
+          "y": 35.973910000000046
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -115.76891999999998,
+          "ymin": 33.973910000000046,
+          "xmax": -111.76891999999998,
+          "ymax": 37.973910000000046
+         }
+        },
+        {
+         "address": "Grand Canyon, Arizona",
+         "location": {
+          "x": -112.13676999999996,
+          "y": 36.056950000000029
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -112.14676999999996,
+          "ymin": 36.046950000000031,
+          "xmax": -112.12676999999995,
+          "ymax": 36.066950000000027
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": 46.786670000000072,
+          "y": -16.333619999999939
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": 46.781670000000069,
+          "ymin": -16.338619999999938,
+          "xmax": 46.791670000000074,
+          "ymax": -16.32861999999994
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -81.281639999999982,
+          "y": 42.66259000000008
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -83.281639999999982,
+          "ymin": 40.66259000000008,
+          "xmax": -79.281639999999982,
+          "ymax": 44.66259000000008
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -121.65287999999998,
+          "y": 53.933230000000037
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -123.65287999999998,
+          "ymin": 51.933230000000037,
+          "xmax": -119.65287999999998,
+          "ymax": 55.933230000000037
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": 6.3240600000000313,
+          "y": 51.073490000000049
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": 6.3190600000000314,
+          "ymin": 51.068490000000047,
+          "xmax": 6.3290600000000312,
+          "ymax": 51.078490000000052
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": 14.224550000000022,
+          "y": 42.461610000000064
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": 14.219550000000021,
+          "ymin": 42.456610000000062,
+          "xmax": 14.229550000000023,
+          "ymax": 42.466610000000067
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": 14.224550000000022,
+          "y": 42.461610000000064
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": 14.219550000000021,
+          "ymin": 42.456610000000062,
+          "xmax": 14.229550000000023,
+          "ymax": 42.466610000000067
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": 43.875050000000044,
+          "y": 56.239610000000027
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": 43.870050000000042,
+          "ymin": 56.234610000000025,
+          "xmax": 43.880050000000047,
+          "ymax": 56.24461000000003
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -74.066789999999969,
+          "y": 4.6365800000000377
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -74.071789999999964,
+          "ymin": 4.6315800000000378,
+          "xmax": -74.061789999999974,
+          "ymax": 4.6415800000000376
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -2.4514399999999341,
+          "y": 42.463620000000049
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -2.456439999999934,
+          "ymin": 42.458620000000046,
+          "xmax": -2.4464399999999342,
+          "ymax": 42.468620000000051
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": 100.36801000000008,
+          "y": -0.30284999999997808
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": 100.36301000000009,
+          "ymin": -0.30784999999997809,
+          "xmax": 100.37301000000008,
+          "ymax": -0.29784999999997808
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": 76.245040000000074,
+          "y": 9.9588900000000535
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": 76.240040000000079,
+          "ymin": 9.9538900000000528,
+          "xmax": 76.25004000000007,
+          "ymax": 9.9638900000000543
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": 6.6444800000000441,
+          "y": 52.103570000000047
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": 6.6394800000000442,
+          "ymin": 52.098570000000045,
+          "xmax": 6.649480000000044,
+          "ymax": 52.10857000000005
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": 121.05666000000008,
+          "y": 14.52350000000007
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": 121.05166000000008,
+          "ymin": 14.518500000000069,
+          "xmax": 121.06166000000007,
+          "ymax": 14.52850000000007
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": 32.285040000000038,
+          "y": 48.518830000000037
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": 32.280040000000035,
+          "ymin": 48.513830000000034,
+          "xmax": 32.29004000000004,
+          "ymax": 48.523830000000039
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": 35.005640000000028,
+          "y": 32.789860000000033
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": 35.000640000000026,
+          "ymin": 32.78486000000003,
+          "xmax": 35.010640000000031,
+          "ymax": 32.794860000000035
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -123.54045999999994,
+          "y": 47.941760000000045
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -125.54045999999994,
+          "ymin": 45.941760000000045,
+          "xmax": -121.54045999999994,
+          "ymax": 49.941760000000045
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -160.98193999999998,
+          "y": 67.926940000000059
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -162.98193999999998,
+          "ymin": 65.926940000000059,
+          "xmax": -158.98193999999998,
+          "ymax": 69.926940000000059
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -113.99606999999997,
+          "y": 36.112760000000037
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -115.99606999999997,
+          "ymin": 34.112760000000037,
+          "xmax": -111.99606999999997,
+          "ymax": 38.112760000000037
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -89.406479999999988,
+          "y": 37.687550000000044
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -91.406479999999988,
+          "ymin": 35.687550000000044,
+          "xmax": -87.406479999999988,
+          "ymax": 39.687550000000044
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -122.82109999999994,
+          "y": 38.091310000000078
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -124.82109999999994,
+          "ymin": 36.091310000000078,
+          "xmax": -120.82109999999994,
+          "ymax": 40.091310000000078
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -118.37590999999998,
+          "y": 33.335030000000074
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -120.37590999999998,
+          "ymin": 31.335030000000074,
+          "xmax": -116.37590999999998,
+          "ymax": 35.335030000000074
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -118.12951999999996,
+          "y": 34.228890000000035
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -120.12951999999996,
+          "ymin": 32.228890000000035,
+          "xmax": -116.12951999999996,
+          "ymax": 36.228890000000035
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -91.103759999999966,
+          "y": 38.65894000000003
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -93.103759999999966,
+          "ymin": 36.65894000000003,
+          "xmax": -89.103759999999966,
+          "ymax": 40.65894000000003
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -104.15271999999999,
+          "y": 44.426100000000076
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -106.15271999999999,
+          "ymin": 42.426100000000076,
+          "xmax": -102.15271999999999,
+          "ymax": 46.426100000000076
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -104.19687999999996,
+          "y": 44.335820000000069
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -106.19687999999996,
+          "ymin": 42.335820000000069,
+          "xmax": -102.19687999999996,
+          "ymax": 46.335820000000069
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": -111.00103999999999,
+          "y": 43.174370000000067
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -113.00103999999999,
+          "ymin": 41.174370000000067,
+          "xmax": -109.00103999999999,
+          "ymax": 45.174370000000067
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": 106.69911000000008,
+          "y": -6.353779999999972
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": 106.69411000000008,
+          "ymin": -6.3587799999999719,
+          "xmax": 106.70411000000007,
+          "ymax": -6.3487799999999721
+         }
+        },
+        {
+         "address": "Grand Canyon",
+         "location": {
+          "x": 72.828630000000032,
+          "y": 19.06633000000005
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": 72.823630000000037,
+          "ymin": 19.061330000000051,
+          "xmax": 72.833630000000028,
+          "ymax": 19.071330000000049
+         }
+        },
+        {
+         "address": "Grand Rd, Canyon, Texas, 79015",
+         "location": {
+          "x": -101.79404923167421,
+          "y": 34.998558569742329
+         },
+         "score": 97.349999999999994,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -101.79504923167421,
+          "ymin": 34.997558569742331,
+          "xmax": -101.7930492316742,
+          "ymax": 34.999558569742327
+         }
+        },
+        {
+         "address": "S Grand Rd, Canyon, Texas, 79015",
+         "location": {
+          "x": -101.79335462129657,
+          "y": 34.844854873704762
+         },
+         "score": 96.420000000000002,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -101.79435462129658,
+          "ymin": 34.843854873704764,
+          "xmax": -101.79235462129657,
+          "ymax": 34.845854873704759
+         }
+        }
+       ]
+      }
+order: 1000

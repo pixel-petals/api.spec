@@ -1,0 +1,14 @@
+$kind: http-request
+description: Access satellite and aerial imagery tiles using a session token for authentication.
+url: https://ibasemaps-api.arcgis.com/arcgis/rest/services/World_Imagery/MapServer/tile/:LEVEL/:ROW/:COLUMN?token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  token: "{{ACCESS_TOKEN}}"
+pathVariables:
+  LEVEL: "17"
+  ROW: "52333"
+  COLUMN: "22866"
+auth:
+  type: noauth
+examples: ./.resources/Get a Tile with a session token.resources/examples
+order: 3000

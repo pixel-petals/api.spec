@@ -1,0 +1,146 @@
+$kind: http-example
+request:
+  url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/serviceLimits?f=pjson
+  method: GET
+  queryParams:
+    f: pjson
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 09:35:24 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    ETag: '"218427063"'
+    Content-Language: en-US
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "messages": [],
+          "serviceLimits": {
+              "paramName": "DiscoveryLimits",
+              "dataType": "DiscoveryLimitsInfo",
+              "value": [
+                  {
+                      "paramName": "MaximumRingSize",
+                      "paramDescription": "Maximum size of rings for simple rings builders.",
+                      "dataType": "esriMiles",
+                      "value": 1000
+                  },
+                  {
+                      "paramName": "MaximumRingSizeTime",
+                      "paramDescription": "Maximum size of rings (time units) for drive time rings builders.",
+                      "dataType": "esriDriveTimeUnitsMinutes",
+                      "value": 300
+                  },
+                  {
+                      "paramName": "defaultFeaturesLimitPerComparisonLevel",
+                      "paramDescription": "Default maximum number of features to return per comparison level (used in report calculators).",
+                      "dataType": "numeric",
+                      "value": 5
+                  },
+                  {
+                      "paramName": "maxRecordCount",
+                      "paramDescription": "Maximum number of features to return.",
+                      "dataType": "numeric",
+                      "value": 1000
+                  },
+                  {
+                      "paramName": "maximumAttributeDescriptionLength",
+                      "paramDescription": "Maximum length of attribute’s description string.",
+                      "dataType": "numeric",
+                      "value": 1000
+                  },
+                  {
+                      "paramName": "maximumDataCollections",
+                      "paramDescription": "Maximum number of data collections to return on request.",
+                      "dataType": "numeric",
+                      "value": 1000
+                  },
+                  {
+                      "paramName": "maximumDetailedMethodStudyAreasSize",
+                      "paramDescription": "Maximum size of rings for drive time/simple rings builders with detailed data calculation method.",
+                      "dataType": "esriMiles",
+                      "value": 300
+                  },
+                  {
+                      "paramName": "maximumDriveDistance",
+                      "paramDescription": "Maximum size of rings for drive time rings builders.",
+                      "dataType": "esriMiles",
+                      "value": 300
+                  },
+                  {
+                      "paramName": "maximumDriveTimeStudyAreasNumber",
+                      "paramDescription": "Maximum number of drive time study areas in one enrich request.",
+                      "dataType": "numeric",
+                      "value": 100
+                  },
+                  {
+                      "paramName": "maximumNumberOfStudyAreasWithDetailedMethod",
+                      "paramDescription": "Maximum number of study areas in one enrich request with detailed data calculation method.",
+                      "dataType": "numeric",
+                      "value": 3
+                  },
+                  {
+                      "paramName": "maximumOutFieldsNumber",
+                      "paramDescription": "Maximum number of ‘outFields’ set in intersectingGeographies parameter.",
+                      "dataType": "numeric",
+                      "value": 256
+                  },
+                  {
+                      "paramName": "maximumRingsNumber",
+                      "paramDescription": "Maximum number of rings for study area location points for drive time/simple rings builder.",
+                      "dataType": "numeric",
+                      "value": 10
+                  },
+                  {
+                      "paramName": "maximumSelectBusinessesResponseRecords",
+                      "paramDescription": "Maximum number of features returned by select businesses search.",
+                      "dataType": "numeric",
+                      "value": 5000
+                  },
+                  {
+                      "paramName": "maximumStandardGeographyQueryRecordsLimit",
+                      "paramDescription": "Maximum number of features returned by standard geography query.",
+                      "dataType": "numeric",
+                      "value": 5000
+                  },
+                  {
+                      "paramName": "maximumStdGeographyIDsNumber",
+                      "paramDescription": "Maximum number of standard geography IDs to return.",
+                      "dataType": "numeric",
+                      "value": 1000
+                  },
+                  {
+                      "paramName": "maximumStudyAreasNumber",
+                      "paramDescription": "Maximum number of study areas in one enrich request.",
+                      "dataType": "numeric",
+                      "value": 100
+                  },
+                  {
+                      "paramName": "maximumStudyAreasNumberInfographicReportHTML",
+                      "paramDescription": "Maximum number of study areas in one create infographic HTML report request.",
+                      "dataType": "numeric",
+                      "value": 100
+                  },
+                  {
+                      "paramName": "maximumStudyAreasNumberInfographicReportPDF",
+                      "paramDescription": "Maximum number of study areas in one create infographic PDF report request.",
+                      "dataType": "numeric",
+                      "value": 50
+                  },
+                  {
+                      "paramName": "optimalBatchStudyAreasNumber",
+                      "paramDescription": "Optimal number of study areas to request in each batch enrich request.",
+                      "dataType": "numeric",
+                      "value": 50
+                  }
+              ]
+          }
+      }
+order: 1000

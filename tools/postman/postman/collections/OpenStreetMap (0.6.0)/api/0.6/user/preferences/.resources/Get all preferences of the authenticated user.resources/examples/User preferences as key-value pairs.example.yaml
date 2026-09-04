@@ -1,0 +1,39 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/user/preferences"
+  method: GET
+  headers:
+    - key: Accept
+      value: application/xml
+    - key: Authorization
+      value: <token>
+      description: "Added as a part of security scheme: oauth2"
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "preferences": {
+          "key_0": "string",
+          "key_1": "string",
+          "key_2": "string",
+          "key_3": "string"
+        }
+      }
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "preferences": {
+            "type": "object"
+          }
+        }
+      }
+order: 1000

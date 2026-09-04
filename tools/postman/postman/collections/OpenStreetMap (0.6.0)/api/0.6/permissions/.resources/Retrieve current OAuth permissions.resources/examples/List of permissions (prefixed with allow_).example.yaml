@@ -1,0 +1,50 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/permissions"
+  method: GET
+  headers:
+    Accept: application/xml
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "version": "string",
+        "generator": "string",
+        "permissions": [
+          "allow_read_prefs",
+          "allow_write_api",
+          "allow_read_gpx"
+        ]
+      }
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "generator": {
+            "type": "string"
+          },
+          "permissions": {
+            "type": "array",
+            "example": [
+              "allow_read_prefs",
+              "allow_write_api",
+              "allow_read_gpx"
+            ],
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+order: 1000

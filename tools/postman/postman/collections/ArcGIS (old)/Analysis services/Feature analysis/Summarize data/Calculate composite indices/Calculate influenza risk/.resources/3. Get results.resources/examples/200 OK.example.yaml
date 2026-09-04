@@ -1,0 +1,37 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/CalculateCompositeIndex/jobs/:JOB_ID/results/indexResultLayer"
+  method: POST
+  pathVariables:
+    JOB_ID: "{{JOB_ID}}"
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Tue, 06 Jan 2026 15:30:16 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: no-cache
+    ETag: '"1821286949"'
+    Vary: Origin,Accept-Encoding,Authorization,X-Esri-Authorization
+    Server: Microsoft-IIS/10.0
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    X-Powered-By: ASP.NET
+  body:
+    type: json
+    content: |-
+      {
+          "paramName": "indexResultLayer",
+          "dataType": "GPRecordSet",
+          "value": {
+              "url": "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Calculate_influenza_risk_1767713341/FeatureServer/0"
+          }
+      }
+order: 1000

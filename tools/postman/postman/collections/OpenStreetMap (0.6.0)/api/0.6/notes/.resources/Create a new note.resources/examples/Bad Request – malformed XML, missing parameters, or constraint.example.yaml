@@ -1,0 +1,26 @@
+$kind: http-example
+name: Bad Request – malformed XML, missing parameters, or constraint violation
+request:
+  url: "{{baseUrl}}/api/0.6/notes"
+  method: POST
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  body:
+    type: urlencoded
+    content:
+      - key: lat
+        value: "3417.5254814407263"
+        description: Latitude
+      - key: lon
+        value: "7922.832726863687"
+        description: Longitude
+      - key: text
+        value: string
+        description: Initial note text
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: text
+    content: ""
+order: 2000

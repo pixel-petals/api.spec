@@ -1,0 +1,14 @@
+$kind: http-request
+description: |-
+  Check job status.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/find-data/find-existing-locations/#find-hotels-sql-query)
+url: "{{ANALYSIS_URL}}/FindExistingLocations/jobs/{{JOB_ID}}"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/2. Check status.resources/examples
+order: 2000

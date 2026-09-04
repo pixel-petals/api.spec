@@ -1,0 +1,4 @@
+$kind: collection
+name: "Job: Find new store / restaurant location"
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/location-allocation/#job-find-new-restaurant-location)
+order: 1000

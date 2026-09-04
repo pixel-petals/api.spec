@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{CKAN_API}}/tag_create"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: text
+  content: |-
+    {
+    	"name": "Example",
+    	"vocabulary_id": "742a34e3-9be3-4a7d-8ffe-d418642fbb1a"
+    }
+order: 1000

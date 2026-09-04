@@ -1,0 +1,8 @@
+$kind: collection
+description: |-
+  A _basemap session_ is a time frame during which a single user of a single application can use a session token to access unlimited basemap tiles from the Basemap Styles service.
+
+  Go to [Developer guide > Basemap usage](https://basemap-sessions-preview.gha.afd.arcgis.com/documentation/mapping-and-location-services/mapping/basemaps/basemap-usage-styles/) to learn more.
+
+  > Basemap Sessions are only supported when using an [ArcGIS Location Platform account](https://location.arcgis.com/).
+order: 1000

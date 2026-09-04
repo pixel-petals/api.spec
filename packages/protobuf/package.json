@@ -1,0 +1,18 @@
+{
+  "name": "@pixelpetals/protobuf",
+  "type": "module",
+  "bin": {
+    "protobuf": "bin/cmd.js"
+  },
+  "exports": {
+    "./*": "./schema/*"
+  },
+  "dependencies": {
+    "commander": "^15.0.0",
+    "protobufjs": "^8.8.0",
+    "utils": "*"
+  },
+  "imports": {
+    "#lib/*": "./bin/lib/*.js"
+  }
+}

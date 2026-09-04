@@ -1,0 +1,18 @@
+$kind: http-example
+request:
+  url: https://example.com/api/reports
+  method: POST
+  headers:
+    Authorization: Bearer <ACCESS_TOKEN>
+  body:
+    type: text
+    content: '{"type":"demographic","parameters":{"region":"USA"}}'
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Authorization: Bearer <ACCESS_TOKEN>
+  body:
+    type: json
+    content: '{"reportId":"rpt-12345","status":"created","message":"Report has been successfully created.","createdAt":"2023-10-01T12:00:00Z"}'
+order: 1000

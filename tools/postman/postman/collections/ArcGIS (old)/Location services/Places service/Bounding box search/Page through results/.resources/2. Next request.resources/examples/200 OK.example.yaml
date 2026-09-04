@@ -1,0 +1,313 @@
+$kind: http-example
+request:
+  url: "{{boundingBoxNextURL}}"
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Encoding: gzip
+    Content-Type: application/json
+    Date: Wed, 05 Jul 2023 17:18:14 GMT
+    permissions-policy: interest-cohort=()
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    transfer-encoding: chunked
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      {
+          "results": [
+              {
+                  "placeId": "9095ab99281f020bc38d5b871c2f56fe",
+                  "location": {
+                      "x": -122.326469,
+                      "y": 47.608048
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "12082",
+                          "label": "Organization"
+                      }
+                  ],
+                  "name": "Fulcrum Foundation"
+              },
+              {
+                  "placeId": "ad60da332c98e165197c35c0d6174111",
+                  "location": {
+                      "x": -122.333832,
+                      "y": 47.606169
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11112",
+                          "label": "Attorney / Law Office"
+                      }
+                  ],
+                  "name": "MartinLaw"
+              },
+              {
+                  "placeId": "b2d0c7a8677f2f0d3d270fab6aa29bab",
+                  "location": {
+                      "x": -122.33208,
+                      "y": 47.606206
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16018",
+                          "label": "Harbor / Marina"
+                      }
+                  ],
+                  "name": "Seattle Harbor"
+              },
+              {
+                  "placeId": "038862e7f0731e59e949968cc6e2b403",
+                  "location": {
+                      "x": -122.333524,
+                      "y": 47.603001
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11112",
+                          "label": "Attorney / Law Office"
+                      }
+                  ],
+                  "name": "Menzer Law Firm"
+              },
+              {
+                  "placeId": "0836da03b2d5728137ff211c882361fe",
+                  "location": {
+                      "x": -122.329682,
+                      "y": 47.605039
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11045",
+                          "label": "Bank"
+                      }
+                  ],
+                  "name": "KeyBank"
+              },
+              {
+                  "placeId": "1eb79fa026654077c9feef5246382032",
+                  "location": {
+                      "x": -122.330758,
+                      "y": 47.604476
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11053",
+                          "label": "Financial Planner"
+                      }
+                  ],
+                  "name": "MassMutual Northwest"
+              },
+              {
+                  "placeId": "493f3d312d70e6aed1b077551828768e",
+                  "location": {
+                      "x": -122.335611,
+                      "y": 47.608709
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "17000",
+                          "label": "Retail"
+                      }
+                  ],
+                  "name": "Pagedna"
+              },
+              {
+                  "placeId": "59c3ff828a6364e46287299f168d8203",
+                  "location": {
+                      "x": -122.338542,
+                      "y": 47.608422
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13035",
+                          "label": "Coffee Shop"
+                      }
+                  ],
+                  "name": "Starbucks"
+              },
+              {
+                  "placeId": "834111cf14cdfca14f647e0d93ffad25",
+                  "location": {
+                      "x": -122.321691,
+                      "y": 47.608174
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "15010",
+                          "label": "Emergency Room"
+                      }
+                  ],
+                  "name": "Swedish First Hill Campus Emergency Room"
+              },
+              {
+                  "placeId": "84a98f406ddac8f88fbe4134630e0e13",
+                  "location": {
+                      "x": -122.334795,
+                      "y": 47.604033
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11167",
+                          "label": "Technology Business"
+                      }
+                  ],
+                  "name": "Saltbox Services"
+              },
+              {
+                  "placeId": "c299e5a82cbe384ffe34350e31566a05",
+                  "location": {
+                      "x": -122.330208,
+                      "y": 47.605696
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11095",
+                          "label": "Pest Control Service"
+                      }
+                  ],
+                  "name": "Willard's Pest Control Co."
+              },
+              {
+                  "placeId": "c85b9c07c149bfc89a1995aa9a712814",
+                  "location": {
+                      "x": -122.339798,
+                      "y": 47.604823
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13035",
+                          "label": "Coffee Shop"
+                      }
+                  ],
+                  "name": "Starbucks"
+              },
+              {
+                  "placeId": "eb48c73124f5514950c7b6e927ab6b09",
+                  "location": {
+                      "x": -122.330085,
+                      "y": 47.605092
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "12069",
+                          "label": "Government Department / Agency"
+                      }
+                  ],
+                  "name": "Seattle Construction & Consultant"
+              },
+              {
+                  "placeId": "ff10244558f24bb19f905da0bb336b6b",
+                  "location": {
+                      "x": -122.33523,
+                      "y": 47.605636
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11112",
+                          "label": "Attorney / Law Office"
+                      }
+                  ],
+                  "name": "Miracle Pruzan & Pruzan"
+              },
+              {
+                  "placeId": "1d70a61beda17aa186e9ac16f6cfdedf",
+                  "location": {
+                      "x": -122.336063,
+                      "y": 47.607233
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11112",
+                          "label": "Attorney / Law Office"
+                      }
+                  ],
+                  "name": "Christensen O'Connor Johnson Kindness"
+              },
+              {
+                  "placeId": "781cd773f905ecf9b2967888f6f48e03",
+                  "location": {
+                      "x": -122.335811,
+                      "y": 47.603738
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13352",
+                          "label": "Thai Restaurant"
+                      }
+                  ],
+                  "name": "Ferry Noodle House"
+              },
+              {
+                  "placeId": "ab055e1a2a27b35174c8bc7b10c29c44",
+                  "location": {
+                      "x": -122.332076,
+                      "y": 47.606148
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16019",
+                          "label": "Hiking Trail"
+                      }
+                  ],
+                  "name": "Mt. Baker Bike Tunnel"
+              },
+              {
+                  "placeId": "e8ba48175a380b1efc8699d83df6496b",
+                  "location": {
+                      "x": -122.33453,
+                      "y": 47.603675
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11001",
+                          "label": "Advertising Agency"
+                      }
+                  ],
+                  "name": "Brown Box Branding"
+              },
+              {
+                  "placeId": "f177ab856cee07d6f72ce3d251664c81",
+                  "location": {
+                      "x": -122.3218,
+                      "y": 47.606377
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "19006",
+                          "label": "Electric Vehicle Charging Station"
+                      },
+                      {
+                          "categoryId": "19020",
+                          "label": "Parking"
+                      }
+                  ],
+                  "name": "First Hill Medical Building"
+              },
+              {
+                  "placeId": "07acd924f03335df03c3051241667fe3",
+                  "location": {
+                      "x": -122.326866,
+                      "y": 47.609126
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11086",
+                          "label": "General Contractor"
+                      }
+                  ],
+                  "name": "Most Lead ADC"
+              }
+          ],
+          "pagination": {
+              "previousUrl": "https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/within-extent?xmin=-122.32164860&ymin=47.60912875&xmax=-122.34233379&ymax=47.60286441&f=pjson&offset=20&pageSize=20",
+              "nextUrl": "https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/within-extent?xmin=-122.32164860&ymin=47.60912875&xmax=-122.34233379&ymax=47.60286441&f=pjson&offset=60&pageSize=20"
+          }
+      }
+order: 1000

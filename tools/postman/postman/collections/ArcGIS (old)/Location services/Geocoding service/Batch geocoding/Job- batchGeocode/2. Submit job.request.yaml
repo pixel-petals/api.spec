@@ -1,0 +1,20 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/batch-geocoding/#job-geocode-a-file-of-addresses)
+url: https://geocode.arcgis.com/arcgis/rest/services/World/GPServer/BatchGeocode/submitJob
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "f": "json",
+        "token": "{{ACCESS_TOKEN}}",
+        "item": "{\"itemID\": \"{{BATCH_GEOCODE_ADDITEM_ID}}\"}",
+        "fieldMapping": "Address:Address, City:City, Region:State, Postal:Postal",
+        "outFields": "*"
+    }
+scripts:
+  - type: afterResponse
+    code: pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+examples: ./.resources/2. Submit job.resources/examples
+order: 2000

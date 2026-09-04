@@ -1,0 +1,320 @@
+$kind: http-example
+request:
+  url: https://{{geoenrich-service}}.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/dataCollections/:country-code/:data-collection-id?f=pjson
+  method: GET
+  queryParams:
+    f: pjson
+  pathVariables:
+    country-code: se
+    data-collection-id: EducationalAttainment
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 17:24:05 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    ETag: '"-1226478863"'
+    Content-Language: en
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+        "DataCollections" : [ {
+          "dataCollectionID" : "EducationalAttainment",
+          "metadata" : {
+            "title" : "Educational Attainment",
+            "name" : "EducationalAttainment",
+            "shortDescription" : "Sweden Educational Attainment",
+            "longDescription" : "Educational Attainment for Sweden includes the population by educational attainment data variables. This collection contains data from Michael Bauer Research.",
+            "url" : "",
+            "keywords" : "Sweden, Education, School, Educational Attainment, Primary, Secondary, Vocational, High School, University",
+            "creationDate" : 1623053369677,
+            "lastRevisionDate" : 1623053369677,
+            "webmap" : "",
+            "author" : "Michael Bauer Research",
+            "countries" : "SE",
+            "IsRoyalties" : false,
+            "categories" : [ {
+              "id" : "Education",
+              "name" : "Education",
+              "alias" : "Education",
+              "description" : "Education Category",
+              "displayOrder" : "75"
+            } ],
+            "filters" : [ {
+              "id" : "Source",
+              "name" : "Source",
+              "aliasname" : "Source",
+              "type" : "Enumeration",
+              "enumValues" : "MBR"
+            }, {
+              "id" : "Year",
+              "name" : "Year",
+              "aliasname" : "Year",
+              "type" : "Enumeration",
+              "enumValues" : "2020"
+            } ],
+            "datasets" : "SWE_MBR_2020",
+            "hierarchies" : "census"
+          },
+          "data" : [ {
+            "id" : "EDUC01_CY",
+            "alias" : "2020 Pop 16+/Edu: Primary/secondary < 9 Years",
+            "type" : "esriFieldTypeDouble",
+            "precision" : 0,
+            "length" : null,
+            "averageBase" : null,
+            "averageBaseAlias" : null,
+            "description" : "2020 Population Age 16+ by Education: Primary and Secondary Education Less Than 9 Years (Isced97 1)",
+            "fieldCategory" : "2020 Educational Attainment (MBR)",
+            "indexBase" : null,
+            "percentBase" : "EDUC_BASE",
+            "percentBaseAlias" : "2020 Education Attainment Base",
+            "popularity" : 100,
+            "units" : "count",
+            "vintage" : "2020",
+            "hideInDataBrowser" : false,
+            "filteringTags" : [ {
+              "id" : "Source",
+              "name" : "Source",
+              "value" : "MBR"
+            }, {
+              "id" : "Year",
+              "name" : "Year",
+              "value" : "2020"
+            } ],
+            "derivative" : false,
+            "provider" : "MBR"
+          }, {
+            "id" : "EDUC02_CY",
+            "alias" : "2020 Pop 16+/Edu: Primary/secondary  9-10 Years",
+            "type" : "esriFieldTypeDouble",
+            "precision" : 0,
+            "length" : null,
+            "averageBase" : null,
+            "averageBaseAlias" : null,
+            "description" : "2020 Population Age 16+ by Education: Primary and Secondary Education 9-10 Years (Isced97 2)",
+            "fieldCategory" : "2020 Educational Attainment (MBR)",
+            "indexBase" : null,
+            "percentBase" : "EDUC_BASE",
+            "percentBaseAlias" : "2020 Education Attainment Base",
+            "popularity" : null,
+            "units" : "count",
+            "vintage" : "2020",
+            "hideInDataBrowser" : false,
+            "filteringTags" : [ {
+              "id" : "Source",
+              "name" : "Source",
+              "value" : "MBR"
+            }, {
+              "id" : "Year",
+              "name" : "Year",
+              "value" : "2020"
+            } ],
+            "derivative" : false,
+            "provider" : "MBR"
+          }, {
+            "id" : "EDUC03_CY",
+            "alias" : "2020 Pop 16+/Edu: Upper Secondary < 2 Years",
+            "type" : "esriFieldTypeDouble",
+            "precision" : 0,
+            "length" : null,
+            "averageBase" : null,
+            "averageBaseAlias" : null,
+            "description" : "2020 Population Age 16+ by Education: Upper Secondary Education, 2 Years or Less (Isced97 3c)",
+            "fieldCategory" : "2020 Educational Attainment (MBR)",
+            "indexBase" : null,
+            "percentBase" : "EDUC_BASE",
+            "percentBaseAlias" : "2020 Education Attainment Base",
+            "popularity" : null,
+            "units" : "count",
+            "vintage" : "2020",
+            "hideInDataBrowser" : false,
+            "filteringTags" : [ {
+              "id" : "Source",
+              "name" : "Source",
+              "value" : "MBR"
+            }, {
+              "id" : "Year",
+              "name" : "Year",
+              "value" : "2020"
+            } ],
+            "derivative" : false,
+            "provider" : "MBR"
+          }, {
+            "id" : "EDUC04_CY",
+            "alias" : "2020 Pop 16+/Edu: Upper Secondary 3 Years",
+            "type" : "esriFieldTypeDouble",
+            "precision" : 0,
+            "length" : null,
+            "averageBase" : null,
+            "averageBaseAlias" : null,
+            "description" : "2020 Population Age 16+ by Education: Upper Secondary Education 3 Years (Isced97 3a)",
+            "fieldCategory" : "2020 Educational Attainment (MBR)",
+            "indexBase" : null,
+            "percentBase" : "EDUC_BASE",
+            "percentBaseAlias" : "2020 Education Attainment Base",
+            "popularity" : 90,
+            "units" : "count",
+            "vintage" : "2020",
+            "hideInDataBrowser" : false,
+            "filteringTags" : [ {
+              "id" : "Source",
+              "name" : "Source",
+              "value" : "MBR"
+            }, {
+              "id" : "Year",
+              "name" : "Year",
+              "value" : "2020"
+            } ],
+            "derivative" : false,
+            "provider" : "MBR"
+          }, {
+            "id" : "EDUC05_CY",
+            "alias" : "2020 Pop 16+/Edu: Post-secondary < 3 Years",
+            "type" : "esriFieldTypeDouble",
+            "precision" : 0,
+            "length" : null,
+            "averageBase" : null,
+            "averageBaseAlias" : null,
+            "description" : "2020 Population Age 16+ by Education: Post-secondary Education, Less Than 3 Years (Isced97 4+5b)",
+            "fieldCategory" : "2020 Educational Attainment (MBR)",
+            "indexBase" : null,
+            "percentBase" : "EDUC_BASE",
+            "percentBaseAlias" : "2020 Education Attainment Base",
+            "popularity" : null,
+            "units" : "count",
+            "vintage" : "2020",
+            "hideInDataBrowser" : false,
+            "filteringTags" : [ {
+              "id" : "Source",
+              "name" : "Source",
+              "value" : "MBR"
+            }, {
+              "id" : "Year",
+              "name" : "Year",
+              "value" : "2020"
+            } ],
+            "derivative" : false,
+            "provider" : "MBR"
+          }, {
+            "id" : "EDUC06_CY",
+            "alias" : "2020 Pop 16+/Edu: Post-secondary > 3 Years",
+            "type" : "esriFieldTypeDouble",
+            "precision" : 0,
+            "length" : null,
+            "averageBase" : null,
+            "averageBaseAlias" : null,
+            "description" : "2020 Population Age 16+ by Education: Post-secondary Education 3 Years or More (Isced97 5a)",
+            "fieldCategory" : "2020 Educational Attainment (MBR)",
+            "indexBase" : null,
+            "percentBase" : "EDUC_BASE",
+            "percentBaseAlias" : "2020 Education Attainment Base",
+            "popularity" : 80,
+            "units" : "count",
+            "vintage" : "2020",
+            "hideInDataBrowser" : false,
+            "filteringTags" : [ {
+              "id" : "Source",
+              "name" : "Source",
+              "value" : "MBR"
+            }, {
+              "id" : "Year",
+              "name" : "Year",
+              "value" : "2020"
+            } ],
+            "derivative" : false,
+            "provider" : "MBR"
+          }, {
+            "id" : "EDUC07_CY",
+            "alias" : "2020 Pop 16+/Edu: Post-graduate",
+            "type" : "esriFieldTypeDouble",
+            "precision" : 0,
+            "length" : null,
+            "averageBase" : null,
+            "averageBaseAlias" : null,
+            "description" : "2020 Population Age 16+ by Education: Post-graduate Education (Isced97 6)",
+            "fieldCategory" : "2020 Educational Attainment (MBR)",
+            "indexBase" : null,
+            "percentBase" : "EDUC_BASE",
+            "percentBaseAlias" : "2020 Education Attainment Base",
+            "popularity" : null,
+            "units" : "count",
+            "vintage" : "2020",
+            "hideInDataBrowser" : false,
+            "filteringTags" : [ {
+              "id" : "Source",
+              "name" : "Source",
+              "value" : "MBR"
+            }, {
+              "id" : "Year",
+              "name" : "Year",
+              "value" : "2020"
+            } ],
+            "derivative" : false,
+            "provider" : "MBR"
+          }, {
+            "id" : "EDUC08_CY",
+            "alias" : "2020 Pop 16+/Edu: No Information",
+            "type" : "esriFieldTypeDouble",
+            "precision" : 0,
+            "length" : null,
+            "averageBase" : null,
+            "averageBaseAlias" : null,
+            "description" : "2020 Population Age 16+ by Education: No Information About Level Of Educational Attainment",
+            "fieldCategory" : "2020 Educational Attainment (MBR)",
+            "indexBase" : null,
+            "percentBase" : "EDUC_BASE",
+            "percentBaseAlias" : "2020 Education Attainment Base",
+            "popularity" : null,
+            "units" : "count",
+            "vintage" : "2020",
+            "hideInDataBrowser" : false,
+            "filteringTags" : [ {
+              "id" : "Source",
+              "name" : "Source",
+              "value" : "MBR"
+            }, {
+              "id" : "Year",
+              "name" : "Year",
+              "value" : "2020"
+            } ],
+            "derivative" : false,
+            "provider" : "MBR"
+          }, {
+            "id" : "EDUC_BASE",
+            "alias" : "2020 Education Attainment Base",
+            "type" : "esriFieldTypeDouble",
+            "precision" : 0,
+            "length" : null,
+            "averageBase" : null,
+            "averageBaseAlias" : null,
+            "description" : "2020 Education Attainment Base",
+            "fieldCategory" : "2020 Educational Attainment (MBR)",
+            "indexBase" : null,
+            "percentBase" : null,
+            "percentBaseAlias" : null,
+            "popularity" : null,
+            "units" : "count",
+            "vintage" : "2020",
+            "hideInDataBrowser" : false,
+            "filteringTags" : [ {
+              "id" : "Source",
+              "name" : "Source",
+              "value" : "MBR"
+            }, {
+              "id" : "Year",
+              "name" : "Year",
+              "value" : "2020"
+            } ],
+            "derivative" : false,
+            "provider" : "MBR"
+          } ]
+        } ]
+      }
+order: 1000

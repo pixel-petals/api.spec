@@ -1,0 +1,8 @@
+$kind: http-request
+description: Get the service metadata as a JSON structure.
+url: https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/:VERSION/self
+method: GET
+pathVariables:
+  VERSION: v2
+examples: ./.resources/Get service info.resources/examples
+order: 5000

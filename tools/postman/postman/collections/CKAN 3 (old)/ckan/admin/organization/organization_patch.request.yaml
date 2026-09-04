@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{CKAN_API}}/organization_patch"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: id
+      value: ""
+      description: (string) – the id or name of the organization
+order: 5000

@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  _GeoEnrichment_, also known as Data enrichment, is the process of finding demographic data and local facts for locations around the world. Data enrichment allows you to gain location-based insight about the people and places in an area.
+
+  To learn more go to the [Developer guide > Data enrichment](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/%5D(https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/).
+order: 5000

@@ -1,0 +1,28 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/FindOutliers/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+      analysisLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Enriched_PDX_hex_bin_tessellations/FeatureServer/0","filter":"AVGVAL_CY <> 0"}'
+      analysisField: AVGVAL_CY
+      returnProcessInfo: "true"
+      outputName: '{"serviceProperties":{"name":"Find outliers results}}'
+      context: '{"extent":{"xmin":-13701588.357587751,"ymin":5636873.660541155,"xmax":-13554599.952195555,"ymax":5730585.457218655,"spatialReference":{"wkid":102100,"latestWkid":3857}}}'
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+        "jobId": "<JOB_ID>",
+        "jobStatus": "esriJobSubmitted",
+        "results": {},
+        "inputs": {},
+        "messages": []
+      }
+order: 1000

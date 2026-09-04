@@ -1,0 +1,27 @@
+$kind: http-request
+url: "{{CKAN_API}}/tag_autocomplete?query=te"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: query
+    value: te
+    description: (string) – the string to search for
+  - key: vocabulary_id
+    value: null
+    disabled: true
+    description: (string) – the id or name of the tag vocabulary to search in (optional)
+  - key: fields
+    value: null
+    disabled: true
+    description: (dictionary) – deprecated
+  - key: limit
+    value: null
+    disabled: true
+    description: (int) – the maximum number of tags to return
+  - key: offset
+    value: null
+    disabled: true
+    description: (int) – when limit is given, the offset to start returning tags from
+order: 3000

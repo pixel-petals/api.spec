@@ -1,0 +1,3 @@
+$kind: collection
+description: The `FindPointClusters` operation finds clusters (defined by you) of point features at a specidied distance and returns new feature data.
+order: 3000

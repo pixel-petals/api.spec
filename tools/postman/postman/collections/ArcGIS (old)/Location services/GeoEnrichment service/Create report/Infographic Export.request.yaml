@@ -1,0 +1,12 @@
+$kind: http-request
+description: Example of generating an infographic report
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/createReport?f=bin&token={{ACCESS_TOKEN}}&report={"itemid":"845dcb9f53294b578820be924c4a31ee"}&format=pdf&studyAreas=[{"sourceCountry":"US","layer":"US.ZIP5","ids":["92373"]}]
+method: GET
+queryParams:
+  f: bin
+  token: "{{ACCESS_TOKEN}}"
+  report: '{"itemid":"845dcb9f53294b578820be924c4a31ee"}'
+  format: pdf
+  studyAreas: '[{"sourceCountry":"US","layer":"US.ZIP5","ids":["92373"]}]'
+examples: ./.resources/Infographic Export.resources/examples
+order: 3000

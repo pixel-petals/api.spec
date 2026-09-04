@@ -1,0 +1,62 @@
+$kind: http-example
+request:
+  url: https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/:VERSION/:STYLE_RESPONSE/:STYLE_FAMILY/:STYLENAME/self?token={{ACCESS_TOKEN}}
+  method: GET
+  queryParams:
+    token: "{{ACCESS_TOKEN}}"
+  pathVariables:
+    VERSION: v2
+    STYLE_RESPONSE: styles
+    STYLE_FAMILY: open
+    STYLENAME: blueprint
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Content-Type
+      value: application/json
+    - key: Content-Length
+      value: "444"
+    - key: Connection
+      value: keep-alive
+    - key: Date
+      value: Thu, 05 Jun 2025 18:17:52 GMT
+    - key: Cache-Control
+      value: max-age=600
+    - key: x-frame-options
+      value: SAMEORIGIN
+    - key: x-content-type-options
+      value: nosniff
+    - key: permissions-policy
+      value: interest-cohort=()
+    - key: Strict-Transport-Security
+      value: max-age=31536000; includeSubDomains; preload
+    - key: Vary
+      value: Accept-Encoding,Authorization,X-Esri-Authorization
+    - key: Vary
+      value: Origin
+    - key: X-Cache
+      value: Miss from cloudfront
+    - key: Via
+      value: 1.1 f9ffa60c9d8e866d90f2c98c19adc4f4.cloudfront.net (CloudFront)
+    - key: X-Amz-Cf-Pop
+      value: IAD55-P5
+    - key: X-Amz-Cf-Id
+      value: fiXF33xB41-k6_nab0r4p72c521qXUrZBkdzE48XW7NV0sxEPEa99w==
+    - key: Referrer-Policy
+      value: no-referrer-when-downgrade
+    - key: Content-Security-Policy
+      value: upgrade-insecure-requests
+  body:
+    type: json
+    content: |-
+      {
+          "complete": true,
+          "name": "Open Basemaps Blueprint",
+          "path": "open/blueprint",
+          "provider": "open",
+          "selfUrl": "https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/styles/open/blueprint/self",
+          "styleUrl": "https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/v2/styles/open/blueprint",
+          "thumbnailUrl": "https://www.arcgis.com/sharing/rest/content/items/b426a8073b8c4a418d1b73ecbc40a0c2/info/thumbnail/thumbnail1746613581064.png"
+      }
+order: 1000

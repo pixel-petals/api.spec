@@ -1,0 +1,39 @@
+$kind: http-request
+name: user_create
+url: "{{CKAN_API}}/user_create"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: name
+      value: ""
+      description: (string) – the name of the new user, a string between 2 and 100 characters in length, containing only lowercase alphanumeric characters, - and _
+    - type: text
+      key: email
+      value: ""
+      description: (string) – the email address for the new user
+    - type: text
+      key: password
+      value: ""
+      description: (string) – the password of the new user, a string of at least 4 characters
+    - type: text
+      key: id
+      value: ""
+      description: (string) – the id of the new user (optional)
+    - type: text
+      key: fullname
+      value: ""
+      description: (string) – the full name of the new user (optional)
+    - type: text
+      key: about
+      value: ""
+      description: (string) – a description of the new user (optional)
+    - type: text
+      key: openid
+      value: ""
+      description: (string) – (optional)
+order: 17000

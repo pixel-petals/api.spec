@@ -1,0 +1,21 @@
+$kind: http-request
+description: "Retrieves the next set of paginated results for a previous query using the provided next URL. Required: boundingBoxNextURL variable containing the next page URL. Response: Returns the next page of results in the same format as the initial query."
+url: "{{boundingBoxNextURL}}"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      const response = pm.response.json();
+
+      const token = pm.environment.get('Token')
+
+      if (response.pagination.nextUrl) {
+          const nextRequest = `${response.pagination.nextUrl}&token=${token}`
+          pm.collectionVariables.set("boundingBoxNextURL", nextRequest);
+      } else {
+          console.log(`This is the last page. Stopping execution`);
+          pm.collectionVariables.unset("boundingBoxNextURL");
+      }
+    language: text/javascript
+examples: ./.resources/2. Next request.resources/examples
+order: 2000

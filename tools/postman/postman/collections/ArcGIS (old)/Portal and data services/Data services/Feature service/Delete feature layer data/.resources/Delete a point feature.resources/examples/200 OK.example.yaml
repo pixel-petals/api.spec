@@ -1,0 +1,41 @@
+$kind: http-example
+request:
+  url: https://services3.arcgis.com/GVgbJbqm8hXASVYi/ArcGIS/rest/services/my_points/FeatureServer/0/deleteFeatures?f=json&objectIds=3461&token={{access_token}}
+  method: POST
+  queryParams:
+    f: json
+    objectIds: "3461"
+    token: "{{access_token}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json; charset=utf-8
+    Content-Length: "75"
+    Connection: keep-alive
+    Cache-Control: public, max-age=0, s-maxage=0
+    Content-Encoding: br
+    X-ArcGIS-Trace-Id: c3827001dbb252479dbc06776e5907a9
+    X-ArcGIS-Correlation-Id: 00-c3827001dbb252479dbc06776e5907a9-8be0296ce2067147-00
+    X-ArcGIS-Instance: MTSDS_Web_IN_18
+    Strict-Transport-Security: max-age=63072000
+    Access-Control-Allow-Origin: "*"
+    Date: Tue, 11 Jan 2022 17:58:18 GMT
+    X-Cache: Miss from cloudfront
+    Via: 1.1 8bc7362fccd25faee5866bbedff892ee.cloudfront.net (CloudFront)
+    X-Amz-Cf-Pop: IAD66-C2
+    X-Amz-Cf-Id: Cnp7njqz7g9B-hz84K9O3N5ST-7yyNoBXNh2iDE6w_o8I7_Kx2TVLA==
+  body:
+    type: json
+    content: |-
+      {
+          "deleteResults": [
+              {
+                  "objectId": 3461,
+                  "uniqueId": 3461,
+                  "globalId": null,
+                  "success": true
+              }
+          ]
+      }
+order: 1000

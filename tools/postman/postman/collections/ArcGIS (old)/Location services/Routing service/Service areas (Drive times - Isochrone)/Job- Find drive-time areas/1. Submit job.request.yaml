@@ -1,0 +1,18 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/service-areas/#job-find-drive-time-areas)
+url: https://logistics.arcgis.com/arcgis/rest/services/World/ServiceAreas/GPServer/GenerateServiceAreas/submitJob
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    facilities: "{'displayFieldName':'','fieldAliases':{'StoreName':'Store Name','Address':'Address','StoreId':'Store ID'},'geometryType':'esriGeometryPoint','spatialReference':{'wkid':4326,'latestWkid':4326},'fields':[{'name':'StoreName','type':'esriFieldTypeString','alias':'Name','length':50},{'name':'Address','type':'esriFieldTypeString','alias':'Name','length':256},{'name':'StoreId','type':'esriFieldTypeString','alias':'Store ID','length':16}],'features':[{'attributes':{'StoreName':'Store 1','Address':'1775 E Lugonia Ave, Redlands, CA 92374','StoreId':'120'},'geometry':{'x':-117.14002999994386,'y':34.071219999994128}},{'attributes':{'StoreName':'Store 2','Address':'1536 Barton Rd, Redlands, CA 92373','StoreId':'130'},'geometry':{'x':-117.207329999671,'y':34.047980000203609}},{'attributes':{'StoreName':'Store 3','Address':'11 E Colton Ave, Redlands, CA 92374','StoreId':'121'},'geometry':{'x':-117.18194000041973,'y':34.06351999976232}}]}"
+    break_values: 5 10 15
+    travel_direction: Towards Facility
+scripts:
+  - type: afterResponse
+    code: pm.collectionVariables.set("JOB_ID", pm.response.json().jobId);
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

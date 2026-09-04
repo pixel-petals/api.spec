@@ -1,0 +1,3 @@
+$kind: collection
+description: The `FindHotSpots` operation finds spatially and statistically signficant clusters of features with high and low values (point counts or field values) and returns new feature data.
+order: 1000

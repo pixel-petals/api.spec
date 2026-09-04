@@ -1,0 +1,16 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/content-items/manage/manage-item-sharing/)
+url: https://www.arcgis.com/sharing/rest/content/users/:USER_NAME/items/:ITEM_ID/Share
+method: POST
+pathVariables:
+  USER_NAME: "{{USERNAME}}"
+  ITEM_ID: e69675091e0b495baeae0f6a94587779
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    everyone: "true"
+    groups: "{{GROUP_ID}}"
+examples: ./.resources/Share an item.resources/examples
+order: 9000

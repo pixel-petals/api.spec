@@ -1,0 +1,3 @@
+$kind: collection
+description: Combine data operations allow you to merge, overlay, and join multiple sources of feature data to create either a new hosted feature layer or feature collection.
+order: 5000

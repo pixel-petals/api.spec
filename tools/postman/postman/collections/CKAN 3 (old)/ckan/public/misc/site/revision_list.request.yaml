@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{CKAN_API}}/revision_list"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: since_id
+    value: null
+    disabled: true
+    description: the revision ID after which you want the revision
+  - key: since_time
+    value: null
+    disabled: true
+    description: the timestamp after which you want the revisions
+  - key: sort
+    value: null
+    disabled: true
+    description: (string) – the order to sort the related items in, possible values are ‘time_asc’, ‘time_desc’ (default). (optional)
+order: 3000

@@ -1,0 +1,94 @@
+$kind: http-example
+request:
+  url: https://logistics.arcgis.com/arcgis/rest/services/World/Route/GPServer/FindRoutes/jobs/:job-id
+  method: POST
+  pathVariables:
+    job-id: "{{JOB_ID}}"
+  body:
+    type: urlencoded
+    content:
+      - key: token
+        value: "{{ACCESS_TOKEN}}"
+        description: Automatically sent by "Params"
+      - key: f
+        value: json
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 07:29:44 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "424"
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 07:30:58 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"b7b900c0"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "jobId": "j6175840ebe4646d0b8154d55eb524c4c",
+          "jobStatus": "esriJobSucceeded",
+          "results": {
+              "Solve_Succeeded": {
+                  "paramUrl": "results/Solve_Succeeded"
+              },
+              "Output_Routes": {
+                  "paramUrl": "results/Output_Routes"
+              },
+              "Output_Route_Edges": {
+                  "paramUrl": "results/Output_Route_Edges"
+              },
+              "Output_Directions": {
+                  "paramUrl": "results/Output_Directions"
+              },
+              "Output_Stops": {
+                  "paramUrl": "results/Output_Stops"
+              },
+              "Output_Network_Analysis_Layer": {
+                  "paramUrl": "results/Output_Network_Analysis_Layer"
+              },
+              "Output_Route_Data": {
+                  "paramUrl": "results/Output_Route_Data"
+              },
+              "Output_Result_File": {
+                  "paramUrl": "results/Output_Result_File"
+              },
+              "Output_Network_Analysis_Layer_Package": {
+                  "paramUrl": "results/Output_Network_Analysis_Layer_Package"
+              },
+              "Output_Direction_Points": {
+                  "paramUrl": "results/Output_Direction_Points"
+              },
+              "Output_Direction_Lines": {
+                  "paramUrl": "results/Output_Direction_Lines"
+              }
+          },
+          "inputs": {
+              "Stops": {
+                  "paramUrl": "inputs/Stops"
+              },
+              "Route_Shape": {
+                  "paramUrl": "inputs/Route_Shape"
+              },
+              "Populate_Directions": {
+                  "paramUrl": "inputs/Populate_Directions"
+              },
+              "Travel_Mode": {
+                  "paramUrl": "inputs/Travel_Mode"
+              }
+          },
+          "messages": [
+              {
+                  "type": "esriJobMessageTypeWarning",
+                  "description": "Network elements with avoid-restrictions are traversed in the output (restriction attribute names: \"Avoid Private Roads\")."
+              }
+          ]
+      }
+order: 3000

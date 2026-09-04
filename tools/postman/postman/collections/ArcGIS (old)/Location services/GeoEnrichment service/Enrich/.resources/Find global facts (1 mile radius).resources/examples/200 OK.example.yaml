@@ -1,0 +1,179 @@
+$kind: http-example
+request:
+  url: https://{{geoenrich-service}}.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/enrich
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      - key: token
+        value: "{{ACCESS_TOKEN}}"
+        description: (Required) You need a valid access token. To learn more, read the collection's documentation.
+      - key: f
+        value: pjson
+        description: (Required) The format of the data returned. The value can be json, csv, or geojson.
+      - key: studyAreas
+        value: "[{'geometry':{'x': -117.1956, 'y': 34.0572}}]"
+        description: (Required) An array of input points, polygons, administrative boundaries, or addresses.
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 08:25:36 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    ETag: '"-1905823039"'
+    Content-Language: en
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+        "results" : [ {
+          "paramName" : "GeoEnrichmentResult",
+          "dataType" : "GeoEnrichmentResult",
+          "value" : {
+            "version" : "2.0",
+            "FeatureSet" : [ {
+              "displayFieldName" : "",
+              "fieldAliases" : {
+                "ID" : "Id",
+                "OBJECTID" : "Object ID",
+                "sourceCountry" : "Country code",
+                "areaType" : "Area type",
+                "bufferUnits" : "Buffer units",
+                "bufferUnitsAlias" : "Buffer units alias",
+                "bufferRadii" : "Buffer radii",
+                "aggregationMethod" : "Aggregation method",
+                "populationToPolygonSizeRating" : "Population to polygon size rating for the country",
+                "apportionmentConfidence" : "Apportionment confidence for the country",
+                "HasData" : "Has data",
+                "TOTPOP" : "Total Population",
+                "TOTHH" : "Total Households",
+                "AVGHHSZ" : "Average Household Size",
+                "TOTMALES" : "Male Population",
+                "TOTFEMALES" : "Female Population"
+              },
+              "spatialReference" : {
+                "wkid" : 4326,
+                "latestWkid" : 4326
+              },
+              "fields" : [ {
+                "name" : "ID",
+                "alias" : "Id",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "OBJECTID",
+                "alias" : "Object ID",
+                "type" : "esriFieldTypeOID"
+              }, {
+                "name" : "sourceCountry",
+                "alias" : "Country code",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "areaType",
+                "alias" : "Area type",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferUnits",
+                "alias" : "Buffer units",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferUnitsAlias",
+                "alias" : "Buffer units alias",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferRadii",
+                "alias" : "Buffer radii",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "aggregationMethod",
+                "alias" : "Aggregation method",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "populationToPolygonSizeRating",
+                "alias" : "Population to polygon size rating for the country",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "apportionmentConfidence",
+                "alias" : "Apportionment confidence for the country",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "HasData",
+                "alias" : "Has data",
+                "type" : "esriFieldTypeInteger"
+              }, {
+                "name" : "TOTPOP",
+                "alias" : "Total Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyGlobalFacts.TOTPOP",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "TOTHH",
+                "alias" : "Total Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyGlobalFacts.TOTHH",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "AVGHHSZ",
+                "alias" : "Average Household Size",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyGlobalFacts.AVGHHSZ",
+                "component" : "scripts",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "TOTMALES",
+                "alias" : "Male Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyGlobalFacts.TOTMALES",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "TOTFEMALES",
+                "alias" : "Female Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyGlobalFacts.TOTFEMALES",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              } ],
+              "features" : [ {
+                "attributes" : {
+                  "ID" : "0",
+                  "OBJECTID" : 1,
+                  "sourceCountry" : "US",
+                  "areaType" : "RingBuffer",
+                  "bufferUnits" : "esriMiles",
+                  "bufferUnitsAlias" : "Miles",
+                  "bufferRadii" : 1,
+                  "aggregationMethod" : "BlockApportionment:US.BlockGroups;PointsLayer:US.BlockPoints",
+                  "populationToPolygonSizeRating" : 2.191,
+                  "apportionmentConfidence" : 2.576,
+                  "HasData" : 1,
+                  "TOTPOP" : 12799,
+                  "TOTHH" : 5158,
+                  "AVGHHSZ" : 2.46,
+                  "TOTMALES" : 6190,
+                  "TOTFEMALES" : 6609
+                }
+              } ]
+            } ]
+          }
+        } ],
+        "messages" : [ ]
+      }
+order: 1000

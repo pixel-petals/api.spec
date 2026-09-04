@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{CKAN_API}}/user_delete"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: id
+      value: ""
+      description: (string) – the id or usernamename of the user to delete
+order: 18000

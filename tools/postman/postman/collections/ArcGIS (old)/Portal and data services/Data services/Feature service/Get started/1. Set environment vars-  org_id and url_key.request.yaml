@@ -1,0 +1,42 @@
+$kind: http-request
+name: "1. Set environment vars:  org_id and url_key"
+description: Sets the required environment variables for your ArcGIS organization, including org_id and url_key. Use this request to configure your workspace for authenticated requests to ArcGIS services. The response confirms the variables have been set.
+url: https://www.arcgis.com/sharing/rest/portals/self?token={{ACCESS_TOKEN}}&f=json
+method: GET
+queryParams:
+  token: "{{ACCESS_TOKEN}}"
+  f: json
+auth:
+  type: noauth
+scripts:
+  - type: afterResponse
+    code: |
+      const schema = {
+          "type": "object",
+          "properties": {
+              "urlKey": { type: "string" },
+              "user": {
+                  "type": "object",
+                  "properties": {
+                      "orgId": {
+                          "type": "string"
+                      }
+                  },
+                  "required": ["orgId"]
+              },
+              "customBaseUrl": { type: "string" }
+          },
+          "required": ["user", "urlKey", "customBaseUrl"]
+      };
+
+      pm.test("orgId, urlKey and customBaseUrl are present", function () {
+        pm.response.to.have.jsonSchema(schema);
+      });
+
+      var jsonData = pm.response.json();
+      pm.collectionVariables.set("ORG_ID", jsonData.user.orgId);
+      pm.collectionVariables.set("ORG_URL_KEY", jsonData.urlKey);
+      pm.collectionVariables.set("ORG_BASE_URL", jsonData.customBaseUrl);
+    language: text/javascript
+examples: ./.resources/1. Set environment vars-  org_id and url_key.resources/examples
+order: 1000

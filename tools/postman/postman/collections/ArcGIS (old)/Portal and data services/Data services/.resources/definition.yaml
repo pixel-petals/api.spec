@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  Data hosting, also referred to as data publishing, is the process of securely storing, managing, and accessing your geographic data in ArcGIS as a data service. You can easily host your data by using data management tools to create services such as feature services, vector tile services, map tile services, and image services. Each service API supports a specific type of data and offers a specific set of capabilities. 
+
+  To learn more go to the [Developer guide > Data services overview](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/).
+order: 1000

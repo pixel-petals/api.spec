@@ -1,0 +1,18 @@
+$kind: collection
+description: |-
+  The OpenStreetMap Editing API v0.6. Allows reading and writing of OSM map data (nodes, ways, relations), changesets, GPS traces, notes, user data, and more.
+
+  Authentication uses OAuth 2.0. Read-only endpoints are generally public; write operations require authorization.
+
+  Base URL: https://api.openstreetmap.org
+
+  Test server: https://master.apis.dev.openstreetmap.org
+
+  Contact Support:
+   Name: OpenStreetMap
+variables:
+  baseUrl: https://api.openstreetmap.org
+auth:
+  - id: ""
+    type: noauth
+    name: No Auth

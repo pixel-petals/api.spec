@@ -1,0 +1,27 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/feature-services/query-table-features/#join-a-table-to-a-feature-layer)
+url: "{{ANALYSIS_URL}}/JoinFeatures/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    token: "{{ACCESS_TOKEN}}"
+    f: json
+    targetLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads_locations/FeatureServer/0"}'
+    joinLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads_data/FeatureServer/0"}'
+    joinOperation: joinOneToOne
+    attributeRelationship: '[{"targetField":"TRL_NAME","operator":"equal","joinField":"TRL_NAME"}]'
+    outputName: '{"serviceProperties": {"name":"{{UNIQUE_NAME}}"}}'
+scripts:
+  - type: afterResponse
+    code: |
+      pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+  - type: beforeRequest
+    code: |-
+      // Creates a unique name for the output service
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/[^A-Z0-9]/gi, "_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+examples: ./.resources/2. Submit job.resources/examples
+order: 2000

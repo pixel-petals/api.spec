@@ -1,0 +1,26 @@
+$kind: http-request
+url: "{{CKAN_API}}/activity_create"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: user_id
+      value: ""
+      description: (string) – the name or id of the user who carried out the activity, e.g. 'seanh'
+    - type: text
+      key: object_id
+      value: ""
+      description: the name or id of the object of the activity, e.g. 'my_dataset'
+    - type: text
+      key: activity_type
+      value: ""
+      description: (string) – the type of the activity, this must be an activity type that CKAN knows how to render, e.g. 'new package', 'changed user', 'deleted group' etc
+    - type: text
+      key: data
+      value: ""
+      description: (dictionary) – any additional data about the activity
+order: 1000

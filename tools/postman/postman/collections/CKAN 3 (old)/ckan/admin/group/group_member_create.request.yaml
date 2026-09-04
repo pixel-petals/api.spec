@@ -1,0 +1,22 @@
+$kind: http-request
+url: "{{CKAN_API}}/group_member_create"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: id
+      value: ""
+      description: (string) – the id or name of the group
+    - type: text
+      key: username
+      value: ""
+      description: (string) – name or id of the user to be made member of the group
+    - type: text
+      key: role
+      value: ""
+      description: (string) – role of the user in the group. One of member, editor, or admin
+order: 4000

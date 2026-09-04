@@ -1,0 +1,496 @@
+$kind: http-example
+request:
+  url: https://www.arcgis.com/sharing/rest/community/groups?q=water&f=pjson
+  method: GET
+  queryParams:
+    q: water
+    f: pjson
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Thu, 13 Jan 2022 19:59:40 GMT
+    - key: Content-Type
+      value: text/plain;charset=utf-8
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Origin
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Cache-Control
+      value: no-cache
+    - key: Pragma
+      value: no-cache
+    - key: Expires
+      value: "-1"
+    - key: Strict-Transport-Security
+      value: max-age=31536000
+    - key: Content-Encoding
+      value: gzip
+  body:
+    type: json
+    content: |-
+      {
+          "query": "water",
+          "total": 3761,
+          "start": 1,
+          "num": 10,
+          "nextStart": 11,
+          "results": [
+              {
+                  "id": "b2e2fce2ab304ff38c27b811b1784b23",
+                  "title": "Wyoming WRDS WDO - Water",
+                  "isInvitationOnly": true,
+                  "owner": "wrds_wdo",
+                  "description": null,
+                  "snippet": "WRDS - WDO Water Resources-related datasets",
+                  "tags": [
+                      "Wyoming",
+                      "Water",
+                      "WRDS",
+                      "WDO"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": "title",
+                  "sortOrder": "asc",
+                  "isViewOnly": false,
+                  "isOpenData": true,
+                  "featuredItemsId": null,
+                  "thumbnail": null,
+                  "created": 1513633253000,
+                  "modified": 1513701386000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": true,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "membershipAccess": "org",
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "properties": null
+              },
+              {
+                  "id": "0ba26bd2ed5f43ec9ad69df7cd66484b",
+                  "title": "Wyoming WRDS WDO - All",
+                  "isInvitationOnly": true,
+                  "owner": "wrds_wdo",
+                  "description": null,
+                  "snippet": "WRDS - WDO All datasets",
+                  "tags": [
+                      "Wyoming",
+                      "Water",
+                      "WRDS",
+                      "WDO"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": "title",
+                  "sortOrder": "asc",
+                  "isViewOnly": false,
+                  "isOpenData": true,
+                  "featuredItemsId": null,
+                  "thumbnail": null,
+                  "created": 1513701256000,
+                  "modified": 1513701375000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": true,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "membershipAccess": "org",
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "properties": null
+              },
+              {
+                  "id": "22fcdd1419324ebaa8ede7228c9a8e5f",
+                  "title": "slcpu",
+                  "isInvitationOnly": false,
+                  "owner": "twambeam",
+                  "description": "<b><font size='4'>Salt Lake City Public Utilities Maps Group</font></b>",
+                  "snippet": "Salt Lake City Public Utilities Group",
+                  "tags": [
+                      "water",
+                      "sewer",
+                      "storm"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": null,
+                  "sortOrder": null,
+                  "isViewOnly": false,
+                  "featuredItemsId": null,
+                  "thumbnail": "pinkearth.jpg",
+                  "created": 1317163351000,
+                  "modified": 1606773550000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": false,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "properties": null
+              },
+              {
+                  "id": "7ffee8bae5824ceba1fa378577dc6b3c",
+                  "title": "NWWSD",
+                  "isInvitationOnly": false,
+                  "owner": "etylerNwwsd",
+                  "description": "This group contains maps created by NWWSD GIS staff.",
+                  "snippet": "This is the Northwestern Water & Sewer Districts GIS Group",
+                  "tags": [
+                      "nwwsd",
+                      "sewer",
+                      "water",
+                      "District",
+                      "Engineering",
+                      "Operations",
+                      "Wood County",
+                      "GIS",
+                      "Maps"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": "title",
+                  "sortOrder": "asc",
+                  "isViewOnly": false,
+                  "featuredItemsId": null,
+                  "thumbnail": "nwwsd_logo3.png",
+                  "created": 1354569508000,
+                  "modified": 1438608868000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": false,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "membershipAccess": "org",
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "properties": null
+              },
+              {
+                  "id": "b468342a72fe4f27b11ae483a9aa967b",
+                  "title": "Kern Water Bank - GIS",
+                  "isInvitationOnly": false,
+                  "owner": "MandaKWB",
+                  "description": "This is the Kern Water Bank Authorities GIS Group.",
+                  "snippet": "Kern Water Bank GIS",
+                  "tags": [
+                      "KWB"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": "modified",
+                  "sortOrder": "desc",
+                  "isViewOnly": true,
+                  "featuredItemsId": null,
+                  "thumbnail": "Greater_Yellowlegs__F11a.jpg",
+                  "created": 1447708754000,
+                  "modified": 1474992230000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": false,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "memberOrgIds": [
+                      "jyJt3V4LLzpQgZ8z"
+                  ],
+                  "properties": null
+              },
+              {
+                  "id": "1593445fc84641248cb43b9e46ae0c9c",
+                  "title": "Ballston Emergency Management Committee",
+                  "isInvitationOnly": false,
+                  "owner": "DennisLEMC",
+                  "description": "ArcGIS Online Emergency Management Committee - Homepage - Quicklinks to content",
+                  "snippet": "Town of Ballston Emergency Management Committee ",
+                  "tags": [
+                      "water"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": "modified",
+                  "sortOrder": "desc",
+                  "isViewOnly": false,
+                  "featuredItemsId": null,
+                  "thumbnail": "thumbnail.png",
+                  "created": 1503508596000,
+                  "modified": 1527802172000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": true,
+                  "autoJoin": true,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "memberOrgIds": [
+                      "0ZRg6WRC7mxSLyKX",
+                      "hpOI6btnDwia1fVO",
+                      "nb4uqzTWJlKyQgoA",
+                      "NXAyKn5RPbr3jO6a",
+                      "sEdGShinQXxB9C6x",
+                      "XDDQBUCsh8rF3xgJ"
+                  ],
+                  "properties": null
+              },
+              {
+                  "id": "7c8552b276144f3b8e947e319141fdb2",
+                  "title": "WRC",
+                  "isInvitationOnly": false,
+                  "owner": "jc8560fx",
+                  "description": null,
+                  "snippet": "ArcGIS Online Group of Water Resources Center",
+                  "tags": [
+                      "MSU",
+                      "Water Resources"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": "title",
+                  "sortOrder": "asc",
+                  "isViewOnly": false,
+                  "featuredItemsId": null,
+                  "thumbnail": "wrc_logo.jpg",
+                  "created": 1496714234000,
+                  "modified": 1497305488000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": false,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "memberOrgIds": [
+                      "g2UdLvZr5lOrmlXl",
+                      "HWNeJO1BX8XvS0O8",
+                      "sZnXR7hFyzOmRFuI",
+                      "ya2I71AH2HQJwFv5"
+                  ],
+                  "properties": null
+              },
+              {
+                  "id": "08a2498d8fbe4508878310fe91b7cb4d",
+                  "title": "WISE - Water Information System for Europe",
+                  "isInvitationOnly": false,
+                  "owner": "EuropeanEnvironmentAgency",
+                  "description": "The WISE group contains the current list of maps, layers and applications currently included in the Water Information System for Europe. It provides a quick access point for users that need to analyse data or develop additional maps and applications.",
+                  "snippet": "Water Information System for Europe - Published products",
+                  "tags": [
+                      "WISE",
+                      "water",
+                      "services",
+                      "maps",
+                      "applications",
+                      "freshwater",
+                      "WFD",
+                      "BWD",
+                      "UWWTD",
+                      "Floods Directive",
+                      "WISE SoE",
+                      "water quality",
+                      "water quantity",
+                      "Bathing waters",
+                      "Urban waste water",
+                      "Water Framework Directive",
+                      "River Basin Management"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": "title",
+                  "sortOrder": "asc",
+                  "isViewOnly": false,
+                  "isOpenData": true,
+                  "featuredItemsId": null,
+                  "thumbnail": "thumbnail.png",
+                  "created": 1365750018000,
+                  "modified": 1594149622000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": true,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "membershipAccess": "org",
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "properties": null
+              },
+              {
+                  "id": "5af6357ba72e48e6b2f1959dfca1cbb2",
+                  "title": "Wyoming GeoHub - All Data",
+                  "isInvitationOnly": false,
+                  "owner": "wygisc_info",
+                  "description": "All Data",
+                  "snippet": "This group will be all the data that is available in Pathfinder.",
+                  "tags": [
+                      "cadastral",
+                      "cultural",
+                      "geological",
+                      "geophysical",
+                      "administrative",
+                      "political",
+                      "boundaries",
+                      "agriculture",
+                      "farming",
+                      "atmosphere",
+                      "climate",
+                      "biology",
+                      "ecology",
+                      "business",
+                      "economics",
+                      "society",
+                      "demographics",
+                      "elevation",
+                      "dervied products",
+                      "enviroment",
+                      "conservation",
+                      "facilities",
+                      "structures",
+                      "human health",
+                      "disease",
+                      "imagery",
+                      "base maps",
+                      "inland water resources",
+                      "water",
+                      "locations",
+                      "geodetic networks",
+                      "military",
+                      "oceans",
+                      "estuaries",
+                      "transportation",
+                      "transportation networks",
+                      "utilities",
+                      "communication"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": "title",
+                  "sortOrder": "asc",
+                  "isViewOnly": false,
+                  "isOpenData": true,
+                  "featuredItemsId": null,
+                  "thumbnail": "all.png",
+                  "created": 1479146692000,
+                  "modified": 1564499117000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": false,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "membershipAccess": "org",
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "properties": null
+              },
+              {
+                  "id": "b6755cf62fa54d36984a336d0d9c22e5",
+                  "title": "WRE",
+                  "isInvitationOnly": false,
+                  "owner": "dnrwres",
+                  "description": "<br />",
+                  "snippet": "Utah Division of Water Resources Maps",
+                  "tags": [
+                      "Utah water resources",
+                      "Utah DNR"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": null,
+                  "sortOrder": null,
+                  "isViewOnly": false,
+                  "featuredItemsId": null,
+                  "thumbnail": "water_resources_logo.gif",
+                  "created": 1332968580000,
+                  "modified": 1548795059000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": false,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "membershipAccess": "org",
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "properties": null
+              }
+          ]
+      }
+order: 1000

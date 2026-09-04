@@ -1,0 +1,86 @@
+$kind: http-example
+request:
+  url: https://{{logistics-service}}.arcgis.com/arcgis/rest/services/World/Route/GPServer/FindRoutes/jobs/jc4e152dbe30c4594ada71ad5c8ea0800
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 30 Jan 2023 20:34:57 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "401"
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES="XUCgVfhNcyLQBfPzQNNuBe9MyvVhkfDMK5eUoY7no000QGFJbQmv2k00PPdJJETmIuvXVQoJalwVVlWmUkEVbRZCPnGqhrQUjaWirwMH8ddJR0qjbbFeg0uGGoycLkrZiJLCBMYkaMpAxYMOYLKPj5GzoFYZDaDC9WB7+F+L8O2MsLv5+uaUCINU0aqB7I7yKX4vh9cItMkUjX+xEGbgHVSCntOAdlId/DHENSSU5f2pJ2yErdNf4WNpi80vrwMypZOydPAXsIEYXdhEK7FfWfftWuGK0oEZPMtYDMlYNP7OlzGX+pVG0nSeQkK/dSd5BiYGRIRvHUHUkOxMpzTGIfLyHnLOHw7xOeOfKiaWYY0BDQVTjZMsVqcCfqkV5TjYKgIuPfnnmKh79UaEYKCbSejebXo9s9jnhFoM0x5081aUIf4gQfjvaRQRsfBHh4Sp4H6PWrmD8IjWqP0LFXFfa7jEfPfB4kk1ssFALigN0zQUzcNlQBLQZ1OGUeulUWjuJRgIxp98KvbdiahzbylQLROg1ZaoZpaKegN2x1RbgqxwQrGPrGMtuaIrPO6C1HJBi7ake6fsw+HJmJO5bBpp3f99ejKW8zqWVvXAANq0hdaNBKvJLbCkKrUw3mCiB9jbSYQWT3xaFrW9bkzfbUl+2klY6mfi5N3GWv3XIWAn3GbtfihrZlBRbXQ5FdOW0kMtPfKIGdAsdfk="; Version=1; Max-Age=60; Expires=Mon, 30-Jan-2023 20:35:57 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"e2a96716"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "jobId": "jc4e152dbe30c4594ada71ad5c8ea0800",
+          "jobStatus": "esriJobSucceeded",
+          "results": {
+              "Solve_Succeeded": {
+                  "paramUrl": "results/Solve_Succeeded"
+              },
+              "Output_Routes": {
+                  "paramUrl": "results/Output_Routes"
+              },
+              "Output_Route_Edges": {
+                  "paramUrl": "results/Output_Route_Edges"
+              },
+              "Output_Directions": {
+                  "paramUrl": "results/Output_Directions"
+              },
+              "Output_Stops": {
+                  "paramUrl": "results/Output_Stops"
+              },
+              "Output_Network_Analysis_Layer": {
+                  "paramUrl": "results/Output_Network_Analysis_Layer"
+              },
+              "Output_Route_Data": {
+                  "paramUrl": "results/Output_Route_Data"
+              },
+              "Output_Result_File": {
+                  "paramUrl": "results/Output_Result_File"
+              },
+              "Output_Network_Analysis_Layer_Package": {
+                  "paramUrl": "results/Output_Network_Analysis_Layer_Package"
+              },
+              "Output_Direction_Points": {
+                  "paramUrl": "results/Output_Direction_Points"
+              },
+              "Output_Direction_Lines": {
+                  "paramUrl": "results/Output_Direction_Lines"
+              },
+              "Usage_Cost": {
+                  "paramUrl": "results/Usage_Cost"
+              }
+          },
+          "inputs": {
+              "Stops": {
+                  "paramUrl": "inputs/Stops"
+              },
+              "Travel_Mode": {
+                  "paramUrl": "inputs/Travel_Mode"
+              }
+          },
+          "messages": [
+              {
+                  "type": "esriJobMessageTypeWarning",
+                  "description": "WARNING 030194: Data values longer than 500 characters for field [Stops:Name] are truncated."
+              }
+          ]
+      }
+order: 1000

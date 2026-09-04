@@ -1,0 +1,10 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/search/search-users/)
+url: https://www.arcgis.com/sharing/rest/community/users?q={{USERNAME}}&f=pjson&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  q: "{{USERNAME}}"
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/Search for a user.resources/examples
+order: 1000

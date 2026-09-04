@@ -1,0 +1,20 @@
+$kind: http-request
+description: Go to the [Basemap styles service &gt; Get started](https://[https://developers.arcgis.com/rest/basemap-styles/get-started/](https://developers.arcgis.com/rest/basemap-styles/get-started/)) to learn more.
+url: https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/:VERSION/:STYLE_RESPONSE/:STYLE_FAMILY/:STYLE_NAME/
+method: GET
+pathVariables:
+  - key: VERSION
+    value: v2
+  - key: STYLE_RESPONSE
+    value: styles
+  - key: STYLE_FAMILY
+    value: arcgis
+    description: "`arcgis` | `open`"
+  - key: STYLE_NAME
+    value: navigation
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/Get a style (Header Auth).resources/examples
+order: 3000

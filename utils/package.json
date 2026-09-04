@@ -1,0 +1,21 @@
+{
+  "name": "utils",
+  "type": "module",
+  "exports": {
+    "./*": "./*.js"
+  },
+  "imports": {
+    "#bundle/*": "./bundle/*.js",
+    "#fragments/*": "./fragments/*.js",
+    "#schema/*": "./schema/*.js",
+    "#serialize/*": "./serialize/*.js",
+    "#source/*": "./source/*.js",
+    "#spec/*": "./spec/*.js"
+  },
+  "dependencies": {
+    "@apidevtools/json-schema-ref-parser": "^16.0.1",
+    "@redocly/openapi-core": "^2.51.1",
+    "commander": "^15.0.0",
+    "yaml": "^2.8.1"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@pixelpetals/asyncapi",
+  "type": "module",
+  "bin": {
+    "asyncapi": "bin/cmd.js"
+  },
+  "exports": {
+    "./*": "./schema/*"
+  },
+  "dependencies": {
+    "utils": "*"
+  },
+  "imports": {
+    "#lib/*": "./bin/lib/*.js"
+  }
+}

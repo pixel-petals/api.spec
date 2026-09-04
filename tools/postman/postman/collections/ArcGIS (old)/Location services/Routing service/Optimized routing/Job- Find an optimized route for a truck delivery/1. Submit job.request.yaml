@@ -1,0 +1,18 @@
+$kind: http-request
+description: Submit the job request. To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/optimized-routing/#job-find-an-optimized-route-for-a-truck-delivery)
+url: https://logistics.arcgis.com/arcgis/rest/services/World/Route/GPServer/FindRoutes/submitJob
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    stops: -117.1755,32.7123;-117.1624,32.7107;-117.1530,32.7096;-117.1671,32.7174;-117.1460,32.7159;-117.1688,32.7207;-117.1678,32.7222;-117.1710,32.7294;-117.1614,32.7284;-117.1696,32.6976;-117.1406,32.7172;-117.1803,32.7427;-117.1300,32.7216;-117.2427,32.7493;-117.2278,32.7231;-117.2120,32.7379;-117.1830,32.7529;-117.1580,32.7479;-117.1397,32.7556;-117.1300,32.7624;-117.1334,32.7481;-117.1201,32.7635;-117.1303,32.7413;-117.2306,32.8690;-117.2540,32.8642;-117.2560,32.8540;-117.2717,32.8494;-117.2736,32.8472;-117.2763,32.8394;-117.2696,32.8144;-117.1547,32.8239;-117.2549,32.8065;-117.2565,32.7968;-117.2524,32.7985;-117.2373,32.8003;-117.2526,32.7846;
+    travel_mode: "{'attributeParameterValues':[{'attributeName':'Use Preferred Truck Routes','parameterName':'Restriction Usage','value':'PREFER_HIGH'},{'attributeName':'Avoid Unpaved Roads','parameterName':'Restriction Usage','value':'AVOID_HIGH'},{'attributeName':'Avoid Private Roads','parameterName':'Restriction Usage','value':'AVOID_MEDIUM'},{'attributeName':'Driving a Truck','parameterName':'Restriction Usage','value':'PROHIBITED'},{'attributeName':'Roads Under Construction Prohibited','parameterName':'Restriction Usage','value':'PROHIBITED'},{'attributeName':'Avoid Gates','parameterName':'Restriction Usage','value':'AVOID_MEDIUM'},{'attributeName':'Avoid Express Lanes','parameterName':'Restriction Usage','value':'PROHIBITED'},{'attributeName':'Avoid Carpool Roads','parameterName':'Restriction Usage','value':'PROHIBITED'},{'attributeName':'Avoid Truck Restricted Roads','parameterName':'Restriction Usage','value':'AVOID_HIGH'},{'attributeName':'TruckTravelTime','parameterName':'Vehicle Maximum Speed (km/h)','value':0}],'description':'Models basic truck travel by preferring designated truck routes, and finds solutions that optimize travel time. Routes must obey one-way roads, avoid illegal turns, and so on. When you specify a start time, dynamic travel speeds based on traffic are used where it is available, up to the legal truck speed limit.','distanceAttributeName':'Kilometers','id':'ZzzRtYcPLjXFBKwr','impedanceAttributeName':'TruckTravelTime','name':'Trucking Time','restrictionAttributeNames':['Avoid Carpool Roads','Avoid Express Lanes','Avoid Gates','Avoid Private Roads','Avoid Truck Restricted Roads','Avoid Unpaved Roads','Driving a Truck','Roads Under Construction Prohibited','Use Preferred Truck Routes'],'simplificationTolerance':10,'simplificationToleranceUnits':'esriMeters','timeAttributeName':'TruckTravelTime','type':'TRUCK','useHierarchy':true,'uturnAtJunctions':'esriNFSBNoBacktrack'}"
+    reorder_stops_to_find_optimal_route: "true"
+scripts:
+  - type: afterResponse
+    code: pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

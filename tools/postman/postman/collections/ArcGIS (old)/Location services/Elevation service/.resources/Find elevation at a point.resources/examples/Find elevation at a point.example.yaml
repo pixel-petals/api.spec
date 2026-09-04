@@ -1,0 +1,38 @@
+$kind: http-example
+request:
+  url: https://elevation-api.arcgis.com/arcgis/rest/services/elevation-service/beta/elevation/at-point?lon={{latitude}}&lat={{longitude}}&token={{access_token}}
+  method: GET
+  queryParams:
+    - key: lon
+      value: "{{latitude}}"
+      description: Latitude of the location.
+    - key: lat
+      value: "{{longitude}}"
+      description: Longitude of the location.
+    - key: token
+      value: "{{access_token}}"
+      description: An access token from an ArcGIS Location Platform account.
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "elevationInfo": {
+              "relativeTo": "meanSeaLevel"
+          },
+          "result": {
+              "point": {
+                  "spatialReference": {
+                      "wkid": 4326
+                  },
+                  "x": 20.71,
+                  "y": 22.75,
+                  "z": 640
+              }
+          }
+      }
+order: 1000

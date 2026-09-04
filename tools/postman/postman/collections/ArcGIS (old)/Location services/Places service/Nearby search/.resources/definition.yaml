@@ -1,0 +1,11 @@
+$kind: collection
+description: |-
+  A nearby search finds places within a given radius of a location. The location typically represents a point on a map or the geolocation of a device.
+
+  You can use this search to:
+  - Find and display places within a distance of a location.
+  - Get the latitude and longitude for places.
+  - Filter places using categories and/or text.
+  - Find place attributes including placeId, name, categories, distance, and location.
+  - Find place IDs so you can request additional place details.
+order: 1000

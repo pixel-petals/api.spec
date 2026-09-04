@@ -1,0 +1,3 @@
+$kind: collection
+description: Summarize data operations allow you to calculate spatial and attribute statistics on feature data to create either a new hosted feature layer or feature collection.
+order: 7000

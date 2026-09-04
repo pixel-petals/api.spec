@@ -1,0 +1,17 @@
+{
+  "name": "@pixelpetals/typeapi",
+  "type": "module",
+  "bin": {
+    "typeapi": "bin/cmd.js"
+  },
+  "exports": {
+    "./*": "./schema/*"
+  },
+  "dependencies": {
+    "utils": "*",
+    "commander": "^15.0.0"
+  },
+  "imports": {
+    "#lib/*": "./bin/lib/*.js"
+  }
+}

@@ -1,0 +1,13 @@
+$kind: http-request
+description: |-
+  Retrieves available information and supported attributes for a specific country using its country code. This endpoint helps you understand what geographic and demographic data can be accessed for a given country. No authentication is required. Returns metadata about available variables and data structure.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/how-to-build-a-data-enrichment-app/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/countries/:country-code?f=json
+method: GET
+queryParams:
+  f: json
+pathVariables:
+  country-code: UA
+examples: ./.resources/Available info (per country).resources/examples
+order: 3000

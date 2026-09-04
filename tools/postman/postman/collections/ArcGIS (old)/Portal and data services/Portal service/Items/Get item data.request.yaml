@@ -1,0 +1,17 @@
+$kind: http-request
+description: |-
+  Retrieves the data for a specific ArcGIS Online item. Provide the item ID to access the item's data, such as web map or feature layer content. The response includes the item's JSON definition or data payload.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/content-items/access/get-item-data/)
+url: https://www.arcgis.com/sharing/rest/content/items/:ITEM_ID/data?f=json&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  - key: f
+    value: json
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    description: If accessing a private item.
+pathVariables:
+  ITEM_ID: 5a5147abe878444cbac68dea9f2f64e7
+examples: ./.resources/Get item data.resources/examples
+order: 3000

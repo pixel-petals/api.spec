@@ -1,0 +1,190 @@
+$kind: http-example
+request:
+  url: 'https://{{geoenrich-service}}.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/enrich?studyareas=[{"address":{"text":" 102 Aqua Ct New Smyrna Beach FL 32168"}}]&studyareasoptions={"areaType": "NetworkServiceArea","bufferUnits": "Minutes","bufferRadii": [15],"travel_mode":"Walking"}&dataCollections=["KeyGlobalFacts"]&returngeometry=true&f=pjson&token={{access_token}}'
+  method: GET
+  queryParams:
+    studyareas: '[{"address":{"text":" 102 Aqua Ct New Smyrna Beach FL 32168"}}]'
+    studyareasoptions: '{"areaType": "NetworkServiceArea","bufferUnits": "Minutes","bufferRadii": [15],"travel_mode":"Walking"}'
+    dataCollections: '["KeyGlobalFacts"]'
+    returngeometry: "true"
+    f: pjson
+    token: "{{access_token}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 10:26:56 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    ETag: '"743823696"'
+    Content-Language: en
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+        "results" : [ {
+          "paramName" : "GeoEnrichmentResult",
+          "dataType" : "GeoEnrichmentResult",
+          "value" : {
+            "version" : "2.0",
+            "FeatureSet" : [ {
+              "displayFieldName" : "",
+              "fieldAliases" : {
+                "ID" : "Id",
+                "OBJECTID" : "Object ID",
+                "sourceCountry" : "Country code",
+                "X" : "X",
+                "Y" : "Y",
+                "areaType" : "Area type",
+                "bufferUnits" : "Buffer units",
+                "bufferUnitsAlias" : "Buffer units alias",
+                "bufferRadii" : "Buffer radii",
+                "aggregationMethod" : "Aggregation method",
+                "populationToPolygonSizeRating" : "Population to polygon size rating for the country",
+                "apportionmentConfidence" : "Apportionment confidence for the country",
+                "HasData" : "Has data",
+                "TOTPOP" : "Total Population",
+                "TOTHH" : "Total Households",
+                "AVGHHSZ" : "Average Household Size",
+                "TOTMALES" : "Male Population",
+                "TOTFEMALES" : "Female Population"
+              },
+              "geometryType" : "esriGeometryPolygon",
+              "spatialReference" : {
+                "wkid" : 4326,
+                "latestWkid" : 4326
+              },
+              "fields" : [ {
+                "name" : "ID",
+                "alias" : "Id",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "OBJECTID",
+                "alias" : "Object ID",
+                "type" : "esriFieldTypeOID"
+              }, {
+                "name" : "sourceCountry",
+                "alias" : "Country code",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "X",
+                "alias" : "X",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "Y",
+                "alias" : "Y",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "areaType",
+                "alias" : "Area type",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferUnits",
+                "alias" : "Buffer units",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferUnitsAlias",
+                "alias" : "Buffer units alias",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferRadii",
+                "alias" : "Buffer radii",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "aggregationMethod",
+                "alias" : "Aggregation method",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "populationToPolygonSizeRating",
+                "alias" : "Population to polygon size rating for the country",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "apportionmentConfidence",
+                "alias" : "Apportionment confidence for the country",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "HasData",
+                "alias" : "Has data",
+                "type" : "esriFieldTypeInteger"
+              }, {
+                "name" : "TOTPOP",
+                "alias" : "Total Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyGlobalFacts.TOTPOP",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "TOTHH",
+                "alias" : "Total Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyGlobalFacts.TOTHH",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "AVGHHSZ",
+                "alias" : "Average Household Size",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyGlobalFacts.AVGHHSZ",
+                "component" : "scripts",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "TOTMALES",
+                "alias" : "Male Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyGlobalFacts.TOTMALES",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "TOTFEMALES",
+                "alias" : "Female Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyGlobalFacts.TOTFEMALES",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              } ],
+              "features" : [ {
+                "attributes" : {
+                  "ID" : "0",
+                  "OBJECTID" : 1,
+                  "sourceCountry" : "US",
+                  "X" : -80.94859997786051,
+                  "Y" : 29.03395702086108,
+                  "areaType" : "NetworkServiceArea",
+                  "bufferUnits" : "Minutes",
+                  "bufferUnitsAlias" : "Walk Time Minutes",
+                  "bufferRadii" : 15,
+                  "aggregationMethod" : "BlockApportionment:US.BlockGroups;PointsLayer:US.BlockPoints",
+                  "populationToPolygonSizeRating" : 2.191,
+                  "apportionmentConfidence" : 2.576,
+                  "HasData" : 1,
+                  "TOTPOP" : 619,
+                  "TOTHH" : 354,
+                  "AVGHHSZ" : 1.75,
+                  "TOTMALES" : 292,
+                  "TOTFEMALES" : 328
+                },
+                "geometry" : {
+                  "rings" : [ [ [ -80.94839179990655, 29.039227704102235 ], [ -80.94726891119132, 29.03832939308741 ], [ -80.94614602157773, 29.03855397118146 ], [ -80.9454722887079, 29.037655659014508 ], [ -80.9452477107852, 29.037655659014508 ], [ -80.9454722887079, 29.036532770376656 ], [ -80.94637060039875, 29.03608361511366 ], [ -80.94637060039875, 29.035409881303117 ], [ -80.94457397791535, 29.030020014305272 ], [ -80.9434510892001, 29.030020014305272 ], [ -80.94322651127739, 29.030020014305272 ], [ -80.94120531087128, 29.031142903104023 ], [ -80.94030700007872, 29.030918326164272 ], [ -80.93985784423329, 29.030244591628307 ], [ -80.94053157710313, 29.029121703269645 ], [ -80.9421036216638, 29.02822339227231 ], [ -80.94232819958651, 29.02822339227231 ], [ -80.94232819958651, 29.02642676960845 ], [ -80.94322651127739, 29.025977614359753 ], [ -80.9434510892001, 29.025977614359753 ], [ -80.94367566712282, 29.02485472515215 ], [ -80.94434939999263, 29.02440557013458 ], [ -80.94569686663061, 29.02485472515215 ], [ -80.94592144365501, 29.02642676960845 ], [ -80.94681975624418, 29.026202191835598 ], [ -80.94816722198384, 29.02732508131365 ], [ -80.94996384536556, 29.027549659000552 ], [ -80.95041300031266, 29.02822339227231 ], [ -80.94884095575198, 29.030244591628307 ], [ -80.94726891119132, 29.030693747950554 ], [ -80.94749348911402, 29.030693747950554 ], [ -80.94929011069911, 29.031816637275444 ], [ -80.94951468862182, 29.031816637275444 ], [ -80.95018842328827, 29.032714947638347 ], [ -80.95018842328827, 29.03361325882358 ], [ -80.95131131200353, 29.03383783696919 ], [ -80.95153588902794, 29.03383783696919 ], [ -80.95198504487337, 29.03473614780727 ], [ -80.95153588902794, 29.035409881303117 ], [ -80.95131131200353, 29.035409881303117 ], [ -80.95063757823539, 29.035634458681418 ], [ -80.95041300031266, 29.035634458681418 ], [ -80.94973926744285, 29.03675734766787 ], [ -80.95018842328827, 29.037655659014508 ], [ -80.94996384536556, 29.03832939308741 ], [ -80.94861637782927, 29.039003125903466 ], [ -80.94839179990655, 29.039003125903466 ], [ -80.94839179990655, 29.039227704102235 ] ] ]
+                }
+              } ]
+            } ]
+          }
+        } ],
+        "messages" : [ ]
+      }
+order: 1000

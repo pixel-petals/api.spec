@@ -1,0 +1,42 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/AggregatePoints/jobs/{{job_id}}"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: "{\r
+
+      \  \"jobId\": \"<JOB_ID>\",\r
+
+      \  \"jobStatus\": \"esriJobSucceeded\",\r
+
+      \  \"results\": {\r
+
+      \    \"aggregatedLayer\": {\r
+
+      \      \"paramUrl\": \"results/aggregatedLayer\"\r
+
+      \    },\r
+
+      \    \"groupSummary\": {\r
+
+      \      \"paramUrl\": \"results/groupSummary\"\r
+
+      \    }\r
+
+      \  },\r
+
+      \  \"inputs\": {},\r
+
+      \  \"messages\": []\r
+
+      }"
+order: 2000

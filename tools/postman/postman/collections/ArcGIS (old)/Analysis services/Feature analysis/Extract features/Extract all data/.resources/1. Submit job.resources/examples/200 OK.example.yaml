@@ -1,0 +1,28 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/ExtractData/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+      inputLayers: '[{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Traffic_Crashes/FeatureServer/0"}]'
+      clip: "false"
+      dataFormat: CSV
+      extent: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/SF_Neighborhoods/FeatureServer/0"}'
+      outputName: '{"itemProperties":{"title":"Extract data results"}}'
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+        "jobId": "<JOB_ID>",
+        "jobStatus": "esriJobSubmitted",
+        "results": {},
+        "inputs": {},
+        "messages": []
+      }
+order: 1000

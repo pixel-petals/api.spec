@@ -1,0 +1,12 @@
+$kind: http-request
+description: |-
+  Adds a new table to the DataStore.
+
+  The datastore_create action allows you to post JSON data to be stored against a resource. This endpoint also supports altering tables, aliases and indexes and bulk insertion. This endpoint can be called multiple times to initially insert more data, add fields, change the aliases or indexes as well as the primary keys.
+
+  To create an empty datastore resource and a CKAN resource at the same time, provide resource with a valid package_id and omit the resource_id.
+
+  If you want to create a datastore resource from the content of a file, provide resource with a valid url.
+url: "{{CKAN_API}}/datastore_create"
+method: GET
+order: 1000

@@ -1,0 +1,28 @@
+$kind: http-request
+url: "{{CKAN_API}}/resource_search"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: query
+    value: ""
+    disabled: true
+    description: (string or list of strings of the form {field}:{term1}) – The search criteria. See above for description.
+  - key: fields
+    value: null
+    disabled: true
+    description: (dict of fields to search terms.) – Deprecated
+  - key: order_by
+    value: null
+    disabled: true
+    description: (string) – A field on the Resource model that orders the results.
+  - key: offset
+    value: null
+    disabled: true
+    description: (int) – Apply an offset to the query.
+  - key: limit
+    value: null
+    disabled: true
+    description: (int) – Apply a limit to the query.
+order: 6000

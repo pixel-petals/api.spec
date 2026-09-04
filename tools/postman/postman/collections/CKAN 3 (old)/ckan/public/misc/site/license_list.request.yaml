@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{CKAN_API}}/license_list"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+order: 6000

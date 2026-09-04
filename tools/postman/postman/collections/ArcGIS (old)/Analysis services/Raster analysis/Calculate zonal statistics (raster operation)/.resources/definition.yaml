@@ -1,0 +1,3 @@
+$kind: collection
+description: Example of using a raster function to perform a zonal statistics analysis.
+order: 2000

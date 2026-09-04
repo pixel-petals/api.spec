@@ -1,0 +1,26 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-apis-and-services/spatial-analysis/feature-analysis/find-data/derive-new-locations/#find-neighborhoods-sections-near-police-stations)
+url: "{{ANALYSIS_URL}}/DeriveNewLocations/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    expressions: '[{"operator":"","layer":0,"selectingLayer":1,"spatialRel":"withinDistance","distance":0.25,"units":"Miles"}]'
+    inputLayers: '[{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Find_Locations_in_SF_Neighborhoods/FeatureServer/0","name":"Find_Locations_in_SF_Neighborhoods"},{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Police_Stations/FeatureServer/0","name":"Police Stations"}]'
+    outputName: '{"serviceProperties":{"name":"{{UNIQUE_NAME}}"}}'
+    context: '{"extent":{"xmin":-13642856.438393056,"ymin":4532585.13569076,"xmax":-13605937.353731368,"ymax":4556013.084860135,"spatialReference":{"wkid":102100,"latestWkid":3857}}}'
+scripts:
+  - type: beforeRequest
+    code: |-
+      // Creates a unique name for the output service
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/ /g,"_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+  - type: afterResponse
+    code: |
+      pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

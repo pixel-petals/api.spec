@@ -1,0 +1,27 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/FindPointClusters/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+      analysisLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Traffic_Crashes/FeatureServer/0","name":"Traffic Crashes"}'
+      minFeaturesCluster: "500"
+      outputName: '{"serviceProperties":{"name":"Find point clusters results"}}'
+      context: "{}"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+        "jobId": "<JOB_ID>",
+        "jobStatus": "esriJobSubmitted",
+        "results": {},
+        "inputs": {},
+        "messages": []
+      }
+order: 1000

@@ -1,0 +1,66 @@
+$kind: http-example
+request:
+  url: https://{{host}}.arcgis.com/{{org_id}}/ArcGIS/rest/services/{{service_name}}/FeatureServer/{{layer_id}}/addFeatures
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      - key: f
+        value: json
+        description: "(Required) Format of the response: html | json"
+      - key: features
+        value: '[ { "attributes" : { }, "geometry" : { "rings": [ [ [ -5.957031250023337, 40.31920408353206 ], [ -9.472656250022405, 43.07479018423466 ], [ -4.023437500023841, 42.299540724508 ], [ -5.781250000023375, 40.185046413472044 ], [ -5.957031250023337, 40.31920408353206 ] ] ], "spatialReference": { "wkid": 4326 } } } ]'
+        description: The array of features to be added. The structure of each feature in the array is the same as the structure of the json feature object returned by the ArcGIS REST API. Features to be added to a feature layer should include the geometry. Records to be added to a table should not include the geometry.
+      - key: token
+        value: "{{ACCESS_TOKEN}}"
+        description: You need a valid access token if acccessing private layers. To learn more, read the collection's documentation.
+      - key: gdbVersion
+        value: <string>
+        disabled: true
+        description: The geodatabase version to apply the edits. This parameter applies only if the isDataVersioned property of the layer is true.
+      - key: returnEditMoment
+        value: <boolean>
+        disabled: true
+        description: Parameter specifying whether the response will report the time features were added. If returnEditMoment = true, the server will report the time in the response's editMoment key. The default value is false.
+      - key: rollbackOnFailure
+        value: <boolean>
+        disabled: true
+        description: Specifies whether the edits should be applied only if all submitted edits succeed. If false, the server will apply the edits that succeed even if some of the submitted edits fail. If true, the server will apply the edits only if all edits succeed. The default value is true.
+      - key: timeReferenceUnknownClient
+        value: <boolean>
+        disabled: true
+        description: Setting timeReferenceUnknownClient as trueindicates that the client is capable of working with data values that are not in UTC. If its not set to true, and the service layer's datesInUnknownTimeZone property is true, then an error is returned. The default is false
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json; charset=utf-8
+    Content-Length: "69"
+    Connection: keep-alive
+    Cache-Control: public, max-age=30, s-maxage=30
+    Content-Encoding: br
+    X-ArcGIS-Trace-Id: 2dd3f1016bc41b4c94fe7ca95a44155e
+    x-esri-edit-request-units: "1"
+    X-ArcGIS-Correlation-Id: 00-2dd3f1016bc41b4c94fe7ca95a44155e-2593e5974fe47248-00
+    X-ArcGIS-Instance: MTSDS_Web_IN_23
+    Strict-Transport-Security: max-age=63072000
+    Access-Control-Allow-Origin: "*"
+    Date: Wed, 23 Mar 2022 18:51:50 GMT
+    X-Cache: Miss from cloudfront
+    Via: 1.1 4e33e2773de19e475926204d85f59708.cloudfront.net (CloudFront)
+    X-Amz-Cf-Pop: MAD51-C1
+    X-Amz-Cf-Id: 2MwMiU0V3rhHsDfNgUIfFz3OWSnF-OTUziFS7uIv0Bjn6WedhWXQBA==
+  body:
+    type: json
+    content: |-
+      {
+          "addResults": [
+              {
+                  "objectId": 3,
+                  "uniqueId": 3,
+                  "globalId": null,
+                  "success": true
+              }
+          ]
+      }
+order: 1000

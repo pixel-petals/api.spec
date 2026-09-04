@@ -1,0 +1,7 @@
+$kind: http-request
+name: user_list
+url: "{{CKAN_API}}/user_list"
+method: GET
+headers:
+  Content-Type: application/json
+order: 25000

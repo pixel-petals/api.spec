@@ -1,0 +1,16 @@
+$kind: http-request
+description: Returns places from a provided category.
+url: https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/near-point?x=24.938&y=60.169&radius=500&categoryIds=4bf58dd8d48988d12d941735, 4bf58dd8d48988d164941735, 4bf58dd8d48988d181941735&pageSize=20&f=pjson&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  x: "24.938"
+  y: "60.169"
+  radius: "500"
+  categoryIds: 4bf58dd8d48988d12d941735, 4bf58dd8d48988d164941735, 4bf58dd8d48988d181941735
+  pageSize: "20"
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+auth:
+  type: noauth
+examples: ./.resources/Find places by category.resources/examples
+order: 2000

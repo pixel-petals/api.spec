@@ -1,0 +1,19 @@
+$kind: http-request
+description: |-
+  Use the [`/findAddressCandidates`](https://developers.arcgis.com/rest/geocode/geocode-addresses/) operation of the geocoding service to search for `starbucks` near a location in San Francisco. 
+
+  ---
+
+  See this example in the [Developer guide](https://local.arcgis.com:8000/mapping-and-location-services/geocoding/geocode-places/#local-search-by-name)
+url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?token={{ACCESS_TOKEN}}&f=pjson&address=Starbucks&location=-122.4194,37.7749&outfields=PlaceName,Place_addr
+method: GET
+queryParams:
+  token: "{{ACCESS_TOKEN}}"
+  f: pjson
+  address: Starbucks
+  location: -122.4194,37.7749
+  outfields: PlaceName,Place_addr
+body:
+  type: urlencoded
+examples: ./.resources/Search Place (POI) locally.resources/examples
+order: 7000

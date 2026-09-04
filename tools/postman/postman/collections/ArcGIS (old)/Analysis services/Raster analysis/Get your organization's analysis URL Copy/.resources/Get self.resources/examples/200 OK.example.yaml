@@ -1,0 +1,29 @@
+$kind: http-example
+request:
+  url: https://arcgis.com/sharing/rest/portals/self
+  method: GET
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+        "helperServices": {
+          // Other parameters
+          "analysis": {
+            "url": "{{ANALYSIS_URL}}"
+          },
+          "geoenrichment": {
+            "url": "https://geoenrich.arcgis.com/arcgis/rest/services/World/GeoenrichmentServer"
+          }
+        }
+      }
+order: 1000

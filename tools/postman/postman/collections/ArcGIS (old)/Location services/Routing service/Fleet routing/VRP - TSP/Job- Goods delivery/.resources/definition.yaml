@@ -1,0 +1,4 @@
+$kind: collection
+name: "Job: Goods delivery"
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/vehicle-routing-problem/#job-goods-delivery)
+order: 2000

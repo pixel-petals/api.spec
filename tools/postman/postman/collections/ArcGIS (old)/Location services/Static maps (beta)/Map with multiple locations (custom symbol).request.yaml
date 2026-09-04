@@ -1,0 +1,194 @@
+$kind: http-request
+description: "[Check the documentation](https://developers.arcgis.com/rest/static-maps/arcgis-arcgis-style-using-many-points-post/)"
+url: https://static-maps-api.arcgis.com/arcgis/rest/services/static-maps-service/:VERSION/static-maps/arcgis/:ARCGIS-STYLE/with-many-points
+method: POST
+pathVariables:
+  - key: VERSION
+    value: beta
+    description: API Version
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "default": "beta",
+            "deprecated": false,
+            "enum": [
+              "beta"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: ARCGIS-STYLE
+    value: streets
+    description: ArcGIS Basemap style
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "navigation",
+              "navigation-night",
+              "streets",
+              "streets-night",
+              "imagery"
+            ],
+            "default": "streets"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+        "graphics": {
+            "customSymbols": {
+                "fire": "data:image/svg+xml;base64,PHN2ZyBkYXRhLW5hbWU9Ik5ldyBTeW1ib2xzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMSAyMSI+PHBhdGggZD0iTTYuNDQgOS43OWMtMy4yMTggNC42MjItLjIwNCA3LjgyMSAyLjI1OCA4LjA1Ny0xLjgzMi0yLjA1Ny0uODg3LTQuMjY5LjM0MS01LjU2OGE1LjcxOCA1LjcxOCAwIDAgMSAxLjc1My0xLjEzNmMtMi4zNCA0LjQzNiAxLjAzNSA2LjgzNyAyLjg5MiA0LjcxNSAyLjk0Ny0zLjM2OCAyLjc2NS03LjM2Ny4xMjQtOS44MjhhMTAuMDk4IDEwLjA5OCAwIDAgMSAuMTA1IDEuNjcxYy0uMDY5IDEuMDI0LS41MjEgMS4xNS0uODcyIDEuMDU5LTEuNTczLS40MDYuMTI1LTQuMTItMi41NTUtNi4zOTktLjMyLS4yNzItLjk0OC0uNzE0LS45NDgtLjcxNHMuMDU1LjUxNy4wOTMgMS4wMDZDOS44OTQgNi4wMDUgNy44NzMgNy41ODggNi40NCA5Ljc5eiIvPjwvc3ZnPg==",
+                "community centre": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMSAyMSI+PHBhdGggZD0iTTEwLjU4MiA2LjUwMWExLjggMS44IDAgMSAwIDAgMy42IDEuOCAxLjggMCAxIDAgMC0zLjZ6Ii8+PHBhdGggZD0iTTE1LjM5NSA4LjUwMWExLjggMS44IDAgMSAwIDAgMy42IDEuOCAxLjggMCAxIDAgMC0zLjZ6Ii8+PHBhdGggZD0iTTEwLjUgNEwxNiA4aDJsLTcuNS02TDMgOGgyeiIvPjxwYXRoIGQ9Ik01LjYwNSA4LjUwMWExLjggMS44IDAgMSAwIDAgMy42IDEuOCAxLjggMCAxIDAgMC0zLjZ6Ii8+PHBhdGggZD0iTTE1LjUgMTNjLS42MDEgMC0xLjEwNS4xNzItMS41LjQ2VjE2aDMuOTgzbC0uMDAzLS40OTJjMC0xLjM5LS45My0yLjUwOC0yLjQ4LTIuNTA4em0tNS4wMjMtMmMtMS41NTIgMC0yLjQ3NCAxLjEyNS0yLjQ3NCAzTDggMTZoNC45NmwtLjAwMy0yLjQ5MmMwLTEuMzktLjkzLTIuNTA4LTIuNDgtMi41MDh6TTcgMTMuNDU3QzYuNjA0IDEzLjE3IDYuMSAxMyA1LjUgMTNjLTEuNTUyIDAtMi40NzQgMS4xMjUtMi40NzQgMi41MTVMMy4wMjMgMTZIN3YtMi41NDN6Ii8+PC9zdmc+",
+                "firefighters": "data:image/svg+xml;base64,PHN2ZyBkYXRhLW5hbWU9Ik5ldyBTeW1ib2xzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMSAyMSI+PHBhdGggZD0iTTE0LjkxMSAxMi4xNjFBMTAuNDQxIDEwLjQ0MSAwIDAgMSAxNSAxMy41YzAgMi45MjctMi4wMTUgNS4zLTQuNSA1LjNTNiAxNi40MjcgNiAxMy41YTEwLjQ0MSAxMC40NDEgMCAwIDEgLjA4OS0xLjMzOUE0Mi4xNzggNDIuMTc4IDAgMCAxIDEwLjUgMTEuOGE0Mi4xNzggNDIuMTc4IDAgMCAxIDQuNDExLjM2MXpNMTkgMTEuNWMwIDEuMjkxLTEuMzA1IDIuOTQ3LTMuMzIyIDQuMTA1QTcuMDc2IDcuMDc2IDAgMCAwIDE2IDEzLjV2LTIuMDA1QTUwLjYwNyA1MC42MDcgMCAwIDAgMTAuNSAxMWE1MC42MDcgNTAuNjA3IDAgMCAwLTUuNS40OTVWMTMuNWE3LjA3NiA3LjA3NiAwIDAgMCAuMzIyIDIuMTA1QzMuMzA1IDE0LjQ0NyAyIDEyLjc5IDIgMTEuNWMwLS45Mi42NjctMS4zMyAxLjc3Ny0xLjVINVY4LjVjMC0yLjA2IDEuNjkzLTMuNzkxIDQtNC4zMjZ2LTEuMDdBMS4xMDMgMS4xMDMgMCAwIDEgMTAuMTAzIDJoLjc5NEExLjEwMyAxLjEwMyAwIDAgMSAxMiAzLjEwM3YxLjA3YzIuMzA3LjUzNiA0IDIuMjY4IDQgNC4zMjdWMTBoMS4yMjNjMS4xMS4xNyAxLjc3Ny41OCAxLjc3NyAxLjV6TTkgNi44MDZBMiAyIDAgMCAwIDEwLjUgOSAyIDIgMCAwIDAgMTIgNi44MDZ2LTEuOTVjLTEuMTE0LjQ3NC0xLjUtLjM3NC0xLjUtLjM3NS0uMDAxIDAtLjMyOS43Ny0xLjUuMzc1eiIvPjwvc3ZnPg=="
+            },
+            "manyPoints": [
+                {
+                    "geometry": {
+                        "x": -116.9,
+                        "y": 34.236,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "customSymbolId": "community centre",
+                        "scale": 2
+                    }
+                },
+                {
+                    "geometry": {
+                        "x": -117,
+                        "y": 34.3,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "customSymbolId": "fire",
+                        "scale": 2
+                    }
+                },
+                {
+                    "geometry": {
+                        "x": -116.965,
+                        "y": 34.285,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "customSymbolId": "fire",
+                        "scale": 2
+                    }
+                },
+                {
+                    "geometry": {
+                        "x": -116.99,
+                        "y": 34.282,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "customSymbolId": "fire",
+                        "scale": 2
+                    }
+                },
+                {
+                    "geometry": {
+                        "x": -116.95,
+                        "y": 34.3,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "customSymbolId": "fire",
+                        "scale": 2
+                    }
+                },
+                {
+                    "geometry": {
+                        "x": -116.87,
+                        "y": 34.25,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "customSymbolId": "community centre",
+                        "scale": 2
+                    }
+                },
+                {
+                    "geometry": {
+                        "x": -116.95,
+                        "y": 34.275,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "customSymbolId": "firefighters",
+                        "scale": 2
+                    }
+                },
+                {
+                    "geometry": {
+                        "x": -116.97,
+                        "y": 34.26,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "customSymbolId": "firefighters",
+                        "scale": 2
+                    }
+                }
+            ]
+        },
+        "image": {
+            "width": 600,
+            "height": 400,
+            "format": "png",
+            "padding": [
+                10,
+                10,
+                10,
+                10
+            ]
+        },
+        "map": {
+            // "radius": 1000,
+            "zoom": 11
+            // "center": {
+            //     "x": -117.1957,
+            //     "y": 34.0561,
+            //     "spatialReference": {
+            //         "wkid": 4326
+            //     }
+            // }
+        }
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+order: 7000

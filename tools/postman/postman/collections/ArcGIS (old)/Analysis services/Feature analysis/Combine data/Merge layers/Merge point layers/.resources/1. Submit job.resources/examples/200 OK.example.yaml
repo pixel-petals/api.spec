@@ -1,0 +1,31 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/MergeLayers/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: <ACCESS_TOKEN>
+      inputLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/SA_Merge_Public_Schools/FeatureServer/0"}'
+      mergeLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/SA_Merge_Private_School/FeatureServer/0"}'
+      outputName: '{"serviceProperties":{"name":"Merge layers results"}}'
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: "{\r
+
+      \  \"jobId\": \"<JOB_ID>\",\r
+
+      \  \"jobStatus\": \"esriJobSubmitted\",\r
+
+      \  \"results\": {},\r
+
+      \  \"inputs\": {},\r
+
+      \  \"messages\": []\r
+
+      }"
+order: 1000

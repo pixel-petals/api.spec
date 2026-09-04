@@ -1,0 +1,31 @@
+$kind: http-example
+request:
+  url: https://geocode-beta.arcgis.com/arcgis/rest/services/World/GeocodeServer/batchGeocode/beta/jobs/{{jobId}}?token={{ACCESS_TOKEN}}
+  method: GET
+  queryParams:
+    token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "jobId": "d3aa164c-b1a0-4fef-8df5-644114f6e021",
+          "jobStatus": "esriJobSucceeded",
+          "status": "SUCCEEDED",
+          "messages": [
+              {
+                  "description": "Total Matched/Tied/Unmatched: 248/1/1",
+                  "type": "esriJobMessageTypeInformative"
+              }
+          ],
+          "results": {
+              "geocodeResult": {
+                  "paramUrl": "results/geocodeResult"
+              }
+          }
+      }
+order: 1000

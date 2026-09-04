@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{baseUrl}}/api/0.6/user/blocks/active"
+method: GET
+headers:
+  Accept: application/xml
+body:
+  type: text
+  content: ""
+auth:
+  type: oauth2
+  credentials:
+    scope: read_prefs write_prefs write_api write_changeset_comments read_gpx write_gpx write_notes write_redactions write_blocks consume_messages send_messages
+    accessTokenUrl: https://www.openstreetmap.org/oauth2/token
+    authUrl: https://www.openstreetmap.org/oauth2/authorize
+    grant_type: authorization_code
+examples: ./.resources/List active blocks for the authenticated user.resources/examples
+order: 1000

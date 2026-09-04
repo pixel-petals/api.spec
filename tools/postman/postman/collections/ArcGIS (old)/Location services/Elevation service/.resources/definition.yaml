@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  Elevation is the vertical distance (height) of a location above or below a reference point such as mean sea level or ground level. The [ArcGIS Elevation service](https://developers.arcgis.com/rest/elevation/) allows you to find the elevation based on a datum (mean sea level or ground level) for locations on land or water. It can be used to develop many types of applications that inspect the height of terrain or find the depth of lakes or oceans.
+
+  To learn more go to [Developer guide > Elevation](https://developers.arcgis.com/documentation/mapping-and-location-services/elevation/)
+order: 6000

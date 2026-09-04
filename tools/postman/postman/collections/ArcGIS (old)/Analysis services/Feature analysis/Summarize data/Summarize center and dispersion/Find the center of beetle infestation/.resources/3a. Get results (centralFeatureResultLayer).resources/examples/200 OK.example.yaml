@@ -1,0 +1,30 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/SummarizeCenterAndDispersion/jobs/{{job_id}}/results/ellipseResultLayer"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: "{\r
+
+      \  \"paramName\": \"ellipseResultLayer\",\r
+
+      \  \"dataType\": \"GPString\",\r
+
+      \  \"value\": {\r
+
+      \      \"url\": \"<SERVICE_URL>\",\r
+
+      \      \"itemId\": \"<ITEM_ID>\"\r
+
+      \  }\r
+
+      }"
+order: 1000

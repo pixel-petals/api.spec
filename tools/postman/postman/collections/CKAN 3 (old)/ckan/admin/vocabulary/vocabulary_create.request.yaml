@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{CKAN_API}}/vocabulary_create"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: name
+      value: ""
+      description: (string) – the name of the new vocabulary, e.g. 'Genre'
+    - type: text
+      key: tags
+      value: ""
+      description: (list of tag dictionaries) – the new tags to add to the new vocabulary, for the format of tag dictionaries see tag_create()
+order: 2000

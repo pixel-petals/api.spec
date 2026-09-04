@@ -1,0 +1,18 @@
+$kind: http-request
+description: |-
+  # Create Report Endpoint
+
+  This endpoint is used to generate a report based on specified study areas and options. The report can be customized with various fields and is returned in PDF format.
+url: 'https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/createReport?f=bin&token={{ACCESS_TOKEN}}&studyAreas=[{"address":{"text":"10685 NW Dumar Ln. Portland, OR 97229"}},{"address":{"text":"380 New York St. Redlands, CA 92373"}},{"address":{"text":"3722 Crenshaw Blvd, Los Angeles, CA 90016"}}]&studyAreasOptions={"areaType":"RingBuffer","bufferUnits":"esriMiles","bufferRadii":[3,5,10]}&report=dandi&reportFields={"title": "My Report","subtitle": "Produced by my company"}&useData={"sourceCountry":"US"}&format=pdf'
+method: GET
+queryParams:
+  f: bin
+  token: "{{ACCESS_TOKEN}}"
+  studyAreas: '[{"address":{"text":"10685 NW Dumar Ln. Portland, OR 97229"}},{"address":{"text":"380 New York St. Redlands, CA 92373"}},{"address":{"text":"3722 Crenshaw Blvd, Los Angeles, CA 90016"}}]'
+  studyAreasOptions: '{"areaType":"RingBuffer","bufferUnits":"esriMiles","bufferRadii":[3,5,10]}'
+  report: dandi
+  reportFields: '{"title": "My Report","subtitle": "Produced by my company"}'
+  useData: '{"sourceCountry":"US"}'
+  format: pdf
+examples: ./.resources/Create Report.resources/examples
+order: 1000

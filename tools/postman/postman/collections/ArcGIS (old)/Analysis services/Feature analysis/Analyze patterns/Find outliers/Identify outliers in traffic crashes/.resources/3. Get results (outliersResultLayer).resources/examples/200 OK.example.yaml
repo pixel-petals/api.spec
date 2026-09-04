@@ -1,0 +1,29 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/FindOutliers/jobs/{{job_id}}/results/outliersResultLayer"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      - key: f
+        value: json
+      - key: returnType
+        value: data
+        disabled: true
+      - key: token
+        value: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+        "paramName": "outliersResultLayer",
+        "dataType": "GPString",
+        "value": {
+            "url": "<SERVICE_URL>",
+            "itemId": "<ITEM_ID>"
+        }
+      }
+order: 1000

@@ -1,0 +1,27 @@
+$kind: http-request
+url: "{{CKAN_API}}/user_show?id=default"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: id
+    value: default
+    description: (string) – the id or name of the user (optional)
+  - key: user_obj
+    value: null
+    disabled: true
+    description: (user dictionary) – the user dictionary of the user (optional)
+  - key: include_datasets
+    value: null
+    disabled: true
+    description: (boolean) – Include a list of datasets the user has created. If it is the same user or a sysadmin requesting, it includes datasets that are draft or private. (optional, default:False, limit:50)
+  - key: include_num_followers
+    value: null
+    disabled: true
+    description: (boolean) – Include the number of followers the user has (optional, default:False)
+  - key: include_password_hash
+    value: null
+    disabled: true
+    description: (boolean) – Include the stored password hash (sysadmin only, optional, default:False)
+order: 26000

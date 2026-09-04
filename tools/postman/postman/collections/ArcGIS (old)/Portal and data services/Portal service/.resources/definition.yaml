@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  The portal service allows you to create, store, manage and access different types of content. You can access the portal to perform some operations, such as search for public content, anonymously. However, if you want to create content, access private content, and perform administrative tasks, you will need to include an access token with the request.
+
+  To learn more, visit [Content management](https://developers.arcgis.com/documentation/mapping-apis-and-services/content-management/) in the *Mapping APIs and location services* guide.
+order: 2000

@@ -1,0 +1,14 @@
+$kind: http-request
+description: |-
+  Checks the status of an asynchronous analysis job (such as MergeLayers, FindExistingLocations, AggregatePoints, FindRoutes, or FindHotSpots). Provide the job ID and analysis service URL to retrieve the current status and progress of the submitted job. The response includes job state, progress, and any available results.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/combine-data/merge-layers/#merge-transportation-layers)
+url: "{{ANALYSIS_URL}}/MergeLayers/jobs/{{job_id}}"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/2. Check status.resources/examples
+order: 2000

@@ -1,0 +1,37 @@
+$kind: http-request
+description: "[API Documentation 2.6.3](http://docs.ckan.org/en/ckan-2.6.3/api/index.html#ckan.logic.action.get.organization_list_for_user)"
+url: "{{CKAN_API}}/group_show"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: id
+    value: null
+    disabled: true
+    description: (boolean) – the id or name of the group
+  - key: include_datasets
+    value: null
+    disabled: true
+    description: "include a list of the group’s datasets (optional, default: False)"
+  - key: include_extras
+    value: null
+    disabled: true
+    description: "include the group’s extra fields (optional, default: True)"
+  - key: include_users
+    value: null
+    disabled: true
+    description: "include the group’s users (optional, default: True"
+  - key: include_groups
+    value: null
+    disabled: true
+    description: "include the group’s sub groups (optional, default: True)"
+  - key: include_tags
+    value: null
+    disabled: true
+    description: "include the group’s tags (optional, default: True)"
+  - key: include_followers
+    value: null
+    disabled: true
+    description: "include the group’s number of followers (optional, default: True)"
+order: 3000

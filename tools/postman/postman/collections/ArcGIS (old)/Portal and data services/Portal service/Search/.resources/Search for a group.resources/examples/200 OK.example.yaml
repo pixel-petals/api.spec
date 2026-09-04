@@ -1,0 +1,324 @@
+$kind: http-example
+request:
+  url: https://www.arcgis.com/sharing/rest/community/groups?q=title:"hikers"&f=pjson
+  method: GET
+  queryParams:
+    q: title:"hikers"
+    f: pjson
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Thu, 13 Jan 2022 15:50:07 GMT
+    - key: Content-Type
+      value: text/plain;charset=utf-8
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Origin
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Cache-Control
+      value: no-cache
+    - key: Pragma
+      value: no-cache
+    - key: Expires
+      value: "-1"
+    - key: Strict-Transport-Security
+      value: max-age=31536000
+    - key: Content-Encoding
+      value: gzip
+  body:
+    type: json
+    content: |-
+      {
+          "query": "title:\"hikers\"",
+          "total": 7,
+          "start": 1,
+          "num": 10,
+          "nextStart": -1,
+          "results": [
+              {
+                  "id": "a015574916894dfd8dc2ca2e48272e35",
+                  "title": "Citizen Problem Reporter -Hikers",
+                  "isInvitationOnly": false,
+                  "owner": "vchitroda_ECTA",
+                  "description": "A group used to organize maps in the Citizen Problem Reporter application.",
+                  "snippet": "A group used to organize maps in the Citizen Problem Reporter application.",
+                  "tags": [
+                      "Citizen Engagement",
+                      "Service Request",
+                      "Problem Reporter",
+                      "Blight",
+                      "Animal",
+                      "Trash",
+                      "Parks and Trees",
+                      "Snow and Ice",
+                      "Health",
+                      "Road",
+                      "ArcGIS Solutions"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": "title",
+                  "sortOrder": "asc",
+                  "isViewOnly": false,
+                  "featuredItemsId": null,
+                  "thumbnail": null,
+                  "created": 1616686036000,
+                  "modified": 1626887617000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": true,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "membershipAccess": "org",
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "properties": null
+              },
+              {
+                  "id": "e766e365a1a343f1888fa8bbc72f438f",
+                  "title": "Citizen Problem Center - Hikers Content",
+                  "isInvitationOnly": false,
+                  "owner": "vchitroda_ECTA",
+                  "description": "Use this group to organize the items that you want to share as part of your site. Shared items become available in your site's search results and only people who have access to these items will be able to find them. Members of the core team get access to shared items and can update them at any time. Certain cards, like the Gallery card, will automatically populate with shared items so that you don't have to search for them when choosing what you want to display on your site.<br /><br />Contact support with any questions related to this group or content management for your site.<br /><br /><strong>DO NOT DELETE THIS GROUP.</strong>",
+                  "snippet": "Applications, maps, data, etc. shared with this group generates the Citizen Problem Reporter content catalog.",
+                  "tags": [
+                      "Hub Group",
+                      "Hub Content Group",
+                      "Hub Site Group"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": "modified",
+                  "sortOrder": "desc",
+                  "isViewOnly": false,
+                  "featuredItemsId": null,
+                  "thumbnail": null,
+                  "created": 1616686040000,
+                  "modified": 1621361483000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": true,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "membershipAccess": "org",
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "properties": null
+              },
+              {
+                  "id": "f4d2f78a0e7a49fc9795704038cb7e86",
+                  "title": "Expert Hikers",
+                  "isInvitationOnly": false,
+                  "owner": "emwalker394",
+                  "description": "Please share your expert hiking content so that others can learn from your experience to plan their New England hikes in the future!",
+                  "snippet": "This group is for hikers that have a lot of experience want to share their knowledge, trail information, and photos with other experts and provide advice for more junior hikers.",
+                  "tags": [
+                      "Hiking",
+                      "Expert",
+                      "New England",
+                      "White Mountains",
+                      "Appalachian Trail"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": "modified",
+                  "sortOrder": "asc",
+                  "isViewOnly": false,
+                  "featuredItemsId": null,
+                  "thumbnail": "thumbnail_1615138856337.jpeg",
+                  "created": 1615138856000,
+                  "modified": 1615138908000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": false,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "membershipAccess": "org",
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "properties": null
+              },
+              {
+                  "id": "86568a39b3d04c2096c084091760c1ad",
+                  "title": "Beginner Hikers",
+                  "isInvitationOnly": false,
+                  "owner": "emwalker394",
+                  "description": "Share content of your beginner hikes and ask questions of other new hikers!",
+                  "snippet": "This group is for hikers who have less experience and want to learn from each other and from experts. Beginner hikers can pose questions and add content as they build up their hiking resume.",
+                  "tags": [
+                      "Hiking",
+                      "Beginner",
+                      "White Mountains",
+                      "Appalachian Trail",
+                      "New England"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": "modified",
+                  "sortOrder": "asc",
+                  "isViewOnly": false,
+                  "featuredItemsId": null,
+                  "thumbnail": "thumbnail_1615139128671.png",
+                  "created": 1615139128000,
+                  "modified": 1615139158000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": false,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "membershipAccess": "org",
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "properties": null
+              },
+              {
+                  "id": "841a00223ee84240a77f6f7d167640f0",
+                  "title": "New York Hikers",
+                  "isInvitationOnly": false,
+                  "owner": "gdborek",
+                  "description": " A group for hikers and backpackers in New York to share maps from the Adirondacks to Western New York",
+                  "snippet": "A group for hikers and backpackers in New York to share maps",
+                  "tags": [
+                      "Adirondacks",
+                      "hiking",
+                      "backpacking",
+                      "western new york",
+                      "ny"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": null,
+                  "sortOrder": null,
+                  "isViewOnly": false,
+                  "featuredItemsId": null,
+                  "thumbnail": null,
+                  "created": 1290530404000,
+                  "modified": 1290530404000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": false,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "properties": null
+              },
+              {
+                  "id": "4e92c6736ca946b49ea8dc845e659268",
+                  "title": "Hikers",
+                  "isInvitationOnly": true,
+                  "owner": "dcaldwel_dbservices",
+                  "description": "Bunch of hikers having fun!",
+                  "snippet": "Bunch of hikers having fun!",
+                  "tags": [
+                      "Hiking",
+                      "Partying"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": "owner",
+                  "sortOrder": "asc",
+                  "isViewOnly": true,
+                  "featuredItemsId": null,
+                  "thumbnail": "hikingthumb.jpg",
+                  "created": 1366053519000,
+                  "modified": 1366067920000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": false,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "properties": null
+              },
+              {
+                  "id": "677ca08a15014372a696c738d13b2120",
+                  "title": "Skyline Hikers",
+                  "isInvitationOnly": true,
+                  "owner": "ycabon",
+                  "description": null,
+                  "snippet": null,
+                  "tags": [
+                      "Skyline",
+                      "Trail"
+                  ],
+                  "typeKeywords": [],
+                  "phone": null,
+                  "sortField": "title",
+                  "sortOrder": "asc",
+                  "isViewOnly": false,
+                  "featuredItemsId": null,
+                  "thumbnail": null,
+                  "created": 1507934190000,
+                  "modified": 1507934190000,
+                  "access": "public",
+                  "capabilities": [],
+                  "isFav": false,
+                  "isReadOnly": false,
+                  "protected": false,
+                  "autoJoin": false,
+                  "notificationsEnabled": false,
+                  "provider": null,
+                  "providerGroupName": null,
+                  "leavingDisallowed": false,
+                  "hiddenMembers": false,
+                  "membershipAccess": "org",
+                  "displaySettings": {
+                      "itemTypes": ""
+                  },
+                  "properties": null
+              }
+          ]
+      }
+order: 1000

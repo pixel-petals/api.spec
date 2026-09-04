@@ -1,0 +1,38 @@
+$kind: http-request
+url: "{{baseUrl}}/api/0.6/changeset/:id/comment"
+method: POST
+headers:
+  Content-Type: application/x-www-form-urlencoded
+  Accept: application/xml
+pathVariables:
+  - key: id
+    value: "6776"
+    description: The numeric ID of the changeset
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: urlencoded
+  content:
+    - key: text
+      value: string
+      description: The comment text
+auth:
+  type: oauth2
+  credentials:
+    scope: read_prefs write_prefs write_api write_changeset_comments read_gpx write_gpx write_notes write_redactions write_blocks consume_messages send_messages
+    accessTokenUrl: https://www.openstreetmap.org/oauth2/token
+    authUrl: https://www.openstreetmap.org/oauth2/authorize
+    grant_type: authorization_code
+examples: ./.resources/Add a comment to a closed changeset.resources/examples
+order: 1000

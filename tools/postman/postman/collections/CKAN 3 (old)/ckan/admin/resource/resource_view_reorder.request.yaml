@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{CKAN_API}}/resource_view_reorder"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: id
+      value: ""
+      description: (string) – the id of the resource
+    - type: text
+      key: order
+      value: ""
+      description: (list of strings) – the list of id of the resource to update the order of the views
+order: 6000

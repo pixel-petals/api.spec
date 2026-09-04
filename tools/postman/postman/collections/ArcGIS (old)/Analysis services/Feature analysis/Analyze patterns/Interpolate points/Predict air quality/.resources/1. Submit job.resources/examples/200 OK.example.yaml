@@ -1,0 +1,32 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/InterpolatePoints/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+      inputLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/aqi_pm10/FeatureServer/0"}'
+      field: DAILY_AQI_VALUE
+      interpolateOption: "5"
+      classificationType: GeometricInterval
+      numClasses: "10"
+      boundingPolygonLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/California_State_Boundary/FeatureServer/0"}'
+      outputPredictionError: "false"
+      returnFeatureCollection: "false"
+      outputName: '{"serviceProperties":{"name":"Interpolate points results"}}'
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+        "jobId": "<JOB_ID>",
+        "jobStatus": "esriJobSubmitted",
+        "results": {},
+        "inputs": {},
+        "messages": []
+      }
+order: 1000

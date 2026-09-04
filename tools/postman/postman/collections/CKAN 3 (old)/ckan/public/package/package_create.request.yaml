@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{CKAN_API}}/package_show?id=metadata-test-4"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  id: metadata-test-4
+order: 3000

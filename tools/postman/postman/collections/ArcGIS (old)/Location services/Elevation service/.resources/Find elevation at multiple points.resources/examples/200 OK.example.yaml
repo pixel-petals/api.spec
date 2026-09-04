@@ -1,0 +1,106 @@
+$kind: http-example
+request:
+  url: https://elevation-api.arcgis.com/arcgis/rest/services/elevation-service/beta/elevation/at-many-points
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      - key: coordinates
+        value: "[[-117.182, 34.0555], [-117.185, 34.057], [-117.188, 34.060], [-117.192, 34.063], [-117.195, 34.065], [-117.200, 34.068], [-117.205, 34.070], [-117.210, 34.073], [-117.215, 34.076]]"
+        description: Array of (longitude, latitude) pairs in the WGS84 spatial reference. Maximum size of 100 coordinates.
+      - key: token
+        value: "{{ACCESS_TOKEN}}"
+        description: An access token from an ArcGIS Location Platform account.
+      - key: relativeTo
+        value: ellipsoid
+        description: Reference point to measure elevation from. Supported values are "meanSeaLevel" and "ellipsoid".
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "elevationInfo": {
+              "relativeTo": "ellipsoid"
+          },
+          "result": {
+              "points": [
+                  {
+                      "spatialReference": {
+                          "wkid": 4326
+                      },
+                      "x": -117.182,
+                      "y": 34.0555,
+                      "z": 382
+                  },
+                  {
+                      "spatialReference": {
+                          "wkid": 4326
+                      },
+                      "x": -117.185,
+                      "y": 34.057,
+                      "z": 379
+                  },
+                  {
+                      "spatialReference": {
+                          "wkid": 4326
+                      },
+                      "x": -117.188,
+                      "y": 34.06,
+                      "z": 374
+                  },
+                  {
+                      "spatialReference": {
+                          "wkid": 4326
+                      },
+                      "x": -117.192,
+                      "y": 34.063,
+                      "z": 370
+                  },
+                  {
+                      "spatialReference": {
+                          "wkid": 4326
+                      },
+                      "x": -117.195,
+                      "y": 34.065,
+                      "z": 366
+                  },
+                  {
+                      "spatialReference": {
+                          "wkid": 4326
+                      },
+                      "x": -117.2,
+                      "y": 34.068,
+                      "z": 360
+                  },
+                  {
+                      "spatialReference": {
+                          "wkid": 4326
+                      },
+                      "x": -117.205,
+                      "y": 34.07,
+                      "z": 349
+                  },
+                  {
+                      "spatialReference": {
+                          "wkid": 4326
+                      },
+                      "x": -117.21,
+                      "y": 34.073,
+                      "z": 342
+                  },
+                  {
+                      "spatialReference": {
+                          "wkid": 4326
+                      },
+                      "x": -117.215,
+                      "y": 34.076,
+                      "z": 334
+                  }
+              ]
+          }
+      }
+order: 1000

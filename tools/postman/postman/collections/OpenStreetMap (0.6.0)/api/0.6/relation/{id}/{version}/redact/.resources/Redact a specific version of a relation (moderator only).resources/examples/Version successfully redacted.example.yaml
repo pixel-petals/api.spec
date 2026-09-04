@@ -1,0 +1,27 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/relation/:id/:version/redact?redaction=9010"
+  method: POST
+  headers:
+    - key: Authorization
+      value: <token>
+      description: "Added as a part of security scheme: oauth2"
+  queryParams:
+    redaction: "9010"
+  pathVariables:
+    - key: id
+      value: "6776"
+      description: The numeric ID of the element
+    - key: version
+      value: "6776"
+      description: The version number of the element
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

@@ -1,0 +1,540 @@
+$kind: http-example
+request:
+  url: https://{{geoenrich-service}}.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/enrich?StudyAreas=[{"geometry":{"rings":[[[-117.26,32.81],[-117.40,32.92],[-117.12,32.80],[-117.26,32.81]]],"spatialReference":{"wkid":4326}},"attributes":{"id":"Polygon 1","name":"Optional Name 1"}}]&StudyAreasOptions={"GeometryType":"esriGeometryPolygon","SpatialRelationship":"esriSpatialRelIntersects"}&dataCollections=["KeyUSFacts"]&f=pjson&token={{access_token}}
+  method: GET
+  queryParams:
+    StudyAreas: '[{"geometry":{"rings":[[[-117.26,32.81],[-117.40,32.92],[-117.12,32.80],[-117.26,32.81]]],"spatialReference":{"wkid":4326}},"attributes":{"id":"Polygon 1","name":"Optional Name 1"}}]'
+    StudyAreasOptions: '{"GeometryType":"esriGeometryPolygon","SpatialRelationship":"esriSpatialRelIntersects"}'
+    dataCollections: '["KeyUSFacts"]'
+    f: pjson
+    token: "{{access_token}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 10:25:26 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    ETag: '"743823696"'
+    Content-Language: en
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+        "results" : [ {
+          "paramName" : "GeoEnrichmentResult",
+          "dataType" : "GeoEnrichmentResult",
+          "value" : {
+            "version" : "2.0",
+            "FeatureSet" : [ {
+              "displayFieldName" : "",
+              "fieldAliases" : {
+                "ID_0" : "Id",
+                "OBJECTID" : "Object ID",
+                "sourceCountry" : "Country code",
+                "name" : "name",
+                "id" : "id",
+                "aggregationMethod" : "Aggregation method",
+                "populationToPolygonSizeRating" : "Population to polygon size rating for the country",
+                "apportionmentConfidence" : "Apportionment confidence for the country",
+                "HasData" : "Has data",
+                "TOTPOP00" : "2000 Total Population",
+                "TOTPOP10" : "2010 Total Population",
+                "TOTPOP_CY" : "2021 Total Population",
+                "TOTPOP_FY" : "2026 Total Population",
+                "GQPOP_CY" : "2021 Group Quarters Population",
+                "DIVINDX_CY" : "2021 Diversity Index",
+                "TOTHH00" : "2000 Total Households",
+                "TOTHH10" : "2010 Total Households",
+                "TOTHH_CY" : "2021 Total Households",
+                "TOTHH_FY" : "2026 Total Households",
+                "AVGHHSZ_CY" : "2021 Average Household Size",
+                "MEDHINC_CY" : "2021 Median Household Income",
+                "MEDHINC_FY" : "2026 Median Household Income",
+                "AVGHINC_CY" : "2021 Average Household Income",
+                "AVGHINC_FY" : "2026 Average Household Income",
+                "PCI_CY" : "2021 Per Capita Income",
+                "PCI_FY" : "2026 Per Capita Income",
+                "TOTHU00" : "2000 Total Housing Units",
+                "TOTHU10" : "2010 Total Housing Units",
+                "TOTHU_CY" : "2021 Total Housing Units",
+                "TOTHU_FY" : "2026 Total Housing Units",
+                "OWNER_CY" : "2021 Owner Occupied HUs",
+                "OWNER_FY" : "2026 Owner Occupied HUs",
+                "RENTER_CY" : "2021 Renter Occupied HUs",
+                "RENTER_FY" : "2026 Renter Occupied HUs",
+                "VACANT_CY" : "2021 Vacant Housing Units",
+                "VACANT_FY" : "2026 Vacant Housing Units",
+                "MEDVAL_CY" : "2021 Median Home Value",
+                "MEDVAL_FY" : "2026 Median Home Value",
+                "AVGVAL_CY" : "2021 Average Home Value",
+                "AVGVAL_FY" : "2026 Average Home Value",
+                "POPGRW10CY" : "2010-2021 Growth Rate: Population",
+                "HHGRW10CY" : "2010-2021 Growth Rate: Households",
+                "FAMGRW10CY" : "2010-2021 Growth Rate: Families",
+                "POPGRWCYFY" : "2021-2026 Growth Rate: Population",
+                "HHGRWCYFY" : "2021-2026 Growth Rate: Households",
+                "FAMGRWCYFY" : "2021-2026 Growth Rate: Families",
+                "MHIGRWCYFY" : "2021-2026 Growth Rate: Median HH Inc",
+                "PCIGRWCYFY" : "2021-2026 Growth Rate: Per Capita Inc",
+                "DPOP_CY" : "2021 Total Daytime Population",
+                "DPOPWRK_CY" : "2021 Daytime Pop: Workers",
+                "DPOPRES_CY" : "2021 Daytime Pop: Residents"
+              },
+              "spatialReference" : {
+                "wkid" : 4326,
+                "latestWkid" : 4326
+              },
+              "fields" : [ {
+                "name" : "ID_0",
+                "alias" : "Id",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "OBJECTID",
+                "alias" : "Object ID",
+                "type" : "esriFieldTypeOID"
+              }, {
+                "name" : "sourceCountry",
+                "alias" : "Country code",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "name",
+                "alias" : "name",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "id",
+                "alias" : "id",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "aggregationMethod",
+                "alias" : "Aggregation method",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "populationToPolygonSizeRating",
+                "alias" : "Population to polygon size rating for the country",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "apportionmentConfidence",
+                "alias" : "Apportionment confidence for the country",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "HasData",
+                "alias" : "Has data",
+                "type" : "esriFieldTypeInteger"
+              }, {
+                "name" : "TOTPOP00",
+                "alias" : "2000 Total Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.TOTPOP00",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "TOTPOP10",
+                "alias" : "2010 Total Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.TOTPOP10",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "TOTPOP_CY",
+                "alias" : "2021 Total Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.TOTPOP_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "TOTPOP_FY",
+                "alias" : "2026 Total Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.TOTPOP_FY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "GQPOP_CY",
+                "alias" : "2021 Group Quarters Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.GQPOP_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "DIVINDX_CY",
+                "alias" : "2021 Diversity Index",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.DIVINDX_CY",
+                "component" : "demographics",
+                "decimals" : 1,
+                "units" : "count"
+              }, {
+                "name" : "TOTHH00",
+                "alias" : "2000 Total Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.TOTHH00",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "TOTHH10",
+                "alias" : "2010 Total Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.TOTHH10",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "TOTHH_CY",
+                "alias" : "2021 Total Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.TOTHH_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "TOTHH_FY",
+                "alias" : "2026 Total Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.TOTHH_FY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "AVGHHSZ_CY",
+                "alias" : "2021 Average Household Size",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.AVGHHSZ_CY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "MEDHINC_CY",
+                "alias" : "2021 Median Household Income",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.MEDHINC_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "currency",
+                "currency" : "$"
+              }, {
+                "name" : "MEDHINC_FY",
+                "alias" : "2026 Median Household Income",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.MEDHINC_FY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "currency",
+                "currency" : "$"
+              }, {
+                "name" : "AVGHINC_CY",
+                "alias" : "2021 Average Household Income",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.AVGHINC_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "currency",
+                "currency" : "$"
+              }, {
+                "name" : "AVGHINC_FY",
+                "alias" : "2026 Average Household Income",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.AVGHINC_FY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "currency",
+                "currency" : "$"
+              }, {
+                "name" : "PCI_CY",
+                "alias" : "2021 Per Capita Income",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.PCI_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "currency",
+                "currency" : "$"
+              }, {
+                "name" : "PCI_FY",
+                "alias" : "2026 Per Capita Income",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.PCI_FY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "currency",
+                "currency" : "$"
+              }, {
+                "name" : "TOTHU00",
+                "alias" : "2000 Total Housing Units",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.TOTHU00",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "TOTHU10",
+                "alias" : "2010 Total Housing Units",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.TOTHU10",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "TOTHU_CY",
+                "alias" : "2021 Total Housing Units",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.TOTHU_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "TOTHU_FY",
+                "alias" : "2026 Total Housing Units",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.TOTHU_FY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "OWNER_CY",
+                "alias" : "2021 Owner Occupied HUs",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.OWNER_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "OWNER_FY",
+                "alias" : "2026 Owner Occupied HUs",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.OWNER_FY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RENTER_CY",
+                "alias" : "2021 Renter Occupied HUs",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.RENTER_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "RENTER_FY",
+                "alias" : "2026 Renter Occupied HUs",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.RENTER_FY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "VACANT_CY",
+                "alias" : "2021 Vacant Housing Units",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.VACANT_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "VACANT_FY",
+                "alias" : "2026 Vacant Housing Units",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.VACANT_FY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MEDVAL_CY",
+                "alias" : "2021 Median Home Value",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.MEDVAL_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "currency",
+                "currency" : "$"
+              }, {
+                "name" : "MEDVAL_FY",
+                "alias" : "2026 Median Home Value",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.MEDVAL_FY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "currency",
+                "currency" : "$"
+              }, {
+                "name" : "AVGVAL_CY",
+                "alias" : "2021 Average Home Value",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.AVGVAL_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "currency",
+                "currency" : "$"
+              }, {
+                "name" : "AVGVAL_FY",
+                "alias" : "2026 Average Home Value",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.AVGVAL_FY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "currency",
+                "currency" : "$"
+              }, {
+                "name" : "POPGRW10CY",
+                "alias" : "2010-2021 Growth Rate: Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.POPGRW10CY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "pct"
+              }, {
+                "name" : "HHGRW10CY",
+                "alias" : "2010-2021 Growth Rate: Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.HHGRW10CY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "pct"
+              }, {
+                "name" : "FAMGRW10CY",
+                "alias" : "2010-2021 Growth Rate: Families",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.FAMGRW10CY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "pct"
+              }, {
+                "name" : "POPGRWCYFY",
+                "alias" : "2021-2026 Growth Rate: Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.POPGRWCYFY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "pct"
+              }, {
+                "name" : "HHGRWCYFY",
+                "alias" : "2021-2026 Growth Rate: Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.HHGRWCYFY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "pct"
+              }, {
+                "name" : "FAMGRWCYFY",
+                "alias" : "2021-2026 Growth Rate: Families",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.FAMGRWCYFY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "pct"
+              }, {
+                "name" : "MHIGRWCYFY",
+                "alias" : "2021-2026 Growth Rate: Median HH Inc",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.MHIGRWCYFY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "pct"
+              }, {
+                "name" : "PCIGRWCYFY",
+                "alias" : "2021-2026 Growth Rate: Per Capita Inc",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.PCIGRWCYFY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "pct"
+              }, {
+                "name" : "DPOP_CY",
+                "alias" : "2021 Total Daytime Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.DPOP_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "DPOPWRK_CY",
+                "alias" : "2021 Daytime Pop: Workers",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.DPOPWRK_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "DPOPRES_CY",
+                "alias" : "2021 Daytime Pop: Residents",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyUSFacts.DPOPRES_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              } ],
+              "features" : [ {
+                "attributes" : {
+                  "ID_0" : "0",
+                  "OBJECTID" : 1,
+                  "sourceCountry" : "US",
+                  "name" : "Optional Name 1",
+                  "id" : "Polygon 1",
+                  "aggregationMethod" : "BlockApportionment:US.BlockGroups;PointsLayer:US.BlockPoints",
+                  "populationToPolygonSizeRating" : 2.191,
+                  "apportionmentConfidence" : 2.576,
+                  "HasData" : 1,
+                  "TOTPOP00" : 80786,
+                  "TOTPOP10" : 80256,
+                  "TOTPOP_CY" : 82661,
+                  "TOTPOP_FY" : 83907,
+                  "GQPOP_CY" : 805,
+                  "DIVINDX_CY" : 63.1,
+                  "TOTHH00" : 33888,
+                  "TOTHH10" : 33182,
+                  "TOTHH_CY" : 34166,
+                  "TOTHH_FY" : 34597,
+                  "AVGHHSZ_CY" : 2.4,
+                  "MEDHINC_CY" : 104277,
+                  "MEDHINC_FY" : 114382,
+                  "AVGHINC_CY" : 143602,
+                  "AVGHINC_FY" : 161202,
+                  "PCI_CY" : 59460,
+                  "PCI_FY" : 66577,
+                  "TOTHU00" : 35671,
+                  "TOTHU10" : 36193,
+                  "TOTHU_CY" : 37089,
+                  "TOTHU_FY" : 37571,
+                  "OWNER_CY" : 20488,
+                  "OWNER_FY" : 20835,
+                  "RENTER_CY" : 13677,
+                  "RENTER_FY" : 13761,
+                  "VACANT_CY" : 2923,
+                  "VACANT_FY" : 2974,
+                  "MEDVAL_CY" : 849619,
+                  "MEDVAL_FY" : 974355,
+                  "AVGVAL_CY" : 1110505,
+                  "AVGVAL_FY" : 1207057,
+                  "POPGRW10CY" : 0.26,
+                  "HHGRW10CY" : 0.26,
+                  "FAMGRW10CY" : 0.26,
+                  "POPGRWCYFY" : 0.3,
+                  "HHGRWCYFY" : 0.25,
+                  "FAMGRWCYFY" : 0.34,
+                  "MHIGRWCYFY" : 1.87,
+                  "PCIGRWCYFY" : 2.29,
+                  "DPOP_CY" : 81045,
+                  "DPOPWRK_CY" : 41018,
+                  "DPOPRES_CY" : 40027
+                }
+              } ]
+            } ]
+          }
+        } ],
+        "messages" : [ ]
+      }
+order: 1000

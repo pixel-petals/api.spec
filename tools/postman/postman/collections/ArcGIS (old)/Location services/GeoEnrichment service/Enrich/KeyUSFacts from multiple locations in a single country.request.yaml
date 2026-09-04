@@ -1,0 +1,16 @@
+$kind: http-request
+description: |-
+  [![](https://developers.arcgis.com/rest/geoenrichment/api-reference/GUID-81B44F92-74A1-4170-A412-828C1CED4897-web.png)](https://www.arcgis.com/apps/mapviewer/index.html?marker=-122.435,37.785&level=14)
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/enrich?f=pjson&token={{ACCESS_TOKEN}}&studyareas=[{"geometry":{"x":-122.435,"y":37.785}},{"geometry":{"x":-122.433,"y":37.734}}]&dataCollections=["KeyUSFacts"]&useData={"sourceCountry":"US"}&returngeometry=true
+method: GET
+queryParams:
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+  studyareas: '[{"geometry":{"x":-122.435,"y":37.785}},{"geometry":{"x":-122.433,"y":37.734}}]'
+  dataCollections: '["KeyUSFacts"]'
+  useData: '{"sourceCountry":"US"}'
+  returngeometry: "true"
+examples: ./.resources/KeyUSFacts from multiple locations in a single country.resources/examples
+order: 10000

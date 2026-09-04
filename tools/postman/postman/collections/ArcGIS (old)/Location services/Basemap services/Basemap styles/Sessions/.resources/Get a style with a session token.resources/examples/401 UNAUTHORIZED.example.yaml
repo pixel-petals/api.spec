@@ -1,0 +1,47 @@
+$kind: http-example
+request:
+  url: https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/:VERSION/:STYLE_RESPONSE/:STYLE_FAMILY/:STYLE_NAME/?token={{SESSION_TOKEN}}&echoToken=true
+  method: GET
+  queryParams:
+    token: "{{SESSION_TOKEN}}"
+    echoToken: "true"
+  pathVariables:
+    VERSION: v2
+    STYLE_RESPONSE: styles
+    STYLE_FAMILY: arcgis
+    STYLE_NAME: community
+response:
+  statusCode: 401
+  statusText: Unauthorized
+  headers:
+    Content-Type: application/json
+    Content-Length: "229"
+    Connection: keep-alive
+    Date: Tue, 26 Aug 2025 15:09:12 GMT
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    WWW-Authenticate: ArcGIS-Token tokenServicesUrl=https://www.arcgis.com/sharing/rest/generateToken, error="invalid_token"
+    Cache-Control: no-cache
+    permissions-policy: interest-cohort=()
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    X-Cache: Error from cloudfront
+    Via: 1.1 1103f2f4fcd4848a1668ac878932c20a.cloudfront.net (CloudFront)
+    X-Amz-Cf-Pop: IAD55-P5
+    X-Amz-Cf-Id: xTeKVJ2LC6Vz1NsPN0sg6_iDM-PB-QQichB3BhdNgmQygCUU-AP2mQ==
+    Referrer-Policy: no-referrer-when-downgrade
+    Content-Security-Policy: upgrade-insecure-requests
+    Vary: Origin
+  body:
+    type: text
+    content: |-
+      {
+          "error": {
+              "code": 498,
+              "message": "Token Invalid.",
+              "details": [
+                  "The required authentication information is invalid. The token is either invalid or has expired."
+              ],
+              "restInfoUrl": "https://basemapstyles-api.arcgis.com/arcgis/rest/info"
+          }
+      }
+order: 2000

@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{CKAN_API}}/activity_detail_list?id=4e1c98c5-3714-4007-a8e8-5b12009aee04"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: id
+    value: 4e1c98c5-3714-4007-a8e8-5b12009aee04
+    description: (string) – the id of the activity
+order: 2000

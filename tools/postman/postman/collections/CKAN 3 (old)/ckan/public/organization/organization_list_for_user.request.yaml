@@ -1,0 +1,12 @@
+$kind: http-request
+description: "[API Documentation 2.6.3](http://docs.ckan.org/en/ckan-2.6.3/api/index.html#ckan.logic.action.get.organization_list_for_user)"
+url: "{{CKAN_API}}/organization_list_for_user"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: permission
+    value: ""
+    disabled: true
+    description: '(string) – the permission the user has against the returned organizations, for example "read" or "create_dataset" (optional, default: "edit_group")'
+order: 1000
