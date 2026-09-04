@@ -1,0 +1,37 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/CalculateComponsiteIndex/jobs/:JOB_ID"
+  method: POST
+  pathVariables:
+    JOB_ID: "{{JOB_ID}}"
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Tue, 06 Jan 2026 15:25:47 GMT
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: no-cache
+    ETag: '"-736765807"'
+    Vary: Origin,Accept-Encoding,Authorization,X-Esri-Authorization
+    Server: Microsoft-IIS/10.0
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    X-Powered-By: ASP.NET
+  body:
+    type: text
+    content: |-
+      {
+          "jobId": "j50cac4370dbf4feabe9c0d5c979c1b8a",
+          "jobStatus": "esriJobExecuting",
+          "results": {},
+          "inputs": {},
+          "messages": []
+      }
+order: 1000

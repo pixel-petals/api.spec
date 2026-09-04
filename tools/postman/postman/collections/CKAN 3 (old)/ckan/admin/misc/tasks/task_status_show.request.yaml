@@ -1,0 +1,24 @@
+$kind: http-request
+url: "{{CKAN_API}}/task_status_show"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: id
+    value: ""
+    disabled: true
+    description: (string) – the id of the task status (optional)
+  - key: entity_id
+    value: null
+    disabled: true
+    description: (string) – the entity_id of the task status (optional)
+  - key: task_type
+    value: null
+    disabled: true
+    description: the task_type of the task status (optional)
+  - key: key
+    value: null
+    disabled: true
+    description: (string) – the key of the task status (optional)
+order: 2000

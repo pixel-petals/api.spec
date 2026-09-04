@@ -1,0 +1,18 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/nodes?nodes=123,456,789"
+  method: GET
+  queryParams:
+    - key: nodes
+      value: 123,456,789
+      description: Comma-separated list of node IDs, optionally versioned (e.g. 123,456v2)
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 3000

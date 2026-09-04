@@ -1,0 +1,27 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/analyze-patterns/calculate-density/#calculate-the-density-of-bike-routes)
+url: "{{ANALYSIS_URL}}/CalculateDensity/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    inputLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Portland Bike Routes/FeatureServer/0","name":"Portland Bike Routes"}'
+    areaUnits: SquareMiles
+    boundingPolygonLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Portland_boundary/FeatureServer/0","name":"Portland_boundary-DissolvedFeatures"}'
+    classificationType: EqualInterval
+    numClasses: "10"
+    outputName: '{"serviceProperties":{"name":"{{UNIQUE_NAME}}"}}'
+scripts:
+  - type: beforeRequest
+    code: |-
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/ /g, "_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+  - type: afterResponse
+    code: |
+      pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

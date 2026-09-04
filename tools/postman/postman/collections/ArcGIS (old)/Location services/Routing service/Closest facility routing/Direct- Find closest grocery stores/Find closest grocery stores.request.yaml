@@ -1,0 +1,16 @@
+$kind: http-request
+description: Finds the closest grocery stores to a specified location using the Closest Facility service. Use this endpoint to solve for optimal routes and distances to nearby grocery stores based on input parameters.
+url: https://route-api.arcgis.com/arcgis/rest/services/World/ClosestFacility/NAServer/ClosestFacility_World/solveClosestFacility
+method: POST
+body:
+  type: urlencoded
+  content:
+    token: "{{ACCESS_TOKEN}}"
+    f: json
+    facilities: "{'spatialReference':{'latestWkid':3857,'wkid':102100},'features':[{'geometry':{'x':-13656100.72194608,'y':5703897.952531632},'attributes':{'Name':'Downtown Grocery, 310 SW 4th Ave, Portland, OR, 97204, USA'}},{'geometry':{'x':-13657081.446659965,'y':5704279.273731899},'attributes':{'Name':'Whole Foods Market, 1210 NW Couch St, Portland, OR, 97209, USA'}},{'geometry':{'x':-13654900.697835328,'y':5704360.306582605},'attributes':{'Name':'Pacific Coast Fruit Company, 201 NE 2nd Ave, Portland, Oregon, 97232'}},{'geometry':{'x':-13654793.831124166,'y':5703907.485363393},'attributes':{'Name':'Nicky USA, 223 SE 3rd Ave, Portland, OR, 97214, USA'}},{'geometry':{'x':-13654829.453361219,'y':5703721.596977669},'attributes':{'Name':'Alexis Foods, 215 SE Stark St, Portland, OR, 97214, USA'}},{'geometry':{'x':-13654680.285243554,'y':5703712.064344136},'attributes':{'Name':'Sheridan Fruit Company, 408 SE Martin Luther King, Portland, OR, 97214, USA'}},{'geometry':{'x':-13654723.699844966,'y':5703513.470124055},'attributes':{'Name':'Graziano Food Services, 302 SE Washington St, Portland, OR, 97214, USA'}},{'geometry':{'x':-13654781.585980177,'y':5703484.872919755},'attributes':{'Name':'Rinella Produce, 231 SE Alder St, Portland, OR, 97214, USA'}}]}"
+    incidents: "{'spatialReference':{'latestWkid':3857,'wkid':102100},'features':[{'geometry':{'x':-13656119.041436872,'y':5703857.952531632},'attributes':{'Name':'322 SW 4th Ave, Portland, OR, 97204, USA'}}]}"
+    defaultTargetFacilityCount: "3"
+    returnFacilities: "true"
+    returnCFRoutes: "true"
+examples: ./.resources/Find closest grocery stores.resources/examples
+order: 1000

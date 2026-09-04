@@ -1,0 +1,8 @@
+$kind: collection
+description: |-
+  A group is a collection of items that are available to a specific set of users. Depending on the role and privileges assigned to you, you can create, add content, and manage a group within your organization.
+
+  NOTE: you cannot use an API key as an access token for these operations. You will need to use a token representing an [ArcGIS Identity](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/arcgis-identity/) from performing oAuth 2.0
+
+  To learn more, visit the [Groups](https://developers.arcgis.com/documentation/mapping-apis-and-services/content-management/groups/) section in the *Mapping APIs and location services* guide.
+order: 4000

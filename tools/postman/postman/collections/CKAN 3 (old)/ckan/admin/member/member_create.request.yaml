@@ -1,0 +1,26 @@
+$kind: http-request
+url: "{{CKAN_API}}/member_create"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: id
+      value: ""
+      description: (string) – the id or name of the group to add the object to
+    - type: text
+      key: object
+      value: ""
+      description: (string) – the id or name of the object to add
+    - type: text
+      key: object_type
+      value: ""
+      description: (string) – the type of the object being added, e.g. 'package' or 'user'
+    - type: text
+      key: capacity
+      value: ""
+      description: (string) – the capacity of the membership
+order: 1000

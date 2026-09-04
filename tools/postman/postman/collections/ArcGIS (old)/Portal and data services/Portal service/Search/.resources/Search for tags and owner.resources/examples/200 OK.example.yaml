@@ -1,0 +1,727 @@
+$kind: http-example
+request:
+  url: https://www.arcgis.com/sharing/rest/search?q=tags:"USA Demographics" AND owner:"esri"&f=pjson
+  method: GET
+  queryParams:
+    q: tags:"USA Demographics" AND owner:"esri"
+    f: pjson
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Thu, 13 Jan 2022 15:47:56 GMT
+    - key: Content-Type
+      value: text/plain;charset=utf-8
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Origin
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Cache-Control
+      value: no-cache
+    - key: Pragma
+      value: no-cache
+    - key: Expires
+      value: "-1"
+    - key: Strict-Transport-Security
+      value: max-age=31536000
+    - key: Content-Encoding
+      value: gzip
+  body:
+    type: json
+    content: |-
+      {
+          "query": "tags:\"USA Demographics\" AND owner:\"esri\"",
+          "total": 36,
+          "start": 1,
+          "num": 10,
+          "nextStart": 11,
+          "results": [
+              {
+                  "id": "d77560f788c04f1ea186cbdab654b053",
+                  "owner": "esri",
+                  "created": 1529612067000,
+                  "modified": 1632246596000,
+                  "guid": null,
+                  "name": null,
+                  "title": "2018 USA Unemployment Rate",
+                  "type": "Map Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Map Service",
+                      "Requires Credits",
+                      "Service"
+                  ],
+                  "description": "<b><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2019 and will be retired December 2022</b>.  A <a href='https://www.arcgis.com/home/item.html?id=1be23111cbb54bea9c76e36d072305f1' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. Esri recommends updating your maps and apps to use the new version.<div><span><br /></span></div><div><span>This layer shows the unemployment rate in the United States in 2018 in a multiscale map by country, state, county, ZIP Code, tract, and block group.</span><div style='margin:0px; padding:0px;'><br /></div><div style='margin:0px; padding:0px;'>The pop-up is configured to include the following information for each geography level:</div><div style='margin:0px; padding:0px;'><ul><li>Unemployment rate (%)</li><li>Population count of persons over the age of 16 within work force</li><li>Count of employed and unemployed civil population (over age 16)</li></ul>T<span>he data shown is from Esri's </span>2018 Updated Demographic<span> estimates using Census 2010 geographies</span><span>. The map adds increasing level of detail as you zoom in, from state, to county, to ZIP Code, to tract, to block group data.  </span><span><br /><br /></span></div><div style='margin:0px; padding:0px;'><font size='small'><b>Permitted use of this data is\ncovered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri\nMaster Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental\nterms</a>.</b></font></div></div>",
+                  "tags": [
+                      "USA",
+                      "demographics",
+                      "unemployment",
+                      "demographics8",
+                      "deprecated",
+                      "mature support",
+                      "USA_Demographics_and_Boundaries_2018",
+                      "retiring"
+                  ],
+                  "snippet": "This layer shows unemployment rates in the United States in 2018 in a multiscale map by country, state, county, ZIP Code, tract, and block group. ArcGIS Online subscription required.",
+                  "thumbnail": "thumbnail/thumbnail1529355341639.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -132.75,
+                          20.54
+                      ],
+                      [
+                          -60.33,
+                          56.88
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "Esri, U.S. Census Bureau",
+                  "licenseInfo": "<img src='https://downloads.esri.com/blogs/arcgisonline/esrilogo_new.png' />This work is licensed under the Esri Master License Agreement. <br /><div><a href='https://goto.arcgis.com/termsofuse/viewsummary' rel='nofollow ugc' target='_blank'><b>View Summary</b></a> | <a href='https://goto.arcgis.com/termsofuse/viewtermsofuse' rel='nofollow ugc' target='_blank'><b>View Terms of Use</b></a> </div><div><br /></div><b>Permitted use of this data is covered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri Master Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental terms</a>.</b><br /><br /><b><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2019 and will be retired December 2022</b>.  A <a href='https://www.arcgis.com/home/item.html?id=1be23111cbb54bea9c76e36d072305f1' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. <br /><br /><div><font color='#b22222'>Important Note:</font> This item requires an ArcGIS Online organizational subscription or an ArcGIS Developer account and <a href='https://goto.arcgis.com/features/credits' rel='nofollow ugc' target='_blank'>consumes credits</a>. To access this item, you'll need to do one of the following: </div><div><ul><li>Sign in with an account that is a member of an organizational subscription </li><li>Sign in with a developer account </li><li><a href='https://goto.arcgis.com/termsofuse/registeranapplication' rel='nofollow ugc' target='_blank'>Register an application</a> and use your application's credentials.</li></ul>If you don't have an account, you can sign up for a <a href='https://goto.arcgis.com/features/trial' rel='nofollow ugc' target='_blank'>free trial of ArcGIS</a> or a <a href='https://goto.arcgis.com/developers/signup' rel='nofollow ugc' target='_blank'>free ArcGIS Developer account</a>.</div>",
+                  "culture": "english (united states)",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://demographics8.arcgis.com/arcgis/rest/services/USA_Demographics_and_Boundaries_2018/MapServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 48760,
+                  "contentStatus": "deprecated",
+                  "scoreCompleteness": 100,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "b8751ac7168e4be6b19cc05e63825738",
+                  "owner": "esri",
+                  "created": 1593129791000,
+                  "modified": 1625020588000,
+                  "guid": null,
+                  "name": null,
+                  "title": "2020 USA Per Capita Income",
+                  "type": "Map Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Map Service",
+                      "Requires Credits",
+                      "Service"
+                  ],
+                  "description": "<p style='padding:0px;'><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2021 and will be retired in December 2024. A <a href='https://www.arcgis.com/home/item.html?id=d2e88a6f52e94fe992c7bf20e151ee96' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. Esri recommends updating your maps and apps to use the new version.</p>This layer shows per capita income (income per person) in the U.S. in 2020 in a multiscale map by country, state, county, ZIP Code, tract, and block group. ArcGIS Online subscription required. Per capita income is calculated by taking the sum of all incomes and dividing by the total population.<br /><div style='margin:0px; padding:0px;'><span><span><br /></span></span>The pop-up is configured to include the following information for each geography level:</div><div style='margin:0px; padding:0px;'><ul><li>2020 Per capita income</li><li>Total population</li><li>2025 projected per capita income</li></ul></div><div style='margin:0px; padding:0px;'><font size='small'><b>Permitted use of this data is\ncovered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri\nMaster Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental\nterms</a>.</b></font></div>",
+                  "tags": [
+                      "USA",
+                      "USA_Demographics_and_Boundaries_2020",
+                      "income",
+                      "deprecated",
+                      "mature support",
+                      "demographics",
+                      "demographics5",
+                      "2020",
+                      "retiring"
+                  ],
+                  "snippet": "This layer shows per capita income (income per person) in the U.S. in 2020 in a multiscale map by country, state, county, ZIP Code, tract, and block group. ArcGIS Online subscription required.",
+                  "thumbnail": "thumbnail/thumbnail1592437068066.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -132.75,
+                          20.54
+                      ],
+                      [
+                          -60.33,
+                          56.88
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "Esri, U.S. Census Bureau",
+                  "licenseInfo": "<img src='https://downloads.esri.com/blogs/arcgisonline/esrilogo_new.png' />This work is licensed under the Esri Master License Agreement.<br /><div><a href='https://goto.arcgis.com/termsofuse/viewsummary' rel='nofollow ugc' target='_blank'><b>View Summary</b></a> | <a href='https://goto.arcgis.com/termsofuse/viewtermsofuse' rel='nofollow ugc' target='_blank'><b>View Terms of Use</b></a></div><div><br /></div><b>Permitted use of this data is covered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri Master Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental terms</a>.</b><br /><br /><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2021 and will be retired in December 2024. A <a href='https://www.arcgis.com/home/item.html?id=d2e88a6f52e94fe992c7bf20e151ee96' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. <br /><br /><div><font color='#b22222'>Important Note:</font> This item requires an ArcGIS Online organizational subscription or an ArcGIS Developer account and <a href='https://goto.arcgis.com/features/credits' rel='nofollow ugc' target='_blank'>consumes credits</a>. To access this item, you'll need to do one of the following:</div><div><ul><li>Sign in with an account that is a member of an organizational subscription</li><li>Sign in with a developer account</li><li><a href='https://goto.arcgis.com/termsofuse/registeranapplication' rel='nofollow ugc' target='_blank'>Register an application</a> and use your application's credentials.</li></ul>If you don't have an account, you can sign up for a <a href='https://goto.arcgis.com/features/trial' rel='nofollow ugc' target='_blank'>free trial of ArcGIS</a> or a <a href='https://goto.arcgis.com/developers/signup' rel='nofollow ugc' target='_blank'>free ArcGIS Developer account</a>.</div>",
+                  "culture": "english (united states)",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://demographics5.arcgis.com/arcgis/rest/services/USA_Demographics_and_Boundaries_2020/MapServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 56600,
+                  "contentStatus": "deprecated",
+                  "scoreCompleteness": 100,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "13260948120c4eacadaff3ecd38c8796",
+                  "owner": "esri",
+                  "created": 1593129855000,
+                  "modified": 1625019738000,
+                  "guid": null,
+                  "name": null,
+                  "title": "2020-2025 USA Population Growth",
+                  "type": "Map Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Map Service",
+                      "Requires Credits",
+                      "Service"
+                  ],
+                  "description": "<p style='padding:0px;'><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2021 and will be retired in December 2024. A <a href='https://www.arcgis.com/home/item.html?id=7996844858ec41b1a73836888e95ff30' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. Esri recommends updating your maps and apps to use the new version.</p><span>This layer shows the estimated annual growth rate of population in the United States from 2020 to 2025 in a multiscale map by country, state, county, ZIP Code, tract, and block group. </span><div style='margin:0px; padding:0px;'><br /></div><div style='margin:0px; padding:0px;'>The pop-up is configured to include the following information for each geography level:<br /></div><div style='margin:0px; padding:0px;'><ul><li>2020 total population</li><li>2025 total population estimate </li><li>2000-2010 annual population growth rate</li><li>2010-2020 annual population growth rate</li><li>2020-2025 annual projected population growth rate</li></ul><b>Permitted use of this data is\ncovered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri\nMaster Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental\nterms</a>.</b><br /></div>",
+                  "tags": [
+                      "USA",
+                      "USA_Demographics_and_Boundaries_2020",
+                      "population",
+                      "deprecated",
+                      "mature support",
+                      "demographics",
+                      "demographics5",
+                      "2020",
+                      "retiring"
+                  ],
+                  "snippet": "This layer shows the estimated annual growth rate of population in the United States from 2020 to 2025 in a multiscale map by country, state, county, ZIP Code, tract, and block group. ArcGIS Online subscription required.",
+                  "thumbnail": "thumbnail/thumbnail1592436844710.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -132.75,
+                          20.54
+                      ],
+                      [
+                          -60.33,
+                          56.88
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "Esri, U.S. Census Bureau",
+                  "licenseInfo": "<img src='https://downloads.esri.com/blogs/arcgisonline/esrilogo_new.png' />This work is licensed under the Esri Master License Agreement.<br /><div><a href='https://goto.arcgis.com/termsofuse/viewsummary' rel='nofollow ugc' target='_blank'><b>View Summary</b></a> | <a href='https://goto.arcgis.com/termsofuse/viewtermsofuse' rel='nofollow ugc' target='_blank'><b>View Terms of Use</b></a></div><div><br /></div><b>Permitted use of this data is covered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri Master Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental terms</a>.</b><br /><br /><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2021 and will be retired in December 2024. A <a href='https://www.arcgis.com/home/item.html?id=7996844858ec41b1a73836888e95ff30' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. <br /><br /><div><font color='#b22222'>Important Note:</font> This item requires an ArcGIS Online organizational subscription or an ArcGIS Developer account and <a href='https://goto.arcgis.com/features/credits' rel='nofollow ugc' target='_blank'>consumes credits</a>. To access this item, you'll need to do one of the following:</div><div><ul><li>Sign in with an account that is a member of an organizational subscription</li><li>Sign in with a developer account</li><li><a href='https://goto.arcgis.com/termsofuse/registeranapplication' rel='nofollow ugc' target='_blank'>Register an application</a> and use your application's credentials.</li></ul>If you don't have an account, you can sign up for a <a href='https://goto.arcgis.com/features/trial' rel='nofollow ugc' target='_blank'>free trial of ArcGIS</a> or a <a href='https://goto.arcgis.com/developers/signup' rel='nofollow ugc' target='_blank'>free ArcGIS Developer account</a>.</div>",
+                  "culture": "english (united states)",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://demographics5.arcgis.com/arcgis/rest/services/USA_Demographics_and_Boundaries_2020/MapServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 1,
+                  "numRatings": 6,
+                  "avgRating": 2.785710096359253,
+                  "numViews": 291476,
+                  "contentStatus": "deprecated",
+                  "scoreCompleteness": 100,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "b597302950234000b7ba4fa33cd785eb",
+                  "owner": "esri",
+                  "created": 1561141047000,
+                  "modified": 1632162101000,
+                  "guid": null,
+                  "name": null,
+                  "title": "2019 USA Average Household Size",
+                  "type": "Map Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Map Service",
+                      "Requires Credits",
+                      "Service"
+                  ],
+                  "description": "<p style='padding:0px; color:rgb(77, 77, 77);'><b><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2020 and will be retired December 2023. </b><span style='color:rgb(76, 76, 76);'> A </span><a href='https://www.arcgis.com/home/item.html?id=86b5cedb60024bb7b727f327a350c3d8' rel='nofollow ugc' target='_blank'>new version of this item</a><span style='color:rgb(76, 76, 76);'> is available for your use. Esri recommends updating your maps and apps to use the new version.</span></p><div>This layer shows the average household size (people per household) in the United States in 2019 in a multiscale map by country, state, county, ZIP Code, tract, and block group. <span>The average household size for the U.S. in 2019 is 2.6 people per household. It is calculated by dividing the household population by total households.</span><br /></div><div><div style='margin:0px; padding:0px;'><br /></div><div style='margin:0px; padding:0px;'>The pop-up is configured to include the following information for each geography level:</div><div style='margin:0px; padding:0px;'><ul><li>Average Household Size</li><li>Count of Households</li><li>Per Capita Income</li><li>Median Household Income</li><li>Household Population</li><li>Family Population</li></ul></div></div><div style='margin:0px; padding:0px;'><font size='small'><b>Permitted use of this data is\ncovered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri\nMaster Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental\nterms</a>.</b></font></div>",
+                  "tags": [
+                      "USA",
+                      "demographics",
+                      "demographics9",
+                      "deprecated",
+                      "mature support",
+                      "2019",
+                      "USA_Demographics_and_Boundaries_2019",
+                      "household",
+                      "retiring"
+                  ],
+                  "snippet": "This layer shows the average household size (people per household) in the United States in 2019 in a multiscale map by country, state, county, ZIP Code, tract, and block group. ArcGIS Online subscription required.",
+                  "thumbnail": "thumbnail/thumbnail1560197961428.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -132.75,
+                          20.54
+                      ],
+                      [
+                          -60.33,
+                          56.88
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "Esri, U.S. Census Bureau",
+                  "licenseInfo": "<img src='https://downloads.esri.com/blogs/arcgisonline/esrilogo_new.png' />This work is licensed under the Esri Master License Agreement. <br /><div><a href='https://goto.arcgis.com/termsofuse/viewsummary' rel='nofollow ugc' target='_blank'><b>View Summary</b></a> | <a href='https://goto.arcgis.com/termsofuse/viewtermsofuse' rel='nofollow ugc' target='_blank'><b>View Terms of Use</b></a> </div><div><br /></div><b>Permitted use of this data is covered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri Master Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental terms</a>.</b><br /><br /><b><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2020 and will be retired December 2023.</b>  A <a href='https://www.arcgis.com/home/item.html?id=86b5cedb60024bb7b727f327a350c3d8' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. <br /><br /><div><font color='#b22222'>Important Note:</font> This item requires an ArcGIS Online organizational subscription or an ArcGIS Developer account and <a href='https://goto.arcgis.com/features/credits' rel='nofollow ugc' target='_blank'>consumes credits</a>. To access this item, you'll need to do one of the following: </div><div><ul><li>Sign in with an account that is a member of an organizational subscription </li><li>Sign in with a developer account </li><li><a href='https://goto.arcgis.com/termsofuse/registeranapplication' rel='nofollow ugc' target='_blank'>Register an application</a> and use your application's credentials.</li></ul>If you don't have an account, you can sign up for a <a href='https://goto.arcgis.com/features/trial' rel='nofollow ugc' target='_blank'>free trial of ArcGIS</a> or a <a href='https://goto.arcgis.com/developers/signup' rel='nofollow ugc' target='_blank'>free ArcGIS Developer account</a>.</div>",
+                  "culture": "english (united states)",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://demographics9.arcgis.com/arcgis/rest/services/USA_Demographics_and_Boundaries_2019/MapServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 47865,
+                  "contentStatus": "deprecated",
+                  "scoreCompleteness": 100,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "ebb8489a11cd494bb1ed3a9995acb50e",
+                  "owner": "esri",
+                  "created": 1561141122000,
+                  "modified": 1632161693000,
+                  "guid": null,
+                  "name": null,
+                  "title": "2019 USA Unemployment Rate",
+                  "type": "Map Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Map Service",
+                      "Requires Credits",
+                      "Service"
+                  ],
+                  "description": "<p style='padding:0px; color:rgb(77, 77, 77);'><b><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2020 and will be retired December 2023.</b><span style='color:rgb(76, 76, 76);'>  A </span><a href='https://www.arcgis.com/home/item.html?id=1be23111cbb54bea9c76e36d072305f1' rel='nofollow ugc' target='_blank'>new version of this item</a><span style='color:rgb(76, 76, 76);'> is available for your use. Esri recommends updating your maps and apps to use the new version.</span></p><span>This layer shows the unemployment rate in the United States in 2019 in a multiscale map by country, state, county, ZIP Code, tract, and block group.</span><div style='margin:0px; padding:0px;'><br /></div><div style='margin:0px; padding:0px;'>The pop-up is configured to include the following information for each geography level:</div><div style='margin:0px; padding:0px;'><ul><li>Unemployment rate (%)</li><li>Population count of persons over the age of 16 within work force</li><li>Count of employed and unemployed civil population (over age 16)</li></ul></div><div style='margin:0px; padding:0px;'><font size='small'><b>Permitted use of this data is\ncovered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri\nMaster Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental\nterms</a>.</b></font></div>",
+                  "tags": [
+                      "USA",
+                      "demographics",
+                      "demographics9",
+                      "deprecated",
+                      "mature support",
+                      "2019",
+                      "USA_Demographics_and_Boundaries_2019",
+                      "employ",
+                      "retiring"
+                  ],
+                  "snippet": "This layer shows unemployment rates in the United States in 2019 in a multiscale map by country, state, county, ZIP Code, tract, and block group. ArcGIS Online subscription required.",
+                  "thumbnail": "thumbnail/thumbnail1560198183566.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -132.75,
+                          20.54
+                      ],
+                      [
+                          -60.33,
+                          56.88
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "Esri, U.S. Census Bureau",
+                  "licenseInfo": "<img src='https://downloads.esri.com/blogs/arcgisonline/esrilogo_new.png' />This work is licensed under the Esri Master License Agreement. <br /><div><a href='https://goto.arcgis.com/termsofuse/viewsummary' rel='nofollow ugc' target='_blank'><b>View Summary</b></a> | <a href='https://goto.arcgis.com/termsofuse/viewtermsofuse' rel='nofollow ugc' target='_blank'><b>View Terms of Use</b></a> </div><div><br /></div><b>Permitted use of this data is covered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri Master Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental terms</a>.</b><br /><br /><b><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2020 and will be retired December 2023.</b>  A <a href='https://www.arcgis.com/home/item.html?id=1be23111cbb54bea9c76e36d072305f1' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. <br /><br /><div><font color='#b22222'>Important Note:</font> This item requires an ArcGIS Online organizational subscription or an ArcGIS Developer account and <a href='https://goto.arcgis.com/features/credits' rel='nofollow ugc' target='_blank'>consumes credits</a>. To access this item, you'll need to do one of the following: </div><div><ul><li>Sign in with an account that is a member of an organizational subscription </li><li>Sign in with a developer account </li><li><a href='https://goto.arcgis.com/termsofuse/registeranapplication' rel='nofollow ugc' target='_blank'>Register an application</a> and use your application's credentials.</li></ul>If you don't have an account, you can sign up for a <a href='https://goto.arcgis.com/features/trial' rel='nofollow ugc' target='_blank'>free trial of ArcGIS</a> or a <a href='https://goto.arcgis.com/developers/signup' rel='nofollow ugc' target='_blank'>free ArcGIS Developer account</a>.</div>",
+                  "culture": "english (united states)",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://demographics9.arcgis.com/arcgis/rest/services/USA_Demographics_and_Boundaries_2019/MapServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 134805,
+                  "contentStatus": "deprecated",
+                  "scoreCompleteness": 100,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "a245493a8c5344cbafc60d70170c666d",
+                  "owner": "esri",
+                  "created": 1561141105000,
+                  "modified": 1632161744000,
+                  "guid": null,
+                  "name": null,
+                  "title": "2019 USA Population Density",
+                  "type": "Map Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Map Service",
+                      "Requires Credits",
+                      "Service"
+                  ],
+                  "description": "<p style='padding:0px; color:rgb(77, 77, 77);'><b><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2020 and will be retired December 2023.</b><span style='color:rgb(76, 76, 76);'>  A </span><a href='https://www.arcgis.com/home/item.html?id=b9095ebdf5e8442588ab3f269dc7ee5e' rel='nofollow ugc' target='_blank'>new version of this item</a><span style='color:rgb(76, 76, 76);'> is available for your use. Esri recommends updating your maps and apps to use the new version.</span></p><span>This layer shows the population density in the United States in 2019 by country, state, county, ZIP Code, tract, and block group. Population density is expressed as persons per square mile.</span><div style='margin:0px; padding:0px;'><br /></div><div style='margin:0px; padding:0px;'>The pop-up is configured to include the following information for each geography level:</div><div style='margin:0px; padding:0px;'><ul><li>Population Density (persons per square mile)</li><li>Population Density 5 year estimate</li><li>Annual population change rate between 2010 and 2019</li><li>2010 U.S. Census population count </li><li>2019 and 2024 Esri population estimates</li></ul><div style='margin:0px; padding:0px;'><div style='margin:0px; padding:0px;'></div></div></div><div style='margin:0px; padding:0px;'><font size='small'><b>Permitted use of this data is\ncovered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri\nMaster Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental\nterms</a>.</b></font></div>",
+                  "tags": [
+                      "USA",
+                      "demographics",
+                      "demographics9",
+                      "deprecated",
+                      "mature support",
+                      "2019",
+                      "population",
+                      "USA_Demographics_and_Boundaries_2019",
+                      "retiring"
+                  ],
+                  "snippet": "This layer shows the population density in the United States in 2019 in persons per square mile in a multiscale map by country, state, county, ZIP Code, tract, and block group. ArcGIS Online subscription required.",
+                  "thumbnail": "thumbnail/thumbnail1560972415151.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -132.75,
+                          20.54
+                      ],
+                      [
+                          -60.33,
+                          56.88
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "Esri, U.S. Census Bureau",
+                  "licenseInfo": "<img src='https://downloads.esri.com/blogs/arcgisonline/esrilogo_new.png' />This work is licensed under the Esri Master License Agreement. <br /><div><a href='https://goto.arcgis.com/termsofuse/viewsummary' rel='nofollow ugc' target='_blank'><b>View Summary</b></a> | <a href='https://goto.arcgis.com/termsofuse/viewtermsofuse' rel='nofollow ugc' target='_blank'><b>View Terms of Use</b></a> </div><div><br /></div><b>Permitted use of this data is covered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri Master Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental terms</a>.</b><br /><br /><b><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2020 and will be retired December 2023.</b>  A <a href='https://www.arcgis.com/home/item.html?id=b9095ebdf5e8442588ab3f269dc7ee5e' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. <br /><br /><div><font color='#b22222'>Important Note:</font> This item requires an ArcGIS Online organizational subscription or an ArcGIS Developer account and <a href='https://goto.arcgis.com/features/credits' rel='nofollow ugc' target='_blank'>consumes credits</a>. To access this item, you'll need to do one of the following: </div><div><ul><li>Sign in with an account that is a member of an organizational subscription </li><li>Sign in with a developer account </li><li><a href='https://goto.arcgis.com/termsofuse/registeranapplication' rel='nofollow ugc' target='_blank'>Register an application</a> and use your application's credentials.</li></ul>If you don't have an account, you can sign up for a <a href='https://goto.arcgis.com/features/trial' rel='nofollow ugc' target='_blank'>free trial of ArcGIS</a> or a <a href='https://goto.arcgis.com/developers/signup' rel='nofollow ugc' target='_blank'>free ArcGIS Developer account</a>.</div>",
+                  "culture": "english (united states)",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://demographics9.arcgis.com/arcgis/rest/services/USA_Demographics_and_Boundaries_2019/MapServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 3,
+                  "numRatings": 16,
+                  "avgRating": 2.4411799907684326,
+                  "numViews": 913484,
+                  "contentStatus": "deprecated",
+                  "scoreCompleteness": 100,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "394b1ff76f3f4d69b32f7cf74e34d80d",
+                  "owner": "esri",
+                  "created": 1561141090000,
+                  "modified": 1632161897000,
+                  "guid": null,
+                  "name": null,
+                  "title": "2019 USA Median Home Value",
+                  "type": "Map Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Map Service",
+                      "Requires Credits",
+                      "Service"
+                  ],
+                  "description": "<p style='padding:0px; color:rgb(77, 77, 77);'><b><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2020 and will be retired December 2023.</b><span style='color:rgb(76, 76, 76);'>  A </span><a href='https://www.arcgis.com/home/item.html?id=d57620bbd2014e9aba7f50102ba15682' rel='nofollow ugc' target='_blank'>new version of this item</a><span style='color:rgb(76, 76, 76);'> is available for your use. Esri recommends updating your maps and apps to use the new version.</span></p>This layer shows the median home value in the U.S. in 2019 in a multiscale map by country, state, county, ZIP Code, tract, and block group. ArcGIS Online subscription required.<div style='margin:0px; padding:0px;'><div style='margin:0px; padding:0px;'><span><span><br /></span></span></div><div style='margin:0px; padding:0px;'>The pop-up is configured to include the following information for each geography level:</div><div style='margin:0px; padding:0px;'><ul><li>Median home value </li><li>Count of homes by valuation</li></ul></div></div><div style='margin:0px; padding:0px;'><font size='small'><b>Permitted use of this data is\ncovered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri\nMaster Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental\nterms</a>.</b></font></div>",
+                  "tags": [
+                      "USA",
+                      "demographics",
+                      "demographics9",
+                      "deprecated",
+                      "mature support",
+                      "2019",
+                      "home",
+                      "USA_Demographics_and_Boundaries_2019",
+                      "retiring"
+                  ],
+                  "snippet": "This layer shows the median home value in the U.S. in 2019 in a multiscale map by country, state, county, ZIP Code, tract, and block group. ArcGIS Online subscription required.",
+                  "thumbnail": "thumbnail/thumbnail1560201211293.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -132.75,
+                          20.54
+                      ],
+                      [
+                          -60.33,
+                          56.88
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "Esri, U.S. Census Bureau",
+                  "licenseInfo": "<img src='https://downloads.esri.com/blogs/arcgisonline/esrilogo_new.png' />This work is licensed under the Esri Master License Agreement. <br /><div><a href='https://goto.arcgis.com/termsofuse/viewsummary' rel='nofollow ugc' target='_blank'><b>View Summary</b></a> | <a href='https://goto.arcgis.com/termsofuse/viewtermsofuse' rel='nofollow ugc' target='_blank'><b>View Terms of Use</b></a> </div><div><br /></div><b>Permitted use of this data is covered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri Master Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental terms</a>.</b><br /><br /><b><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2020 and will be retired December 2023.</b>  A <a href='https://www.arcgis.com/home/item.html?id=d57620bbd2014e9aba7f50102ba15682' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. <br /><br /><div><font color='#b22222'>Important Note:</font> This item requires an ArcGIS Online organizational subscription or an ArcGIS Developer account and <a href='https://goto.arcgis.com/features/credits' rel='nofollow ugc' target='_blank'>consumes credits</a>. To access this item, you'll need to do one of the following: </div><div><ul><li>Sign in with an account that is a member of an organizational subscription </li><li>Sign in with a developer account </li><li><a href='https://goto.arcgis.com/termsofuse/registeranapplication' rel='nofollow ugc' target='_blank'>Register an application</a> and use your application's credentials.</li></ul>If you don't have an account, you can sign up for a <a href='https://goto.arcgis.com/features/trial' rel='nofollow ugc' target='_blank'>free trial of ArcGIS</a> or a <a href='https://goto.arcgis.com/developers/signup' rel='nofollow ugc' target='_blank'>free ArcGIS Developer account</a>.</div>",
+                  "culture": "english (united states)",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://demographics9.arcgis.com/arcgis/rest/services/USA_Demographics_and_Boundaries_2019/MapServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 84267,
+                  "contentStatus": "deprecated",
+                  "scoreCompleteness": 100,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "1be23111cbb54bea9c76e36d072305f1",
+                  "owner": "esri",
+                  "created": 1593129848000,
+                  "modified": 1625019861000,
+                  "guid": null,
+                  "name": null,
+                  "title": "2020 USA Unemployment Rate",
+                  "type": "Map Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Map Service",
+                      "Requires Credits",
+                      "Service"
+                  ],
+                  "description": "<p style='padding:0px;'><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2021 and will be retired in December 2024. A <a href='https://www.arcgis.com/home/item.html?id=a1f9775f797d456eb8588911c2cc5eb9' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. Esri recommends updating your maps and apps to use the new version.</p><span>This layer shows the unemployment rate in the United States in 2020 in a multiscale map by country, state, county, ZIP Code, tract, and block group.</span><div style='margin:0px; padding:0px;'><br /></div><div style='margin:0px; padding:0px;'>The pop-up is configured to include the following information for each geography level:</div><div style='margin:0px; padding:0px;'><ul><li>Unemployment rate (%)</li><li>Population count of persons over the age of 16 within work force</li><li>Count of employed and unemployed civil population (over age 16)</li></ul></div><div style='margin:0px; padding:0px;'><font size='small'><b>Permitted use of this data is\ncovered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri\nMaster Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental\nterms</a>.</b></font></div>",
+                  "tags": [
+                      "USA",
+                      "USA_Demographics_and_Boundaries_2020",
+                      "work",
+                      "deprecated",
+                      "mature support",
+                      "demographics",
+                      "demographics5",
+                      "2020",
+                      "retiring"
+                  ],
+                  "snippet": "This layer shows unemployment rates in the United States in 2020 in a multiscale map by country, state, county, ZIP Code, tract, and block group. ArcGIS Online subscription required.",
+                  "thumbnail": "thumbnail/thumbnail1592436677027.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -132.75,
+                          20.54
+                      ],
+                      [
+                          -60.33,
+                          56.88
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "Esri, U.S. Census Bureau",
+                  "licenseInfo": "<img src='https://downloads.esri.com/blogs/arcgisonline/esrilogo_new.png' />This work is licensed under the Esri Master License Agreement.<br /><div><a href='https://goto.arcgis.com/termsofuse/viewsummary' rel='nofollow ugc' target='_blank'><b>View Summary</b></a> | <a href='https://goto.arcgis.com/termsofuse/viewtermsofuse' rel='nofollow ugc' target='_blank'><b>View Terms of Use</b></a></div><div><br /></div><b>Permitted use of this data is covered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri Master Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental terms</a>.</b><br /><br /><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2021 and will be retired in December 2024. A <a href='https://www.arcgis.com/home/item.html?id=a1f9775f797d456eb8588911c2cc5eb9' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. <br /><br /><div><font color='#b22222'>Important Note:</font> This item requires an ArcGIS Online organizational subscription or an ArcGIS Developer account and <a href='https://goto.arcgis.com/features/credits' rel='nofollow ugc' target='_blank'>consumes credits</a>. To access this item, you'll need to do one of the following:</div><div><ul><li>Sign in with an account that is a member of an organizational subscription</li><li>Sign in with a developer account</li><li><a href='https://goto.arcgis.com/termsofuse/registeranapplication' rel='nofollow ugc' target='_blank'>Register an application</a> and use your application's credentials.</li></ul>If you don't have an account, you can sign up for a <a href='https://goto.arcgis.com/features/trial' rel='nofollow ugc' target='_blank'>free trial of ArcGIS</a> or a <a href='https://goto.arcgis.com/developers/signup' rel='nofollow ugc' target='_blank'>free ArcGIS Developer account</a>.</div>",
+                  "culture": "english (united states)",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://demographics5.arcgis.com/arcgis/rest/services/USA_Demographics_and_Boundaries_2020/MapServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 3,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 87990,
+                  "contentStatus": "deprecated",
+                  "scoreCompleteness": 100,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "60df8337cc7947a7a05e5bf3f1cdbbb5",
+                  "owner": "esri",
+                  "created": 1529611929000,
+                  "modified": 1632166805000,
+                  "guid": null,
+                  "name": null,
+                  "title": "2018 USA Average Household Income",
+                  "type": "Map Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Map Service",
+                      "Requires Credits",
+                      "Service"
+                  ],
+                  "description": "<b><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2019 and will be retired December 2022</b>.  A <a href='https://www.arcgis.com/home/item.html?id=1a1436d7ceab4fa9808b0330c7d45bd5' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. Esri recommends updating your maps and apps to use the new version.<div><br /></div><div>This layer shows the average household income in the U.S. in 2018 in a multiscale map by country, state, county, ZIP Code, tract, and block group. Information for the average household income is an estimate of income for calendar year 2018. Income amounts are expressed in current dollars, including an adjustment for inflation or cost-of-living increases.<br /></div><div><div style='margin:0px; padding:0px;'><div style='margin:0px; padding:0px;'><span><span><br /></span></span>The pop-up is configured to include the following information for each geography level:</div><div style='margin:0px; padding:0px;'><ul><li>Average household income</li><li>Median household income</li><li>Count of households by income group</li><li>Average household income by householder age group</li></ul><div style='margin:0px; padding:0px;'><span>T<span>he data shown is from Esri's </span></span>2018 Updated Demographic<span><span> estimates using Census 2010 geographies</span></span><span><span>. The map adds increasing level of detail as you zoom in, from state, to county, to ZIP Code, to tract, to block group data.</span></span></div><div style='margin:0px; padding:0px;'><span><span><br /></span></span></div></div></div></div><div style='margin:0px; padding:0px;'><font size='small'><b>Permitted use of this data is\ncovered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri\nMaster Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental\nterms</a>.</b></font></div>",
+                  "tags": [
+                      "USA",
+                      "demographics",
+                      "household income",
+                      "demographics8",
+                      "deprecated",
+                      "mature support",
+                      "USA_Demographics_and_Boundaries_2018",
+                      "2018",
+                      "retiring"
+                  ],
+                  "snippet": "This layer shows the average household income in the U.S. in 2018 in a multiscale map by country, state, county, ZIP Code, tract, and block group. ArcGIS Online subscription required.",
+                  "thumbnail": "thumbnail/thumbnail1529090221791.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -132.75,
+                          20.54
+                      ],
+                      [
+                          -60.33,
+                          56.88
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "Esri, U.S. Census Bureau",
+                  "licenseInfo": "<img src='https://downloads.esri.com/blogs/arcgisonline/esrilogo_new.png' />This work is licensed under the Esri Master License Agreement. <br /><div><a href='https://goto.arcgis.com/termsofuse/viewsummary' rel='nofollow ugc' target='_blank'><b>View Summary</b></a> | <a href='https://goto.arcgis.com/termsofuse/viewtermsofuse' rel='nofollow ugc' target='_blank'><b>View Terms of Use</b></a> </div><div><br /></div><b>Permitted use of this data is covered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri Master Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental terms</a>.</b><br /><br /><b><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2019 and will be retired December 2022</b>.  A <a href='https://www.arcgis.com/home/item.html?id=1a1436d7ceab4fa9808b0330c7d45bd5' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. <br /><br /><div><font color='#b22222'>Important Note:</font> This item requires an ArcGIS Online organizational subscription or an ArcGIS Developer account and <a href='https://goto.arcgis.com/features/credits' rel='nofollow ugc' target='_blank'>consumes credits</a>. To access this item, you'll need to do one of the following: </div><div><ul><li>Sign in with an account that is a member of an organizational subscription </li><li>Sign in with a developer account </li><li><a href='https://goto.arcgis.com/termsofuse/registeranapplication' rel='nofollow ugc' target='_blank'>Register an application</a> and use your application's credentials.</li></ul>If you don't have an account, you can sign up for a <a href='https://goto.arcgis.com/features/trial' rel='nofollow ugc' target='_blank'>free trial of ArcGIS</a> or a <a href='https://goto.arcgis.com/developers/signup' rel='nofollow ugc' target='_blank'>free ArcGIS Developer account</a>.</div>",
+                  "culture": "english (united states)",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://demographics8.arcgis.com/arcgis/rest/services/USA_Demographics_and_Boundaries_2018/MapServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 1,
+                  "avgRating": 1.75,
+                  "numViews": 122406,
+                  "contentStatus": "deprecated",
+                  "scoreCompleteness": 100,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "b9095ebdf5e8442588ab3f269dc7ee5e",
+                  "owner": "esri",
+                  "created": 1593129818000,
+                  "modified": 1625020405000,
+                  "guid": null,
+                  "name": null,
+                  "title": "2020 USA Population Density",
+                  "type": "Map Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Map Service",
+                      "Requires Credits",
+                      "Service"
+                  ],
+                  "description": "<p style='padding:0px;'><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2021 and will be retired in December 2024. A <a href='https://www.arcgis.com/home/item.html?id=a8407298de7e48078a2bc9cdd76c79af' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. Esri recommends updating your maps and apps to use the new version.</p><span>This layer shows the population density in the United States in 2020 by country, state, county, ZIP Code, tract, and block group. Population density is expressed as persons per square mile.</span><div style='margin:0px; padding:0px;'><br /></div><div style='margin:0px; padding:0px;'>The pop-up is configured to include the following information for each geography level:</div><div style='margin:0px; padding:0px;'><ul><li>Population Density (persons per square mile)</li><li>Population Density 5 year estimate</li><li>Annual population change rate between 2010 and 2020</li><li>2010 U.S. Census population count </li><li>2020 and 2025 Esri population estimates</li></ul><div style='margin:0px; padding:0px;'><div style='margin:0px; padding:0px;'></div></div></div><div style='margin:0px; padding:0px;'><font size='small'><b>Permitted use of this data is\ncovered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri\nMaster Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental\nterms</a>.</b></font></div>",
+                  "tags": [
+                      "USA",
+                      "USA_Demographics_and_Boundaries_2020",
+                      "population",
+                      "deprecated",
+                      "mature support",
+                      "demographics",
+                      "demographics5",
+                      "2020",
+                      "retiring"
+                  ],
+                  "snippet": "This layer shows the population density in the United States in 2020 in persons per square mile in a multiscale map by country, state, county, ZIP Code, tract, and block group. ArcGIS Online subscription required.",
+                  "thumbnail": "thumbnail/thumbnail1592437015423.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -132.75,
+                          20.54
+                      ],
+                      [
+                          -60.33,
+                          56.88
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "Esri, U.S. Census Bureau",
+                  "licenseInfo": "<img src='https://downloads.esri.com/blogs/arcgisonline/esrilogo_new.png' />This work is licensed under the Esri Master License Agreement.<br /><div><a href='https://goto.arcgis.com/termsofuse/viewsummary' rel='nofollow ugc' target='_blank'><b>View Summary</b></a> | <a href='https://goto.arcgis.com/termsofuse/viewtermsofuse' rel='nofollow ugc' target='_blank'><b>View Terms of Use</b></a></div><div><br /></div><b>Permitted use of this data is covered in the DATA section of the <a href='https://www.esri.com/en-us/legal/terms/master-agreement-product' rel='nofollow ugc'>Esri Master Agreement (E204CW)</a> and these <a href='https://www.esri.com/en-us/legal/terms/data-attributions' rel='nofollow ugc'>supplemental terms</a>.</b><br /><br /><font color='#b22222'>Important Note:</font> This item is in <a href='https://goto.arcgisonline.com/lifecycle/demographics' rel='nofollow ugc' target='_blank'>mature support</a> as of June 2021 and will be retired in December 2024. A <a href='https://www.arcgis.com/home/item.html?id=a8407298de7e48078a2bc9cdd76c79af' rel='nofollow ugc' target='_blank'>new version of this item</a> is available for your use. <br /><br /><div><font color='#b22222'>Important Note:</font> This item requires an ArcGIS Online organizational subscription or an ArcGIS Developer account and <a href='https://goto.arcgis.com/features/credits' rel='nofollow ugc' target='_blank'>consumes credits</a>. To access this item, you'll need to do one of the following:</div><div><ul><li>Sign in with an account that is a member of an organizational subscription</li><li>Sign in with a developer account</li><li><a href='https://goto.arcgis.com/termsofuse/registeranapplication' rel='nofollow ugc' target='_blank'>Register an application</a> and use your application's credentials.</li></ul>If you don't have an account, you can sign up for a <a href='https://goto.arcgis.com/features/trial' rel='nofollow ugc' target='_blank'>free trial of ArcGIS</a> or a <a href='https://goto.arcgis.com/developers/signup' rel='nofollow ugc' target='_blank'>free ArcGIS Developer account</a>.</div>",
+                  "culture": "english (united states)",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://demographics5.arcgis.com/arcgis/rest/services/USA_Demographics_and_Boundaries_2020/MapServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 3,
+                  "numRatings": 1,
+                  "avgRating": 3.75,
+                  "numViews": 479135,
+                  "contentStatus": "deprecated",
+                  "scoreCompleteness": 100,
+                  "groupDesignations": null
+              }
+          ]
+      }
+order: 1000

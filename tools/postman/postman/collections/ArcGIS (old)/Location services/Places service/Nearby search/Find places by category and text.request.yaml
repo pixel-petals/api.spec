@@ -1,0 +1,15 @@
+$kind: http-request
+description: Return places in the provided category and filtered by the provided text string.
+url: https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/near-point?x=-0.1276&y=51.5073&searchText=sports&radius=1609.344&categoryIds=4bf58dd8d48988d11b941735, 4edd64a0c7ddd24ca188df1a, 52e81612bcbc57f1066b7a2e&pageSize=20&f=pjson&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  x: "-0.1276"
+  y: "51.5073"
+  searchText: sports
+  radius: "1609.344"
+  categoryIds: 4bf58dd8d48988d11b941735, 4edd64a0c7ddd24ca188df1a, 52e81612bcbc57f1066b7a2e
+  pageSize: "20"
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/Find places by category and text.resources/examples
+order: 3000

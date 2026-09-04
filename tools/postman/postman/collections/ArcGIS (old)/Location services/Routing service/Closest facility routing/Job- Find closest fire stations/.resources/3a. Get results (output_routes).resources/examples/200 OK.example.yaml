@@ -1,0 +1,475 @@
+$kind: http-example
+request:
+  url: https://{{logistics-service}}.arcgis.com/arcgis/rest/services/World/ClosestFacility/GPServer/FindClosestFacilities/jobs/:job-id/results/Output_Routes
+  method: POST
+  pathVariables:
+    job-id: "{{job_id}}"
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 08:12:21 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "1360"
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 08:13:19 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"1c228912"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "paramName": "Output_Routes",
+          "dataType": "GPFeatureRecordSetLayer",
+          "value": {
+              "displayFieldName": "",
+              "geometryType": "esriGeometryPolyline",
+              "spatialReference": {
+                  "wkid": 4326,
+                  "latestWkid": 4326
+              },
+              "fields": [
+                  {
+                      "name": "ObjectID",
+                      "type": "esriFieldTypeOID",
+                      "alias": "ObjectID"
+                  },
+                  {
+                      "name": "FacilityRank",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "FacilityRank"
+                  },
+                  {
+                      "name": "Name",
+                      "type": "esriFieldTypeString",
+                      "alias": "Name",
+                      "length": 1024
+                  },
+                  {
+                      "name": "IncidentCurbApproach",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "IncidentCurbApproach"
+                  },
+                  {
+                      "name": "FacilityCurbApproach",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "FacilityCurbApproach"
+                  },
+                  {
+                      "name": "StartTime",
+                      "type": "esriFieldTypeDate",
+                      "alias": "StartTime",
+                      "length": 16
+                  },
+                  {
+                      "name": "EndTime",
+                      "type": "esriFieldTypeDate",
+                      "alias": "EndTime",
+                      "length": 16
+                  },
+                  {
+                      "name": "StartTimeUTC",
+                      "type": "esriFieldTypeDate",
+                      "alias": "StartTimeUTC",
+                      "length": 16
+                  },
+                  {
+                      "name": "EndTimeUTC",
+                      "type": "esriFieldTypeDate",
+                      "alias": "EndTimeUTC",
+                      "length": 16
+                  },
+                  {
+                      "name": "FacilityID",
+                      "type": "esriFieldTypeString",
+                      "alias": "FacilityID",
+                      "length": 500
+                  },
+                  {
+                      "name": "IncidentID",
+                      "type": "esriFieldTypeString",
+                      "alias": "IncidentID",
+                      "length": 500
+                  },
+                  {
+                      "name": "Total_Miles",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Total_Miles"
+                  },
+                  {
+                      "name": "Total_Kilometers",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Total_Kilometers"
+                  },
+                  {
+                      "name": "Total_Minutes",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Total_Minutes"
+                  },
+                  {
+                      "name": "FacilityOID",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "FacilityOID"
+                  },
+                  {
+                      "name": "IncidentOID",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "IncidentOID"
+                  },
+                  {
+                      "name": "Shape_Length",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Shape_Length"
+                  }
+              ],
+              "features": [
+                  {
+                      "attributes": {
+                          "ObjectID": 1,
+                          "FacilityRank": 1,
+                          "Name": "Station 21 - Eastbank/Hawthrone - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "IncidentCurbApproach": 2,
+                          "FacilityCurbApproach": 2,
+                          "StartTime": 1611676800000,
+                          "EndTime": 1611677010050,
+                          "StartTimeUTC": 1611705600000,
+                          "EndTimeUTC": 1611705810050,
+                          "FacilityID": null,
+                          "IncidentID": null,
+                          "Total_Miles": 0.67127596411697754,
+                          "Total_Kilometers": 1.0803161058280848,
+                          "Total_Minutes": 3.5008302147758044,
+                          "FacilityOID": 30,
+                          "IncidentOID": 1,
+                          "Shape_Length": 0.01275397030456495
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.66823543599997,
+                                      45.512980000000027
+                                  ],
+                                  [
+                                      -122.66709999999995,
+                                      45.512980000000027
+                                  ],
+                                  [
+                                      -122.66651999999999,
+                                      45.512980000000027
+                                  ],
+                                  [
+                                      -122.66584999999998,
+                                      45.512940000000071
+                                  ],
+                                  [
+                                      -122.66585999999995,
+                                      45.513680000000079
+                                  ],
+                                  [
+                                      -122.66536999999994,
+                                      45.513670000000047
+                                  ],
+                                  [
+                                      -122.66481999999996,
+                                      45.513660000000073
+                                  ],
+                                  [
+                                      -122.66382999999996,
+                                      45.513670000000047
+                                  ],
+                                  [
+                                      -122.66281999999995,
+                                      45.513670000000047
+                                  ],
+                                  [
+                                      -122.66279999999995,
+                                      45.514390000000049
+                                  ],
+                                  [
+                                      -122.66181999999998,
+                                      45.514390000000049
+                                  ],
+                                  [
+                                      -122.66076999999996,
+                                      45.514390000000049
+                                  ],
+                                  [
+                                      -122.66004999999996,
+                                      45.514380000000074
+                                  ],
+                                  [
+                                      -122.65973999999994,
+                                      45.514380000000074
+                                  ],
+                                  [
+                                      -122.65973999999994,
+                                      45.514540000000068
+                                  ],
+                                  [
+                                      -122.65972999999997,
+                                      45.514740000000074
+                                  ],
+                                  [
+                                      -122.65972999999997,
+                                      45.514950000000056
+                                  ],
+                                  [
+                                      -122.65972999999997,
+                                      45.515090000000043
+                                  ],
+                                  [
+                                      -122.65912999999995,
+                                      45.515080000000069
+                                  ],
+                                  [
+                                      -122.65890999999999,
+                                      45.515080000000069
+                                  ],
+                                  [
+                                      -122.65867999999995,
+                                      45.515080000000069
+                                  ],
+                                  [
+                                      -122.65844999999996,
+                                      45.515080000000069
+                                  ],
+                                  [
+                                      -122.65798999999998,
+                                      45.515080000000069
+                                  ],
+                                  [
+                                      -122.65798999999998,
+                                      45.515436350000073
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 2,
+                          "FacilityRank": 2,
+                          "Name": " Station 01 - Old Town - 1020 SE 7th Ave, Portland, Oregon, 97214",
+                          "IncidentCurbApproach": 1,
+                          "FacilityCurbApproach": 2,
+                          "StartTime": 1611676800000,
+                          "EndTime": 1611677065777,
+                          "StartTimeUTC": 1611705600000,
+                          "EndTimeUTC": 1611705865777,
+                          "FacilityID": null,
+                          "IncidentID": null,
+                          "Total_Miles": 1.2114367334364797,
+                          "Total_Kilometers": 1.9496223375802735,
+                          "Total_Minutes": 4.4296148292720749,
+                          "FacilityOID": 13,
+                          "IncidentOID": 1,
+                          "Shape_Length": 0.022330709052904407
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.67076347099999,
+                                      45.521576209000045
+                                  ],
+                                  [
+                                      -122.67048999999997,
+                                      45.521510000000035
+                                  ],
+                                  [
+                                      -122.67081999999999,
+                                      45.520800000000065
+                                  ],
+                                  [
+                                      -122.67085999999995,
+                                      45.520730000000071
+                                  ],
+                                  [
+                                      -122.67140999999998,
+                                      45.519710000000032
+                                  ],
+                                  [
+                                      -122.67159999999996,
+                                      45.519380000000069
+                                  ],
+                                  [
+                                      -122.67174999999997,
+                                      45.519090000000062
+                                  ],
+                                  [
+                                      -122.67206999999996,
+                                      45.518560000000036
+                                  ],
+                                  [
+                                      -122.67215999999996,
+                                      45.518390000000068
+                                  ],
+                                  [
+                                      -122.67225999999999,
+                                      45.518200000000036
+                                  ],
+                                  [
+                                      -122.67240999999996,
+                                      45.517910000000029
+                                  ],
+                                  [
+                                      -122.67258999999996,
+                                      45.517580000000066
+                                  ],
+                                  [
+                                      -122.67314999999996,
+                                      45.517790000000048
+                                  ],
+                                  [
+                                      -122.67320999999998,
+                                      45.518080000000054
+                                  ],
+                                  [
+                                      -122.67300999999998,
+                                      45.518280000000061
+                                  ],
+                                  [
+                                      -122.67237999999998,
+                                      45.518420000000049
+                                  ],
+                                  [
+                                      -122.67215999999996,
+                                      45.518390000000068
+                                  ],
+                                  [
+                                      -122.67196999999999,
+                                      45.51836000000003
+                                  ],
+                                  [
+                                      -122.67170999999996,
+                                      45.51834000000008
+                                  ],
+                                  [
+                                      -122.67153999999999,
+                                      45.518330000000049
+                                  ],
+                                  [
+                                      -122.67120999999997,
+                                      45.518240000000048
+                                  ],
+                                  [
+                                      -122.67107999999996,
+                                      45.518200000000036
+                                  ],
+                                  [
+                                      -122.67061999999999,
+                                      45.518080000000054
+                                  ],
+                                  [
+                                      -122.66861999999998,
+                                      45.517530000000079
+                                  ],
+                                  [
+                                      -122.66830999999996,
+                                      45.517450000000053
+                                  ],
+                                  [
+                                      -122.66802999999999,
+                                      45.517370000000028
+                                  ],
+                                  [
+                                      -122.66773999999998,
+                                      45.517250000000047
+                                  ],
+                                  [
+                                      -122.66757999999999,
+                                      45.517190000000028
+                                  ],
+                                  [
+                                      -122.66746999999998,
+                                      45.517130000000066
+                                  ],
+                                  [
+                                      -122.66720999999995,
+                                      45.516980000000046
+                                  ],
+                                  [
+                                      -122.66707999999994,
+                                      45.516920000000027
+                                  ],
+                                  [
+                                      -122.66682999999995,
+                                      45.516820000000052
+                                  ],
+                                  [
+                                      -122.66615999999999,
+                                      45.516600000000039
+                                  ],
+                                  [
+                                      -122.66579999999999,
+                                      45.516560000000027
+                                  ],
+                                  [
+                                      -122.66481999999996,
+                                      45.516550000000052
+                                  ],
+                                  [
+                                      -122.66377999999997,
+                                      45.516530000000046
+                                  ],
+                                  [
+                                      -122.66276999999997,
+                                      45.516530000000046
+                                  ],
+                                  [
+                                      -122.66180999999995,
+                                      45.516530000000046
+                                  ],
+                                  [
+                                      -122.66148999999996,
+                                      45.516530000000046
+                                  ],
+                                  [
+                                      -122.66074999999995,
+                                      45.516530000000046
+                                  ],
+                                  [
+                                      -122.66008999999997,
+                                      45.516520000000071
+                                  ],
+                                  [
+                                      -122.65973999999994,
+                                      45.516520000000071
+                                  ],
+                                  [
+                                      -122.65867999999995,
+                                      45.516530000000046
+                                  ],
+                                  [
+                                      -122.65866999999997,
+                                      45.515810000000045
+                                  ],
+                                  [
+                                      -122.65798999999998,
+                                      45.515810000000045
+                                  ],
+                                  [
+                                      -122.65798999999998,
+                                      45.515436350000073
+                                  ]
+                              ]
+                          ]
+                      }
+                  }
+              ],
+              "exceededTransferLimit": false
+          }
+      }
+order: 1000

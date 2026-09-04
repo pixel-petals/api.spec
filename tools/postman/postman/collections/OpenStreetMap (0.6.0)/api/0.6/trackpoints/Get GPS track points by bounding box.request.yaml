@@ -1,0 +1,42 @@
+$kind: http-request
+description: Returns GPS track points within the bounding box as GPX 1.0. Returns 5000 points per page. Increment the page parameter to retrieve subsequent pages.
+url: "{{baseUrl}}/api/0.6/trackpoints?bbox=0,51.5,0.25,51.75&page=0"
+method: GET
+headers:
+  Accept: application/gpx+xml
+queryParams:
+  - key: bbox
+    value: 0,51.5,0.25,51.75
+    description: Bounding box as left,bottom,right,top. Max width and height is 0.25 degrees.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: page
+    value: "0"
+    description: Page number (0-indexed). Each page contains up to 5000 points.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "default": 0
+          }
+        }
+      }
+body:
+  type: text
+  content: ""
+auth:
+  type: noauth
+examples: ./.resources/Get GPS track points by bounding box.resources/examples
+order: 1000

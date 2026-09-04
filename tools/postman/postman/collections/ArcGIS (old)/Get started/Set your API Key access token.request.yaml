@@ -1,0 +1,22 @@
+$kind: http-request
+description: |-
+  API key authentication is a type of authentication that uses long-lived access tokens embedded directly into an application to authenticate requests to access secure ArcGIS services and items. The access tokens are called API keys and managed through API key credentials. It is the easiest type of authentication to set up, and is the recommended type of authentication for public applications that access ArcGIS Location Services.
+
+  To get started, complete the [Create an API key](https://[https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/tutorials/create-an-api-key/](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/tutorials/create-an-api-key/)) tutorial, then add your new API key token to the [global <code>ACCESS_TOKEN</code>](https://www.postman.com/esridevs/esri-arcgis-services/globals) variable or paste it into the API_KEY parameter of this request to set it automatically. The token will then be used in all subsequent requests.
+url: https://postman-echo.com/post
+method: POST
+body:
+  type: urlencoded
+  content:
+    - key: API_KEY
+      value: <YOUR_API_KEY>
+      description: Enter the API Key you created after finishing the Create an API Key tutorial. This request just sets the `ACCESS_TOKEN` global variable.
+scripts:
+  - type: afterResponse
+    code: |-
+      const inputAPIKey = pm.response.json().json.API_KEY
+
+      pm.globals.set("ACCESS_TOKEN", inputAPIKey)
+    language: text/javascript
+examples: ./.resources/Set your API Key access token.resources/examples
+order: 2000

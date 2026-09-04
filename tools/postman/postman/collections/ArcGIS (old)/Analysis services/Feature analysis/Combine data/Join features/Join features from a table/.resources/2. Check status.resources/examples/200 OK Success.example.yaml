@@ -1,0 +1,36 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/JoinFeatures/jobs/{{job_id}}"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: "{\r
+
+      \  \"jobId\": \"<JOB_ID>\",\r
+
+      \  \"jobStatus\": \"esriJobSucceeded\",\r
+
+      \  \"results\": {\r
+
+      \    \"outputLayer\": {\r
+
+      \      \"paramUrl\": \"results/outputLayer\"\r
+
+      \    }\r
+
+      \  },\r
+
+      \  \"inputs\": {},\r
+
+      \  \"messages\": []\r
+
+      }"
+order: 2000

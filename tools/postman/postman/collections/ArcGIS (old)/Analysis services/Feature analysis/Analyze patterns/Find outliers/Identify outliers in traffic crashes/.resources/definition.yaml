@@ -1,0 +1,3 @@
+$kind: collection
+description: To visualize the results, go to the [example](https://developers.arcgis.com/documentation/mapping-apis-and-services/spatial-analysis/feature-analysis/analyze-patterns/find-outliers/#identify-outliers-in-traffic-crashes) in the _Mapping APIs and location services_ guide.
+order: 1000

@@ -1,0 +1,52 @@
+$kind: http-example
+request:
+  url: https://postman-echo.com/post
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      - key: API_KEY
+        value: <YOUR_API_KEY>
+        description: Enter the API Key you created after finishing the Create an API Key tutorial. This request just sets the `ACCESS_TOKEN` global variable.
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 03 Oct 2025 20:58:12 GMT
+    Content-Type: application/json; charset=utf-8
+    Content-Length: "724"
+    Connection: keep-alive
+    Server: nginx
+    ETag: W/"2d4-DSlO9Tqjnp4lOU+2/57LauU+v7s"
+    Set-Cookie: sails.sid=s%3A9HR9VorU_HW9wzuWwKFlM7VfUIpmUtvs.po5yrBLSF2%2FBhC4DSC%2Fbrdq7yRnUZC8lQEesSUuoRks; Path=/; HttpOnly
+  body:
+    type: text
+    content: |-
+      {
+          "args": {},
+          "data": "",
+          "files": {},
+          "form": {
+              "API_KEY": "<YOUR_API_KEY>"
+          },
+          "headers": {
+              "host": "postman-echo.com",
+              "x-request-start": "t1759525092.090",
+              "connection": "close",
+              "content-length": "26",
+              "x-forwarded-proto": "https",
+              "x-forwarded-port": "443",
+              "x-amzn-trace-id": "Root=1-68e038e4-6c01ce483f6e8098225a85aa",
+              "user-agent": "PostmanRuntime/7.48.0",
+              "accept": "*/*",
+              "cache-control": "no-cache",
+              "postman-token": "85f1a3fd-77e3-4084-8733-189b73f92a2d",
+              "accept-encoding": "gzip, deflate, br",
+              "content-type": "application/x-www-form-urlencoded"
+          },
+          "json": {
+              "API_KEY": "<YOUR_API_KEY>"
+          },
+          "url": "https://postman-echo.com/post"
+      }
+order: 1000

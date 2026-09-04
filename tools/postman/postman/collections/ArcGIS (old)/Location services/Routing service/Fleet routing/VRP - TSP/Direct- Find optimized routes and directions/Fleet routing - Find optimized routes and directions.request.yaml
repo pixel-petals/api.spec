@@ -1,0 +1,15 @@
+$kind: http-request
+description: Finds the most efficient routes and directions for a fleet of vehicles based on input stops, depots, and constraints. Use this request to optimize delivery or service routes, minimize travel time, and generate turn-by-turn directions for each vehicle in the fleet.
+url: https://logistics.arcgis.com/arcgis/rest/services/World/VehicleRoutingProblemSync/GPServer/EditVehicleRoutingProblem/execute
+method: POST
+body:
+  type: urlencoded
+  content:
+    token: "{{ACCESS_TOKEN}}"
+    f: json
+    orders: "{'type':'features','features':[{'attributes':{'Name':'Father\\'s Office','ServiceTime':10},'geometry':{'x':-118.498406,'y':34.029445}},{'attributes':{'Name':'R+D Kitchen','ServiceTime':10},'geometry':{'x':-118.495788,'y':34.032339}},{'attributes':{'Name':'Pono Burger','ServiceTime':10},'geometry':{'x':-118.489469,'y':34.019000}},{'attributes':{'Name':'Il Ristorante di Giorgio Baldi','ServiceTime':10},'geometry':{'x':-118.518787,'y':34.028508}},{'attributes':{'Name':'Milo + Olive','ServiceTime':10},'geometry':{'x':-118.476026,'y':34.037572}},{'attributes':{'Name':'Dialogue','ServiceTime':10},'geometry':{'x':-118.495814,'y':34.017042}}]}"
+    depots: "{'type':'features','features':[{'attributes':{'Name':'Bay Cities Kitchens and Appliances'},'geometry':{'x':-118.469630,'y':34.037555}}]}"
+    routes: "{'features':[{'attributes':{'Name':'Route 1','Description':'vehicle 1','StartDepotName':'Bay Cities Kitchens and Appliances','EndDepotName':'Bay Cities Kitchens and Appliances','Capacities':'4','MaxOrderCount':3,'MaxTotalTime':60,}},{'attributes':{'Name':'Route 2','Description':'vehicle 2','StartDepotName':'Bay Cities Kitchens and Appliances','EndDepotName':'Bay Cities Kitchens and Appliances','Capacities':'4','MaxOrderCount':3,'MaxTotalTime':60,}}]}"
+    populate_directions: "true"
+examples: ./.resources/Fleet routing - Find optimized routes and directions.resources/examples
+order: 1000

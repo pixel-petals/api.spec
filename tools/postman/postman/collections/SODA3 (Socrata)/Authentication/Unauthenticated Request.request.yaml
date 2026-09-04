@@ -1,0 +1,11 @@
+$kind: http-request
+description: Unauthenticated requests are allowed but throttled. Without an app token, requests come from a shared pool limited to a low rate. Register for a free app token at https://dev.socrata.com/register to get up to 1000 requests per rolling hour.
+url: "{{baseUrl}}/api/v3/views/{{datasetId}}/query.json"
+method: POST
+headers:
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: '{"query":"SELECT *","page":{"pageNumber":1,"pageSize":10}}'
+order: 3000

@@ -1,0 +1,16 @@
+$kind: http-request
+description: "[API Documentation 2.6.3](http://docs.ckan.org/en/ckan-2.6.3/api/index.html#ckan.logic.action.get.organization_list_for_user)"
+url: "{{CKAN_API}}/user_autocomplete"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: q
+    value: null
+    disabled: true
+    description: (string) – the string to search for
+  - key: order_by
+    value: null
+    disabled: true
+    description: "(int) – the maximum number of user names to return (optional, default: 20)"
+order: 15000

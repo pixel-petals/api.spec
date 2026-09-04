@@ -1,0 +1,19 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/elevation/multiple-point-elevations/#find-the-elevations-of-multiple-points)
+url: https://elevation-api.arcgis.com/arcgis/rest/services/elevation-service/v1/elevation/at-many-points
+method: POST
+body:
+  type: urlencoded
+  content:
+    - key: coordinates
+      value: "[[1.2783, 51.1102], [1.3507, 51.0883], [1.4206, 51.0524], [1.4939, 51.0162], [1.5978, 50.9827], [1.7302, 50.9387]]"
+      description: Array of (longitude, latitude) pairs in the WGS84 spatial reference. Maximum size of 100 coordinates.
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      description: An access token from an ArcGIS Location Platform account.
+    - key: relativeTo
+      value: ""
+      disabled: true
+      description: Reference point to measure elevation from. Supported values are "meanSeaLevel" and "ellipsoid".
+examples: ./.resources/Find elevation at multiple points.resources/examples
+order: 2000

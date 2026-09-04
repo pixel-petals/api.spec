@@ -1,0 +1,16 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/search/search-items/#search-for-tags-and-an-owner)
+url: https://www.arcgis.com/sharing/rest/search?q=tags:"USA Demographics" AND owner:"esri"&f=pjson
+method: GET
+queryParams:
+  - key: q
+    value: tags:"USA Demographics" AND owner:"esri"
+    description: Query parameters to search for an item.
+  - key: f
+    value: pjson
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    disabled: true
+    description: If accessing a private item.
+examples: ./.resources/Search for tags and an owner.resources/examples
+order: 5000

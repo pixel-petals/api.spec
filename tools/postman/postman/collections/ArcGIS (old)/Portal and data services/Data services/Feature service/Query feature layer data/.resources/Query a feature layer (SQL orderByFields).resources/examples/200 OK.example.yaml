@@ -1,0 +1,976 @@
+$kind: http-example
+request:
+  url: https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/LA_County_Parcels/FeatureServer/0/query?where=UseType = 'Residential'&resultRecordCount=1&f=json&outFields=*
+  method: GET
+  queryParams:
+    - key: where
+      value: UseType = 'Residential'
+    - key: resultRecordCount
+      value: "1"
+    - key: f
+      value: json
+    - key: outFields
+      value: "*"
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      disabled: true
+      description: "If your layer is not public, you will need an access token to access it. "
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json; charset=utf-8
+    Content-Length: "1945"
+    Connection: keep-alive
+    Cache-Control: public, max-age=30, s-maxage=30
+    Content-Encoding: br
+    Last-Modified: Thu, 19 Nov 2020 22:33:01 GMT
+    ETag: sd290_444460315
+    X-ArcGIS-Trace-Id: f59fc158728af54284f34a1e6f0ec2e6
+    x-esri-query-request-units: "2"
+    x-esri-tiles-basic-query-mode: "true"
+    x-esri-tiles-basic-query-type: Basic
+    x-esri-query-max-vertex-count: "6"
+    x-esri-query-geometry-field-name: Shape
+    X-ArcGIS-Correlation-Id: 00-f59fc158728af54284f34a1e6f0ec2e6-712def79a8eff647-00
+    X-ArcGIS-Instance: MTSDS_Web_IN_8
+    Strict-Transport-Security: max-age=63072000
+    Access-Control-Allow-Origin: "*"
+    Date: Tue, 11 Jan 2022 01:29:00 GMT
+    X-Cache: Miss from cloudfront
+    Via: 1.1 2b72ec8519147ac56ddc0dd5ac0b0210.cloudfront.net (CloudFront)
+    X-Amz-Cf-Pop: IAD66-C2
+    X-Amz-Cf-Id: Bxh70ss_r-w8_aZcf2PKEukvhH68-fmgZYFWpDCC8dE0HTdz8fKDxg==
+  body:
+    type: json
+    content: |-
+      {
+          "objectIdFieldName": "OBJECTID",
+          "uniqueIdField": {
+              "name": "OBJECTID",
+              "isSystemMaintained": true
+          },
+          "globalIdFieldName": "",
+          "geometryProperties": {
+              "shapeAreaFieldName": "Shape__Area",
+              "shapeLengthFieldName": "Shape__Length",
+              "units": "esriMeters"
+          },
+          "geometryType": "esriGeometryPolygon",
+          "spatialReference": {
+              "wkid": 102100,
+              "latestWkid": 3857
+          },
+          "fields": [
+              {
+                  "name": "OBJECTID",
+                  "type": "esriFieldTypeOID",
+                  "alias": "OBJECTID",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "AIN",
+                  "type": "esriFieldTypeString",
+                  "alias": "AIN",
+                  "sqlType": "sqlTypeOther",
+                  "length": 10,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "APN",
+                  "type": "esriFieldTypeString",
+                  "alias": "APN",
+                  "sqlType": "sqlTypeOther",
+                  "length": 12,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusHouseNo",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusHouseNo",
+                  "sqlType": "sqlTypeOther",
+                  "length": 5,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusFraction",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusFraction",
+                  "sqlType": "sqlTypeOther",
+                  "length": 3,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusDirection",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusDirection",
+                  "sqlType": "sqlTypeOther",
+                  "length": 1,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusUnit",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusUnit",
+                  "sqlType": "sqlTypeOther",
+                  "length": 8,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusStreet",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusStreet",
+                  "sqlType": "sqlTypeOther",
+                  "length": 32,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusAddress",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusAddress",
+                  "sqlType": "sqlTypeOther",
+                  "length": 55,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusCity",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusCity",
+                  "sqlType": "sqlTypeOther",
+                  "length": 24,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusZIP",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusZIP",
+                  "sqlType": "sqlTypeOther",
+                  "length": 10,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusFullAddress",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusFullAddress",
+                  "sqlType": "sqlTypeOther",
+                  "length": 84,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "TaxRateArea",
+                  "type": "esriFieldTypeString",
+                  "alias": "TaxRateArea",
+                  "sqlType": "sqlTypeOther",
+                  "length": 5,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "TaxRateCity",
+                  "type": "esriFieldTypeString",
+                  "alias": "TaxRateCity",
+                  "sqlType": "sqlTypeOther",
+                  "length": 21,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "AgencyClassNo",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "AgencyClassNo",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "AgencyName",
+                  "type": "esriFieldTypeString",
+                  "alias": "AgencyName",
+                  "sqlType": "sqlTypeOther",
+                  "length": 255,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "AgencyType",
+                  "type": "esriFieldTypeString",
+                  "alias": "AgencyType",
+                  "sqlType": "sqlTypeOther",
+                  "length": 255,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "UseCode",
+                  "type": "esriFieldTypeString",
+                  "alias": "UseCode",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "UseCode_2",
+                  "type": "esriFieldTypeString",
+                  "alias": "UseCode_2",
+                  "sqlType": "sqlTypeOther",
+                  "length": 2,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "UseType",
+                  "type": "esriFieldTypeString",
+                  "alias": "UseType",
+                  "sqlType": "sqlTypeOther",
+                  "length": 14,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "UseDescription",
+                  "type": "esriFieldTypeString",
+                  "alias": "UseDescription",
+                  "sqlType": "sqlTypeOther",
+                  "length": 61,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "DesignType1",
+                  "type": "esriFieldTypeString",
+                  "alias": "DesignType1",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "YearBuilt1",
+                  "type": "esriFieldTypeString",
+                  "alias": "YearBuilt1",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "EffectiveYear1",
+                  "type": "esriFieldTypeString",
+                  "alias": "EffectiveYear1",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Units1",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Units1",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bedrooms1",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bedrooms1",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bathrooms1",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bathrooms1",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SQFTmain1",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "SQFTmain1",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "DesignType2",
+                  "type": "esriFieldTypeString",
+                  "alias": "DesignType2",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "YearBuilt2",
+                  "type": "esriFieldTypeString",
+                  "alias": "YearBuilt2",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "EffectiveYear2",
+                  "type": "esriFieldTypeString",
+                  "alias": "EffectiveYear2",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Units2",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Units2",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bedrooms2",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bedrooms2",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bathrooms2",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bathrooms2",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SQFTmain2",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "SQFTmain2",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "DesignType3",
+                  "type": "esriFieldTypeString",
+                  "alias": "DesignType3",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "YearBuilt3",
+                  "type": "esriFieldTypeString",
+                  "alias": "YearBuilt3",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "EffectiveYear3",
+                  "type": "esriFieldTypeString",
+                  "alias": "EffectiveYear3",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Units3",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Units3",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bedrooms3",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bedrooms3",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bathrooms3",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bathrooms3",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SQFTmain3",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "SQFTmain3",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "DesignType4",
+                  "type": "esriFieldTypeString",
+                  "alias": "DesignType4",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "YearBuilt4",
+                  "type": "esriFieldTypeString",
+                  "alias": "YearBuilt4",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "EffectiveYear4",
+                  "type": "esriFieldTypeString",
+                  "alias": "EffectiveYear4",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Units4",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Units4",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bedrooms4",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bedrooms4",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bathrooms4",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bathrooms4",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SQFTmain4",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "SQFTmain4",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "DesignType5",
+                  "type": "esriFieldTypeString",
+                  "alias": "DesignType5",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "YearBuilt5",
+                  "type": "esriFieldTypeString",
+                  "alias": "YearBuilt5",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "EffectiveYear5",
+                  "type": "esriFieldTypeString",
+                  "alias": "EffectiveYear5",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Units5",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Units5",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bedrooms5",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bedrooms5",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bathrooms5",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bathrooms5",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SQFTmain5",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "SQFTmain5",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_Year",
+                  "type": "esriFieldTypeString",
+                  "alias": "Roll_Year",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_LandValue",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_LandValue",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_ImpValue",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_ImpValue",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_PersPropValue",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_PersPropValue",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_FixtureValue",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_FixtureValue",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_HomeOwnersExemp",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_HomeOwnersExemp",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_RealEstateExemp",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_RealEstateExemp",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_PersPropExemp",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_PersPropExemp",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_FixtureExemp",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_FixtureExemp",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_LandBaseYear",
+                  "type": "esriFieldTypeString",
+                  "alias": "Roll_LandBaseYear",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_ImpBaseYear",
+                  "type": "esriFieldTypeString",
+                  "alias": "Roll_ImpBaseYear",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "QualityClass1",
+                  "type": "esriFieldTypeString",
+                  "alias": "QualityClass1",
+                  "sqlType": "sqlTypeOther",
+                  "length": 5,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "QualityClass2",
+                  "type": "esriFieldTypeString",
+                  "alias": "QualityClass2",
+                  "sqlType": "sqlTypeOther",
+                  "length": 5,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "QualityClass3",
+                  "type": "esriFieldTypeString",
+                  "alias": "QualityClass3",
+                  "sqlType": "sqlTypeOther",
+                  "length": 5,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "QualityClass4",
+                  "type": "esriFieldTypeString",
+                  "alias": "QualityClass4",
+                  "sqlType": "sqlTypeOther",
+                  "length": 5,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "QualityClass5",
+                  "type": "esriFieldTypeString",
+                  "alias": "QualityClass5",
+                  "sqlType": "sqlTypeOther",
+                  "length": 5,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LegalDescLine1",
+                  "type": "esriFieldTypeString",
+                  "alias": "LegalDescLine1",
+                  "sqlType": "sqlTypeOther",
+                  "length": 40,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LegalDescLine2",
+                  "type": "esriFieldTypeString",
+                  "alias": "LegalDescLine2",
+                  "sqlType": "sqlTypeOther",
+                  "length": 40,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LegalDescLine3",
+                  "type": "esriFieldTypeString",
+                  "alias": "LegalDescLine3",
+                  "sqlType": "sqlTypeOther",
+                  "length": 40,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LegalDescLine4",
+                  "type": "esriFieldTypeString",
+                  "alias": "LegalDescLine4",
+                  "sqlType": "sqlTypeOther",
+                  "length": 40,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LegalDescLine5",
+                  "type": "esriFieldTypeString",
+                  "alias": "LegalDescLine5",
+                  "sqlType": "sqlTypeOther",
+                  "length": 40,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LegalDescLineLast",
+                  "type": "esriFieldTypeString",
+                  "alias": "LegalDescLineLast",
+                  "sqlType": "sqlTypeOther",
+                  "length": 40,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LegalDescription",
+                  "type": "esriFieldTypeString",
+                  "alias": "LegalDescription",
+                  "sqlType": "sqlTypeOther",
+                  "length": 500,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SpatialChangeDate",
+                  "type": "esriFieldTypeDate",
+                  "alias": "SpatialChangeDate",
+                  "sqlType": "sqlTypeOther",
+                  "length": 8,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "ParcelCreateDate",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "ParcelCreateDate",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "ParcelTypeCode",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "ParcelTypeCode",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Assr_Map",
+                  "type": "esriFieldTypeString",
+                  "alias": "Assr_Map",
+                  "sqlType": "sqlTypeOther",
+                  "length": 8,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Assr_Index_Map",
+                  "type": "esriFieldTypeString",
+                  "alias": "Assr_Index_Map",
+                  "sqlType": "sqlTypeOther",
+                  "length": 8,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "CENTER_LAT",
+                  "type": "esriFieldTypeDouble",
+                  "alias": "CENTER_LAT",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "CENTER_LON",
+                  "type": "esriFieldTypeDouble",
+                  "alias": "CENTER_LON",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "CENTER_X",
+                  "type": "esriFieldTypeDouble",
+                  "alias": "CENTER_X",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "CENTER_Y",
+                  "type": "esriFieldTypeDouble",
+                  "alias": "CENTER_Y",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LAT_LON",
+                  "type": "esriFieldTypeString",
+                  "alias": "LAT_LON",
+                  "sqlType": "sqlTypeOther",
+                  "length": 62,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Shape__Area",
+                  "type": "esriFieldTypeDouble",
+                  "alias": "Shape__Area",
+                  "sqlType": "sqlTypeDouble",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Shape__Length",
+                  "type": "esriFieldTypeDouble",
+                  "alias": "Shape__Length",
+                  "sqlType": "sqlTypeDouble",
+                  "domain": null,
+                  "defaultValue": null
+              }
+          ],
+          "exceededTransferLimit": true,
+          "features": [
+              {
+                  "attributes": {
+                      "OBJECTID": 52,
+                      "AIN": "2004001003",
+                      "APN": "2004-001-003",
+                      "SitusHouseNo": "8321",
+                      "SitusFraction": " ",
+                      "SitusDirection": " ",
+                      "SitusUnit": " ",
+                      "SitusStreet": "FAUST AVE",
+                      "SitusAddress": "8321 FAUST AVE",
+                      "SitusCity": "LOS ANGELES CA",
+                      "SitusZIP": "91304-3327",
+                      "SitusFullAddress": "8321 FAUST AVE LOS ANGELES CA 91304",
+                      "TaxRateArea": "00016",
+                      "TaxRateCity": "LOS ANGELES",
+                      "AgencyClassNo": null,
+                      "AgencyName": null,
+                      "AgencyType": null,
+                      "UseCode": "0101",
+                      "UseCode_2": "01",
+                      "UseType": "Residential",
+                      "UseDescription": "Single",
+                      "DesignType1": "0131",
+                      "YearBuilt1": "1973",
+                      "EffectiveYear1": "1973",
+                      "Units1": 1,
+                      "Bedrooms1": 4,
+                      "Bathrooms1": 3,
+                      "SQFTmain1": 2090,
+                      "DesignType2": null,
+                      "YearBuilt2": null,
+                      "EffectiveYear2": null,
+                      "Units2": null,
+                      "Bedrooms2": null,
+                      "Bathrooms2": null,
+                      "SQFTmain2": null,
+                      "DesignType3": null,
+                      "YearBuilt3": null,
+                      "EffectiveYear3": null,
+                      "Units3": null,
+                      "Bedrooms3": null,
+                      "Bathrooms3": null,
+                      "SQFTmain3": null,
+                      "DesignType4": null,
+                      "YearBuilt4": null,
+                      "EffectiveYear4": null,
+                      "Units4": null,
+                      "Bedrooms4": null,
+                      "Bathrooms4": null,
+                      "SQFTmain4": null,
+                      "DesignType5": null,
+                      "YearBuilt5": null,
+                      "EffectiveYear5": null,
+                      "Units5": null,
+                      "Bedrooms5": null,
+                      "Bathrooms5": null,
+                      "SQFTmain5": null,
+                      "Roll_Year": "2020",
+                      "Roll_LandValue": 543000,
+                      "Roll_ImpValue": 231000,
+                      "Roll_PersPropValue": 0,
+                      "Roll_FixtureValue": 0,
+                      "Roll_HomeOwnersExemp": 0,
+                      "Roll_RealEstateExemp": 0,
+                      "Roll_PersPropExemp": 0,
+                      "Roll_FixtureExemp": 0,
+                      "Roll_LandBaseYear": "2006",
+                      "Roll_ImpBaseYear": "2006",
+                      "QualityClass1": "D7C  ",
+                      "QualityClass2": null,
+                      "QualityClass3": null,
+                      "QualityClass4": null,
+                      "QualityClass5": null,
+                      "LegalDescLine1": "TRACT NO 25040 LOT   99",
+                      "LegalDescLine2": null,
+                      "LegalDescLine3": null,
+                      "LegalDescLine4": null,
+                      "LegalDescLine5": null,
+                      "LegalDescLineLast": null,
+                      "LegalDescription": "TRACT NO 25040 LOT   99",
+                      "SpatialChangeDate": null,
+                      "ParcelCreateDate": 0,
+                      "ParcelTypeCode": 0,
+                      "Assr_Map": "2004-001",
+                      "Assr_Index_Map": "2004-NDX",
+                      "CENTER_LAT": 34.22021979,
+                      "CENTER_LON": -118.62066881,
+                      "CENTER_X": 6374037.18070554,
+                      "CENTER_Y": 1903103.56710631,
+                      "LAT_LON": "34.220220, -118.620669",
+                      "Shape__Area": 1319.40234375,
+                      "Shape__Length": 157.842523712718
+                  },
+                  "geometry": {
+                      "rings": [
+                          [
+                              [
+                                  -13204766.3538678,
+                                  4058399.77888738
+                              ],
+                              [
+                                  -13204821.2194976,
+                                  4058398.74674666
+                              ],
+                              [
+                                  -13204821.2629007,
+                                  4058418.83056127
+                              ],
+                              [
+                                  -13204821.2716357,
+                                  4058422.79627624
+                              ],
+                              [
+                                  -13204766.4095481,
+                                  4058423.82469731
+                              ],
+                              [
+                                  -13204766.3538678,
+                                  4058399.77888738
+                              ]
+                          ]
+                      ]
+                  }
+              }
+          ]
+      }
+order: 1000

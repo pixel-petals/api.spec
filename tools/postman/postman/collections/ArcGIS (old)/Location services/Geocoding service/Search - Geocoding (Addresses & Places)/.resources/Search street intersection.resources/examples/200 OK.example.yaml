@@ -1,0 +1,83 @@
+$kind: http-example
+request:
+  url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?f=pjson&token={{ACCESS_TOKEN}}&category=intersection&singleLine=7th street NW and Pennsylvania Ave NW, Washington DC
+  method: GET
+  queryParams:
+    - key: f
+      value: pjson
+      description: "(Required) Format of the response: json, pjson, html, ..."
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      description: (Required on Platform) You need a valid access token. To learn more, read the collection's documentation.
+    - key: address
+      value: Cambie St and W King Edward Ave
+      disabled: true
+      description: Search for an address, POI category, intersection, etc.
+    - key: City
+      value: Vancouver
+      disabled: true
+    - key: Region
+      value: British Columbia
+      disabled: true
+    - key: category
+      value: intersection
+    - key: singleLine
+      value: 7th street NW and Pennsylvania Ave NW, Washington DC
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 18 Dec 2025 16:49:41 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: max-age=0,must-revalidate
+    X-Content-Type-Options: nosniff
+    Vary: Origin
+    Server: ""
+    Set-Cookie: AGS_ROLES="sym-gcm|1|JYyjMRJaWwofioiJCo0BRw==|ifMEofqZV45eXYElbKr30QAEGRKAxsFSR9yQZ-WzBx90gNSLvGxmhb_EeeOspBCgBuEGE89e7skB6GTlg2hlgG1rpYbuDyn-TdJ13PgcVNMggTj2Kh4Qsppu9ceuYNa-vAJgztSzqit7H6jspgr52XTJRCTOnhUGKMO9g04iGZNLHKUeS2Tyh5gtia7I3srz3CjEjSb2vNqnhreVM4-WE1jU2NavDAlzfFdsLbu123FANIzj0QG0MjTv6O-AFGzuk9M7Vu_vmIE-mSSnzJf6hUOFUTrrDFkPa4s7-bZPoZJj-n4wsM-75SInTfs4tZmREgAvarpEyQ7aCR9hjvFeqtAay90xgnHniPb11NUzWKZicBMSUrhw6kN10ZhAI_JEnukpJZhoez4RAqhQguc6KzM1LMdjJvNXGda90xNGbJL-DQ6-ubYFyT6rzhVZ8rCuyz6_SsFyeoYq_lIT0IDapN8jSCcd789FomsB5vrDymgywa9r2hZMM2GdyhH4FLkmocpmjbgSDWMYmywHukoEaqs38Qm8jmVbAiOJ4QAFm5-aMqubLLge8U0uLUU5ZzON9LkwWqOwQzRpSb87OOHg_50LIkPFLPodhNu__rlWZJ3ZeQ4bEt3XHxYQqyfGkB_Ue9RiJSbWWuKcGiY47-6RSVm9NSxZxmfPULcg2jS3PtxocWk6yt-atdEOb4sM6H9YzYiUHXyAyqQrkgN-5VzgNq-yS1ijEYTW1wk-Q1PvrR29M4sT-5nI5N-n0j1sX9280R0ZAoJvKEOIL4v0-KUUbKVmCu3i2NeQwhR6dsao-ZEp2l8-QcL9Um-GTG9hCv4wMNCbvn0lDhWep6VcHfyk"; Version=1; Max-Age=60; Expires=Thu, 18 Dec 2025 16:50:41 GMT; Path=/arcgis/rest; Secure; HttpOnly
+    ETag: '"dd23da87"'
+    Content-Encoding: gzip
+    X-Region: us-east-1
+  body:
+    type: text
+    content: |-
+      {
+          "spatialReference": {
+              "wkid": 4326,
+              "latestWkid": 4326
+          },
+          "candidates": [
+              {
+                  "address": "7th St NW & Pennsylvania Ave NW, Washington, District of Columbia, 20004",
+                  "location": {
+                      "x": -77.021923007919,
+                      "y": 38.893389817743
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -77.022923007919,
+                      "ymin": 38.892389817743,
+                      "xmax": -77.020923007919,
+                      "ymax": 38.894389817743
+                  }
+              },
+              {
+                  "address": "7th St NW & Pennsylvania Ave NW, Washington, District of Columbia, 20004",
+                  "location": {
+                      "x": -77.021926025405,
+                      "y": 38.893240116953
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -77.022926025405,
+                      "ymin": 38.892240116953,
+                      "xmax": -77.020926025405,
+                      "ymax": 38.894240116953
+                  }
+              }
+          ]
+      }
+order: 1000

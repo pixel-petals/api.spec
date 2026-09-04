@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{CKAN_API}}/group_member_delete"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: id
+      value: ""
+      description: (string) – the id or name of the group
+    - type: text
+      key: username
+      value: ""
+      description: (string) – name or id of the user to be removed
+order: 5000

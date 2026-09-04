@@ -1,0 +1,45 @@
+$kind: http-example
+request:
+  url: https://logistics.arcgis.com/arcgis/rest/services/World/VehicleRoutingProblem/GPServer/SolveLastMileDelivery/submitJob
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+      orders: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/LMD_Dublin_orders/FeatureServer/0"}'
+      depots: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/LMD_Dublin_depots/FeatureServer/0"}'
+      routes: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/LMD_Dublin_Routes/FeatureServer/0"}'
+      zones: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/LMD_Dublin_zones/FeatureServer/0"}'
+      earliest_route_start_time: 17:00:00
+      earliest_route_start_date: 2025-01-22
+      max_route_total_time: "1"
+      time_units: Hours
+      analysis_region: Europe
+      travel_mode: '{"attributeParameterValues": [{"attributeName": "TruckTravelTime", "parameterName": "Vehicle Maximum Speed (km/h)", "value": 0}, {"attributeName": "Avoid Carpool Roads", "parameterName": "Restriction Usage", "value": "PROHIBITED"}, {"attributeName": "Avoid Express Lanes", "parameterName": "Restriction Usage", "value": "PROHIBITED"}, {"attributeName": "Avoid Gates", "parameterName": "Restriction Usage", "value": "AVOID_MEDIUM"}, {"attributeName": "Avoid Private Roads", "parameterName": "Restriction Usage", "value": "AVOID_MEDIUM"}, {"attributeName": "Avoid Truck Restricted Roads", "parameterName": "Restriction Usage", "value": "AVOID_HIGH"}, {"attributeName": "Avoid Unpaved Roads", "parameterName": "Restriction Usage", "value": "AVOID_HIGH"}, {"attributeName": "Driving a Truck", "parameterName": "Restriction Usage", "value": "PROHIBITED"}, {"attributeName": "Roads Under Construction Prohibited", "parameterName": "Restriction Usage", "value": "PROHIBITED"}, {"attributeName": "Through Traffic Prohibited", "parameterName": "Restriction Usage", "value": "AVOID_HIGH"}, {"attributeName": "Use Preferred Truck Routes", "parameterName": "Restriction Usage", "value": "PREFER_HIGH"}], "description": "Models basic truck travel by preferring designated truck routes, and finds solutions that optimize travel time. Routes must obey one-way roads, avoid illegal turns, and so on. When you specify a start time, dynamic travel speeds based on traffic are used where it is available, up to the legal truck speed limit.", "distanceAttributeName": "Kilometers", "id": "ZzzRtYcPLjXFBKwr", "impedanceAttributeName": "TruckTravelTime", "name": "Trucking Time", "restrictionAttributeNames": ["Avoid Carpool Roads", "Avoid Express Lanes", "Avoid Gates", "Avoid Private Roads", "Avoid Truck Restricted Roads", "Avoid Unpaved Roads", "Driving a Truck", "Roads Under Construction Prohibited", "Through Traffic Prohibited", "Use Preferred Truck Routes"], "simplificationTolerance": 10, "simplificationToleranceUnits": "esriMeters", "timeAttributeName": "TruckTravelTime", "type": "TRUCK", "useHierarchy": true, "uturnAtJunctions": "esriNFSBNoBacktrack"}'
+      route_shape: True Shape with Measures
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 03 Oct 2025 21:01:13 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "91"
+    Connection: keep-alive
+    Content-Security-Policy: script-src 'self';
+    X-Content-Type-Options: nosniff
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=sym-gcm|1|UyJ5ejLNxjgERDVZkaIdgQ==|EIM58ostVQkApFociaV0DxR0JR5SulO8xiHXn1YVvXhDNtjAImFcI-FdzWQqtfpveMTiQk6Ht2JNBWac97cRLu2emAoF53ubLY8i5VzlIgZ6mDQhberO9baK3vfopcEEDP5LUXsVkZSzftti9nGHGtkqs-5N6pfUwbmIrcRIcST4dGhLjn7MSAH81lj_EbeOknhgwSdXjOJgDLAmXY-Xy95Gpqw17QeLjFp-78oWHomHyLRBJ_MzVq6uBf5XrmpHMMCZfUjNGTaeo69rMJhAb6NKOK0aGmvquu5xISfk5PZXjxlw4vbduiMp_S6Os7lZdJStVXOk5H7d6LT7wP0NvtP2ijqzDOjfXJAxNDeGYyMn-9PSBotpW8dRvNaFxleQfBqZ_YARS9EjAWhgxfgPZ1SKbnd3BMr6rkkJBjNu8nbKJ5gPMJhmR33h48QM53gAA9LsmobQal6Ly5BCbt7-GUokKRoVWNzrrJAE_3L202PZoFT0FrWrx-Kijce7IC-bWif8fC-093lqdU1_GYp8SHkH9No-C7ED62ilKfsnLM5Nzh6ehLOIEEUMkSjr5HkVIsD1YOOc3vEM44UBopRbPRzz9cHtTlJRQBQyZfIv-aij_hfqwnFhYm9lUdYn24EvQL5hPB0owhMh40IoSMey1vGV_gusELWV9fQ1nQLQgDUa63o6ias_hbEM72dGvxCjeWKSfZ4quufp55lHuYLTVLX-JzOq6OJLVltXAkyfTdr4MvLTB6KgcNN-jodKidzPqt9xJWnl6pwHNm0-YsZz6mrKLL_nZ7JIrpTZYn8-ALVA8Msegh8wM2qYNXNgdpDI_9CGBwHMjqsgDrVQF2JM0SuEyyPSfsibLXN2OzKptYvDqLPsVfzJ3Ek3RoPCb1vty10JxZJD6nOvj0xqDasMPo6sAi_qZWdymGGejX1EHDlwXa4D7RYYSApjEn38p7GFO0eJy95fw8Q__4c4zTycXq10UK0erY3jpGNbLFUbkY351c1DdcP9OpqFOz9ddmat-uuZB-fPDPw61tC7TroSuRypFLcpMt8ao6etKMqYT6AllCYZ2Xt33QqDakIMy8XAiCa1L1G1QoCY3hvmtHqD9bBdhsueaakKeMr7Kk3gnbVrp4dzBzivm9s4qKgmYsLkk572QpnA_rPo4DIpHpJJrtYziQehjyxwPXwX7OJHw-gq2NWK7yWAWEdS8TP0IIrSyhwKVIpSWmgaZalQiihHL7Px5tGrpkjniIB0omtlqcGPoJjAr2kNJ54i9Npgri5j9woBVRuijKUV0N6zbM6rKkXckm9N93Vpk2DisDStres1AvdV7b5xRcnuc3uumImxLP7-53jHOMJ5hN4fLzgj3diRDSDrBUULgvjVrGYdjXOYWqf5UWTZD-IJUTTn6iRx5meV9yyukgrPS6qSaULnL54wt-Uube_uTozu729waIiIfCypuTxvYDBNLLJt_hB9FC394hXs5jJWJj3z9ujmCAud0QjN-Ce-zFNgjrhaSaq-qKxu8jDixDrPmRTvPraYBm06IwOqrIwjqZSLyjbmTLjgO5YlppdcmVyJmZ08L2173i95z_Cng86UUWDS0TUEC5yFVGrvjHES_7Ne0PPLtdDg2VQgifleLJs=; Max-Age=60; Expires=Fri, 03 Oct 2025 21:02:12 GMT; Path=/arcgis/rest; HttpOnly; SameSite=Lax
+    ETag: '"82770a93"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+          "jobId": "j50aa7a49ce3048229f61d3278464118c",
+          "jobStatus": "esriJobSubmitted"
+      }
+order: 1000

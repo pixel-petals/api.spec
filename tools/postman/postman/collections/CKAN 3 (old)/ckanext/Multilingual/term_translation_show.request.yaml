@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{CKAN_API}}/term_translation_show?terms=Russian, romantic novel&lang_codes=fr"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: terms
+    value: Russian, romantic novel
+    description: (list of strings) – the terms to search for translations of, e.g. 'Russian', 'romantic novel'
+  - key: lang_codes
+    value: fr
+    description: (list of language code strings) – the language codes of the languages to search for translations into, e.g. 'en', 'de' (optional, default is to search for translations into any language)
+order: 2000

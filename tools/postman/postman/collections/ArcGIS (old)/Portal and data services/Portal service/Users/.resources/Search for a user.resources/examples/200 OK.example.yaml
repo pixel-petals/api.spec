@@ -1,0 +1,227 @@
+$kind: http-example
+request:
+  url: https://www.arcgis.com/sharing/rest/community/users?q=JSmith&f=pjson&token={{access_token}}
+  method: GET
+  queryParams:
+    q: JSmith
+    f: pjson
+    token: "{{access_token}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Thu, 13 Jan 2022 17:06:59 GMT
+    - key: Content-Type
+      value: text/plain;charset=utf-8
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Origin
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Cache-Control
+      value: no-cache
+    - key: Pragma
+      value: no-cache
+    - key: Expires
+      value: "-1"
+    - key: Strict-Transport-Security
+      value: max-age=31536000
+    - key: Content-Encoding
+      value: gzip
+  body:
+    type: json
+    content: |-
+      {
+          "query": "JSmith",
+          "total": 192,
+          "start": 1,
+          "num": 10,
+          "nextStart": 11,
+          "results": [
+              {
+                  "username": "OntarioAdmin",
+                  "fullName": "Jim Smith",
+                  "id": "08c59cc53ae5c2ad7532549808521e4f",
+                  "firstName": "Jim",
+                  "lastName": "Smith",
+                  "provider": null,
+                  "created": 1316617421000,
+                  "modified": 1492275854000,
+                  "description": "Jim Smith | GIS Coorindator&#10;&#13;&#10;&#13;Ministry of Transportation | 301 St. Paul Street | St. Catharines, ON L2R  7R4&#10;&#13;&#10;&#13;T 416-386-6481&#10;&#13;M 416-209-0489&#10;&#13;E jsmith@ontario.ca&#10;&#13;   ",
+                  "tags": [
+                      "undefined"
+                  ],
+                  "culture": "en",
+                  "cultureFormat": null,
+                  "region": "CA",
+                  "thumbnail": "photo.JPG",
+                  "access": "public"
+              },
+              {
+                  "username": "jsmith0318",
+                  "fullName": "John Smith",
+                  "id": "028ae9834fa4f319a55d133ca672ba44",
+                  "firstName": "John",
+                  "lastName": "Smith",
+                  "provider": null,
+                  "created": 1403535158000,
+                  "modified": 1515456706000,
+                  "description": "I have worked for Government for more than 33 years in both the State and Local systems.  Of those 33 years, 24 of those were using GIS in a variety of ways.  My GIS career started with a PC ArcInfo system using SML scripting (anybody remember that?) which we quickly grew out of.  Then it was on to a Sun Unix system using \"real\" GIS and AML.  That was a few years ago.  My latest version of the software was the ArcGIS for Desktop, version 10.2.2.  I have seen a lot of changes over the years and can only say that ESRI is continually making it better and better!\r\n\r\nNow I am retired from the City of Salem (and my GIS career), but wanted to share some of my adventures with whomever is interested.  The first adventure is a bicycle tour across the United States from Jefferson, Oregon (where I live) to Portland, Maine - 3733 miles (according to GIS!).  So many people have asked if I will be blogging, so I thought I'd do one better - blod AND map my ride.  So this is the \"map\" part for those who want to see the route and follow my progress the summer and fall of 2014.\r\n\r\nSince I love GIS so much, and will miss it tremendously, I decided to set up this account to keep up with the technology and let others know what's happening.  I hope to continue to use GIS in the future as a Red Cross volunteer and anywhere else my skills can be used.",
+                  "tags": [],
+                  "culture": "en",
+                  "cultureFormat": null,
+                  "region": "US",
+                  "thumbnail": "John.jpg",
+                  "access": "public"
+              },
+              {
+                  "username": "jsmith_retired",
+                  "fullName": "John Smith",
+                  "id": "5593b70b5971083c1390234104da8085",
+                  "firstName": "John",
+                  "lastName": "Smith",
+                  "provider": null,
+                  "created": 1421108929000,
+                  "modified": 1421109443000,
+                  "description": "After more than 33 years in Oregon State and Local Government, and more than 24 of those years using ArcInfo and ArcGIS products, I decided to call it quits and retire.  Now I am planning retirement activities that include bicycle touring and I fully intend to use the ArcGIS products to plan and advertise my trips.",
+                  "tags": [],
+                  "culture": "en",
+                  "cultureFormat": null,
+                  "region": "US",
+                  "thumbnail": "John_Retired_2.jpg",
+                  "access": "public"
+              },
+              {
+                  "username": "jsmith26_EPA",
+                  "fullName": "Jason Smith",
+                  "id": "f0c2355777dd7dcc9083e0e8cd6cd03b",
+                  "firstName": "Jason",
+                  "lastName": "Smith",
+                  "provider": null,
+                  "created": 1423173441000,
+                  "modified": 1631539680000,
+                  "description": "Works as an Environmental Scientist/GIS Analyst for the Office of Air Quality Planning and Standards, within the Office of Air and Radiation at US EPA.",
+                  "tags": [],
+                  "culture": "en-US",
+                  "cultureFormat": null,
+                  "region": "WO",
+                  "thumbnail": "Selfie1.jpg",
+                  "access": "public"
+              },
+              {
+                  "username": "jsmith119",
+                  "fullName": "James Smith",
+                  "id": "fdead220d708dd9edfd5253eec28b777",
+                  "firstName": "James",
+                  "lastName": "Smith",
+                  "provider": null,
+                  "created": 1351535814000,
+                  "modified": 1405751856000,
+                  "description": "Graduate Student @ Murray State University ",
+                  "tags": [
+                      "undefined"
+                  ],
+                  "culture": null,
+                  "cultureFormat": null,
+                  "region": null,
+                  "thumbnail": null,
+                  "access": "public"
+              },
+              {
+                  "username": "jsmith@mema.ms.gov",
+                  "fullName": "Jefferson smith",
+                  "id": "271bcf756dd0ffb553d2a0c3eca14d2c",
+                  "firstName": "Jefferson",
+                  "lastName": "smith",
+                  "provider": null,
+                  "created": 1392771636000,
+                  "modified": 1411418538000,
+                  "description": "organization - Mississippi Emergency Management Agency",
+                  "tags": [],
+                  "culture": "en",
+                  "cultureFormat": null,
+                  "region": "US",
+                  "thumbnail": null,
+                  "access": "public"
+              },
+              {
+                  "username": "Jsmith@lansdale.org",
+                  "fullName": "Justin Smith",
+                  "id": "7b2c25acf102040517e4f2695ba579a5",
+                  "firstName": "Justin",
+                  "lastName": "Smith",
+                  "provider": null,
+                  "created": 1369944437000,
+                  "modified": 1641495258000,
+                  "description": "",
+                  "tags": [
+                      "undefined"
+                  ],
+                  "culture": "en-US",
+                  "cultureFormat": null,
+                  "region": "US",
+                  "thumbnail": "Photo.png",
+                  "access": "public"
+              },
+              {
+                  "username": "jsmith331",
+                  "fullName": "John Smith",
+                  "id": "14b80e09eaa24a777afa7fbbfb626723",
+                  "firstName": "John",
+                  "lastName": "Smith",
+                  "provider": null,
+                  "created": 1514318006000,
+                  "modified": 1547209362000,
+                  "tags": [],
+                  "culture": null,
+                  "cultureFormat": null,
+                  "region": null,
+                  "thumbnail": "geographer-vermeer.jpg",
+                  "access": "public"
+              },
+              {
+                  "username": "jsmithpc",
+                  "fullName": "Javier Smith Palacios Carrillo",
+                  "id": "70c106aa5ad8a29f4d68356f060d0aa1",
+                  "firstName": "Javier Smith",
+                  "lastName": "Palacios Carrillo",
+                  "provider": null,
+                  "created": 1374446081000,
+                  "modified": 1374460564000,
+                  "description": "De Profesión Ingeniero Civil.",
+                  "tags": [
+                      "undefined"
+                  ],
+                  "culture": "es",
+                  "cultureFormat": null,
+                  "region": "PE",
+                  "thumbnail": null,
+                  "access": "public"
+              },
+              {
+                  "username": "jsmith7124",
+                  "fullName": "Jaime Smith",
+                  "id": "ee1b344e34b76c0d02208085c08ead88",
+                  "firstName": "Jaime",
+                  "lastName": "Smith",
+                  "provider": null,
+                  "created": 1313510495000,
+                  "modified": 1313510543000,
+                  "tags": [
+                      "undefined"
+                  ],
+                  "culture": null,
+                  "cultureFormat": null,
+                  "region": null,
+                  "thumbnail": "black-panther-meiklejohn.jpg",
+                  "access": "public"
+              }
+          ]
+      }
+order: 1000

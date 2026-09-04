@@ -1,0 +1,11 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/last-mile-delivery/#last-mile-delivery-with-zones)
+url: https://logistics.arcgis.com/arcgis/rest/services/World/VehicleRoutingProblem/GPServer/SolveLastMileDelivery/jobs/{{LMD_JOB_ID}}/results/output_routes
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/3. Get results (routes).resources/examples
+order: 3000

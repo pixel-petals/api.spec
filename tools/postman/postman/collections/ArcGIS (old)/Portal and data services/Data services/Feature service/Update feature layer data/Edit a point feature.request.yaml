@@ -1,0 +1,15 @@
+$kind: http-request
+description: |-
+  Updates the attributes of an existing point feature in a hosted feature layer. Use this endpoint to modify feature data by specifying the object ID and new attribute values in the request body.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/feature-services/edit-features/#update-the-attributes-of-a-feature)
+url: https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/my_points/FeatureServer/0/updateFeatures
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    features: '[{"attributes": {"objectid": 6, "name": "Point Dume natural preserve(updated)",      "rating": "3"      "SOURCEID": "222"    }}]'
+    token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/Edit a point feature.resources/examples
+order: 1000

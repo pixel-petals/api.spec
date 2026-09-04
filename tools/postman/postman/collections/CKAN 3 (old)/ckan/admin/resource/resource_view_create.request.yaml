@@ -1,0 +1,30 @@
+$kind: http-request
+url: "{{CKAN_API}}/resource_view_create"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: resource_id
+      value: ""
+      description: (string) – id of the resource
+    - type: text
+      key: title
+      value: ""
+      description: (string) – the title of the view
+    - type: text
+      key: description
+      value: ""
+      description: (string) – a description of the view (optional)
+    - type: text
+      key: view_type
+      value: ""
+      description: (string) – type of view
+    - type: text
+      key: config
+      value: ""
+      description: (JSON string) – options necessary to recreate a view state (optional)
+order: 10000

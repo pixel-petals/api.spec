@@ -1,0 +1,23 @@
+$kind: http-example
+name: Forbidden – authenticated but not permitted (e.g. blocked user or missing OAuth scope)
+request:
+  url: "{{baseUrl}}/api/0.6/changeset_comments/:id/visibility"
+  method: DELETE
+  headers:
+    - key: Authorization
+      value: <token>
+      description: "Added as a part of security scheme: oauth2"
+  pathVariables:
+    - key: id
+      value: "6776"
+      description: The numeric ID of the element
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 403
+  statusText: Forbidden
+  body:
+    type: text
+    content: ""
+order: 2000

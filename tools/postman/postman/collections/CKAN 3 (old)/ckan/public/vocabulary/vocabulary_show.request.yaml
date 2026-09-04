@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{CKAN_API}}/vocabulary_show?id=a6ef1367-c1e5-46db-a35d-28444f400f32"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: id
+    value: a6ef1367-c1e5-46db-a35d-28444f400f32
+    description: (string) – the id or name of the vocabulary
+order: 1000

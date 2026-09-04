@@ -1,0 +1,22 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/travel-cost-matrix/#job-calculate-walkability).
+url: https://logistics.arcgis.com/arcgis/rest/services/World/OriginDestinationCostMatrix/GPServer/GenerateOriginDestinationCostMatrix/submitJob
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    origins: "{'features':[{'geometry':{'x':-122.341116,'y':47.61641},'attributes':{'Name':'2200 6th Ave, Seattle, WA, 98121, USA'}}]}"
+    destinations: "{'features':[{'geometry':{'x':-122.339910,'y':47.615270},'attributes':{'Name':'Wells Fargo, 2121 6th Ave, Seattle, WA, 98121, USA','Type':'ATM'}},{'geometry':{'x':-122.341360,'y':47.616220},'attributes':{'Name':'Bank of America, 2200 6th Ave, Seattle, WA, 98121, USA','Type':'ATM'}},{'geometry':{'x':-122.339400,'y':47.613800},'attributes':{'Name':'Sound Community Bank, 2001 5th Ave, Seattle, WA, 98121, USA','Type':'ATM'}},{'geometry':{'x':-122.337977,'y':47.618351},'attributes':{'Name':'Whole Foods Market, 2210 Westlake Ave, Seattle, WA, 98121, USA','Type':'Grocery'}},{'geometry':{'x':-122.337396,'y':47.618669},'attributes':{'Name':'District H, 101 Terry Ave N, Seattle, WA, 98109, USA','Type':'Grocery'}},{'geometry':{'x':-122.344450,'y':47.614170},'attributes':{'Name':'Dans Belltown Grocery, 2221 3rd Ave, Seattle, WA, 98121, USA','Type':'Grocery'}},{'geometry':{'x':-122.340099,'y':47.616020},'attributes':{'Name':'Elm Coffee Roasters Doppler, 2121 7th Ave, Seattle, WA, 98121, USA','Type':'Snacks'}},{'geometry':{'x':-122.340149,'y':47.616090},'attributes':{'Name':'Amazon Go, 2131 7th Ave, Seattle, WA, 98121, USA','Type':'Fast Food'}},{'geometry':{'x':-122.339474,'y':47.615646},'attributes':{'Name':'General Porpoise, 2101 7th Ave, Seattle, WA, 98121, USA','Type':'Snacks'}},{'geometry':{'x':-122.341109,'y':47.618590},'attributes':{'Name':'Denny Park, 800 Denny Way, Seattle, WA, 98109, USA','Type':'Park'}},{'geometry':{'x':-122.337480,'y':47.613740},'attributes':{'Name':'Westlake Square, Westlake Ave, Seattle, WA, 98101, USA','Type':'Park'}},{'geometry':{'x':-122.337530,'y':47.612810},'attributes':{'Name':'McGraw Square, 5th Ave, Seattle, WA, 98101, USA','Type':'Park'}}]}"
+    travel_mode: "{'attributeParameterValues':[{'attributeName':'Avoid Private Roads','parameterName':'Restriction Usage','value':'AVOID_MEDIUM'},{'attributeName':'Walking','parameterName':'Restriction Usage','value':'PROHIBITED'},{'attributeName':'Preferred for Pedestrians','parameterName':'Restriction Usage','value':'PREFER_LOW'},{'attributeName':'WalkTime','parameterName':'Walking Speed (km/h)','value':5},{'attributeName':'Avoid Roads Unsuitable for Pedestrians','parameterName':'Restriction Usage','value':'AVOID_HIGH'}],'description':'Follows paths and roads that allow pedestrian traffic and finds solutions that optimize travel distance.','distanceAttributeName':'Kilometers','id':'yFuMFwIYblqKEefX','impedanceAttributeName':'Kilometers','name':'Walking Distance','restrictionAttributeNames':['Avoid Private Roads','Avoid Roads Unsuitable for Pedestrians','Preferred for Pedestrians','Walking'],'simplificationTolerance':2,'simplificationToleranceUnits':'esriMeters','timeAttributeName':'WalkTime','type':'WALK','useHierarchy':false,'uturnAtJunctions':'esriNFSBAllowBacktrack'}"
+scripts:
+  - type: afterResponse
+    code: |-
+      var jsonData = JSON.parse(responseBody);
+      tests["jobId is present"] = responseBody.has("jobId");
+
+      pm.collectionVariables.set("JOB_ID", jsonData.jobId);
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

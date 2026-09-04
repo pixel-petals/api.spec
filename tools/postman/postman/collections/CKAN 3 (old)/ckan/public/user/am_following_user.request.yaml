@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{CKAN_API}}/am_following_user?id"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: id
+    value: null
+    description: (string) – the id or name of the user
+order: 2000

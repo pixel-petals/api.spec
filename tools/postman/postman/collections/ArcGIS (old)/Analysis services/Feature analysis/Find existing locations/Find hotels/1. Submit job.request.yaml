@@ -1,0 +1,28 @@
+$kind: http-request
+description: |-
+  Submits a `FindExistingLocations` analysis job. Use this endpoint to start the process of identifying existing locations in your data that meet specified criteria.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/find-data/find-existing-locations/#find-hotels-sql-query)
+url: "{{ANALYSIS_URL}}/FindExistingLocations/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    expressions: "[{\"operator\": \"\", \"layer\": 0, \"where\": \"service = 'Eten en Drinken'\"}]"
+    inputLayers: '[{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/OpenStreetMap%20-%20Points%20of%20interest/FeatureServer/0","name":"OpenStreetMap - Points of interest (bèta) - Punten"}]'
+    outputName: '{"serviceProperties":{"name":"{{UNIQUE_NAME}}"}}'
+    context: '{"extent": {"xmin": 568547.4926900844, "ymin": 6816058.336549545, "xmax": 570749.8345676091, "ymax": 6817610.963686628, "spatialReference": {"wkid": 102100, "latestWkid": 3857}}}'
+scripts:
+  - type: beforeRequest
+    code: |-
+      // Creates a unique name for the output service
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/ /g, "_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+  - type: afterResponse
+    code: pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

@@ -1,0 +1,31 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/analyze-patterns/interpolate-points/#predict-air-quality)
+url: "{{ANALYSIS_URL}}/InterpolatePoints/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    inputLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/aqi_pm10/FeatureServer/0"}'
+    field: DAILY_AQI_VALUE
+    interpolateOption: "5"
+    classificationType: GeometricInterval
+    numClasses: "10"
+    boundingPolygonLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/California_State_Boundary/FeatureServer/0"}'
+    outputPredictionError: "false"
+    returnFeatureCollection: "false"
+    outputName: '{"serviceProperties":{"name":"{{UNIQUE_NAME}}"}}'
+scripts:
+  - type: beforeRequest
+    code: |-
+      // Creates a unique name for the output service
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/ /g, "_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+  - type: afterResponse
+    code: |
+      pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

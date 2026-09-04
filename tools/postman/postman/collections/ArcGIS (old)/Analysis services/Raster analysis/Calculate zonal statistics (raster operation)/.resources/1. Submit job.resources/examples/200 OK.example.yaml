@@ -1,0 +1,38 @@
+$kind: http-example
+request:
+  url: "{{RASTER_ANALYSIS_URL}}/SummarizeRasterWithin/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+      zoneField: COUNTY_FIPS
+      statisticType: Mean
+      inputZoneLayer: |-
+        { "url":"https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Census_Counties/FeatureServer/0",
+        "filter":"STATE_NAME = 'Alabama'",
+        "itemId":"14c5450526a8430298b2fa74da12c2f4"
+        }
+      inputRasterLayerToSummarize: '{"url":"https://tiledimageservices3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/US_Annual_Temperature/ImageServer"}'
+      outputName: '{"serviceProperties": {"name": {{UNIQUE_NAME}},"capabilities": "Image, TilesOnly"},"itemProperties": {"description": "output generated from the summarizeRasterWithin operation in postman","title": "Summarize raster within"}}'
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 24 Mar 2025 17:01:55 GMT
+    Content-Type: application/json
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Content-Encoding: br
+    Vary: Accept-Encoding
+    Server: Microsoft-IIS/10.0
+    X-Powered-By: ASP.NET
+  body:
+    type: json
+    content: |-
+      {
+          "jobId": "371c40056ef545549b2dfa4388c511fb",
+          "jobStatus": "esriJobNew"
+      }
+order: 1000

@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{CKAN_API}}/job_clear"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: queues
+      value: ""
+      description: (list) – The queues to clear. If not given then ALL queues are cleared
+order: 2000

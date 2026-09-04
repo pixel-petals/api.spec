@@ -1,0 +1,34 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/feature-services/edit-features/#add-a-feature-to-a-feature-layer)
+url: https://{{host}}.arcgis.com/{{org_id}}/ArcGIS/rest/services/{{service_name}}/FeatureServer/{{layer_id}}/addFeatures
+method: POST
+body:
+  type: urlencoded
+  content:
+    - key: f
+      value: json
+      description: "(Required) Format of the response: html | json"
+    - key: features
+      value: '[ { "attributes" : { }, "geometry" : { "rings": [ [ [ -5.957031250023337, 40.31920408353206 ], [ -9.472656250022405, 43.07479018423466 ], [ -4.023437500023841, 42.299540724508 ], [ -5.781250000023375, 40.185046413472044 ], [ -5.957031250023337, 40.31920408353206 ] ] ], "spatialReference": { "wkid": 4326 } } } ]'
+      description: The array of features to be added. The structure of each feature in the array is the same as the structure of the json feature object returned by the ArcGIS REST API. Features to be added to a feature layer should include the geometry. Records to be added to a table should not include the geometry.
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      description: You need a valid access token if acccessing private layers. To learn more, read the collection's documentation.
+    - key: gdbVersion
+      value: <string>
+      disabled: true
+      description: The geodatabase version to apply the edits. This parameter applies only if the isDataVersioned property of the layer is true.
+    - key: returnEditMoment
+      value: <boolean>
+      disabled: true
+      description: Parameter specifying whether the response will report the time features were added. If returnEditMoment = true, the server will report the time in the response's editMoment key. The default value is false.
+    - key: rollbackOnFailure
+      value: <boolean>
+      disabled: true
+      description: Specifies whether the edits should be applied only if all submitted edits succeed. If false, the server will apply the edits that succeed even if some of the submitted edits fail. If true, the server will apply the edits only if all edits succeed. The default value is true.
+    - key: timeReferenceUnknownClient
+      value: <boolean>
+      disabled: true
+      description: Setting timeReferenceUnknownClient as trueindicates that the client is capable of working with data values that are not in UTC. If its not set to true, and the service layer's datesInUnknownTimeZone property is true, then an error is returned. The default is false
+examples: ./.resources/Add a polygon feature.resources/examples
+order: 2000

@@ -1,0 +1,19 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/elevation/point-elevation/#find-the-elevation-of-a-point)
+url: https://elevation-api.arcgis.com/arcgis/rest/services/elevation-service/v1/elevation/at-point?token={{ACCESS_TOKEN}}&lon=-179.99&lat=-85.05
+method: GET
+queryParams:
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+  - key: lon
+    value: "-179.99"
+    description: Latitude of the location.
+  - key: lat
+    value: "-85.05"
+    description: Longitude of the location.
+  - key: relativeTo
+    value: ""
+    disabled: true
+    description: Reference point to measure elevation from. Supported values are "meanSeaLevel" and "ellipsoid".
+examples: ./.resources/Find elevation at a point.resources/examples
+order: 1000

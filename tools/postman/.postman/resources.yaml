@@ -1,0 +1,29 @@
+workspace:
+  id: c57931ed-c0a6-4ca7-8bc5-17199bcd8adc
+
+localResources:
+  collections:
+    - ../postman/collections/OpenDataSoft Explore API (2.1)
+    - ..\postman\collections\CKAN 3 (old)
+    - ../postman/collections/SODA3 (Socrata)
+    - ..\postman\collections\ArcGIS (old)
+    - ../postman/collections/OpenStreetMaps
+  environments:
+    - ../postman/environments/Production.environment.yaml
+  specs:
+    - ../postman/specs/OpenDataSoft/openapi.opendatasoft.json
+    - ../postman/specs/OpenStreetMaps/openapi.openstreetmaps.json
+    - ../postman/specs/Socrata/openapi.socrata.json
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ../postman/collections/OpenDataSoft Explore API (2.1): 41960290-627dde4b-ce4a-4ac2-ba7b-d7d0df0ae638
+    ../postman/collections/SODA3 (Socrata): 41960290-8c95bd52-05ad-40d2-9b6f-75711bcb0e47
+    ../postman/collections/OpenStreetMaps: 41960290-f7250263-cec9-4b1b-84e3-8d4b35e01c67
+    ..\postman\collections\ArcGIS (old): 41960290-d28451e2-2c18-49be-815a-07bd2512974b
+    ..\postman\collections\CKAN 3 (old): 41960290-6a5e0457-4676-4052-876a-899cae0a2002
+  environments:
+    ../postman/environments/Production.environment.yaml: 41960290-6d3e43d5-a844-4f51-a3f6-e99f463bdba7
+  specs: {}

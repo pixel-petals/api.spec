@@ -1,0 +1,13 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/travel-cost-matrix/#direct-create-time-distance-matrix).
+url: https://route-api.arcgis.com/arcgis/rest/services/World/OriginDestinationCostMatrix/NAServer/OriginDestinationCostMatrix_World/solveODCostMatrix
+method: POST
+body:
+  type: urlencoded
+  content:
+    token: "{{ACCESS_TOKEN}}"
+    f: json
+    origins: "{'spatialReference':{'wkid':4326},'features':[{'geometry':{'x':153.03660,'y':-27.486320},'attributes':{'ObjectID':101}},{'geometry':{'x':144.983120,'y':-37.817870},'attributes':{'ObjectID':102}},{'geometry':{'x':151.223490,'y':-33.891220},'attributes':{'ObjectID':103}},{'geometry':{'x':149.133490,'y':-35.316850},'attributes':{'ObjectID':104}},{'geometry':{'x':138.596810,'y':-34.917470},'attributes':{'ObjectID':105}}]}"
+    destinations: "{'spatialReference':{'wkid':4326},'features':[{'geometry':{'x':153.03660,'y':-27.486320},'attributes':{'ObjectID':101}},{'geometry':{'x':144.983120,'y':-37.817870},'attributes':{'ObjectID':102}},{'geometry':{'x':151.223490,'y':-33.891220},'attributes':{'ObjectID':103}},{'geometry':{'x':149.133490,'y':-35.316850},'attributes':{'ObjectID':104}},{'geometry':{'x':138.596810,'y':-34.917470},'attributes':{'ObjectID':105}}]}"
+examples: ./.resources/Create time-distance matrix.resources/examples
+order: 1000

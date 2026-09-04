@@ -1,0 +1,8 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/batch-geocoding/#job-geocode-a-file-of-addresses)
+url: https://geocode.arcgis.com/arcgis/rest/services/World/GPServer/BatchGeocode/download/{{JOB_ID}}.zip
+method: GET
+headers:
+  token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/5. Download result file.resources/examples
+order: 5000

@@ -1,0 +1,3 @@
+$kind: collection
+description: The `InterpolatePoints` operation finds and predicts new features and attribute values in point feature data and returns new feature data.
+order: 5000

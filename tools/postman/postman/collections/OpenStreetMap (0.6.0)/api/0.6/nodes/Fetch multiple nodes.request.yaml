@@ -1,0 +1,28 @@
+$kind: http-request
+url: "{{baseUrl}}/api/0.6/nodes?nodes=123,456,789"
+method: GET
+headers:
+  Accept: application/xml
+queryParams:
+  - key: nodes
+    value: 123,456,789
+    description: Comma-separated list of node IDs, optionally versioned (e.g. 123,456v2)
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: text
+  content: ""
+auth:
+  type: noauth
+examples: ./.resources/Fetch multiple nodes.resources/examples
+order: 1000

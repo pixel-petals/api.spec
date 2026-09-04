@@ -1,0 +1,29 @@
+$kind: http-request
+description: Returns all nodes, ways and relations within the given bounding box. Max bounding box area is 0.25 square degrees. Returns at most 50,000 nodes.
+url: "{{baseUrl}}/api/0.6/map?bbox=-0.489,51.28,0.236,51.686"
+method: GET
+headers:
+  Accept: application/xml
+queryParams:
+  - key: bbox
+    value: -0.489,51.28,0.236,51.686
+    description: Bounding box as left,bottom,right,top (min_lon,min_lat,max_lon,max_lat)
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: text
+  content: ""
+auth:
+  type: noauth
+examples: ./.resources/Retrieve map data by bounding box.resources/examples
+order: 1000

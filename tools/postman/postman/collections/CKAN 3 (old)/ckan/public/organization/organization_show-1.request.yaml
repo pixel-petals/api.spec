@@ -1,0 +1,11 @@
+$kind: http-request
+name: organization_show
+description: "[API Documentation 2.6.3](http://docs.ckan.org/en/ckan-2.6.3/api/index.html#ckan.logic.action.get.organization_list_for_user)"
+url: "{{CKAN_API}}/organization_show?id={{project-no-role}}"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  id: "{{project-no-role}}"
+order: 6000

@@ -1,0 +1,14 @@
+$kind: http-request
+description: Get the Logistics service metadata
+url: https://route-api.arcgis.com/arcgis/rest/services/World?f=json&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  f: json
+  token: "{{ACCESS_TOKEN}}"
+scripts:
+  - type: afterResponse
+    code: |+
+      
+    language: text/javascript
+examples: ./.resources/Logistics service definition.resources/examples
+order: 6000

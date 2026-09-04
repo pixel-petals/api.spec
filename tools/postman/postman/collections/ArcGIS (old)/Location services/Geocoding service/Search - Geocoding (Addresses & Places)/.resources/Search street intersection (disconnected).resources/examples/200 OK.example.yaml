@@ -1,0 +1,68 @@
+$kind: http-example
+request:
+  url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?f=pjson&token={{ACCESS_TOKEN}}&category=intersection&singleLine=shawn and lugonia, redlands, ca
+  method: GET
+  queryParams:
+    - key: f
+      value: pjson
+      description: "(Required) Format of the response: json, pjson, html, ..."
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      description: (Required on Platform) You need a valid access token. To learn more, read the collection's documentation.
+    - key: address
+      value: Cambie St and W King Edward Ave
+      disabled: true
+      description: Search for an address, POI category, intersection, etc.
+    - key: City
+      value: Vancouver
+      disabled: true
+    - key: Region
+      value: British Columbia
+      disabled: true
+    - key: category
+      value: intersection
+    - key: singleLine
+      value: shawn and lugonia, redlands, ca
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 18 Dec 2025 16:49:16 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: max-age=0,must-revalidate
+    X-Content-Type-Options: nosniff
+    Vary: Origin
+    Server: ""
+    Set-Cookie: AGS_ROLES="sym-gcm|1|aOB-qToNaeK0rnao3sJAjA==|UND5JMIgp6qJU_UgOMRmk1Ei7q9UaX9HU-UeoL6MB0E4I-mcMCDeQDJokoG0z9RPmXC8VMBVxuo3JvKQ0Skhe2aWnEuHDZcIrXhcmG0Sosm_piPGKYQ9mv8AgV5B631ysyC5HA3AnqOUqp_Le2CRk8XWkQIELDYpUCUkuvMpgnyhuh2hosSFh2UqKX7R8QbY3ITOgAE05-_CpiuEqStZYPvNKPcHmkUK_D6AWvE_BJfWKHXkw9-CEUXABLj7Cw1--OvOnmZZHS1ob1-7s331TF8wg2CHljQ2fgLlLW75ALABVWSrzeSmM7-fISHS1BvMpU516RxQdQRN7v_q_ibT_ztJQVvpzTXKEDpdT4K1OG2viAH3cnQkH7Im8EUNVw3d4N2ZXhl3DcprMscyhh6oBXHd2ep8NHSZEL5XsCmJaa4WapzUZjevvZuamKbZilegCdSjM4IDMWZAuHJNxagvOqOwLjPL_DwrmZdFT1IMc3A8DN5m0pLMZdUiJ94LqSBCVKRUOwTDCKrzm4YkABj_nQK8y3cJ6YWRcr0JvWwIUIeiHV4ZwuB6VrngcXtjW6dktPEYmRpBJ5b4_A2gAQ4ri4j3UnXRY-6sLc4YlaPfx1jnbZYI2uBw1QziNJX879AmyLJaO-KNW3_vQ2VE3c0M-FIWmcGjWFFwxXA0eNA1lBSOPwJHJPVNKvwyaCSIvBkGBGpBbl9q3o-DK1dJmv7utPhLSKqiXS2CF9N6zUmYyloUI_LpNa97so8z0gcH4EGhSJ253xmqT9MvZSFQ-_jcn8LEQbp6kHoxlERCdxjSWJcxe_5Z3dRSpJ4jL5ltK3LxipapPy11o8ZPegK6Ps25"; Version=1; Max-Age=60; Expires=Thu, 18 Dec 2025 16:50:16 GMT; Path=/arcgis/rest; Secure; HttpOnly
+    ETag: '"697226e0"'
+    Content-Encoding: gzip
+    X-Region: us-east-1
+  body:
+    type: text
+    content: |-
+      {
+          "spatialReference": {
+              "wkid": 4326,
+              "latestWkid": 4326
+          },
+          "candidates": [
+              {
+                  "address": "Shawn Ct & E Lugonia Ave, Redlands, California, 92374",
+                  "location": {
+                      "x": -117.159841296803,
+                      "y": 34.070215916294
+                  },
+                  "score": 99.36,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -117.160841296803,
+                      "ymin": 34.069215916294,
+                      "xmax": -117.158841296803,
+                      "ymax": 34.071215916294
+                  }
+              }
+          ]
+      }
+order: 1000

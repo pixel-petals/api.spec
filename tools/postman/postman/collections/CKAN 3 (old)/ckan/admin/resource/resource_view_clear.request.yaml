@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{CKAN_API}}/resource_view_clear"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: view_types
+      value: ""
+      description: (list) – specific types to delete (optional)
+order: 2000

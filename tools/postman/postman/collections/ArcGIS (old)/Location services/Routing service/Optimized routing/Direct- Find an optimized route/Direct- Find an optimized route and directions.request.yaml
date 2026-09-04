@@ -1,0 +1,142 @@
+$kind: http-request
+name: "Direct: Find an optimized route and directions"
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/optimized-routing/)
+url: https://route-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/solve?f=json&token={{ACCESS_TOKEN}}&stops=-117.1755,32.7123;-117.1624,32.7107;-117.1530,32.7096;-117.1671,32.7174;-117.1460,32.7159;-117.1688,32.7207;-117.1678,32.7222;-117.1710,32.7294;-117.1614,32.7284;-117.1406,32.7172&startTime=now&returnStops=true&findBestSequence=true
+method: GET
+queryParams:
+  f: json
+  token: "{{ACCESS_TOKEN}}"
+  stops: -117.1755,32.7123;-117.1624,32.7107;-117.1530,32.7096;-117.1671,32.7174;-117.1460,32.7159;-117.1688,32.7207;-117.1678,32.7222;-117.1710,32.7294;-117.1614,32.7284;-117.1406,32.7172
+  startTime: now
+  returnStops: "true"
+  findBestSequence: "true"
+scripts:
+  - type: afterResponse
+    code: |-
+      const features = pm.response.json().stops.features;
+      const routes = pm.response.json().routes.features;
+
+      let t = `
+      <link rel="stylesheet" href="https://js.arcgis.com/4.32/esri/themes/light/main.css" />
+      <script src="https://js.arcgis.com/4.32/"></script>
+      <style>
+        body,
+        html,
+        #mapContainer {
+          height: 100%;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+        }
+      </style>
+
+      <div id="mapContainer"></div>
+
+      <script>
+        require(["esri/Map", "esri/views/MapView", "esri/Graphic"], (EsriMap, EsriMapView, EsriGraphic) => {
+          const m = new EsriMap({
+            basemap: "gray-vector",
+          })
+
+          const mv = new EsriMapView({
+            map: m,
+            container: "mapContainer",
+          })
+
+          mv.when(() => {
+            pm.getData((err, data) => {
+              const stops = data.stops.map((f) => {
+                return new EsriGraphic({
+                  geometry: { type: "point", x: f.geometry.x, y: f.geometry.y },
+                  attributes: f.attributes,
+                  symbol: {
+                    type: "simple-marker",
+                    style: "circle",
+                    color: [0, 122, 194],
+                    size: "12px",
+                    outline: {
+                      color: [255, 255, 255],
+                      width: 1,
+                    },
+                  },
+                  popupTemplate: {
+                    // autocasts as new PopupTemplate()
+                    title: "{Name}",
+                    content: [
+                      {
+                        type: "fields",
+                        fieldInfos: [
+                          {
+                            fieldName: "Name",
+                          },
+                          {
+                            fieldName: "Sequence",
+                          },
+                          {
+                            fieldName: "ArriveTimeUTC",
+                            format: {
+                              dateFormat: "long-date-long-time",
+                            },
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                })
+              })
+
+              const routes = data.routes.map((f) => {
+                return new EsriGraphic({
+                  geometry: { type: "polyline", paths: f.geometry.paths },
+                  attributes: f.attributes,
+                  symbol: {
+                    type: "simple-line",
+                    color: [72, 194, 73, 255],
+                    width: 2,
+                    style: "short-dash",
+                  },
+                  popupTemplate: {
+                    title: "{Name}",
+                    content: [
+                      {
+                        type: "fields",
+                        fieldInfos: [
+                          {
+                            fieldName: "StartTime",
+                            label: "Start time",
+                            format: { dateFormat: "long-date-long-time" },
+                          },
+                          {
+                            fieldName: "EndTime",
+                            label: "End Time",
+                            format: { dateFormat: "long-date-long-time" },
+                          },
+                          {
+                            fieldName: "Total_TravelTime",
+                            label: "Total travel time (mins)",
+                            format: { places: 0 },
+                          },
+                          {
+                            fieldName: "Total_Miles",
+                            label: "Total length (miles)",
+                            format: { places: 2 },
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                })
+              })
+              mv.graphics.addMany(routes)
+              mv.graphics.addMany(stops)
+              mv.goTo(mv.graphics)
+            })
+          })
+        })
+      </script>
+      `
+
+      pm.visualizer.set(t, {stops: features, routes: routes} )
+    language: text/javascript
+examples: ./.resources/Direct- Find an optimized route and directions.resources/examples
+order: 1000

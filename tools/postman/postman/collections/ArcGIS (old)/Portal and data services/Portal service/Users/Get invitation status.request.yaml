@@ -1,0 +1,15 @@
+$kind: http-request
+description: |-
+  Retrieves the status of a specific invitation for a user in ArcGIS Online. Use this endpoint to check whether an invitation has been accepted, declined, or is still pending.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/users-and-groups/users/#get-invitation-status)
+url: https://www.arcgis.com/sharing/rest/community/users/:USER_NAME/invitations/:INVITE_ID?f=json&token={{ACCESS_TOKEN}}
+method: POST
+queryParams:
+  f: json
+  token: "{{ACCESS_TOKEN}}"
+pathVariables:
+  USER_NAME: "{{USERNAME}}"
+  INVITE_ID: 4c22b41fd6fb438a9d91aa180969c486
+examples: ./.resources/Get invitation status.resources/examples
+order: 4000

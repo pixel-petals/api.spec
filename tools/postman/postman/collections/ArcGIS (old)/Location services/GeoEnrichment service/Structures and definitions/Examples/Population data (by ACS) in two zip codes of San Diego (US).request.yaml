@@ -1,0 +1,25 @@
+$kind: http-request
+description: Example requests using the GeoEnrichment service.
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/GeoEnrichmentServer/StandardGeographyQuery?sourceCountry=US&optionalCountryDataset=USA_ACS_2021&geographyLayers=["US.ZIP5"]&geographyIDs=["92129","92126"]&f=pjson&returnGeometry=True&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  - key: sourceCountry
+    value: US
+    description: United states
+  - key: optionalCountryDataset
+    value: USA_ACS_2021
+    description: This report contains ACS 2015-2019 data
+  - key: geographyLayers
+    value: '["US.ZIP5"]'
+    description: US ZIP Codes
+  - key: geographyIDs
+    value: '["92129","92126"]'
+    description: Two zip codes from San Diego (92129 and 92126)
+  - key: f
+    value: pjson
+  - key: returnGeometry
+    value: "True"
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+examples: ./.resources/Population data (by ACS) in two zip codes of San Diego (US).resources/examples
+order: 1000

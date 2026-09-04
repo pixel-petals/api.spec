@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{CKAN_API}}/bulk_update_public"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: datasets
+      value: ""
+      description: (list of strings) – list of ids of the datasets to update
+    - type: text
+      key: org_id
+      value: ""
+      description: (int) – id of the owning organization
+order: 7000

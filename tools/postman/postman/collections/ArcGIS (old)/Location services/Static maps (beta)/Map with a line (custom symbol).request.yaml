@@ -1,0 +1,150 @@
+$kind: http-request
+url: https://static-maps-api.arcgis.com/arcgis/rest/services/static-maps-service/:VERSION/static-maps/arcgis/:ARCGIS-STYLE/with-polyline
+method: POST
+pathVariables:
+  - key: VERSION
+    value: beta
+    description: API Version
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "default": "beta",
+            "enum": [
+              "beta"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: ARCGIS-STYLE
+    value: streets
+    description: ArcGIS Basemap style
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "navigation",
+              "navigation-night",
+              "streets",
+              "streets-night",
+              "imagery"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+        "graphics": {
+            "customSymbols": {
+                "bus": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMSAyMSI+PHBhdGggZD0iTTUgMTYuNWEuNS41IDAgMCAwIC41LjVoMWEuNS41IDAgMCAwIC41LS41VjE1aDd2MS41YS41LjUgMCAwIDAgLjUuNWgxYS41LjUgMCAwIDAgLjUtLjVWMTVoMVY2YzAtMS45MDctMy42MjUtMy02LjUtM1M0IDQuMDkyIDQgNnY5aDF6bTExLTNhLjUuNSAwIDAgMS0uNS41aC0xYS41LjUgMCAwIDEtLjUtLjV2LTFhLjUuNSAwIDAgMSAuNS0uNWgxYS41LjUgMCAwIDEgLjUuNXpNNyA1aDd2MUg3ek01IDdoMTF2NEg1em0wIDUuNWEuNS41IDAgMCAxIC41LS41aDFhLjUuNSAwIDAgMSAuNS41djFhLjUuNSAwIDAgMS0uNS41aC0xYS41LjUgMCAwIDEtLjUtLjV6Ii8+PC9zdmc+",
+                "flag": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMSAyMSI+PHBhdGggZD0iTTEzLjI1IDQuNDk4Yy0xLjI5NSAwLTIuMjA1LTEuMDQyLTMuNS0xLjA0MlM4IDMuOTk4IDggMy45OTh2LTFIN3YxNmgxdi04cy40NTUtLjU0MiAxLjc1LS41NDIgMi4yMDUgMS4wNDIgMy41IDEuMDQyIDEuNzUtLjUgMS43NS0uNXYtN3MtLjQ1NS41LTEuNzUuNXoiLz48L3N2Zz4="
+            },
+            "polyline": {
+                "paths": [
+                    [
+                        [
+                            -117.247325,
+                            34.100934
+                        ],
+                        [
+                            -117.247506,
+                            34.104433
+                        ],
+                        [
+                            -117.247962,
+                            34.105095
+                        ],
+                        [
+                            -117.244321,
+                            34.106745
+                        ],
+                        [
+                            -117.209646,
+                            34.106204
+                        ],
+                        [
+                            -117.208757,
+                            34.105251
+                        ],
+                        [
+                            -117.208776,
+                            34.062906
+                        ],
+                        [
+                            -117.206477,
+                            34.062549
+                        ],
+                        [
+                            -117.200110,
+                            34.060783
+                        ],
+                        [
+                            -117.200068,
+                            34.055620
+                        ],
+                        [
+                            -117.195611,
+                            34.055640
+                        ]
+                    ]
+                ],
+                "spatialReference": {
+                    "wkid": 4326
+                }
+            },
+            "polylineStyle": {
+                "startSymbol": {
+                    "customSymbolId": "bus",
+                    "scale": 2
+                },
+                "endSymbol": {
+                    "customSymbolId": "flag",
+                    "scale": 2
+                },
+                "lineSymbol": {
+                    "width": 4,
+                    "style": "dash",
+                    "color": "007ac2"
+                }
+            }
+        },
+        "image": {
+            "width": 600,
+            "height": 600,
+            "format": "png",
+            "padding": [
+                5
+            ]
+        },
+        "map": {
+            "radius": 5000
+            // "zoom": 12,
+            // "center": {
+            //     "x": -117.1957,
+            //     "y": 34.0561,
+            //     "spatialReference": {
+            //         "wkid": 4326
+            //     }
+            // }
+        }
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+order: 10000

@@ -1,0 +1,33 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/MergeLayers/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+      inputLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Portland Bike Routes/FeatureServer/0"}'
+      mergeLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Light Rail Lines/FeatureServer/0"}'
+      mergingAttributes: '["STATUS Rename RAIL_STATUS","TYPE Rename RAIL_TYPE","LINE Rename RAIL_LINE"]'
+      context: '{"extent":{"xmin":-13659922.688640626,"ymin":5701881.312173232,"xmax":-13652866.595467059,"ymax":5705965.915872216,"spatialReference":{"wkid":102100,"latestWkid":3857}}}'
+      outputName: '{"serviceProperties":{"name":"Merge layers results"}}'
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: "{\r
+
+      \  \"jobId\": \"<JOB_ID>\",\r
+
+      \  \"jobStatus\": \"esriJobSubmitted\",\r
+
+      \  \"results\": {},\r
+
+      \  \"inputs\": {},\r
+
+      \  \"messages\": []\r
+
+      }"
+order: 1000

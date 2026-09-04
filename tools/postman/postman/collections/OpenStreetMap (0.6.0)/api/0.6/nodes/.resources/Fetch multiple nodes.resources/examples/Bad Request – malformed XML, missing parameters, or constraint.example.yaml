@@ -1,0 +1,19 @@
+$kind: http-example
+name: Bad Request – malformed XML, missing parameters, or constraint violation
+request:
+  url: "{{baseUrl}}/api/0.6/nodes?nodes=123,456,789"
+  method: GET
+  queryParams:
+    - key: nodes
+      value: 123,456,789
+      description: Comma-separated list of node IDs, optionally versioned (e.g. 123,456v2)
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: text
+    content: ""
+order: 2000

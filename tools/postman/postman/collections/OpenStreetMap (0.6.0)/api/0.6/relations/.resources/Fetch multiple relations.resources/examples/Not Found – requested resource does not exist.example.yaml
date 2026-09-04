@@ -1,0 +1,18 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/relations?relations=string"
+  method: GET
+  queryParams:
+    - key: relations
+      value: string
+      description: Comma-separated list of relation IDs, optionally versioned
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 3000

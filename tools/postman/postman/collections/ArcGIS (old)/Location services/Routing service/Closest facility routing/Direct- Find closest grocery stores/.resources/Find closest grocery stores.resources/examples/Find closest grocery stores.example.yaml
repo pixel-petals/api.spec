@@ -1,0 +1,747 @@
+$kind: http-example
+request:
+  url: https://{{route-service}}.arcgis.com/arcgis/rest/services/World/ClosestFacility/NAServer/ClosestFacility_World/solveClosestFacility
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      token: "{{ACCESS_TOKEN}}"
+      f: json
+      facilities: "{'spatialReference':{'latestWkid':3857,'wkid':102100},'features':[{'geometry':{'x':-13656100.72194608,'y':5703897.952531632},'attributes':{'Name':'Downtown Grocery, 310 SW 4th Ave, Portland, OR, 97204, USA'}},{'geometry':{'x':-13657081.446659965,'y':5704279.273731899},'attributes':{'Name':'Whole Foods Market, 1210 NW Couch St, Portland, OR, 97209, USA'}},{'geometry':{'x':-13654900.697835328,'y':5704360.306582605},'attributes':{'Name':'Pacific Coast Fruit Company, 201 NE 2nd Ave, Portland, Oregon, 97232'}},{'geometry':{'x':-13654793.831124166,'y':5703907.485363393},'attributes':{'Name':'Nicky USA, 223 SE 3rd Ave, Portland, OR, 97214, USA'}},{'geometry':{'x':-13654829.453361219,'y':5703721.596977669},'attributes':{'Name':'Alexis Foods, 215 SE Stark St, Portland, OR, 97214, USA'}},{'geometry':{'x':-13654680.285243554,'y':5703712.064344136},'attributes':{'Name':'Sheridan Fruit Company, 408 SE Martin Luther King, Portland, OR, 97214, USA'}},{'geometry':{'x':-13654723.699844966,'y':5703513.470124055},'attributes':{'Name':'Graziano Food Services, 302 SE Washington St, Portland, OR, 97214, USA'}},{'geometry':{'x':-13654781.585980177,'y':5703484.872919755},'attributes':{'Name':'Rinella Produce, 231 SE Alder St, Portland, OR, 97214, USA'}}]}"
+      incidents: "{'spatialReference':{'latestWkid':3857,'wkid':102100},'features':[{'geometry':{'x':-13656119.041436872,'y':5703857.952531632},'attributes':{'Name':'322 SW 4th Ave, Portland, OR, 97204, USA'}}]}"
+      defaultTargetFacilityCount: "3"
+      returnFacilities: "true"
+      returnCFRoutes: "true"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 17 Nov 2021 07:45:32 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "2440"
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 17-Nov-2021 07:46:32 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"c54f5f0e"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "messages": [
+              {
+                  "type": 50,
+                  "description": "Network elements with avoid-restrictions are traversed in the output (restriction attribute names: \"Through Traffic Prohibited\")."
+              }
+          ],
+          "routes": {
+              "fieldAliases": {
+                  "ObjectID": "ObjectID",
+                  "FacilityID": "FacilityID",
+                  "FacilityRank": "FacilityRank",
+                  "Name": "Name",
+                  "IncidentCurbApproach": "IncidentCurbApproach",
+                  "FacilityCurbApproach": "FacilityCurbApproach",
+                  "IncidentID": "IncidentID",
+                  "StartTime": "StartTime",
+                  "EndTime": "EndTime",
+                  "StartTimeUTC": "StartTimeUTC",
+                  "EndTimeUTC": "EndTimeUTC",
+                  "Total_Minutes": "Total_Minutes",
+                  "Total_TravelTime": "Total_TravelTime",
+                  "Total_Miles": "Total_Miles",
+                  "Total_Kilometers": "Total_Kilometers",
+                  "Total_TimeAt1KPH": "Total_TimeAt1KPH",
+                  "Total_WalkTime": "Total_WalkTime",
+                  "Total_TruckMinutes": "Total_TruckMinutes",
+                  "Total_TruckTravelTime": "Total_TruckTravelTime",
+                  "Shape_Length": "Shape_Length"
+              },
+              "geometryType": "esriGeometryPolyline",
+              "spatialReference": {
+                  "wkid": 4326,
+                  "latestWkid": 4326
+              },
+              "features": [
+                  {
+                      "attributes": {
+                          "ObjectID": 1,
+                          "FacilityID": 1,
+                          "FacilityRank": 1,
+                          "Name": "322 SW 4th Ave, Portland, OR, 97204, USA - Downtown Grocery, 310 SW 4th Ave, Portland, OR, 97204, USA",
+                          "IncidentCurbApproach": 2,
+                          "FacilityCurbApproach": 2,
+                          "IncidentID": 1,
+                          "StartTime": null,
+                          "EndTime": null,
+                          "StartTimeUTC": null,
+                          "EndTimeUTC": null,
+                          "Total_Minutes": null,
+                          "Total_TravelTime": 1.5401556540375578,
+                          "Total_Miles": 0.24943525791376361,
+                          "Total_Kilometers": 0.40142713571196803,
+                          "Total_TimeAt1KPH": null,
+                          "Total_WalkTime": null,
+                          "Total_TruckMinutes": null,
+                          "Total_TruckTravelTime": null,
+                          "Shape_Length": 0.0043160140084885822
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.67500427299996,
+                                      45.520619387000067
+                                  ],
+                                  [
+                                      -122.67541999999997,
+                                      45.520660000000078
+                                  ],
+                                  [
+                                      -122.67512999999997,
+                                      45.521180000000072
+                                  ],
+                                  [
+                                      -122.67476999999997,
+                                      45.521870000000035
+                                  ],
+                                  [
+                                      -122.67374999999998,
+                                      45.52159000000006
+                                  ],
+                                  [
+                                      -122.67395999999997,
+                                      45.521170000000041
+                                  ],
+                                  [
+                                      -122.67402999999996,
+                                      45.521060000000034
+                                  ],
+                                  [
+                                      -122.67408999999998,
+                                      45.520920000000046
+                                  ],
+                                  [
+                                      -122.67449999999997,
+                                      45.521020000000078
+                                  ],
+                                  [
+                                      -122.67478361199994,
+                                      45.521092028000055
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 2,
+                          "FacilityID": 2,
+                          "FacilityRank": 2,
+                          "Name": "322 SW 4th Ave, Portland, OR, 97204, USA - Whole Foods Market, 1210 NW Couch St, Portland, OR, 97209, USA",
+                          "IncidentCurbApproach": 2,
+                          "FacilityCurbApproach": 1,
+                          "IncidentID": 1,
+                          "StartTime": null,
+                          "EndTime": null,
+                          "StartTimeUTC": null,
+                          "EndTimeUTC": null,
+                          "Total_Minutes": null,
+                          "Total_TravelTime": 3.0792690646476264,
+                          "Total_Miles": 0.50934422889482578,
+                          "Total_Kilometers": 0.81971007870651447,
+                          "Total_TimeAt1KPH": null,
+                          "Total_WalkTime": null,
+                          "Total_TruckMinutes": null,
+                          "Total_TruckTravelTime": null,
+                          "Shape_Length": 0.0099716060092713658
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.67500427299996,
+                                      45.520619387000067
+                                  ],
+                                  [
+                                      -122.67541999999997,
+                                      45.520660000000078
+                                  ],
+                                  [
+                                      -122.67512999999997,
+                                      45.521180000000072
+                                  ],
+                                  [
+                                      -122.67589999999996,
+                                      45.521390000000054
+                                  ],
+                                  [
+                                      -122.67613999999998,
+                                      45.521460000000047
+                                  ],
+                                  [
+                                      -122.67713999999995,
+                                      45.521730000000048
+                                  ],
+                                  [
+                                      -122.67819999999995,
+                                      45.52201000000008
+                                  ],
+                                  [
+                                      -122.67916999999994,
+                                      45.522270000000049
+                                  ],
+                                  [
+                                      -122.68005999999997,
+                                      45.522520000000043
+                                  ],
+                                  [
+                                      -122.68043999999998,
+                                      45.522600000000068
+                                  ],
+                                  [
+                                      -122.68078999999994,
+                                      45.522670000000062
+                                  ],
+                                  [
+                                      -122.68110999999999,
+                                      45.522740000000056
+                                  ],
+                                  [
+                                      -122.68111999999996,
+                                      45.52299000000005
+                                  ],
+                                  [
+                                      -122.68193999999994,
+                                      45.522970000000043
+                                  ],
+                                  [
+                                      -122.68210999999997,
+                                      45.522970000000043
+                                  ],
+                                  [
+                                      -122.68314999999996,
+                                      45.522950000000037
+                                  ],
+                                  [
+                                      -122.68364602399998,
+                                      45.522943951000059
+                                  ]
+                              ]
+                          ]
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 3,
+                          "FacilityID": 8,
+                          "FacilityRank": 3,
+                          "Name": "322 SW 4th Ave, Portland, OR, 97204, USA - Rinella Produce, 231 SE Alder St, Portland, OR, 97214, USA",
+                          "IncidentCurbApproach": 1,
+                          "FacilityCurbApproach": 2,
+                          "IncidentID": 1,
+                          "StartTime": null,
+                          "EndTime": null,
+                          "StartTimeUTC": null,
+                          "EndTimeUTC": null,
+                          "Total_Minutes": null,
+                          "Total_TravelTime": 3.4107589165781453,
+                          "Total_Miles": 0.94527321143673726,
+                          "Total_Kilometers": 1.5212697711864445,
+                          "Total_TimeAt1KPH": null,
+                          "Total_WalkTime": null,
+                          "Total_TruckMinutes": null,
+                          "Total_TruckTravelTime": null,
+                          "Shape_Length": 0.017451412443131455
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.67500427299996,
+                                      45.520619387000067
+                                  ],
+                                  [
+                                      -122.67435999999998,
+                                      45.520420000000058
+                                  ],
+                                  [
+                                      -122.67444999999998,
+                                      45.520260000000064
+                                  ],
+                                  [
+                                      -122.67461999999995,
+                                      45.519930000000045
+                                  ],
+                                  [
+                                      -122.67480999999998,
+                                      45.519580000000076
+                                  ],
+                                  [
+                                      -122.67518999999999,
+                                      45.518900000000031
+                                  ],
+                                  [
+                                      -122.67436999999995,
+                                      45.518680000000074
+                                  ],
+                                  [
+                                      -122.67421999999999,
+                                      45.518650000000036
+                                  ],
+                                  [
+                                      -122.67308999999995,
+                                      45.51854000000003
+                                  ],
+                                  [
+                                      -122.67237999999998,
+                                      45.518420000000049
+                                  ],
+                                  [
+                                      -122.67215999999996,
+                                      45.518390000000068
+                                  ],
+                                  [
+                                      -122.67196999999999,
+                                      45.51836000000003
+                                  ],
+                                  [
+                                      -122.67170999999996,
+                                      45.51834000000008
+                                  ],
+                                  [
+                                      -122.67153999999999,
+                                      45.518330000000049
+                                  ],
+                                  [
+                                      -122.67120999999997,
+                                      45.518240000000048
+                                  ],
+                                  [
+                                      -122.67107999999996,
+                                      45.518200000000036
+                                  ],
+                                  [
+                                      -122.67061999999999,
+                                      45.518080000000054
+                                  ],
+                                  [
+                                      -122.66861999999998,
+                                      45.517530000000079
+                                  ],
+                                  [
+                                      -122.66830999999996,
+                                      45.517450000000053
+                                  ],
+                                  [
+                                      -122.66802999999999,
+                                      45.517370000000028
+                                  ],
+                                  [
+                                      -122.66777999999999,
+                                      45.517170000000078
+                                  ],
+                                  [
+                                      -122.66759999999999,
+                                      45.517070000000047
+                                  ],
+                                  [
+                                      -122.66749999999996,
+                                      45.517010000000028
+                                  ],
+                                  [
+                                      -122.66724999999997,
+                                      45.516840000000059
+                                  ],
+                                  [
+                                      -122.66690999999997,
+                                      45.516560000000027
+                                  ],
+                                  [
+                                      -122.66674999999998,
+                                      45.516430000000071
+                                  ],
+                                  [
+                                      -122.66641999999996,
+                                      45.516240000000039
+                                  ],
+                                  [
+                                      -122.66579999999999,
+                                      45.516220000000033
+                                  ],
+                                  [
+                                      -122.66579999999999,
+                                      45.516390000000058
+                                  ],
+                                  [
+                                      -122.66579999999999,
+                                      45.516560000000027
+                                  ],
+                                  [
+                                      -122.66481999999996,
+                                      45.516550000000052
+                                  ],
+                                  [
+                                      -122.66377999999997,
+                                      45.516530000000046
+                                  ],
+                                  [
+                                      -122.66276999999997,
+                                      45.516530000000046
+                                  ],
+                                  [
+                                      -122.66276999999997,
+                                      45.517240000000072
+                                  ],
+                                  [
+                                      -122.66277999999994,
+                                      45.517720000000054
+                                  ],
+                                  [
+                                      -122.66277999999994,
+                                      45.517950000000042
+                                  ],
+                                  [
+                                      -122.66277999999994,
+                                      45.51827000000003
+                                  ]
+                              ]
+                          ]
+                      }
+                  }
+              ]
+          },
+          "facilities": {
+              "fieldAliases": {
+                  "ObjectID": "ObjectID",
+                  "Name": "Name",
+                  "SourceID": "SourceID",
+                  "SourceOID": "SourceOID",
+                  "PosAlong": "PosAlong",
+                  "SideOfEdge": "SideOfEdge",
+                  "CurbApproach": "CurbApproach",
+                  "Status": "Status",
+                  "SnapX": "SnapX",
+                  "SnapY": "SnapY",
+                  "SnapZ": "SnapZ",
+                  "DistanceToNetworkInMeters": "DistanceToNetworkInMeters",
+                  "Attr_Minutes": "Attr_Minutes",
+                  "Attr_TravelTime": "Attr_TravelTime",
+                  "Attr_Miles": "Attr_Miles",
+                  "Attr_Kilometers": "Attr_Kilometers",
+                  "Attr_TimeAt1KPH": "Attr_TimeAt1KPH",
+                  "Attr_WalkTime": "Attr_WalkTime",
+                  "Attr_TruckMinutes": "Attr_TruckMinutes",
+                  "Attr_TruckTravelTime": "Attr_TruckTravelTime",
+                  "Cutoff_Minutes": "Cutoff_Minutes",
+                  "Cutoff_TravelTime": "Cutoff_TravelTime",
+                  "Cutoff_Miles": "Cutoff_Miles",
+                  "Cutoff_Kilometers": "Cutoff_Kilometers",
+                  "Cutoff_TimeAt1KPH": "Cutoff_TimeAt1KPH",
+                  "Cutoff_WalkTime": "Cutoff_WalkTime",
+                  "Cutoff_TruckMinutes": "Cutoff_TruckMinutes",
+                  "Cutoff_TruckTravelTime": "Cutoff_TruckTravelTime"
+              },
+              "geometryType": "esriGeometryPoint",
+              "spatialReference": {
+                  "wkid": 4326,
+                  "latestWkid": 4326
+              },
+              "features": [
+                  {
+                      "attributes": {
+                          "ObjectID": 1,
+                          "Name": "Downtown Grocery, 310 SW 4th Ave, Portland, OR, 97204, USA",
+                          "SourceID": 1,
+                          "SourceOID": 12053247,
+                          "PosAlong": 0.48741262758256448,
+                          "SideOfEdge": 1,
+                          "CurbApproach": 0,
+                          "Status": 0,
+                          "SnapX": -122.67478361183427,
+                          "SnapY": 45.521092028402435,
+                          "SnapZ": 0,
+                          "DistanceToNetworkInMeters": 25.104311651206501,
+                          "Attr_Minutes": 0,
+                          "Attr_TravelTime": 0,
+                          "Attr_Miles": 0,
+                          "Attr_Kilometers": 0,
+                          "Attr_TimeAt1KPH": 0,
+                          "Attr_WalkTime": 0,
+                          "Attr_TruckMinutes": 0,
+                          "Attr_TruckTravelTime": 0,
+                          "Cutoff_Minutes": null,
+                          "Cutoff_TravelTime": null,
+                          "Cutoff_Miles": null,
+                          "Cutoff_Kilometers": null,
+                          "Cutoff_TimeAt1KPH": null,
+                          "Cutoff_WalkTime": null,
+                          "Cutoff_TruckMinutes": null,
+                          "Cutoff_TruckTravelTime": null
+                      },
+                      "geometry": {
+                          "x": -122.67483999999996,
+                          "y": 45.520870000000059
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 2,
+                          "Name": "Whole Foods Market, 1210 NW Couch St, Portland, OR, 97209, USA",
+                          "SourceID": 1,
+                          "SourceOID": 12055048,
+                          "PosAlong": 0.88297884096084878,
+                          "SideOfEdge": 1,
+                          "CurbApproach": 0,
+                          "Status": 0,
+                          "SnapX": -122.68364602379177,
+                          "SnapY": 45.522943950929424,
+                          "SnapZ": 0,
+                          "DistanceToNetworkInMeters": 36.296951455871735,
+                          "Attr_Minutes": 0,
+                          "Attr_TravelTime": 0,
+                          "Attr_Miles": 0,
+                          "Attr_Kilometers": 0,
+                          "Attr_TimeAt1KPH": 0,
+                          "Attr_WalkTime": 0,
+                          "Attr_TruckMinutes": 0,
+                          "Attr_TruckTravelTime": 0,
+                          "Cutoff_Minutes": null,
+                          "Cutoff_TravelTime": null,
+                          "Cutoff_Miles": null,
+                          "Cutoff_Kilometers": null,
+                          "Cutoff_TimeAt1KPH": null,
+                          "Cutoff_WalkTime": null,
+                          "Cutoff_TruckMinutes": null,
+                          "Cutoff_TruckTravelTime": null
+                      },
+                      "geometry": {
+                          "x": -122.68364999999994,
+                          "y": 45.523270000000025
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 3,
+                          "Name": "Pacific Coast Fruit Company, 201 NE 2nd Ave, Portland, Oregon, 97232",
+                          "SourceID": 1,
+                          "SourceOID": 12093635,
+                          "PosAlong": 0.53055785196169325,
+                          "SideOfEdge": 1,
+                          "CurbApproach": 0,
+                          "Status": 0,
+                          "SnapX": -122.66386014737135,
+                          "SnapY": 45.523782379198011,
+                          "SnapZ": 0,
+                          "DistanceToNetworkInMeters": 15.589148115384775,
+                          "Attr_Minutes": 0,
+                          "Attr_TravelTime": 0,
+                          "Attr_Miles": 0,
+                          "Attr_Kilometers": 0,
+                          "Attr_TimeAt1KPH": 0,
+                          "Attr_WalkTime": 0,
+                          "Attr_TruckMinutes": 0,
+                          "Attr_TruckTravelTime": 0,
+                          "Cutoff_Minutes": null,
+                          "Cutoff_TravelTime": null,
+                          "Cutoff_Miles": null,
+                          "Cutoff_Kilometers": null,
+                          "Cutoff_TimeAt1KPH": null,
+                          "Cutoff_WalkTime": null,
+                          "Cutoff_TruckMinutes": null,
+                          "Cutoff_TruckTravelTime": null
+                      },
+                      "geometry": {
+                          "x": -122.66405999999995,
+                          "y": 45.523780000000045
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 4,
+                          "Name": "Nicky USA, 223 SE 3rd Ave, Portland, OR, 97214, USA",
+                          "SourceID": 1,
+                          "SourceOID": 12090541,
+                          "PosAlong": 0.35598357419647575,
+                          "SideOfEdge": 1,
+                          "CurbApproach": 0,
+                          "Status": 0,
+                          "SnapX": -122.66274999999996,
+                          "SnapY": 45.520930000000078,
+                          "SnapZ": 0,
+                          "DistanceToNetworkInMeters": 27.29863492006815,
+                          "Attr_Minutes": 0,
+                          "Attr_TravelTime": 0,
+                          "Attr_Miles": 0,
+                          "Attr_Kilometers": 0,
+                          "Attr_TimeAt1KPH": 0,
+                          "Attr_WalkTime": 0,
+                          "Attr_TruckMinutes": 0,
+                          "Attr_TruckTravelTime": 0,
+                          "Cutoff_Minutes": null,
+                          "Cutoff_TravelTime": null,
+                          "Cutoff_Miles": null,
+                          "Cutoff_Kilometers": null,
+                          "Cutoff_TimeAt1KPH": null,
+                          "Cutoff_WalkTime": null,
+                          "Cutoff_TruckMinutes": null,
+                          "Cutoff_TruckTravelTime": null
+                      },
+                      "geometry": {
+                          "x": -122.66309999999999,
+                          "y": 45.520930000000078
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 5,
+                          "Name": "Alexis Foods, 215 SE Stark St, Portland, OR, 97214, USA",
+                          "SourceID": 1,
+                          "SourceOID": 12090547,
+                          "PosAlong": 0.79191575241535861,
+                          "SideOfEdge": 2,
+                          "CurbApproach": 0,
+                          "Status": 0,
+                          "SnapX": -122.66341999999997,
+                          "SnapY": 45.520080000000064,
+                          "SnapZ": 0,
+                          "DistanceToNetworkInMeters": 35.622238375023102,
+                          "Attr_Minutes": 0,
+                          "Attr_TravelTime": 0,
+                          "Attr_Miles": 0,
+                          "Attr_Kilometers": 0,
+                          "Attr_TimeAt1KPH": 0,
+                          "Attr_WalkTime": 0,
+                          "Attr_TruckMinutes": 0,
+                          "Attr_TruckTravelTime": 0,
+                          "Cutoff_Minutes": null,
+                          "Cutoff_TravelTime": null,
+                          "Cutoff_Miles": null,
+                          "Cutoff_Kilometers": null,
+                          "Cutoff_TimeAt1KPH": null,
+                          "Cutoff_WalkTime": null,
+                          "Cutoff_TruckMinutes": null,
+                          "Cutoff_TruckTravelTime": null
+                      },
+                      "geometry": {
+                          "x": -122.66341999999997,
+                          "y": 45.519760000000076
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 6,
+                          "Name": "Sheridan Fruit Company, 408 SE Martin Luther King, Portland, OR, 97214, USA",
+                          "SourceID": 1,
+                          "SourceOID": 12090633,
+                          "PosAlong": 0.80153709366072068,
+                          "SideOfEdge": 1,
+                          "CurbApproach": 0,
+                          "Status": 0,
+                          "SnapX": -122.66204999999997,
+                          "SnapY": 45.519750000000045,
+                          "SnapZ": 0,
+                          "DistanceToNetworkInMeters": 6.0379503153307867,
+                          "Attr_Minutes": 0,
+                          "Attr_TravelTime": 0,
+                          "Attr_Miles": 0,
+                          "Attr_Kilometers": 0,
+                          "Attr_TimeAt1KPH": 0,
+                          "Attr_WalkTime": 0,
+                          "Attr_TruckMinutes": 0,
+                          "Attr_TruckTravelTime": 0,
+                          "Cutoff_Minutes": null,
+                          "Cutoff_TravelTime": null,
+                          "Cutoff_Miles": null,
+                          "Cutoff_Kilometers": null,
+                          "Cutoff_TimeAt1KPH": null,
+                          "Cutoff_WalkTime": null,
+                          "Cutoff_TruckMinutes": null,
+                          "Cutoff_TruckTravelTime": null
+                      },
+                      "geometry": {
+                          "x": -122.66207999999995,
+                          "y": 45.519700000000057
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 7,
+                          "Name": "Graziano Food Services, 302 SE Washington St, Portland, OR, 97214, USA",
+                          "SourceID": 1,
+                          "SourceOID": 12090623,
+                          "PosAlong": 0.40541623964548673,
+                          "SideOfEdge": 1,
+                          "CurbApproach": 0,
+                          "Status": 0,
+                          "SnapX": -122.6624728370299,
+                          "SnapY": 45.51865426615241,
+                          "SnapZ": 0,
+                          "DistanceToNetworkInMeters": 22.739794170248139,
+                          "Attr_Minutes": 0,
+                          "Attr_TravelTime": 0,
+                          "Attr_Miles": 0,
+                          "Attr_Kilometers": 0,
+                          "Attr_TimeAt1KPH": 0,
+                          "Attr_WalkTime": 0,
+                          "Attr_TruckMinutes": 0,
+                          "Attr_TruckTravelTime": 0,
+                          "Cutoff_Minutes": null,
+                          "Cutoff_TravelTime": null,
+                          "Cutoff_Miles": null,
+                          "Cutoff_Kilometers": null,
+                          "Cutoff_TimeAt1KPH": null,
+                          "Cutoff_WalkTime": null,
+                          "Cutoff_TruckMinutes": null,
+                          "Cutoff_TruckTravelTime": null
+                      },
+                      "geometry": {
+                          "x": -122.66246999999998,
+                          "y": 45.51845000000003
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 8,
+                          "Name": "Rinella Produce, 231 SE Alder St, Portland, OR, 97214, USA",
+                          "SourceID": 1,
+                          "SourceOID": 12090541,
+                          "PosAlong": 0.8202512248646302,
+                          "SideOfEdge": 1,
+                          "CurbApproach": 0,
+                          "Status": 0,
+                          "SnapX": -122.66277999999994,
+                          "SnapY": 45.51827000000003,
+                          "SnapZ": 0,
+                          "DistanceToNetworkInMeters": 16.380008162505479,
+                          "Attr_Minutes": 0,
+                          "Attr_TravelTime": 0,
+                          "Attr_Miles": 0,
+                          "Attr_Kilometers": 0,
+                          "Attr_TimeAt1KPH": 0,
+                          "Attr_WalkTime": 0,
+                          "Attr_TruckMinutes": 0,
+                          "Attr_TruckTravelTime": 0,
+                          "Cutoff_Minutes": null,
+                          "Cutoff_TravelTime": null,
+                          "Cutoff_Miles": null,
+                          "Cutoff_Kilometers": null,
+                          "Cutoff_TimeAt1KPH": null,
+                          "Cutoff_WalkTime": null,
+                          "Cutoff_TruckMinutes": null,
+                          "Cutoff_TruckTravelTime": null
+                      },
+                      "geometry": {
+                          "x": -122.66298999999998,
+                          "y": 45.51827000000003
+                      }
+                  }
+              ]
+          }
+      }
+order: 1000

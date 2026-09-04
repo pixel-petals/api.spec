@@ -1,0 +1,18 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/way/:id"
+  method: GET
+  pathVariables:
+    - key: id
+      value: "6776"
+      description: The numeric ID of the element
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 410
+  statusText: Gone
+  body:
+    type: text
+    content: ""
+order: 3000

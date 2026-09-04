@@ -1,0 +1,26 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/notes/:id/reopen?text=string"
+  method: POST
+  headers:
+    - key: Authorization
+      value: <token>
+      description: "Added as a part of security scheme: oauth2"
+  queryParams:
+    - key: text
+      value: string
+      description: Optional comment on reopen
+  pathVariables:
+    - key: id
+      value: "6776"
+      description: The numeric ID of the element
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 3000

@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{CKAN_API}}/config_option_update"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: key
+      value: ""
+      description: a configuration option key (eg ckan.site_title). It must be present on the update_configuration_schema
+order: 3000

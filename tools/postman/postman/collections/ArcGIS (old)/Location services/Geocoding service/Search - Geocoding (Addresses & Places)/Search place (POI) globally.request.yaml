@@ -1,0 +1,12 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/geocode-places/#global-search)
+url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?token={{ACCESS_TOKEN}}&f=pjson&address=grand canyon
+method: GET
+queryParams:
+  token: "{{ACCESS_TOKEN}}"
+  f: pjson
+  address: grand canyon
+body:
+  type: urlencoded
+examples: ./.resources/Search place (POI) globally.resources/examples
+order: 9000

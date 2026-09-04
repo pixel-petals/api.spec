@@ -1,0 +1,10 @@
+$kind: collection
+description: |-
+  Places, also known as _points of interest (POIs)_, are businesses and geographic locations that you can discover around the world. The [service API](https://developers.arcgis.com/rest/places/) allows you to search for places [near a location](https://developers.arcgis.com/documentation/mapping-and-location-services/place-finding/nearby-search/) or [within a bounding box](https://developers.arcgis.com/documentation/mapping-and-location-services/place-finding/bounding-box-search/). You can also get valuable place details such as _name_, _category_, _street address_, _contact information_, _website_, and _social links_. This topic covers how to use the places service to build place finding applications.
+
+  To learn more go to [Developer guide > Place finding](https://developers.arcgis.com/documentation/mapping-and-location-services/place-finding/).
+auth:
+  - id: ""
+    type: noauth
+    name: No Auth
+order: 2000

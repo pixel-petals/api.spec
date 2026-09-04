@@ -1,0 +1,19 @@
+$kind: http-example
+request:
+  url: https://example.com/api/tiles/4/5/6.png?z=4&x=5&y=6
+  method: GET
+  headers:
+    Authorization: Bearer <ACCESS_TOKEN>
+  queryParams:
+    z: "4"
+    x: "5"
+    y: "6"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Authorization: Bearer <ACCESS_TOKEN>
+  body:
+    type: text
+    content: <binary image data>
+order: 1000

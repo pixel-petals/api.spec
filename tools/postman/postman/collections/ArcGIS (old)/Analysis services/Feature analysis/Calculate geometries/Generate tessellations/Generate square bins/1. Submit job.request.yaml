@@ -1,0 +1,17 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/calculate-geometries/generate-tessellations/#generate-square-bins)
+url: "{{ANALYSIS_URL}}/GenerateTessellations/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    binType: SQUARE
+    extentLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Portland_boundary/FeatureServer/0","name":"Portland_boundary"}'
+    intersectStudyArea: "true"
+    binSize: "1"
+    binSizeUnit: Miles
+    outputName: '{"serviceProperties":{"name":"Generate square bins"}}'
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

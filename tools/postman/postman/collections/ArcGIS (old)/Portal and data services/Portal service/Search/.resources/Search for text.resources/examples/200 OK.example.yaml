@@ -1,0 +1,625 @@
+$kind: http-example
+request:
+  url: https://www.arcgis.com/sharing/rest/search?q=title:"Seven Natural Wonders of the World" OR description:"Seven Natural Wonders of the World"&f=pjson
+  method: GET
+  queryParams:
+    q: title:"Seven Natural Wonders of the World" OR description:"Seven Natural Wonders of the World"
+    f: pjson
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Thu, 13 Jan 2022 15:35:09 GMT
+    - key: Content-Type
+      value: text/plain;charset=utf-8
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Origin
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Cache-Control
+      value: no-cache
+    - key: Pragma
+      value: no-cache
+    - key: Expires
+      value: "-1"
+    - key: Strict-Transport-Security
+      value: max-age=31536000
+    - key: Content-Encoding
+      value: gzip
+  body:
+    type: json
+    content: |-
+      {
+          "query": "title:\"Seven Natural Wonders of the World\" OR description:\"Seven Natural Wonders of the World\"",
+          "total": 15,
+          "start": 1,
+          "num": 10,
+          "nextStart": 11,
+          "results": [
+              {
+                  "id": "1772830e6d4d42c6a9fb12c333d41e1d",
+                  "owner": "olaoluwaatere",
+                  "created": 1637597397000,
+                  "modified": 1637809049000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Seven Natural Wonders of the World!",
+                  "type": "StoryMap",
+                  "typeKeywords": [
+                      "arcgis-storymaps",
+                      "smdraftresourceid:draft_1637809047506.json",
+                      "smfirstpublisheddate:1637809047504",
+                      "smitem1",
+                      "smpublisheddate:1637809047504",
+                      "smstatuspublished",
+                      "smversiondraft:21.47.101",
+                      "smversionpublished:21.47.101",
+                      "StoryMap",
+                      "Web Application"
+                  ],
+                  "description": "<p>I am Olaoluwa Atere, A graduate of Surveying and Geo-Informatics from the University of Ilorin. So I enrolled for a course on GIS, this is my first major work on GIS, done a few though, in school and while I&nbsp;was an intern. I was asked to do a story map on places I have visited in my country or natural wonders of the world I will love to visit. But I don’t have images from places I have visited, so I went for natural wonders of the world I did love to visit. So here, I have got pictures and videos of these places, scroll through and enjoy.</p><p><strong>The Northern Lights: Aurora Borealis</strong></p><p>The Northern Lights have become a sensation for tourists travelling in the Northern Hemisphere. The Northern Lights are auroras or naturally occurring phenomena that consist of mystifying displays of light in the sky. The northern lights dance across the sky and emanate a diffused glow along the northern horizon.</p>",
+                  "tags": [],
+                  "snippet": "Be amazed at what the Earth offered",
+                  "thumbnail": "thumbnail/ago_downloaded.jpg",
+                  "documentation": null,
+                  "extent": [],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-gb",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://storymaps.arcgis.com/stories/1772830e6d4d42c6a9fb12c333d41e1d",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 65,
+                  "scoreCompleteness": 61,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "005f1f8d9d0a40a7a6d0d9ba0e076e5d",
+                  "owner": "ColleenFoyn",
+                  "created": 1374755488000,
+                  "modified": 1374771351000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Grand Canyon",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": " <span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>The</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><b>Grand Canyon</b><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>(</span><a href='https://en.wikipedia.org/wiki/Hopi_language' style='font-family: sans-serif; line-height: 19.1875px; text-decoration: none; color: rgb(11, 0, 128); background-image: none;'>Hopi</a><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>:</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><i>Ongtupqa</i><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>;</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><a href='https://en.wikipedia.org/wiki/Yavapai_language' style='font-family: sans-serif; line-height: 19.1875px; text-decoration: none; color: rgb(11, 0, 128); background-image: none;'>Yavapai</a><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>:</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><span style='color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'><i>Wi:kaʼi:la</i></span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>) is a steep-sided</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><a href='https://en.wikipedia.org/wiki/Canyon' style='font-family: sans-serif; line-height: 19.1875px; text-decoration: none; color: rgb(11, 0, 128); background-image: none;'>canyon</a><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>carved by the</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><a href='https://en.wikipedia.org/wiki/Colorado_River' style='font-family: sans-serif; line-height: 19.1875px; text-decoration: none; color: rgb(11, 0, 128); background-image: none;'>Colorado River</a><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>in the</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><a href='https://en.wikipedia.org/wiki/United_States' style='font-family: sans-serif; line-height: 19.1875px; text-decoration: none; color: rgb(11, 0, 128); background-image: none;'>United States</a><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>in the state of</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><a href='https://en.wikipedia.org/wiki/Arizona' style='font-family: sans-serif; line-height: 19.1875px; text-decoration: none; color: rgb(11, 0, 128); background-image: none;'>Arizona</a><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>. It is contained within and managed by</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><a href='https://en.wikipedia.org/wiki/Grand_Canyon_National_Park' style='font-family: sans-serif; line-height: 19.1875px; text-decoration: none; color: rgb(11, 0, 128); background-image: none;'>Grand Canyon National Park</a><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>, the</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><a href='https://en.wikipedia.org/wiki/Hualapai_people' style='font-family: sans-serif; line-height: 19.1875px; text-decoration: none; color: rgb(11, 0, 128); background-image: none;'>Hualapai</a><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>Tribal Nation, and the</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><a href='https://en.wikipedia.org/wiki/Havasupai_people' style='font-family: sans-serif; line-height: 19.1875px; text-decoration: none; color: rgb(11, 0, 128); background-image: none;'>Havasupai Tribe</a><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>. President</span><a href='https://en.wikipedia.org/wiki/Theodore_Roosevelt' style='font-family: sans-serif; line-height: 19.1875px; text-decoration: none; color: rgb(11, 0, 128); background-image: none;'>Theodore Roosevelt</a><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>was a major proponent of preservation of the Grand Canyon area, and visited it on numerous occasions to hunt and enjoy the scenery. It is considered one of the</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><a href='https://en.wikipedia.org/wiki/Seven_Natural_Wonders_of_the_World' style='font-family: sans-serif; line-height: 19.1875px; text-decoration: none; color: rgb(11, 0, 128); background-image: none;'>Seven Natural Wonders of the World</a><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>.</span><div><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'><br /></span></div><div><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>The Grand Canyon is 277 miles (446 km) long, up to 18 miles (29 km) wide and attains a depth of over a mile (6,000 feet or 1,800 meters). </span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>Nearly two billion years of the</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><a href='https://en.wikipedia.org/wiki/Earth' style='font-family: sans-serif; line-height: 19.1875px; text-decoration: none; color: rgb(11, 0, 128); background-image: none;'>Earth</a><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>'s geological history has been exposed as the Colorado River and its tributaries cut their</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><a href='https://en.wikipedia.org/wiki/Stream_channel' style='font-family: sans-serif; line-height: 19.1875px; text-decoration: none; color: rgb(11, 0, 128); background-image: none;'>channels</a><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>through layer after layer of rock while the</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><a href='https://en.wikipedia.org/wiki/Colorado_Plateau' style='font-family: sans-serif; line-height: 19.1875px; text-decoration: none; color: rgb(11, 0, 128); background-image: none;'>Colorado Plateau</a><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>was</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><a href='https://en.wikipedia.org/wiki/Tectonic_uplift' style='font-family: sans-serif; line-height: 19.1875px; text-decoration: none; color: rgb(11, 0, 128); background-image: none;'>uplifted</a><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>.</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>While the specific geologic processes and timing that formed the Grand Canyon are the subject of debate by geologists,</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>recent evidence suggests the Colorado River established its course through the canyon at least 17 million years ago.</span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'> </span><span style='background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; line-height: 19.1875px;'>Since that time, the Colorado River continued to erode and form the canyon to its present-day configuration.</span><p style='margin-top: 0.4em; margin-bottom: 0.5em; line-height: 19.1875px; color: rgb(0, 0, 0); font-family: sans-serif; background-color: rgb(255, 255, 255);'>For thousands of years, the area has been continuously inhabited by <a href='https://en.wikipedia.org/wiki/Native_Americans_in_the_United_States' style='text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-position: initial initial; background-repeat: initial initial;'>Native Americans</a> who built settlements within the canyon and its many caves. The <a href='https://en.wikipedia.org/wiki/Puebloan_peoples' style='text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-position: initial initial; background-repeat: initial initial;'>Pueblo people</a> considered the Grand Canyon (&quot;Ongtupqa&quot; in <a href='https://en.wikipedia.org/wiki/Hopi_language' style='text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-position: initial initial; background-repeat: initial initial;'>Hopi language</a>) a holy site and made pilgrimages to it. The first European known to have viewed the Grand Canyon was <a href='https://en.wikipedia.org/wiki/Garcia_Lopez_de_Cardenas' style='text-decoration: none; color: rgb(11, 0, 128); background-image: none; background-position: initial initial; background-repeat: initial initial;'>García López de Cárdenas</a> from Spain, who arrived in 1540.</p><p style='margin-top: 0.4em; margin-bottom: 0.5em; line-height: 19.1875px; color: rgb(0, 0, 0); font-family: sans-serif; background-color: rgb(255, 255, 255);'><br /></p><p style='margin-top: 0.4em; margin-bottom: 0.5em; color: rgb(0, 0, 0); font-family: sans-serif; background-color: rgb(255, 255, 255);'><span style='font-size: 11px; line-height: 10.828125px;'>Source Wikipedia</span></p></div>",
+                  "tags": [
+                      "#Tourism #GrandCanyon #River #Mountains"
+                  ],
+                  "snippet": "Grand Canyon tours",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -113.7828,
+                          36.0069
+                      ],
+                      [
+                          -113.7379,
+                          36.0258
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "Wikipedia",
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 175,
+                  "scoreCompleteness": 55,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "da7cda8d38224b368bc74cc7d6f05d0f",
+                  "owner": "al_geodev",
+                  "created": 1520083972000,
+                  "modified": 1520187436000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Seven Natural Wonders of the World",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "world",
+                      "data"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -112.60000302532282,
+                          -22.79027853558569
+                      ],
+                      [
+                          147.70000188586465,
+                          64.1258908091207
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services.arcgis.com/uCXeTVveQzP4IIcx/arcgis/rest/services/Seven_Natural_Wonders_of_the_World/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 1607,
+                  "scoreCompleteness": 41,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "3f2285579ae74f32b75d2a4287ffe0a0",
+                  "owner": "al_geodev",
+                  "created": 1520084381000,
+                  "modified": 1543420964000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Seven Natural Wonders of the World",
+                  "type": "Web Scene",
+                  "typeKeywords": [
+                      "3D",
+                      "Map",
+                      "Scene",
+                      "Streaming",
+                      "Web",
+                      "Web Scene"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "world",
+                      "data"
+                  ],
+                  "snippet": "Seven Natural Wonders of the World",
+                  "thumbnail": "thumbnail/thumbnail.jpeg",
+                  "documentation": null,
+                  "extent": [],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 254,
+                  "scoreCompleteness": 51,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "dcbd2324154c4df78373a568184e63e5",
+                  "owner": "al_geodev",
+                  "created": 1520080815000,
+                  "modified": 1523293722000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Seven Natural Wonders of the World",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "webmap"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -120.0586,
+                          -76.4771
+                      ],
+                      [
+                          134.1211,
+                          83.9602
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 1210,
+                  "scoreCompleteness": 33,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "1a285274721e47049dc145ea62397746",
+                  "owner": "rkeep3@eq.edu.au",
+                  "created": 1637019443000,
+                  "modified": 1637279386000,
+                  "guid": null,
+                  "name": null,
+                  "title": "The Great Barrier Reef",
+                  "type": "StoryMap",
+                  "typeKeywords": [
+                      "arcgis-storymaps",
+                      "smdraftresourceid:draft_1637279382815.json",
+                      "smfirstpublisheddate:1637020750814",
+                      "smitem1",
+                      "smpublisheddate:1637231954305",
+                      "smstatusunpublishedchanges",
+                      "smversiondraft:21.47.101",
+                      "smversionpublished:21.47.101",
+                      "StoryMap",
+                      "Web Application"
+                  ],
+                  "description": "<p>The Great Barrier Reef is the worlds oldest and biggest reef, it is 20 Million years old and is one of the seven natural wonders of the world. The Great Barrier Reef is unique because it expands over 14 degrees latitude from shallow to deep waters. Humans use The Great Barrier Reef as a money system to get money from tourists. Tourists who come to this sight come to see the multitude of species and corals living and thriving in our great underwater city. The Great Barrier Reef (Uiure) holds Aboriginal and Torres Strait islander significance as they have been interacting with it such as hunting and fishing way before Captain Cook discovered it.</p><p>GRAPH GOES HERE!!!!</p><p>The Great Barrier Reef is coming to an end though. Why? Oh that's simple. Because people litter and pollute the world a big portion of that litter finds it way into the ocean and into the Great Barrier Reef. This litter kills not just the reef but all living sea creatures there. global warming isn't helping out either in fact it is a big reason why some corals are dead. It is become evident that the water surrounding our reef has become too hot for some of the coral making them die. In the years 2016 and 2017 there were 2 huge bleaching events in the Great Barrier Reef causing coral to die. Then just when the reef was about to make a full recovery a huge Hurricane named Hurricane Hamish destroyed the majority of The Great Barrier Reef.</p>",
+                  "tags": [],
+                  "snippet": "This is a story about the great barrier reef.",
+                  "thumbnail": "thumbnail/ago_downloaded.jpg",
+                  "documentation": null,
+                  "extent": [],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://storymaps.arcgis.com/stories/1a285274721e47049dc145ea62397746",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 107,
+                  "scoreCompleteness": 65,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "bfd700db1ee945ed94c37e218899f57d",
+                  "owner": "Gene-Bean",
+                  "created": 1555191422000,
+                  "modified": 1580760361000,
+                  "guid": null,
+                  "name": null,
+                  "title": "The Seven Natural Wonders of the World",
+                  "type": "Web Mapping Application",
+                  "typeKeywords": [
+                      "JavaScript",
+                      "layout-tab",
+                      "Map",
+                      "Mapping Site",
+                      "MapSeries",
+                      "Online Map",
+                      "Ready To Use",
+                      "selfConfigured",
+                      "Story Map",
+                      "Story Maps",
+                      "Web Map"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "Story Map",
+                      "Map Series"
+                  ],
+                  "snippet": "This is my lab for my independent study where I explore the function and use of the Map Series story map form. This story map shows the locations of the 7 natural wonders of the world (CNN) and offers a short description and images for each.",
+                  "thumbnail": "thumbnail/thumbnail.png",
+                  "documentation": null,
+                  "extent": [],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://www.arcgis.com/apps/MapSeries/index.html?appid=bfd700db1ee945ed94c37e218899f57d",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": "largethumbnail/largeThumbnail.png",
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 123,
+                  "scoreCompleteness": 58,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "19551429c13147678ff6e88de1eb1fab",
+                  "owner": "al_dev",
+                  "created": 1521488281000,
+                  "modified": 1630610869000,
+                  "guid": null,
+                  "name": "Seven Natural Wonders of the World",
+                  "title": "Seven Natural Wonders of the World",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "world",
+                      "data",
+                      "sourceId-da7cda8d38224b368bc74cc7d6f05d0f",
+                      "copied with ago-assistant"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/thumbnail1630610866587.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -112.60000302532282,
+                          -22.79027853558569
+                      ],
+                      [
+                          147.70000188586465,
+                          64.1258908091207
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": null,
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services1.arcgis.com/JMcCdYwFdP7JrHLL/arcgis/rest/services/Seven Natural Wonders of the World/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 66,
+                  "scoreCompleteness": 50,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "b606b4a7101b4246a5cff7fe35080f7c",
+                  "owner": "G00398789@gmit.ie",
+                  "created": 1639801548000,
+                  "modified": 1639960828000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Best Places To Visit In           Zimbabwe ",
+                  "type": "StoryMap",
+                  "typeKeywords": [
+                      "arcgis-storymaps",
+                      "smdraftresourceid:draft_1639960826077.json",
+                      "smfirstpublisheddate:1639804366273",
+                      "smpublisheddate:1639960826068",
+                      "smstatuspublished",
+                      "smversiondraft:21.51.120",
+                      "smversionpublished:21.51.120",
+                      "StoryMap",
+                      "Web Application"
+                  ],
+                  "description": "<p>In Zimbabwe’s far west corner, the Zambezi River marks the border with Zambia. At&nbsp;<a href='https://www.tripsavvy.com/swimming-at-devils-pool-victoria-falls-1454647' target='_blank' rel='nofollow ugc noopener noreferrer'>Victoria Falls</a>, it plunges off a precipice measuring 354 feet/108 meters in height and 5,604 feet/1,708 meters in width. This is the largest sheet of falling water on the planet, and one of the&nbsp;<a href='https://en.wikipedia.org/wiki/Seven_Natural_Wonders_%28CNN%29' target='_blank' rel='nofollow ugc noopener noreferrer'><span>Seven Natural Wonders of the World</span></a>. In peak flood season (February to May), the spray thrown up by the plunging water can be seen from 30 miles/48 kilometers away. This magnificent spectacle gives the falls its indigenous name —&nbsp;<em><span>Mosi-oa-Tunya</span></em>, or \"The Smoke That Thunders\". On the Zimbabwean side, a path winds its way along the edge of the gorge. Viewpoints offer breathtaking panoramas&nbsp;of the plummeting water and the rainbows that hang suspended above the chasm. The sound is deafening and the spray soaks to the skin - but the spectacle is one that can never be forgotten.&nbsp;</p>",
+                  "tags": [
+                      ""
+                  ],
+                  "snippet": "Zimbabwe offers breathtaking nature areas, exotic wildlife and ancient sites that offer a fascinating insight into the continent's history. ",
+                  "thumbnail": "thumbnail/thumbnail.jpeg",
+                  "documentation": null,
+                  "extent": [],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": {
+                      "thumbnail": [
+                          "url",
+                          "https://gmit.maps.arcgis.com/sharing/rest/content/items/b606b4a7101b4246a5cff7fe35080f7c/resources/J0akDO1L1zapuUNURS7cE.jpeg{{qp|[[\"wago\"],[\"ust\"]]}}"
+                      ]
+                  },
+                  "advancedSettings": null,
+                  "url": "https://storymaps.arcgis.com/stories/b606b4a7101b4246a5cff7fe35080f7c",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 17,
+                  "scoreCompleteness": 66,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "9d86b70a60c34bc5b9fce9e7ef2eddef",
+                  "owner": "al_dev",
+                  "created": 1521736628000,
+                  "modified": 1521736634000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Seven Natural Wonders of the World Map",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "map"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -180,
+                          -68.6081
+                      ],
+                      [
+                          180,
+                          82.5122
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 338,
+                  "scoreCompleteness": 33,
+                  "groupDesignations": null
+              }
+          ]
+      }
+order: 1000

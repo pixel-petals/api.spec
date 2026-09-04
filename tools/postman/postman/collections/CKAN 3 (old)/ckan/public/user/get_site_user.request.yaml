@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{CKAN_API}}/get_site_user"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: defer_commit
+    value: null
+    disabled: true
+    description: "(boolean) – by default (or if set to false) get_site_user will commit and clean up the current transaction. If set to true, caller is responsible for commiting transaction after get_site_user is called. Leaving open connections can cause cli commands to hang! (optional, default: False)"
+order: 10000

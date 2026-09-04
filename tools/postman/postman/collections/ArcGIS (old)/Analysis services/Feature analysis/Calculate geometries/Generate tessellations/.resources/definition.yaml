@@ -1,0 +1,3 @@
+$kind: collection
+description: The `GenerateTessellations` operation allows you to create equally sized square, hexagon, triangle, or diamond geometry bins for an area or extent and returns new feature data.
+order: 3000

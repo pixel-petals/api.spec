@@ -1,0 +1,14 @@
+$kind: http-request
+description: |-
+  Retrieves a list of available reports for a specific country, identified by its country code. Requires an access token for authentication. Use this endpoint to access predefined geographic and demographic reports for the selected country.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/how-to-build-a-data-enrichment-app/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/GeoEnrichmentServer/Geoenrichment/reports/:country-code?f=pjson&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+pathVariables:
+  country-code: GB
+examples: ./.resources/Available reports (by country).resources/examples
+order: 5000

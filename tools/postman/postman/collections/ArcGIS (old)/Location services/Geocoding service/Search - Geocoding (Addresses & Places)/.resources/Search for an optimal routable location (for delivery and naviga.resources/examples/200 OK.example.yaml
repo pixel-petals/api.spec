@@ -1,0 +1,61 @@
+$kind: http-example
+request:
+  url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?token={{ACCESS_TOKEN}}&f=pjson&singleLine=1600 Pennsylvania Ave NW, DC
+  method: GET
+  queryParams:
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      description: (Required on Platform) You need a valid access token. To learn more, read the collection's documentation.
+    - key: f
+      value: pjson
+      description: "(Required) Format of the response: json, pjson, html, ..."
+    - key: singleLine
+      value: 1600 Pennsylvania Ave NW, DC
+      description: Search for an address, POI category, intersection, etc.
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 17 Nov 2021 09:53:40 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Vary: Origin
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 17-Nov-2021 09:54:40 GMT; Path=/arcgis/rest; Secure; HttpOnly
+    ETag: 14f3b005
+    x-esri-ftiles-cache-compress: "true"
+    Content-Encoding: gzip
+    X-Region: eu-central-1
+  body:
+    type: text
+    content: |-
+      {
+       "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+       },
+       "candidates": [
+        {
+         "address": "1600 Pennsylvania Ave NW, Washington, District of Columbia, 20500",
+         "location": {
+          "x": -77.036546998208649,
+          "y": 38.897675107651253
+         },
+         "score": 100,
+         "attributes": {
+          
+         },
+         "extent": {
+          "xmin": -77.037546998208654,
+          "ymin": 38.896675107651255,
+          "xmax": -77.035546998208645,
+          "ymax": 38.89867510765125
+         }
+        }
+       ]
+      }
+order: 1000

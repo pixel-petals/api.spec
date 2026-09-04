@@ -1,0 +1,20 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/users-and-groups/groups/#create-a-new-group)
+url: https://www.arcgis.com/sharing/rest/community/createGroup?title={{UNIQUE_NAME}}&access=public&f=json&token={{ACCESS_TOKEN}}
+method: POST
+queryParams:
+  title: "{{UNIQUE_NAME}}"
+  access: public
+  f: json
+  token: "{{ACCESS_TOKEN}}"
+scripts:
+  - type: beforeRequest
+    code: |-
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/[^A-Z0-9]/gi, "_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+  - type: afterResponse
+    code: pm.collectionVariables.set("CREATED_GROUP_ID", pm.response.json().group.id)
+    language: text/javascript
+examples: ./.resources/Create a new group.resources/examples
+order: 2000

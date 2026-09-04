@@ -1,0 +1,148 @@
+$kind: http-request
+url: https://static-maps-api.arcgis.com/arcgis/rest/services/static-maps-service/:VERSION/static-maps/arcgis/:ARCGIS-STYLE/with-polygon
+method: POST
+pathVariables:
+  - key: VERSION
+    value: beta
+    description: API Version
+  - key: ARCGIS-STYLE
+    value: streets-night
+    description: ArcGIS Basemap style
+body:
+  type: json
+  content: |-
+    {
+        "graphics": {
+            "polygon": {
+                "rings": [
+                    [
+                        [
+                            -83.9873778,
+                            35.5874869
+                        ],
+                        [
+                            -83.8807373,
+                            35.6681883
+                        ],
+                        [
+                            -83.7189378,
+                            35.6823774
+                        ],
+                        [
+                            -83.6720528,
+                            35.6995502
+                        ],
+                        [
+                            -83.5479453,
+                            35.6995502
+                        ],
+                        [
+                            -83.4992216,
+                            35.7294072
+                        ],
+                        [
+                            -83.459691,
+                            35.7271683
+                        ],
+                        [
+                            -83.2923757,
+                            35.7674587
+                        ],
+                        [
+                            -83.2280236,
+                            35.7861047
+                        ],
+                        [
+                            -83.1259797,
+                            35.7793926
+                        ],
+                        [
+                            -83.0984002,
+                            35.7562689
+                        ],
+                        [
+                            -83.0827719,
+                            35.7002968
+                        ],
+                        [
+                            -83.04508,
+                            35.6517558
+                        ],
+                        [
+                            -83.0386448,
+                            35.6024378
+                        ],
+                        [
+                            -83.1011582,
+                            35.5486016
+                        ],
+                        [
+                            -83.1508012,
+                            35.5007169
+                        ],
+                        [
+                            -83.2252657,
+                            35.4700257
+                        ],
+                        [
+                            -83.3144393,
+                            35.4587943
+                        ],
+                        [
+                            -83.544268,
+                            35.4363268
+                        ],
+                        [
+                            -83.8384488,
+                            35.4528036
+                        ],
+                        [
+                            -83.9524438,
+                            35.4864956
+                        ],
+                        [
+                            -84.0057641,
+                            35.5418695
+                        ],
+                        [
+                            -83.9873778,
+                            35.5874869
+                        ]
+                    ]
+                ]
+            },
+            "ringStyle": {
+                "polygonSymbol": {
+                    "style": "solid",
+                    "color": "fbf96140",
+                    "outline": {
+                        "style": "solid",
+                        "color": "FFFFFFC2",
+                        "width": 2
+                    }
+                }
+            }
+        },
+        "image": {
+            "width": 500,
+            "height": 500,
+            "format": "png",
+            "padding": [10]
+        },
+        "map": {
+            "radius": 50000
+            // "zoom": 20
+            // "center": {
+            //     "x": -117.1957,
+            //     "y": 34.0561,
+            //     "spatialReference": {
+            //         "wkid": 4326
+            //     }
+            // }
+        }
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+order: 12000

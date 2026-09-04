@@ -1,0 +1,17 @@
+$kind: http-request
+description: The [<code>findAddressCandidates</code>](https://developers.arcgis.com/rest/geocode/find-address-candidates/) operation geocodes one location per request; the input address can be combined into a single input field or divided among multiple parameters.
+url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?f=pjson&singleLine=1600 Pennsylvania Ave NW, DC
+method: GET
+queryParams:
+  - key: f
+    value: pjson
+    description: "(Required) Format of the response: json, pjson, html, ..."
+  - key: singleLine
+    value: 1600 Pennsylvania Ave NW, DC
+    description: Search for an address, POI category, intersection, etc.
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/Search address (Header auth).resources/examples
+order: 2000

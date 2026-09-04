@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{CKAN_API}}/group_delete"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: id
+      value: ""
+      description: (string) – the name or id of the group
+order: 3000

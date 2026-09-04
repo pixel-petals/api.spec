@@ -1,0 +1,27 @@
+$kind: http-request
+description: To get an access token...
+url: https://www.arcgis.com/sharing/rest/portals/self?f=json&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  f: json
+  token: "{{ACCESS_TOKEN}}"
+scripts:
+  - type: afterResponse
+    code: |
+      const selfResponse = pm.response.json()
+
+      pm.test("Has helper services", ()=>{
+          pm.expect(selfResponse).to.have.property("helperServices")
+      })
+
+      pm.test("Has analysis URL", ()=>{
+          pm.expect(selfResponse.helperServices).to.have.property("analysis")
+      })
+
+
+      if (selfResponse.helperServices && selfResponse.helperServices.analysis.url){
+          pm.collectionVariables.set("ANALYSIS_URL", selfResponse.helperServices.analysis.url)
+      }
+    language: text/javascript
+examples: ./.resources/Get self.resources/examples
+order: 1000

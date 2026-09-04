@@ -1,0 +1,381 @@
+$kind: http-example
+request:
+  url: https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/near-point?x=174.778&y=-41.292&pageSize=20&f=pjson&token={{ACCESS_TOKEN}}
+  method: GET
+  queryParams:
+    - key: x
+      value: "174.778"
+      description: |+
+        
+    - key: y
+      value: "-41.292"
+    - key: pageSize
+      value: "20"
+    - key: f
+      value: pjson
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Encoding: gzip
+    Content-Type: application/json
+    Date: Wed, 05 Jul 2023 16:43:59 GMT
+    permissions-policy: interest-cohort=()
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    Content-Length: "1822"
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      {
+          "results": [
+              {
+                  "placeId": "3056a3a88981b09e5f6bef24e6f1a9c1",
+                  "location": {
+                      "x": 174.778056,
+                      "y": -41.292109
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16032",
+                          "label": "Park"
+                      }
+                  ],
+                  "name": "Te Aro Park",
+                  "distance": 13
+              },
+              {
+                  "placeId": "ce2226f7102ce7e7779fa67af167e048",
+                  "location": {
+                      "x": 174.777844,
+                      "y": -41.292
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "17000",
+                          "label": "Retail"
+                      }
+                  ],
+                  "name": "2Cheap",
+                  "distance": 13
+              },
+              {
+                  "placeId": "0781fab8c9f718e826545d930d86f5ff",
+                  "location": {
+                      "x": 174.777744,
+                      "y": -41.292221
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11124",
+                          "label": "Office"
+                      }
+                  ],
+                  "name": "Ponoko",
+                  "distance": 32.6
+              },
+              {
+                  "placeId": "989dd79bee7ee1aa34c7f5933ee430db",
+                  "location": {
+                      "x": 174.777946,
+                      "y": -41.291703
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10018",
+                          "label": "Gaming Cafe"
+                      }
+                  ],
+                  "name": "Old Boy Entertainment Internet Cafe",
+                  "distance": 33.3
+              },
+              {
+                  "placeId": "8d2aefb608d31d448fbea422096a4eff",
+                  "location": {
+                      "x": 174.777946,
+                      "y": -41.291703
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13072",
+                          "label": "Asian Restaurant"
+                      },
+                      {
+                          "categoryId": "13099",
+                          "label": "Chinese Restaurant"
+                      }
+                  ],
+                  "name": "Shanghai Restaurant",
+                  "distance": 33.3
+              },
+              {
+                  "placeId": "24761d55e895a714ebfbdeed1cf488e6",
+                  "location": {
+                      "x": 174.777946,
+                      "y": -41.291703
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11064",
+                          "label": "Hair Salon"
+                      }
+                  ],
+                  "name": "Adrian Hairstylists",
+                  "distance": 33.3
+              },
+              {
+                  "placeId": "f272a71d60d7f4800a0709af01f44717",
+                  "location": {
+                      "x": 174.777795,
+                      "y": -41.292296
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "19048",
+                          "label": "Rental Car Location"
+                      }
+                  ],
+                  "name": "Budget",
+                  "distance": 37.1
+              },
+              {
+                  "placeId": "cbddd4505a45fdd6a3226992bc1c1396",
+                  "location": {
+                      "x": 174.777876,
+                      "y": -41.291667
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13072",
+                          "label": "Asian Restaurant"
+                      },
+                      {
+                          "categoryId": "13299",
+                          "label": "Malay Restaurant"
+                      }
+                  ],
+                  "name": "Cinta Malaysian Kitchen",
+                  "distance": 38.4
+              },
+              {
+                  "placeId": "c8164d43d0193fd72b45f8153493bb58",
+                  "location": {
+                      "x": 174.777876,
+                      "y": -41.291667
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13099",
+                          "label": "Chinese Restaurant"
+                      }
+                  ],
+                  "name": "Redhill Restaurant",
+                  "distance": 38.4
+              },
+              {
+                  "placeId": "6aadd4b9d24d5154bc17f1330dc8d02d",
+                  "location": {
+                      "x": 174.777876,
+                      "y": -41.291667
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11032",
+                          "label": "Electrical Equipment Supplier"
+                      }
+                  ],
+                  "name": "Shosha Nz",
+                  "distance": 38.4
+              },
+              {
+                  "placeId": "f1db01577b6346b5cca7ffdf54f0fb59",
+                  "location": {
+                      "x": 174.777671,
+                      "y": -41.292261
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "11166",
+                          "label": "Tailor"
+                      }
+                  ],
+                  "name": "Topline Tailors",
+                  "distance": 40
+              },
+              {
+                  "placeId": "998523bd294473490ab09d433d361bb0",
+                  "location": {
+                      "x": 174.777805,
+                      "y": -41.291631
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13009",
+                          "label": "Cocktail Bar"
+                      },
+                      {
+                          "categoryId": "13025",
+                          "label": "Wine Bar"
+                      },
+                      {
+                          "categoryId": "13065",
+                          "label": "Restaurant"
+                      }
+                  ],
+                  "name": "Crumpet",
+                  "distance": 44.1
+              },
+              {
+                  "placeId": "cee0535ac26d315c6483c5217af1f4a9",
+                  "location": {
+                      "x": 174.777485,
+                      "y": -41.291886
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13003",
+                          "label": "Bar"
+                      }
+                  ],
+                  "name": "Birdcage",
+                  "distance": 44.9
+              },
+              {
+                  "placeId": "6fa19c83bcf284b899c85c36e49e6b21",
+                  "location": {
+                      "x": 174.778178,
+                      "y": -41.292381
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "19013",
+                          "label": "Hostel"
+                      }
+                  ],
+                  "name": "The Setup",
+                  "distance": 44.9
+              },
+              {
+                  "placeId": "3deda15a6ce57228ed2fe689f8274e8d",
+                  "location": {
+                      "x": 174.777882,
+                      "y": -41.2916
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10039",
+                          "label": "Music Venue"
+                      },
+                      {
+                          "categoryId": "10042",
+                          "label": "Opera House"
+                      }
+                  ],
+                  "name": "The Opera House",
+                  "distance": 45.6
+              },
+              {
+                  "placeId": "068e5279aa48078474c6a724569a320e",
+                  "location": {
+                      "x": 174.777665,
+                      "y": -41.292328
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "19048",
+                          "label": "Rental Car Location"
+                      }
+                  ],
+                  "name": "Avis Rent a Car",
+                  "distance": 46
+              },
+              {
+                  "placeId": "8dd65aa152b9e22ef66217c716465094",
+                  "location": {
+                      "x": 174.778101,
+                      "y": -41.292411
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13039",
+                          "label": "Deli"
+                      },
+                      {
+                          "categoryId": "13145",
+                          "label": "Fast Food Restaurant"
+                      }
+                  ],
+                  "name": "Subway",
+                  "distance": 46.5
+              },
+              {
+                  "placeId": "7528a022286ba2b312a4ecd368947ba3",
+                  "location": {
+                      "x": 174.778024,
+                      "y": -41.292442
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "19013",
+                          "label": "Hostel"
+                      },
+                      {
+                          "categoryId": "19014",
+                          "label": "Hotel"
+                      }
+                  ],
+                  "name": "The Setup on Dixon",
+                  "distance": 49.2
+              },
+              {
+                  "placeId": "82a26c0e027ae0535fb9a5479fa485d3",
+                  "location": {
+                      "x": 174.777888,
+                      "y": -41.291533
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "17043",
+                          "label": "Clothing Store"
+                      },
+                      {
+                          "categoryId": "17048",
+                          "label": "Shoe Store"
+                      }
+                  ],
+                  "name": "Mark Kendall Shoes",
+                  "distance": 52.8
+              },
+              {
+                  "placeId": "bd650791aa7e3237bd3aaf72c845dd37",
+                  "location": {
+                      "x": 174.777517,
+                      "y": -41.292323
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13003",
+                          "label": "Bar"
+                      },
+                      {
+                          "categoryId": "13031",
+                          "label": "Burger Joint"
+                      },
+                      {
+                          "categoryId": "13057",
+                          "label": "Gastropub"
+                      }
+                  ],
+                  "name": "Eva Beva",
+                  "distance": 54
+              }
+          ],
+          "pagination": {
+              "nextUrl": "https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/near-point?x=174.77800000&y=-41.29200000&f=pjson&offset=20&pageSize=20"
+          }
+      }
+order: 1000

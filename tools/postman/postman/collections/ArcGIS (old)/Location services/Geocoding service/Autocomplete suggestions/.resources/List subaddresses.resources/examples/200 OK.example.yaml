@@ -1,0 +1,59 @@
+$kind: http-example
+request:
+  url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?text=424 Church St, Nashville, TN&subaddressAfterBaseAddress=true&f=pjson&token={{ACCESS_TOKEN}}
+  method: GET
+  queryParams:
+    text: 424 Church St, Nashville, TN
+    subaddressAfterBaseAddress: "true"
+    f: pjson
+    token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 10 Apr 2026 13:58:57 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: max-age=0,must-revalidate
+    Content-Security-Policy: script-src 'self';
+    X-Content-Type-Options: nosniff
+    Vary: Origin
+    Server: ""
+    Set-Cookie: AGS_ROLES=sym-gcm|1|V4Pm9xWwIcMgjAb-3xBm-w==|figoqzWIPpQgFKdPh-fv6tzylv5HXm3Dhp_nyFFm7UdnRSujumW_kNmIWNT9WCnCUqsvNtZMOgkR4tCfdhwnhIopoTe19IdByBGxJtOYqpqN0vgdB-NaMc1hQR0QejMaQ-RDp9pJyar4bwdDTRE_rDqrIU_RdBv0R7lt_vpZSGOUHtV1q3Y-zXMnFmxdM71FdVm33Kq9B_VtZ37S0IZY9febVJFafMSGuQZUl5AgOxD1NNKZf2r8AdpxyZ9WKiyezCOXJnMh36gnwJNXf465JsBsiaLbR78ZT5fXYnQiJRo5pZxH3-DdrCZ3xwJx1t1Ka5Vz-UKwWXqKsyk5uxXYreqmsfkqBh6EnRG4v2ghs3X-wTQ7UdSrE46eM9SYbYN17-f_2PISO6ECudxR9VGNGQrXKDwfsd-OmLuZoXVyEkuQYT4ztuPje5cf4HIBPdZ9M-yD-yVkQvgDdOKPemRhLRehtF8JIJ8MVQrVcz_S5qeHX7Sn4N0aFymi9CbWHVLTXzZopf3gFKzOcbxwcDUs9NC08nBFdMNT0bFuc3XIYs-cSLQHeld6vGY8x_6d468EjJ51S46yQMRHEv6PmOu1_GPxo2Ax2oDbdqvNJBW-k2szoTQNkAf0_u_PSVgJ7uFEHnt8UtT8xZu0ycaaM6Eakjmdoor7aa63PAp0LPIht33L-9iDb_oXG9LAqumtc6xsHqNuxQ5g3i-3U22M4v19LxIurrT8CcYf5s4yWWuCBGHEceOicKXQS2xDBz7mOAZtDvzpFrfJPZoLinsnt9b9SmsmYIM17LDk4r7r9PezXRm0c4PwT9i1P1UoJ93XolU0DqmmjO0djyzt5iXwICh6eY1tLG06jZTMcSbJ86b5CegpcDxfdqTa3i1RGbnTU5mEB_ktBeKuPh9c0I1J8fjaL0O-qwCwEZI5pzTbAh_RcNJiUaJ3Z-t7xGeDX3MacVuY3GRYlwjUEydGEkpbezpJbVlKNiVV_For7iV9TAHlS310BZfAJOhViGND_NbuBal7gnLVGqowUQ0ECaHXr0pzZXRBEcZdwwM_0mUKNJejyrtYdHABS63saCuQwj_FvwNa7tFs5Sew4MOlPvl8CUqu3kCYNveCokZElo4lLjGknomUW2T_bwU0V8SGHwbCxzB_1AIiZ0Fz1b-65vOfJAiU0Q5GuLzTxIpn8Tc6uqwF5EVP6fm9nnnuE-INiPs0tveuDbyUvutA84j4wP7P0BNr6EQSXrUTPRqumqwgqlCPZnj55zf032CQ-0nUZdboHypO2DuJhlA4R73K2jNpXS3huIiEwmFKAm16dhn1PgVMtDxKJt8PXCNNh2l6ryVuL12g16p4WmXY8t5dAwQG5JDRc-kGwfhqol36oFXxJtIkwEmyiTFfDk0r2bXPbGSKypbQuvf8MVNaWSX4i7s9Kh73MiJ7MjE=; Max-Age=60; Expires=Fri, 10 Apr 2026 13:59:57 GMT; Path=/arcgis/rest; Secure; HttpOnly; SameSite=Lax
+    ETag: '"4d4d525e"'
+    Content-Encoding: gzip
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+       "suggestions": [
+        {
+         "text": "424 Church St, Nashville, TN, 37219, USA",
+         "magicKey": "dHA9MCN0dj1mNjM1YjI5MiNsb2M9MjA0NzQzNTYjbG5nPTQxI2ZhPTQ1ODc1MiNobj00MjQjbGJzPTEwOTo5MjQ3NjcxNzs5OjUzNTAwNzE4OzI6NzM0ODE3ODcjbG49V29ybGQ=",
+         "isCollection": false
+        },
+        {
+         "text": "424 Church St, Suite 1, Nashville, TN, 37219, USA",
+         "magicKey": "dHA9MCN0dj1mNjM1YjI5MiNsb2M9MjA0NzQzNTYjbG5nPTQxI2ZhPTQ1ODk4OCNobj00MjQjbGJzPTEwOTo5MjQ3NjcxNzs5OjUzNTAwNzE4OzI6NzM0ODE3ODcjbG49V29ybGQ=",
+         "isCollection": false
+        },
+        {
+         "text": "424 Church St, Suite 2, Nashville, TN, 37219, USA",
+         "magicKey": "dHA9MCN0dj1mNjM1YjI5MiNsb2M9MjA0NzQzNTYjbG5nPTQxI2ZhPTQ1ODgzNSNobj00MjQjbGJzPTEwOTo5MjQ3NjcxNzs5OjUzNTAwNzE4OzI6NzM0ODE3ODcjbG49V29ybGQ=",
+         "isCollection": false
+        },
+        {
+         "text": "424 Church St, Suite 3, Nashville, TN, 37219, USA",
+         "magicKey": "dHA9MCN0dj1mNjM1YjI5MiNsb2M9MjA0NzQzNTYjbG5nPTQxI2ZhPTQ1ODc2OCNobj00MjQjbGJzPTEwOTo5MjQ3NjcxNzs5OjUzNTAwNzE4OzI6NzM0ODE3ODcjbG49V29ybGQ=",
+         "isCollection": false
+        },
+        {
+         "text": "424 Church St, Suite 4, Nashville, TN, 37219, USA",
+         "magicKey": "dHA9MCN0dj1mNjM1YjI5MiNsb2M9MjA0NzQzNTYjbG5nPTQxI2ZhPTQ1ODc3NSNobj00MjQjbGJzPTEwOTo5MjQ3NjcxNzs5OjUzNTAwNzE4OzI6NzM0ODE3ODcjbG49V29ybGQ=",
+         "isCollection": false
+        }
+       ]
+      }
+order: 1000

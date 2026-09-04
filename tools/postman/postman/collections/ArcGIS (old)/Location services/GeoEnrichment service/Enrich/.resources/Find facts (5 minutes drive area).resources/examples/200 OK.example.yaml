@@ -1,0 +1,512 @@
+$kind: http-example
+request:
+  url: https://{{geoenrich-service}}.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/enrich
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      - key: token
+        value: "{{ACCESS_TOKEN}}"
+        description: (Required) You need a valid access token. To learn more, read the collection's documentation.
+      - key: f
+        value: pjson
+        description: (Required) The format of the data returned. The value can be json, pjson (formatted), or html (not supported by all requests).
+      - key: studyAreas
+        value: "[{'geometry':{'x': -74.0060, 'y': 40.7128}}]"
+        description: (Required) An array of input points, polygons, administrative boundaries, or addresses.
+      - key: studyAreasOptions
+        value: "{'areaType': 'NetworkServiceArea', 'bufferUnits': 'Minutes', 'bufferRadii': [10],'travel_mode': 'Driving'}"
+        description: An array of values to control how input points are buffered. Supported area types include ring buffers and network service areas such as drive times and walk times. Multiple buffer radii can be requested. The unit of measurement requested can be miles or kilometers and in the case of service areas, minutes and hours are also supported.
+      - key: dataCollections
+        value: HouseholdTotals
+        description: An array of data collection names to query for. The names contain pre-defined set of attributes to return for the world or different countries.
+      - key: returnGeometry
+        value: "true"
+        description: An optional parameter to request an area's geometry for display on a map. When this parameter is set to true, the geometries of each feature will be included in the repsonse. The default value is false.
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 08:30:24 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    ETag: '"-1621569537"'
+    Content-Language: en
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+        "results" : [ {
+          "paramName" : "GeoEnrichmentResult",
+          "dataType" : "GeoEnrichmentResult",
+          "value" : {
+            "version" : "2.0",
+            "FeatureSet" : [ {
+              "displayFieldName" : "",
+              "fieldAliases" : {
+                "ID" : "Id",
+                "OBJECTID" : "Object ID",
+                "sourceCountry" : "Country code",
+                "areaType" : "Area type",
+                "bufferUnits" : "Buffer units",
+                "bufferUnitsAlias" : "Buffer units alias",
+                "bufferRadii" : "Buffer radii",
+                "aggregationMethod" : "Aggregation method",
+                "populationToPolygonSizeRating" : "Population to polygon size rating for the country",
+                "apportionmentConfidence" : "Apportionment confidence for the country",
+                "HasData" : "Has data",
+                "TOTHH_CY" : "2021 Total Households",
+                "AVGHHSZ_CY" : "2021 Average Household Size",
+                "FAMHH_CY" : "2021 Family Households",
+                "AVGFMSZ_CY" : "2021 Average Family Size",
+                "HHGRW10CY" : "2010-2021 Growth Rate: Households",
+                "FAMGRW10CY" : "2010-2021 Growth Rate: Families",
+                "TOTHH_FY" : "2026 Total Households",
+                "AVGHHSZ_FY" : "2026 Average Household Size",
+                "FAMHH_FY" : "2026 Family Households",
+                "AVGFMSZ_FY" : "2026 Average Family Size",
+                "HHGRWCYFY" : "2021-2026 Growth Rate: Households",
+                "FAMGRWCYFY" : "2021-2026 Growth Rate: Families",
+                "TOTHH10" : "2010 Total Households",
+                "HHU18C10" : "2010 HHs with Population <18",
+                "MLTGENHH10" : "2010 Multigenerational HHs",
+                "UNMARRMF10" : "2010 Unmarried-partner HH: M&F",
+                "UNMARRSS10" : "2010 Unmarried-partner HH: Same Sex",
+                "FAMSENR10" : "2010 HHs w/Pop 65+: Family HH",
+                "HHGRW0010" : "2000-2010 Growth Rate: Households",
+                "FAMGRW0010" : "2000-2010 Growth Rate: Families",
+                "AVGHHSZ10" : "2010 Average Household Size",
+                "AVGHSZOO10" : "2010 Avg HH Size of OOHUs",
+                "AVGHSZRO10" : "2010 Avg HH Size of Renter Occ HUs",
+                "AVGFMSZ10" : "2010 Average Family Size",
+                "AVGNFMSZ10" : "2010 Average Nonfamily Size",
+                "AVGHSZWH10" : "2010 Avg HH Size: White HHr",
+                "AVGHSZBL10" : "2010 Avg HH Size: Black HHr",
+                "AVGHSZAI10" : "2010 Avg HH Size: American Ind HHr",
+                "AVGHSZAS10" : "2010 Avg HH Size: Asian HHr",
+                "AVGHSZPI10" : "2010 Avg HH Size: Pacific Islander HHr",
+                "AVGHSZOT10" : "2010 Avg HH Size: Other Race HHr",
+                "AVGHSZ2R10" : "2010 Avg HH Size: 2+ Races HHr",
+                "AVGHSZHS10" : "2010 Avg HH Size: Hispanic HHr",
+                "TOTHH00" : "2000 Total Households",
+                "FAMHH00" : "2000 Family Households",
+                "HAI_CY" : "2021 Housing Affordability Index",
+                "INCMORT_CY" : "2021 Pct of Income for Mortgage"
+              },
+              "geometryType" : "esriGeometryPolygon",
+              "spatialReference" : {
+                "wkid" : 4326,
+                "latestWkid" : 4326
+              },
+              "fields" : [ {
+                "name" : "ID",
+                "alias" : "Id",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "OBJECTID",
+                "alias" : "Object ID",
+                "type" : "esriFieldTypeOID"
+              }, {
+                "name" : "sourceCountry",
+                "alias" : "Country code",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "areaType",
+                "alias" : "Area type",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferUnits",
+                "alias" : "Buffer units",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferUnitsAlias",
+                "alias" : "Buffer units alias",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferRadii",
+                "alias" : "Buffer radii",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "aggregationMethod",
+                "alias" : "Aggregation method",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "populationToPolygonSizeRating",
+                "alias" : "Population to polygon size rating for the country",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "apportionmentConfidence",
+                "alias" : "Apportionment confidence for the country",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "HasData",
+                "alias" : "Has data",
+                "type" : "esriFieldTypeInteger"
+              }, {
+                "name" : "TOTHH_CY",
+                "alias" : "2021 Total Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.TOTHH_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "AVGHHSZ_CY",
+                "alias" : "2021 Average Household Size",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGHHSZ_CY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "FAMHH_CY",
+                "alias" : "2021 Family Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.FAMHH_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "AVGFMSZ_CY",
+                "alias" : "2021 Average Family Size",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGFMSZ_CY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "HHGRW10CY",
+                "alias" : "2010-2021 Growth Rate: Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.HHGRW10CY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "pct"
+              }, {
+                "name" : "FAMGRW10CY",
+                "alias" : "2010-2021 Growth Rate: Families",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.FAMGRW10CY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "pct"
+              }, {
+                "name" : "TOTHH_FY",
+                "alias" : "2026 Total Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.TOTHH_FY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "AVGHHSZ_FY",
+                "alias" : "2026 Average Household Size",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGHHSZ_FY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "FAMHH_FY",
+                "alias" : "2026 Family Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.FAMHH_FY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "AVGFMSZ_FY",
+                "alias" : "2026 Average Family Size",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGFMSZ_FY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "HHGRWCYFY",
+                "alias" : "2021-2026 Growth Rate: Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.HHGRWCYFY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "pct"
+              }, {
+                "name" : "FAMGRWCYFY",
+                "alias" : "2021-2026 Growth Rate: Families",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.FAMGRWCYFY",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "pct"
+              }, {
+                "name" : "TOTHH10",
+                "alias" : "2010 Total Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.TOTHH10",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "HHU18C10",
+                "alias" : "2010 HHs with Population <18",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.HHU18C10",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "MLTGENHH10",
+                "alias" : "2010 Multigenerational HHs",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.MLTGENHH10",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "UNMARRMF10",
+                "alias" : "2010 Unmarried-partner HH: M&F",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.UNMARRMF10",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "UNMARRSS10",
+                "alias" : "2010 Unmarried-partner HH: Same Sex",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.UNMARRSS10",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "FAMSENR10",
+                "alias" : "2010 HHs w/Pop 65+: Family HH",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.FAMSENR10",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "HHGRW0010",
+                "alias" : "2000-2010 Growth Rate: Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.HHGRW0010",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "pct"
+              }, {
+                "name" : "FAMGRW0010",
+                "alias" : "2000-2010 Growth Rate: Families",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.FAMGRW0010",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "pct"
+              }, {
+                "name" : "AVGHHSZ10",
+                "alias" : "2010 Average Household Size",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGHHSZ10",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "AVGHSZOO10",
+                "alias" : "2010 Avg HH Size of OOHUs",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGHSZOO10",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "AVGHSZRO10",
+                "alias" : "2010 Avg HH Size of Renter Occ HUs",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGHSZRO10",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "AVGFMSZ10",
+                "alias" : "2010 Average Family Size",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGFMSZ10",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "AVGNFMSZ10",
+                "alias" : "2010 Average Nonfamily Size",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGNFMSZ10",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "AVGHSZWH10",
+                "alias" : "2010 Avg HH Size: White HHr",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGHSZWH10",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "AVGHSZBL10",
+                "alias" : "2010 Avg HH Size: Black HHr",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGHSZBL10",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "AVGHSZAI10",
+                "alias" : "2010 Avg HH Size: American Ind HHr",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGHSZAI10",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "AVGHSZAS10",
+                "alias" : "2010 Avg HH Size: Asian HHr",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGHSZAS10",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "AVGHSZPI10",
+                "alias" : "2010 Avg HH Size: Pacific Islander HHr",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGHSZPI10",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "AVGHSZOT10",
+                "alias" : "2010 Avg HH Size: Other Race HHr",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGHSZOT10",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "AVGHSZ2R10",
+                "alias" : "2010 Avg HH Size: 2+ Races HHr",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGHSZ2R10",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "AVGHSZHS10",
+                "alias" : "2010 Avg HH Size: Hispanic HHr",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.AVGHSZHS10",
+                "component" : "demographics",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "TOTHH00",
+                "alias" : "2000 Total Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.TOTHH00",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "FAMHH00",
+                "alias" : "2000 Family Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.FAMHH00",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "HAI_CY",
+                "alias" : "2021 Housing Affordability Index",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.HAI_CY",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "INCMORT_CY",
+                "alias" : "2021 Pct of Income for Mortgage",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "householdtotals.INCMORT_CY",
+                "component" : "demographics",
+                "decimals" : 1,
+                "units" : "pct"
+              } ],
+              "features" : [ {
+                "attributes" : {
+                  "ID" : "0",
+                  "OBJECTID" : 1,
+                  "sourceCountry" : "US",
+                  "areaType" : "NetworkServiceArea",
+                  "bufferUnits" : "Minutes",
+                  "bufferUnitsAlias" : "Drive Time Minutes",
+                  "bufferRadii" : 10,
+                  "aggregationMethod" : "BlockApportionment:US.BlockGroups;PointsLayer:US.BlockPoints",
+                  "populationToPolygonSizeRating" : 2.191,
+                  "apportionmentConfidence" : 2.576,
+                  "HasData" : 1,
+                  "TOTHH_CY" : 145193,
+                  "AVGHHSZ_CY" : 2.01,
+                  "FAMHH_CY" : 59445,
+                  "AVGFMSZ_CY" : 2.94,
+                  "HHGRW10CY" : 0.76,
+                  "FAMGRW10CY" : 0.48,
+                  "TOTHH_FY" : 150126,
+                  "AVGHHSZ_FY" : 2.01,
+                  "FAMHH_FY" : 60958,
+                  "AVGFMSZ_FY" : 2.94,
+                  "HHGRWCYFY" : 0.67,
+                  "FAMGRWCYFY" : 0.5,
+                  "TOTHH10" : 133325,
+                  "HHU18C10" : 24239,
+                  "MLTGENHH10" : 3736,
+                  "UNMARRMF10" : 8106,
+                  "UNMARRSS10" : 2405,
+                  "FAMSENR10" : 13585,
+                  "HHGRW0010" : 1.41,
+                  "FAMGRW0010" : 0.8,
+                  "AVGHHSZ10" : 2.04,
+                  "AVGHSZOO10" : 2.06,
+                  "AVGHSZRO10" : 2.03,
+                  "AVGFMSZ10" : 2.94,
+                  "AVGNFMSZ10" : 1.32,
+                  "AVGHSZWH10" : 1.83,
+                  "AVGHSZBL10" : 2.13,
+                  "AVGHSZAI10" : 2.32,
+                  "AVGHSZAS10" : 2.48,
+                  "AVGHSZPI10" : 2.21,
+                  "AVGHSZOT10" : 2.61,
+                  "AVGHSZ2R10" : 2.09,
+                  "AVGHSZHS10" : 2.34,
+                  "TOTHH00" : 115942,
+                  "FAMHH00" : 52026,
+                  "HAI_CY" : 48,
+                  "INCMORT_CY" : 50.9
+                },
+                "geometry" : {
+                  "rings" : [ [ [ -74.00826424008231, 40.74579435922033 ], [ -74.00714135136705, 40.74489604691587 ], [ -74.00736592928978, 40.74377315818871 ], [ -74.00691677344435, 40.74309942470032 ], [ -74.00669219462331, 40.74309942470032 ], [ -74.00669219462331, 40.74175195766784 ], [ -74.00714135136705, 40.74107822480485 ], [ -74.00803966215959, 40.74085364725552 ], [ -74.00893797295214, 40.73860786885593 ], [ -74.00714135136705, 40.73860786885593 ], [ -74.00669219462331, 40.739057024747964 ], [ -74.0064676175989, 40.739057024747964 ], [ -74.00556930680635, 40.738383291133964 ], [ -74.00422184016838, 40.738383291133964 ], [ -74.00377268432295, 40.73770955818363 ], [ -74.00422184016838, 40.73591293584242 ], [ -74.00399726224568, 40.73591293584242 ], [ -74.0028743726321, 40.73299342367078 ], [ -74.00309895055481, 40.732544269043416 ], [ -74.00220063976228, 40.73187053482076 ], [ -74.00152690599413, 40.7323196912734 ], [ -74.00220063976228, 40.73321800188962 ], [ -74.00175148391685, 40.734116313310665 ], [ -74.00017943935616, 40.734116313310665 ], [ -73.99973028440904, 40.734565468897436 ], [ -73.9988319727182, 40.734116313310665 ], [ -73.99860739479547, 40.73321800188962 ], [ -73.99905654974258, 40.732544269043416 ], [ -73.99860739479547, 40.7323196912734 ], [ -73.99838281687276, 40.7323196912734 ], [ -73.99793366192564, 40.73097222371111 ], [ -73.99860739479547, 40.72917560186902 ], [ -73.99815823895004, 40.72917560186902 ], [ -73.99748450608021, 40.72827729113767 ], [ -73.9972599281575, 40.72827729113767 ], [ -73.9972599281575, 40.72648066801483 ], [ -73.99456499488156, 40.725806935028935 ], [ -73.99434041695885, 40.72490862375625 ], [ -73.99456499488156, 40.72490862375625 ], [ -73.99501414982866, 40.72401031329365 ], [ -73.99411583903613, 40.72401031329365 ], [ -73.99389126111342, 40.72490862375625 ], [ -73.99254379357711, 40.725806935028935 ], [ -73.99231921655273, 40.725806935028935 ], [ -73.99164548278458, 40.72558235698596 ], [ -73.99119632783747, 40.72468404608589 ], [ -73.98962428327678, 40.724234889833426 ], [ -73.98895055040694, 40.724234889833426 ], [ -73.98737850494796, 40.72558235698596 ], [ -73.98648019415539, 40.72468404608589 ], [ -73.98692935000082, 40.72356115725995 ], [ -73.98670477207811, 40.72356115725995 ], [ -73.98558188336287, 40.72401031329365 ], [ -73.9849081486964, 40.72356115725995 ], [ -73.9849081486964, 40.72266284631146 ], [ -73.98468357167201, 40.72266284631146 ], [ -73.98333610503404, 40.72311200091841 ], [ -73.9826623721642, 40.72221369003511 ], [ -73.98131490462792, 40.72221369003511 ], [ -73.98086574878249, 40.72311200091841 ], [ -73.98019201591266, 40.723336579127654 ], [ -73.97996743798994, 40.723336579127654 ], [ -73.9790691271974, 40.72198911212201 ], [ -73.9788445492747, 40.72198911212201 ], [ -73.97839539342925, 40.72288742399381 ], [ -73.97704792679129, 40.72356115725995 ], [ -73.97682334886858, 40.72356115725995 ], [ -73.97592503807601, 40.72266284631146 ], [ -73.97637419302313, 40.72086622276443 ], [ -73.9757004601533, 40.72064164575158 ], [ -73.97525130430789, 40.72288742399381 ], [ -73.97278094895466, 40.726705245749585 ], [ -73.97255637103194, 40.7287264459769 ], [ -73.97480214936078, 40.73097222371111 ], [ -73.97502672728349, 40.73097222371111 ], [ -73.97592503807601, 40.73681124695204 ], [ -73.97457757143806, 40.73883244718104 ], [ -73.97323010390177, 40.73883244718104 ], [ -73.97278094895466, 40.73770955818363 ], [ -73.97300552597906, 40.73770955818363 ], [ -73.97390383766991, 40.73658666929083 ], [ -73.97390383766991, 40.73523920169722 ], [ -73.97300552597906, 40.73187053482076 ], [ -73.97120890439396, 40.730523069054264 ], [ -73.97053517062582, 40.7294001800397 ], [ -73.97053517062582, 40.727828135309096 ], [ -73.97120890439396, 40.72558235698596 ], [ -73.97345468182448, 40.72198911212201 ], [ -73.9736792597472, 40.71817129013524 ], [ -73.97502672728349, 40.71547635598304 ], [ -73.96851397111803, 40.71345515578257 ], [ -73.96784023734988, 40.71255684531411 ], [ -73.9680648152726, 40.71188311233978 ], [ -73.96941228191055, 40.711433956186866 ], [ -73.97592503807601, 40.71345515578257 ], [ -73.97614961599874, 40.71345515578257 ], [ -73.97682334886858, 40.71165853430161 ], [ -73.97704792679129, 40.71165853430161 ], [ -73.9788445492747, 40.71008648929652 ], [ -73.9790691271974, 40.71008648929652 ], [ -73.98356068295675, 40.70918817832259 ], [ -73.98400983790386, 40.708739023057916 ], [ -73.98423441582658, 40.708739023057916 ], [ -73.98468357167201, 40.70918817832259 ], [ -73.98692935000082, 40.708739023057916 ], [ -73.99007343912221, 40.708963600047525 ], [ -73.99007343912221, 40.70828986680657 ], [ -73.9898488611995, 40.70828986680657 ], [ -73.9885013936632, 40.70559493377826 ], [ -73.98445899374929, 40.70537035632417 ], [ -73.98378526087947, 40.70492119982518 ], [ -73.98333610503404, 40.705819511156015 ], [ -73.98221321631877, 40.706493244874345 ], [ -73.98131490462792, 40.70559493377826 ], [ -73.98153948344896, 40.70492119982518 ], [ -73.97704792679129, 40.70492119982518 ], [ -73.97682334886858, 40.70492119982518 ], [ -73.9757004601533, 40.70245084384323 ], [ -73.97457757143806, 40.70222626668378 ], [ -73.9741284146943, 40.70132795524118 ], [ -73.97390383766991, 40.70132795524118 ], [ -73.97323010390177, 40.70132795524118 ], [ -73.97255637103194, 40.700654221710884 ], [ -73.97165806023939, 40.70110337770093 ], [ -73.97120890439396, 40.700654221710884 ], [ -73.9680648152726, 40.700205066097446 ], [ -73.96784023734988, 40.69953133278753 ], [ -73.96761565942717, 40.69953133278753 ], [ -73.96784023734988, 40.698633021777646 ], [ -73.96963685983327, 40.69818386615688 ], [ -73.97075974765023, 40.69683640019436 ], [ -73.96424699238308, 40.69683640019436 ], [ -73.9633486806922, 40.69773471091305 ], [ -73.96245036989967, 40.700654221710884 ], [ -73.96177663702986, 40.70087880008449 ], [ -73.96155205910713, 40.70087880008449 ], [ -73.96087832623729, 40.699980488857626 ], [ -73.96065374831458, 40.699980488857626 ], [ -73.96200121495256, 40.69616266618725 ], [ -73.96379783743596, 40.694815198846655 ], [ -73.97480214936078, 40.695039777153596 ], [ -73.97502672728349, 40.695039777153596 ], [ -73.97525130430789, 40.69324315470296 ], [ -73.97659877094586, 40.69234484404085 ], [ -73.97794623758382, 40.69234484404085 ], [ -73.97794623758382, 40.69144653284681 ], [ -73.9788445492747, 40.690548221121404 ], [ -73.9790691271974, 40.690548221121404 ], [ -73.9810903267052, 40.69212026618578 ], [ -73.98131490462792, 40.69144653284681 ], [ -73.97996743798994, 40.688751598803016 ], [ -73.98019201591266, 40.688751598803016 ], [ -73.98086574878249, 40.68785328821121 ], [ -73.98198863839605, 40.68830244331786 ], [ -73.98221321631877, 40.68762871020378 ], [ -73.98311152711132, 40.68762871020378 ], [ -73.98333610503404, 40.68762871020378 ], [ -73.98243779424148, 40.68650582107589 ], [ -73.98333610503404, 40.6853829321015 ], [ -73.98603103830997, 40.68628124329594 ], [ -73.98625561623268, 40.68628124329594 ], [ -73.98715392702523, 40.685158353943656 ], [ -73.98737850494796, 40.685158353943656 ], [ -73.98895055040694, 40.684933775710284 ], [ -73.98962428327678, 40.6853829321015 ], [ -73.9898488611995, 40.68628124329594 ], [ -73.99119632783747, 40.686730398780206 ], [ -73.99142090486187, 40.686730398780206 ], [ -73.99299295032085, 40.6860566647592 ], [ -73.99344210616628, 40.685158353943656 ], [ -73.99434041695885, 40.684484621060484 ], [ -73.99456499488156, 40.684484621060484 ], [ -73.99523872775138, 40.684933775710284 ], [ -73.9954633056741, 40.68583208819044 ], [ -73.99411583903613, 40.688527021098245 ], [ -73.99434041695885, 40.688527021098245 ], [ -73.99456499488156, 40.688527021098245 ], [ -73.99613703944225, 40.68897617711323 ], [ -73.99703535023478, 40.68830244331786 ], [ -73.99793366192564, 40.68897617711323 ], [ -74.00130232807142, 40.682014264747714 ], [ -74.00152690599413, 40.682014264747714 ], [ -74.00242521678668, 40.681565110179136 ], [ -74.00332352937586, 40.68268799875973 ], [ -74.00130232807142, 40.686730398780206 ], [ -74.00152690599413, 40.686730398780206 ], [ -74.00242521678668, 40.68762871020378 ], [ -74.00197606183956, 40.688751598803016 ], [ -74.00354810640023, 40.688751598803016 ], [ -74.00399726224568, 40.69009906616639 ], [ -74.00309895055481, 40.690997377135616 ], [ -74.00152690599413, 40.690997377135616 ], [ -74.00130232807142, 40.690997377135616 ], [ -74.00175148391685, 40.69189568825487 ], [ -74.00107775104702, 40.69346773285999 ], [ -74.00062859520159, 40.69369231026006 ], [ -74.00040401727888, 40.69369231026006 ], [ -74.00062859520159, 40.69414146619482 ], [ -73.99995486233175, 40.695264354703525 ], [ -74.00017943935616, 40.696387244038576 ], [ -73.99860739479547, 40.69751013283659 ], [ -73.99793366192564, 40.69953133278753 ], [ -73.99748450608021, 40.699980488857626 ], [ -73.9972599281575, 40.699980488857626 ], [ -73.99568788359682, 40.70312457826951 ], [ -73.99568788359682, 40.70402288931685 ], [ -73.99703535023478, 40.70469662214225 ], [ -73.9988319727182, 40.706493244874345 ], [ -73.99995486233175, 40.70671782194679 ], [ -74.00893797295214, 40.70110337770093 ], [ -74.01185748504912, 40.700205066097446 ], [ -74.01365410663419, 40.700205066097446 ], [ -74.01387868455691, 40.69975591086062 ], [ -74.01051001841113, 40.690997377135616 ], [ -74.0102854395901, 40.690997377135616 ], [ -74.00669219462331, 40.68628124329594 ], [ -74.0064676175989, 40.68628124329594 ], [ -74.00399726224568, 40.680891375716904 ], [ -74.00220063976228, 40.68021764330114 ], [ -74.00175148391685, 40.679543908844494 ], [ -74.00197606183956, 40.67864559813302 ], [ -74.00017943935616, 40.675726086984646 ], [ -73.99995486233175, 40.675726086984646 ], [ -74.00017943935616, 40.67482777592464 ], [ -74.00085317312431, 40.6743786199436 ], [ -74.00332352937586, 40.67662439820395 ], [ -74.00422184016838, 40.67864559813302 ], [ -74.0044464180911, 40.67864559813302 ], [ -74.0046709951155, 40.67864559813302 ], [ -74.00556930680635, 40.679543908844494 ], [ -74.00871339592774, 40.6860566647592 ], [ -74.01230663999623, 40.69009906616639 ], [ -74.01634904080845, 40.70132795524118 ], [ -74.017247351601, 40.70245084384323 ], [ -74.01747193042202, 40.70379831132883 ], [ -74.01859481913728, 40.70447204506402 ], [ -74.0190439740844, 40.70537035632417 ], [ -74.0190439740844, 40.70716697790563 ], [ -74.01881939616169, 40.70716697790563 ], [ -74.01859481913728, 40.707840710930576 ], [ -74.01881939616169, 40.707840710930576 ], [ -74.01949312992983, 40.708963600047525 ], [ -74.01859481913728, 40.70963733396247 ], [ -74.01859481913728, 40.71098480108974 ], [ -74.01792108536915, 40.711433956186866 ], [ -74.01769650744643, 40.711433956186866 ], [ -74.01702277367828, 40.711209377995615 ], [ -74.01634904080845, 40.71233226682467 ], [ -74.0152261520932, 40.71233226682467 ], [ -74.01500157417048, 40.713006000701526 ], [ -74.0154507291176, 40.71345515578257 ], [ -74.01657361783285, 40.713006000701526 ], [ -74.01769650744643, 40.71345515578257 ], [ -74.01747193042202, 40.71704840105631 ], [ -74.01679819575557, 40.71817129013524 ], [ -74.0154507291176, 40.71906960110591 ], [ -74.01387868455691, 40.71862044577418 ], [ -74.01365410663419, 40.71862044577418 ], [ -74.01230663999623, 40.7253577788659 ], [ -74.01567530704031, 40.72558235698596 ], [ -74.01589988496303, 40.72558235698596 ], [ -74.02667961896512, 40.727603557279124 ], [ -74.0316203305699, 40.727828135309096 ], [ -74.03409068592312, 40.728501868255506 ], [ -74.03521357463839, 40.72962475677165 ], [ -74.03476441969127, 40.730523069054264 ], [ -74.03386610889872, 40.73074764608093 ], [ -74.03251864226075, 40.730073912727015 ], [ -74.03117117472446, 40.730298491269586 ], [ -74.03094659680175, 40.730298491269586 ], [ -74.03049744185465, 40.72984933478793 ], [ -74.02645504104241, 40.72962475677165 ], [ -74.01567530704031, 40.727603557279124 ], [ -74.01185748504912, 40.72737897985277 ], [ -74.01073459633385, 40.73726040204212 ], [ -74.01118375128097, 40.73883244718104 ], [ -74.00983628464299, 40.74130280295722 ], [ -74.00938712879757, 40.74467147000653 ], [ -74.00826424008231, 40.74556978126089 ], [ -74.00826424008231, 40.74579435922033 ] ] ]
+                }
+              } ]
+            } ]
+          }
+        } ],
+        "messages" : [ ]
+      }
+order: 1000

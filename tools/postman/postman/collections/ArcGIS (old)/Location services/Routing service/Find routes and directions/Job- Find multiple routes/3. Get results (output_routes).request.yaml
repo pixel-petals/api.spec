@@ -1,0 +1,14 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/route-and-directions/)
+url: https://logistics.arcgis.com/arcgis/rest/services/World/Route/GPServer/FindRoutes/jobs/{{JOB_ID}}/results/Output_Routes
+method: POST
+body:
+  type: urlencoded
+  content:
+    - key: f
+      value: json
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      description: Automatically sent by "Params"
+examples: ./.resources/3. Get results (output_routes).resources/examples
+order: 3000

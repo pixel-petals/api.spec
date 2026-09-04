@@ -1,0 +1,26 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/FindCentroids/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+      inputLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Generate_tessellations_on_Portland_boundary/FeatureServer/0"}'
+      pointLocation: "false"
+      outputName: '{"serviceProperties":{"name":"Find centroids results"}}'
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+        "jobId": "<JOB_ID>",
+        "jobStatus": "esriJobSubmitted",
+        "results": {},
+        "inputs": {},
+        "messages": []
+      }
+order: 1000

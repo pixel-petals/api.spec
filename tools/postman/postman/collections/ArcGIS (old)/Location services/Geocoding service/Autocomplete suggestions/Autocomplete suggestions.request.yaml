@@ -1,0 +1,23 @@
+$kind: http-request
+description: |-
+  Use the [<code>/suggest</code>](https://developers.arcgis.com/rest/geocode/suggest/) operation of the [geocoding service](https://developers.arcgis.com/rest/geocode/) to find suggestions for the string `New Y`.
+
+  ---
+
+  See this example in the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/autosuggest/#get-suggestions-for-a-string)
+url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?token={{ACCESS_TOKEN}}&f=json&text=New Y
+method: GET
+queryParams:
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    description: (Required) You need a valid access token. To learn more, read the collection's documentation.
+  - key: f
+    value: json
+    description: "(Required) Format of the response: json or pjson"
+  - key: text
+    value: New Y
+    description: (Required) The input text entered by a user, which is used by the suggest operation to generate a list of possible matches.
+auth:
+  type: noauth
+examples: ./.resources/Autocomplete suggestions.resources/examples
+order: 1000

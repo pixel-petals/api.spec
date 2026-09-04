@@ -1,0 +1,30 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/raster-analysis/raster-operations/tutorial-perform-raster-analysis-operation/)
+url: "{{RASTER_ANALYSIS_URL}}/SummarizeRasterWithin/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    zoneField: COUNTY_FIPS
+    statisticType: Mean
+    inputZoneLayer: |-
+      { "url":"https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Census_Counties/FeatureServer/0",
+      "filter":"STATE_NAME = 'Alabama'",
+      "itemId":"14c5450526a8430298b2fa74da12c2f4"
+      }
+    inputRasterLayerToSummarize: '{"url":"https://tiledimageservices3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/US_Annual_Temperature/ImageServer"}'
+    outputName: '{"serviceProperties": {"name": {{UNIQUE_NAME}},"capabilities": "Image, TilesOnly"},"itemProperties": {"description": "output generated from the summarizeRasterWithin operation in postman","title": "Summarize raster within"}}'
+scripts:
+  - type: beforeRequest
+    code: |-
+      // Creates a unique name for the output service
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/[^A-Z0-9]/ig, "_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+  - type: afterResponse
+    code: pm.collectionVariables.set("RASTER_ANALYSIS_JOBID", pm.response.json().jobId)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

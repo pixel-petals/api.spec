@@ -1,0 +1,185 @@
+$kind: http-example
+request:
+  url: https://www.arcgis.com/sharing/rest/content/groups/d6340748701d4ccfb18ad3c42b7feb9e/search?q=bike&f=json
+  method: GET
+  queryParams:
+    q: bike
+    f: json
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Thu, 13 Jan 2022 20:13:05 GMT
+    - key: Content-Type
+      value: application/json;charset=utf-8
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Origin
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Cache-Control
+      value: no-cache
+    - key: Pragma
+      value: no-cache
+    - key: Expires
+      value: "-1"
+    - key: Strict-Transport-Security
+      value: max-age=31536000
+    - key: Content-Encoding
+      value: gzip
+  body:
+    type: json
+    content: |-
+      {
+          "query": "bike",
+          "total": 2,
+          "start": 1,
+          "num": 10,
+          "nextStart": -1,
+          "results": [
+              {
+                  "id": "37695c689cbe4e87aa1877ef12c7bf3b",
+                  "owner": "esri_devlabs",
+                  "created": 1544731545000,
+                  "modified": 1610889683000,
+                  "guid": null,
+                  "name": "Bike Parking",
+                  "title": "Portland Bike Parking",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "Portland",
+                      "Bike",
+                      "Bicycle",
+                      "Parking",
+                      "sourceId-21013f2964334fae834e98602c60dd40",
+                      "copied with ago-assistant"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -122.70593008969614,
+                          45.45962752852747
+                      ],
+                      [
+                          -122.49711025020218,
+                          45.58711400270654
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Bike Parking/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 14883,
+                  "groupCategories": [],
+                  "scoreCompleteness": 50,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "e618c42af94d44c293fd70a12de28d31",
+                  "owner": "esri_devlabs",
+                  "created": 1544722437000,
+                  "modified": 1610888306000,
+                  "guid": null,
+                  "name": "Portland Bike Routes",
+                  "title": "Portland Bike Routes",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "Portland",
+                      "Bike",
+                      "Bicycle",
+                      "Routes",
+                      "Streets",
+                      "sourceId-0f06d69afe4645ce99e07b3c40bf4b44",
+                      "copied with ago-assistant",
+                      "sourceId-0f06d69afe4645ce99e07b3c40bf4b44",
+                      "copied with ago-assistant"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -123.31654007646142,
+                          44.89111167542515
+                      ],
+                      [
+                          -121.70246774537547,
+                          45.759728221821
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Portland Bike Routes/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 14860,
+                  "groupCategories": [],
+                  "scoreCompleteness": 50,
+                  "groupDesignations": null
+              }
+          ]
+      }
+order: 1000

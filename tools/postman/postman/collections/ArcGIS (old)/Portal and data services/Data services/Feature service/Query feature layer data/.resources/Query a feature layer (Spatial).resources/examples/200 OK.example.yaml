@@ -1,0 +1,1455 @@
+$kind: http-example
+request:
+  url: https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/LA_County_Parcels/FeatureServer/0/query?f=json&where=1=1&outFields=*&geometry={"x":-118.807,"y":34.002,"spatialReference":{"wkid":4326}}&geometryType=esriGeometryPoint&spatialRel=esriSpatialRelIntersects
+  method: GET
+  queryParams:
+    - key: f
+      value: json
+    - key: where
+      value: 1=1
+    - key: outFields
+      value: "*"
+    - key: geometry
+      value: '{"x":-118.807,"y":34.002,"spatialReference":{"wkid":4326}}'
+    - key: geometryType
+      value: esriGeometryPoint
+    - key: spatialRel
+      value: esriSpatialRelIntersects
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      disabled: true
+      description: "If your layer is not public, you will need to use an access token to access it. "
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json; charset=utf-8
+    Content-Length: "3455"
+    Connection: keep-alive
+    Cache-Control: private, max-age=30, s-maxage=30
+    Content-Encoding: br
+    Last-Modified: Thu, 19 Nov 2020 22:33:01 GMT
+    ETag: sd290_444460315
+    X-ArcGIS-Trace-Id: 214ccf2d9266f646be88c8909799763f
+    x-esri-query-request-units: "2"
+    x-esri-tiles-basic-query-mode: "true"
+    x-esri-tiles-basic-query-type: Basic
+    x-esri-query-max-vertex-count: "125"
+    x-esri-query-geometry-field-name: Shape
+    X-ArcGIS-Correlation-Id: 00-214ccf2d9266f646be88c8909799763f-b0e50eaf9c23fc47-00
+    X-ArcGIS-Instance: MTSDS_Web_IN_14
+    Strict-Transport-Security: max-age=63072000
+    Access-Control-Allow-Origin: "*"
+    Date: Tue, 11 Jan 2022 01:27:10 GMT
+    X-Cache: Miss from cloudfront
+    Via: 1.1 2cfc0bae5f623e4a6a6bc0939f1d71c8.cloudfront.net (CloudFront)
+    X-Amz-Cf-Pop: IAD66-C2
+    X-Amz-Cf-Id: UxFMNILN-agqZK3-ZGV2wm1zeI-686vv9KQNjhLS4ha-aIpi_s4D8A==
+  body:
+    type: json
+    content: |-
+      {
+          "objectIdFieldName": "OBJECTID",
+          "uniqueIdField": {
+              "name": "OBJECTID",
+              "isSystemMaintained": true
+          },
+          "globalIdFieldName": "",
+          "geometryProperties": {
+              "shapeAreaFieldName": "Shape__Area",
+              "shapeLengthFieldName": "Shape__Length",
+              "units": "esriMeters"
+          },
+          "geometryType": "esriGeometryPolygon",
+          "spatialReference": {
+              "wkid": 102100,
+              "latestWkid": 3857
+          },
+          "fields": [
+              {
+                  "name": "OBJECTID",
+                  "type": "esriFieldTypeOID",
+                  "alias": "OBJECTID",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "AIN",
+                  "type": "esriFieldTypeString",
+                  "alias": "AIN",
+                  "sqlType": "sqlTypeOther",
+                  "length": 10,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "APN",
+                  "type": "esriFieldTypeString",
+                  "alias": "APN",
+                  "sqlType": "sqlTypeOther",
+                  "length": 12,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusHouseNo",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusHouseNo",
+                  "sqlType": "sqlTypeOther",
+                  "length": 5,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusFraction",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusFraction",
+                  "sqlType": "sqlTypeOther",
+                  "length": 3,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusDirection",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusDirection",
+                  "sqlType": "sqlTypeOther",
+                  "length": 1,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusUnit",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusUnit",
+                  "sqlType": "sqlTypeOther",
+                  "length": 8,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusStreet",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusStreet",
+                  "sqlType": "sqlTypeOther",
+                  "length": 32,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusAddress",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusAddress",
+                  "sqlType": "sqlTypeOther",
+                  "length": 55,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusCity",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusCity",
+                  "sqlType": "sqlTypeOther",
+                  "length": 24,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusZIP",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusZIP",
+                  "sqlType": "sqlTypeOther",
+                  "length": 10,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SitusFullAddress",
+                  "type": "esriFieldTypeString",
+                  "alias": "SitusFullAddress",
+                  "sqlType": "sqlTypeOther",
+                  "length": 84,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "TaxRateArea",
+                  "type": "esriFieldTypeString",
+                  "alias": "TaxRateArea",
+                  "sqlType": "sqlTypeOther",
+                  "length": 5,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "TaxRateCity",
+                  "type": "esriFieldTypeString",
+                  "alias": "TaxRateCity",
+                  "sqlType": "sqlTypeOther",
+                  "length": 21,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "AgencyClassNo",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "AgencyClassNo",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "AgencyName",
+                  "type": "esriFieldTypeString",
+                  "alias": "AgencyName",
+                  "sqlType": "sqlTypeOther",
+                  "length": 255,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "AgencyType",
+                  "type": "esriFieldTypeString",
+                  "alias": "AgencyType",
+                  "sqlType": "sqlTypeOther",
+                  "length": 255,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "UseCode",
+                  "type": "esriFieldTypeString",
+                  "alias": "UseCode",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "UseCode_2",
+                  "type": "esriFieldTypeString",
+                  "alias": "UseCode_2",
+                  "sqlType": "sqlTypeOther",
+                  "length": 2,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "UseType",
+                  "type": "esriFieldTypeString",
+                  "alias": "UseType",
+                  "sqlType": "sqlTypeOther",
+                  "length": 14,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "UseDescription",
+                  "type": "esriFieldTypeString",
+                  "alias": "UseDescription",
+                  "sqlType": "sqlTypeOther",
+                  "length": 61,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "DesignType1",
+                  "type": "esriFieldTypeString",
+                  "alias": "DesignType1",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "YearBuilt1",
+                  "type": "esriFieldTypeString",
+                  "alias": "YearBuilt1",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "EffectiveYear1",
+                  "type": "esriFieldTypeString",
+                  "alias": "EffectiveYear1",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Units1",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Units1",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bedrooms1",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bedrooms1",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bathrooms1",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bathrooms1",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SQFTmain1",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "SQFTmain1",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "DesignType2",
+                  "type": "esriFieldTypeString",
+                  "alias": "DesignType2",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "YearBuilt2",
+                  "type": "esriFieldTypeString",
+                  "alias": "YearBuilt2",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "EffectiveYear2",
+                  "type": "esriFieldTypeString",
+                  "alias": "EffectiveYear2",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Units2",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Units2",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bedrooms2",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bedrooms2",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bathrooms2",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bathrooms2",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SQFTmain2",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "SQFTmain2",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "DesignType3",
+                  "type": "esriFieldTypeString",
+                  "alias": "DesignType3",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "YearBuilt3",
+                  "type": "esriFieldTypeString",
+                  "alias": "YearBuilt3",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "EffectiveYear3",
+                  "type": "esriFieldTypeString",
+                  "alias": "EffectiveYear3",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Units3",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Units3",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bedrooms3",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bedrooms3",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bathrooms3",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bathrooms3",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SQFTmain3",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "SQFTmain3",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "DesignType4",
+                  "type": "esriFieldTypeString",
+                  "alias": "DesignType4",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "YearBuilt4",
+                  "type": "esriFieldTypeString",
+                  "alias": "YearBuilt4",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "EffectiveYear4",
+                  "type": "esriFieldTypeString",
+                  "alias": "EffectiveYear4",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Units4",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Units4",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bedrooms4",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bedrooms4",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bathrooms4",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bathrooms4",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SQFTmain4",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "SQFTmain4",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "DesignType5",
+                  "type": "esriFieldTypeString",
+                  "alias": "DesignType5",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "YearBuilt5",
+                  "type": "esriFieldTypeString",
+                  "alias": "YearBuilt5",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "EffectiveYear5",
+                  "type": "esriFieldTypeString",
+                  "alias": "EffectiveYear5",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Units5",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Units5",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bedrooms5",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bedrooms5",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Bathrooms5",
+                  "type": "esriFieldTypeSmallInteger",
+                  "alias": "Bathrooms5",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SQFTmain5",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "SQFTmain5",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_Year",
+                  "type": "esriFieldTypeString",
+                  "alias": "Roll_Year",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_LandValue",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_LandValue",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_ImpValue",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_ImpValue",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_PersPropValue",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_PersPropValue",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_FixtureValue",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_FixtureValue",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_HomeOwnersExemp",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_HomeOwnersExemp",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_RealEstateExemp",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_RealEstateExemp",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_PersPropExemp",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_PersPropExemp",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_FixtureExemp",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "Roll_FixtureExemp",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_LandBaseYear",
+                  "type": "esriFieldTypeString",
+                  "alias": "Roll_LandBaseYear",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Roll_ImpBaseYear",
+                  "type": "esriFieldTypeString",
+                  "alias": "Roll_ImpBaseYear",
+                  "sqlType": "sqlTypeOther",
+                  "length": 4,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "QualityClass1",
+                  "type": "esriFieldTypeString",
+                  "alias": "QualityClass1",
+                  "sqlType": "sqlTypeOther",
+                  "length": 5,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "QualityClass2",
+                  "type": "esriFieldTypeString",
+                  "alias": "QualityClass2",
+                  "sqlType": "sqlTypeOther",
+                  "length": 5,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "QualityClass3",
+                  "type": "esriFieldTypeString",
+                  "alias": "QualityClass3",
+                  "sqlType": "sqlTypeOther",
+                  "length": 5,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "QualityClass4",
+                  "type": "esriFieldTypeString",
+                  "alias": "QualityClass4",
+                  "sqlType": "sqlTypeOther",
+                  "length": 5,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "QualityClass5",
+                  "type": "esriFieldTypeString",
+                  "alias": "QualityClass5",
+                  "sqlType": "sqlTypeOther",
+                  "length": 5,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LegalDescLine1",
+                  "type": "esriFieldTypeString",
+                  "alias": "LegalDescLine1",
+                  "sqlType": "sqlTypeOther",
+                  "length": 40,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LegalDescLine2",
+                  "type": "esriFieldTypeString",
+                  "alias": "LegalDescLine2",
+                  "sqlType": "sqlTypeOther",
+                  "length": 40,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LegalDescLine3",
+                  "type": "esriFieldTypeString",
+                  "alias": "LegalDescLine3",
+                  "sqlType": "sqlTypeOther",
+                  "length": 40,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LegalDescLine4",
+                  "type": "esriFieldTypeString",
+                  "alias": "LegalDescLine4",
+                  "sqlType": "sqlTypeOther",
+                  "length": 40,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LegalDescLine5",
+                  "type": "esriFieldTypeString",
+                  "alias": "LegalDescLine5",
+                  "sqlType": "sqlTypeOther",
+                  "length": 40,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LegalDescLineLast",
+                  "type": "esriFieldTypeString",
+                  "alias": "LegalDescLineLast",
+                  "sqlType": "sqlTypeOther",
+                  "length": 40,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LegalDescription",
+                  "type": "esriFieldTypeString",
+                  "alias": "LegalDescription",
+                  "sqlType": "sqlTypeOther",
+                  "length": 500,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "SpatialChangeDate",
+                  "type": "esriFieldTypeDate",
+                  "alias": "SpatialChangeDate",
+                  "sqlType": "sqlTypeOther",
+                  "length": 8,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "ParcelCreateDate",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "ParcelCreateDate",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "ParcelTypeCode",
+                  "type": "esriFieldTypeInteger",
+                  "alias": "ParcelTypeCode",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Assr_Map",
+                  "type": "esriFieldTypeString",
+                  "alias": "Assr_Map",
+                  "sqlType": "sqlTypeOther",
+                  "length": 8,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Assr_Index_Map",
+                  "type": "esriFieldTypeString",
+                  "alias": "Assr_Index_Map",
+                  "sqlType": "sqlTypeOther",
+                  "length": 8,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "CENTER_LAT",
+                  "type": "esriFieldTypeDouble",
+                  "alias": "CENTER_LAT",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "CENTER_LON",
+                  "type": "esriFieldTypeDouble",
+                  "alias": "CENTER_LON",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "CENTER_X",
+                  "type": "esriFieldTypeDouble",
+                  "alias": "CENTER_X",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "CENTER_Y",
+                  "type": "esriFieldTypeDouble",
+                  "alias": "CENTER_Y",
+                  "sqlType": "sqlTypeOther",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "LAT_LON",
+                  "type": "esriFieldTypeString",
+                  "alias": "LAT_LON",
+                  "sqlType": "sqlTypeOther",
+                  "length": 62,
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Shape__Area",
+                  "type": "esriFieldTypeDouble",
+                  "alias": "Shape__Area",
+                  "sqlType": "sqlTypeDouble",
+                  "domain": null,
+                  "defaultValue": null
+              },
+              {
+                  "name": "Shape__Length",
+                  "type": "esriFieldTypeDouble",
+                  "alias": "Shape__Length",
+                  "sqlType": "sqlTypeDouble",
+                  "domain": null,
+                  "defaultValue": null
+              }
+          ],
+          "features": [
+              {
+                  "attributes": {
+                      "OBJECTID": 985600,
+                      "AIN": "4468002902",
+                      "APN": "4468-002-902",
+                      "SitusHouseNo": "0",
+                      "SitusFraction": " ",
+                      "SitusDirection": " ",
+                      "SitusUnit": " ",
+                      "SitusStreet": " ",
+                      "SitusAddress": "",
+                      "SitusCity": " ",
+                      "SitusZIP": " ",
+                      "SitusFullAddress": "",
+                      "TaxRateArea": "10860",
+                      "TaxRateCity": "MALIBU",
+                      "AgencyClassNo": 505000,
+                      "AgencyName": "State of California",
+                      "AgencyType": "Miscellaneous",
+                      "UseCode": "880V",
+                      "UseCode_2": "88",
+                      "UseType": "Government",
+                      "UseDescription": "Government Parcel",
+                      "DesignType1": null,
+                      "YearBuilt1": null,
+                      "EffectiveYear1": null,
+                      "Units1": null,
+                      "Bedrooms1": null,
+                      "Bathrooms1": null,
+                      "SQFTmain1": null,
+                      "DesignType2": null,
+                      "YearBuilt2": null,
+                      "EffectiveYear2": null,
+                      "Units2": null,
+                      "Bedrooms2": null,
+                      "Bathrooms2": null,
+                      "SQFTmain2": null,
+                      "DesignType3": null,
+                      "YearBuilt3": null,
+                      "EffectiveYear3": null,
+                      "Units3": null,
+                      "Bedrooms3": null,
+                      "Bathrooms3": null,
+                      "SQFTmain3": null,
+                      "DesignType4": null,
+                      "YearBuilt4": null,
+                      "EffectiveYear4": null,
+                      "Units4": null,
+                      "Bedrooms4": null,
+                      "Bathrooms4": null,
+                      "SQFTmain4": null,
+                      "DesignType5": null,
+                      "YearBuilt5": null,
+                      "EffectiveYear5": null,
+                      "Units5": null,
+                      "Bedrooms5": null,
+                      "Bathrooms5": null,
+                      "SQFTmain5": null,
+                      "Roll_Year": null,
+                      "Roll_LandValue": null,
+                      "Roll_ImpValue": null,
+                      "Roll_PersPropValue": null,
+                      "Roll_FixtureValue": null,
+                      "Roll_HomeOwnersExemp": null,
+                      "Roll_RealEstateExemp": null,
+                      "Roll_PersPropExemp": null,
+                      "Roll_FixtureExemp": null,
+                      "Roll_LandBaseYear": "0000",
+                      "Roll_ImpBaseYear": "0000",
+                      "QualityClass1": null,
+                      "QualityClass2": null,
+                      "QualityClass3": null,
+                      "QualityClass4": null,
+                      "QualityClass5": null,
+                      "LegalDescLine1": "POR OF LOTS 10 AND 11 R F 534 AND POR",
+                      "LegalDescLine2": null,
+                      "LegalDescLine3": null,
+                      "LegalDescLine4": null,
+                      "LegalDescLine5": null,
+                      "LegalDescLineLast": "OF C S B 307-7",
+                      "LegalDescription": "POR OF LOTS 10 AND 11 R F 534 AND POR OF C S B 307-7",
+                      "SpatialChangeDate": null,
+                      "ParcelCreateDate": 19950919,
+                      "ParcelTypeCode": 0,
+                      "Assr_Map": "4468-002",
+                      "Assr_Index_Map": "4468-NDX",
+                      "CENTER_LAT": 34.00222896,
+                      "CENTER_LON": -118.80631942,
+                      "CENTER_X": 6317279.30903556,
+                      "CENTER_Y": 1824173.51104908,
+                      "LAT_LON": "34.002229, -118.806319",
+                      "Shape__Area": 171405.45703125,
+                      "Shape__Length": 1846.29581037805
+                  },
+                  "geometry": {
+                      "rings": [
+                          [
+                              [
+                                  -13225348.4260096,
+                                  4029382.82084106
+                              ],
+                              [
+                                  -13225190.8898737,
+                                  4029372.47162689
+                              ],
+                              [
+                                  -13225198.4190973,
+                                  4029363.36786726
+                              ],
+                              [
+                                  -13225206.5781329,
+                                  4029354.82915225
+                              ],
+                              [
+                                  -13225215.3246297,
+                                  4029346.89917696
+                              ],
+                              [
+                                  -13225225.8154863,
+                                  4029337.3760951
+                              ],
+                              [
+                                  -13225235.6961243,
+                                  4029327.21539828
+                              ],
+                              [
+                                  -13225239.0347775,
+                                  4029322.79609473
+                              ],
+                              [
+                                  -13225241.8342828,
+                                  4029318.01374264
+                              ],
+                              [
+                                  -13225244.0559116,
+                                  4029312.93438202
+                              ],
+                              [
+                                  -13225247.5055739,
+                                  4029301.96217391
+                              ],
+                              [
+                                  -13225249.9810196,
+                                  4029291.80222223
+                              ],
+                              [
+                                  -13225253.2879888,
+                                  4029279.97879717
+                              ],
+                              [
+                                  -13225257.1676409,
+                                  4029270.88504275
+                              ],
+                              [
+                                  -13225258.9701375,
+                                  4029264.34369345
+                              ],
+                              [
+                                  -13225259.5024476,
+                                  4029252.75593166
+                              ],
+                              [
+                                  -13225259.9069966,
+                                  4029243.60158213
+                              ],
+                              [
+                                  -13225263.7497425,
+                                  4029231.2609923
+                              ],
+                              [
+                                  -13225270.9131135,
+                                  4029221.26265747
+                              ],
+                              [
+                                  -13225277.93047,
+                                  4029210.4574029
+                              ],
+                              [
+                                  -13225282.435705,
+                                  4029197.36983583
+                              ],
+                              [
+                                  -13225287.0181209,
+                                  4029185.21152545
+                              ],
+                              [
+                                  -13225291.1039716,
+                                  4029176.18997482
+                              ],
+                              [
+                                  -13225296.2196739,
+                                  4029168.27081492
+                              ],
+                              [
+                                  -13225300.1597648,
+                                  4029161.23931902
+                              ],
+                              [
+                                  -13225302.8414124,
+                                  4029150.23282894
+                              ],
+                              [
+                                  -13225304.1197472,
+                                  4029140.11584043
+                              ],
+                              [
+                                  -13225305.3998295,
+                                  4029128.37528207
+                              ],
+                              [
+                                  -13225308.1459506,
+                                  4029116.70411896
+                              ],
+                              [
+                                  -13225308.9964768,
+                                  4029109.13295152
+                              ],
+                              [
+                                  -13225307.2637479,
+                                  4029099.10664283
+                              ],
+                              [
+                                  -13225305.3915899,
+                                  4029090.47993921
+                              ],
+                              [
+                                  -13225302.1801768,
+                                  4029077.87523033
+                              ],
+                              [
+                                  -13225299.0334013,
+                                  4029064.16304499
+                              ],
+                              [
+                                  -13225298.2461814,
+                                  4029051.10714464
+                              ],
+                              [
+                                  -13225297.8328254,
+                                  4029040.25849605
+                              ],
+                              [
+                                  -13225296.9241354,
+                                  4029033.62031473
+                              ],
+                              [
+                                  -13225294.6143282,
+                                  4029023.99722089
+                              ],
+                              [
+                                  -13225293.4045311,
+                                  4029015.52390929
+                              ],
+                              [
+                                  -13225293.381424,
+                                  4029009.39889156
+                              ],
+                              [
+                                  -13225296.3328093,
+                                  4028993.06957877
+                              ],
+                              [
+                                  -13225298.9141852,
+                                  4028975.93887357
+                              ],
+                              [
+                                  -13225300.7172506,
+                                  4028966.2237048
+                              ],
+                              [
+                                  -13225301.337867,
+                                  4028955.15280732
+                              ],
+                              [
+                                  -13225302.3328017,
+                                  4028944.96447554
+                              ],
+                              [
+                                  -13225305.8128146,
+                                  4028933.21380009
+                              ],
+                              [
+                                  -13225310.3374986,
+                                  4028923.04505702
+                              ],
+                              [
+                                  -13225314.5676433,
+                                  4028914.1701384
+                              ],
+                              [
+                                  -13225319.2194903,
+                                  4028899.68326595
+                              ],
+                              [
+                                  -13225322.7834,
+                                  4028889.70677057
+                              ],
+                              [
+                                  -13225325.782603,
+                                  4028885.37290178
+                              ],
+                              [
+                                  -13225330.9080086,
+                                  4028879.15117515
+                              ],
+                              [
+                                  -13225336.036797,
+                                  4028873.81498308
+                              ],
+                              [
+                                  -13225343.8115253,
+                                  4028869.12904512
+                              ],
+                              [
+                                  -13225352.3274088,
+                                  4028864.80981097
+                              ],
+                              [
+                                  -13225361.2117213,
+                                  4028860.63519927
+                              ],
+                              [
+                                  -13225368.8529243,
+                                  4028858.09042618
+                              ],
+                              [
+                                  -13225377.2304491,
+                                  4028856.68725727
+                              ],
+                              [
+                                  -13225387.4516517,
+                                  4028856.19538355
+                              ],
+                              [
+                                  -13225394.0025674,
+                                  4028856.02086536
+                              ],
+                              [
+                                  -13225402.5226846,
+                                  4028853.61658526
+                              ],
+                              [
+                                  -13225419.3500959,
+                                  4028848.37432154
+                              ],
+                              [
+                                  -13225429.4180452,
+                                  4028846.62910249
+                              ],
+                              [
+                                  -13225439.7916089,
+                                  4028846.36103312
+                              ],
+                              [
+                                  -13225449.9366773,
+                                  4028844.61517442
+                              ],
+                              [
+                                  -13225458.9947397,
+                                  4028846.56789454
+                              ],
+                              [
+                                  -13225469.6726003,
+                                  4028848.99091983
+                              ],
+                              [
+                                  -13225484.0952047,
+                                  4028848.92263248
+                              ],
+                              [
+                                  -13225499.3214083,
+                                  4028849.22052008
+                              ],
+                              [
+                                  -13225505.8675725,
+                                  4028848.451912
+                              ],
+                              [
+                                  -13225520.3592098,
+                                  4028846.91077942
+                              ],
+                              [
+                                  -13225532.7969771,
+                                  4028848.03180109
+                              ],
+                              [
+                                  -13225546.1280208,
+                                  4028850.62891457
+                              ],
+                              [
+                                  -13225556.5887344,
+                                  4028853.45211097
+                              ],
+                              [
+                                  -13225566.3164995,
+                                  4028857.39554143
+                              ],
+                              [
+                                  -13225575.9004211,
+                                  4028861.26263906
+                              ],
+                              [
+                                  -13225578.7062613,
+                                  4028863.53507347
+                              ],
+                              [
+                                  -13225584.4958434,
+                                  4028875.17037187
+                              ],
+                              [
+                                  -13225588.5022785,
+                                  4028882.90145948
+                              ],
+                              [
+                                  -13225596.5114003,
+                                  4028896.51506419
+                              ],
+                              [
+                                  -13225608.1877513,
+                                  4028908.04752087
+                              ],
+                              [
+                                  -13225622.1451333,
+                                  4028918.68337636
+                              ],
+                              [
+                                  -13225631.0850863,
+                                  4028926.97978215
+                              ],
+                              [
+                                  -13225637.520796,
+                                  4028933.51789793
+                              ],
+                              [
+                                  -13225645.6017236,
+                                  4028946.91324719
+                              ],
+                              [
+                                  -13225655.0830182,
+                                  4028960.8913648
+                              ],
+                              [
+                                  -13225662.9986415,
+                                  4028970.14803553
+                              ],
+                              [
+                                  -13225672.5973293,
+                                  4028976.3026899
+                              ],
+                              [
+                                  -13225685.5775785,
+                                  4028981.85439894
+                              ],
+                              [
+                                  -13225695.8292477,
+                                  4028986.53150419
+                              ],
+                              [
+                                  -13225706.8257035,
+                                  4028993.85929414
+                              ],
+                              [
+                                  -13225713.7036472,
+                                  4028999.65585554
+                              ],
+                              [
+                                  -13225722.7212242,
+                                  4029008.91467979
+                              ],
+                              [
+                                  -13225727.5446463,
+                                  4029017.74617151
+                              ],
+                              [
+                                  -13225733.1001838,
+                                  4029024.43530532
+                              ],
+                              [
+                                  -13225735.7289742,
+                                  4029027.06339385
+                              ],
+                              [
+                                  -13225696.246112,
+                                  4029027.13158544
+                              ],
+                              [
+                                  -13225687.2726247,
+                                  4029062.8373902
+                              ],
+                              [
+                                  -13225690.4715922,
+                                  4029087.13907458
+                              ],
+                              [
+                                  -13225682.5435777,
+                                  4029094.70102206
+                              ],
+                              [
+                                  -13225703.3734342,
+                                  4029153.9846935
+                              ],
+                              [
+                                  -13225696.8761516,
+                                  4029161.79711876
+                              ],
+                              [
+                                  -13225673.3202477,
+                                  4029190.06415648
+                              ],
+                              [
+                                  -13225623.8143461,
+                                  4029249.48102894
+                              ],
+                              [
+                                  -13225620.4313014,
+                                  4029244.39774953
+                              ],
+                              [
+                                  -13225616.5500531,
+                                  4029239.10562911
+                              ],
+                              [
+                                  -13225612.1185265,
+                                  4029234.26904907
+                              ],
+                              [
+                                  -13225607.1895226,
+                                  4029229.9456987
+                              ],
+                              [
+                                  -13225601.8217584,
+                                  4029226.18676213
+                              ],
+                              [
+                                  -13225595.425157,
+                                  4029222.7200239
+                              ],
+                              [
+                                  -13225588.6569163,
+                                  4029220.05861595
+                              ],
+                              [
+                                  -13225581.6176666,
+                                  4029218.24185311
+                              ],
+                              [
+                                  -13225574.410691,
+                                  4029217.29634504
+                              ],
+                              [
+                                  -13225567.1428454,
+                                  4029217.2362194
+                              ],
+                              [
+                                  -13225559.9215677,
+                                  4029218.06222358
+                              ],
+                              [
+                                  -13225552.853274,
+                                  4029219.76219888
+                              ],
+                              [
+                                  -13225546.0424431,
+                                  4029222.31131847
+                              ],
+                              [
+                                  -13225540.5642639,
+                                  4029225.09852601
+                              ],
+                              [
+                                  -13225535.39946,
+                                  4029228.43531302
+                              ],
+                              [
+                                  -13225530.6026158,
+                                  4029232.28664686
+                              ],
+                              [
+                                  -13225526.2241395,
+                                  4029236.6119937
+                              ],
+                              [
+                                  -13225498.2330414,
+                                  4029269.76691612
+                              ],
+                              [
+                                  -13225399.9132192,
+                                  4029386.20515528
+                              ],
+                              [
+                                  -13225399.8424925,
+                                  4029386.28874996
+                              ],
+                              [
+                                  -13225348.4260096,
+                                  4029382.82084106
+                              ]
+                          ]
+                      ]
+                  }
+              }
+          ]
+      }
+order: 1000

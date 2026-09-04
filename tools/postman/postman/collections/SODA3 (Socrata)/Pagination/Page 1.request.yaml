@@ -1,0 +1,12 @@
+$kind: http-request
+description: Fetch the first page of results. SODA3 uses pageNumber and pageSize for pagination. Always include ORDER BY for stable pagination — ':id' is the system row identifier.
+url: "{{baseUrl}}/api/v3/views/{{datasetId}}/query.json"
+method: POST
+headers:
+  X-App-Token: "{{appToken}}"
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: '{"query":"SELECT * ORDER BY :id","page":{"pageNumber":1,"pageSize":100}}'
+order: 3000

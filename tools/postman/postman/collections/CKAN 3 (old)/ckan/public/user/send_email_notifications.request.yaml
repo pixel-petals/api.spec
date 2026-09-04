@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{CKAN_API}}/send_email_notifications"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+order: 11000

@@ -1,0 +1,26 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/analyze-patterns/find-outliers/#identify-home-value-outliers)
+url: "{{ANALYSIS_URL}}/FindOutliers/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    analysisLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Enriched_PDX_hex_bin_tessellations/FeatureServer/0","filter":"AVGVAL_CY <> 0"}'
+    analysisField: AVGVAL_CY
+    returnProcessInfo: "true"
+    outputName: '{"serviceProperties":{"name":"{{UNIQUE_NAME}}"}}'
+    context: '{"extent":{"xmin":-13701588.357587751,"ymin":5636873.660541155,"xmax":-13554599.952195555,"ymax":5730585.457218655,"spatialReference":{"wkid":102100,"latestWkid":3857}}}'
+scripts:
+  - type: afterResponse
+    code: |
+      pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+  - type: beforeRequest
+    code: |
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/ /g, "_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

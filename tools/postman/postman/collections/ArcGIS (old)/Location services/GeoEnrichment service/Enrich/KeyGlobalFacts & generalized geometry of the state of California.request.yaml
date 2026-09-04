@@ -1,0 +1,19 @@
+$kind: http-request
+name: KeyGlobalFacts & generalized geometry of the state of California study area
+description: |-
+  * You only need to specify `generalizationLevel` if `returnGeometry` is set to true.
+  * Generalization levels are from 0 through 6 with 0 being the most detailed and 6 being the most generalized.
+
+  ![](https://developers.arcgis.com/rest/geoenrichment/api-reference/GUID-8E480DDB-1B49-4E33-B214-0325C4239A3B-web.png)
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/enrich?f=pjson&token={{ACCESS_TOKEN}}&dataCollections=["KeyGlobalFacts"]&studyAreas=[{"sourceCountry":"US","layer":"US.States","ids":["06"],"generalizationLevel":"6"}]&returnGeometry=true
+method: GET
+queryParams:
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+  dataCollections: '["KeyGlobalFacts"]'
+  studyAreas: '[{"sourceCountry":"US","layer":"US.States","ids":["06"],"generalizationLevel":"6"}]'
+  returnGeometry: "true"
+examples: ./.resources/KeyGlobalFacts & generalized geometry of the state of California.resources/examples
+order: 13000

@@ -1,0 +1,13 @@
+$kind: http-request
+description: Retrieves a web map style definition for a specified version, style response, style family, and style name. Use this endpoint to obtain the JSON style specification for rendering ArcGIS basemaps. Requires authentication with an access token.
+url: https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/:VERSION/:STYLE_RESPONSE/:STYLE_FAMILY/:STYLE_NAME?token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  token: "{{ACCESS_TOKEN}}"
+pathVariables:
+  VERSION: v2
+  STYLE_RESPONSE: webmaps
+  STYLE_FAMILY: arcgis
+  STYLE_NAME: navigation
+examples: ./.resources/Get a webmap.resources/examples
+order: 4000

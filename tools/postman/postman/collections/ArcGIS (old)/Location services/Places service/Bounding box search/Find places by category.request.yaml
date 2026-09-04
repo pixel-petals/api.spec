@@ -1,0 +1,15 @@
+$kind: http-request
+description: Return places within the specific bounding box that are in the provided category
+url: https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/within-extent?xmin=24.897&ymin=60.159&xmax=24.979&ymax=60.178&categoryIds=4bf58dd8d48988d12d941735, 4bf58dd8d48988d181941735, 4bf58dd8d48988d163941735&pageSize=20&f=pjson&token={{Token}}
+method: GET
+queryParams:
+  xmin: "24.897"
+  ymin: "60.159"
+  xmax: "24.979"
+  ymax: "60.178"
+  categoryIds: 4bf58dd8d48988d12d941735, 4bf58dd8d48988d181941735, 4bf58dd8d48988d163941735
+  pageSize: "20"
+  f: pjson
+  token: "{{Token}}"
+examples: ./.resources/Find places by category.resources/examples
+order: 2000

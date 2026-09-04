@@ -1,0 +1,14 @@
+$kind: http-request
+description: |-
+  Checks the status of a FindRoutes analysis job using the provided job ID. Use this endpoint to monitor the progress and retrieve the current state of your submitted FindRoutes job.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/optimized-routing/#job-find-an-optimized-route-for-a-truck-delivery)
+url: https://logistics.arcgis.com/arcgis/rest/services/World/Route/GPServer/FindRoutes/jobs/{{JOB_ID}}
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/2. Check status.resources/examples
+order: 2000

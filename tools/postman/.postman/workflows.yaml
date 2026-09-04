@@ -1,0 +1,15 @@
+# This is a Workflow metadata file for defining entity relationships in this workspace.
+# Each workflow defines relations between entities and may include optional behavior/settings.
+# The Paths are relative to the .postman directory (avoid absolute paths).
+# Keep relation entries explicit and avoid duplicate pairs within the same workflow.
+# This file is declarative metadata and does not execute workflows by itself.
+workflows:
+  syncCollectionToSpec:
+    - spec: ../postman/specs/OpenDataSoft/openapi.opendatasoft.json
+      collection: ../postman/collections/OpenDataSoft Explore API (2.1.0)
+      options:
+        syncExamples: false
+    - spec: ../postman/specs/OpenStreetMap/openapi.open-street-map.json
+      collection: ../postman/collections/OpenStreetMap (0.6.0)
+      options:
+        syncExamples: false

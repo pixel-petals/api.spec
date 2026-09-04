@@ -1,0 +1,13 @@
+$kind: http-request
+description: Gets the feature service metadata.
+url: https://{{FS_HOST}}.arcgis.com/:ORG_ID/arcgis/rest/services/:SERVICE_NAME/FeatureServer/:LAYER_ID?f=json&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  f: json
+  token: "{{ACCESS_TOKEN}}"
+pathVariables:
+  ORG_ID: "{{ORG_ID}}"
+  SERVICE_NAME: "{{FS_NAME}}"
+  LAYER_ID: "{{FS_LYR_ID}}"
+examples: ./.resources/Get feature service metadata.resources/examples
+order: 1000

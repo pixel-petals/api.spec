@@ -1,0 +1,19 @@
+$kind: http-request
+name: tag_create
+url: "{{CKAN_API}}/tag_create"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: name
+      value: ""
+      description: (string) – the name for the new tag, a string between 2 and 100 characters long containing only alphanumeric characters and -, _ and ., e.g. 'Jazz'
+    - type: text
+      key: vocabulary_id
+      value: ""
+      description: (string) – the id of the vocabulary that the new tag should be added to, e.g. the id of vocabulary 'Genre'
+order: 3000

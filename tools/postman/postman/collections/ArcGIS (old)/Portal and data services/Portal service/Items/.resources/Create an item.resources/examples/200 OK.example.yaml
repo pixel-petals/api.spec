@@ -1,0 +1,63 @@
+$kind: http-example
+request:
+  url: https://www.arcgis.com/sharing/rest/content/users/{{your_org}}/addItem
+  method: GET
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  body:
+    type: urlencoded
+    content:
+      - key: f
+        value: json
+        description: "(Required) Format resposnse: json|pjson|html"
+      - key: title
+        value: World geography
+        description: (Required)
+      - key: description
+        value: This is the map of the world
+        description: (Required)
+      - key: type
+        value: Web Map
+        description: (Required) Must be drawn from list of supported types (web map, web scene, feature service etc.)
+      - key: tags
+        value: map, world, geography
+      - key: token
+        value: "{{ACCESS_TOKEN}}"
+        description: "Cannot use an API key,  you will need to generate a token. "
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Thu, 13 Jan 2022 15:16:19 GMT
+    - key: Content-Type
+      value: text/plain;charset=utf-8
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Origin
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Cache-Control
+      value: no-cache
+    - key: Pragma
+      value: no-cache
+    - key: Expires
+      value: "-1"
+    - key: Strict-Transport-Security
+      value: max-age=31536000
+    - key: Content-Encoding
+      value: gzip
+  body:
+    type: json
+    content: |-
+      {
+          "success": true,
+          "id": "060a7683f9064b0d83c8231606915132",
+          "folder": null
+      }
+order: 1000

@@ -1,0 +1,11 @@
+$kind: http-request
+description: Get the results. To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/optimized-routing/#job-find-an-optimized-route-for-a-truck-delivery)
+url: https://logistics.arcgis.com/arcgis/rest/services/World/Route/GPServer/FindRoutes/jobs/{{JOB_ID}}/results/Output_Routes
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+examples: ./.resources/3. Get route.resources/examples
+order: 3000

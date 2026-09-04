@@ -1,0 +1,3 @@
+$kind: collection
+description: This folder provides APIs to discover geographic and demographic data by country using the GeoEnrichment service. It includes requests to list all supported countries, retrieve data collections and available information for specific countries, and access reports by country. The folder also contains an 'Examples' subfolder with sample requests demonstrating usage of these APIs.
+order: 2000

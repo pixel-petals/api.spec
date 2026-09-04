@@ -1,0 +1,36 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/FindOutliers/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      - key: f
+        value: json
+      - key: token
+        value: "{{ACCESS_TOKEN}}"
+      - key: analysisLayer
+        value: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Traffic_Crashes/FeatureServer/0"}'
+      - key: shapeType
+        value: fishnet
+      - key: returnProcessInfo
+        value: "true"
+      - key: outputName
+        value: '{"serviceProperties":{"name":"Find outliers results}}'
+      - key: context
+        value: "{}"
+        disabled: true
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+        "jobId": "<JOB_ID>",
+        "jobStatus": "esriJobSubmitted",
+        "results": {},
+        "inputs": {},
+        "messages": []
+      }
+order: 1000

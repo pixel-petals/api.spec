@@ -1,0 +1,40 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/CalculateCompositeIndex/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+      inputLayer: "{\"url\": \"https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/2022_County_Health_Rankings/FeatureServer/2\", filter: \"STATE = 'NH'\"}"
+      inputVariables: '[{"reverseVariable":false,"weight":1,"field":"v053_rawvalue"},{"reverseVariable":false,"weight":1,"field":"v002_rawvalue"},{"reverseVariable":true,"weight":1,"field":"v155_rawvalue"}]'
+      indexMethod: meanScaled
+      outputName: '{"serviceProperties":{"name":{{UNIQUE_NAME}}}}'
+      outputIndexReverse: "false"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Tue, 06 Jan 2026 15:25:37 GMT
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: no-cache
+    ETag: '"-607992352"'
+    Vary: Origin,Accept-Encoding,Authorization,X-Esri-Authorization
+    Server: Microsoft-IIS/10.0
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    X-Powered-By: ASP.NET
+  body:
+    type: text
+    content: |-
+      {
+          "jobId": "j50cac4370dbf4feabe9c0d5c979c1b8a",
+          "jobStatus": "esriJobSubmitted",
+          "results": {},
+          "inputs": {},
+          "messages": []
+      }
+order: 1000

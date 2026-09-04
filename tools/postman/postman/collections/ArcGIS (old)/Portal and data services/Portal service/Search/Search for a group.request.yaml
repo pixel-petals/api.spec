@@ -1,0 +1,15 @@
+$kind: http-request
+description: |-
+  Searches for ArcGIS groups matching the specified query. Use this endpoint to find groups by title or other criteria within the ArcGIS Online community.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/search/search-items/#search-for-a-group)
+url: https://www.arcgis.com/sharing/rest/community/groups?q=title:hikers&f=json
+method: GET
+queryParams:
+  - key: q
+    value: title:hikers
+    description: Title or keyword for the group
+  - key: f
+    value: json
+examples: ./.resources/Search for a group.resources/examples
+order: 4000

@@ -1,0 +1,8 @@
+$kind: http-request
+description: To learn more go to the [REST API](https://developers.arcgis.com/rest/geoenrichment/standard-geography-query/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/StandardGeographyLevels?f=json
+method: GET
+queryParams:
+  f: json
+examples: ./.resources/Standard geography levels.resources/examples
+order: 1000

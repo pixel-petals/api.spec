@@ -1,0 +1,51 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/versions"
+  method: GET
+  headers:
+    Accept: application/xml
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "version": "string",
+        "generator": "string",
+        "api": {
+          "versions": [
+            "string",
+            "string"
+          ]
+        }
+      }
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "generator": {
+            "type": "string"
+          },
+          "api": {
+            "type": "object",
+            "properties": {
+              "versions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+order: 1000

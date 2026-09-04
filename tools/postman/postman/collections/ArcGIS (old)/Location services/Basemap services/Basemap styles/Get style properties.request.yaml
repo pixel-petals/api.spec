@@ -1,0 +1,13 @@
+$kind: http-request
+description: Go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/mapping/basemap-layers) to learn more.
+url: https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/:VERSION/:STYLE_RESPONSE/:STYLE_FAMILY/:STYLENAME/self?token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  token: "{{ACCESS_TOKEN}}"
+pathVariables:
+  VERSION: v2
+  STYLE_RESPONSE: styles
+  STYLE_FAMILY: open
+  STYLENAME: blueprint
+examples: ./.resources/Get style properties.resources/examples
+order: 7000

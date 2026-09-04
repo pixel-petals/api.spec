@@ -1,0 +1,43 @@
+$kind: http-request
+description: Updates tags on an open changeset. Only the tags provided in this call will remain; omitted tags are deleted.
+url: "{{baseUrl}}/api/0.6/changeset/:id"
+method: PUT
+headers:
+  Content-Type: application/xml
+  Accept: application/xml
+pathVariables:
+  - key: id
+    value: "6776"
+    description: The numeric ID of the changeset
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: xml
+  content: |-
+    <?xml version="1.0" encoding="UTF-8"?>
+    <element>(string)</element>
+  $type: |-
+    {
+      "type": "string",
+      "description": "OSM XML document, content wrapped in an <osm> root element"
+    }
+auth:
+  type: oauth2
+  credentials:
+    scope: read_prefs write_prefs write_api write_changeset_comments read_gpx write_gpx write_notes write_redactions write_blocks consume_messages send_messages
+    accessTokenUrl: https://www.openstreetmap.org/oauth2/token
+    authUrl: https://www.openstreetmap.org/oauth2/authorize
+    grant_type: authorization_code
+examples: ./.resources/Update changeset tags.resources/examples
+order: 2000

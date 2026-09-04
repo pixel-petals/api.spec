@@ -1,0 +1,175 @@
+$kind: collection
+name: Search / Geocoding (Addresses & Places)
+description: |-
+  Address geocoding, also known as _forward geocoding_, is the process of converting text for an address to a complete address with a location. For example, you can convert `1 Bridge St, Sydney, Australia` to `1 Bridge St, Sydney, New South Wales, 2000`.
+
+  You can use address search to:
+
+  - Geocode address text to a complete address.
+      
+  - Find the location of an address.
+      
+  - Provide a list of address candidates for an incomplete address.
+scripts:
+  - type: http:beforeRequest
+    code: |-
+      // utils.requiredParameters(["token", "f"]);
+      // utils.checkSupportedValues("f", ["json", "pjson"]);
+
+      // console.log("Check string parameters");
+      // utils.forceValueType(['address', 'address2', 'address3', 'category', 'city', 'countryCode', 'langCode', 'locationType', 'magicKey', 'neighborhood', 'outFields', 'preferredLabelValues', 'region', 'singleLine', 'sourceCountry', 'subregion'], 'string');
+
+      // console.log("Check booleans parameters");
+      // utils.forceValueType(['forStorage', 'matchOutOfRange'], 'boolean');
+
+
+
+      // utils.isURIEncoded("searchExtent");
+
+      //Pending check if string or object
+      //'location' <string> | <Point>
+    language: text/javascript
+  - type: http:afterResponse
+    code: |-
+      var template = `
+
+      <link
+        rel="stylesheet"
+        href="https://js.arcgis.com/4.20/@arcgis/core/assets/esri/themes/light/main.css"
+      />
+
+      <style>
+        #viewDiv, body, html {
+          padding: 0;
+          margin: 0;
+          height: 100%;
+          width: 100%;
+        }
+      </style>
+      <div id="viewDiv"></div>
+      <script type="module">
+      import MapView from "https://js.arcgis.com/4.20/@arcgis/core/views/MapView.js";
+      import Graphic from "https://js.arcgis.com/4.20/@arcgis/core/Graphic.js";
+      import FeatureLayer from "https://js.arcgis.com/4.20/@arcgis/core/layers/FeatureLayer.js";
+
+      //   const response = {
+      //  "spatialReference": {
+      //   "wkid": 4326,
+      //   "latestWkid": 4326
+      //  },
+      //  "candidates": [
+      //   {
+      //    "address": "1600 Pennsylvania Ave NW, Washington, District of Columbia, 20500",
+      //    "location": {
+      //     "x": -77.036546998209,
+      //     "y": 38.897675107651
+      //    },
+      //    "score": 100,
+      //    "attributes": {
+
+      //    },
+      //    "extent": {
+      //     "xmin": -77.037546998209,
+      //     "ymin": 38.896675107651,
+      //     "xmax": -77.035546998209,
+      //     "ymax": 38.898675107651
+      //    }
+      //   }
+      //  ]
+      // }
+
+      pm.getData((error, data) => {
+          const view = new MapView({
+              container: "viewDiv",
+              map: {
+                  basemap: "streets-navigation-vector",
+              },
+              zoom: 4,
+              center: [15, 65], // longitude, latitude
+          });
+
+          const response = data.response;
+          let graphics = []
+          
+          for (let i = 0; i < response.candidates.length; i++) {
+              const {
+                  address,
+                  score,
+                  attributes,
+                  location
+              } = response.candidates[i];
+              const PlaceName = attributes.PlaceName,
+                    {x, y} = location;
+              graphics.push(
+                  new Graphic({
+                      attributes: {
+                          ObjectId: i,
+                          address: address,
+                          score: score,
+                          placename: PlaceName
+
+                      },
+                      geometry: {
+                          type: "point",
+                          x,
+                          y,
+                          spatialReference: 4326,
+                      },
+                  }),
+              );
+          }
+
+          const layer = new FeatureLayer({
+              source: graphics,
+              fields: [{
+                  name: "address",
+                  alias: "address",
+                  type: "string"
+              }, {
+                  name: "score",
+                  alias: "Score",
+                  type: "double"
+              }, {
+                  name: "placename",
+                  alias: "PlaceName",
+                  type: "string"
+              }],
+              objectIdField: "ObjectID",
+              geometryType: "point",
+              renderer: {
+                  type: "simple",
+                  symbol: {
+                      type: "simple-marker",
+                      color: "#102A44",
+                      outline: {
+                          color: "#598DD8",
+                          width: 2,
+                      },
+                  },
+              },
+              popupTemplate: {
+                  title: "{PlaceName}",
+                  content: [{
+                      type: "text",
+                      text: "Address: {address}<br>Score: {score}"
+                  }]
+              }
+          });
+          view.map.add(layer);
+          layer
+              .when(() => {
+                  return layer.queryExtent();
+              })
+              .then((response) => {
+                  view.goTo(response.extent);
+              });
+      })
+      </script>
+      `;
+
+      // Set visualizer
+      pm.visualizer.set(template, {
+          response: pm.response.json()
+      });
+    language: text/javascript
+order: 1000

@@ -1,0 +1,37 @@
+$kind: http-example
+name: Forbidden – authenticated but not permitted (e.g. blocked user or missing OAuth scope)
+request:
+  url: "{{baseUrl}}/api/0.6/gpx/:id"
+  method: PUT
+  headers:
+    - key: Content-Type
+      value: multipart/form-data
+    - key: Authorization
+      value: <token>
+      description: "Added as a part of security scheme: oauth2"
+  pathVariables:
+    - key: id
+      value: "6776"
+      description: The numeric ID of the element
+  body:
+    type: formdata
+    content:
+      - type: text
+        key: description
+        value: string
+        description: ""
+      - type: text
+        key: tags
+        value: string
+        description: ""
+      - type: text
+        key: visibility
+        value: trackable
+        description: ""
+response:
+  statusCode: 403
+  statusText: Forbidden
+  body:
+    type: text
+    content: ""
+order: 2000

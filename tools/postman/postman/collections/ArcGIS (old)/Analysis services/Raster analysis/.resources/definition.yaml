@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  Raster analysis is the process of using the [Raster analysis service](https://developers.arcgis.com/rest/services-reference/enterprise/get-started-with-the-raster-analysis-service/) to solve a geospatial problem with raster data. When using the raster analysis service you can use operations or functions to perform analysis such as detecting patterns, data classification, deep learning analysis, data summarization, multidimensional analysis and raster data management.
+
+  To learn more go to the [Developer guide > Introduction to raster analysis](https://developers.arcgis.com/documentation/spatial-analysis-services/raster-analysis/introduction/).
+order: 2000

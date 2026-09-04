@@ -1,0 +1,36 @@
+$kind: http-request
+url: "{{baseUrl}}/api/0.6/user/preferences/:key"
+method: PUT
+headers:
+  Content-Type: text/plain
+pathVariables:
+  - key: key
+    value: string
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: text
+  content: string
+  $type: |-
+    {
+      "type": "string"
+    }
+auth:
+  type: oauth2
+  credentials:
+    scope: read_prefs write_prefs write_api write_changeset_comments read_gpx write_gpx write_notes write_redactions write_blocks consume_messages send_messages
+    accessTokenUrl: https://www.openstreetmap.org/oauth2/token
+    authUrl: https://www.openstreetmap.org/oauth2/authorize
+    grant_type: authorization_code
+examples: ./.resources/Set a single user preference.resources/examples
+order: 2000

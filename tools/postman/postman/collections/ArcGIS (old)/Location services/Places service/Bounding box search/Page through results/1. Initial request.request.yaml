@@ -1,0 +1,30 @@
+$kind: http-request
+description: Make a request to the places service with paging.
+url: https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/within-extent?xmin=-122.3216485977173&ymin=47.60912874706993&xmax=-122.34233379364015&ymax=47.602864405717575&pageSize=20&f=pjson&token={{Token}}
+method: GET
+queryParams:
+  xmin: "-122.3216485977173"
+  ymin: "47.60912874706993"
+  xmax: "-122.34233379364015"
+  ymax: "47.602864405717575"
+  pageSize: "20"
+  f: pjson
+  token: "{{Token}}"
+scripts:
+  - type: afterResponse
+    code: |-
+      const response = pm.response.json();
+
+      const token = pm.environment.get('Token')
+      pm.collectionVariables.unset("boundingBoxNextURL");
+
+      if (response.pagination.nextUrl) {
+          const nextRequest = `${response.pagination.nextUrl}&token=${token}`
+          pm.collectionVariables.set("boundingBoxNextURL", nextRequest);
+      } else {
+          console.log(`This is the last page. Stopping execution`);
+          pm.collectionVariables.unset("boundingBoxNextURL");
+      }
+    language: text/javascript
+examples: ./.resources/1. Initial request.resources/examples
+order: 1000

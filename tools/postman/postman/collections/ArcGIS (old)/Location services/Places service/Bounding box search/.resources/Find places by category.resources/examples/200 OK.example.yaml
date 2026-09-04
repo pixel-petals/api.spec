@@ -1,0 +1,317 @@
+$kind: http-example
+request:
+  url: https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/within-extent?xmin=24.897&ymin=60.159&xmax=24.979&ymax=60.178&categoryIds=16026, 10027, 16032&pageSize=20&f=pjson&token={{Token}}
+  method: GET
+  queryParams:
+    xmin: "24.897"
+    ymin: "60.159"
+    xmax: "24.979"
+    ymax: "60.178"
+    categoryIds: 16026, 10027, 16032
+    pageSize: "20"
+    f: pjson
+    token: "{{Token}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Encoding: gzip
+    Content-Type: application/json
+    Date: Wed, 05 Jul 2023 17:18:39 GMT
+    permissions-policy: interest-cohort=()
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    transfer-encoding: chunked
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      {
+          "results": [
+              {
+                  "placeId": "a45b3f488788f4ae1138f08981a1e8f9",
+                  "location": {
+                      "x": 24.923854,
+                      "y": 60.172184
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16032",
+                          "label": "Park"
+                      }
+                  ],
+                  "name": "Lutherinkatu, Puisto"
+              },
+              {
+                  "placeId": "6be263c64f04279a2c670d9d8bb0f528",
+                  "location": {
+                      "x": 24.942604,
+                      "y": 60.173939
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16032",
+                          "label": "Park"
+                      }
+                  ],
+                  "name": "Kaisaniemi Park"
+              },
+              {
+                  "placeId": "0f0a33b13cf47239bc3d531bb487b13b",
+                  "location": {
+                      "x": 24.95721,
+                      "y": 60.160252
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16032",
+                          "label": "Park"
+                      }
+                  ],
+                  "name": "Armi Ratian puisto"
+              },
+              {
+                  "placeId": "21d6216e887a012b9943f2fdaed0599f",
+                  "location": {
+                      "x": 24.905838,
+                      "y": 60.161861
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10027",
+                          "label": "Museum"
+                      }
+                  ],
+                  "name": "Hotelli- Ja Ravintolamuseo / The Hotel And Restaurant Museum"
+              },
+              {
+                  "placeId": "96eb550ce3829a2f79d06e44563dc4e8",
+                  "location": {
+                      "x": 24.947328,
+                      "y": 60.16746
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16026",
+                          "label": "Monument"
+                      }
+                  ],
+                  "name": "Statue of Johan Ludvig Runeberg"
+              },
+              {
+                  "placeId": "ab756a46cd59b2998f386367fd11e7cd",
+                  "location": {
+                      "x": 24.937485,
+                      "y": 60.168314
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10027",
+                          "label": "Museum"
+                      }
+                  ],
+                  "name": "Amos Andersonin taidemuseo"
+              },
+              {
+                  "placeId": "ceb438ccaa30f2dfdc3b8e2c1eac2113",
+                  "location": {
+                      "x": 24.922271,
+                      "y": 60.172557
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16032",
+                          "label": "Park"
+                      }
+                  ],
+                  "name": "Sammonpuistikko"
+              },
+              {
+                  "placeId": "a56646d85fc462389f1bbe6f88ac3fef",
+                  "location": {
+                      "x": 24.949862,
+                      "y": 60.173448
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16032",
+                          "label": "Park"
+                      }
+                  ],
+                  "name": "Varsapuistikko"
+              },
+              {
+                  "placeId": "f328b21539fe8a2b2c63baf860aa7e51",
+                  "location": {
+                      "x": 24.922284,
+                      "y": 60.170877
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16037",
+                          "label": "Playground"
+                      }
+                  ],
+                  "name": "Leikkipaikka Perhon kenttä"
+              },
+              {
+                  "placeId": "7555f761af873588be97d61cc169a05b",
+                  "location": {
+                      "x": 24.948424,
+                      "y": 60.169157
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10027",
+                          "label": "Museum"
+                      }
+                  ],
+                  "name": "Pankkimuseo"
+              },
+              {
+                  "placeId": "4dc4f353afdc0fdca03af8dc7616d3bb",
+                  "location": {
+                      "x": 24.94198,
+                      "y": 60.168701
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16026",
+                          "label": "Monument"
+                      }
+                  ],
+                  "name": "Stockan Kello"
+              },
+              {
+                  "placeId": "95e3db782754165a4df25e38329b07cb",
+                  "location": {
+                      "x": 24.948292,
+                      "y": 60.159303
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16037",
+                          "label": "Playground"
+                      }
+                  ],
+                  "name": "Leikkipaikka"
+              },
+              {
+                  "placeId": "129790a03f705bfbff2f7569d3a21786",
+                  "location": {
+                      "x": 24.912572,
+                      "y": 60.167155
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16032",
+                          "label": "Park"
+                      }
+                  ],
+                  "name": "Lapinlahden Puisto"
+              },
+              {
+                  "placeId": "63a323e9206a0ff1bb8e2b9bd0100b8c",
+                  "location": {
+                      "x": 24.931387,
+                      "y": 60.176753
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16026",
+                          "label": "Monument"
+                      }
+                  ],
+                  "name": "Larin Parasken Patsas"
+              },
+              {
+                  "placeId": "2a4ad009716c71dca9440ff6e0d63b53",
+                  "location": {
+                      "x": 24.922499,
+                      "y": 60.175985
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10031",
+                          "label": "Science Museum"
+                      }
+                  ],
+                  "name": "Helsingin Puhelinmuseo"
+              },
+              {
+                  "placeId": "d1939b08d56385c84b58e92490259674",
+                  "location": {
+                      "x": 24.916179,
+                      "y": 60.172646
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16032",
+                          "label": "Park"
+                      }
+                  ],
+                  "name": "Hietakannas"
+              },
+              {
+                  "placeId": "80ab34d613322ce66b96ba99f75d1b4a",
+                  "location": {
+                      "x": 24.956528,
+                      "y": 60.169454
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16032",
+                          "label": "Park"
+                      }
+                  ],
+                  "name": "Ritarihuoneen Puisto"
+              },
+              {
+                  "placeId": "bc26db1a70c1a434ec96f5525be0841e",
+                  "location": {
+                      "x": 24.922213,
+                      "y": 60.176339
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10028",
+                          "label": "Art Museum"
+                      }
+                  ],
+                  "name": "Lauri Ja Lasse Reitzin Säätiön Museo"
+              },
+              {
+                  "placeId": "8149d2e0ab1d815c992d0a0341a68735",
+                  "location": {
+                      "x": 24.92513,
+                      "y": 60.163442
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16032",
+                          "label": "Park"
+                      }
+                  ],
+                  "name": "Köydenpunojanpuistikko"
+              },
+              {
+                  "placeId": "977c5a79a6a5b3dee28a04d8c3905cc5",
+                  "location": {
+                      "x": 24.922572,
+                      "y": 60.172681
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "16032",
+                          "label": "Park"
+                      }
+                  ],
+                  "name": "S. Kotamäen Puisto"
+              }
+          ],
+          "pagination": {
+              "nextUrl": "https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/within-extent?xmin=24.89700000&ymin=60.15900000&xmax=24.97900000&ymax=60.17800000&categoryIds=16026,10027,16032&f=pjson&offset=20&pageSize=20"
+          }
+      }
+order: 1000

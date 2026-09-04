@@ -1,0 +1,27 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/enrich
+method: POST
+body:
+  type: urlencoded
+  content:
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      description: (Required) You need a valid access token. To learn more, read the collection's documentation.
+    - key: f
+      value: pjson
+      description: (Required) The format of the data returned. The value can be json, pjson (formatted), or html (not supported by all requests).
+    - key: studyAreas
+      value: "[{'geometry':{'x': -74.0060, 'y': 40.7128}}]"
+      description: (Required) An array of input points, polygons, administrative boundaries, or addresses.
+    - key: studyAreasOptions
+      value: "{'areaType': 'NetworkServiceArea', 'bufferUnits': 'Minutes', 'bufferRadii': [10],'travel_mode': 'Driving'}"
+      description: An array of values to control how input points are buffered. Supported area types include ring buffers and network service areas such as drive times and walk times. Multiple buffer radii can be requested. The unit of measurement requested can be miles or kilometers and in the case of service areas, minutes and hours are also supported.
+    - key: dataCollections
+      value: HouseholdTotals
+      description: An array of data collection names to query for. The names contain pre-defined set of attributes to return for the world or different countries.
+    - key: returnGeometry
+      value: "true"
+      description: An optional parameter to request an area's geometry for display on a map. When this parameter is set to true, the geometries of each feature will be included in the repsonse. The default value is false.
+examples: ./.resources/Find facts (5 minutes drive area).resources/examples
+order: 4000

@@ -1,0 +1,7 @@
+$kind: collection
+description: |-
+  Before running analysis examples you will need to run the following requests to setup your environement:
+
+  1. Set your the `org_id` and `url_key` [environment variables](https://www.postman.com/esridevs/esri-arcgis-services/request/k7bs0uu/1-set-environment-vars-org-id-and-url-key?action=share&source=copy-link&creator=23458780&ctx=documentation).
+  2. Set the `host`, `service_name`, and `layer_id` [environment variables](https://www.postman.com/esridevs/esri-arcgis-services/request/z8s6ggl/2-set-environment-vars-host-service-name-layer-id?action=share&source=copy-link&creator=23458780&ctx=documentation). 
+order: 1000

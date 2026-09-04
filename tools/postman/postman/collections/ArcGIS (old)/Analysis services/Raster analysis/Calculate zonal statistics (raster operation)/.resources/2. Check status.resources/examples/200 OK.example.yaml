@@ -1,0 +1,27 @@
+$kind: http-example
+request:
+  url: "{{RASTER_ANALYSIS_URL}}/SummarizeRasterWithin/jobs/:JOBID/"
+  method: POST
+  pathVariables:
+    JOBID: "{{RASTER_ANALYSIS_JOBID}}"
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 24 Mar 2025 17:16:13 GMT
+    Content-Type: text/javascript
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Content-Encoding: br
+    Vary: Accept-Encoding
+    Server: Microsoft-IIS/10.0
+    X-Powered-By: ASP.NET
+  body:
+    type: text
+    content: '{"jobId":"be31573cfb9d4e738f1d52fad87bd3e5","jobStatus":"esriJobSucceeded","inputs":{"zoneField":{"paramUrl":"inputs/zoneField"},"statisticType":{"paramUrl":"inputs/statisticType"},"inputZoneLayer":{"paramUrl":"inputs/inputZoneLayer"},"inputRasterLayerToSummarize":{"paramUrl":"inputs/inputRasterLayerToSummarize"},"outputName":{"paramUrl":"inputs/outputName"}},"results":{"outputRaster":{"paramUrl":"results/outputRaster"}},"messages":[{"type":"esriJobMessageTypeWarning","description":"{\u0022cost\u0022: 1.1299999952316284}"},{"type":"esriJobMessageTypeInformative","description":"Raster Analysis Privilege Check: OK"},{"type":"esriJobMessageTypeInformative","description":"New portal item created, ID: 9e293d4cd4b643e8bd19713670d27dbf"},{"type":"esriJobMessageTypeInformative","description":"Output item id is: 9e293d4cd4b643e8bd19713670d27dbf"},{"type":"esriJobMessageTypeInformative","description":"Output image service url is: https://tiledimageservices3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Calculate_zonal_statistics__raster_operation__1742836318/ImageServer"},{"type":"esriJobMessageTypeInformative","description":"Output cloud raster name is: /cloudStores/GVgbJbqm8hXASVYi/9e293d4cd4b643e8bd19713670d27dbf/Calculate_zonal_statistics__raster_operation__1742836318.crf"},{"type":"esriJobMessageTypeInformative","description":"catalog_path is: https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Census_Counties/FeatureServer/0"},{"type":"esriJobMessageTypeInformative","description":"inrasterorfeature: layer0,dtl_cnty,esriGeometryPolygon,67"},{"type":"esriJobMessageTypeInformative","description":"inputLyr esriLayerCatalogPath: "},{"type":"esriJobMessageTypeInformative","description":"Using full extent of input dataset."},{"type":"esriJobMessageTypeInformative","description":"Output coordinate system: "},{"type":"esriJobMessageTypeInformative","description":"Output extent: \u003Cclass \u0027arcpy.arcobjects.arcobjects.Extent\u0027\u003E"},{"type":"esriJobMessageTypeInformative","description":"Use default resampling method."},{"type":"esriJobMessageTypeInformative","description":"Output raster will be the same resolution as input."},{"type":"esriJobMessageTypeInformative","description":"Use default mask."},{"type":"esriJobMessageTypeInformative","description":"Use default snap raster setting."},{"type":"esriJobMessageTypeInformative","description":"Output raster will be the default as the gp tool."},{"type":"esriJobMessageTypeInformative","description":"Running Zonal Statistics analysis..."},{"type":"esriJobMessageTypeInformative","description":"GP message: Start Time: Monday, March 24, 2025 5:12:16 PM"},{"type":"esriJobMessageTypeInformative","description":"GP message: Value raster being used as snap raster; this is new default behavior."},{"type":"esriJobMessageTypeInformative","description":"GP message: Succeeded at Monday, March 24, 2025 5:13:02 PM (Elapsed Time: 46.30 seconds)"},{"type":"esriJobMessageTypeInformative","description":"Output created with pyramids."},{"type":"esriJobMessageTypeInformative","description":"Pyramids are existing."},{"type":"esriJobMessageTypeInformative","description":"Data store URI: /cloudStores/GVgbJbqm8hXASVYi/9e293d4cd4b643e8bd19713670d27dbf/Calculate_zonal_statistics__raster_operation__1742836318.crf"},{"type":"esriJobMessageTypeInformative","description":"Getting image service info..."},{"type":"esriJobMessageTypeInformative","description":"Updating service: https://tiledimageservices3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/admin/services/Calculate_zonal_statistics__raster_operation__1742836318/ImageServer/edit"},{"type":"esriJobMessageTypeInformative","description":"{\u0027success\u0027: True}"},{"type":"esriJobMessageTypeInformative","description":"Update portal Item: 9e293d4cd4b643e8bd19713670d27dbf successfully."},{"type":"esriJobMessageTypeInformative","description":"Portal item refreshed."},{"type":"esriJobMessageTypeInformative","description":"{\u0027success\u0027: True}"},{"type":"esriJobMessageTypeInformative","description":"Succeeded at Monday, March 24, 2025 5:13:20 PM (Elapsed Time: 1 minutes 11 seconds)"}]}'
+order: 1000

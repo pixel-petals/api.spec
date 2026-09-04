@@ -1,0 +1,14 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/content-items/access/get-an-item/)
+url: https://www.arcgis.com/sharing/rest/content/items/:ITEM_ID/?f=json&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  - key: f
+    value: json
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    description: If accessing a private item.
+pathVariables:
+  ITEM_ID: 5a5147abe878444cbac68dea9f2f64e7
+examples: ./.resources/Get an item.resources/examples
+order: 1000

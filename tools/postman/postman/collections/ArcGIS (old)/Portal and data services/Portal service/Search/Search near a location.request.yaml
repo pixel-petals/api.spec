@@ -1,0 +1,14 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/search/search-items/#search-by-extent)
+url: 'https://www.arcgis.com/sharing/rest/search?bbox=-122.6750,45.5051, -122.6750,45.5051&q="food cart" AND type: "web map"&f=json'
+method: GET
+queryParams:
+  - key: bbox
+    value: -122.6750,45.5051, -122.6750,45.5051
+    description: Longitude, latitude
+  - key: q
+    value: '"food cart" AND type: "web map"'
+  - key: f
+    value: json
+examples: ./.resources/Search near a location.resources/examples
+order: 5000

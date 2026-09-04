@@ -1,0 +1,22 @@
+$kind: http-request
+url: "{{CKAN_API}}/term_translation_update"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: term
+      value: ""
+      description: (string) – the term to be translated, in the original language, e.g. 'romantic novel'
+    - type: text
+      key: term_translation
+      value: ""
+      description: (string) – the translation of the term, e.g. 'Liebesroman'
+    - type: text
+      key: lang_code
+      value: ""
+      description: (string) – the language code of the translation, e.g. 'de'
+order: 1000

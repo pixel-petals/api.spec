@@ -1,0 +1,60 @@
+$kind: http-example
+name: 200 OK
+request:
+  url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?text=3325 springbank lane, charlotte, nc&subaddressAfterBaseAddress=true&f=pjson&token={{ACCESS_TOKEN}}
+  method: GET
+  queryParams:
+    text: 3325 springbank lane, charlotte, nc
+    subaddressAfterBaseAddress: "true"
+    f: pjson
+    token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 10 Apr 2026 14:16:24 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: max-age=0,must-revalidate
+    Content-Security-Policy: script-src 'self';
+    X-Content-Type-Options: nosniff
+    Vary: Origin
+    Server: ""
+    Set-Cookie: AGS_ROLES=sym-gcm|1|evl6FVm1ioNYtJ0lN26-cQ==|jyvqxUdAqck3Hwhj1wzwyILF21qJICA7GA6p4gSFvEv4IYOqlXGE-EkQVOHKxuLP5C8Iwk306ODv2eVViKQChMEGvz1AXnOZoCsIb3U8NylcwzDaN5H2GOYbLTXdlaWRFxfyoiPuaigmopHcSxb2gdE4T-i0u87W_LUmdsdNzoW9KsUbmm_i6JaHJagtLl756ccy_m5MCRXiWOgXXLbye81Ac30Jc7y---iDqLDcF2vbhYjg4iP7mieyJnFJx91xXhXpcuXhKRhmQ8cKpTN59bZRQ7wW0a2t38HhT_D-Yq9XPYDMroKwo0tRV6K9U7NE6Io_vpPsri6TKPgXfnvXBaYDg0hL8Uw-8vNop9bpbf8siU8VzuDAFK5RIYQF41FCxVtXVflpC4SfMsqDSeSDQtAd9WBmXYJB_s0Jl9_u4exGMk5Pz2bKdat82xPSPkDnMRn-FtNch8Xz6Znt5cRbiGqBsURZVi3sTkEjX2DlslpAFlqF97HnPPU3TKsjTmTE9Yoe_IuGniCfG10-IEjQTyUOk26BikXvu7iy9WQiVfflWJbVF0MTJAes40Pn1F41GVgTCqfx3V1p0Rh2lMHizb7NSrymDA74qOlk8HUc80JSmrqCXaA44WOUtJ3-Hkz2ntPBN1d-5xWQLKpGLIj7NPnLhdM-EdbesA6T0D8TT_a3zMLQZ9AIZPazhoW20LBDrjOsrALgt6EucjOTKwWCUUlceT8fCHyccauLCvz1trjezHo9tKJFG2TBweRs5p-UD4fXEtLSEg4HN2ODwcklziSHao5xlHMz0iAUOGvmeHoRVSdzAos5zezTerNYmf8MTNFrLg8-OuR-9swDWAiauXjaHbv-HW6sBSWUcCmcr-Ij1errYPcjU2b3dvSrxLxDFNUBCcwy24czp-8CT22GYGzJBr3eeP5iYfQEjzmzFhqacDO7vqnhw-2Y5swp_va-G5H2pcioyagxbPaXEB5nlJbRSh_0JaBky3k2qRQn3sjRIlBikEI4cDnBItKmoaFX-vMtyHAV8LdkuaNvu1L3_U_D9nL1TfJ00hYDKoiS3lM5k2hxIexRYTZKkahvlOeCOnX6E2k2ZpBubcyw8qE2DUH0TTeHMn9So7vR7-Cs3wf76IVcQsXSDcqOSZyPGFF2NGI97eleJK14InspioNOtP7Jtn1kJaT9QwDXawFexEZc_GpfDxmE57kXscU262aCWMZo3_4Mr-s7Kf7pFp6-KmDREGHZplRAuKaNAdeHp4-N1jbHIWWSSFhoqx6ckuxr4Qwo8MsUvMFydvJeXMTmIndW1DTzFlKTusUWclfhrMuBHecmIb8ky7vScvBYBN-MnfbRZDQraynGWgT0G-dtlc9hMw3P0sX9e3imgwc6KvWwFjpXRd7Hm0GjMSeqPU8fDpaAjgCS8XRdstKAuvS4VhRwYNQ=; Max-Age=60; Expires=Fri, 10 Apr 2026 14:17:24 GMT; Path=/arcgis/rest; Secure; HttpOnly; SameSite=Lax
+    ETag: '"35fa1ce7"'
+    Content-Encoding: gzip
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+       "suggestions": [
+        {
+         "text": "3325 Springbank Ln, Charlotte, NC, 28226, USA",
+         "magicKey": "dHA9MCN0dj1mNjM1YjI5MiNsb2M9MTU5OTgyNjEjbG5nPTQxI2ZhPTcyMDg5NiNobj0zMzI1I2xicz0xMDk6OTc4Njc4NjU7OToxODc1NTM3NDsyOjUyOTU1MTIyI2xuPVdvcmxk",
+         "isCollection": false
+        },
+        {
+         "text": "3325 Springbank Ln, Suite 100, Charlotte, NC, 28226, USA",
+         "magicKey": "dHA9MCN0dj1mNjM1YjI5MiNsb2M9MTU5OTgyNjEjbG5nPTQxI2ZhPTcyMDg5OCNobj0zMzI1I2xicz0xMDk6OTc4Njc4NjU7OToxODc1NTM3NDsyOjUyOTU1MTIyI2xuPVdvcmxk",
+         "isCollection": false
+        },
+        {
+         "text": "3325 Springbank Ln, Suite 140, Charlotte, NC, 28226, USA",
+         "magicKey": "dHA9MCN0dj1mNjM1YjI5MiNsb2M9MTU5OTgyNjEjbG5nPTQxI2ZhPTcyMDkwMSNobj0zMzI1I2xicz0xMDk6OTc4Njc4NjU7OToxODc1NTM3NDsyOjUyOTU1MTIyI2xuPVdvcmxk",
+         "isCollection": false
+        },
+        {
+         "text": "3325 Springbank Ln, Suite 150, Charlotte, NC, 28226, USA",
+         "magicKey": "dHA9MCN0dj1mNjM1YjI5MiNsb2M9MTU5OTgyNjEjbG5nPTQxI2ZhPTcyMDg5OSNobj0zMzI1I2xicz0xMDk6OTc4Njc4NjU7OToxODc1NTM3NDsyOjUyOTU1MTIyI2xuPVdvcmxk",
+         "isCollection": false
+        },
+        {
+         "text": "3325 Springbank Ln, Suite 200, Charlotte, NC, 28226, USA",
+         "magicKey": "dHA9MCN0dj1mNjM1YjI5MiNsb2M9MTU5OTgyNjEjbG5nPTQxI2ZhPTcyMDg5NyNobj0zMzI1I2xicz0xMDk6OTc4Njc4NjU7OToxODc1NTM3NDsyOjUyOTU1MTIyI2xuPVdvcmxk",
+         "isCollection": false
+        }
+       ]
+      }
+order: 2000

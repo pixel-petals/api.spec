@@ -1,0 +1,16 @@
+$kind: http-request
+name: KeyGlobalFacts around an address (within a 15 minute walk time area)
+description: |-
+  Area enriched around [102 Aqua Ct New Smyrna Beach FL 32168](https://www.arcgis.com/apps/mapviewer/index.html?marker=-80.9486,29.033957&level=14)
+  [![](https://developers.arcgis.com/rest/geoenrichment/api-reference/GUID-5668A005-5F62-4E7B-9F9D-BB05C4A11A36-web.png)](https://www.arcgis.com/apps/mapviewer/index.html?marker=-80.9486,29.033957&level=14)
+url: 'https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/enrich?f=pjson&token={{ACCESS_TOKEN}}&studyareas=[{"address":{"text":" 102 Aqua Ct New Smyrna Beach FL 32168"}}]&studyareasoptions={"areaType": "NetworkServiceArea","bufferUnits": "Minutes","bufferRadii": [15],"travel_mode":"Walking"}&dataCollections=["KeyGlobalFacts"]&returngeometry=true'
+method: GET
+queryParams:
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+  studyareas: '[{"address":{"text":" 102 Aqua Ct New Smyrna Beach FL 32168"}}]'
+  studyareasoptions: '{"areaType": "NetworkServiceArea","bufferUnits": "Minutes","bufferRadii": [15],"travel_mode":"Walking"}'
+  dataCollections: '["KeyGlobalFacts"]'
+  returngeometry: "true"
+examples: ./.resources/KeyGlobalFacts around an address (within a 15 minute walk time a.resources/examples
+order: 7000

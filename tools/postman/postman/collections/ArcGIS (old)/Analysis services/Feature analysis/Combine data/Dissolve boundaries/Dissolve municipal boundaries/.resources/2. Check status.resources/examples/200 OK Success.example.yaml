@@ -1,0 +1,28 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/DissolveBoundaries/jobs/{{job_id}}"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: "{\r
+
+      \  \"jobId\": \"<JOB_ID>\",\r
+
+      \  \"jobStatus\": \"esriJobSucceeded\",\r
+
+      \  \"results\": {\"resultLayer\": {\"paramUrl\": \"results/dissolvedLayer\"}},\r
+
+      \  \"inputs\": {},\r
+
+      \  \"messages\": []\r
+
+      }"
+order: 2000

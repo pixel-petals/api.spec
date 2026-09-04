@@ -1,0 +1,48 @@
+$kind: http-request
+description: "[API Documentation 2.6.3](http://docs.ckan.org/en/ckan-2.6.3/api/index.html#ckan.logic.action.get.organization_list_for_user)"
+url: "{{CKAN_API}}/organization_list"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: order_by
+    value: null
+    disabled: true
+    description: "(string) – the field to sort the list by, must be 'name' or 'packages' (optional, default: 'name') Deprecated use sort."
+  - key: sort
+    value: null
+    disabled: true
+    description: "(string) – sorting of the search results. Optional. Default: “name asc” string of field name and sort-order. The allowed fields are ‘name’, ‘package_count’ and ‘title’"
+  - key: limit
+    value: ""
+    disabled: true
+    description: (int) – if given, the list of organizations will be broken into pages of at most limit organizations per page and only one page will be returned at a time (optional)
+  - key: offset
+    value: null
+    disabled: true
+    description: (int) – when limit is given, the offset to start returning organizations from
+  - key: organizations
+    value: null
+    disabled: true
+    description: (list of strings) – a list of names of the groups to return, if given only groups whose names are in this list will be returned (optional)
+  - key: all_fields
+    value: null
+    disabled: true
+    description: "(boolean) – return group dictionaries instead of just names. Only core fields are returned - get some more using the include_* options. Returning a list of packages is too expensive, so the packages property for each group is deprecated, but there is a count of the packages in the package_count property. (optional, default: False)"
+  - key: include_extras
+    value: null
+    disabled: true
+    description: "(boolean) – if all_fields, include the organization extra fields (optional, default: False)"
+  - key: include_tags
+    value: null
+    disabled: true
+    description: "if all_fields, include the organization tags (optional, default: False)"
+  - key: include_groups
+    value: null
+    disabled: true
+    description: "if all_fields, include the organizations the organizations are in (optional, default: False)"
+  - key: include_users
+    value: null
+    disabled: true
+    description: "(boolean) – if all_fields, include the organization users (optional, default: False)"
+order: 2000

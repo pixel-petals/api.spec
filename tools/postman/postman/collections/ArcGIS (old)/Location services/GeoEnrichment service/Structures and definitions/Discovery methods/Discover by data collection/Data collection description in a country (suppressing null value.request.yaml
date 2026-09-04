@@ -1,0 +1,10 @@
+$kind: http-request
+name: Data collection description in a country (suppressing null values)
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/how-to-build-a-data-enrichment-app/#data-collections)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/dataCollections?f=json&suppressNullValues=true
+method: GET
+queryParams:
+  f: json
+  suppressNullValues: "true"
+examples: ./.resources/Data collection description in a country (suppressing null value.resources/examples
+order: 3000

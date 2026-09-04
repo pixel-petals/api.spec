@@ -1,0 +1,23 @@
+$kind: http-example
+name: API capabilities including limits for areas, changesets, ways, etc.
+request:
+  url: "{{baseUrl}}/api/0.6/capabilities"
+  method: GET
+  headers:
+    Accept: application/xml
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: "{}"
+    $type: |-
+      {
+        "type": "object"
+      }
+order: 1000

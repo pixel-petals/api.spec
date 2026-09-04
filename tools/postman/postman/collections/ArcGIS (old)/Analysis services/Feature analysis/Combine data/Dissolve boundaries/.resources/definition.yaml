@@ -1,0 +1,3 @@
+$kind: collection
+description: The `DissolveBoundaries` operation combines polygons from feature datasets that ovelap or share a common boundary and returns new feature data.
+order: 1000

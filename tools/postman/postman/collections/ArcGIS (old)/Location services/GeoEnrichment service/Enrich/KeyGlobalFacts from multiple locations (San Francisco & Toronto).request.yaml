@@ -1,0 +1,11 @@
+$kind: http-request
+name: KeyGlobalFacts from multiple locations (San Francisco & Toronto) defined by lat, lon
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/enrich?f=pjson&token={{ACCESS_TOKEN}}&studyareas=[{"geometry":{"x":-122.435,"y":37.785}},{"geometry":{"x":-122.433,"y":37.734}},{"geometry":{"x":-79.345,"y":43.69}}]
+method: GET
+queryParams:
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+  studyareas: '[{"geometry":{"x":-122.435,"y":37.785}},{"geometry":{"x":-122.433,"y":37.734}},{"geometry":{"x":-79.345,"y":43.69}}]'
+examples: ./.resources/KeyGlobalFacts from multiple locations (San Francisco & Toronto).resources/examples
+order: 9000

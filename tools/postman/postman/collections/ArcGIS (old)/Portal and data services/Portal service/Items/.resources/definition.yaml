@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  An item is a specific type of content in the portal service. Items can reference different types of content such as maps, layers, styles, tools, applications, files, data services, or notebooks. The structure of the content is usually text/JSON.
+
+  To learn more about items, visit the [Content management](https://developers.arcgis.com/documentation/mapping-apis-and-services/content-management/items/) chapter in the *Mapping APIs and location services* guide.
+order: 1000

@@ -1,0 +1,13 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/portal-service/users-and-groups/groups/#add-items-to-a-group)
+url: https://www.arcgis.com/sharing/rest/content/users/:USER_NAME/items/:ITEM_ID/share?f=json&token={{ACCESS_TOKEN}}&groups={{CREATED_GROUP_ID}}
+method: POST
+queryParams:
+  f: json
+  token: "{{ACCESS_TOKEN}}"
+  groups: "{{CREATED_GROUP_ID}}"
+pathVariables:
+  USER_NAME: "{{USERNAME}}"
+  ITEM_ID: 883cedb8c9fe4524b64d47666ed234a7
+examples: ./.resources/Add items to a group.resources/examples
+order: 5000

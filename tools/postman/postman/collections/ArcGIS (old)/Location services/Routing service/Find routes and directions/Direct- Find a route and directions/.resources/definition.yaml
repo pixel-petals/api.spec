@@ -1,0 +1,4 @@
+$kind: collection
+name: "Direct: Find a route and directions"
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/route-and-directions/#direct-find-a-route-and-directions).
+order: 1000

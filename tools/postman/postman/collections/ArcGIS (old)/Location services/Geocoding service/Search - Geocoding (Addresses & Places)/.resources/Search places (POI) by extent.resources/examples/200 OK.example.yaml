@@ -1,0 +1,886 @@
+$kind: http-example
+request:
+  url: https://{{geocode-service}}.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?token={{access_token}}&f=json&category=Nightlife Spot&searchExtent=%7B%20%22spatialReference%22%3A%20%7B%20%22wkid%22%3A%204326%20%7D%2C%20%22xmin%22%3A%20-116.61682328124984%2C%20%22ymin%22%3A%2033.78414122763017%2C%20%22xmax%22%3A%20-116.39709671875015%2C%20%22ymax%22%3A%2033.87198351954844%20%7D
+  method: GET
+  queryParams:
+    - key: token
+      value: "{{access_token}}"
+      description: (Required) You need a valid access token. To learn more, read the collection's documentation.
+    - key: f
+      value: json
+      description: (Required) Format of the response
+    - key: address
+      value: Palm Springs
+      disabled: true
+      description: A string that represents the first line of a street address. In most cases this field will be used for street name and house number input, but it can also be used to input building name or place name.
+    - key: address2
+      value: <string>
+      disabled: true
+      description: A string that represents the second line of a street address. This can include street name/house number, building name, place name, or subunit.
+    - key: address3
+      value: <string>
+      disabled: true
+      description: A string that represents the third line of a street address. This can include street name/house number, building name, place name, or subunit.
+    - key: category
+      value: Nightlife Spot
+      description: A place or address type that can be used to filter findAddressCandidates results. The parameter supports input of single category values or multiple comma-separated values. The category parameter can be passed in a request with the SingleLine or address parameters. It can also be passed in a request on its own without the singleline or address parameters. See Category filtering for complete details about the category parameter.
+    - key: city
+      value: <string>
+      disabled: true
+      description: The next largest administrative division associated with an address. Depending on the country, a subregion can represent a county, state, or province.
+    - key: countryCode
+      value: <string>
+      disabled: true
+      description: "A value representing the country. Providing this value increases geocoding speed. Acceptable values include the full country name in English or the official language of the country, the 2-character country code, or the 3-character country code. Valid country codes: https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm"
+    - key: forStorage
+      value: <boolean>
+      disabled: true
+      description: Specifies whether the results of the operation will be persisted
+    - key: langCode
+      value: <string>
+      disabled: true
+      description: "Sets the language in which geocode results are returned. Addresses and places in many countries are available in more than one language; in these cases the langCode parameter can be used to specify which language should be used for results returned by the findAddressCandidates operation. This is useful for ensuring that results are returned in the expected language. For example, a web application could be designed to get the browser language and pass it as the langCode parameter value in a findAddressCandidates request. Valid country codes: https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm"
+    - key: location
+      value: <string> | <Point>
+      disabled: true
+      description: Defines an origin point that is used to prefer or boost geocoding candidates based on their proximity to the location. Candidates near the location are prioritized relative to those further away. This is useful in mobile applications where a user wants to search for places in the vicinity of their current GPS location, or in mapping applications where users want to search for places near the center of the map.
+    - key: locationType
+      value: <string>
+      disabled: true
+      description: Specifies if the output geometry of PointAddress and Subaddress matches should be the rooftop point or street entrance location. Valid values are rooftop and street. The default value is rooftop.
+    - key: magicKey
+      value: <string>
+      disabled: true
+      description: The findAddressCandidates operation retrieves results quicker when you pass in valid SingleLine and magicKey values than when you don't pass in magicKey. However, to get these advantages, you need to make a prior request to suggest, which provides a magicKey. This may or may not be relevant to your workflow.
+    - key: matchOutOfRange
+      value: <boolean>
+      disabled: true
+      description: A Boolean which specifies if StreetAddress matches should be returned even when the input house number is outside of the house number range defined for the input street. Out-of-range matches have Addr_type=StreetAddressExt. The geometry of such matches is a point corresponding to the end of the street segment where the range value is closest to the input house number. If matchOutOfRange is not specified in a request, its value is set to true by default.
+    - key: maxLocations
+      value: <integer>
+      disabled: true
+      description: The maximum number of locations to be returned by a search, up to the maximum number allowed by the service. If not specified, then all matching candidates up to the service maximum are returned.
+    - key: neighborhood
+      value: <string>
+      disabled: true
+      description: The smallest administrative division associated with an address, typically, a neighborhood or a section of a larger populated place. A neighborhood is a subdivision of a city.
+    - key: outFields
+      value: <string>
+      disabled: true
+      description: "The list of fields to be returned within the attributes object of the response. Descriptions for each of these fields are available in the Output fields section of this document. Check all possible outFields: https://developers.arcgis.com/rest/geocode/api-reference/geocoding-service-output.htm"
+    - key: outSR
+      value: <integer>
+      disabled: true
+      description: The maximum number of locations to be returned by a search, up to the maximum number allowed by the service. If not specified, then all matching candidates up to the service maximum are returned.
+    - key: postal
+      value: <integer>
+      disabled: true
+      description: A postal code extension, such as the United States Postal Service ZIP+4 code, provides finer resolution or higher accuracy when also passing postal.
+    - key: postalExt
+      value: <integer>
+      disabled: true
+      description: A value representing the country. Providing this value increases geocoding speed. Acceptable values include the full country name in English or the official language of the country, the 2-character country code, or the 3-character country code. A list of supported countries and codes is available in the Geocode coverage topic.
+    - key: preferredLabelValues
+      value: <string>
+      disabled: true
+      description: |
+        Allows simple configuration of output fields returned in a response from the ArcGIS World Geocoding Service by specifying which address component values should be included in output fields. Supports a single value or a comma-delimited collection of values as input. If the parameter is blank or excluded from a request then default address label formats will be used.
+    - key: region
+      value: <string>
+      disabled: true
+      description: The standard postal code for an address, typically, a 3–6-digit alphanumeric code.
+    - key: searchExtent
+      value: "%7B%20%22spatialReference%22%3A%20%7B%20%22wkid%22%3A%204326%20%7D%2C%20%22xmin%22%3A%20-116.61682328124984%2C%20%22ymin%22%3A%2033.78414122763017%2C%20%22xmax%22%3A%20-116.39709671875015%2C%20%22ymax%22%3A%2033.87198351954844%20%7D"
+      description: Helper to get search extent with https://arcgis-js-api-extent-helper.gavinr.com/
+    - key: singleLine
+      value: <string>
+      disabled: true
+      description: Search for an address, POI category, intersection, etc.
+    - key: sourceCountry
+      value: <string>
+      disabled: true
+      description: "Limits the candidates returned by the findAddressCandidates operation to the specified country or countries. For example, if sourceCountry=USA is included in the request, it is assumed that the address is in the United States, so only matching addresses in USA are returned. Using this parameter prevents potential unexpected results in other countries for ambiguous searches. Valid country codes: https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm"
+    - key: subregion
+      value: <string>
+      disabled: true
+      description: The largest administrative division associated with an address, typically, a state or province.
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Tue, 08 Mar 2022 21:50:27 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "2306"
+    Connection: keep-alive
+    Cache-Control: max-age=0,must-revalidate
+    Expires: Thu, 01 Jan 1970 00:00:00 GMT
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Vary: Origin
+    Server: ""
+    Set-Cookie: AGS_ROLES=BnitHjPOb1GzFoMhSSuRu1yEW1BRWAzKWrxd1ZZSEhLdSMUkVIMQkQ6c//YXzPpB4cnOgL3FrUzOodnRVWLLwbLu9/P8llNbzadvBRRCNmRLNvNwzu6MhH/XaXoeic4dwWoeQtb9I3tUlpeUHKtdF9yEm3/SGGX/y09rcHHxUTNfm+pM0PjglrVPT2oFo+fkjtq5Z0gOecJJXOsZu5qRIsxZRU1VEyk45TLNhyxgMasaE/2ahX212TrGbGAvtLgVVRz5G8mQFto2JgiGB69mXQIZfAXbujQh48xWrAruWXEpImHteXkCjHVhgdi3D3pFpoxESiq5Sz91QRqD7n+mclJY+xv1AuM2FLOg8Zzv59HN7yMjVQw6ynEAfrj5QIXFgmojoIBRwZTqlh2PPkfQviTHRsGCQr/0u2tiSlg1F1aTzzyjNdKgqxtuvWVdMif6Qmjin+RbNnmLCoUtz9vMzGpWVPXv6ZMwS1d/d63mZxVKvLC3GeXgBt/T9dR2Ju58flRniTPlcZHOtrkLhsDta67+Sc0WDM6hJIEOO+KZT3HQhKeNZax2HFXqtAU4IkYu8x+vkbUuUcMlLN/RfsTUIdg32ZjrtQ5u7aV07ihlXTDhJ+EC5W7V3auJ/pzNQn7/VUaxae+Mnvu77a1cjGimPCw8YETshAWCxYT6Ukns+F+RuGxXtzLplF+4Gfs+VAswyhRpHL0Gb9bQtVeHgfLbfSoJ+NOMkmEV; Expires=Tue, 08-Mar-2022 21:51:27 GMT; Path=/arcgis/rest; Secure; HttpOnly
+    ETag: '"7e0ba4e5"'
+    Content-Encoding: gzip
+    X-Region: us-east-1
+  body:
+    type: json
+    content: |-
+      {
+          "spatialReference": {
+              "wkid": 4326,
+              "latestWkid": 4326
+          },
+          "candidates": [
+              {
+                  "address": "Tool Shed",
+                  "location": {
+                      "x": -116.54231399999998,
+                      "y": 33.812393000000043
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54331399999998,
+                      "ymin": 33.811393000000045,
+                      "xmax": -116.54131399999997,
+                      "ymax": 33.81339300000004
+                  }
+              },
+              {
+                  "address": "Mr Lyons Steakhouse",
+                  "location": {
+                      "x": -116.54491899999999,
+                      "y": 33.801397000000065
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.545919,
+                      "ymin": 33.800397000000068,
+                      "xmax": -116.54391899999999,
+                      "ymax": 33.802397000000063
+                  }
+              },
+              {
+                  "address": "Mister Parker's",
+                  "location": {
+                      "x": -116.50085499999994,
+                      "y": 33.795488000000034
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.50185499999995,
+                      "ymin": 33.794488000000037,
+                      "xmax": -116.49985499999994,
+                      "ymax": 33.796488000000032
+                  }
+              },
+              {
+                  "address": "Seymour's",
+                  "location": {
+                      "x": -116.54491399999995,
+                      "y": 33.801393000000076
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54591399999995,
+                      "ymin": 33.800393000000078,
+                      "xmax": -116.54391399999994,
+                      "ymax": 33.802393000000073
+                  }
+              },
+              {
+                  "address": "533 Viet Fusion",
+                  "location": {
+                      "x": -116.52754299999998,
+                      "y": 33.799483000000066
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.52854299999998,
+                      "ymin": 33.798483000000068,
+                      "xmax": -116.52654299999998,
+                      "ymax": 33.800483000000064
+                  }
+              },
+              {
+                  "address": "The Reef Palm Springs",
+                  "location": {
+                      "x": -116.54286999999999,
+                      "y": 33.800862000000052
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54387,
+                      "ymin": 33.799862000000054,
+                      "xmax": -116.54186999999999,
+                      "ymax": 33.80186200000005
+                  }
+              },
+              {
+                  "address": "Elixir Pool Bar & Grill",
+                  "location": {
+                      "x": -116.54407499999996,
+                      "y": 33.800635000000057
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54507499999997,
+                      "ymin": 33.799635000000059,
+                      "xmax": -116.54307499999996,
+                      "ymax": 33.801635000000054
+                  }
+              },
+              {
+                  "address": "Amigo Room",
+                  "location": {
+                      "x": -116.53975199999996,
+                      "y": 33.800843000000043
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54075199999997,
+                      "ymin": 33.799843000000045,
+                      "xmax": -116.53875199999996,
+                      "ymax": 33.801843000000041
+                  }
+              },
+              {
+                  "address": "Counter Reformation",
+                  "location": {
+                      "x": -116.50042899999994,
+                      "y": 33.795218000000034
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.50142899999994,
+                      "ymin": 33.794218000000036,
+                      "xmax": -116.49942899999994,
+                      "ymax": 33.796218000000032
+                  }
+              },
+              {
+                  "address": "Dead or Alive",
+                  "location": {
+                      "x": -116.54523099999994,
+                      "y": 33.802770000000066
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54623099999995,
+                      "ymin": 33.801770000000069,
+                      "xmax": -116.54423099999994,
+                      "ymax": 33.803770000000064
+                  }
+              },
+              {
+                  "address": "Palm Canyon Roadhouse",
+                  "location": {
+                      "x": -116.54693799999995,
+                      "y": 33.815216000000078
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54793799999996,
+                      "ymin": 33.81421600000008,
+                      "xmax": -116.54593799999995,
+                      "ymax": 33.816216000000075
+                  }
+              },
+              {
+                  "address": "Bar Cecil",
+                  "location": {
+                      "x": -116.54616799999997,
+                      "y": 33.804421000000048
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54716799999997,
+                      "ymin": 33.80342100000005,
+                      "xmax": -116.54516799999996,
+                      "ymax": 33.805421000000045
+                  }
+              },
+              {
+                  "address": "PS Air",
+                  "location": {
+                      "x": -116.54588999999999,
+                      "y": 33.81341800000007
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54688999999999,
+                      "ymin": 33.812418000000072,
+                      "xmax": -116.54488999999998,
+                      "ymax": 33.814418000000067
+                  }
+              },
+              {
+                  "address": "Fireside Lounge",
+                  "location": {
+                      "x": -116.49607199999997,
+                      "y": 33.81238600000006
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.49707199999997,
+                      "ymin": 33.811386000000063,
+                      "xmax": -116.49507199999996,
+                      "ymax": 33.813386000000058
+                  }
+              },
+              {
+                  "address": "Trio",
+                  "location": {
+                      "x": -116.54711099999997,
+                      "y": 33.833196000000044
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54811099999998,
+                      "ymin": 33.832196000000046,
+                      "xmax": -116.54611099999997,
+                      "ymax": 33.834196000000041
+                  }
+              },
+              {
+                  "address": "Toucans Tiki Lounge",
+                  "location": {
+                      "x": -116.54786599999994,
+                      "y": 33.848670000000027
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54886599999995,
+                      "ymin": 33.847670000000029,
+                      "xmax": -116.54686599999994,
+                      "ymax": 33.849670000000025
+                  }
+              },
+              {
+                  "address": "Copley's",
+                  "location": {
+                      "x": -116.54739799999999,
+                      "y": 33.832018000000062
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54839799999999,
+                      "ymin": 33.831018000000064,
+                      "xmax": -116.54639799999998,
+                      "ymax": 33.83301800000006
+                  }
+              },
+              {
+                  "address": "Workshop Kitchen Bar",
+                  "location": {
+                      "x": -116.54653399999995,
+                      "y": 33.83414300000004
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54753399999996,
+                      "ymin": 33.833143000000042,
+                      "xmax": -116.54553399999995,
+                      "ymax": 33.835143000000038
+                  }
+              },
+              {
+                  "address": "420 Lounge",
+                  "location": {
+                      "x": -116.54727099999997,
+                      "y": 33.833700000000078
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54827099999997,
+                      "ymin": 33.832700000000081,
+                      "xmax": -116.54627099999996,
+                      "ymax": 33.834700000000076
+                  }
+              },
+              {
+                  "address": "Truss & Twine",
+                  "location": {
+                      "x": -116.54650199999998,
+                      "y": 33.834198000000072
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54750199999998,
+                      "ymin": 33.833198000000074,
+                      "xmax": -116.54550199999997,
+                      "ymax": 33.835198000000069
+                  }
+              },
+              {
+                  "address": "Eight4Nine",
+                  "location": {
+                      "x": -116.54716399999995,
+                      "y": 33.834531000000027
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54816399999996,
+                      "ymin": 33.833531000000029,
+                      "xmax": -116.54616399999995,
+                      "ymax": 33.835531000000024
+                  }
+              },
+              {
+                  "address": "Bootlegger Tiki",
+                  "location": {
+                      "x": -116.54697499999997,
+                      "y": 33.837423000000058
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54797499999998,
+                      "ymin": 33.83642300000006,
+                      "xmax": -116.54597499999997,
+                      "ymax": 33.838423000000056
+                  }
+              },
+              {
+                  "address": "Jake's",
+                  "location": {
+                      "x": -116.54646099999997,
+                      "y": 33.832695000000058
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54746099999997,
+                      "ymin": 33.83169500000006,
+                      "xmax": -116.54546099999996,
+                      "ymax": 33.833695000000056
+                  }
+              },
+              {
+                  "address": "Crazy Mel's Burgers & Bar",
+                  "location": {
+                      "x": -116.54658199999994,
+                      "y": 33.824185000000057
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54758199999995,
+                      "ymin": 33.823185000000059,
+                      "xmax": -116.54558199999994,
+                      "ymax": 33.825185000000054
+                  }
+              },
+              {
+                  "address": "HooDoo Patio Restaurant & Bar",
+                  "location": {
+                      "x": -116.54718199999996,
+                      "y": 33.826597000000049
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54818199999997,
+                      "ymin": 33.825597000000052,
+                      "xmax": -116.54618199999996,
+                      "ymax": 33.827597000000047
+                  }
+              },
+              {
+                  "address": "Tonga Hut",
+                  "location": {
+                      "x": -116.54659099999998,
+                      "y": 33.82583900000003
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54759099999998,
+                      "ymin": 33.824839000000033,
+                      "xmax": -116.54559099999997,
+                      "ymax": 33.826839000000028
+                  }
+              },
+              {
+                  "address": "The 13",
+                  "location": {
+                      "x": -116.54657599999996,
+                      "y": 33.824717000000078
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54757599999996,
+                      "ymin": 33.82371700000008,
+                      "xmax": -116.54557599999995,
+                      "ymax": 33.825717000000076
+                  }
+              },
+              {
+                  "address": "Boozehounds",
+                  "location": {
+                      "x": -116.54745299999996,
+                      "y": 33.848306000000036
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54845299999997,
+                      "ymin": 33.847306000000039,
+                      "xmax": -116.54645299999996,
+                      "ymax": 33.849306000000034
+                  }
+              },
+              {
+                  "address": "The Landing Bar & Lounge",
+                  "location": {
+                      "x": -116.54466399999995,
+                      "y": 33.846021000000064
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54566399999996,
+                      "ymin": 33.845021000000067,
+                      "xmax": -116.54366399999995,
+                      "ymax": 33.847021000000062
+                  }
+              },
+              {
+                  "address": "Camelot Cafe & Cinebar",
+                  "location": {
+                      "x": -116.52117099999998,
+                      "y": 33.820099000000027
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.52217099999999,
+                      "ymin": 33.81909900000003,
+                      "xmax": -116.52017099999998,
+                      "ymax": 33.821099000000025
+                  }
+              },
+              {
+                  "address": "Copa Nightclub",
+                  "location": {
+                      "x": -116.54447799999997,
+                      "y": 33.827049000000045
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54547799999997,
+                      "ymin": 33.826049000000047,
+                      "xmax": -116.54347799999996,
+                      "ymax": 33.828049000000043
+                  }
+              },
+              {
+                  "address": "Cascade Lounge",
+                  "location": {
+                      "x": -116.54304299999995,
+                      "y": 33.825844000000075
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54404299999996,
+                      "ymin": 33.824844000000077,
+                      "xmax": -116.54204299999995,
+                      "ymax": 33.826844000000072
+                  }
+              },
+              {
+                  "address": "RetroRoom Lounge",
+                  "location": {
+                      "x": -116.54623199999997,
+                      "y": 33.82287000000008
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54723199999998,
+                      "ymin": 33.821870000000082,
+                      "xmax": -116.54523199999997,
+                      "ymax": 33.823870000000078
+                  }
+              },
+              {
+                  "address": "HMS Service Bar Palm Springs Airport",
+                  "location": {
+                      "x": -116.50730899999996,
+                      "y": 33.821440000000052
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.50830899999997,
+                      "ymin": 33.820440000000055,
+                      "xmax": -116.50630899999996,
+                      "ymax": 33.82244000000005
+                  }
+              },
+              {
+                  "address": "V Wine lounge",
+                  "location": {
+                      "x": -116.54129499999999,
+                      "y": 33.823445000000049
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.542295,
+                      "ymin": 33.822445000000052,
+                      "xmax": -116.54029499999999,
+                      "ymax": 33.824445000000047
+                  }
+              },
+              {
+                  "address": "Califonia Vintages",
+                  "location": {
+                      "x": -116.50787799999995,
+                      "y": 33.823320000000024
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.50887799999995,
+                      "ymin": 33.822320000000026,
+                      "xmax": -116.50687799999994,
+                      "ymax": 33.824320000000021
+                  }
+              },
+              {
+                  "address": "Nic's Bar",
+                  "location": {
+                      "x": -116.50980299999998,
+                      "y": 33.816768000000025
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.51080299999998,
+                      "ymin": 33.815768000000027,
+                      "xmax": -116.50880299999997,
+                      "ymax": 33.817768000000022
+                  }
+              },
+              {
+                  "address": "Spencer's Restaurant",
+                  "location": {
+                      "x": -116.55378099999996,
+                      "y": 33.819706000000053
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.55478099999996,
+                      "ymin": 33.818706000000056,
+                      "xmax": -116.55278099999995,
+                      "ymax": 33.820706000000051
+                  }
+              },
+              {
+                  "address": "Moxie Palm Springs",
+                  "location": {
+                      "x": -116.54656299999999,
+                      "y": 33.820106000000067
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.547563,
+                      "ymin": 33.819106000000069,
+                      "xmax": -116.54556299999999,
+                      "ymax": 33.821106000000064
+                  }
+              },
+              {
+                  "address": "The Loft Nightclub",
+                  "location": {
+                      "x": -116.54646299999996,
+                      "y": 33.820033000000024
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54746299999996,
+                      "ymin": 33.819033000000026,
+                      "xmax": -116.54546299999996,
+                      "ymax": 33.821033000000021
+                  }
+              },
+              {
+                  "address": "LG's Prime Steakhouse",
+                  "location": {
+                      "x": -116.54707899999994,
+                      "y": 33.820162000000039
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54807899999994,
+                      "ymin": 33.819162000000041,
+                      "xmax": -116.54607899999993,
+                      "ymax": 33.821162000000037
+                  }
+              },
+              {
+                  "address": "Blue Wave Hookah Lounge",
+                  "location": {
+                      "x": -116.54647999999997,
+                      "y": 33.822676000000058
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54747999999998,
+                      "ymin": 33.82167600000006,
+                      "xmax": -116.54547999999997,
+                      "ymax": 33.823676000000056
+                  }
+              },
+              {
+                  "address": "Eagle 501 Bar",
+                  "location": {
+                      "x": -116.54440999999997,
+                      "y": 33.820971000000043
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54540999999998,
+                      "ymin": 33.819971000000045,
+                      "xmax": -116.54340999999997,
+                      "ymax": 33.82197100000004
+                  }
+              },
+              {
+                  "address": "Street Bar",
+                  "location": {
+                      "x": -116.54456999999996,
+                      "y": 33.821466000000044
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54556999999997,
+                      "ymin": 33.820466000000046,
+                      "xmax": -116.54356999999996,
+                      "ymax": 33.822466000000041
+                  }
+              },
+              {
+                  "address": "Chill Bar",
+                  "location": {
+                      "x": -116.54481299999998,
+                      "y": 33.821030000000064
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54581299999998,
+                      "ymin": 33.820030000000067,
+                      "xmax": -116.54381299999997,
+                      "ymax": 33.822030000000062
+                  }
+              },
+              {
+                  "address": "Scorpion Room",
+                  "location": {
+                      "x": -116.54483599999998,
+                      "y": 33.821026000000074
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54583599999998,
+                      "ymin": 33.820026000000077,
+                      "xmax": -116.54383599999997,
+                      "ymax": 33.822026000000072
+                  }
+              },
+              {
+                  "address": "Stacy's at Palm Springs",
+                  "location": {
+                      "x": -116.54469399999999,
+                      "y": 33.821467000000041
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.545694,
+                      "ymin": 33.820467000000043,
+                      "xmax": -116.54369399999999,
+                      "ymax": 33.822467000000039
+                  }
+              },
+              {
+                  "address": "Hunters",
+                  "location": {
+                      "x": -116.54404699999998,
+                      "y": 33.821366000000069
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54504699999998,
+                      "ymin": 33.820366000000071,
+                      "xmax": -116.54304699999997,
+                      "ymax": 33.822366000000066
+                  }
+              },
+              {
+                  "address": "Starlite Lounge",
+                  "location": {
+                      "x": -116.54464799999994,
+                      "y": 33.846015000000079
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54564799999994,
+                      "ymin": 33.845015000000082,
+                      "xmax": -116.54364799999993,
+                      "ymax": 33.847015000000077
+                  }
+              },
+              {
+                  "address": "Chiki",
+                  "location": {
+                      "x": -116.54395199999999,
+                      "y": 33.845872000000043
+                  },
+                  "score": 100,
+                  "attributes": {},
+                  "extent": {
+                      "xmin": -116.54495199999999,
+                      "ymin": 33.844872000000045,
+                      "xmax": -116.54295199999999,
+                      "ymax": 33.84687200000004
+                  }
+              }
+          ]
+      }
+order: 1000

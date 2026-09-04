@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{CKAN_API}}/dashboard_mark_activities_old"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+order: 5000

@@ -1,0 +1,31 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/analyze-patterns/interpolate-points/#predict-fuel-prices)
+url: "{{ANALYSIS_URL}}/InterpolatePoints/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    inputLayer: '{"url":"https://services1.arcgis.com/nCKYwcSONQTkPA4K/arcgis/rest/services/Gasolineras_Pro/FeatureServer/0"}'
+    field: Precio_gas
+    interpolateOption: "5"
+    classificationType: GeometricInterval
+    numClasses: "10"
+    outputPredictionError: "false"
+    returnFeatureCollection: "false"
+    outputName: '{"serviceProperties":{"name":"{{UNIQUE_NAME}}"}}'
+    context: '{"extent":{"xmin":-439205.7832022423,"ymin":4903730.811446736,"xmax":-375075.11647106585,"ymax":4945924.051060095,"spatialReference":{"wkid":102100,"latestWkid":3857}}}'
+scripts:
+  - type: afterResponse
+    code: |
+      pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+  - type: beforeRequest
+    code: |
+      // Creates a unique name for the output service
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/ /g, "_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

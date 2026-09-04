@@ -1,0 +1,46 @@
+$kind: http-example
+name: Bad Request – malformed XML, missing parameters, or constraint violation
+request:
+  url: "{{baseUrl}}/api/0.6/notes/search?q=string&limit=100&closed=7&display_name=string&user=6776&bbox=string&from=1994-08-13T16:27:31.733Z&to=1994-08-13T16:27:31.733Z&sort=updated_at&order=newest"
+  method: GET
+  queryParams:
+    - key: q
+      value: string
+      description: Full-text search query
+    - key: limit
+      value: "100"
+      description: Max results (default 100, max 10000)
+    - key: closed
+      value: "7"
+      description: Days since closed (-1=all, 0=open only)
+    - key: display_name
+      value: string
+      description: Filter by author display name
+    - key: user
+      value: "6776"
+      description: Filter by author user ID
+    - key: bbox
+      value: string
+      description: Bounding box as left,bottom,right,top
+    - key: from
+      value: 1994-08-13T16:27:31.733Z
+      description: Filter notes created on or after this date
+    - key: to
+      value: 1994-08-13T16:27:31.733Z
+      description: Filter notes created before this date
+    - key: sort
+      value: updated_at
+      description: Sort field
+    - key: order
+      value: newest
+      description: Sort order
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: text
+    content: ""
+order: 2000

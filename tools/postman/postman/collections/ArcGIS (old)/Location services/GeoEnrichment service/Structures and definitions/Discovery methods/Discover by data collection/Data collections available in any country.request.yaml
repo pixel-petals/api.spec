@@ -1,0 +1,8 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/how-to-build-a-data-enrichment-app/#data-collections)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/dataCollections?f=json
+method: GET
+queryParams:
+  f: json
+examples: ./.resources/Data collections available in any country.resources/examples
+order: 2000

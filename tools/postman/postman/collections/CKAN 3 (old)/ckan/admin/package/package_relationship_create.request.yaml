@@ -1,0 +1,30 @@
+$kind: http-request
+url: "{{CKAN_API}}/package_relationship_create"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: subject
+      value: ""
+      description: (string) – the id or name of the dataset that is the subject of the relationship
+      disabled: true
+    - type: text
+      key: object
+      value: ""
+      description: the id or name of the dataset that is the object of the relationship
+      disabled: true
+    - type: text
+      key: type
+      value: ""
+      description: (string) – the type of the relationship, one of 'depends_on', 'dependency_of', 'derives_from', 'has_derivation', 'links_to', 'linked_from', 'child_of' or 'parent_of'
+      disabled: true
+    - type: text
+      key: comment
+      value: ""
+      description: (string) – a comment about the relationship (optional)
+      disabled: true
+order: 17000

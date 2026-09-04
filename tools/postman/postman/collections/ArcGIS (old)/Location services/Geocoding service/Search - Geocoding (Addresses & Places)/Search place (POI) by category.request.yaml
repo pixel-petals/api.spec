@@ -1,0 +1,14 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/geocode-places/#local-search-by-category)
+url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?token={{ACCESS_TOKEN}}&f=pjson&category=gas station&location=2.34602,48.85880&outfields=PlaceName,Place_addr
+method: GET
+queryParams:
+  token: "{{ACCESS_TOKEN}}"
+  f: pjson
+  category: gas station
+  location: 2.34602,48.85880
+  outfields: PlaceName,Place_addr
+body:
+  type: urlencoded
+examples: ./.resources/Search place (POI) by category.resources/examples
+order: 8000

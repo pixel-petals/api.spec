@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{CKAN_API}}/current_package_list_with_resources"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: limit
+    value: null
+    disabled: true
+    description: if given, the list of datasets will be broken into pages of at most limit datasets per page and only one page will be returned at a time (optional)
+  - key: offset
+    value: ""
+    disabled: true
+    description: when limit is given, the offset to start returning packages from
+order: 5000

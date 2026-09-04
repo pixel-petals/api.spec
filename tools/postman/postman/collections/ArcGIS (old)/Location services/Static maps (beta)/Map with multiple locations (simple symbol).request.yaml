@@ -1,0 +1,202 @@
+$kind: http-request
+description: "[Check the documentation](https://developers.arcgis.com/rest/static-maps/arcgis-arcgis-style-using-many-points-post/)"
+url: https://static-maps-api.arcgis.com/arcgis/rest/services/static-maps-service/:VERSION/static-maps/arcgis/:ARCGIS-STYLE/with-many-points
+method: POST
+pathVariables:
+  - key: VERSION
+    value: beta
+    description: API Version
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "default": "beta",
+            "enum": [
+              "beta"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: ARCGIS-STYLE
+    value: streets
+    description: ArcGIS Basemap style
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "default": "streets",
+            "enum": [
+              "navigation",
+              "navigation-night",
+              "streets",
+              "streets-night",
+              "imagery"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+        "graphics": {
+            "manyPoints": [
+                {
+                    "geometry": {
+                        "x": -116.9,
+                        "y": 34.236,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "style": "pin",
+                        "color": "00FF00",
+                        "label": "CC",
+                        "scale": 1
+                    }
+                },
+                {
+                    "geometry": {
+                        "x": -116.87,
+                        "y": 34.25,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "style": "pin",
+                        "color": "00FF00",
+                        "label": "CC",
+                        "scale": 1
+                    }
+                },
+                {
+                    "geometry": {
+                        "x": -117,
+                        "y": 34.3,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "style": "circle",
+                        "color": "FF0000",
+                        "label": "AF",
+                        "scale": 1
+                    }
+                },
+                {
+                    "geometry": {
+                        "x": -116.965,
+                        "y": 34.285,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "style": "circle",
+                        "color": "FF0000",
+                        "label": "AF",
+                        "scale": 1
+                    }
+                },
+                {
+                    "geometry": {
+                        "x": -116.99,
+                        "y": 34.282,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "style": "circle",
+                        "color": "FF0000",
+                        "label": "AF",
+                        "scale": 1
+                    }
+                },
+                {
+                    "geometry": {
+                        "x": -116.95,
+                        "y": 34.3,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "style": "circle",
+                        "color": "FF0000",
+                        "label": "AF",
+                        "scale": 1
+                    }
+                },
+                {
+                    "geometry": {
+                        "x": -116.95,
+                        "y": 34.275,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "style": "circle",
+                        "color": "0000FF",
+                        "label": "FF",
+                        "scale": 1
+                    }
+                },
+                {
+                    "geometry": {
+                        "x": -116.97,
+                        "y": 34.26,
+                        "spatialReference": {
+                            "wkid": 4326
+                        }
+                    },
+                    "symbol": {
+                        "style": "circle",
+                        "color": "0000FF",
+                        "label": "FF",
+                        "scale": 1
+                    }
+                }
+            ]
+        },
+        "image": {
+            "width": 600,
+            "height": 400,
+            "format": "png",
+            "padding": [
+                10
+            ]
+        },
+        "map": {
+            // "radius": 1000
+            "zoom": 10
+            // "center": {
+            //     "x": -117.1957,
+            //     "y": 34.0561,
+            //     "spatialReference": {
+            //         "wkid": 4326
+            //     }
+            // }
+        }
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+order: 6000

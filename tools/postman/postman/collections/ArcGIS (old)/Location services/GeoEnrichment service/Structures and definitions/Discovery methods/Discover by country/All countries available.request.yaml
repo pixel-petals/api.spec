@@ -1,0 +1,11 @@
+$kind: http-request
+description: |-
+  Retrieves a list of all countries supported by the GeoEnrichment service. Use this endpoint to determine which countries are available for geographic and demographic enrichment. No authentication is required for this request. Returns country codes and names in JSON format.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/how-to-build-a-data-enrichment-app/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/countries?f=json
+method: GET
+queryParams:
+  f: json
+examples: ./.resources/All countries available.resources/examples
+order: 2000

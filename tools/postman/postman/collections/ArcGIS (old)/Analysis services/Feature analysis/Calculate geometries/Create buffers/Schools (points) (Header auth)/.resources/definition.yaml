@@ -1,0 +1,3 @@
+$kind: collection
+description: Generate a buffer around point geometrys with authentication in the header.
+order: 2000

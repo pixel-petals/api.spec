@@ -1,0 +1,24 @@
+$kind: http-example
+request:
+  url: https://geocode-beta.arcgis.com/arcgis/rest/services/World/GeocodeServer/batchGeocode/beta/submitJob?f=json&token={{ACCESS_TOKEN}}&item={"itemID":"{{ID}}"}&fieldMapping=Address:Address, City:City, Region:State, Postal:Postal&outFields=*
+  method: GET
+  queryParams:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    item: '{"itemID":"{{ID}}"}'
+    fieldMapping: Address:Address, City:City, Region:State, Postal:Postal
+    outFields: "*"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "jobId": "d3aa164c-b1a0-4fef-8df5-644114f6e021",
+          "jobStatus": "esriJobSubmitted",
+          "messages": []
+      }
+order: 1000

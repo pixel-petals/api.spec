@@ -1,0 +1,12 @@
+$kind: http-request
+description: "Filter rows using WHERE clauses. Supports comparison operators (>, <, >=, <=, =, !=), AND, OR, NOT, and IS NULL / IS NOT NULL. Note: string matching is case-sensitive in SODA3."
+url: "{{baseUrl}}/api/v3/views/{{datasetId}}/query.json"
+method: POST
+headers:
+  X-App-Token: "{{appToken}}"
+  Content-Type: application/json
+  Accept: application/json
+body:
+  type: json
+  content: "{\"query\":\"SELECT * WHERE numeric_column > 100 AND text_column = 'some value'\",\"page\":{\"pageNumber\":1,\"pageSize\":100}}"
+order: 3000

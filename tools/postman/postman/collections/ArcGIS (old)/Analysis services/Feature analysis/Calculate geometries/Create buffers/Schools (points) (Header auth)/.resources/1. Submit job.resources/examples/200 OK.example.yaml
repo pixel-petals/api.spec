@@ -1,0 +1,52 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/CreateBuffers/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      - key: f
+        value: json
+      - key: token
+        value: "{{ACCESS_TOKEN}}"
+      - key: inputLayer
+        value: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/DeriveHighSchools/FeatureServer"}'
+      - key: dissolveType
+        value: None
+      - key: distances
+        value: "[1000]"
+      - key: units
+        value: Feet
+      - key: ringType
+        value: Rings
+      - key: outputName
+        value: '{"serviceProperties": {"name":"{{UNIQUE_NAME}}"}}'
+      - key: ""
+        value: ""
+        disabled: true
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Tue, 04 Feb 2025 21:25:03 GMT
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: no-cache
+    ETag: '"1603365120"'
+    Vary: Origin,Accept-Encoding,Authorization,X-Esri-Authorization
+    Server: Microsoft-IIS/10.0
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    X-Powered-By: ASP.NET
+  body:
+    type: json
+    content: |-
+      {
+          "jobId": "j676346c849164b7cb605160f58fe732a",
+          "jobStatus": "esriJobSubmitted",
+          "results": {},
+          "inputs": {},
+          "messages": []
+      }
+order: 1000

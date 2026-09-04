@@ -1,0 +1,4 @@
+$kind: collection
+name: "Job: Find closest fire stations"
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/closest-facility-routing/#job-find-closest-fire-stations)
+order: 2000

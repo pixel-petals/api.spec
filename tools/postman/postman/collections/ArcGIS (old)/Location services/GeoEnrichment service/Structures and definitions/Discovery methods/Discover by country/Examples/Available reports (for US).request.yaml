@@ -1,0 +1,11 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/how-to-build-a-data-enrichment-app/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/GeoEnrichmentServer/Geoenrichment/reports/:country-code?f=pjson&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+pathVariables:
+  country-code: US
+examples: ./.resources/Available reports (for US).resources/examples
+order: 3000

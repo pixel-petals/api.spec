@@ -1,0 +1,125 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/way/:id/full"
+  method: GET
+  headers:
+    Accept: application/xml
+  pathVariables:
+    - key: id
+      value: "6776"
+      description: The numeric ID of the element
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "version": "0.6",
+        "generator": "string",
+        "copyright": "string",
+        "attribution": "string",
+        "license": "string",
+        "elements": [
+          {
+            "type": "relation",
+            "id": 5901,
+            "version": 3870,
+            "changeset": 7706,
+            "timestamp": "1985-02-27T13:36:46.299Z",
+            "user": "string",
+            "uid": 8287,
+            "visible": false,
+            "tags": {
+              "key_0": "string"
+            }
+          },
+          {
+            "type": "relation",
+            "id": 2693,
+            "version": 7101,
+            "changeset": 9224,
+            "timestamp": "1979-03-15T15:42:27.350Z",
+            "user": "string",
+            "uid": 2797,
+            "visible": false,
+            "tags": {
+              "key_0": "string"
+            }
+          }
+        ]
+      }
+    $type: |-
+      {
+        "description": "OSM JSON response envelope",
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string",
+            "example": "0.6"
+          },
+          "generator": {
+            "type": "string"
+          },
+          "copyright": {
+            "type": "string"
+          },
+          "attribution": {
+            "type": "string"
+          },
+          "license": {
+            "type": "string"
+          },
+          "elements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "node",
+                    "way",
+                    "relation"
+                  ]
+                },
+                "id": {
+                  "type": "integer",
+                  "format": "int64"
+                },
+                "version": {
+                  "type": "integer"
+                },
+                "changeset": {
+                  "type": "integer",
+                  "format": "int64"
+                },
+                "timestamp": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "uid": {
+                  "type": "integer",
+                  "format": "int64"
+                },
+                "visible": {
+                  "type": "boolean"
+                },
+                "tags": {
+                  "type": "object",
+                  "description": "Key-value tag pairs, each max 255 unicode codepoints"
+                }
+              }
+            }
+          }
+        }
+      }
+order: 1000

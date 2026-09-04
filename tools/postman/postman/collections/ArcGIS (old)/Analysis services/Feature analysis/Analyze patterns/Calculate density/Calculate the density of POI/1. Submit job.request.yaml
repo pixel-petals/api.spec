@@ -1,0 +1,29 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/analyze-patterns/calculate-density/#calculate-the-density-of-poi)
+url: "{{ANALYSIS_URL}}/CalculateDensity/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    inputLayer: '{"url":"https://services.arcgis.com/nSZVuSZjHpEZZbRo/arcgis/rest/services/OSM_POI/FeatureServer/0","name":"OpenStreetMap - Points of interest (bèta) - Punten"}'
+    areaUnits: SquareMiles
+    boundingPolygonLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Nijmegen_boundary_layer/FeatureServer/3"}'
+    numClasses: "10"
+    outputName: '{"serviceProperties":{"name":"{{UNIQUE_NAME}}"}}'
+    context: "{}"
+    returnFeatureCollection: "false"
+scripts:
+  - type: afterResponse
+    code: |
+      pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+  - type: beforeRequest
+    code: |-
+      // Creates a unique name for the output service
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/ /g, "_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

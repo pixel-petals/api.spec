@@ -1,0 +1,21 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/geocode-places/)
+url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?token={{ACCESS_TOKEN}}&f=json&singleLine=Grocery%20Store%20redlands%20ca&outFields=*
+method: GET
+queryParams:
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    description: (Required on Platform) You need a valid access token. To learn more, read the collection's documentation.
+  - key: f
+    value: json
+    description: "(Required) Format of the response: json, pjson, html, ..."
+  - key: singleLine
+    value: Grocery%20Store%20redlands%20ca
+    description: Search for an address, POI category, intersection, etc.
+  - key: outFields
+    value: "*"
+    description: The list of fields to be returned within the attributes object of the response. Descriptions for each of these fields are available in the Output fields section of this document.
+auth:
+  type: noauth
+examples: ./.resources/Search places (POIs).resources/examples
+order: 6000

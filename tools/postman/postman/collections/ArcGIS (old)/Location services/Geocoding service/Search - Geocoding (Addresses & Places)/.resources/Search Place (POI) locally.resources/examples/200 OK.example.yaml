@@ -1,0 +1,942 @@
+$kind: http-example
+request:
+  url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?token={{ACCESS_TOKEN}}&f=pjson&address=Starbucks&location=-122.4194,37.7749&outfields=PlaceName,Place_addr
+  method: GET
+  queryParams:
+    token: "{{ACCESS_TOKEN}}"
+    f: pjson
+    address: Starbucks
+    location: -122.4194,37.7749
+    outfields: PlaceName,Place_addr
+  body:
+    type: urlencoded
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 06:52:44 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Vary: Origin
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 06:53:44 GMT; Path=/arcgis/rest; Secure; HttpOnly
+    ETag: 74ade0c7
+    x-esri-ftiles-cache-compress: "true"
+    Content-Encoding: gzip
+    X-Region: eu-central-1
+  body:
+    type: text
+    content: |-
+      {
+       "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+       },
+       "candidates": [
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.41935099999995,
+          "y": 37.777191000000073
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "150 Van Ness Ave, San Francisco, California, 94102"
+         },
+         "extent": {
+          "xmin": -122.42035099999995,
+          "ymin": 37.776191000000075,
+          "xmax": -122.41835099999994,
+          "ymax": 37.778191000000071
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.41732199999996,
+          "y": 37.777066000000048
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "1390 Market Street 107 Fox Plz, San Francisco, California, 94102"
+         },
+         "extent": {
+          "xmin": -122.41832199999996,
+          "ymin": 37.77606600000005,
+          "xmax": -122.41632199999995,
+          "ymax": 37.778066000000045
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.41606099999996,
+          "y": 37.770024000000035
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "1690 Folsom St, San Francisco, California, 94103"
+         },
+         "extent": {
+          "xmin": -122.41706099999996,
+          "ymin": 37.769024000000037,
+          "xmax": -122.41506099999995,
+          "ymax": 37.771024000000033
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.42774999999995,
+          "y": 37.769035000000031
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "2020 Market St, San Francisco, California, 94114"
+         },
+         "extent": {
+          "xmin": -122.42874999999995,
+          "ymin": 37.768035000000033,
+          "xmax": -122.42674999999994,
+          "ymax": 37.770035000000028
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40962199999996,
+          "y": 37.766887000000054
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "2300 16th St, San Francisco, California, 94103"
+         },
+         "extent": {
+          "xmin": -122.41062199999996,
+          "ymin": 37.765887000000056,
+          "xmax": -122.40862199999995,
+          "ymax": 37.767887000000052
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.43151099999994,
+          "y": 37.782730000000072
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "1335 Webster St, San Francisco, California, 94115"
+         },
+         "extent": {
+          "xmin": -122.43251099999995,
+          "ymin": 37.781730000000074,
+          "xmax": -122.43051099999994,
+          "ymax": 37.78373000000007
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40763499999997,
+          "y": 37.784107000000063
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "865 Market Street C 26a San Ctr, San Francisco, California, 94103"
+         },
+         "extent": {
+          "xmin": -122.40863499999998,
+          "ymin": 37.783107000000065,
+          "xmax": -122.40663499999997,
+          "ymax": 37.78510700000006
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40342099999998,
+          "y": 37.770226000000036
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "689 Townsend St, San Francisco, California, 94103"
+         },
+         "extent": {
+          "xmin": -122.40442099999999,
+          "ymin": 37.769226000000039,
+          "xmax": -122.40242099999998,
+          "ymax": 37.771226000000034
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.43292399999996,
+          "y": 37.783417000000043
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "1501 Fillmore Street The Fillmore Ctr, San Francisco, California, 94115"
+         },
+         "extent": {
+          "xmin": -122.43392399999996,
+          "ymin": 37.782417000000045,
+          "xmax": -122.43192399999995,
+          "ymax": 37.78441700000004
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.42225299999996,
+          "y": 37.788573000000042
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "1401 Van Ness Ave, San Francisco, California, 94109"
+         },
+         "extent": {
+          "xmin": -122.42325299999996,
+          "ymin": 37.787573000000044,
+          "xmax": -122.42125299999995,
+          "ymax": 37.78957300000004
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.41044299999999,
+          "y": 37.762912000000028
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "2727 Mariposa St, San Francisco, California, 94110"
+         },
+         "extent": {
+          "xmin": -122.41144299999999,
+          "ymin": 37.761912000000031,
+          "xmax": -122.40944299999998,
+          "ymax": 37.763912000000026
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.41070599999995,
+          "y": 37.787314000000038
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "442 Geary St, San Francisco, California, 94102"
+         },
+         "extent": {
+          "xmin": -122.41170599999995,
+          "ymin": 37.78631400000004,
+          "xmax": -122.40970599999994,
+          "ymax": 37.788314000000035
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40419099999997,
+          "y": 37.78419400000007
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "120 4th St, San Francisco, California, 94103"
+         },
+         "extent": {
+          "xmin": -122.40519099999997,
+          "ymin": 37.783194000000073,
+          "xmax": -122.40319099999996,
+          "ymax": 37.785194000000068
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40734499999996,
+          "y": 37.787010000000066
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "170 Ofarrell St, San Francisco, California, 94102"
+         },
+         "extent": {
+          "xmin": -122.40834499999997,
+          "ymin": 37.786010000000068,
+          "xmax": -122.40634499999996,
+          "ymax": 37.788010000000064
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.42203199999994,
+          "y": 37.790261000000044
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "1560 Van Ness Ave, San Francisco, California, 94109"
+         },
+         "extent": {
+          "xmin": -122.42303199999995,
+          "ymin": 37.789261000000046,
+          "xmax": -122.42103199999994,
+          "ymax": 37.791261000000041
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40344699999997,
+          "y": 37.765880000000038
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "350 Rhode Island St, San Francisco, California, 94103"
+         },
+         "extent": {
+          "xmin": -122.40444699999998,
+          "ymin": 37.764880000000041,
+          "xmax": -122.40244699999997,
+          "ymax": 37.766880000000036
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40394699999996,
+          "y": 37.784486000000072
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "789 Mission St, San Francisco, California, 94103"
+         },
+         "extent": {
+          "xmin": -122.40494699999996,
+          "ymin": 37.783486000000075,
+          "xmax": -122.40294699999995,
+          "ymax": 37.78548600000007
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40569099999999,
+          "y": 37.786224000000061
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "780 Market St, San Francisco, California, 94102"
+         },
+         "extent": {
+          "xmin": -122.406691,
+          "ymin": 37.785224000000063,
+          "xmax": -122.40469099999999,
+          "ymax": 37.787224000000059
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40841999999998,
+          "y": 37.789154000000053
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "462 Powell St, San Francisco, California, 94102"
+         },
+         "extent": {
+          "xmin": -122.40941999999998,
+          "ymin": 37.788154000000056,
+          "xmax": -122.40741999999997,
+          "ymax": 37.790154000000051
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40678399999996,
+          "y": 37.789342000000033
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "390 Stockton St, San Francisco, California, 94108"
+         },
+         "extent": {
+          "xmin": -122.40778399999996,
+          "ymin": 37.788342000000036,
+          "xmax": -122.40578399999995,
+          "ymax": 37.790342000000031
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.43466799999999,
+          "y": 37.788639000000046
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "2435 California St, San Francisco, California, 94115"
+         },
+         "extent": {
+          "xmin": -122.43566799999999,
+          "ymin": 37.787639000000048,
+          "xmax": -122.43366799999998,
+          "ymax": 37.789639000000044
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.39993899999996,
+          "y": 37.784794000000034
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "201 3rd St, San Francisco, California, 94103"
+         },
+         "extent": {
+          "xmin": -122.40093899999997,
+          "ymin": 37.783794000000036,
+          "xmax": -122.39893899999996,
+          "ymax": 37.785794000000031
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.43463099999997,
+          "y": 37.761048000000073
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "4094 18th St, San Francisco, California, 94114"
+         },
+         "extent": {
+          "xmin": -122.43563099999997,
+          "ymin": 37.760048000000076,
+          "xmax": -122.43363099999996,
+          "ymax": 37.762048000000071
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40579699999995,
+          "y": 37.790419000000043
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "359 Grant Ave, San Francisco, California, 94108"
+         },
+         "extent": {
+          "xmin": -122.40679699999995,
+          "ymin": 37.789419000000045,
+          "xmax": -122.40479699999995,
+          "ymax": 37.79141900000004
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.43385899999998,
+          "y": 37.790217000000041
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "2222 Fillmore St, San Francisco, California, 94115"
+         },
+         "extent": {
+          "xmin": -122.43485899999999,
+          "ymin": 37.789217000000043,
+          "xmax": -122.43285899999998,
+          "ymax": 37.791217000000039
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40110999999996,
+          "y": 37.787749000000076
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "74 New Montgomery St, San Francisco, California, 94105"
+         },
+         "extent": {
+          "xmin": -122.40210999999996,
+          "ymin": 37.786749000000079,
+          "xmax": -122.40010999999996,
+          "ymax": 37.788749000000074
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.43976799999996,
+          "y": 37.785953000000063
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "1750 Divisadero St, San Francisco, California, 94115"
+         },
+         "extent": {
+          "xmin": -122.44076799999996,
+          "ymin": 37.784953000000066,
+          "xmax": -122.43876799999995,
+          "ymax": 37.786953000000061
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40385599999996,
+          "y": 37.790698000000077
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "264 Kearny St, San Francisco, California, 94108"
+         },
+         "extent": {
+          "xmin": -122.40485599999997,
+          "ymin": 37.78969800000008,
+          "xmax": -122.40285599999996,
+          "ymax": 37.791698000000075
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40201699999994,
+          "y": 37.789505000000077
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "44 Montgomery St, San Francisco, California, 94104"
+         },
+         "extent": {
+          "xmin": -122.40301699999995,
+          "ymin": 37.788505000000079,
+          "xmax": -122.40101699999994,
+          "ymax": 37.790505000000074
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.39375199999995,
+          "y": 37.777081000000067
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "280 King St, San Francisco, California, 94107"
+         },
+         "extent": {
+          "xmin": -122.39475199999995,
+          "ymin": 37.776081000000069,
+          "xmax": -122.39275199999994,
+          "ymax": 37.778081000000064
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.39370599999995,
+          "y": 37.777086000000054
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "298 King St, San Francisco, California, 94107"
+         },
+         "extent": {
+          "xmin": -122.39470599999996,
+          "ymin": 37.776086000000056,
+          "xmax": -122.39270599999995,
+          "ymax": 37.778086000000052
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.44623599999994,
+          "y": 37.775731000000064
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "1799 Fulton St, San Francisco, California, 94117"
+         },
+         "extent": {
+          "xmin": -122.44723599999995,
+          "ymin": 37.774731000000067,
+          "xmax": -122.44523599999994,
+          "ymax": 37.776731000000062
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40434699999997,
+          "y": 37.792910000000063
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "580 California St, San Francisco, California, 94104"
+         },
+         "extent": {
+          "xmin": -122.40534699999998,
+          "ymin": 37.791910000000065,
+          "xmax": -122.40334699999997,
+          "ymax": 37.793910000000061
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.39381799999995,
+          "y": 37.767110000000059
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "1700 Owens St, San Francisco, California, 94158"
+         },
+         "extent": {
+          "xmin": -122.39481799999996,
+          "ymin": 37.766110000000062,
+          "xmax": -122.39281799999995,
+          "ymax": 37.768110000000057
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40103899999997,
+          "y": 37.79102000000006
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "225 Bush St, San Francisco, California, 94104"
+         },
+         "extent": {
+          "xmin": -122.40203899999997,
+          "ymin": 37.790020000000062,
+          "xmax": -122.40003899999996,
+          "ymax": 37.792020000000058
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.42217499999998,
+          "y": 37.796758000000068
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "2165 Polk St, San Francisco, California, 94109"
+         },
+         "extent": {
+          "xmin": -122.42317499999999,
+          "ymin": 37.79575800000007,
+          "xmax": -122.42117499999998,
+          "ymax": 37.797758000000066
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.39761199999998,
+          "y": 37.789558000000056
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "100 1st St, San Francisco, California, 94105"
+         },
+         "extent": {
+          "xmin": -122.39861199999999,
+          "ymin": 37.788558000000059,
+          "xmax": -122.39661199999998,
+          "ymax": 37.790558000000054
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.44708099999997,
+          "y": 37.782084000000054
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "2675 Geary Blvd, San Francisco, California, 94118"
+         },
+         "extent": {
+          "xmin": -122.44808099999997,
+          "ymin": 37.781084000000057,
+          "xmax": -122.44608099999996,
+          "ymax": 37.783084000000052
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40266399999996,
+          "y": 37.794606000000044
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "425 Battery St, San Francisco, California, 94111"
+         },
+         "extent": {
+          "xmin": -122.40366399999996,
+          "ymin": 37.793606000000047,
+          "xmax": -122.40166399999995,
+          "ymax": 37.795606000000042
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.40266399999996,
+          "y": 37.794608000000039
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "565 Clay St, San Francisco, California, 94111"
+         },
+         "extent": {
+          "xmin": -122.40366399999996,
+          "ymin": 37.793608000000042,
+          "xmax": -122.40166399999995,
+          "ymax": 37.795608000000037
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.39834999999999,
+          "y": 37.791952000000038
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "398 Market St, San Francisco, California, 94111"
+         },
+         "extent": {
+          "xmin": -122.39935,
+          "ymin": 37.79095200000004,
+          "xmax": -122.39734999999999,
+          "ymax": 37.792952000000035
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.39976899999999,
+          "y": 37.793077000000039
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "295 California St, San Francisco, California, 94111"
+         },
+         "extent": {
+          "xmin": -122.400769,
+          "ymin": 37.792077000000042,
+          "xmax": -122.39876899999999,
+          "ymax": 37.794077000000037
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.38928699999997,
+          "y": 37.771258000000046
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "1375 3rd St, San Francisco, California, 94158"
+         },
+         "extent": {
+          "xmin": -122.39028699999997,
+          "ymin": 37.770258000000048,
+          "xmax": -122.38828699999996,
+          "ymax": 37.772258000000043
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.43043499999999,
+          "y": 37.79755300000005
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "1899 Union St, San Francisco, California, 94123"
+         },
+         "extent": {
+          "xmin": -122.43143499999999,
+          "ymin": 37.796553000000053,
+          "xmax": -122.42943499999998,
+          "ymax": 37.798553000000048
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.39364199999994,
+          "y": 37.788395000000037
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "299 Fremont St, San Francisco, California, 94105"
+         },
+         "extent": {
+          "xmin": -122.39464199999995,
+          "ymin": 37.787395000000039,
+          "xmax": -122.39264199999994,
+          "ymax": 37.789395000000034
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.39514299999996,
+          "y": 37.791464000000076
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "201 Mission St, San Francisco, California, 94105"
+         },
+         "extent": {
+          "xmin": -122.39614299999997,
+          "ymin": 37.790464000000078,
+          "xmax": -122.39414299999996,
+          "ymax": 37.792464000000074
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.43168899999995,
+          "y": 37.751269000000036
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "3995 24th St, San Francisco, California, 94114"
+         },
+         "extent": {
+          "xmin": -122.43268899999995,
+          "ymin": 37.750269000000038,
+          "xmax": -122.43068899999994,
+          "ymax": 37.752269000000034
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.39711499999999,
+          "y": 37.793794000000048
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "52 California St, San Francisco, California, 94111"
+         },
+         "extent": {
+          "xmin": -122.39811499999999,
+          "ymin": 37.79279400000005,
+          "xmax": -122.39611499999998,
+          "ymax": 37.794794000000046
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.39226699999995,
+          "y": 37.791313000000059
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "201 Spear St, San Francisco, California, 94105"
+         },
+         "extent": {
+          "xmin": -122.39326699999995,
+          "ymin": 37.790313000000062,
+          "xmax": -122.39126699999994,
+          "ymax": 37.792313000000057
+         }
+        },
+        {
+         "address": "Starbucks",
+         "location": {
+          "x": -122.39815599999997,
+          "y": 37.796967000000052
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Starbucks",
+          "Place_addr": "99 Jackson St, San Francisco, California, 94111"
+         },
+         "extent": {
+          "xmin": -122.39915599999998,
+          "ymin": 37.795967000000054,
+          "xmax": -122.39715599999997,
+          "ymax": 37.79796700000005
+         }
+        }
+       ]
+      }
+order: 1000

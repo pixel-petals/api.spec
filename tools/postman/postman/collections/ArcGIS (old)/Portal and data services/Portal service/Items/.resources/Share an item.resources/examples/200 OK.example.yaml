@@ -1,0 +1,123 @@
+$kind: http-example
+request:
+  url: https://www.arcgis.com/sharing/rest/content/users/{{your_org}}/items/{{item_id}}/shareItems
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      - key: everyone
+        value: "false"
+        description: If true, items will be shared with everyone.
+      - key: org
+        value: "true"
+        description: "If true, the items will be shared with everyone in the organization. "
+      - key: groups
+        value: "{{group_id}}"
+      - key: f
+        value: json
+        description: "(Required) Format of the response: json|pjson|html"
+      - key: token
+        value: "{{ACCESS_TOKEN}}"
+        description: "Cannot use an API key, you will need to generate a token. "
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Wed, 30 Mar 2022 02:17:16 GMT
+    - key: Content-Type
+      value: application/json;charset=utf-8
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Origin
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Cache-Control
+      value: no-cache
+    - key: Pragma
+      value: no-cache
+    - key: Expires
+      value: "-1"
+    - key: Strict-Transport-Security
+      value: max-age=31536000
+    - key: Content-Encoding
+      value: gzip
+  body:
+    type: json
+    content: |-
+      {
+          "item": {
+              "id": "1cd1ebf5f3b142298932e7d73fac6061",
+              "owner": "",
+              "created": 1629167781000,
+              "isOrgItem": true,
+              "modified": 1629167783000,
+              "guid": null,
+              "name": null,
+              "title": "SPI_recent",
+              "type": "Feature Service",
+              "typeKeywords": [
+                  "ArcGIS Server",
+                  "Data",
+                  "Feature Access",
+                  "Feature Service",
+                  "Service",
+                  "Singlelayer"
+              ],
+              "description": null,
+              "tags": [
+                  "test"
+              ],
+              "snippet": null,
+              "thumbnail": "thumbnail/ago_downloaded.png",
+              "documentation": null,
+              "extent": [
+                  [
+                      -180,
+                      -50.0349
+                  ],
+                  [
+                      180,
+                      50.0469
+                  ]
+              ],
+              "categories": [],
+              "spatialReference": null,
+              "accessInformation": null,
+              "licenseInfo": null,
+              "culture": "en-us",
+              "properties": null,
+              "advancedSettings": null,
+              "url": "https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/SPI_recent/FeatureServer/1",
+              "proxyFilter": null,
+              "access": "org",
+              "size": 93,
+              "subInfo": 0,
+              "appCategories": [],
+              "industries": [],
+              "languages": [],
+              "largeThumbnail": null,
+              "banner": null,
+              "screenshots": [],
+              "listed": false,
+              "ownerFolder": null,
+              "protected": false,
+              "numComments": 0,
+              "numRatings": 0,
+              "avgRating": 0,
+              "numViews": 6,
+              "itemControl": "admin",
+              "scoreCompleteness": 33,
+              "groupDesignations": null
+          },
+          "sharing": {
+              "access": "org",
+              "groups": []
+          }
+      }
+order: 1000

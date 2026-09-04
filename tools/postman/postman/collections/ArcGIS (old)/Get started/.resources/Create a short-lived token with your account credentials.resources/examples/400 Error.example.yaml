@@ -1,0 +1,70 @@
+$kind: http-example
+request:
+  url: https://www.arcgis.com/sharing/rest/generateToken
+  method: POST
+  body:
+    type: formdata
+    content:
+      - type: text
+        key: f
+        value: json
+        description: "(Required) Format of the response: json | pjson"
+      - type: text
+        key: username
+        value: "{{username}}"
+        description: (Required) Your user account username
+      - type: text
+        key: password
+        value: "{{password}}"
+        description: (Required) Your user account password
+      - type: text
+        key: referer
+        value: https://www.arcgis.com
+        description: (Required) The base URL of the web app that will invoke the request to access secured resource
+      - type: text
+        key: client
+        value: referer
+        description: "It can be: referer, ip or requestip"
+      - type: text
+        key: expiration
+        value: "120"
+        description: "Token expiration time in minutes. The default is 60 minutes. Max: 21600"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Thu, 03 Mar 2022 07:38:05 GMT
+    - key: Content-Type
+      value: application/json;charset=utf-8
+    - key: Content-Length
+      value: "104"
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Origin
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Cache-Control
+      value: no-cache
+    - key: Pragma
+      value: no-cache
+    - key: Expires
+      value: "-1"
+    - key: Strict-Transport-Security
+      value: max-age=31536000
+  body:
+    type: json
+    content: |-
+      {
+          "error": {
+              "code": 400,
+              "message": "Unable to generate token.",
+              "details": [
+                  "Invalid username or password."
+              ]
+          }
+      }
+order: 2000

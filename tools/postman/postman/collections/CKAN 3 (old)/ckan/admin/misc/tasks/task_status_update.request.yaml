@@ -1,0 +1,46 @@
+$kind: http-request
+url: "{{CKAN_API}}/task_status_update"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: id
+      value: ""
+      description: (string) – the id of the task status to update
+    - type: text
+      key: entity_id
+      value: ""
+      description: (string) –
+    - type: text
+      key: entity_type
+      value: ""
+      description: (string) –
+    - type: text
+      key: task_type
+      value: ""
+      description: (string) –
+    - type: text
+      key: key
+      value: ""
+      description: (string) –
+    - type: text
+      key: value
+      value: ""
+      description: (optional)
+    - type: text
+      key: state
+      value: ""
+      description: (optional)
+    - type: text
+      key: last_updated
+      value: ""
+      description: (optional)
+    - type: text
+      key: error
+      value: ""
+      description: (optional)
+order: 3000

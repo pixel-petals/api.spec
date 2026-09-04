@@ -1,0 +1,10 @@
+$kind: collection
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/autosuggest/)
+scripts:
+  - type: http:beforeRequest
+    code: |-
+      // utils.requiredParameters(["f", "token", "text"]);
+      // console.log("Checking if searchExtent is enabled and is valid");
+      // utils.checkSearchExtent();
+    language: text/javascript
+order: 4000

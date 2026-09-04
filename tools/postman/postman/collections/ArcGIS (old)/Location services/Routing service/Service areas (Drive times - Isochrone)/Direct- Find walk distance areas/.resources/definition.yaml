@@ -1,0 +1,4 @@
+$kind: collection
+name: "Direct: Find walk distance areas"
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/service-areas/#direct-find-walk-distance-areas)
+order: 1000

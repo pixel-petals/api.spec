@@ -1,0 +1,61 @@
+$kind: http-example
+request:
+  url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?f=pjson&token={{ACCESS_TOKEN}}&singleLine=2600 Benjamin Franklin Pkwy, Philadelphia, PA&outFields=Addr_type
+  method: GET
+  queryParams:
+    - key: f
+      value: pjson
+      description: "(Required) Format of the response: json, pjson, html, ..."
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      description: (Required on Platform) You need a valid access token. To learn more, read the collection's documentation.
+    - key: singleLine
+      value: 2600 Benjamin Franklin Pkwy, Philadelphia, PA
+      description: Search for an address, POI category, intersection, etc.
+    - key: outFields
+      value: Addr_type
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Mon, 13 Oct 2025 19:04:39 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: max-age=0,must-revalidate
+    X-Content-Type-Options: nosniff
+    Vary: Origin
+    Server: ""
+    Set-Cookie: AGS_ROLES="sym-gcm|1|wdzh-juFjiwpCjZxTgaaCQ==|8crHORz00HtVUXAwL1AcKPuDijwKmP6PzTMiUqmbD2d00U9nCBCZXhFiJ486BarCwZ6HFGHT2-TP2LtXqnk-Hk7W-ISmBNxyfLjhptM3ioVqMzoLkRAnGZO01Dk7E5qPbmmeecFuMhFXbdjZhucOBdL7-Se1TqDKjfGU0UNFq-OBgOQ0nMGvKRGokdAQF1nNw2txCEtHrb0ednysGJwg40Nxrk2As328IpKyZdIABxcI9_6eGJmdR_yXVdZHBUvHyPOEurTKlkVPJwtzekc4Vf-5ShhhcHl4YTUr0YvFJrJ51ItBkQG79iJZ6vLU07kNH0kFjpP61ZiGLVl6YOK8l0eBnzlih18LsLAm8p0om03WZ_ztTijnv_tXMnsAR0IVoBpV0QsXFzdXy_Vfg57uDkIFzpzlQfAe8wkz7BjUE6z216TAMi19xsS7oNbEJY_Sgn9sz6lgtPJV5WAhkrYLt_aeUgJCiJVMc_aGeRZo9ucB8tDI6KX-uY8sPTThpbYX47BJO9uH0ZPlVpU7SCN_GpjNjQ_SDpY4ssqF2yFE03RzCBr9MEMexNNCN4cszN8aqlxjaIo6K-GT75fHWQDoM8z2-oKmg73GwICerHG_yrwY3Ub4OYmVYDTwiTAk0uDkrZ3yPOZgMj8VPfL4uqZA7luoFnw2LFtoSU0v5HqaQ8qpUbI7Lcw_c3ZnTaDzXqVcH-zOJDQC1NHCUTO0N1zXIS1sdVV8PgP_pWIY-C570jTYZ7wGKGS8-Y4mkasYagql95cnB9Gkdwu5RKtYZqzNp1RiOWbf6qUwWJOO7layoGnP03X0gIiJEzW5guWKtuSBdbltqIvVB234qtgRbUHmHYB8qczbsSogZzab04jcHmKp-Q_A6MzUECrIl2RsWyhuqi3iydxHFJrulRkYyjtEzV_qT2_2oy2EkHH-t-NVB07ze6sTATi_DrvA8sm3sJwfO6ABSOPUklHA54h9tic1l2DMxvBpQouBscUOt68uoyw3sqkp5m1bgYc0s7NrWHvNAh9beEE-xaUWo0-nDDuGonrFYmXqqCtdck_-L0GD3whIef6uWxfwjOZAoZ1JeIV2IQwSpZWXHfGT_UMWelqVgQ-oKcPKWeh01gvpJkkK4G2gUtyF6OfdDa5-gpuOiegGhIzcpQZ9LLL1vjkR1ZZl_7rD00FIhLokOz6VMJB8onOu2pDvCZZDoqu9lzYvZygAA6_QZTqzbYf8eJpiPQXZWUO_vFIBq9jPMdDaw8IURnQwuuL6UOna3Ogn3ry59rZoX9BVJhuyZe9__pUqfskOV9LfoMlKqoOD5lw2qWRcJF1htsGwwrOQ7UrV8yQvgp3zE_CJHe6tQZiN-eWH2xj4DbjSSin57jsQFKDawMgkRCPrUaexQt8nFFJqA12vuF59uJV8p43K9DvYtGW8btQ-pKk2P1W3LXCGqmmMH103K35f12nG5VUIrJ71GQn8LOup6CDMJOUFDpIHSigwEf6MyStIPnz_lOjSEnhorPy2BE6HZ1vrfnqJZ6Q49758KitEOXfmnGJno1vUeXfA4bUHjNxg5WIVSk8l2lPuII4fvunNW6LKsaslt1FYab68kzxlUYMTSmlIsLfIdv-A1K-QWZjXs_54Wl7Lu6Q="; Version=1; Max-Age=60; Expires=Mon, 13 Oct 2025 19:05:39 GMT; Path=/arcgis/rest; Secure; HttpOnly
+    ETag: '"d2d9f30a"'
+    Content-Encoding: gzip
+    X-Region: us-east-1
+  body:
+    type: text
+    content: |-
+      {
+          "spatialReference": {
+              "wkid": 4326,
+              "latestWkid": 4326
+          },
+          "candidates": [
+              {
+                  "address": "2600 Benjamin Franklin Pkwy, Philadelphia, Pennsylvania, 19130",
+                  "location": {
+                      "x": -75.180027696854,
+                      "y": 39.964947784303
+                  },
+                  "score": 100,
+                  "attributes": {
+                      "Addr_type": "PointAddress"
+                  },
+                  "extent": {
+                      "xmin": -75.181027696854,
+                      "ymin": 39.963947784303,
+                      "xmax": -75.179027696854,
+                      "ymax": 39.965947784303
+                  }
+              }
+          ]
+      }
+order: 1000

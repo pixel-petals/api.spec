@@ -1,0 +1,43 @@
+$kind: http-example
+request:
+  url: "{{ORG_URL}}/sharing/rest/content/users/{{USER_NAME}}/addItem"
+  method: POST
+  body:
+    type: formdata
+    content:
+      - type: text
+        key: f
+        value: json
+      - type: text
+        key: token
+        value: "{{ACCESS_TOKEN}}"
+      - type: file
+        key: file
+        src: /Users/mark4582/_esri/python/batchGeocode/data/addresses.csv
+      - type: text
+        key: title
+        value: Postman batchGeocode address file upload
+      - type: text
+        key: type
+        value: CSV
+      - type: text
+        key: typeKeywords
+        value: CSV, Text, Data
+      - type: text
+        key: description
+        value: This is a csv file uploaded programmatically for use with the batchGeocode(beta) service
+      - type: text
+        key: tags
+        value: postman, batchGeocode, csv, addresses
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: |-
+      {
+          "folder": "",
+          "id": "6ad337f5283c4a0ea142908868631ef8",
+          "success": true
+      }
+order: 1000

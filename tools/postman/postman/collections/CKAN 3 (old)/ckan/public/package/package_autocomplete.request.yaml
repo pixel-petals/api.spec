@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{CKAN_API}}/package_autocomplete"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: q
+    value: null
+    disabled: true
+    description: the string to search for
+  - key: limit
+    value: null
+    disabled: true
+    description: "(int) – the maximum number of resource formats to return (optional, default: 10)"
+order: 2000

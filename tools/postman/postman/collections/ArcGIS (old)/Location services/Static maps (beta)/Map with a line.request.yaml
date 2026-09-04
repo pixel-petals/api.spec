@@ -1,0 +1,146 @@
+$kind: http-request
+description: "[Check the documentation](https://developers.arcgis.com/rest/static-maps/arcgis-arcgis-style-along-a-route-get/)"
+url: https://static-maps-api.arcgis.com/arcgis/rest/services/static-maps-service/:VERSION/static-maps/arcgis/:ARCGIS-STYLE/with-polyline?endSymbolLabel=E&endSymbolColor=b83619&endSymbolStyle=pin&lineColor=3a74b5&lineStyle=dot&lineWidth=5&imageFormat=png&imageHeight=400&imageWidth=400&imagePadding=[10]&polyline=[[-117.1604,32.7067],[-117.1642, 32.7090],[-117.1637, 32.7096],[-117.1637, 32.7115],[-117.1556, 32.7115],[-117.1556, 32.7085]]&mapRadius=1000&startSymbolColor=3ab548&startSymbolLabel=S&startSymbolStyle=circle&symbolScale=1.5
+method: GET
+queryParams:
+  - key: endSymbolLabel
+    value: E
+    description: The label to be displayed on the simple symbol at the end of a polyline.
+  - key: endSymbolColor
+    value: b83619
+    description: The color of the end marker symbol in hexadecimal format.
+  - key: endSymbolStyle
+    value: pin
+    description: The marker symbol that will be placed at the end of the last route part.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "enum": [
+              "pin",
+              "circle"
+            ]
+          }
+        }
+      }
+  - key: lineColor
+    value: 3a74b5
+    description: The color of the line symbol in hexadecimal format.
+  - key: lineStyle
+    value: dot
+    description: The style, or stroke, of the line symbol.
+  - key: lineWidth
+    value: "5"
+    description: The width of the line in device-independent pixels.
+  - key: imageFormat
+    value: png
+    description: The format of the map image, such as png, jpeg, webp.
+  - key: imageHeight
+    value: "400"
+    description: The height of the requested map image in pixels at 96 DPI between 64 and 1024 pixels.
+  - key: imageWidth
+    value: "400"
+    description: The width of the requested map image in pixels at 96 DPI between 64 and 1024 pixels.
+  - key: imagePadding
+    value: "[10]"
+    description: The padding applied to the static map adds extra map content between the static map's extent and the edge of the image.
+  - key: polyline
+    value: "[[-117.1604,32.7067],[-117.1642, 32.7090],[-117.1637, 32.7096],[-117.1637, 32.7115],[-117.1556, 32.7115],[-117.1556, 32.7085]]"
+    description: A route contains an array of x,y coordinate pairs in the WGS84 spatial reference.
+  - key: mapRadius
+    value: "1000"
+    description: The radius, in meters, that defines the minimum geographic area shown around the specified point on the static map.
+  - key: startSymbolColor
+    value: 3ab548
+    description: The color of the start marker symbol in hexadecimal format.
+  - key: startSymbolLabel
+    value: S
+    description: The label to be displayed on the simple symbol at the start of a polyline.
+  - key: startSymbolStyle
+    value: circle
+    description: The marker symbol that will be placed at the start of the first route part.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "pin",
+              "circle"
+            ]
+          }
+        }
+      }
+  - key: symbolScale
+    value: "1.5"
+    description: The scale of the marker symbol as a multiplier of the symbol's dimensions.
+  - key: token
+    value: string
+    disabled: true
+    description: The authentication token, used to access the static maps service.
+    $type: string
+  - key: mapCenterX
+    value: ""
+    disabled: true
+    description: The x-coordinate, or longitude value, of the point expressed in WGS84 decimal degrees.
+  - key: mapCenterY
+    value: ""
+    disabled: true
+    description: The y-coordinate, or latitude value, of the point expressed in WGS84 decimal degrees.
+  - key: mapZoom
+    value: "15"
+    disabled: true
+    description: Specifies the map zoom level, which controls the level of detail (LOD) displayed.
+pathVariables:
+  - key: VERSION
+    value: beta
+    description: API Version
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "default": "beta",
+            "enum": [
+              "beta"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: ARCGIS-STYLE
+    value: streets
+    description: ArcGIS Basemap style
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "enum": [
+              "navigation",
+              "navigation-night",
+              "streets",
+              "streets-night",
+              "imagery"
+            ],
+            "deprecated": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+order: 8000

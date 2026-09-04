@@ -1,0 +1,8 @@
+$kind: http-request
+description: Retrieves the service limits for the GeoEnrichment service, including maximum record counts, request size, and other operational constraints. Use this endpoint to understand usage boundaries for GeoEnrichment operations.
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/serviceLimits?f=json
+method: GET
+queryParams:
+  f: json
+examples: ./.resources/Service limits.resources/examples
+order: 1000

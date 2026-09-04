@@ -1,0 +1,23 @@
+$kind: http-example
+name: Precondition Failed – referenced element does not exist or is still in use
+request:
+  url: "{{baseUrl}}/api/0.6/ways"
+  method: POST
+  headers:
+    - key: Content-Type
+      value: application/xml
+    - key: Authorization
+      value: <token>
+      description: "Added as a part of security scheme: oauth2"
+  body:
+    type: xml
+    content: |-
+      <?xml version="1.0" encoding="UTF-8"?>
+      <element>(string)</element>
+response:
+  statusCode: 412
+  statusText: Precondition Failed
+  body:
+    type: text
+    content: ""
+order: 5000

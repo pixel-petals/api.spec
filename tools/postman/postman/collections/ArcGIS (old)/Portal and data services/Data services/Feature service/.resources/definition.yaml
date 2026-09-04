@@ -1,0 +1,7 @@
+$kind: collection
+description: A feature service is a type of data service that stores spatial data, known as *features,* and non-spatial data. The services provides access to the data as *feature* layers and tables. You can use SQL queries, spatial queries, or both to get data from a feature service. To learn more, go to the [feature service page](https://developers.arcgis.com/documentation/mapping-apis-and-services/data-hosting/services/feature-service/#) in the [Mapping APIs and location services guide](https://developers.arcgis.com/documentation/mapping-apis-and-services/).
+auth:
+  - id: ""
+    type: noauth
+    name: No Auth
+order: 1000

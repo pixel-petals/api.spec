@@ -1,0 +1,736 @@
+$kind: http-example
+request:
+  url: https://{{logistics-service}}.arcgis.com/arcgis/rest/services/World/VehicleRoutingProblem/GPServer/SolveVehicleRoutingProblem/jobs/:job_id/results/out_routes
+  method: POST
+  pathVariables:
+    job_id: "{{job_id}}"
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 08:02:51 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "1451"
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 08:03:34 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"7763b911"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "paramName": "out_routes",
+          "dataType": "GPFeatureRecordSetLayer",
+          "value": {
+              "displayFieldName": "",
+              "geometryType": "esriGeometryPolyline",
+              "spatialReference": {
+                  "wkid": 4326,
+                  "latestWkid": 4326
+              },
+              "fields": [
+                  {
+                      "name": "ObjectID",
+                      "type": "esriFieldTypeOID",
+                      "alias": "ObjectID"
+                  },
+                  {
+                      "name": "Name",
+                      "type": "esriFieldTypeString",
+                      "alias": "Name",
+                      "length": 1024
+                  },
+                  {
+                      "name": "ViolatedConstraints",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "ViolatedConstraints"
+                  },
+                  {
+                      "name": "ViolatedConstraint_1",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "ViolatedConstraint_1",
+                      "domain": {
+                          "type": "codedValue",
+                          "name": "ViolatedConstraintDomain",
+                          "description": "",
+                          "codedValues": [
+                              {
+                                  "name": "MaxOrderCount exceeded",
+                                  "code": 0
+                              },
+                              {
+                                  "name": "Capacities exceeded",
+                                  "code": 1
+                              },
+                              {
+                                  "name": "MaxTotalTime exceeded",
+                                  "code": 2
+                              },
+                              {
+                                  "name": "MaxTotalTravelTime exceeded",
+                                  "code": 3
+                              },
+                              {
+                                  "name": "MaxTotalDistance exceeded",
+                                  "code": 4
+                              },
+                              {
+                                  "name": "Hard time window",
+                                  "code": 5
+                              },
+                              {
+                                  "name": "Unmatched specialty",
+                                  "code": 6
+                              },
+                              {
+                                  "name": "Hard route zone",
+                                  "code": 7
+                              },
+                              {
+                                  "name": "Order pair MaxTransitTime exceeded",
+                                  "code": 8
+                              },
+                              {
+                                  "name": "Order pair violation",
+                                  "code": 9
+                              },
+                              {
+                                  "name": "Unreachable",
+                                  "code": 10
+                              },
+                              {
+                                  "name": "Cannot insert required break(s)",
+                                  "code": 11
+                              },
+                              {
+                                  "name": "Cannot insert required renewal(s)",
+                                  "code": 12
+                              },
+                              {
+                                  "name": "MaxTravelTimeBetweenBreaks exceeded",
+                                  "code": 13
+                              },
+                              {
+                                  "name": "Break MaxCumulWorkTime exceeded",
+                                  "code": 14
+                              },
+                              {
+                                  "name": "InboundArriveTime or OutboundDepartTime order violation",
+                                  "code": 15
+                              },
+                              {
+                                  "name": "Cannot anchor first/last",
+                                  "code": 16
+                              }
+                          ],
+                          "mergePolicy": "esriMPTDefaultValue",
+                          "splitPolicy": "esriSPTDefaultValue"
+                      }
+                  },
+                  {
+                      "name": "ViolatedConstraint_2",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "ViolatedConstraint_2",
+                      "domain": {
+                          "type": "codedValue",
+                          "name": "ViolatedConstraintDomain",
+                          "description": "",
+                          "codedValues": [
+                              {
+                                  "name": "MaxOrderCount exceeded",
+                                  "code": 0
+                              },
+                              {
+                                  "name": "Capacities exceeded",
+                                  "code": 1
+                              },
+                              {
+                                  "name": "MaxTotalTime exceeded",
+                                  "code": 2
+                              },
+                              {
+                                  "name": "MaxTotalTravelTime exceeded",
+                                  "code": 3
+                              },
+                              {
+                                  "name": "MaxTotalDistance exceeded",
+                                  "code": 4
+                              },
+                              {
+                                  "name": "Hard time window",
+                                  "code": 5
+                              },
+                              {
+                                  "name": "Unmatched specialty",
+                                  "code": 6
+                              },
+                              {
+                                  "name": "Hard route zone",
+                                  "code": 7
+                              },
+                              {
+                                  "name": "Order pair MaxTransitTime exceeded",
+                                  "code": 8
+                              },
+                              {
+                                  "name": "Order pair violation",
+                                  "code": 9
+                              },
+                              {
+                                  "name": "Unreachable",
+                                  "code": 10
+                              },
+                              {
+                                  "name": "Cannot insert required break(s)",
+                                  "code": 11
+                              },
+                              {
+                                  "name": "Cannot insert required renewal(s)",
+                                  "code": 12
+                              },
+                              {
+                                  "name": "MaxTravelTimeBetweenBreaks exceeded",
+                                  "code": 13
+                              },
+                              {
+                                  "name": "Break MaxCumulWorkTime exceeded",
+                                  "code": 14
+                              },
+                              {
+                                  "name": "InboundArriveTime or OutboundDepartTime order violation",
+                                  "code": 15
+                              },
+                              {
+                                  "name": "Cannot anchor first/last",
+                                  "code": 16
+                              }
+                          ],
+                          "mergePolicy": "esriMPTDefaultValue",
+                          "splitPolicy": "esriSPTDefaultValue"
+                      }
+                  },
+                  {
+                      "name": "ViolatedConstraint_3",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "ViolatedConstraint_3",
+                      "domain": {
+                          "type": "codedValue",
+                          "name": "ViolatedConstraintDomain",
+                          "description": "",
+                          "codedValues": [
+                              {
+                                  "name": "MaxOrderCount exceeded",
+                                  "code": 0
+                              },
+                              {
+                                  "name": "Capacities exceeded",
+                                  "code": 1
+                              },
+                              {
+                                  "name": "MaxTotalTime exceeded",
+                                  "code": 2
+                              },
+                              {
+                                  "name": "MaxTotalTravelTime exceeded",
+                                  "code": 3
+                              },
+                              {
+                                  "name": "MaxTotalDistance exceeded",
+                                  "code": 4
+                              },
+                              {
+                                  "name": "Hard time window",
+                                  "code": 5
+                              },
+                              {
+                                  "name": "Unmatched specialty",
+                                  "code": 6
+                              },
+                              {
+                                  "name": "Hard route zone",
+                                  "code": 7
+                              },
+                              {
+                                  "name": "Order pair MaxTransitTime exceeded",
+                                  "code": 8
+                              },
+                              {
+                                  "name": "Order pair violation",
+                                  "code": 9
+                              },
+                              {
+                                  "name": "Unreachable",
+                                  "code": 10
+                              },
+                              {
+                                  "name": "Cannot insert required break(s)",
+                                  "code": 11
+                              },
+                              {
+                                  "name": "Cannot insert required renewal(s)",
+                                  "code": 12
+                              },
+                              {
+                                  "name": "MaxTravelTimeBetweenBreaks exceeded",
+                                  "code": 13
+                              },
+                              {
+                                  "name": "Break MaxCumulWorkTime exceeded",
+                                  "code": 14
+                              },
+                              {
+                                  "name": "InboundArriveTime or OutboundDepartTime order violation",
+                                  "code": 15
+                              },
+                              {
+                                  "name": "Cannot anchor first/last",
+                                  "code": 16
+                              }
+                          ],
+                          "mergePolicy": "esriMPTDefaultValue",
+                          "splitPolicy": "esriSPTDefaultValue"
+                      }
+                  },
+                  {
+                      "name": "ViolatedConstraint_4",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "ViolatedConstraint_4",
+                      "domain": {
+                          "type": "codedValue",
+                          "name": "ViolatedConstraintDomain",
+                          "description": "",
+                          "codedValues": [
+                              {
+                                  "name": "MaxOrderCount exceeded",
+                                  "code": 0
+                              },
+                              {
+                                  "name": "Capacities exceeded",
+                                  "code": 1
+                              },
+                              {
+                                  "name": "MaxTotalTime exceeded",
+                                  "code": 2
+                              },
+                              {
+                                  "name": "MaxTotalTravelTime exceeded",
+                                  "code": 3
+                              },
+                              {
+                                  "name": "MaxTotalDistance exceeded",
+                                  "code": 4
+                              },
+                              {
+                                  "name": "Hard time window",
+                                  "code": 5
+                              },
+                              {
+                                  "name": "Unmatched specialty",
+                                  "code": 6
+                              },
+                              {
+                                  "name": "Hard route zone",
+                                  "code": 7
+                              },
+                              {
+                                  "name": "Order pair MaxTransitTime exceeded",
+                                  "code": 8
+                              },
+                              {
+                                  "name": "Order pair violation",
+                                  "code": 9
+                              },
+                              {
+                                  "name": "Unreachable",
+                                  "code": 10
+                              },
+                              {
+                                  "name": "Cannot insert required break(s)",
+                                  "code": 11
+                              },
+                              {
+                                  "name": "Cannot insert required renewal(s)",
+                                  "code": 12
+                              },
+                              {
+                                  "name": "MaxTravelTimeBetweenBreaks exceeded",
+                                  "code": 13
+                              },
+                              {
+                                  "name": "Break MaxCumulWorkTime exceeded",
+                                  "code": 14
+                              },
+                              {
+                                  "name": "InboundArriveTime or OutboundDepartTime order violation",
+                                  "code": 15
+                              },
+                              {
+                                  "name": "Cannot anchor first/last",
+                                  "code": 16
+                              }
+                          ],
+                          "mergePolicy": "esriMPTDefaultValue",
+                          "splitPolicy": "esriSPTDefaultValue"
+                      }
+                  },
+                  {
+                      "name": "OrderCount",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "OrderCount",
+                      "domain": {
+                          "type": "range",
+                          "name": "OrderCount",
+                          "description": "",
+                          "range": [
+                              0,
+                              2147483647
+                          ],
+                          "mergePolicy": "esriMPTSumValues",
+                          "splitPolicy": "esriSPTGeometryRatio"
+                      }
+                  },
+                  {
+                      "name": "TotalCost",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "TotalCost",
+                      "domain": {
+                          "type": "range",
+                          "name": "TotalCost",
+                          "description": "",
+                          "range": [
+                              0,
+                              1e+308
+                          ],
+                          "mergePolicy": "esriMPTSumValues",
+                          "splitPolicy": "esriSPTGeometryRatio"
+                      }
+                  },
+                  {
+                      "name": "RegularTimeCost",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "RegularTimeCost",
+                      "domain": {
+                          "type": "range",
+                          "name": "RegularTimeCost",
+                          "description": "",
+                          "range": [
+                              0,
+                              1e+308
+                          ],
+                          "mergePolicy": "esriMPTSumValues",
+                          "splitPolicy": "esriSPTGeometryRatio"
+                      }
+                  },
+                  {
+                      "name": "OvertimeCost",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "OvertimeCost",
+                      "domain": {
+                          "type": "range",
+                          "name": "OvertimeCost",
+                          "description": "",
+                          "range": [
+                              0,
+                              1e+308
+                          ],
+                          "mergePolicy": "esriMPTSumValues",
+                          "splitPolicy": "esriSPTGeometryRatio"
+                      }
+                  },
+                  {
+                      "name": "DistanceCost",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "DistanceCost",
+                      "domain": {
+                          "type": "range",
+                          "name": "DistanceCost",
+                          "description": "",
+                          "range": [
+                              0,
+                              1e+308
+                          ],
+                          "mergePolicy": "esriMPTSumValues",
+                          "splitPolicy": "esriSPTGeometryRatio"
+                      }
+                  },
+                  {
+                      "name": "TotalTime",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "TotalTime",
+                      "domain": {
+                          "type": "range",
+                          "name": "TotalTime",
+                          "description": "",
+                          "range": [
+                              0,
+                              1e+308
+                          ],
+                          "mergePolicy": "esriMPTSumValues",
+                          "splitPolicy": "esriSPTGeometryRatio"
+                      }
+                  },
+                  {
+                      "name": "TotalOrderServiceTime",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "TotalOrderServiceTime",
+                      "domain": {
+                          "type": "range",
+                          "name": "TotalOrderServiceTime",
+                          "description": "",
+                          "range": [
+                              0,
+                              1e+308
+                          ],
+                          "mergePolicy": "esriMPTSumValues",
+                          "splitPolicy": "esriSPTGeometryRatio"
+                      }
+                  },
+                  {
+                      "name": "TotalBreakServiceTime",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "TotalBreakServiceTime",
+                      "domain": {
+                          "type": "range",
+                          "name": "TotalBreakServiceTime",
+                          "description": "",
+                          "range": [
+                              0,
+                              1e+308
+                          ],
+                          "mergePolicy": "esriMPTSumValues",
+                          "splitPolicy": "esriSPTGeometryRatio"
+                      }
+                  },
+                  {
+                      "name": "TotalTravelTime",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "TotalTravelTime",
+                      "domain": {
+                          "type": "range",
+                          "name": "TotalTravelTime",
+                          "description": "",
+                          "range": [
+                              0,
+                              1e+308
+                          ],
+                          "mergePolicy": "esriMPTSumValues",
+                          "splitPolicy": "esriSPTGeometryRatio"
+                      }
+                  },
+                  {
+                      "name": "TotalDistance",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "TotalDistance",
+                      "domain": {
+                          "type": "range",
+                          "name": "TotalDistance",
+                          "description": "",
+                          "range": [
+                              0,
+                              1e+308
+                          ],
+                          "mergePolicy": "esriMPTSumValues",
+                          "splitPolicy": "esriSPTGeometryRatio"
+                      }
+                  },
+                  {
+                      "name": "StartTime",
+                      "type": "esriFieldTypeDate",
+                      "alias": "StartTime",
+                      "length": 16
+                  },
+                  {
+                      "name": "EndTime",
+                      "type": "esriFieldTypeDate",
+                      "alias": "EndTime",
+                      "length": 16
+                  },
+                  {
+                      "name": "StartTimeUTC",
+                      "type": "esriFieldTypeDate",
+                      "alias": "StartTimeUTC",
+                      "length": 16
+                  },
+                  {
+                      "name": "EndTimeUTC",
+                      "type": "esriFieldTypeDate",
+                      "alias": "EndTimeUTC",
+                      "length": 16
+                  },
+                  {
+                      "name": "TotalWaitTime",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "TotalWaitTime",
+                      "domain": {
+                          "type": "range",
+                          "name": "TotalWaitTime",
+                          "description": "",
+                          "range": [
+                              0,
+                              1e+308
+                          ],
+                          "mergePolicy": "esriMPTSumValues",
+                          "splitPolicy": "esriSPTGeometryRatio"
+                      }
+                  },
+                  {
+                      "name": "TotalViolationTime",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "TotalViolationTime",
+                      "domain": {
+                          "type": "range",
+                          "name": "TotalViolationTime",
+                          "description": "",
+                          "range": [
+                              0,
+                              1e+308
+                          ],
+                          "mergePolicy": "esriMPTSumValues",
+                          "splitPolicy": "esriSPTGeometryRatio"
+                      }
+                  },
+                  {
+                      "name": "RenewalCount",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "RenewalCount",
+                      "domain": {
+                          "type": "range",
+                          "name": "RenewalCount",
+                          "description": "",
+                          "range": [
+                              0,
+                              2147483647
+                          ],
+                          "mergePolicy": "esriMPTSumValues",
+                          "splitPolicy": "esriSPTGeometryRatio"
+                      }
+                  },
+                  {
+                      "name": "TotalRenewalServiceTime",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "TotalRenewalServiceTime",
+                      "domain": {
+                          "type": "range",
+                          "name": "TotalRenewalServiceTime",
+                          "description": "",
+                          "range": [
+                              0,
+                              1e+308
+                          ],
+                          "mergePolicy": "esriMPTSumValues",
+                          "splitPolicy": "esriSPTGeometryRatio"
+                      }
+                  },
+                  {
+                      "name": "Shape_Length",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Shape_Length"
+                  }
+              ],
+              "features": [
+                  {
+                      "attributes": {
+                          "ObjectID": 1,
+                          "Name": "Truck_1",
+                          "ViolatedConstraints": 0,
+                          "ViolatedConstraint_1": null,
+                          "ViolatedConstraint_2": null,
+                          "ViolatedConstraint_3": null,
+                          "ViolatedConstraint_4": null,
+                          "OrderCount": 3,
+                          "TotalCost": 108.61248818069083,
+                          "RegularTimeCost": 43.145052371919157,
+                          "OvertimeCost": 0,
+                          "DistanceCost": 65.467435808771668,
+                          "TotalTime": 215.72526185959578,
+                          "TotalOrderServiceTime": 68,
+                          "TotalBreakServiceTime": 0,
+                          "TotalTravelTime": 87.725261859595776,
+                          "TotalDistance": 43.644957205847781,
+                          "StartTime": 1608048000000,
+                          "EndTime": 1608060943516,
+                          "StartTimeUTC": 1608076800000,
+                          "EndTimeUTC": 1608089743516,
+                          "TotalWaitTime": 0,
+                          "TotalViolationTime": 0,
+                          "RenewalCount": 0,
+                          "TotalRenewalServiceTime": 0,
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 2,
+                          "Name": "Truck_2",
+                          "ViolatedConstraints": 0,
+                          "ViolatedConstraint_1": null,
+                          "ViolatedConstraint_2": null,
+                          "ViolatedConstraint_3": null,
+                          "ViolatedConstraint_4": null,
+                          "OrderCount": 3,
+                          "TotalCost": 155.07909319450246,
+                          "RegularTimeCost": 53.427135510742666,
+                          "OvertimeCost": 0,
+                          "DistanceCost": 101.6519576837598,
+                          "TotalTime": 267.13567755371332,
+                          "TotalOrderServiceTime": 77,
+                          "TotalBreakServiceTime": 0,
+                          "TotalTravelTime": 130.13567755371332,
+                          "TotalDistance": 67.767971789173203,
+                          "StartTime": 1608048000000,
+                          "EndTime": 1608064028141,
+                          "StartTimeUTC": 1608076800000,
+                          "EndTimeUTC": 1608092828141,
+                          "TotalWaitTime": 0,
+                          "TotalViolationTime": 0,
+                          "RenewalCount": 0,
+                          "TotalRenewalServiceTime": 0,
+                          "Shape_Length": 0
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 3,
+                          "Name": "Truck_3",
+                          "ViolatedConstraints": 0,
+                          "ViolatedConstraint_1": null,
+                          "ViolatedConstraint_2": null,
+                          "ViolatedConstraint_3": null,
+                          "ViolatedConstraint_4": null,
+                          "OrderCount": 3,
+                          "TotalCost": 82.756076286647613,
+                          "RegularTimeCost": 37.810581788793208,
+                          "OvertimeCost": 0,
+                          "DistanceCost": 44.945494497854405,
+                          "TotalTime": 189.05290894396603,
+                          "TotalOrderServiceTime": 64,
+                          "TotalBreakServiceTime": 0,
+                          "TotalTravelTime": 65.052908943966031,
+                          "TotalDistance": 29.963662998569603,
+                          "StartTime": 1608048000000,
+                          "EndTime": 1608059343175,
+                          "StartTimeUTC": 1608076800000,
+                          "EndTimeUTC": 1608088143175,
+                          "TotalWaitTime": 0,
+                          "TotalViolationTime": 0,
+                          "RenewalCount": 0,
+                          "TotalRenewalServiceTime": 0,
+                          "Shape_Length": 0
+                      }
+                  }
+              ],
+              "exceededTransferLimit": false
+          }
+      }
+order: 1000

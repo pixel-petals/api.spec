@@ -1,0 +1,20 @@
+$kind: http-request
+description: Starts a basemap session and returns a JSON Object with the values for the `startTime, endTime, styleFamily, and sessionToken.`
+url: https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/:VERSION/sessions/start?f=json&styleFamily=arcgis&durationSeconds=60
+method: GET
+queryParams:
+  f: json
+  styleFamily: arcgis
+  durationSeconds: "60"
+pathVariables:
+  VERSION: v2
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+scripts:
+  - type: afterResponse
+    code: pm.collectionVariables.set("SESSION_TOKEN", pm.response.json().sessionToken)
+    language: text/javascript
+examples: ./.resources/Start a session.resources/examples
+order: 1000

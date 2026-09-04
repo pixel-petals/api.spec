@@ -1,0 +1,17 @@
+$kind: http-request
+description: |-
+  The `/CreateReport` request allows you to create  
+  many types of high quality reports for a variety of use cases describing  
+  the input area. If a point is used as a study area, the service will  
+  create a 1­mile ring buffer around the point to collect and append  
+  enrichment data.
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/createReport?f=pjson&token={{ACCESS_TOKEN}}&report=acs_housing&format=pdf&studyAreas=[{"address":{"text":"380 New York St. Redlands, CA 92373"}},{"address":{"text":"3722 Crenshaw Blvd, Los Angeles, CA 90016"}},{"address":{"text":"2103 N Hall St, Dallas, TX 75204"}},{"address":{"text":"2807 N. Campbell Road, Tucson, AZ 85719"}},{"address":{"text":"30 W Erie St, Chicago, IL 60654"}}]
+method: GET
+queryParams:
+  f: pjson
+  token: "{{ACCESS_TOKEN}}"
+  report: acs_housing
+  format: pdf
+  studyAreas: '[{"address":{"text":"380 New York St. Redlands, CA 92373"}},{"address":{"text":"3722 Crenshaw Blvd, Los Angeles, CA 90016"}},{"address":{"text":"2103 N Hall St, Dallas, TX 75204"}},{"address":{"text":"2807 N. Campbell Road, Tucson, AZ 85719"}},{"address":{"text":"30 W Erie St, Chicago, IL 60654"}}]'
+examples: ./.resources/Demographic Report.resources/examples
+order: 2000

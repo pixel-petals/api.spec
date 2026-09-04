@@ -1,0 +1,37 @@
+$kind: collection
+description: |-
+  # SODA3 API Template
+
+  A ready-to-use template for the **Socrata Open Data API (SODA) version 3**. SODA3 is the API powering thousands of open government data portals worldwide (cities, counties, states, federal agencies).
+
+  ## Getting Started
+
+  1. Find a dataset on any Socrata-powered portal (e.g. data.cityofchicago.org, data.ny.gov)
+  2. On the dataset page, click **Export → API** to find the dataset's API endpoint and 8-character dataset ID
+  3. Update the `datasetId` collection variable with your dataset ID
+  4. Update the `baseUrl` collection variable with your portal's domain
+  5. (Optional) Register for a free app token at https://dev.socrata.com/register and set the `appToken` variable
+
+  ## Collection Variables
+
+  | Variable | Description | Default |
+  |---|---|---|
+  | `baseUrl` | The Socrata portal domain | `https://soda.demo.socrata.com` |
+  | `datasetId` | 8-character dataset identifier | `4tka-6guv` |
+  | `appToken` | Your Socrata app token | *(empty)* |
+  | `socrataUsername` | Socrata username or API key ID | *(empty)* |
+  | `socrataPassword` | Socrata password or API key secret | *(empty)* |
+
+  ## Resources
+
+  - [Getting Started Guide](https://dev.socrata.com/consumers/getting-started.html)
+  - [API Endpoints](https://dev.socrata.com/docs/endpoints)
+  - [SoQL Query Language](https://dev.socrata.com/docs/queries/)
+  - [Authentication](https://dev.socrata.com/docs/authentication.html)
+  - [Register for App Token](https://dev.socrata.com/register)
+variables:
+  baseUrl: ""
+  datasetId: ""
+  appToken: ""
+  socrataUsername: ""
+  socrataPassword: ""

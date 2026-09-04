@@ -1,0 +1,4 @@
+$kind: collection
+name: "Job: Order fulfillment with zones"
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/last-mile-delivery/#last-mile-delivery-with-zones)
+order: 1000

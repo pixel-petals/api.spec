@@ -1,0 +1,97 @@
+$kind: http-request
+description: "[Check the `/static-maps/arcgis/{arcgis-style}/centered-at` documentation](https://developers.arcgis.com/rest/static-maps/arcgis-arcgis-style-centered-at-get/)"
+url: https://static-maps-api.arcgis.com/arcgis/rest/services/static-maps-service/:VERSION/static-maps/arcgis/:ARCGIS-STYLE/with-point
+method: POST
+pathVariables:
+  - key: VERSION
+    value: beta
+    description: API Version
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "default": "beta",
+            "enum": [
+              "beta"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: ARCGIS-STYLE
+    value: streets
+    description: ArcGIS Basemap style
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "navigation",
+              "navigation-night",
+              "streets",
+              "streets-night",
+              "imagery"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+        "graphics": {
+            "point": {
+                "geometry": {
+                    "x": -119.588,
+                    "y": 37.748,
+                    "spatialReference": {
+                        "wkid": 4326
+                    }
+                },
+                "symbol": {
+                    "style": "pin",
+                    "label": "HQ",
+                    "color": "0000FF",
+                    "scale": 1
+                }
+            }
+        },
+        "image": {
+            "width": 400,
+            "height": 400,
+            "format": "png",
+            "padding": [
+                10,
+                10,
+                10,
+                10
+            ]
+        },
+        "map": {
+            "radius": 500
+            // "zoom": 12,
+            // "center": {
+            //     "x": -119.5,
+            //     "y": 37.7,
+            //     "spatialReference": {
+            //         "wkid": 4326
+            //     }
+            // }
+        }
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+order: 3000

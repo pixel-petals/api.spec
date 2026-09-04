@@ -1,0 +1,4 @@
+$kind: collection
+name: "Job: Find an optimized route for a truck delivery"
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/optimized-routing/#job-find-an-optimized-route-for-a-truck-delivery)
+order: 2000

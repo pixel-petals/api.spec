@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  A basemap, also known as a _basemap layer_, is a layer that provides the overall visual context for a map or scene. It typically contains geographic features and labels for continents, lakes, administrative boundaries, streets, cities, and places.
+
+  To learn more go to the [Developer guide > Basemaps](https://developers.arcgis.com/documentation/mapping-and-location-services/mapping/basemap-layers/).
+order: 1000

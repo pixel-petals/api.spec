@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{CKAN_API}}/package_show?id=t_files"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: id
+    value: t_files
+    description: (string) – the id or name of the dataset
+  - key: use_default_schema
+    value: null
+    disabled: true
+    description: "(bool) – use default package schema instead of a custom schema defined with an IDatasetForm plugin (default: False)"
+  - key: include_tracking
+    value: null
+    disabled: true
+    description: "(bool) – add tracking information to dataset and resources (default: False)"
+order: 1000

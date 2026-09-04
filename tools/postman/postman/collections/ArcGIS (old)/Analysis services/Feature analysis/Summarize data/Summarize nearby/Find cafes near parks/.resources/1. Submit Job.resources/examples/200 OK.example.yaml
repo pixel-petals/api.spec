@@ -1,0 +1,36 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/SummarizeNearby/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      token: "{{ACCESS_TOKEN}}"
+      f: json
+      sumNearbyLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/obdb/FeatureServer/0"}'
+      summaryLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Enriched_Portland_Neighborhoods/FeatureServer/0"}'
+      nearType: StraightLine
+      distances: "[0.25]"
+      units: Miles
+      returnBoundaries: "false"
+      outputName: '{"serviceProperties":{"name": "Summarize nearby results"}}'
+      sumShape: "true"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: "{\r
+
+      \  \"jobId\": \"<JOB_ID>\",\r
+
+      \  \"jobStatus\": \"esriJobSubmitted\",\r
+
+      \  \"results\": {},\r
+
+      \  \"inputs\": {},\r
+
+      \  \"messages\": []\r
+
+      }"
+order: 1000

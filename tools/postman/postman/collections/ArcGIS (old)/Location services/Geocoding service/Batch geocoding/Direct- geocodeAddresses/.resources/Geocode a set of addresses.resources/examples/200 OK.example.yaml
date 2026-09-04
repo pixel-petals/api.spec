@@ -1,0 +1,266 @@
+$kind: http-example
+request:
+  url: https://{{geocode-service}}.arcgis.com/arcgis/rest/services/World/GeocodeServer/geocodeAddresses
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: pjson
+      addresses: |-
+        {
+            "records": [
+               {
+                "attributes": {
+                    "objectid": 1,
+                    "address": "Buckingham Palace"
+                }
+                },
+                {
+                    "attributes": {
+                        "objectid": 2,
+                        "address": "Bernardis Restaurant London"
+                    }
+                },
+                {
+                    "attributes": {
+                        "objectid": 3,
+                        "address": "58 Brewer Street, London, England"
+                    }
+                }
+            ]
+        }  
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 07:18:15 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Vary: Origin
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 07:19:15 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: 7a0dd57e
+    x-esri-ftiles-cache-compress: "true"
+    Content-Encoding: gzip
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+       "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+       },
+       "locations": [
+        {
+         "address": "58 Brewer Street, London, England, W1F 9TL",
+         "location": {
+          "x": -0.13606997199997295,
+          "y": 51.511369982000076
+         },
+         "score": 100,
+         "attributes": {
+          "ResultID": 3,
+          "Loc_name": "World",
+          "Status": "M",
+          "Score": 100,
+          "Match_addr": "58 Brewer Street, London, England, W1F 9TL",
+          "LongLabel": "58 Brewer Street, London, England, W1F 9TL, GBR",
+          "ShortLabel": "58 Brewer Street",
+          "Addr_type": "PointAddress",
+          "Type": "",
+          "PlaceName": "",
+          "Place_addr": "58 Brewer Street, London, England, W1F 9TL",
+          "Phone": "",
+          "URL": "",
+          "Rank": 20,
+          "AddBldg": "",
+          "AddNum": "58",
+          "AddNumFrom": "",
+          "AddNumTo": "",
+          "AddRange": "",
+          "Side": "L",
+          "StPreDir": "",
+          "StPreType": "",
+          "StName": "Brewer",
+          "StType": "Street",
+          "StDir": "",
+          "BldgType": "",
+          "BldgName": "",
+          "LevelType": "",
+          "LevelName": "",
+          "UnitType": "",
+          "UnitName": "",
+          "SubAddr": "",
+          "StAddr": "58 Brewer Street",
+          "Block": "",
+          "Sector": "",
+          "Nbrhd": "",
+          "District": "",
+          "City": "London",
+          "MetroArea": "",
+          "Subregion": "London",
+          "Region": "England",
+          "RegionAbbr": "ENG",
+          "Territory": "",
+          "Zone": "Soho",
+          "Postal": "W1F 9TL",
+          "PostalExt": "TL",
+          "Country": "GBR",
+          "LangCode": "ENG",
+          "Distance": 0,
+          "X": -0.13598464435711721,
+          "Y": 51.511325892764766,
+          "DisplayX": -0.13606997213142336,
+          "DisplayY": 51.511369981575456,
+          "Xmin": -0.13706997213142336,
+          "Xmax": -0.13506997213142335,
+          "Ymin": 51.510369981575458,
+          "Ymax": 51.512369981575453,
+          "ExInfo": ""
+         }
+        },
+        {
+         "address": "Buckingham Palace",
+         "location": {
+          "x": -0.14309999999994716,
+          "y": 51.500810000000058
+         },
+         "score": 100,
+         "attributes": {
+          "ResultID": 1,
+          "Loc_name": "World",
+          "Status": "T",
+          "Score": 100,
+          "Match_addr": "Buckingham Palace",
+          "LongLabel": "Buckingham Palace, London, England, SW1A 1, GBR",
+          "ShortLabel": "Buckingham Palace",
+          "Addr_type": "POI",
+          "Type": "Historical Monument",
+          "PlaceName": "Buckingham Palace",
+          "Place_addr": "London, England, SW1A 1",
+          "Phone": "",
+          "URL": "",
+          "Rank": 2.5,
+          "AddBldg": "",
+          "AddNum": "",
+          "AddNumFrom": "",
+          "AddNumTo": "",
+          "AddRange": "",
+          "Side": "",
+          "StPreDir": "",
+          "StPreType": "",
+          "StName": "",
+          "StType": "",
+          "StDir": "",
+          "BldgType": "",
+          "BldgName": "",
+          "LevelType": "",
+          "LevelName": "",
+          "UnitType": "",
+          "UnitName": "",
+          "SubAddr": "",
+          "StAddr": "",
+          "Block": "",
+          "Sector": "",
+          "Nbrhd": "",
+          "District": "",
+          "City": "London",
+          "MetroArea": "",
+          "Subregion": "London",
+          "Region": "England",
+          "RegionAbbr": "ENG",
+          "Territory": "",
+          "Zone": "St James's",
+          "Postal": "SW1A 1",
+          "PostalExt": "",
+          "Country": "GBR",
+          "LangCode": "ENG",
+          "Distance": 0,
+          "X": -0.14113000129708159,
+          "Y": 51.501639976052296,
+          "DisplayX": -0.14309999999994716,
+          "DisplayY": 51.500810000000058,
+          "Xmin": -0.14809999999994716,
+          "Xmax": -0.13809999999994715,
+          "Ymin": 51.495810000000056,
+          "Ymax": 51.505810000000061,
+          "ExInfo": ""
+         }
+        },
+        {
+         "address": "Bernardi's",
+         "location": {
+          "x": -0.16121999999995751,
+          "y": 51.514410000000055
+         },
+         "score": 100,
+         "attributes": {
+          "ResultID": 2,
+          "Loc_name": "World",
+          "Status": "M",
+          "Score": 100,
+          "Match_addr": "Bernardi's",
+          "LongLabel": "Bernardi's, 62 Seymour Street, London, England, W1H 7, GBR",
+          "ShortLabel": "Bernardi's",
+          "Addr_type": "POI",
+          "Type": "Italian Food",
+          "PlaceName": "Bernardi's",
+          "Place_addr": "62 Seymour Street, London, England, W1H 7",
+          "Phone": "+44 20-38267940",
+          "URL": "http://bernardis.co.uk/",
+          "Rank": 19,
+          "AddBldg": "",
+          "AddNum": "62",
+          "AddNumFrom": "",
+          "AddNumTo": "",
+          "AddRange": "",
+          "Side": "L",
+          "StPreDir": "",
+          "StPreType": "",
+          "StName": "Seymour",
+          "StType": "Street",
+          "StDir": "",
+          "BldgType": "",
+          "BldgName": "",
+          "LevelType": "",
+          "LevelName": "",
+          "UnitType": "",
+          "UnitName": "",
+          "SubAddr": "",
+          "StAddr": "62 Seymour Street",
+          "Block": "",
+          "Sector": "",
+          "Nbrhd": "",
+          "District": "",
+          "City": "London",
+          "MetroArea": "",
+          "Subregion": "London",
+          "Region": "England",
+          "RegionAbbr": "ENG",
+          "Territory": "",
+          "Zone": "Marylebone",
+          "Postal": "W1H 7",
+          "PostalExt": "",
+          "Country": "GBR",
+          "LangCode": "ENG",
+          "Distance": 0,
+          "X": -0.1611700438570435,
+          "Y": 51.514300029430416,
+          "DisplayX": -0.16121999999995751,
+          "DisplayY": 51.514410000000055,
+          "Xmin": -0.16621999999995751,
+          "Xmax": -0.1562199999999575,
+          "Ymin": 51.509410000000052,
+          "Ymax": 51.519410000000057,
+          "ExInfo": ""
+         }
+        }
+       ]
+      }
+order: 1000

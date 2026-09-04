@@ -1,0 +1,148 @@
+$kind: http-request
+description: "[Check the documentation](https://developers.arcgis.com/rest/static-maps/arcgis-arcgis-style-along-a-route-post/)"
+url: https://static-maps-api.arcgis.com/arcgis/rest/services/static-maps-service/:VERSION/static-maps/arcgis/:ARCGIS-STYLE/with-polyline
+method: POST
+pathVariables:
+  - key: VERSION
+    value: beta
+    description: API Version
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "default": "beta",
+            "enum": [
+              "beta"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: ARCGIS-STYLE
+    value: streets
+    description: ArcGIS Basemap style
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "enum": [
+              "navigation",
+              "navigation-night",
+              "streets",
+              "streets-night",
+              "imagery"
+            ],
+            "deprecated": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+        "graphics": {
+            "polyline": {
+                "paths": [
+                    [
+                        [
+                            -117.247325,
+                            34.100934
+                        ],
+                        [
+                            -117.247506,
+                            34.104433
+                        ],
+                        [
+                            -117.247962,
+                            34.105095
+                        ],
+                        [
+                            -117.244321,
+                            34.106745
+                        ],
+                        [
+                            -117.209646,
+                            34.106204
+                        ],
+                        [
+                            -117.208757,
+                            34.105251
+                        ],
+                        [
+                            -117.208776,
+                            34.062906
+                        ],
+                        [
+                            -117.206477,
+                            34.062549
+                        ],
+                        [
+                            -117.200110,
+                            34.060783
+                        ],
+                        [
+                            -117.200068,
+                            34.055620
+                        ],
+                        [
+                            -117.195611,
+                            34.055640
+                        ]
+                    ]
+                ],
+                "spatialReference": {
+                    "wkid": 4326
+                }
+            },
+            "polylineStyle": {
+                "startSymbol": {
+                    "style": "circle",
+                    "scale": 1
+                },
+                "endSymbol": {
+                    "style": "pin",
+                    "scale": 2,
+                    "label": "E"
+                },
+                "lineSymbol": {
+                    "width": 4,
+                    "style": "solid",
+                    "color": "007ac2"
+                }
+            }
+        },
+        "image": {
+            "width": 600,
+            "height": 600,
+            "format": "webp",
+            "padding": [
+                5
+            ]
+        },
+        "map": {
+            // "radius": 100
+             "zoom": 12
+            // "center": {
+            //     "x": -117.1957,
+            //     "y": 34.0561,
+            //     "spatialReference": {
+            //         "wkid": 4326
+            //     }
+            // }
+        }
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{ACCESS_TOKEN}}"
+order: 9000

@@ -1,0 +1,4 @@
+$kind: collection
+name: "Direct: geocodeAddresses"
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/batch-geocoding/#direct-geocode-a-set-of-addresses)
+order: 1000

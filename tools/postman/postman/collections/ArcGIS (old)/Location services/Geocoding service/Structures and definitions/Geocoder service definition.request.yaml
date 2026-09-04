@@ -1,0 +1,29 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/how-to-build-a-geocoding-app/)
+url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer?f=json&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  - key: f
+    value: json
+    description: "(Required) Format of the response: json, pjson, html, ..."
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    description: (Required on Platform) You need a valid access token. To learn more, read the collection's documentation.
+auth:
+  type: noauth
+scripts:
+  - type: beforeRequest
+    code: |-
+      // const access_token = pm.variables.get("access_token");
+      // const geocode_api = pm.variables.get("geocode-api");
+
+      // if(geocode_api === "geocode" && pm.request.url.query.get('token')){
+      //     const error_msg = "When using ArcGIS Online Search should not include a token";
+      //     throw new Error(error_msg);
+      // }else if (!access_token || access_token === "YOUR_KEY_OR_TOKEN") {
+      //     const error_msg = "Add `access_token` variable with an API Key, or run ArcGIS Identity collection first";
+      //     throw new Error(error_msg);
+      // }
+    language: text/javascript
+examples: ./.resources/Geocoder service definition.resources/examples
+order: 1000

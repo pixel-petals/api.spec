@@ -1,0 +1,128 @@
+$kind: http-example
+request:
+  url: https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?f=pjson&token={{ACCESS_TOKEN}}&singleLine=Carretera N-6 KM 490, Lugo​&category=Distance Marker&outFields=*
+  method: GET
+  queryParams:
+    - key: f
+      value: pjson
+      description: "(Required) Format of the response: json, pjson, html, ..."
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      description: (Required on Platform) You need a valid access token. To learn more, read the collection's documentation.
+    - key: singleLine
+      value: Carretera N-6 KM 490, Lugo​
+    - key: category
+      value: Distance Marker
+    - key: outFields
+      value: "*"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Thu, 18 Dec 2025 16:50:18 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: max-age=0,must-revalidate
+    X-Content-Type-Options: nosniff
+    Vary: Origin
+    Server: ""
+    Set-Cookie: AGS_ROLES="sym-gcm|1|5W4KusPW0TDJ0OIHhONm6g==|_sbSSNVZWK4JSqKonJfYbxNq2jLvwg7vXaLv6gFOmhbcwlJ4CkrywTXhUrVdiOZb0Ac3C9VkzKgOhCUdgVlEalW5zwdFOahIF-DSHDWoJeMfn55aeiNNFB7EDk2YntWv2tXcpWCzE-W_MgAbNGTEjwxM7ZCtLzVHsEM8-m6Tm3U84vTXGYYq0cE6ETXbPcDSpIAb9snVR9yT7F4Bq1B1r0ueYTLcFOlR3hHHSGqC2CS1ZM5RBzLW6qzFk2dv3QaxJnSPr4Mn0T9C8oNI1jeLkowczK4VwQrS2a2rFY2N-PurgMRZytRoXzHpGFO_gJl-GBKTvH5Cbm65Zmr3J-WqgdWnoXq0MGQA1aRjDktxzn-Z3qg8KYCBYCzuMJZu9R66vWNMObcLvDa052WKt7t7Cha4YK5_vAe-5K6l0XWLH5UHrd6OpTJk2MbCAMYd0Vx0_AdPPxNJfyBwqLNae7nTuhTs2uqmng_3kPJwr9CEJrz28OfXkv1aLlEm6OnGNNqThHRlYpIHH5C2nCD_UwPZrwB6loXMd8TtQBssC9Y0U6lbc-ud35x_DEB8WuCmuEc6qQInVONEGfvTyKE2UPqWahAnBULi6JLovbxuaLueUXAquMZNfFX2lzmZ2zF9SKshxXkZo-1xCXgPynK5DAQx1nCtX9j1rm0_LvTnDr5pZQZymuJt2qJinlEwCByQRJqP14UNHlN3GVK7Lb_pN-5at01okoO5-YuLRuPzN-a0B8JsbEEpfya1sTJ7i6WjJbRwU6wqQ_bpA9QWJsI6jx7tAX54Z9QutFOUG1cLnHXvieorSs2EBtINLfQ1ooIYtzF2Q0w-CYWCTRHDd-yBfZtF"; Version=1; Max-Age=60; Expires=Thu, 18 Dec 2025 16:51:18 GMT; Path=/arcgis/rest; Secure; HttpOnly
+    ETag: '"22141ac2"'
+    Content-Encoding: gzip
+    X-Region: us-east-1
+  body:
+    type: text
+    content: |-
+      {
+          "spatialReference": {
+              "wkid": 4326,
+              "latestWkid": 4326
+          },
+          "candidates": [
+              {
+                  "address": "Carretera N-6 KM 490, 27163, O Corgo, Lugo, Galicia",
+                  "location": {
+                      "x": -7.458170003937,
+                      "y": 42.951573023084
+                  },
+                  "score": 94.53,
+                  "attributes": {
+                      "Loc_name": "World",
+                      "Status": "M",
+                      "Score": 94.53,
+                      "Match_addr": "Carretera N-6 KM 490, 27163, O Corgo, Lugo, Galicia",
+                      "LongLabel": "Carretera N-6 KM 490, 27163, O Corgo, Lugo, Galicia, ESP",
+                      "ShortLabel": "Carretera N-6 KM 490",
+                      "Addr_type": "DistanceMarker",
+                      "Type": "",
+                      "PlaceName": "",
+                      "Place_addr": "Carretera N-6 KM 490, 27163, O Corgo, Lugo, Galicia",
+                      "Phone": "",
+                      "URL": "",
+                      "Rank": 20,
+                      "AddBldg": "",
+                      "AddNum": "490",
+                      "AddNumFrom": "",
+                      "AddNumTo": "",
+                      "AddRange": "",
+                      "Side": "",
+                      "StPreDir": "",
+                      "StPreType": "Carretera",
+                      "StName": "N-6",
+                      "StType": "",
+                      "StDir": "",
+                      "BldgComp": "",
+                      "BldgType": "",
+                      "BldgName": "",
+                      "LevelType": "",
+                      "LevelName": "",
+                      "UnitType": "",
+                      "UnitName": "",
+                      "RoomType": "",
+                      "RoomName": "",
+                      "WingType": "",
+                      "WingName": "",
+                      "SubAddr": "",
+                      "StAddr": "Carretera N-6 KM 490",
+                      "Block": "",
+                      "Sector": "",
+                      "Nbrhd": "",
+                      "District": "",
+                      "City": "O Corgo",
+                      "MetroArea": "",
+                      "Subregion": "Lugo",
+                      "Region": "Galicia",
+                      "RegionAbbr": "GA",
+                      "Territory": "",
+                      "Zone": "",
+                      "Postal": "27163",
+                      "PostalExt": "",
+                      "Country": "ESP",
+                      "CntryName": "España",
+                      "LangCode": "SPA",
+                      "Distance": 0,
+                      "X": -7.458170003937,
+                      "Y": 42.951573023084,
+                      "DisplayX": -7.458170003937,
+                      "DisplayY": 42.951573023084,
+                      "Xmin": -7.463170003937,
+                      "Xmax": -7.453170003937,
+                      "Ymin": 42.946573023084,
+                      "Ymax": 42.956573023084,
+                      "ExInfo": "",
+                      "MatchID": "AQb9oQIAVwcCAJUBBAAAAAAMDUNBUlJFVEVSQSBOIDYVAzQ5MGYDU1BB",
+                      "PotentialID": "",
+                      "StrucType": "",
+                      "StrucDet": ""
+                  },
+                  "extent": {
+                      "xmin": -7.463170003937,
+                      "ymin": 42.946573023084,
+                      "xmax": -7.453170003937,
+                      "ymax": 42.956573023084
+                  }
+              }
+          ]
+      }
+order: 1000

@@ -1,0 +1,1202 @@
+$kind: http-example
+request:
+  url: https://{{route-service}}.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/solve?f=json&token={{access_token}}&stops=-122.68782,45.51238;-122.690176,45.522054;-122.614995,45.526201&startTime=now&returnDirections=true&directionsLanguage=es
+  method: GET
+  queryParams:
+    f: json
+    token: "{{access_token}}"
+    stops: -122.68782,45.51238;-122.690176,45.522054;-122.614995,45.526201
+    startTime: now
+    returnDirections: "true"
+    directionsLanguage: es
+  body:
+    type: urlencoded
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 07:21:06 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "4328"
+    Connection: keep-alive
+    Cache-Control: max-age=0,must-revalidate
+    Expires: Thu, 01 Jan 1970 00:00:00 GMT
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 07:22:06 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"bbf33613"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "messages": [],
+          "checksum": "K-m3ALvptwDZhbgA",
+          "routes": {
+              "fieldAliases": {
+                  "ObjectID": "ObjectID",
+                  "Name": "Name",
+                  "FirstStopID": "FirstStopID",
+                  "LastStopID": "LastStopID",
+                  "StopCount": "StopCount",
+                  "StartTime": "StartTime",
+                  "EndTime": "EndTime",
+                  "StartTimeUTC": "StartTimeUTC",
+                  "EndTimeUTC": "EndTimeUTC",
+                  "TotalWait_Minutes": "TotalWait_Minutes",
+                  "TotalWait_TravelTime": "TotalWait_TravelTime",
+                  "TotalWait_TimeAt1KPH": "TotalWait_TimeAt1KPH",
+                  "TotalWait_WalkTime": "TotalWait_WalkTime",
+                  "TotalWait_TruckMinutes": "TotalWait_TruckMinutes",
+                  "TotalWait_TruckTravelTime": "TotalWait_TruckTravelTime",
+                  "TotalViolation_Minutes": "TotalViolation_Minutes",
+                  "TotalViolation_TravelTime": "TotalViolation_TravelTime",
+                  "TotalViolation_TimeAt1KPH": "TotalViolation_TimeAt1KPH",
+                  "TotalViolation_WalkTime": "TotalViolation_WalkTime",
+                  "TotalViolation_TruckMinutes": "TotalViolation_TruckMinutes",
+                  "TotalViolation_TruckTravelTime": "TotalViolation_TruckTravelTime",
+                  "Total_Minutes": "Total_Minutes",
+                  "Total_TravelTime": "Total_TravelTime",
+                  "Total_Miles": "Total_Miles",
+                  "Total_Kilometers": "Total_Kilometers",
+                  "Total_TimeAt1KPH": "Total_TimeAt1KPH",
+                  "Total_WalkTime": "Total_WalkTime",
+                  "Total_TruckMinutes": "Total_TruckMinutes",
+                  "Total_TruckTravelTime": "Total_TruckTravelTime",
+                  "Shape_Length": "Shape_Length"
+              },
+              "geometryType": "esriGeometryPolyline",
+              "spatialReference": {
+                  "wkid": 4326,
+                  "latestWkid": 4326
+              },
+              "features": [
+                  {
+                      "attributes": {
+                          "ObjectID": 1,
+                          "Name": "Location 1 - Location 3",
+                          "FirstStopID": 1,
+                          "LastStopID": 3,
+                          "StopCount": 3,
+                          "StartTime": 1637738466000,
+                          "EndTime": 1637739325546,
+                          "StartTimeUTC": 1637738466000,
+                          "EndTimeUTC": 1637739325546,
+                          "TotalWait_Minutes": null,
+                          "TotalWait_TravelTime": null,
+                          "TotalWait_TimeAt1KPH": null,
+                          "TotalWait_WalkTime": null,
+                          "TotalWait_TruckMinutes": null,
+                          "TotalWait_TruckTravelTime": null,
+                          "TotalViolation_Minutes": null,
+                          "TotalViolation_TravelTime": null,
+                          "TotalViolation_TimeAt1KPH": null,
+                          "TotalViolation_WalkTime": null,
+                          "TotalViolation_TruckMinutes": null,
+                          "TotalViolation_TruckTravelTime": null,
+                          "Total_Minutes": null,
+                          "Total_TravelTime": 14.325770832763013,
+                          "Total_Miles": 5.4590918760305449,
+                          "Total_Kilometers": 8.7855567561385008,
+                          "Total_TimeAt1KPH": null,
+                          "Total_WalkTime": null,
+                          "Total_TruckMinutes": null,
+                          "Total_TruckTravelTime": null,
+                          "Shape_Length": 0.1029022714663807
+                      },
+                      "geometry": {
+                          "paths": [
+                              [
+                                  [
+                                      -122.68838520099996,
+                                      45.512624920000064
+                                  ],
+                                  [
+                                      -122.68836999999996,
+                                      45.512660000000039
+                                  ],
+                                  [
+                                      -122.68827999999996,
+                                      45.512970000000053
+                                  ],
+                                  [
+                                      -122.68811999999997,
+                                      45.513230000000078
+                                  ],
+                                  [
+                                      -122.68789999999996,
+                                      45.51362000000006
+                                  ],
+                                  [
+                                      -122.68774999999999,
+                                      45.513880000000029
+                                  ],
+                                  [
+                                      -122.68744999999996,
+                                      45.514430000000061
+                                  ],
+                                  [
+                                      -122.68736999999999,
+                                      45.514570000000049
+                                  ],
+                                  [
+                                      -122.68718999999999,
+                                      45.514920000000075
+                                  ],
+                                  [
+                                      -122.68703999999997,
+                                      45.515230000000031
+                                  ],
+                                  [
+                                      -122.68662999999998,
+                                      45.515910000000076
+                                  ],
+                                  [
+                                      -122.68642999999997,
+                                      45.516240000000039
+                                  ],
+                                  [
+                                      -122.68625999999995,
+                                      45.516550000000052
+                                  ],
+                                  [
+                                      -122.68729999999999,
+                                      45.516840000000059
+                                  ],
+                                  [
+                                      -122.68791999999996,
+                                      45.516990000000078
+                                  ],
+                                  [
+                                      -122.68836999999996,
+                                      45.517100000000028
+                                  ],
+                                  [
+                                      -122.68812999999994,
+                                      45.517520000000047
+                                  ],
+                                  [
+                                      -122.68803999999994,
+                                      45.517700000000048
+                                  ],
+                                  [
+                                      -122.68797999999998,
+                                      45.517810000000054
+                                  ],
+                                  [
+                                      -122.68794999999994,
+                                      45.517870000000073
+                                  ],
+                                  [
+                                      -122.68782999999996,
+                                      45.518100000000061
+                                  ],
+                                  [
+                                      -122.68766999999997,
+                                      45.518390000000068
+                                  ],
+                                  [
+                                      -122.68758999999994,
+                                      45.51854000000003
+                                  ],
+                                  [
+                                      -122.68742999999995,
+                                      45.518830000000037
+                                  ],
+                                  [
+                                      -122.68727999999999,
+                                      45.519100000000037
+                                  ],
+                                  [
+                                      -122.68707999999998,
+                                      45.519460000000038
+                                  ],
+                                  [
+                                      -122.68690999999995,
+                                      45.519770000000051
+                                  ],
+                                  [
+                                      -122.68927999999994,
+                                      45.520400000000052
+                                  ],
+                                  [
+                                      -122.68984999999998,
+                                      45.520560000000046
+                                  ],
+                                  [
+                                      -122.69080999999994,
+                                      45.52081000000004
+                                  ],
+                                  [
+                                      -122.69030999999995,
+                                      45.521810000000073
+                                  ],
+                                  [
+                                      -122.69018805499996,
+                                      45.522058521000076
+                                  ]
+                              ],
+                              [
+                                  [
+                                      -122.69018805499996,
+                                      45.522058521000076
+                                  ],
+                                  [
+                                      -122.69016999999997,
+                                      45.522160000000042
+                                  ],
+                                  [
+                                      -122.69010999999995,
+                                      45.52228000000008
+                                  ],
+                                  [
+                                      -122.68969999999996,
+                                      45.52281000000005
+                                  ],
+                                  [
+                                      -122.68951999999996,
+                                      45.522980000000075
+                                  ],
+                                  [
+                                      -122.68787999999995,
+                                      45.522910000000081
+                                  ],
+                                  [
+                                      -122.68716999999998,
+                                      45.522880000000043
+                                  ],
+                                  [
+                                      -122.68653999999998,
+                                      45.522890000000075
+                                  ],
+                                  [
+                                      -122.68609999999995,
+                                      45.522910000000081
+                                  ],
+                                  [
+                                      -122.68578999999994,
+                                      45.522930000000031
+                                  ],
+                                  [
+                                      -122.68519999999995,
+                                      45.522930000000031
+                                  ],
+                                  [
+                                      -122.68449999999996,
+                                      45.522940000000062
+                                  ],
+                                  [
+                                      -122.68411999999995,
+                                      45.522940000000062
+                                  ],
+                                  [
+                                      -122.68396999999999,
+                                      45.522940000000062
+                                  ],
+                                  [
+                                      -122.68314999999996,
+                                      45.522950000000037
+                                  ],
+                                  [
+                                      -122.68210999999997,
+                                      45.522970000000043
+                                  ],
+                                  [
+                                      -122.68193999999994,
+                                      45.522970000000043
+                                  ],
+                                  [
+                                      -122.68111999999996,
+                                      45.52299000000005
+                                  ],
+                                  [
+                                      -122.68020999999999,
+                                      45.523000000000081
+                                  ],
+                                  [
+                                      -122.68006999999994,
+                                      45.523000000000081
+                                  ],
+                                  [
+                                      -122.67992999999996,
+                                      45.523000000000081
+                                  ],
+                                  [
+                                      -122.67930999999999,
+                                      45.523010000000056
+                                  ],
+                                  [
+                                      -122.67908999999997,
+                                      45.523010000000056
+                                  ],
+                                  [
+                                      -122.67888999999997,
+                                      45.523010000000056
+                                  ],
+                                  [
+                                      -122.67859999999996,
+                                      45.523010000000056
+                                  ],
+                                  [
+                                      -122.67845999999997,
+                                      45.523010000000056
+                                  ],
+                                  [
+                                      -122.67834999999997,
+                                      45.523010000000056
+                                  ],
+                                  [
+                                      -122.67745999999994,
+                                      45.523040000000037
+                                  ],
+                                  [
+                                      -122.67643999999996,
+                                      45.523060000000044
+                                  ],
+                                  [
+                                      -122.67588999999998,
+                                      45.523070000000075
+                                  ],
+                                  [
+                                      -122.67501999999996,
+                                      45.52308000000005
+                                  ],
+                                  [
+                                      -122.67437999999999,
+                                      45.523090000000025
+                                  ],
+                                  [
+                                      -122.67403999999999,
+                                      45.523090000000025
+                                  ],
+                                  [
+                                      -122.67377999999997,
+                                      45.523090000000025
+                                  ],
+                                  [
+                                      -122.67335999999995,
+                                      45.523090000000025
+                                  ],
+                                  [
+                                      -122.67274999999995,
+                                      45.523090000000025
+                                  ],
+                                  [
+                                      -122.67192999999997,
+                                      45.523090000000025
+                                  ],
+                                  [
+                                      -122.67131999999998,
+                                      45.523100000000056
+                                  ],
+                                  [
+                                      -122.67091999999997,
+                                      45.523100000000056
+                                  ],
+                                  [
+                                      -122.67035999999996,
+                                      45.523100000000056
+                                  ],
+                                  [
+                                      -122.67021999999997,
+                                      45.523100000000056
+                                  ],
+                                  [
+                                      -122.66960999999998,
+                                      45.523090000000025
+                                  ],
+                                  [
+                                      -122.66918999999996,
+                                      45.52308000000005
+                                  ],
+                                  [
+                                      -122.66867999999999,
+                                      45.523070000000075
+                                  ],
+                                  [
+                                      -122.66666999999995,
+                                      45.523030000000063
+                                  ],
+                                  [
+                                      -122.66590999999994,
+                                      45.523010000000056
+                                  ],
+                                  [
+                                      -122.66579999999999,
+                                      45.523010000000056
+                                  ],
+                                  [
+                                      -122.66511999999994,
+                                      45.523010000000056
+                                  ],
+                                  [
+                                      -122.66479999999996,
+                                      45.52299000000005
+                                  ],
+                                  [
+                                      -122.66386999999997,
+                                      45.522970000000043
+                                  ],
+                                  [
+                                      -122.66317999999995,
+                                      45.522970000000043
+                                  ],
+                                  [
+                                      -122.66273999999999,
+                                      45.522970000000043
+                                  ],
+                                  [
+                                      -122.66228999999998,
+                                      45.522960000000069
+                                  ],
+                                  [
+                                      -122.66176999999999,
+                                      45.522950000000037
+                                  ],
+                                  [
+                                      -122.66071999999997,
+                                      45.522940000000062
+                                  ],
+                                  [
+                                      -122.66071999999997,
+                                      45.523660000000064
+                                  ],
+                                  [
+                                      -122.66071999999997,
+                                      45.524020000000064
+                                  ],
+                                  [
+                                      -122.66070999999999,
+                                      45.525070000000028
+                                  ],
+                                  [
+                                      -122.65968999999996,
+                                      45.525790000000029
+                                  ],
+                                  [
+                                      -122.65944999999999,
+                                      45.525930000000074
+                                  ],
+                                  [
+                                      -122.65836999999999,
+                                      45.526650000000075
+                                  ],
+                                  [
+                                      -122.65747999999996,
+                                      45.527080000000069
+                                  ],
+                                  [
+                                      -122.65717999999998,
+                                      45.527210000000025
+                                  ],
+                                  [
+                                      -122.65690999999998,
+                                      45.527330000000063
+                                  ],
+                                  [
+                                      -122.65511999999995,
+                                      45.527980000000071
+                                  ],
+                                  [
+                                      -122.65475999999995,
+                                      45.528080000000045
+                                  ],
+                                  [
+                                      -122.65447999999998,
+                                      45.528150000000039
+                                  ],
+                                  [
+                                      -122.65356999999995,
+                                      45.528400000000033
+                                  ],
+                                  [
+                                      -122.64784999999995,
+                                      45.529750000000035
+                                  ],
+                                  [
+                                      -122.64647999999994,
+                                      45.529840000000036
+                                  ],
+                                  [
+                                      -122.64496999999994,
+                                      45.529910000000029
+                                  ],
+                                  [
+                                      -122.64486999999997,
+                                      45.529910000000029
+                                  ],
+                                  [
+                                      -122.64472999999998,
+                                      45.529910000000029
+                                  ],
+                                  [
+                                      -122.64450999999997,
+                                      45.529910000000029
+                                  ],
+                                  [
+                                      -122.64391999999998,
+                                      45.529920000000061
+                                  ],
+                                  [
+                                      -122.64342999999997,
+                                      45.529950000000042
+                                  ],
+                                  [
+                                      -122.63810999999998,
+                                      45.530210000000068
+                                  ],
+                                  [
+                                      -122.63735999999994,
+                                      45.53025000000008
+                                  ],
+                                  [
+                                      -122.63557999999995,
+                                      45.53045000000003
+                                  ],
+                                  [
+                                      -122.63511999999997,
+                                      45.530560000000037
+                                  ],
+                                  [
+                                      -122.63391999999999,
+                                      45.531130000000076
+                                  ],
+                                  [
+                                      -122.63241999999997,
+                                      45.532680000000028
+                                  ],
+                                  [
+                                      -122.63150999999999,
+                                      45.533490000000029
+                                  ],
+                                  [
+                                      -122.63068999999996,
+                                      45.533900000000074
+                                  ],
+                                  [
+                                      -122.63021999999995,
+                                      45.534050000000036
+                                  ],
+                                  [
+                                      -122.62877999999995,
+                                      45.534220000000062
+                                  ],
+                                  [
+                                      -122.62729999999999,
+                                      45.53403000000003
+                                  ],
+                                  [
+                                      -122.62577999999996,
+                                      45.533680000000061
+                                  ],
+                                  [
+                                      -122.62563999999998,
+                                      45.53365000000008
+                                  ],
+                                  [
+                                      -122.62452999999999,
+                                      45.533260000000041
+                                  ],
+                                  [
+                                      -122.62406999999996,
+                                      45.533150000000035
+                                  ],
+                                  [
+                                      -122.62294999999995,
+                                      45.532910000000072
+                                  ],
+                                  [
+                                      -122.62295999999998,
+                                      45.532600000000059
+                                  ],
+                                  [
+                                      -122.62299999999999,
+                                      45.531500000000051
+                                  ],
+                                  [
+                                      -122.62299999999999,
+                                      45.531130000000076
+                                  ],
+                                  [
+                                      -122.62298999999996,
+                                      45.530260000000055
+                                  ],
+                                  [
+                                      -122.62297999999998,
+                                      45.529940000000067
+                                  ],
+                                  [
+                                      -122.62299999999999,
+                                      45.528940000000034
+                                  ],
+                                  [
+                                      -122.62299999999999,
+                                      45.528740000000028
+                                  ],
+                                  [
+                                      -122.62300999999997,
+                                      45.526990000000069
+                                  ],
+                                  [
+                                      -122.62318999999997,
+                                      45.526690000000031
+                                  ],
+                                  [
+                                      -122.62332999999995,
+                                      45.526610000000062
+                                  ],
+                                  [
+                                      -122.62341999999995,
+                                      45.526440000000036
+                                  ],
+                                  [
+                                      -122.62336999999997,
+                                      45.526300000000049
+                                  ],
+                                  [
+                                      -122.62323999999995,
+                                      45.526200000000074
+                                  ],
+                                  [
+                                      -122.62299999999999,
+                                      45.52615000000003
+                                  ],
+                                  [
+                                      -122.62275999999997,
+                                      45.526200000000074
+                                  ],
+                                  [
+                                      -122.62268999999998,
+                                      45.526260000000036
+                                  ],
+                                  [
+                                      -122.62214999999998,
+                                      45.526430000000062
+                                  ],
+                                  [
+                                      -122.62169999999998,
+                                      45.526430000000062
+                                  ],
+                                  [
+                                      -122.62078999999994,
+                                      45.52642000000003
+                                  ],
+                                  [
+                                      -122.62001999999995,
+                                      45.52642000000003
+                                  ],
+                                  [
+                                      -122.61822999999998,
+                                      45.52642000000003
+                                  ],
+                                  [
+                                      -122.61730999999997,
+                                      45.526410000000055
+                                  ],
+                                  [
+                                      -122.61670999999996,
+                                      45.526410000000055
+                                  ],
+                                  [
+                                      -122.61616999999995,
+                                      45.526410000000055
+                                  ],
+                                  [
+                                      -122.61554999999998,
+                                      45.52642000000003
+                                  ],
+                                  [
+                                      -122.61523999999997,
+                                      45.526440000000036
+                                  ],
+                                  [
+                                      -122.61496999999997,
+                                      45.526470000000074
+                                  ],
+                                  [
+                                      -122.61496999999997,
+                                      45.526201000000071
+                                  ]
+                              ]
+                          ]
+                      }
+                  }
+              ]
+          },
+          "directions": [
+              {
+                  "routeId": 1,
+                  "routeName": "Location 1 - Location 3",
+                  "summary": {
+                      "totalLength": 5.4590814015617806,
+                      "totalTime": 14.325770832763013,
+                      "totalDriveTime": 14.325770832763013,
+                      "envelope": {
+                          "xmin": -122.69080999999994,
+                          "ymin": 45.512624920000064,
+                          "xmax": -122.61496999999997,
+                          "ymax": 45.534220000000062,
+                          "spatialReference": {
+                              "wkid": 4326,
+                              "latestWkid": 4326
+                          }
+                      }
+                  },
+                  "features": [
+                      {
+                          "attributes": {
+                              "length": 0,
+                              "time": 0,
+                              "text": "Salga desde Location 1",
+                              "ETA": 1637738466000,
+                              "arriveTimeUTC": 1637738466000,
+                              "maneuverType": "esriDMTDepart"
+                          },
+                          "compressedGeometry": "+gm5a9-1vvvvvh+nnn9tf+0+0",
+                          "strings": [
+                              {
+                                  "string": "7:21 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "Location 1",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.024438111744741864,
+                              "time": 0.041893986230958163,
+                              "text": "Vaya hacia el noreste",
+                              "ETA": 1637738466000,
+                              "arriveTimeUTC": 1637738466000,
+                              "maneuverType": "esriDMTStraight"
+                          },
+                          "compressedGeometry": "+gm5a9-1vvvvvh+nnn9tf+8a+j6+1h7+59i",
+                          "strings": [
+                              {
+                                  "string": "7:21 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.26605415235372071,
+                              "time": 1.4971605385856042,
+                              "text": "Gire a la derecha por SW 12th Ave",
+                              "ETA": 1637738468514,
+                              "arriveTimeUTC": 1637738468514,
+                              "maneuverType": "esriDMTBearRight"
+                          },
+                          "compressedGeometry": "+gm5ao-1vvvvvg+nnngfh+2ng+4e7+3ob+6lb+2i2+4e7+543+9cr+1bo+2ci+32f+5ve+2i1+59i+709+bjv+3dc+5kg+2t0+59i",
+                          "strings": [
+                              {
+                                  "string": "7:21 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "SW 12th Ave",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.10931443650918224,
+                              "time": 0.40908583615435834,
+                              "text": "En el semáforo, gire a la izquierda en SW Jefferson St",
+                              "ETA": 1637738558343,
+                              "arriveTimeUTC": 1637738558343,
+                              "maneuverType": "esriDMTTurnLeft"
+                          },
+                          "compressedGeometry": "+gm5ab-1vvurso+nnpd38-hos+4ul-aj4+2i1-7m5+1s5",
+                          "strings": [
+                              {
+                                  "string": "7:23 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "SW Jefferson St",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.19760052854417529,
+                              "time": 0.79040363073995579,
+                              "text": "En el semáforo, gire a la derecha en SW 14th Ave",
+                              "ETA": 1637738582888,
+                              "arriveTimeUTC": 1637738582888,
+                              "maneuverType": "esriDMTTurnRight"
+                          },
+                          "compressedGeometry": "+gm5ab-1vvvvut+nnpmg3+439+75o+1h8+32f+10q+1s5+gd+10q+21k+3tq+2nh+4uk+1bo+2i2+2nh+4uk+2i1+4jm+3dd+64t+2t0+59i",
+                          "strings": [
+                              {
+                                  "string": "7:23 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "SW 14th Ave",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.20253607790059805,
+                              "time": 0.86801342790585911,
+                              "text": "En el semáforo, gire a la izquierda en SW Taylor St",
+                              "ETA": 1637738630313,
+                              "arriveTimeUTC": 1637738630313,
+                              "maneuverType": "esriDMTTurnLeft"
+                          },
+                          "compressedGeometry": "+gm4vf-1vvtta2+nnqklh-18gb+aoj-9np+2nh-gd3+48n",
+                          "strings": [
+                              {
+                                  "string": "7:24 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "SW Taylor St",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.089476585080921392,
+                              "time": 0.67107567571323123,
+                              "text": "En el semáforo, gire a la derecha en SW 18th Ave",
+                              "ETA": 1637738682393,
+                              "arriveTimeUTC": 1637738682393,
+                              "maneuverType": "esriDMTTurnRight"
+                          },
+                          "compressedGeometry": "+gm4vf-1vvvvv9+nnr6ec+8hg+h30+22m+47u",
+                          "strings": [
+                              {
+                                  "string": "7:25 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "SW 18th Ave",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0,
+                              "time": 0,
+                              "text": "Ha llegado a Location 2, que se encuentra a la derecha",
+                              "ETA": 1637738722658,
+                              "arriveTimeUTC": 1637738722658,
+                              "maneuverType": "esriDMTStop"
+                          },
+                          "compressedGeometry": "+gm527-1vvvvsg+nnrvmf+0+0",
+                          "strings": [
+                              {
+                                  "string": "7:25 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "Location 2",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0,
+                              "time": 0,
+                              "text": "Salga de Location 2",
+                              "ETA": 1637738722658,
+                              "arriveTimeUTC": 1637738722658,
+                              "maneuverType": "esriDMTDepart"
+                          },
+                          "compressedGeometry": "+gm527-1vvvvsg+nnrvmf+0+0",
+                          "strings": [
+                              {
+                                  "string": "7:25 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "Location 2",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.07172433857076875,
+                              "time": 0.53793357142467002,
+                              "text": "Vaya al norte por SW 18th Ave",
+                              "ETA": 1637738722658,
+                              "arriveTimeUTC": 1637738722658,
+                              "maneuverType": "esriDMTStraight"
+                          },
+                          "compressedGeometry": "+gm527-1vvvvsg+nnrvmf+9s+1nh+10r+21k+708+91t+32f+2sv",
+                          "strings": [
+                              {
+                                  "string": "7:25 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "SW 18th Ave",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.36848867540576308,
+                              "time": 1.0754399741971001,
+                              "text": "En el semáforo, gire a la derecha en W Burnside St",
+                              "ETA": 1637738754934,
+                              "arriveTimeUTC": 1637738754934,
+                              "maneuverType": "esriDMTTurnRight"
+                          },
+                          "compressedGeometry": "+gm557-1vvvvv5+nnsjn3+s12-16a+c4b-gd+aoj+5f+7gm+au+59i+au+a2n+0+bus+5f+6fs+0+2i1+0+e0h+5g+hos+au+2sv+0",
+                          "strings": [
+                              {
+                                  "string": "7:26 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "W Burnside St",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.56229566219093896,
+                              "time": 1.5145259104141182,
+                              "text": "En el semáforo, manténgase a la izquierda en la bifurcación por W Burnside St",
+                              "ETA": 1637738819460,
+                              "arriveTimeUTC": 1637738819460,
+                              "maneuverType": "esriDMTForkLeft"
+                          },
+                          "compressedGeometry": "+gm670-1vvvvtc+nnu3je+e0i+au+fhp+5f+2ci+0+2cj+0+aj5+5f+3ob+0+3dd+0+4uk+0+2ci+0+1s6+0+f6r+gd+hdv+au+9cr+5f+ert+5f+au3+5f+5pv+0+4e7+0+75o+0+adm+0+e0i+0+adl+5f+6qq+0+9ib+0",
+                          "strings": [
+                              {
+                                  "string": "7:27 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "W Burnside St",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.0067963298236457604,
+                              "time": 0.016990857159811412,
+                              "text": "Siga adelante por Burnside Brg",
+                              "ETA": 1637738910332,
+                              "arriveTimeUTC": 1637738910332,
+                              "maneuverType": "esriDMTStraight"
+                          },
+                          "compressedGeometry": "+gm7ql-1vvvvvk+no0fa3+2cj+0",
+                          "strings": [
+                              {
+                                  "string": "7:29 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "Burnside Brg",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.46138928539809143,
+                              "time": 1.1534754266915996,
+                              "text": "Siga adelante por W Burnside St",
+                              "ETA": 1637738911351,
+                              "arriveTimeUTC": 1637738911351,
+                              "maneuverType": "esriDMTStraight"
+                          },
+                          "compressedGeometry": "+gm7r9-1vvvvvn+no0g6i+adn-5f+75o-5f+8n1-5g+12bj-ls+cvp-au+1s5+0+bk1+0+5f1-au+fsp-au+bpf+0+7gn+0+7m6-5f+8sf-5f+hue-5f",
+                          "strings": [
+                              {
+                                  "string": "7:29 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "W Burnside St",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.14709840518420073,
+                              "time": 0.33945850944321876,
+                              "text": "En el semáforo, gire a la izquierda en NE Grand Ave (OR-99E N)",
+                              "ETA": 1637738980560,
+                              "arriveTimeUTC": 1637738980560,
+                              "maneuverType": "esriDMTTurnLeft"
+                          },
+                          "compressedGeometry": "+gm95k-1vvvvsg+no29mk+0+c9u+0+64u+5f+huf",
+                          "strings": [
+                              {
+                                  "string": "7:30 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "NE Grand Ave",
+                                  "stringType": "esriDSTStreetName"
+                              },
+                              {
+                                  "string": "OR-99E N",
+                                  "stringType": "esriDSTAltName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 1.9123436355499344,
+                              "time": 2.3588170070675005,
+                              "text": "Gire a la derecha para incorporarse a I-84 E / US-30 E en dirección a Portland Airport / The Dalles",
+                              "ETA": 1637739000927,
+                              "arriveTimeUTC": 1637739000927,
+                              "maneuverType": "esriDMTTurnRight"
+                          },
+                          "compressedGeometry": "+gm95m-1vvvvum+no3e6q+he2+c9u+43a+2cj+ies+c9t+f6t+7b8+545+274+4jn+21l+uja+b3k+64v+1mn+4p6+169+fhs+48p+31pf+n2j+ndh+1h8+pq4+16a+1mn+0+2cj+0+3oc+0+a2p+5f+8c3+gd+2quk+4e8+cqa+ls+uds+3de+7rl+1s6+kgh+9nr+pkm+qg0+fhr+dr6+e0l+70a+814+2i2+ojr+2t0+p9n-37u+pvj-5vg+2cj-gd",
+                          "strings": [
+                              {
+                                  "string": "7:30 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "I-84 E / US-30 E",
+                                  "stringType": "esriDSTBranch"
+                              },
+                              {
+                                  "string": "Portland Airport / The Dalles",
+                                  "stringType": "esriDSTToward"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.14070311704318753,
+                              "time": 0.58787283398513956,
+                              "text": "Tome la salida 2 a la derecha por Cesar E Chavez Blvd",
+                              "ETA": 1637739142456,
+                              "arriveTimeUTC": 1637739142456,
+                              "maneuverType": "esriDMTRampRight"
+                          },
+                          "compressedGeometry": "+gme25-1vvvvuk+noevhk+ivf-6le+7ro-1s7+j4u-43b",
+                          "strings": [
+                              {
+                                  "string": "7:32 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "Cesar E Chavez Blvd",
+                                  "stringType": "esriDSTBranch"
+                              },
+                              {
+                                  "string": "2",
+                                  "stringType": "esriDSTExit"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.4314660965345421,
+                              "time": 1.2301107316157704,
+                              "text": "En el semáforo, gire a la derecha en NE Cesar E Chavez Blvd",
+                              "ETA": 1637739177729,
+                              "arriveTimeUTC": 1637739177729,
+                              "maneuverType": "esriDMTTurnRight"
+                          },
+                          "compressedGeometry": "+gmed3-1vvvrrl+nof2el-5g-59l-ls-iq0+0-6ag+5f-es4+5f-5f4-au-h39+0-3df-5f-ttn-32h-546",
+                          "strings": [
+                              {
+                                  "string": "7:33 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "NE Cesar E Chavez Blvd",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.44877959453603156,
+                              "time": 1.1736952280508497,
+                              "text": "En la rotonda, tome la tercera salida por NE Glisan St",
+                              "ETA": 1637739251535,
+                              "arriveTimeUTC": 1637739251535,
+                              "maneuverType": "esriDMTRoundabout"
+                          },
+                          "compressedGeometry": "+gmec2-1vvvs0i+nobmjl-2ck-1bp-1h8-2t2+rc-2cj+274-1mo+43b-rb+43b+rb+16a+10r+97h+2t1+7m9+0+fi1-5f+d5d+0+ujk+0+fnf-5f+a8c+0+97h+0+aja+5f+59l+au+4jo+ge",
+                          "strings": [
+                              {
+                                  "string": "7:34 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "NE Glisan St",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0.018576369191335824,
+                              "time": 0.059817687383267426,
+                              "text": "En el semáforo, gire a la derecha en NE 47th Ave",
+                              "ETA": 1637739321957,
+                              "arriveTimeUTC": 1637739321957,
+                              "maneuverType": "esriDMTTurnRight"
+                          },
+                          "compressedGeometry": "+gmfhp-1vvvvur+nod8ge+0-4j7",
+                          "strings": [
+                              {
+                                  "string": "7:35 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "NE 47th Ave",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      },
+                      {
+                          "attributes": {
+                              "length": 0,
+                              "time": 0,
+                              "text": "Ha llegado a Location 3, que se encuentra a la derecha",
+                              "ETA": 1637739325546,
+                              "arriveTimeUTC": 1637739325546,
+                              "maneuverType": "esriDMTStop"
+                          },
+                          "compressedGeometry": "+gmfhp-1vvvvur+nod3t7+0+0",
+                          "strings": [
+                              {
+                                  "string": "7:35 AM",
+                                  "stringType": "esriDSTEstimatedArrivalTime"
+                              },
+                              {
+                                  "string": "Location 3",
+                                  "stringType": "esriDSTStreetName"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ]
+      }
+order: 1000

@@ -1,0 +1,22 @@
+$kind: collection
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/feature-services/edit-features/)
+scripts:
+  - type: http:beforeRequest
+    code: |-
+      /*// Check parameters within a Scope that can not be null.
+      const reqParams = (scope, params) => {
+          const variables = scope.toJSON();
+          const getVar = (variables, el) => {
+              return variables.values.find(e => e.key === el).value
+          }
+          params.forEach(el => {
+              if(!getVar(variables,"host") || !getVar(variables,"org_id") || !getVar(variables,"service_name") || !getVar(variables,"layer_id")){
+                  throw new Error("Set collection variables using requests in Structure and definitions");
+              }
+          })
+      };
+
+      reqParams(pm.collectionVariables, ["host", "org_id", "service_name", "layer_id"]);
+      */
+    language: text/javascript
+order: 5000

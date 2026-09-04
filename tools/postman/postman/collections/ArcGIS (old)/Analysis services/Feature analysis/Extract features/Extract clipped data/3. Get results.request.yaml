@@ -1,0 +1,12 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/find-data/extract-features/#export-a-subset-of-data-as-csv)
+url: "{{ANALYSIS_URL}}/ExtractData/jobs/{{JOB_ID}}/results/contentID"
+method: POST
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+    returnType: data
+examples: ./.resources/3. Get results.resources/examples
+order: 3000

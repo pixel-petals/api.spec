@@ -1,0 +1,3699 @@
+$kind: http-example
+request:
+  url: https://{{route-service}}.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/?f=json
+  method: GET
+  queryParams:
+    f: json
+  body:
+    type: urlencoded
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 17 Nov 2021 07:32:32 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "4289"
+    Connection: keep-alive
+    Cache-Control: max-age=0,must-revalidate
+    Expires: Thu, 01 Jan 1970 00:00:00 GMT
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 17-Nov-2021 07:33:32 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"af87951f"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "currentVersion": 10.9,
+          "layerName": "Route_World",
+          "layerType": "esriNAServerRouteLayer",
+          "impedance": "TravelTime",
+          "restrictions": [
+              "Avoid Unpaved Roads",
+              "Avoid Private Roads",
+              "Driving an Automobile",
+              "Through Traffic Prohibited",
+              "Roads Under Construction Prohibited",
+              "Avoid Gates",
+              "Avoid Express Lanes",
+              "Avoid Carpool Roads"
+          ],
+          "snapTolerance": 0,
+          "maxSnapTolerance": 20000,
+          "snapToleranceUnits": "esriMeters",
+          "ignoreInvalidLocations": true,
+          "restrictUTurns": "esriNFSBAtDeadEndsAndIntersections",
+          "accumulateAttributeNames": [
+              "Miles",
+              "Kilometers"
+          ],
+          "attributeParameterValues": [
+              {
+                  "attributeName": "Avoid Limited Access Roads",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Avoid_Medium"
+              },
+              {
+                  "attributeName": "Avoid Ferries",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Avoid_Medium"
+              },
+              {
+                  "attributeName": "Avoid Unpaved Roads",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Avoid_High"
+              },
+              {
+                  "attributeName": "Avoid Private Roads",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Avoid_Medium"
+              },
+              {
+                  "attributeName": "Avoid Toll Roads",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Avoid_Medium"
+              },
+              {
+                  "attributeName": "Driving an Automobile",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Driving a Bus",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Driving a Taxi",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Walking",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Driving a Truck",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Driving an Emergency Vehicle",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Through Traffic Prohibited",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Avoid_High"
+              },
+              {
+                  "attributeName": "TravelTime",
+                  "parameterName": "Vehicle Maximum Speed (km/h)",
+                  "parameterType": "float",
+                  "value": 0
+              },
+              {
+                  "attributeName": "Roads Under Construction Prohibited",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Riding a Motorcycle",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Height Restriction",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Height Restriction",
+                  "parameterName": "Vehicle Height (meters)",
+                  "parameterType": "float",
+                  "value": 0
+              },
+              {
+                  "attributeName": "Weight Restriction",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Weight Restriction",
+                  "parameterName": "Vehicle Weight (kilograms)",
+                  "parameterType": "float",
+                  "value": 0
+              },
+              {
+                  "attributeName": "Length Restriction",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Length Restriction",
+                  "parameterName": "Vehicle Length (meters)",
+                  "parameterType": "float",
+                  "value": 0
+              },
+              {
+                  "attributeName": "Width Restriction",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Width Restriction",
+                  "parameterName": "Vehicle Width (meters)",
+                  "parameterType": "float",
+                  "value": 0
+              },
+              {
+                  "attributeName": "Truck with Trailers Restriction",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Truck with Trailers Restriction",
+                  "parameterName": "Number of Trailers on Truck",
+                  "parameterType": "integer",
+                  "value": 0
+              },
+              {
+                  "attributeName": "Any Hazmat Prohibited",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Avoid Gates",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Avoid_Medium"
+              },
+              {
+                  "attributeName": "Avoid Express Lanes",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Weight per Axle Restriction",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Weight per Axle Restriction",
+                  "parameterName": "Vehicle Weight per Axle (kilograms)",
+                  "parameterType": "float",
+                  "value": 0
+              },
+              {
+                  "attributeName": "Axle Count Restriction",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Axle Count Restriction",
+                  "parameterName": "Number of Axles",
+                  "parameterType": "integer",
+                  "value": 0
+              },
+              {
+                  "attributeName": "Avoid Carpool Roads",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Semi or Tractor with One or More Trailers Prohibited",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Kingpin to Rear Axle Length Restriction",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Kingpin to Rear Axle Length Restriction",
+                  "parameterName": "Vehicle Kingpin to Rear Axle Length (meters)",
+                  "parameterType": "float",
+                  "value": 0
+              },
+              {
+                  "attributeName": "Single Axle Vehicles Prohibited",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Tandem Axle Vehicles Prohibited",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prohibited"
+              },
+              {
+                  "attributeName": "Use Preferred Truck Routes",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prefer_Medium"
+              },
+              {
+                  "attributeName": "Use Preferred Hazmat Routes",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prefer_Medium"
+              },
+              {
+                  "attributeName": "Preferred for Pedestrians",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Prefer_Low"
+              },
+              {
+                  "attributeName": "Avoid Stairways",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Avoid_High"
+              },
+              {
+                  "attributeName": "WalkTime",
+                  "parameterName": "Walking Speed (km/h)",
+                  "parameterType": "float",
+                  "value": 5
+              },
+              {
+                  "attributeName": "Avoid Truck Restricted Roads",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Avoid_High"
+              },
+              {
+                  "attributeName": "Avoid Roads Unsuitable for Pedestrians",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Avoid_High"
+              },
+              {
+                  "attributeName": "Avoid Toll Roads for Trucks",
+                  "parameterName": "Restriction Usage",
+                  "parameterType": "float",
+                  "value": "Avoid_Medium"
+              },
+              {
+                  "attributeName": "TruckTravelTime",
+                  "parameterName": "Vehicle Maximum Speed (km/h)",
+                  "parameterType": "float",
+                  "value": 0
+              }
+          ],
+          "outputSpatialReference": {
+              "wkid": 4326
+          },
+          "useHierarchy": true,
+          "hierarchyAttributeName": "Hierarchy",
+          "hierarchyLevelCount": 3,
+          "hierarchyMaxValues": [
+              2,
+              4
+          ],
+          "hierarchyNumTransitions": [
+              9,
+              6
+          ],
+          "networkClasses": [
+              {
+                  "className": "Stops",
+                  "fields": [
+                      {
+                          "fieldName": "Shape",
+                          "defaultValue": null,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Name",
+                          "defaultValue": null,
+                          "candidateFields": [
+                              "Name",
+                              "Address",
+                              "Label",
+                              "Location",
+                              "Stop",
+                              "WayPoint",
+                              "Description",
+                              "Title",
+                              "DepotName"
+                          ]
+                      },
+                      {
+                          "fieldName": "RouteName",
+                          "defaultValue": null,
+                          "candidateFields": [
+                              "RouteName",
+                              "Route",
+                              "RouteID",
+                              "NoteType"
+                          ]
+                      },
+                      {
+                          "fieldName": "Sequence",
+                          "defaultValue": 1,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "TimeWindowStart",
+                          "defaultValue": null,
+                          "candidateFields": [
+                              "TimeWindowStart1",
+                              "TWStart1",
+                              "FromTime1",
+                              "FromTimeWindow1",
+                              "FromTW1",
+                              "From1",
+                              "TimeWindowStart",
+                              "TWStart",
+                              "FromTime",
+                              "FromTimeWindow",
+                              "FromTW",
+                              "From"
+                          ]
+                      },
+                      {
+                          "fieldName": "TimeWindowEnd",
+                          "defaultValue": null,
+                          "candidateFields": [
+                              "TimeWindowEnd1",
+                              "TWEnd1",
+                              "ToTime1",
+                              "ToTimeWindow1",
+                              "ToTW1",
+                              "To1",
+                              "TimeWindowEnd",
+                              "TWEnd",
+                              "ToTime",
+                              "ToTimeWindow",
+                              "ToTW",
+                              "To"
+                          ]
+                      },
+                      {
+                          "fieldName": "LocationType",
+                          "defaultValue": 0,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "SourceID",
+                          "defaultValue": -1,
+                          "candidateFields": [
+                              "SourceID",
+                              "SID",
+                              "Source"
+                          ]
+                      },
+                      {
+                          "fieldName": "SourceOID",
+                          "defaultValue": -1,
+                          "candidateFields": [
+                              "SourceOID",
+                              "SOID"
+                          ]
+                      },
+                      {
+                          "fieldName": "PosAlong",
+                          "defaultValue": 0,
+                          "candidateFields": [
+                              "PosAlong",
+                              "PA",
+                              "Pos"
+                          ]
+                      },
+                      {
+                          "fieldName": "SideOfEdge",
+                          "defaultValue": 2,
+                          "candidateFields": [
+                              "SideOfEdge",
+                              "SOE"
+                          ]
+                      },
+                      {
+                          "fieldName": "CurbApproach",
+                          "defaultValue": 0,
+                          "candidateFields": [
+                              "CurbApproach",
+                              "SideOfStreet",
+                              "SideApproach",
+                              "CurbSide",
+                              "Curb"
+                          ]
+                      },
+                      {
+                          "fieldName": "Status",
+                          "defaultValue": 0,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_Minutes",
+                          "defaultValue": 0,
+                          "candidateFields": [
+                              "Attr_Minutes",
+                              "Minutes",
+                              "VisitTime",
+                              "StopTime",
+                              "Delay",
+                              "ServiceTime",
+                              "SrvTime",
+                              "StartDepotServiceTime",
+                              "StartSrvTime",
+                              "StartSrv"
+                          ]
+                      },
+                      {
+                          "fieldName": "Attr_TravelTime",
+                          "defaultValue": 0,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_Miles",
+                          "defaultValue": 0,
+                          "candidateFields": [
+                              "Attr_Miles",
+                              "Miles"
+                          ]
+                      },
+                      {
+                          "fieldName": "Attr_Kilometers",
+                          "defaultValue": 0,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_TimeAt1KPH",
+                          "defaultValue": 0,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_WalkTime",
+                          "defaultValue": 0,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_TruckMinutes",
+                          "defaultValue": 0,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_TruckTravelTime",
+                          "defaultValue": 0,
+                          "candidateFields": null
+                      }
+                  ]
+              },
+              {
+                  "className": "Barriers",
+                  "fields": [
+                      {
+                          "fieldName": "Shape",
+                          "defaultValue": null,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Name",
+                          "defaultValue": null,
+                          "candidateFields": [
+                              "Name",
+                              "Address",
+                              "Label",
+                              "Location",
+                              "Barrier",
+                              "Description",
+                              "Title"
+                          ]
+                      },
+                      {
+                          "fieldName": "SourceID",
+                          "defaultValue": -1,
+                          "candidateFields": [
+                              "SourceID",
+                              "SID",
+                              "Source"
+                          ]
+                      },
+                      {
+                          "fieldName": "SourceOID",
+                          "defaultValue": -1,
+                          "candidateFields": [
+                              "SourceOID",
+                              "SOID"
+                          ]
+                      },
+                      {
+                          "fieldName": "PosAlong",
+                          "defaultValue": 0,
+                          "candidateFields": [
+                              "PosAlong",
+                              "PA",
+                              "Pos"
+                          ]
+                      },
+                      {
+                          "fieldName": "SideOfEdge",
+                          "defaultValue": 2,
+                          "candidateFields": [
+                              "SideOfEdge",
+                              "SOE"
+                          ]
+                      },
+                      {
+                          "fieldName": "CurbApproach",
+                          "defaultValue": 0,
+                          "candidateFields": [
+                              "CurbApproach",
+                              "SideOfStreet",
+                              "SideApproach",
+                              "CurbSide",
+                              "Curb"
+                          ]
+                      },
+                      {
+                          "fieldName": "Status",
+                          "defaultValue": 0,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "FullEdge",
+                          "defaultValue": 0,
+                          "candidateFields": [
+                              "FullEdge",
+                              "IsFullEdge",
+                              "BlockEntire"
+                          ]
+                      },
+                      {
+                          "fieldName": "BarrierType",
+                          "defaultValue": 0,
+                          "candidateFields": [
+                              "BarrierType",
+                              "BarType",
+                              "BarrierTyp"
+                          ]
+                      },
+                      {
+                          "fieldName": "Attr_Minutes",
+                          "defaultValue": 0,
+                          "candidateFields": [
+                              "Attr_Minutes",
+                              "Minutes",
+                              "VisitTime",
+                              "StopTime",
+                              "Delay",
+                              "ServiceTime",
+                              "SrvTime",
+                              "StartDepotServiceTime",
+                              "StartSrvTime",
+                              "StartSrv"
+                          ]
+                      },
+                      {
+                          "fieldName": "Attr_TravelTime",
+                          "defaultValue": 0,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_Miles",
+                          "defaultValue": 0,
+                          "candidateFields": [
+                              "Attr_Miles",
+                              "Miles"
+                          ]
+                      },
+                      {
+                          "fieldName": "Attr_Kilometers",
+                          "defaultValue": 0,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_TimeAt1KPH",
+                          "defaultValue": 0,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_WalkTime",
+                          "defaultValue": 0,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_TruckMinutes",
+                          "defaultValue": 0,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_TruckTravelTime",
+                          "defaultValue": 0,
+                          "candidateFields": null
+                      }
+                  ]
+              },
+              {
+                  "className": "PolylineBarriers",
+                  "fields": [
+                      {
+                          "fieldName": "Shape",
+                          "defaultValue": null,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Name",
+                          "defaultValue": null,
+                          "candidateFields": [
+                              "Name",
+                              "Label",
+                              "Locations",
+                              "Barrier",
+                              "Description",
+                              "Title"
+                          ]
+                      },
+                      {
+                          "fieldName": "Locations",
+                          "defaultValue": null,
+                          "candidateFields": [
+                              "Locations",
+                              "LocRanges"
+                          ]
+                      },
+                      {
+                          "fieldName": "BarrierType",
+                          "defaultValue": 0,
+                          "candidateFields": [
+                              "BarrierType",
+                              "BarType",
+                              "BarrierTyp"
+                          ]
+                      },
+                      {
+                          "fieldName": "Attr_Minutes",
+                          "defaultValue": 1,
+                          "candidateFields": [
+                              "Attr_Minutes",
+                              "Minutes",
+                              "Scaled_Cost",
+                              "Scaled_Time"
+                          ]
+                      },
+                      {
+                          "fieldName": "Attr_TravelTime",
+                          "defaultValue": 1,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_Miles",
+                          "defaultValue": 1,
+                          "candidateFields": [
+                              "Attr_Miles",
+                              "Miles"
+                          ]
+                      },
+                      {
+                          "fieldName": "Attr_Kilometers",
+                          "defaultValue": 1,
+                          "candidateFields": [
+                              "Attr_Kilometers",
+                              "Kilometers"
+                          ]
+                      },
+                      {
+                          "fieldName": "Attr_TimeAt1KPH",
+                          "defaultValue": 1,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_WalkTime",
+                          "defaultValue": 1,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_TruckMinutes",
+                          "defaultValue": 1,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_TruckTravelTime",
+                          "defaultValue": 1,
+                          "candidateFields": null
+                      }
+                  ]
+              },
+              {
+                  "className": "PolygonBarriers",
+                  "fields": [
+                      {
+                          "fieldName": "Shape",
+                          "defaultValue": null,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Name",
+                          "defaultValue": null,
+                          "candidateFields": [
+                              "Name",
+                              "Label",
+                              "Locations",
+                              "Barrier",
+                              "Description",
+                              "Title"
+                          ]
+                      },
+                      {
+                          "fieldName": "Locations",
+                          "defaultValue": null,
+                          "candidateFields": [
+                              "Locations",
+                              "LocRanges"
+                          ]
+                      },
+                      {
+                          "fieldName": "BarrierType",
+                          "defaultValue": 0,
+                          "candidateFields": [
+                              "BarrierType",
+                              "BarType",
+                              "BarrierTyp"
+                          ]
+                      },
+                      {
+                          "fieldName": "Attr_Minutes",
+                          "defaultValue": 1,
+                          "candidateFields": [
+                              "Attr_Minutes",
+                              "Minutes",
+                              "Scaled_Cost",
+                              "Scaled_Time"
+                          ]
+                      },
+                      {
+                          "fieldName": "Attr_TravelTime",
+                          "defaultValue": 1,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_Miles",
+                          "defaultValue": 1,
+                          "candidateFields": [
+                              "Attr_Miles",
+                              "Miles"
+                          ]
+                      },
+                      {
+                          "fieldName": "Attr_Kilometers",
+                          "defaultValue": 1,
+                          "candidateFields": [
+                              "Attr_Kilometers",
+                              "Kilometers"
+                          ]
+                      },
+                      {
+                          "fieldName": "Attr_TimeAt1KPH",
+                          "defaultValue": 1,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_WalkTime",
+                          "defaultValue": 1,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_TruckMinutes",
+                          "defaultValue": 1,
+                          "candidateFields": null
+                      },
+                      {
+                          "fieldName": "Attr_TruckTravelTime",
+                          "defaultValue": 1,
+                          "candidateFields": null
+                      }
+                  ]
+              }
+          ],
+          "networkDataset": {
+              "name": "Routing_ND",
+              "buildTime": 1631312407000,
+              "state": "esriNDSBuilt",
+              "networkAttributes": [
+                  {
+                      "name": "Hierarchy",
+                      "dataType": "esriNADTInteger",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTHierarchy",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Minutes",
+                      "dataType": "esriNADTDouble",
+                      "units": "esriNAUMinutes",
+                      "usageType": "esriNAUTCost",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "RoadClass",
+                      "dataType": "esriNADTInteger",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "TimeZoneID",
+                      "dataType": "esriNADTInteger",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Avoid Limited Access Roads",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Avoid Ferries",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Avoid Unpaved Roads",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Avoid Private Roads",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Avoid Toll Roads",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Driving an Automobile",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Driving a Bus",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Driving a Taxi",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Walking",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Driving a Truck",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Driving an Emergency Vehicle",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Through Traffic Prohibited",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "TravelTime",
+                      "dataType": "esriNADTDouble",
+                      "units": "esriNAUMinutes",
+                      "usageType": "esriNAUTCost",
+                      "parameterNames": [
+                          "Vehicle Maximum Speed (km/h)"
+                      ],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSHistoricalAndLive",
+                      "timeNeutralAttributeName": "Minutes"
+                  },
+                  {
+                      "name": "Miles",
+                      "dataType": "esriNADTDouble",
+                      "units": "esriNAUMiles",
+                      "usageType": "esriNAUTCost",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Kilometers",
+                      "dataType": "esriNADTDouble",
+                      "units": "esriNAUKilometers",
+                      "usageType": "esriNAUTCost",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Roads Under Construction Prohibited",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Riding a Motorcycle",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Height Limit (meters)",
+                      "dataType": "esriNADTDouble",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Height Restriction",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage",
+                          "Vehicle Height (meters)"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Weight Limit (kilograms)",
+                      "dataType": "esriNADTDouble",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Weight Restriction",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage",
+                          "Vehicle Weight (kilograms)"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Length Limit (meters)",
+                      "dataType": "esriNADTDouble",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Length Restriction",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage",
+                          "Vehicle Length (meters)"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Width Limit (meters)",
+                      "dataType": "esriNADTDouble",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Width Restriction",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage",
+                          "Vehicle Width (meters)"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Truck with Trailers Restriction",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage",
+                          "Number of Trailers on Truck"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Any Hazmat Prohibited",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Avoid Gates",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Maximum Number of Trailers Allowed on Truck",
+                      "dataType": "esriNADTInteger",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Avoid Express Lanes",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Weight Limit per Axle (kilograms)",
+                      "dataType": "esriNADTDouble",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Weight per Axle Restriction",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage",
+                          "Vehicle Weight per Axle (kilograms)"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Maximum Number of Axles Allowed",
+                      "dataType": "esriNADTInteger",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Axle Count Restriction",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage",
+                          "Number of Axles"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Avoid Carpool Roads",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Semi or Tractor with One or More Trailers Prohibited",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Kingpin to Rear Axle Length Limit (meters)",
+                      "dataType": "esriNADTDouble",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Kingpin to Rear Axle Length Restriction",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage",
+                          "Vehicle Kingpin to Rear Axle Length (meters)"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Single Axle Vehicles Prohibited",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Tandem Axle Vehicles Prohibited",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Use Preferred Truck Routes",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Use Preferred Hazmat Routes",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Preferred for Pedestrians",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Avoid Stairways",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "TruckTravelTime Speed Limit",
+                      "dataType": "esriNADTInteger",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Speed Class",
+                      "dataType": "esriNADTInteger",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "~Empty~",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "TimeAt1KPH",
+                      "dataType": "esriNADTDouble",
+                      "units": "esriNAUMinutes",
+                      "usageType": "esriNAUTCost",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "WalkTime",
+                      "dataType": "esriNADTDouble",
+                      "units": "esriNAUMinutes",
+                      "usageType": "esriNAUTCost",
+                      "parameterNames": [
+                          "Walking Speed (km/h)"
+                      ],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "TruckMinutes",
+                      "dataType": "esriNADTDouble",
+                      "units": "esriNAUMinutes",
+                      "usageType": "esriNAUTCost",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "ManeuverClass",
+                      "dataType": "esriNADTInteger",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Avoid Truck Restricted Roads",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Avoid Roads Unsuitable for Pedestrians",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "Avoid Toll Roads for Trucks",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTRestriction",
+                      "parameterNames": [
+                          "Restriction Usage"
+                      ],
+                      "restrictionUsageParameterName": "Restriction Usage",
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "LeftDrivingSide",
+                      "dataType": "esriNADTBoolean",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "TruckTravelTime",
+                      "dataType": "esriNADTDouble",
+                      "units": "esriNAUMinutes",
+                      "usageType": "esriNAUTCost",
+                      "parameterNames": [
+                          "Vehicle Maximum Speed (km/h)"
+                      ],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSHistoricalAndLive",
+                      "timeNeutralAttributeName": "TruckMinutes"
+                  },
+                  {
+                      "name": "TravelTime Speed Limit",
+                      "dataType": "esriNADTInteger",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  },
+                  {
+                      "name": "DrivingSide",
+                      "dataType": "esriNADTInteger",
+                      "units": "esriNAUUnknown",
+                      "usageType": "esriNAUTDescriptor",
+                      "parameterNames": [],
+                      "restrictionUsageParameterName": null,
+                      "trafficSupport": "esriNTSNone"
+                  }
+              ],
+              "networkSources": [
+                  {
+                      "name": "Routing_Streets",
+                      "elementType": "esriNETEdge",
+                      "sourceType": "esriNSTEdgeFeature",
+                      "id": 1
+                  },
+                  {
+                      "name": "Routing_Streets_Override",
+                      "elementType": "esriNETJunction",
+                      "sourceType": "esriNSTJunctionFeature",
+                      "id": 4
+                  },
+                  {
+                      "name": "Routing_ND_Junctions",
+                      "elementType": "esriNETJunction",
+                      "sourceType": "esriNSTSystemJunction",
+                      "id": 3
+                  },
+                  {
+                      "name": "RestrictedTurns",
+                      "elementType": "esriNETTurn",
+                      "sourceType": "esriNSTTurnFeature",
+                      "id": 2
+                  }
+              ]
+          },
+          "hasM": true,
+          "hasZ": false,
+          "defaultTravelMode": "1",
+          "supportedTravelModes": [
+              {
+                  "name": "Driving Time",
+                  "itemId": "1",
+                  "type": "AUTOMOBILE",
+                  "description": "Models the movement of cars and other similar small automobiles, such as pickup trucks, and finds solutions that optimize travel time. Travel obeys one-way roads, avoids illegal turns, and follows other rules that are specific to cars. When you specify a start time, dynamic travel speeds based on traffic are used where it is available.",
+                  "timeAttributeName": "TravelTime",
+                  "distanceAttributeName": "Kilometers",
+                  "impedanceAttributeName": "TravelTime",
+                  "restrictionAttributeNames": [
+                      "Avoid Unpaved Roads",
+                      "Avoid Private Roads",
+                      "Driving an Automobile",
+                      "Through Traffic Prohibited",
+                      "Roads Under Construction Prohibited",
+                      "Avoid Gates",
+                      "Avoid Express Lanes",
+                      "Avoid Carpool Roads"
+                  ],
+                  "attributeParameterValues": [
+                      {
+                          "attributeName": "Avoid Limited Access Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Ferries",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Unpaved Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Private Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Driving an Automobile",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Bus",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Taxi",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Walking",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Truck",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving an Emergency Vehicle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Through Traffic Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "TravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Roads Under Construction Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Riding a Motorcycle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Vehicle Height (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Vehicle Weight (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Vehicle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Vehicle Width (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Number of Trailers on Truck",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Any Hazmat Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Avoid Gates",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Express Lanes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Vehicle Weight per Axle (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Number of Axles",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Avoid Carpool Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Semi or Tractor with One or More Trailers Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Vehicle Kingpin to Rear Axle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Single Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Tandem Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Use Preferred Truck Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Medium"
+                      },
+                      {
+                          "attributeName": "Use Preferred Hazmat Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Medium"
+                      },
+                      {
+                          "attributeName": "Preferred for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Low"
+                      },
+                      {
+                          "attributeName": "Avoid Stairways",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "WalkTime",
+                          "parameterName": "Walking Speed (km/h)",
+                          "value": 5
+                      },
+                      {
+                          "attributeName": "Avoid Truck Restricted Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Roads Unsuitable for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads for Trucks",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "TruckTravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      }
+                  ],
+                  "useHierarchy": true,
+                  "uturnAtJunctions": "esriNFSBAtDeadEndsAndIntersections",
+                  "simplificationTolerance": 10,
+                  "simplificationToleranceUnits": "esriMeters"
+              },
+              {
+                  "name": "Driving Distance",
+                  "itemId": "2",
+                  "type": "AUTOMOBILE",
+                  "description": "Models the movement of cars and other similar small automobiles, such as pickup trucks, and finds solutions that optimize travel distance. Travel obeys one-way roads, avoids illegal turns, and follows other rules that are specific to cars.",
+                  "timeAttributeName": "TravelTime",
+                  "distanceAttributeName": "Kilometers",
+                  "impedanceAttributeName": "Kilometers",
+                  "restrictionAttributeNames": [
+                      "Avoid Unpaved Roads",
+                      "Avoid Private Roads",
+                      "Driving an Automobile",
+                      "Through Traffic Prohibited",
+                      "Roads Under Construction Prohibited",
+                      "Avoid Gates",
+                      "Avoid Express Lanes",
+                      "Avoid Carpool Roads"
+                  ],
+                  "attributeParameterValues": [
+                      {
+                          "attributeName": "Avoid Limited Access Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Ferries",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Unpaved Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Private Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Driving an Automobile",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Bus",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Taxi",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Walking",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Truck",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving an Emergency Vehicle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Through Traffic Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "TravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Roads Under Construction Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Riding a Motorcycle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Vehicle Height (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Vehicle Weight (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Vehicle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Vehicle Width (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Number of Trailers on Truck",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Any Hazmat Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Avoid Gates",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Express Lanes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Vehicle Weight per Axle (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Number of Axles",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Avoid Carpool Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Semi or Tractor with One or More Trailers Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Vehicle Kingpin to Rear Axle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Single Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Tandem Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Use Preferred Truck Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Medium"
+                      },
+                      {
+                          "attributeName": "Use Preferred Hazmat Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Medium"
+                      },
+                      {
+                          "attributeName": "Preferred for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Low"
+                      },
+                      {
+                          "attributeName": "Avoid Stairways",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "WalkTime",
+                          "parameterName": "Walking Speed (km/h)",
+                          "value": 5
+                      },
+                      {
+                          "attributeName": "Avoid Truck Restricted Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Roads Unsuitable for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads for Trucks",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "TruckTravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      }
+                  ],
+                  "useHierarchy": true,
+                  "uturnAtJunctions": "esriNFSBAtDeadEndsAndIntersections",
+                  "simplificationTolerance": 10,
+                  "simplificationToleranceUnits": "esriMeters"
+              },
+              {
+                  "name": "Trucking Time",
+                  "itemId": "3",
+                  "type": "TRUCK",
+                  "description": "Models basic truck travel by preferring designated truck routes, and finds solutions that optimize travel time. Routes must obey one-way roads, avoid illegal turns, and so on. When you specify a start time, dynamic travel speeds based on traffic are used where it is available, up to the legal truck speed limit.",
+                  "timeAttributeName": "TruckTravelTime",
+                  "distanceAttributeName": "Kilometers",
+                  "impedanceAttributeName": "TruckTravelTime",
+                  "restrictionAttributeNames": [
+                      "Avoid Carpool Roads",
+                      "Avoid Express Lanes",
+                      "Avoid Gates",
+                      "Avoid Private Roads",
+                      "Avoid Truck Restricted Roads",
+                      "Avoid Unpaved Roads",
+                      "Driving a Truck",
+                      "Roads Under Construction Prohibited",
+                      "Use Preferred Truck Routes"
+                  ],
+                  "attributeParameterValues": [
+                      {
+                          "attributeName": "Use Preferred Truck Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_High"
+                      },
+                      {
+                          "attributeName": "Avoid Limited Access Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Ferries",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Unpaved Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Private Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Driving an Automobile",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Bus",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Taxi",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Walking",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Truck",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving an Emergency Vehicle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Through Traffic Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "TravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Roads Under Construction Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Riding a Motorcycle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Vehicle Height (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Vehicle Weight (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Vehicle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Vehicle Width (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Number of Trailers on Truck",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Any Hazmat Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Avoid Gates",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Express Lanes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Vehicle Weight per Axle (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Number of Axles",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Avoid Carpool Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Semi or Tractor with One or More Trailers Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Vehicle Kingpin to Rear Axle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Single Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Tandem Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Use Preferred Hazmat Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Medium"
+                      },
+                      {
+                          "attributeName": "Preferred for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Low"
+                      },
+                      {
+                          "attributeName": "Avoid Stairways",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "WalkTime",
+                          "parameterName": "Walking Speed (km/h)",
+                          "value": 5
+                      },
+                      {
+                          "attributeName": "Avoid Truck Restricted Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Roads Unsuitable for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads for Trucks",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "TruckTravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      }
+                  ],
+                  "useHierarchy": true,
+                  "uturnAtJunctions": "esriNFSBNoBacktrack",
+                  "simplificationTolerance": 10,
+                  "simplificationToleranceUnits": "esriMeters"
+              },
+              {
+                  "name": "Trucking Distance",
+                  "itemId": "4",
+                  "type": "TRUCK",
+                  "description": "Models basic truck travel by preferring designated truck routes, and finds solutions that optimize travel distance. Routes must obey one-way roads, avoid illegal turns, and so on.",
+                  "timeAttributeName": "TruckTravelTime",
+                  "distanceAttributeName": "Kilometers",
+                  "impedanceAttributeName": "Kilometers",
+                  "restrictionAttributeNames": [
+                      "Avoid Carpool Roads",
+                      "Avoid Express Lanes",
+                      "Avoid Gates",
+                      "Avoid Private Roads",
+                      "Avoid Truck Restricted Roads",
+                      "Avoid Unpaved Roads",
+                      "Driving a Truck",
+                      "Roads Under Construction Prohibited",
+                      "Use Preferred Truck Routes"
+                  ],
+                  "attributeParameterValues": [
+                      {
+                          "attributeName": "Use Preferred Truck Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_High"
+                      },
+                      {
+                          "attributeName": "Avoid Limited Access Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Ferries",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Unpaved Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Private Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Driving an Automobile",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Bus",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Taxi",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Walking",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Truck",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving an Emergency Vehicle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Through Traffic Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "TravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Roads Under Construction Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Riding a Motorcycle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Vehicle Height (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Vehicle Weight (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Vehicle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Vehicle Width (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Number of Trailers on Truck",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Any Hazmat Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Avoid Gates",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Express Lanes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Vehicle Weight per Axle (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Number of Axles",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Avoid Carpool Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Semi or Tractor with One or More Trailers Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Vehicle Kingpin to Rear Axle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Single Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Tandem Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Use Preferred Hazmat Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Medium"
+                      },
+                      {
+                          "attributeName": "Preferred for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Low"
+                      },
+                      {
+                          "attributeName": "Avoid Stairways",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "WalkTime",
+                          "parameterName": "Walking Speed (km/h)",
+                          "value": 5
+                      },
+                      {
+                          "attributeName": "Avoid Truck Restricted Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Roads Unsuitable for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads for Trucks",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "TruckTravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      }
+                  ],
+                  "useHierarchy": true,
+                  "uturnAtJunctions": "esriNFSBNoBacktrack",
+                  "simplificationTolerance": 10,
+                  "simplificationToleranceUnits": "esriMeters"
+              },
+              {
+                  "name": "Walking Time",
+                  "itemId": "5",
+                  "type": "WALK",
+                  "description": "Follows paths and roads that allow pedestrian traffic and finds solutions that optimize travel time. The walking speed is set to 5 kilometers per hour.",
+                  "timeAttributeName": "WalkTime",
+                  "distanceAttributeName": "Kilometers",
+                  "impedanceAttributeName": "WalkTime",
+                  "restrictionAttributeNames": [
+                      "Avoid Private Roads",
+                      "Avoid Roads Unsuitable for Pedestrians",
+                      "Preferred for Pedestrians",
+                      "Walking"
+                  ],
+                  "attributeParameterValues": [
+                      {
+                          "attributeName": "Avoid Limited Access Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Ferries",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Unpaved Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Private Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Driving an Automobile",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Bus",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Taxi",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Walking",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Truck",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving an Emergency Vehicle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Through Traffic Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "TravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Roads Under Construction Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Riding a Motorcycle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Vehicle Height (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Vehicle Weight (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Vehicle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Vehicle Width (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Number of Trailers on Truck",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Any Hazmat Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Avoid Gates",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Express Lanes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Vehicle Weight per Axle (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Number of Axles",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Avoid Carpool Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Semi or Tractor with One or More Trailers Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Vehicle Kingpin to Rear Axle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Single Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Tandem Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Use Preferred Truck Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Medium"
+                      },
+                      {
+                          "attributeName": "Use Preferred Hazmat Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Medium"
+                      },
+                      {
+                          "attributeName": "Preferred for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Low"
+                      },
+                      {
+                          "attributeName": "Avoid Stairways",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "WalkTime",
+                          "parameterName": "Walking Speed (km/h)",
+                          "value": 5
+                      },
+                      {
+                          "attributeName": "Avoid Truck Restricted Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Roads Unsuitable for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads for Trucks",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "TruckTravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      }
+                  ],
+                  "useHierarchy": false,
+                  "uturnAtJunctions": "esriNFSBAllowBacktrack",
+                  "simplificationTolerance": 2,
+                  "simplificationToleranceUnits": "esriMeters"
+              },
+              {
+                  "name": "Walking Distance",
+                  "itemId": "6",
+                  "type": "WALK",
+                  "description": "Follows paths and roads that allow pedestrian traffic and finds solutions that optimize travel distance.",
+                  "timeAttributeName": "WalkTime",
+                  "distanceAttributeName": "Kilometers",
+                  "impedanceAttributeName": "Kilometers",
+                  "restrictionAttributeNames": [
+                      "Avoid Private Roads",
+                      "Avoid Roads Unsuitable for Pedestrians",
+                      "Preferred for Pedestrians",
+                      "Walking"
+                  ],
+                  "attributeParameterValues": [
+                      {
+                          "attributeName": "Avoid Limited Access Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Ferries",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Unpaved Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Private Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Driving an Automobile",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Bus",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Taxi",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Walking",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Truck",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving an Emergency Vehicle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Through Traffic Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "TravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Roads Under Construction Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Riding a Motorcycle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Vehicle Height (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Vehicle Weight (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Vehicle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Vehicle Width (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Number of Trailers on Truck",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Any Hazmat Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Avoid Gates",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Express Lanes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Vehicle Weight per Axle (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Number of Axles",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Avoid Carpool Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Semi or Tractor with One or More Trailers Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Vehicle Kingpin to Rear Axle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Single Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Tandem Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Use Preferred Truck Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Medium"
+                      },
+                      {
+                          "attributeName": "Use Preferred Hazmat Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Medium"
+                      },
+                      {
+                          "attributeName": "Preferred for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Low"
+                      },
+                      {
+                          "attributeName": "Avoid Stairways",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "WalkTime",
+                          "parameterName": "Walking Speed (km/h)",
+                          "value": 5
+                      },
+                      {
+                          "attributeName": "Avoid Truck Restricted Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Roads Unsuitable for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads for Trucks",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "TruckTravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      }
+                  ],
+                  "useHierarchy": false,
+                  "uturnAtJunctions": "esriNFSBAllowBacktrack",
+                  "simplificationTolerance": 2,
+                  "simplificationToleranceUnits": "esriMeters"
+              },
+              {
+                  "name": "Rural Driving Time",
+                  "itemId": "7",
+                  "type": "AUTOMOBILE",
+                  "description": "Models the movement of cars and other similar small automobiles, such as pickup trucks, and finds solutions that optimize travel time. Travel obeys one-way roads, avoids illegal turns, and follows other rules that are specific to cars, but does not discourage travel on unpaved roads. When you specify a start time, dynamic travel speeds based on traffic are used where it is available.",
+                  "timeAttributeName": "TravelTime",
+                  "distanceAttributeName": "Kilometers",
+                  "impedanceAttributeName": "TravelTime",
+                  "restrictionAttributeNames": [
+                      "Avoid Carpool Roads",
+                      "Avoid Express Lanes",
+                      "Avoid Gates",
+                      "Avoid Private Roads",
+                      "Driving an Automobile",
+                      "Roads Under Construction Prohibited",
+                      "Through Traffic Prohibited"
+                  ],
+                  "attributeParameterValues": [
+                      {
+                          "attributeName": "Avoid Limited Access Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Ferries",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Unpaved Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Private Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Driving an Automobile",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Bus",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Taxi",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Walking",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Truck",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving an Emergency Vehicle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Through Traffic Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "TravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Roads Under Construction Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Riding a Motorcycle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Vehicle Height (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Vehicle Weight (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Vehicle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Vehicle Width (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Number of Trailers on Truck",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Any Hazmat Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Avoid Gates",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Express Lanes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Vehicle Weight per Axle (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Number of Axles",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Avoid Carpool Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Semi or Tractor with One or More Trailers Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Vehicle Kingpin to Rear Axle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Single Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Tandem Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Use Preferred Truck Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Medium"
+                      },
+                      {
+                          "attributeName": "Use Preferred Hazmat Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Medium"
+                      },
+                      {
+                          "attributeName": "Preferred for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Low"
+                      },
+                      {
+                          "attributeName": "Avoid Stairways",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "WalkTime",
+                          "parameterName": "Walking Speed (km/h)",
+                          "value": 5
+                      },
+                      {
+                          "attributeName": "Avoid Truck Restricted Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Roads Unsuitable for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads for Trucks",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "TruckTravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      }
+                  ],
+                  "useHierarchy": true,
+                  "uturnAtJunctions": "esriNFSBAtDeadEndsAndIntersections",
+                  "simplificationTolerance": 10,
+                  "simplificationToleranceUnits": "esriMeters"
+              },
+              {
+                  "name": "Rural Driving Distance",
+                  "itemId": "8",
+                  "type": "AUTOMOBILE",
+                  "description": "Models the movement of cars and other similar small automobiles, such as pickup trucks, and finds solutions that optimize travel distance. Travel obeys one-way roads, avoids illegal turns, and follows other rules that are specific to cars, but does not discourage travel on unpaved roads.",
+                  "timeAttributeName": "TravelTime",
+                  "distanceAttributeName": "Kilometers",
+                  "impedanceAttributeName": "Kilometers",
+                  "restrictionAttributeNames": [
+                      "Avoid Carpool Roads",
+                      "Avoid Express Lanes",
+                      "Avoid Gates",
+                      "Avoid Private Roads",
+                      "Driving an Automobile",
+                      "Roads Under Construction Prohibited",
+                      "Through Traffic Prohibited"
+                  ],
+                  "attributeParameterValues": [
+                      {
+                          "attributeName": "Avoid Limited Access Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Ferries",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Unpaved Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Private Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Driving an Automobile",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Bus",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Taxi",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Walking",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving a Truck",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Driving an Emergency Vehicle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Through Traffic Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "TravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Roads Under Construction Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Riding a Motorcycle",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Height Restriction",
+                          "parameterName": "Vehicle Height (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight Restriction",
+                          "parameterName": "Vehicle Weight (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Length Restriction",
+                          "parameterName": "Vehicle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Width Restriction",
+                          "parameterName": "Vehicle Width (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Truck with Trailers Restriction",
+                          "parameterName": "Number of Trailers on Truck",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Any Hazmat Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Avoid Gates",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "Avoid Express Lanes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Weight per Axle Restriction",
+                          "parameterName": "Vehicle Weight per Axle (kilograms)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Axle Count Restriction",
+                          "parameterName": "Number of Axles",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Avoid Carpool Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Semi or Tractor with One or More Trailers Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Kingpin to Rear Axle Length Restriction",
+                          "parameterName": "Vehicle Kingpin to Rear Axle Length (meters)",
+                          "value": 0
+                      },
+                      {
+                          "attributeName": "Single Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Tandem Axle Vehicles Prohibited",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prohibited"
+                      },
+                      {
+                          "attributeName": "Use Preferred Truck Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Medium"
+                      },
+                      {
+                          "attributeName": "Use Preferred Hazmat Routes",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Medium"
+                      },
+                      {
+                          "attributeName": "Preferred for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Prefer_Low"
+                      },
+                      {
+                          "attributeName": "Avoid Stairways",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "WalkTime",
+                          "parameterName": "Walking Speed (km/h)",
+                          "value": 5
+                      },
+                      {
+                          "attributeName": "Avoid Truck Restricted Roads",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Roads Unsuitable for Pedestrians",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_High"
+                      },
+                      {
+                          "attributeName": "Avoid Toll Roads for Trucks",
+                          "parameterName": "Restriction Usage",
+                          "value": "Avoid_Medium"
+                      },
+                      {
+                          "attributeName": "TruckTravelTime",
+                          "parameterName": "Vehicle Maximum Speed (km/h)",
+                          "value": 0
+                      }
+                  ],
+                  "useHierarchy": true,
+                  "uturnAtJunctions": "esriNFSBAtDeadEndsAndIntersections",
+                  "simplificationTolerance": 10,
+                  "simplificationToleranceUnits": "esriMeters"
+              }
+          ],
+          "trafficSupport": "esriNTSHistoricalAndLive",
+          "outputGeometryPrecision": 10,
+          "outputGeometryPrecisionUnits": "esriMeters",
+          "supportsPreservingObjectID": true,
+          "preserveObjectID": false,
+          "findBestSequence": false,
+          "useStartTime": false,
+          "startTime": null,
+          "startTimeIsUTC": false,
+          "timeWindowsAreUTC": false,
+          "useTimeWindows": false,
+          "preserveFirstStop": true,
+          "preserveLastStop": true,
+          "outputLineType": "esriNAOutputLineTrueShape",
+          "directionsLanguage": "",
+          "directionsSupportedLanguages": [
+              "ar",
+              "bs",
+              "ca",
+              "cs",
+              "da",
+              "de",
+              "el",
+              "en",
+              "es",
+              "et",
+              "fi",
+              "fr",
+              "he",
+              "hr",
+              "hu",
+              "id",
+              "it",
+              "ja",
+              "ko",
+              "lt",
+              "lv",
+              "nb",
+              "nl",
+              "pl",
+              "pt-BR",
+              "pt-PT",
+              "ro",
+              "ru",
+              "sl",
+              "sr",
+              "sv",
+              "th",
+              "tr",
+              "uk",
+              "vi",
+              "zh-CN",
+              "zh-HK",
+              "zh-TW"
+          ],
+          "directionsStyleNames": [
+              "NA Desktop",
+              "NA Navigation",
+              "NA Campus"
+          ],
+          "directionsLengthUnits": "esriNAUMiles",
+          "directionsTimeAttribute": "TravelTime",
+          "supportsDirections": true,
+          "serviceLimits": {
+              "AllowSaveLayerOnServer": "false",
+              "DefaultOutputGeometryPrecision": "10",
+              "DefaultOutputGeometryPrecisionUnits": "esriMeters",
+              "LicensedForAutomaticRerouting": "false",
+              "Route_AllowTimeWindows": "true",
+              "Route_ForceHierarchyBeyondDistance": "50",
+              "Route_ForceHierarchyBeyondDistanceUnits": "esriMiles",
+              "Route_MaxBarriers": "250",
+              "Route_MaxFeaturesInLineBarriers": "500",
+              "Route_MaxFeaturesInPolygonBarriers": "2000",
+              "Route_MaxStops": "150",
+              "Route_MaxGeodesicDistanceWhenWalking": "27",
+              "Route_MaxGeodesicDistanceUnitsWhenWalking": "esriMiles"
+          }
+      }
+order: 1000

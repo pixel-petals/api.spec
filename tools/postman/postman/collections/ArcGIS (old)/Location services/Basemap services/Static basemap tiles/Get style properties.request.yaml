@@ -1,0 +1,14 @@
+$kind: http-request
+description: Returns the metadata of a specific static tile style in JSON format.
+url: https://static-map-tiles-api.arcgis.com/arcgis/rest/services/static-basemap-tiles-service/:VERSION/:STYLE_FAMILY/:STYLE_NAME/static?token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    description: An access token from an ArcGIS Location Platform account.
+pathVariables:
+  VERSION: v1
+  STYLE_FAMILY: arcgis
+  STYLE_NAME: outdoor
+examples: ./.resources/Get style properties.resources/examples
+order: 3000

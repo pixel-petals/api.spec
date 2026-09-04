@@ -1,0 +1,57 @@
+$kind: http-request
+description: Returns changeset comments matching the query. If no query is provided, returns the most recent comments.
+url: "{{baseUrl}}/api/0.6/changeset_comments?display_name=string&user=6776&from=1994-08-13T16:27:31.733Z&to=1994-08-13T16:27:31.733Z"
+method: GET
+headers:
+  Accept: application/xml
+queryParams:
+  - key: display_name
+    value: string
+    description: Filter by user display name
+    $type: string
+  - key: user
+    value: "6776"
+    description: Filter by user ID. display_name takes priority if both are supplied.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+  - key: from
+    value: 1994-08-13T16:27:31.733Z
+    description: Beginning of date range (ISO 8601 preferred)
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+  - key: to
+    value: 1994-08-13T16:27:31.733Z
+    description: End of date range (ISO 8601 preferred). Requires from.
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+body:
+  type: text
+  content: ""
+auth:
+  type: noauth
+examples: ./.resources/Search changeset comments.resources/examples
+order: 1000

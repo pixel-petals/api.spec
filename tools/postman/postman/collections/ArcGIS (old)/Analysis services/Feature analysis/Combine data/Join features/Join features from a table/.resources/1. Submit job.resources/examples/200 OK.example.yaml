@@ -1,0 +1,42 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/JoinFeatures/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+      targetLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/nc_regions/FeatureServer/0","itemId":"aadcf9a1a0884caf8d390f1059f159a8"}'
+      joinLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/nc_resource_table/FeatureServer/0","itemId":"b79e015459314212a56590ea97faaaad"}'
+      attributeRelationship: '[{"targetField":"county","joinField":"Area_Name"}]'
+      joinType: INNER
+      joinOperation: JoinOneToOne
+      recordsToMatch: '{"orderByFields":"ObjectId ASC"}'
+      outputName: '{"serviceProperties":{"name":"{{UNIQUE_NAME}}"}}'
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 31 Jan 2025 18:07:33 GMT
+    Content-Type: application/json;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    Cache-Control: no-cache
+    ETag: '"437933584"'
+    Vary: Origin,Accept-Encoding,Authorization,X-Esri-Authorization
+    Server: Microsoft-IIS/10.0
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    X-Powered-By: ASP.NET
+  body:
+    type: json
+    content: |-
+      {
+          "jobId": "<JOB_ID>",
+          "jobStatus": "esriJobSubmitted",
+          "results": {},
+          "inputs": {},
+          "messages": []
+      }
+order: 1000

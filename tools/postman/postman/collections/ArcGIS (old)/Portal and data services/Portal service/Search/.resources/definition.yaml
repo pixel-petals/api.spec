@@ -1,0 +1,3 @@
+$kind: collection
+description: You can search for public or private items as well as users and groups by querying the portal service. To learn more, visit the [Content management](https://developers.arcgis.com/documentation/mapping-apis-and-services/content-management/search/) chapter in the *Mapping APIs and locations services* guide.
+order: 2000

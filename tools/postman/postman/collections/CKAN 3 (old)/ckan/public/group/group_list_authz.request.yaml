@@ -1,0 +1,14 @@
+$kind: http-request
+description: "[API Documentation 2.6.3](http://docs.ckan.org/en/ckan-2.6.3/api/index.html#ckan.logic.action.get.organization_list_for_user)"
+url: "{{CKAN_API}}/group_list_authz?available_only&am_member"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: available_only
+    value: null
+    description: "(boolean) – remove the existing groups in the package (optional, default: False)"
+  - key: am_member
+    value: null
+    description: "if True return only the groups the logged-in user is a member of, otherwise return all groups that the user is authorized to edit (for example, sysadmin users are authorized to edit all groups) (optional, default: False)"
+order: 1000

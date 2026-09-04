@@ -1,0 +1,48 @@
+$kind: http-example
+request:
+  url: https://www.arcgis.com/sharing/rest/community/groups/{{group_id}}/invite
+  method: GET
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  body:
+    type: urlencoded
+    content:
+      users: "{{username}}"
+      role: group member
+      expiration: "20160"
+      f: json
+      token: "{{acces_token}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Thu, 13 Jan 2022 20:04:53 GMT
+    - key: Content-Type
+      value: application/json;charset=utf-8
+    - key: Content-Length
+      value: "125"
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Origin
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Cache-Control
+      value: no-cache
+    - key: Pragma
+      value: no-cache
+    - key: Expires
+      value: "-1"
+    - key: Strict-Transport-Security
+      value: max-age=31536000
+  body:
+    type: json
+    content: |-
+      {
+        "success":true,
+        "groupId": "cec0934890f244d18f4717a161c2f506"
+      }
+order: 1000

@@ -1,0 +1,320 @@
+$kind: http-example
+request:
+  url: https://{{logistics-service}}.arcgis.com/arcgis/rest/services/World/LocationAllocation/GPServer/SolveLocationAllocation/jobs/:job-id/results/Output_Facilities
+  method: POST
+  pathVariables:
+    job-id: "{{job_id}}"
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 08:23:26 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "1154"
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 08:24:26 GMT; Path=/arcgis/rest; HttpOnly
+    ETag: '"95d86ee4"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "paramName": "Output_Facilities",
+          "dataType": "GPFeatureRecordSetLayer",
+          "value": {
+              "displayFieldName": "",
+              "geometryType": "esriGeometryPoint",
+              "spatialReference": {
+                  "wkid": 4326,
+                  "latestWkid": 4326
+              },
+              "fields": [
+                  {
+                      "name": "ObjectID",
+                      "type": "esriFieldTypeOID",
+                      "alias": "ObjectID"
+                  },
+                  {
+                      "name": "Name",
+                      "type": "esriFieldTypeString",
+                      "alias": "Name",
+                      "length": 500
+                  },
+                  {
+                      "name": "FacilityType",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "FacilityType"
+                  },
+                  {
+                      "name": "Weight",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Weight"
+                  },
+                  {
+                      "name": "Capacity",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Capacity"
+                  },
+                  {
+                      "name": "DemandCount",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "DemandCount"
+                  },
+                  {
+                      "name": "DemandWeight",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "DemandWeight"
+                  },
+                  {
+                      "name": "SourceID",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "SourceID"
+                  },
+                  {
+                      "name": "SourceOID",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "SourceOID"
+                  },
+                  {
+                      "name": "PosAlong",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "PosAlong"
+                  },
+                  {
+                      "name": "SideOfEdge",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "SideOfEdge"
+                  },
+                  {
+                      "name": "CurbApproach",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "CurbApproach"
+                  },
+                  {
+                      "name": "Status",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "Status"
+                  },
+                  {
+                      "name": "SnapX",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "SnapX"
+                  },
+                  {
+                      "name": "SnapY",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "SnapY"
+                  },
+                  {
+                      "name": "SnapZ",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "SnapZ"
+                  },
+                  {
+                      "name": "DistanceToNetworkInMeters",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "DistanceToNetworkInMeters"
+                  },
+                  {
+                      "name": "Total_Minutes",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Total_Minutes"
+                  },
+                  {
+                      "name": "TotalWeighted_Minutes",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "TotalWeighted_Minutes"
+                  },
+                  {
+                      "name": "FacilityOID",
+                      "type": "esriFieldTypeInteger",
+                      "alias": "FacilityOID"
+                  },
+                  {
+                      "name": "Bearing",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "Bearing"
+                  },
+                  {
+                      "name": "BearingTol",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "BearingTol"
+                  },
+                  {
+                      "name": "NavLatency",
+                      "type": "esriFieldTypeDouble",
+                      "alias": "NavLatency"
+                  }
+              ],
+              "features": [
+                  {
+                      "attributes": {
+                          "ObjectID": 1,
+                          "Name": "Existing Location",
+                          "FacilityType": 1,
+                          "Weight": 1,
+                          "Capacity": null,
+                          "DemandCount": 10,
+                          "DemandWeight": 23491.00665945021,
+                          "SourceID": 1,
+                          "SourceOID": 12458305,
+                          "PosAlong": 0.44278869634287754,
+                          "SideOfEdge": 2,
+                          "CurbApproach": 0,
+                          "Status": 0,
+                          "SnapX": -122.33407252783104,
+                          "SnapY": 47.608998040307171,
+                          "SnapZ": 0,
+                          "DistanceToNetworkInMeters": 21.211541308396932,
+                          "Total_Minutes": 38.229233593838202,
+                          "TotalWeighted_Minutes": 87265.942145859895,
+                          "FacilityOID": 1,
+                          "Bearing": null,
+                          "BearingTol": null,
+                          "NavLatency": null
+                      },
+                      "geometry": {
+                          "x": -122.33390599999996,
+                          "y": 47.609152000000051
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 2,
+                          "Name": "Candidate 1",
+                          "FacilityType": 3,
+                          "Weight": 1,
+                          "Capacity": null,
+                          "DemandCount": 8,
+                          "DemandWeight": 20987.973847114568,
+                          "SourceID": 1,
+                          "SourceOID": 12458053,
+                          "PosAlong": 0.62896375544855376,
+                          "SideOfEdge": 2,
+                          "CurbApproach": 0,
+                          "Status": 0,
+                          "SnapX": -122.33369000736597,
+                          "SnapY": 47.604755698717568,
+                          "SnapZ": 0,
+                          "DistanceToNetworkInMeters": 29.428092661849504,
+                          "Total_Minutes": 25.898427632572758,
+                          "TotalWeighted_Minutes": 70703.083169596488,
+                          "FacilityOID": 2,
+                          "Bearing": null,
+                          "BearingTol": null,
+                          "NavLatency": null
+                      },
+                      "geometry": {
+                          "x": -122.33358499999997,
+                          "y": 47.604501000000027
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 3,
+                          "Name": "Candidate 2",
+                          "FacilityType": 0,
+                          "Weight": 1,
+                          "Capacity": null,
+                          "DemandCount": 0,
+                          "DemandWeight": 0,
+                          "SourceID": 1,
+                          "SourceOID": 12458052,
+                          "PosAlong": 0.5795096708857489,
+                          "SideOfEdge": 1,
+                          "CurbApproach": 0,
+                          "Status": 0,
+                          "SnapX": -122.3345068365482,
+                          "SnapY": 47.605452688324917,
+                          "SnapZ": 0,
+                          "DistanceToNetworkInMeters": 12.055312759497905,
+                          "Total_Minutes": 0,
+                          "TotalWeighted_Minutes": 0,
+                          "FacilityOID": 3,
+                          "Bearing": null,
+                          "BearingTol": null,
+                          "NavLatency": null
+                      },
+                      "geometry": {
+                          "x": -122.33454999999998,
+                          "y": 47.605557000000033
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 4,
+                          "Name": "Candidate 3",
+                          "FacilityType": 0,
+                          "Weight": 1,
+                          "Capacity": null,
+                          "DemandCount": 0,
+                          "DemandWeight": 0,
+                          "SourceID": 1,
+                          "SourceOID": 12458081,
+                          "PosAlong": 0.37970833856978703,
+                          "SideOfEdge": 1,
+                          "CurbApproach": 0,
+                          "Status": 0,
+                          "SnapX": -122.33765047292417,
+                          "SnapY": 47.609538375451322,
+                          "SnapZ": 0,
+                          "DistanceToNetworkInMeters": 13.202581426010713,
+                          "Total_Minutes": 0,
+                          "TotalWeighted_Minutes": 0,
+                          "FacilityOID": 4,
+                          "Bearing": null,
+                          "BearingTol": null,
+                          "NavLatency": null
+                      },
+                      "geometry": {
+                          "x": -122.33775299999996,
+                          "y": 47.609442000000058
+                      }
+                  },
+                  {
+                      "attributes": {
+                          "ObjectID": 5,
+                          "Name": "Candidate 4",
+                          "FacilityType": 0,
+                          "Weight": 1,
+                          "Capacity": null,
+                          "DemandCount": 0,
+                          "DemandWeight": 0,
+                          "SourceID": 1,
+                          "SourceOID": 12458081,
+                          "PosAlong": 0.96232515009764985,
+                          "SideOfEdge": 2,
+                          "CurbApproach": 0,
+                          "Status": 0,
+                          "SnapX": -122.33546279445349,
+                          "SnapY": 47.607181194127321,
+                          "SnapZ": 0,
+                          "DistanceToNetworkInMeters": 18.574746634683223,
+                          "Total_Minutes": 0,
+                          "TotalWeighted_Minutes": 0,
+                          "FacilityOID": 5,
+                          "Bearing": null,
+                          "BearingTol": null,
+                          "NavLatency": null
+                      },
+                      "geometry": {
+                          "x": -122.33531899999997,
+                          "y": 47.60731700000008
+                      }
+                  }
+              ],
+              "exceededTransferLimit": false
+          }
+      }
+order: 1000

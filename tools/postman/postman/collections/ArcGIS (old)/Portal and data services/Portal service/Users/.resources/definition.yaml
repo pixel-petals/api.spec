@@ -1,0 +1,8 @@
+$kind: collection
+description: |-
+  A user is created when someone signs up for a developer account, when an account is created for a user by an administrator, or when someone joins an organization. Depending on your role and privileges assigned to you, you can search, create, and manage users within your organization.
+
+  NOTE: you cannot use an API key as an access token for these operations. You will need to use a token representing an [ArcGIS Identity](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/arcgis-identity/) from performing oAuth 2.0
+
+  To learn more, go to the [Users](https://developers.arcgis.com/documentation/mapping-apis-and-services/content-management/users/) section in the *Mapping APIs and location services* guide.
+order: 3000

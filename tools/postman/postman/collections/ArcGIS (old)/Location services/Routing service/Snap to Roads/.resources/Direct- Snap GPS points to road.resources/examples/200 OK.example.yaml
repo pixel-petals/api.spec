@@ -1,0 +1,206 @@
+$kind: http-example
+request:
+  url: https://route-api.arcgis.com/arcgis/rest/services/World/SnapToRoadsSync/GPServer/SnapToRoads/execute
+  method: POST
+  queryParams:
+    - key: f
+      value: json
+      disabled: true
+    - key: points
+      value: '{"features":[{"attributes":{"OBJECTID":1,"location_timestamp":1704522159000},"geometry":{"x":-122.43410099956145,"y":37.800155000053394}},{"attributes":{"OBJECTID":2,"location_timestamp":1704522171000},"geometry":{"x":-122.43459799999755,"y":37.800737999958812}},{"attributes":{"OBJECTID":3,"location_timestamp":1704522183000},"geometry":{"x":-122.43539199974094,"y":37.800955000073259}},{"attributes":{"OBJECTID":4,"location_timestamp":1704522195000},"geometry":{"x":-122.43629900019869,"y":37.800787999566637}},{"attributes":{"OBJECTID":5,"location_timestamp":1704522231000},"geometry":{"x":-122.43627299989902,"y":37.800661000005221}},{"attributes":{"OBJECTID":6,"location_timestamp":1704522247000},"geometry":{"x":-122.43612999959976,"y":37.800168999799666}}]}'
+      disabled: true
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      disabled: true
+  body:
+    type: urlencoded
+    content:
+      - key: f
+        value: json
+      - key: points
+        value: '{"features":[{"attributes":{"OBJECTID":1,"location_timestamp":1704522159000},"geometry":{"x":-122.43410099956145,"y":37.800155000053394}},{"attributes":{"OBJECTID":2,"location_timestamp":1704522171000},"geometry":{"x":-122.43459799999755,"y":37.800737999958812}},{"attributes":{"OBJECTID":3,"location_timestamp":1704522183000},"geometry":{"x":-122.43539199974094,"y":37.800955000073259}},{"attributes":{"OBJECTID":4,"location_timestamp":1704522195000},"geometry":{"x":-122.43629900019869,"y":37.800787999566637}},{"attributes":{"OBJECTID":5,"location_timestamp":1704522231000},"geometry":{"x":-122.43627299989902,"y":37.800661000005221}},{"attributes":{"OBJECTID":6,"location_timestamp":1704522247000},"geometry":{"x":-122.43612999959976,"y":37.800168999799666}}]}'
+      - key: token
+        value: "{{ACCESS_TOKEN}}"
+        disabled: true
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Fri, 27 Jun 2025 13:33:58 GMT
+    Content-Type: application/json;charset=UTF-8
+    Content-Length: "698"
+    Connection: keep-alive
+    Content-Security-Policy: script-src 'self';
+    X-Content-Type-Options: nosniff
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=sym-gcm|1|Ceh0TTv1hDdi53fAHdlSXQ==|vU4EGOS2-Kt-4mUY7_KxbbS5h5zJHwoiX5NSOfRqOjB7gY7IND-Vnt2NDBex-29wshL6_hpHozrm_W6O9pHx1UpzdcdrlPYKXeuixlJVjGuAnq6hAOx6rUxAoCAjH4OKUR7HQh6p4KNxpI_5kq9hkT0e2X5NYSn4sE838yLhVeOARWtJ2vqX4sLsqHuOnhyl0oTBVGFd3qQTPrGj_hr0VhGyfxHJxaEbB3_yI-FyOllCh_zrg-UWDYh3Ebv6JYMuHOVoP8HztbXqfQifN9zBCljqvWwxcfWeW4Hs-Tz73zRRfVCR5dIQgv9jHywZlWfkV5IN2F-4RbrbSd75WY-1sAei78F6PgnEfKFnjeJTQJR9RJ3R1HffbHCsbSKGU9iKOLPioYB11xoDXaxRCbpohFTQcBfosmPK7Jte2im4Agc7WhjCRPrjlQwgmEjlw2CH5i56jaQS73PK9dFQtvbk4QzrH1L7AMXVZykeIx-yup-BTMcsop45E6XVlxXeySOhpjhPexJJQDWa6tIC10ao0z-aEVXf3t-2TBVrRx2hqFzxag6lR3Ihwssts5g2Huy2BxMBCVb1zZzxEzc5bcqb8vYaqC1vuu_W0J1JmOOBNKeXlTt92mQJkgFaUZgMdiFaQa6AQiiT7LEsrCU60QQjf4iafoIJDAQ44vCu7z2_-d3_xt5F5B-Bhu2B0eh4W6-MbjTje3orTIMvd-AmcQRegiiN63uoxjBkrLJRn4XsUr9W0AqriS4ii5Xok_BOdcV-X-29skVT8TT8Uzlu9ces0a_BVWVvffSWpHJMZqHvoMgwHx7ViP4fuDyKr8uRtvqBCEynI2xOhoZLgUl2JOMADHESyR5QcEJDCHePDZPDYPSoZs5W493_kZVIsIu6ME5PynQ5jQzlw8ohw1fTMyarzSkLna1XrfvmGTTTPj9__1MMykgripQrh3n6dMmamuuit_HcdPpT_3X586Ye2BBK4gTuGmP7NQM5ZAjx2mOHZ9zCmYNE7l8N6HIt7597BjhD8r9sUG75Uw8MVVgJ937OO4SEqfPO_jXDVvuNyyfmpfuYPT-sLXoKTKp4u6UV5dnbkqfutfz0JfPaVE_n4sVHcBTHn8cMElKLIZ8gcUo_yxU_PAW_jVH5is1NBs43WqevgzFGJJBmIk6gk1Ov1MmGse3qxMv2QTm2lHZORL_QB23vE4haWjhCsGD8-BpCaGPHVq9iZkoFNfrzU0BfQFmUYqGKigxgicYHXBiQQ8wxbgy_j4vhfhk8K1Ni0LkJjUNO4ire_ro1tknjCgwM2t8_psyGqKAE1ggtEu7geMbP73A26LWvjX5umtKTa1WaZ2VHSnP6va8CS1fWZu9tKoMs9ki6Y_GAFuDTJtpGKznNGj9kembzGJLm-nMPDHTpzfgJo5cppCAYO_U-tl0egC0SznbWmAEPkTBxUL1IiKbSg1dkK0k2l1pvRTBBmuh_IGPRanObnMu4J4oYJQrevcFaS86CJYUhRzSRyrQo5FSDJMU1sDbDA4-Z-Pa8is27MtFLVH-XFegKkTh1DXVlb5tS0-222xug7wvUvnEvBrmqzGWyCPA3jL9A1QtttuImS6NQpeFue1pMPZEgyFfoOeItm1WFC8uGux-CWZ8=; Max-Age=60; Expires=Fri, 27 Jun 2025 13:34:46 GMT; Path=/arcgis/rest; HttpOnly; SameSite=Lax
+    ETag: '"1f4681e8"'
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: json
+    content: |-
+      {
+          "results": [
+              {
+                  "paramName": "output_snapped_points",
+                  "dataType": "GPFeatureRecordSetLayer",
+                  "value": {
+                      "displayFieldName": "",
+                      "geometryType": "esriGeometryPoint",
+                      "spatialReference": {
+                          "wkid": 4326,
+                          "latestWkid": 4326
+                      },
+                      "fields": [
+                          {
+                              "name": "ObjectID",
+                              "type": "esriFieldTypeOID",
+                              "alias": "ObjectID"
+                          },
+                          {
+                              "name": "confidence",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "confidence"
+                          },
+                          {
+                              "name": "track_id",
+                              "type": "esriFieldTypeString",
+                              "alias": "track_id",
+                              "length": 1024
+                          },
+                          {
+                              "name": "location_timestamp",
+                              "type": "esriFieldTypeDate",
+                              "alias": "location_timestamp"
+                          },
+                          {
+                              "name": "horizontal_accuracy",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "horizontal_accuracy"
+                          },
+                          {
+                              "name": "speed",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "speed"
+                          },
+                          {
+                              "name": "course",
+                              "type": "esriFieldTypeDouble",
+                              "alias": "course"
+                          }
+                      ],
+                      "features": [
+                          {
+                              "attributes": {
+                                  "ObjectID": 1,
+                                  "confidence": 0.4418717194695182,
+                                  "track_id": null,
+                                  "location_timestamp": 1704522159000,
+                                  "horizontal_accuracy": null,
+                                  "speed": null,
+                                  "course": null
+                              },
+                              "geometry": {
+                                  "x": -122.43409904999999,
+                                  "y": 37.800139348000073
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "ObjectID": 2,
+                                  "confidence": 0.9651294347769841,
+                                  "track_id": null,
+                                  "location_timestamp": 1704522171000,
+                                  "horizontal_accuracy": null,
+                                  "speed": null,
+                                  "course": null
+                              },
+                              "geometry": {
+                                  "x": -122.43455172899996,
+                                  "y": 37.800747275000049
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "ObjectID": 3,
+                                  "confidence": 0.97220238896331246,
+                                  "track_id": null,
+                                  "location_timestamp": 1704522183000,
+                                  "horizontal_accuracy": null,
+                                  "speed": null,
+                                  "course": null
+                              },
+                              "geometry": {
+                                  "x": -122.43538873299997,
+                                  "y": 37.800928060000047
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "ObjectID": 4,
+                                  "confidence": 0.97215780246941119,
+                                  "track_id": null,
+                                  "location_timestamp": 1704522195000,
+                                  "horizontal_accuracy": null,
+                                  "speed": null,
+                                  "course": null
+                              },
+                              "geometry": {
+                                  "x": -122.43630924199999,
+                                  "y": 37.800781948000065
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "ObjectID": 5,
+                                  "confidence": 0.9755534578969276,
+                                  "track_id": null,
+                                  "location_timestamp": 1704522231000,
+                                  "horizontal_accuracy": null,
+                                  "speed": null,
+                                  "course": null
+                              },
+                              "geometry": {
+                                  "x": -122.43622354199999,
+                                  "y": 37.80067114700006
+                              }
+                          },
+                          {
+                              "attributes": {
+                                  "ObjectID": 6,
+                                  "confidence": 0.97175678871436189,
+                                  "track_id": null,
+                                  "location_timestamp": 1704522247000,
+                                  "horizontal_accuracy": null,
+                                  "speed": null,
+                                  "course": null
+                              },
+                              "geometry": {
+                                  "x": -122.43612144799999,
+                                  "y": 37.80017074400007
+                              }
+                          }
+                      ],
+                      "exceededTransferLimit": false
+                  }
+              },
+              {
+                  "paramName": "output_lines",
+                  "dataType": "GPFeatureRecordSetLayer",
+                  "value": {}
+              },
+              {
+                  "paramName": "usage_cost",
+                  "dataType": "GPString",
+                  "value": {
+                      "numObjects": 6,
+                      "credits": 0.30000000000000004
+                  }
+              }
+          ],
+          "messages": []
+      }
+order: 1000

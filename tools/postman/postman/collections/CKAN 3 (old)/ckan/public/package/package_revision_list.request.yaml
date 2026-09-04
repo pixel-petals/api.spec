@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{CKAN_API}}/package_revision_list?id={{test-package-id}}"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: id
+    value: "{{test-package-id}}"
+    description: REQUIRED (string) – the id or name of the dataset
+order: 6000

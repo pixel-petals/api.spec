@@ -1,0 +1,20 @@
+$kind: http-request
+description: "[API Documentation 2.6.3](http://docs.ckan.org/en/ckan-2.6.3/api/index.html#ckan.logic.action.get.organization_list_for_user)"
+url: "{{CKAN_API}}/package_activity_list?id=6e29a235-5a8b-451e-a229-54faab70761a"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: id
+    value: 6e29a235-5a8b-451e-a229-54faab70761a
+    description: REQUIRED (string) – the id or name of the package
+  - key: offset
+    value: null
+    disabled: true
+    description: "(int) – where to start getting activity items from (optional, default: 0)"
+  - key: limit
+    value: null
+    disabled: true
+    description: "(int) – the maximum number of activities to return (optional, default: 31, the default value is configurable via the ckan.activity_list_limit setting)"
+order: 9000

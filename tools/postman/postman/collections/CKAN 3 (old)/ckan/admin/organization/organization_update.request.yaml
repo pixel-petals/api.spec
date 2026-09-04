@@ -1,0 +1,17 @@
+$kind: http-request
+description: "[API Documentation 2.6.3](http://docs.ckan.org/en/ckan-2.6.3/api/index.html#ckan.logic.action.get.organization_list_for_user)"
+url: "{{CKAN_API}}/organization_update?id=a-pending-project-2"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  id: a-pending-project-2
+body:
+  type: text
+  content: |-
+    {
+      "id": "a-pending-project-2",
+      "approval_status": "Pending"
+    }
+order: 6000

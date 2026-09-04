@@ -1,0 +1,75 @@
+$kind: http-request
+description: Go to the [Basemap styles service &gt; Get started](https://[https://developers.arcgis.com/rest/basemap-styles/get-started/](https://developers.arcgis.com/rest/basemap-styles/get-started/)) to learn more.
+url: https://basemapstyles-api.arcgis.com/arcgis/rest/services/styles/:VERSION/:STYLE_RESPONSE/:STYLE_FAMILY/:STYLE_NAME/?token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  token: "{{ACCESS_TOKEN}}"
+pathVariables:
+  - key: VERSION
+    value: v2
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: STYLE_RESPONSE
+    value: styles
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "styles",
+              "webmaps"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: STYLE_FAMILY
+    value: arcgis
+    description: "`arcgis` | `open`"
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false,
+            "enum": [
+              "arcgis",
+              "open"
+            ]
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+  - key: STYLE_NAME
+    value: navigation
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "deprecated": false
+          }
+        }
+      }
+examples: ./.resources/Get a style.resources/examples
+order: 2000

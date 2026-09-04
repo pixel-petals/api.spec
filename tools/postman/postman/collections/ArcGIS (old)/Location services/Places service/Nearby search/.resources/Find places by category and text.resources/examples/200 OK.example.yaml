@@ -1,0 +1,377 @@
+$kind: http-example
+request:
+  url: https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/near-point?x=-0.1276&y=51.5073&searchText=sports&radius=1609.344&categoryIds=13018, 13051, 18065&pageSize=20&f=pjson&token={{Token}}
+  method: GET
+  queryParams:
+    x: "-0.1276"
+    y: "51.5073"
+    searchText: sports
+    radius: "1609.344"
+    categoryIds: 13018, 13051, 18065
+    pageSize: "20"
+    f: pjson
+    token: "{{Token}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Encoding: gzip
+    Content-Type: application/json
+    Date: Wed, 05 Jul 2023 16:54:50 GMT
+    permissions-policy: interest-cohort=()
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    x-content-type-options: nosniff
+    x-frame-options: SAMEORIGIN
+    Content-Length: "1657"
+    Connection: keep-alive
+  body:
+    type: json
+    content: |-
+      {
+          "results": [
+              {
+                  "placeId": "22a25084338d14aa48e41a2387880c44",
+                  "location": {
+                      "x": -0.128309,
+                      "y": 51.50718
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "News Sports",
+                  "distance": 50.9
+              },
+              {
+                  "placeId": "4b8962295377a7d46e7acea54dab3198",
+                  "location": {
+                      "x": -0.127403,
+                      "y": 51.506411
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Ireland Wales Rugby",
+                  "distance": 99.8
+              },
+              {
+                  "placeId": "c37f9d7946964078b530d2c7eeb64d2f",
+                  "location": {
+                      "x": -0.126207,
+                      "y": 51.507927
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Social Media",
+                  "distance": 119
+              },
+              {
+                  "placeId": "a554d20a8282e76847b5e282343b0e9c",
+                  "location": {
+                      "x": -0.125917,
+                      "y": 51.508102
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Buy Instagram Followers",
+                  "distance": 146.7
+              },
+              {
+                  "placeId": "439d77a6bd75f70f212dd823fa099ebf",
+                  "location": {
+                      "x": -0.125917,
+                      "y": 51.508102
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Buy Instagram Followers",
+                  "distance": 146.7
+              },
+              {
+                  "placeId": "880dff4f3f4bcab8e697778e6b8408a8",
+                  "location": {
+                      "x": -0.125733,
+                      "y": 51.508706
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "OMFC - Official Maradona Fan Club",
+                  "distance": 202.8
+              },
+              {
+                  "placeId": "2a8bf9d979ccfc9b066bc0234538dd97",
+                  "location": {
+                      "x": -0.127112,
+                      "y": 51.510806
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13018",
+                          "label": "Pub"
+                      },
+                      {
+                          "categoryId": "13022",
+                          "label": "Sports Bar"
+                      },
+                      {
+                          "categoryId": "13057",
+                          "label": "Gastropub"
+                      }
+                  ],
+                  "name": "The Salisbury Pub",
+                  "distance": 391.3
+              },
+              {
+                  "placeId": "606dfda3a6914fa032276aa5e63009ca",
+                  "location": {
+                      "x": -0.122778,
+                      "y": 51.511006
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13018",
+                          "label": "Pub"
+                      },
+                      {
+                          "categoryId": "13022",
+                          "label": "Sports Bar"
+                      },
+                      {
+                          "categoryId": "13065",
+                          "label": "Restaurant"
+                      }
+                  ],
+                  "name": "Maple Leaf",
+                  "distance": 530.3
+              },
+              {
+                  "placeId": "70ad6acfcc2c35b41cb828589b182ccb",
+                  "location": {
+                      "x": -0.119428,
+                      "y": 51.510945
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "10000",
+                          "label": "Arts and Entertainment"
+                      },
+                      {
+                          "categoryId": "13018",
+                          "label": "Pub"
+                      },
+                      {
+                          "categoryId": "13022",
+                          "label": "Sports Bar"
+                      }
+                  ],
+                  "name": "The Savoy Tup",
+                  "distance": 695.8
+              },
+              {
+                  "placeId": "0803ec374ec61374706e125de69f3ec7",
+                  "location": {
+                      "x": -0.137311,
+                      "y": 51.505628
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Commonwealth Games Federation",
+                  "distance": 697.4
+              },
+              {
+                  "placeId": "01be9c443afa33c0e9a540e212bb2326",
+                  "location": {
+                      "x": -0.119425,
+                      "y": 51.511702
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Immerse Swimming - Covent Garden",
+                  "distance": 748.1
+              },
+              {
+                  "placeId": "533d319240a256763dadee2526b17d89",
+                  "location": {
+                      "x": -0.137685,
+                      "y": 51.510587
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13018",
+                          "label": "Pub"
+                      },
+                      {
+                          "categoryId": "13022",
+                          "label": "Sports Bar"
+                      },
+                      {
+                          "categoryId": "13065",
+                          "label": "Restaurant"
+                      }
+                  ],
+                  "name": "Leicester Arms",
+                  "distance": 787.9
+              },
+              {
+                  "placeId": "de7c041f5dbceda826eef6c9dd8b02e4",
+                  "location": {
+                      "x": -0.13624,
+                      "y": 51.512061
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "400 Films",
+                  "distance": 798.6
+              },
+              {
+                  "placeId": "79ee5ae429f58a02d1469566bf45ea72",
+                  "location": {
+                      "x": -0.139959,
+                      "y": 51.506695
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Racehorse Owners Association",
+                  "distance": 858
+              },
+              {
+                  "placeId": "82f6a891aa7246a2868d3d1c68ab8553",
+                  "location": {
+                      "x": -0.123674,
+                      "y": 51.514806
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "ProInfinity",
+                  "distance": 877.7
+              },
+              {
+                  "placeId": "a28290f1484126a39aeb6be117db5b59",
+                  "location": {
+                      "x": -0.123674,
+                      "y": 51.514806
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Top Corner Football 5 a Side 5-A-Side",
+                  "distance": 877.7
+              },
+              {
+                  "placeId": "f0b3785233ffbeb06555d0f6360172ad",
+                  "location": {
+                      "x": -0.124956,
+                      "y": 51.515558
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Footy Ambition",
+                  "distance": 936.3
+              },
+              {
+                  "placeId": "7051b8aa2a3b28e9b79a98da7ade823b",
+                  "location": {
+                      "x": -0.124956,
+                      "y": 51.515558
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "Bundesliga Betting Tips",
+                  "distance": 936.3
+              },
+              {
+                  "placeId": "769bf6ab1b62adf90357cdbbf617b7ff",
+                  "location": {
+                      "x": -0.12191,
+                      "y": 51.514995
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "13018",
+                          "label": "Pub"
+                      },
+                      {
+                          "categoryId": "13022",
+                          "label": "Sports Bar"
+                      },
+                      {
+                          "categoryId": "13065",
+                          "label": "Restaurant"
+                      }
+                  ],
+                  "name": "Philomena's",
+                  "distance": 941.9
+              },
+              {
+                  "placeId": "523b4fd2c1f6345997743e7bccd3ac98",
+                  "location": {
+                      "x": -0.115069,
+                      "y": 51.51239
+                  },
+                  "categories": [
+                      {
+                          "categoryId": "18065",
+                          "label": "Sports Club"
+                      }
+                  ],
+                  "name": "180 House",
+                  "distance": 1035.6
+              }
+          ],
+          "pagination": {
+              "nextUrl": "https://places-api.arcgis.com/arcgis/rest/services/places-service/v1/places/near-point?x=-0.12760000&y=51.50730000&radius=1609.34400000&searchText=sports&categoryIds=13018,13051,18065&f=pjson&offset=20&pageSize=20"
+          }
+      }
+order: 1000

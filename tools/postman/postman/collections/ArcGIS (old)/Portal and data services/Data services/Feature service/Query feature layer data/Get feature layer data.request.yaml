@@ -1,0 +1,20 @@
+$kind: http-request
+description: Queries a feature layer to retrieve data for all features. Use this endpoint to access attribute and geometry information from a specified feature layer by providing the organization ID, service name, and layer ID in the URL. Supports filtering, field selection, and authentication via access token.
+url: https://services3.arcgis.com/:ORG_ID/ArcGIS/rest/services/:SERVICE_NAME/FeatureServer/:LAYER_ID/query?where=1=1&outFields=*&f=json&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  - key: where
+    value: 1=1
+  - key: outFields
+    value: "*"
+  - key: f
+    value: json
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+    description: "If your layer is not public, you will need an access token to access it. "
+pathVariables:
+  ORG_ID: "{{ORG_ID}}"
+  SERVICE_NAME: "{{SERVICE_NAME}}"
+  LAYER_ID: "{{LAYER_ID}}"
+examples: ./.resources/Get feature layer data.resources/examples
+order: 1000

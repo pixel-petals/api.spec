@@ -1,0 +1,22 @@
+$kind: http-example
+request:
+  url: https://geocode-beta.arcgis.com/arcgis/rest/services/World/GeocodeServer/batchGeocode/beta/jobs/{{jobId}}/results/geocodeResult?token={{ACCESS_TOKEN}}
+  method: GET
+  queryParams:
+    token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "paramName": "geocodeResult",
+          "dataType": "GPDataFile",
+          "value": {
+              "url": "https://geocode-beta.arcgis.com/arcgis/rest/services/World/GeocodeServer/batchGeocode/beta/download/8b4d100f-65e3-4291-962b-704f1890f204.zip"
+          }
+      }
+order: 1000

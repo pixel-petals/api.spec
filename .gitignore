@@ -67,8 +67,8 @@
 !/packages/
 !/packages/**
 
-!/plugins/
-!/plugins/**
+!/tools/
+!/tools/**
 
 !/utils/
 !/utils/**

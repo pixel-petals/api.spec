@@ -1,0 +1,3 @@
+$kind: collection
+description: The `SummarizeWithin` operation find areas (and portions of areas) that overlap between two feature datasets, calculates statistics about the overlap, and returns new feature data.
+order: 4000

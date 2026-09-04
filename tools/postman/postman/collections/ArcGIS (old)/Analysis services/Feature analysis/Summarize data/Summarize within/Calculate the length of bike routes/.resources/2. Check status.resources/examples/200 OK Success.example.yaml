@@ -1,0 +1,42 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/SummarizeWithin/jobs/{{job_id}}"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: "{\r
+
+      \  \"jobId\": \"<JOB_ID>\",\r
+
+      \  \"jobStatus\": \"esriJobSucceeded\",\r
+
+      \  \"results\": {\r
+
+      \    \"resultLayer\": {\r
+
+      \      \"paramUrl\": \"results/resultLayer\"\r
+
+      \    },\r
+
+      \    \"groupBySummary\": {\r
+
+      \      \"paramUrl\": \"results/groupBySummary\"\r
+
+      \    }\r
+
+      \  },\r
+
+      \  \"inputs\": {},\r
+
+      \  \"messages\": []\r
+
+      }"
+order: 2000

@@ -1,0 +1,4 @@
+$kind: collection
+name: Travel cost (Distance / OD matrix)
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/travel-cost-matrix/)
+order: 6000

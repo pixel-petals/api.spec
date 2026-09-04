@@ -1,0 +1,3 @@
+$kind: collection
+description: The `OverlayLayers` operation combines two or more feature datasets using either intersect, union, or erase methods. The operation returns a new feature dataset that contains the feature attributes of the input layers.
+order: 4000

@@ -1,0 +1,24 @@
+$kind: http-request
+description: |-
+  Polygon at [University City West (Philadelphia)](https://www.arcgis.com/apps/mapviewer/index.html?marker=-117.217855,32.842137&level=13)
+  [![](https://developers.arcgis.com/rest/geoenrichment/api-reference/GUID-C1665347-E801-4987-AF13-442303338A88-web.png)](https://www.arcgis.com/apps/mapviewer/index.html?marker=-117.217855,32.842137&level=13)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/enrich?f=pjson&token={{ACCESS_TOKEN}}&StudyAreas=[{"geometry":{"rings":[[[-117.217855,32.842137],[-117.219443,32.847293],[-117.216611,32.853999],[-117.23249,32.849312],[-117.234249,32.843399],[-117.229571,32.839108],[-117.217855,32.842137]]],"spatialReference":{"wkid":4326}},"attributes":{"id":"Polygon 1","name":"University City West"}}]&StudyAreasOptions={"GeometryType":"esriGeometryPolygon","SpatialRelationship":"esriSpatialRelIntersects"}&dataCollections=["Employment"]&returngeometry=true
+method: GET
+queryParams:
+  - key: f
+    value: pjson
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+  - key: StudyAreas
+    value: '[{"geometry":{"rings":[[[-117.217855,32.842137],[-117.219443,32.847293],[-117.216611,32.853999],[-117.23249,32.849312],[-117.234249,32.843399],[-117.229571,32.839108],[-117.217855,32.842137]]],"spatialReference":{"wkid":4326}},"attributes":{"id":"Polygon 1","name":"University City West"}}]'
+  - key: StudyAreasOptions
+    value: '{"GeometryType":"esriGeometryPolygon","SpatialRelationship":"esriSpatialRelIntersects"}'
+  - key: dataCollections
+    value: '["Employment"]'
+  - key: returngeometry
+    value: "true"
+  - key: analysisVariables
+    value: '["KeyUSFacts.PCI_CY"]'
+    disabled: true
+examples: ./.resources/KeyUSFacts in an area of Philadelphia.resources/examples
+order: 5000

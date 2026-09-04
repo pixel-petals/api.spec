@@ -1,0 +1,942 @@
+$kind: http-example
+request:
+  url: https://{{geocode-service}}.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?token={{access_token}}&f=pjson&category=gas station&location=2.34602,48.85880&outfields=PlaceName,Place_addr
+  method: GET
+  queryParams:
+    token: "{{access_token}}"
+    f: pjson
+    category: gas station
+    location: 2.34602,48.85880
+    outfields: PlaceName,Place_addr
+  body:
+    type: urlencoded
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 07:06:06 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Vary: Origin
+    Cache-Control: max-age=0,must-revalidate
+    Server: ""
+    Set-Cookie: AGS_ROLES=E2SQX/u6luIPBQUhx0iGui++UZzWt7ygx2qHIns9mHdCr1WbHF2Lsy8PrDZXIlDUVQuJlIXm1j/2SzJu68h82+6/2OxVDlyJBlYwULX8wyaoEXsWh2mI32EQxr16765sD9uBD7wu1D3pAJYG7sodoXAD1ahcIRZvyD54ZfPHvLRejtiGr8Z/ggCD3udD59Ufa5ChSY+CSdBngO8g39rrHgDgWNMqv6xs35cV5DN2WdkInnuHWPwQLbSCBs6jPM8TZDA2beqCUFCo1upGivhK1vG0K1iiep5a1Xcg9MPnN5yuIgoGCzdg5Q9Ot2o6HUvymAoAqXzAeqXFfWI4QQ6vIBkKmTt64kptQQiviClzw3ut6G3bMfkdUVkoDudtGyP6B3qHyrXkF7/diG3WyO3yV9GCD2yW26CA3t/7XBdxUuFy5RBAjKCosOAabdM9r1jGw4GGrg7ixKzXQWqzrBsx/1LHYWlo1Tk2qSOnIgOWceorL3TnYRKuiOlkchTgzEAQSJooESfOAjICarRskX1gfIEVRtwF403ueavHjBUWBnosjDIN9s6l030Q++JVC5OroSeO0YfyZ2hMv5opb6M8hRlf/viIz37BUiE8u9OgTTBNhOMs8uujEbKJ+sh1N9f6DV91KVfOGes92MyBwT/o8l2IkOEWNjmbHihifp9f88ToS3aY5rPzgl2EniOp6hI9BlzU/HZKDvoZS0sFFI4vdkCSLEc4hFIRJB/m78OD8/2rHIrGlVd9JsRWeZA5bHrNFrdfBEY58jDD/m8aBgPsg+9eUsFyPUY/yBZdo2CKSpWATp+aUJv96peWt0zGh21TaN8Wcai9L2+xcXSZ7uXT/oggV1iXbmfLd7btpjXJhJQqy2K/a+yJ4WbRxwEnil/ulpP+USiE5+d/EWUalk7OguL80/bhxNtH06v6bOo7FE3jWl3BI5DeHP9uyt8HrUqQFTVJPRgWwkQQl/kLM/fP6jmIz7U/4pHQMG2zNnNt+BEAUyizMZvN4eA5zzmW3d/YWkvC1LXn4YfeSxnAEpa23gHQJ276+2sbnVZOmUWTXqDMEJBzGhhqpJ+EqjLm+Lok; Expires=Wed, 24-Nov-2021 07:07:06 GMT; Path=/arcgis/rest; Secure; HttpOnly
+    ETag: 827a50b2
+    x-esri-ftiles-cache-compress: "true"
+    Content-Encoding: gzip
+    X-Region: eu-central-1
+  body:
+    type: text
+    content: |-
+      {
+       "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+       },
+       "candidates": [
+        {
+         "address": "Oil",
+         "location": {
+          "x": 2.341350000000034,
+          "y": 48.861050000000034
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Oil",
+          "Place_addr": "Rue Bailleul, 75001, 1er Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3363500000000341,
+          "ymin": 48.856050000000032,
+          "xmax": 2.3463500000000339,
+          "ymax": 48.866050000000037
+         }
+        },
+        {
+         "address": "Garage de l'Île Saint Louis",
+         "location": {
+          "x": 2.3595800000000509,
+          "y": 48.850430000000074
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Garage de l'Île Saint Louis",
+          "Place_addr": "5 Boulevard Henri IV, 75004, 4e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.354580000000051,
+          "ymin": 48.845430000000071,
+          "xmax": 2.3645800000000508,
+          "ymax": 48.855430000000077
+         }
+        },
+        {
+         "address": "Station-Service Sully",
+         "location": {
+          "x": 2.3621500000000424,
+          "y": 48.850190000000055
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Station-Service Sully",
+          "Place_addr": "5 Rue Agrippa d'Aubigné, 75004, 4e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3571500000000425,
+          "ymin": 48.845190000000052,
+          "xmax": 2.3671500000000423,
+          "ymax": 48.855190000000057
+         }
+        },
+        {
+         "address": "AVIA",
+         "location": {
+          "x": 2.3255700000000274,
+          "y": 48.855140000000063
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "AVIA",
+          "Place_addr": "6 Boulevard Raspail, 75007, 7e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3205700000000276,
+          "ymin": 48.85014000000006,
+          "xmax": 2.3305700000000273,
+          "ymax": 48.860140000000065
+         }
+        },
+        {
+         "address": "Station-Service Parking Saint-Antoine",
+         "location": {
+          "x": 2.3664100000000303,
+          "y": 48.853650000000073
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Station-Service Parking Saint-Antoine",
+          "Place_addr": "16 Rue Saint-Antoine, 75004, 4e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3614100000000304,
+          "ymin": 48.84865000000007,
+          "xmax": 2.3714100000000302,
+          "ymax": 48.858650000000075
+         }
+        },
+        {
+         "address": "Station-Service Glc Carburant",
+         "location": {
+          "x": 2.3421900000000733,
+          "y": 48.843690000000038
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Station-Service Glc Carburant",
+          "Place_addr": "40 Rue Gay-Lussac, 75005, 5e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3371900000000734,
+          "ymin": 48.838690000000035,
+          "xmax": 2.3471900000000732,
+          "ymax": 48.84869000000004
+         }
+        },
+        {
+         "address": "Station-Service Meca Voltaire",
+         "location": {
+          "x": 2.3702700000000618,
+          "y": 48.863480000000038
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Station-Service Meca Voltaire",
+          "Place_addr": "42 Boulevard Voltaire, 75011, 11e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3652700000000619,
+          "ymin": 48.858480000000036,
+          "xmax": 2.3752700000000617,
+          "ymax": 48.868480000000041
+         }
+        },
+        {
+         "address": "Elan",
+         "location": {
+          "x": 2.338040000000035,
+          "y": 48.842670000000055
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Elan",
+          "Place_addr": "82 Boulevard Saint-Michel, 75006, 6e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3330400000000351,
+          "ymin": 48.837670000000053,
+          "xmax": 2.3430400000000349,
+          "ymax": 48.847670000000058
+         }
+        },
+        {
+         "address": "TOTAL",
+         "location": {
+          "x": 2.3244000000000256,
+          "y": 48.871160000000032
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "TOTAL",
+          "Place_addr": "27 Place de la Madeleine, 75008, 8e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3194000000000257,
+          "ymin": 48.866160000000029,
+          "xmax": 2.3294000000000255,
+          "ymax": 48.876160000000034
+         }
+        },
+        {
+         "address": "Elan",
+         "location": {
+          "x": 2.374680000000069,
+          "y": 48.860850000000028
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Elan",
+          "Place_addr": "82 Boulevard Voltaire, 75011, 11e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3696800000000691,
+          "ymin": 48.855850000000025,
+          "xmax": 2.3796800000000689,
+          "ymax": 48.86585000000003
+         }
+        },
+        {
+         "address": "Elan",
+         "location": {
+          "x": 2.3152900000000614,
+          "y": 48.856290000000058
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Elan",
+          "Place_addr": "17 Boulevard des Invalides, 75007, 7e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3102900000000615,
+          "ymin": 48.851290000000056,
+          "xmax": 2.3202900000000612,
+          "ymax": 48.861290000000061
+         }
+        },
+        {
+         "address": "AVIA",
+         "location": {
+          "x": 2.3756000000000199,
+          "y": 48.864920000000041
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "AVIA",
+          "Place_addr": "54 Avenue de la République, 75011, 11e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.37060000000002,
+          "ymin": 48.859920000000038,
+          "xmax": 2.3806000000000198,
+          "ymax": 48.869920000000043
+         }
+        },
+        {
+         "address": "TOTAL",
+         "location": {
+          "x": 2.3147100000000478,
+          "y": 48.859410000000025
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "TOTAL",
+          "Place_addr": "Rue de Constantine, 75007, 7e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3097100000000479,
+          "ymin": 48.854410000000023,
+          "xmax": 2.3197100000000477,
+          "ymax": 48.864410000000028
+         }
+        },
+        {
+         "address": "Station-Service Wins",
+         "location": {
+          "x": 2.3548700000000622,
+          "y": 48.878640000000075
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Station-Service Wins",
+          "Place_addr": "142 Rue La Fayette, 75010, 10e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3498700000000623,
+          "ymin": 48.873640000000073,
+          "xmax": 2.3598700000000621,
+          "ymax": 48.883640000000078
+         }
+        },
+        {
+         "address": "Elan",
+         "location": {
+          "x": 2.3447200000000521,
+          "y": 48.838000000000079
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Elan",
+          "Place_addr": "72 Boulevard de Port-Royal, 75005, 5e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3397200000000522,
+          "ymin": 48.833000000000077,
+          "xmax": 2.349720000000052,
+          "ymax": 48.843000000000082
+         }
+        },
+        {
+         "address": "Garage Saint-Georges",
+         "location": {
+          "x": 2.3378600000000347,
+          "y": 48.879300000000057
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Garage Saint-Georges",
+          "Place_addr": "20 Rue Clauzel, 75009, 9e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3328600000000348,
+          "ymin": 48.874300000000055,
+          "xmax": 2.3428600000000346,
+          "ymax": 48.88430000000006
+         }
+        },
+        {
+         "address": "Total access",
+         "location": {
+          "x": 2.3326600000000326,
+          "y": 48.878420000000062
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Total access",
+          "Place_addr": "10 Rue Jean-Baptiste Pigalle, 75009, 9e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3276600000000327,
+          "ymin": 48.87342000000006,
+          "xmax": 2.3376600000000325,
+          "ymax": 48.883420000000065
+         }
+        },
+        {
+         "address": "Elan",
+         "location": {
+          "x": 2.3790000000000759,
+          "y": 48.856540000000052
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Elan",
+          "Place_addr": "175 Avenue Ledru-Rollin, 75011, 11e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.374000000000076,
+          "ymin": 48.85154000000005,
+          "xmax": 2.3840000000000758,
+          "ymax": 48.861540000000055
+         }
+        },
+        {
+         "address": "TOTAL",
+         "location": {
+          "x": 2.3208400000000324,
+          "y": 48.873100000000079
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "TOTAL",
+          "Place_addr": "35 Boulevard Malesherbes, 75008, 8e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3158400000000325,
+          "ymin": 48.868100000000076,
+          "xmax": 2.3258400000000323,
+          "ymax": 48.878100000000082
+         }
+        },
+        {
+         "address": "Garage du Maine",
+         "location": {
+          "x": 2.3207400000000575,
+          "y": 48.843470000000082
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Garage du Maine",
+          "Place_addr": "21 Avenue du Maine, 75015, 15e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3157400000000576,
+          "ymin": 48.838470000000079,
+          "xmax": 2.3257400000000574,
+          "ymax": 48.848470000000084
+         }
+        },
+        {
+         "address": "AVIA",
+         "location": {
+          "x": 2.331320000000062,
+          "y": 48.838100000000054
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "AVIA",
+          "Place_addr": "253 Boulevard Raspail, 75014, 14e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3263200000000621,
+          "ymin": 48.833100000000051,
+          "xmax": 2.3363200000000619,
+          "ymax": 48.843100000000057
+         }
+        },
+        {
+         "address": "Elan",
+         "location": {
+          "x": 2.3658400000000483,
+          "y": 48.878350000000069
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Elan",
+          "Place_addr": "159 Quai de Valmy, 75010, 10e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3608400000000485,
+          "ymin": 48.873350000000066,
+          "xmax": 2.3708400000000482,
+          "ymax": 48.883350000000071
+         }
+        },
+        {
+         "address": "Elan",
+         "location": {
+          "x": 2.3382000000000289,
+          "y": 48.882050000000049
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Elan",
+          "Place_addr": "13 Boulevard de Clichy, 75009, 9e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.333200000000029,
+          "ymin": 48.877050000000047,
+          "xmax": 2.3432000000000288,
+          "ymax": 48.887050000000052
+         }
+        },
+        {
+         "address": "TOTAL",
+         "location": {
+          "x": 2.3214600000000587,
+          "y": 48.840290000000039
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "TOTAL",
+          "Place_addr": "56 Avenue du Maine, 75015, 15e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3164600000000588,
+          "ymin": 48.835290000000036,
+          "xmax": 2.3264600000000586,
+          "ymax": 48.845290000000041
+         }
+        },
+        {
+         "address": "TOTAL",
+         "location": {
+          "x": 2.357840000000067,
+          "y": 48.835300000000075
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "TOTAL",
+          "Place_addr": "114 Boulevard de l'Hôpital, 75013, 13e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3528400000000671,
+          "ymin": 48.830300000000072,
+          "xmax": 2.3628400000000669,
+          "ymax": 48.840300000000077
+         }
+        },
+        {
+         "address": "Elan",
+         "location": {
+          "x": 2.3180600000000595,
+          "y": 48.875500000000045
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Elan",
+          "Place_addr": "43 Rue de Laborde, 75008, 8e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3130600000000596,
+          "ymin": 48.870500000000042,
+          "xmax": 2.3230600000000594,
+          "ymax": 48.880500000000048
+         }
+        },
+        {
+         "address": "Zahav",
+         "location": {
+          "x": 2.3836200000000645,
+          "y": 48.855910000000051
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Zahav",
+          "Place_addr": "139 Boulevard Voltaire, 75011, 11e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3786200000000646,
+          "ymin": 48.850910000000049,
+          "xmax": 2.3886200000000644,
+          "ymax": 48.860910000000054
+         }
+        },
+        {
+         "address": "Esso Express",
+         "location": {
+          "x": 2.373230000000035,
+          "y": 48.841470000000072
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Esso Express",
+          "Place_addr": "36 Quai de la Rapée, 75012, 12e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3682300000000351,
+          "ymin": 48.83647000000007,
+          "xmax": 2.3782300000000349,
+          "ymax": 48.846470000000075
+         }
+        },
+        {
+         "address": "Esso Express",
+         "location": {
+          "x": 2.3699700000000234,
+          "y": 48.878680000000031
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Esso Express",
+          "Place_addr": "89 Boulevard de la Villette, 75010, 10e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3649700000000236,
+          "ymin": 48.873680000000029,
+          "xmax": 2.3749700000000233,
+          "ymax": 48.883680000000034
+         }
+        },
+        {
+         "address": "AVIA",
+         "location": {
+          "x": 2.308050000000037,
+          "y": 48.853270000000066
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "AVIA",
+          "Place_addr": "15 Avenue Duquesne, 75007, 7e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3030500000000371,
+          "ymin": 48.848270000000063,
+          "xmax": 2.3130500000000369,
+          "ymax": 48.858270000000068
+         }
+        },
+        {
+         "address": "Station-Service",
+         "location": {
+          "x": 2.3801600000000462,
+          "y": 48.845750000000066
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Station-Service",
+          "Place_addr": "Rue de Charenton, 75012, 12e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3751600000000463,
+          "ymin": 48.840750000000064,
+          "xmax": 2.3851600000000461,
+          "ymax": 48.850750000000069
+         }
+        },
+        {
+         "address": "BP",
+         "location": {
+          "x": 2.3171500000000265,
+          "y": 48.840890000000059
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "BP",
+          "Place_addr": "47 Boulevard de Vaugirard, 75015, 15e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3121500000000266,
+          "ymin": 48.835890000000056,
+          "xmax": 2.3221500000000264,
+          "ymax": 48.845890000000061
+         }
+        },
+        {
+         "address": "TOTAL",
+         "location": {
+          "x": 2.3705600000000686,
+          "y": 48.879900000000077
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "TOTAL",
+          "Place_addr": "152 Boulevard de la Villette, 75019, 19e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3655600000000687,
+          "ymin": 48.874900000000075,
+          "xmax": 2.3755600000000685,
+          "ymax": 48.88490000000008
+         }
+        },
+        {
+         "address": "Elan",
+         "location": {
+          "x": 2.3609000000000719,
+          "y": 48.884210000000053
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Elan",
+          "Place_addr": "25 Boulevard de la Chapelle, 75010, 10e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.355900000000072,
+          "ymin": 48.87921000000005,
+          "xmax": 2.3659000000000718,
+          "ymax": 48.889210000000055
+         }
+        },
+        {
+         "address": "Station-Service Pasteur Services",
+         "location": {
+          "x": 2.3139600000000655,
+          "y": 48.840880000000027
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Station-Service Pasteur Services",
+          "Place_addr": "56 Boulevard Pasteur, 75015, 15e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3089600000000656,
+          "ymin": 48.835880000000024,
+          "xmax": 2.3189600000000654,
+          "ymax": 48.845880000000029
+         }
+        },
+        {
+         "address": "TOTAL",
+         "location": {
+          "x": 2.3085900000000379,
+          "y": 48.845670000000041
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "TOTAL",
+          "Place_addr": "76 Boulevard Garibaldi, 75015, 15e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.303590000000038,
+          "ymin": 48.840670000000038,
+          "xmax": 2.3135900000000378,
+          "ymax": 48.850670000000044
+         }
+        },
+        {
+         "address": "AVIA",
+         "location": {
+          "x": 2.3642200000000457,
+          "y": 48.884190000000046
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "AVIA",
+          "Place_addr": "1 Boulevard de la Chapelle, 75010, 10e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3592200000000458,
+          "ymin": 48.879190000000044,
+          "xmax": 2.3692200000000456,
+          "ymax": 48.889190000000049
+         }
+        },
+        {
+         "address": "Elan",
+         "location": {
+          "x": 2.3233800000000429,
+          "y": 48.882910000000038
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Elan",
+          "Place_addr": "38 Boulevard des Batignolles, 75017, 17e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.318380000000043,
+          "ymin": 48.877910000000035,
+          "xmax": 2.3283800000000427,
+          "ymax": 48.887910000000041
+         }
+        },
+        {
+         "address": "Total access",
+         "location": {
+          "x": 2.3589400000000751,
+          "y": 48.831520000000069
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Total access",
+          "Place_addr": "181 Boulevard Vincent Auriol, 75013, 13e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3539400000000752,
+          "ymin": 48.826520000000066,
+          "xmax": 2.363940000000075,
+          "ymax": 48.836520000000071
+         }
+        },
+        {
+         "address": "BP",
+         "location": {
+          "x": 2.381020000000035,
+          "y": 48.875930000000039
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "BP",
+          "Place_addr": "41 Avenue Simon Bolivar, 75019, 19e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3760200000000351,
+          "ymin": 48.870930000000037,
+          "xmax": 2.3860200000000349,
+          "ymax": 48.880930000000042
+         }
+        },
+        {
+         "address": "Sams",
+         "location": {
+          "x": 2.3691100000000347,
+          "y": 48.883230000000026
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Sams",
+          "Place_addr": "Place de la Bataille de Stalingrad, 75010, 10e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3641100000000348,
+          "ymin": 48.878230000000023,
+          "xmax": 2.3741100000000346,
+          "ymax": 48.888230000000028
+         }
+        },
+        {
+         "address": "BP",
+         "location": {
+          "x": 2.3812200000000416,
+          "y": 48.875990000000058
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "BP",
+          "Place_addr": "39 Avenue Simon Bolivar, 75019, 19e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3762200000000417,
+          "ymin": 48.870990000000056,
+          "xmax": 2.3862200000000415,
+          "ymax": 48.880990000000061
+         }
+        },
+        {
+         "address": "Station-Service C. P. F",
+         "location": {
+          "x": 2.3898400000000493,
+          "y": 48.85779000000008
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Station-Service C. P. F",
+          "Place_addr": "127 Avenue Philippe Auguste, 75011, 11e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3848400000000494,
+          "ymin": 48.852790000000077,
+          "xmax": 2.3948400000000492,
+          "ymax": 48.862790000000082
+         }
+        },
+        {
+         "address": "BP",
+         "location": {
+          "x": 2.3644200000000524,
+          "y": 48.832560000000058
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "BP",
+          "Place_addr": "85 Rue Jeanne d'Arc, 75013, 13e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3594200000000525,
+          "ymin": 48.827560000000055,
+          "xmax": 2.3694200000000523,
+          "ymax": 48.83756000000006
+         }
+        },
+        {
+         "address": "AVIA",
+         "location": {
+          "x": 2.3096600000000649,
+          "y": 48.87522000000007
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "AVIA",
+          "Place_addr": "164 Boulevard Haussmann, 75008, 8e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.304660000000065,
+          "ymin": 48.870220000000067,
+          "xmax": 2.3146600000000648,
+          "ymax": 48.880220000000072
+         }
+        },
+        {
+         "address": "Bga Hippodrome",
+         "location": {
+          "x": 2.3330200000000332,
+          "y": 48.886850000000038
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Bga Hippodrome",
+          "Place_addr": "16 Rue Caulaincourt, 75018, 18e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3280200000000333,
+          "ymin": 48.881850000000036,
+          "xmax": 2.3380200000000331,
+          "ymax": 48.891850000000041
+         }
+        },
+        {
+         "address": "AVIA",
+         "location": {
+          "x": 2.3873600000000579,
+          "y": 48.84662000000003
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "AVIA",
+          "Place_addr": "32 Rue de Reuilly, 75012, 12e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.382360000000058,
+          "ymin": 48.841620000000027,
+          "xmax": 2.3923600000000578,
+          "ymax": 48.851620000000032
+         }
+        },
+        {
+         "address": "AVIA",
+         "location": {
+          "x": 2.3034100000000421,
+          "y": 48.847590000000025
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "AVIA",
+          "Place_addr": "11 Boulevard Garibaldi, 75015, 15e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.2984100000000423,
+          "ymin": 48.842590000000023,
+          "xmax": 2.308410000000042,
+          "ymax": 48.852590000000028
+         }
+        },
+        {
+         "address": "Station-Service Automobile",
+         "location": {
+          "x": 2.3451800000000276,
+          "y": 48.889290000000074
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Station-Service Automobile",
+          "Place_addr": "48 Rue Custine, 75018, 18e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3401800000000277,
+          "ymin": 48.884290000000071,
+          "xmax": 2.3501800000000275,
+          "ymax": 48.894290000000076
+         }
+        },
+        {
+         "address": "Station-Service Lemercier",
+         "location": {
+          "x": 2.322210000000041,
+          "y": 48.887380000000064
+         },
+         "score": 100,
+         "attributes": {
+          "PlaceName": "Station-Service Lemercier",
+          "Place_addr": "51 Rue Lemercier, 75017, 17e Arrondissement, Paris, Île-de-France"
+         },
+         "extent": {
+          "xmin": 2.3172100000000411,
+          "ymin": 48.882380000000062,
+          "xmax": 2.3272100000000409,
+          "ymax": 48.892380000000067
+         }
+        }
+       ]
+      }
+order: 1000

@@ -1,0 +1,35 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/AggregatePoints/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+      polygonLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Find_Locations_in_USA_Counties_Generalized_CONUS/FeatureServer/0"}'
+      pointLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/obdb/FeatureServer/0"}'
+      keepBoundariesWithNoPoints: "false"
+      groupByField: brewery_type
+      minorityMajority: "true"
+      percentPoints: "true"
+      outputName: '{"serviceProperties":{"name":"Aggregate points results"}}'
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: "{\r
+
+      \  \"jobId\": \"<JOB_ID>\",\r
+
+      \  \"jobStatus\": \"esriJobSubmitted\",\r
+
+      \  \"results\": {},\r
+
+      \  \"inputs\": {},\r
+
+      \  \"messages\": []\r
+
+      }"
+order: 1000

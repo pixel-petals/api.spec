@@ -1,0 +1,65 @@
+$kind: http-request
+name: "2. Set environment vars: host, service_name, layer_id"
+description: Sets the required environment variables for your ArcGIS organization. Use this request to configure your workspace for authenticated requests to ArcGIS services. The response confirms the variables have been set.
+url: 'https://{{ORG_URL_KEY}}.maps.arcgis.com/sharing/rest/search?token={{ACCESS_TOKEN}}&f=json&q=owner: "{{USERNAME}}" type:"Feature Service"&num=20&start=1&sortField=modified&sortOrder=desc'
+method: GET
+queryParams:
+  token: "{{ACCESS_TOKEN}}"
+  f: json
+  q: 'owner: "{{USERNAME}}" type:"Feature Service"'
+  num: "20"
+  start: "1"
+  sortField: modified
+  sortOrder: desc
+scripts:
+  - type: afterResponse
+    code: |-
+      var data = pm.response.json().results;
+      const urlKey = pm.collectionVariables.get("ORG_URL_KEY");
+      const access_token = pm.globals.get("ACCESS_TOKEN");
+
+      pm.test('Owned Feature services = ' + pm.response.json().total, function () {
+          pm.expect(data.length).to.greaterThan(0);
+      });
+
+      if(pm.response.json().total > 0){
+          const regEx = new RegExp(/(?:http[s]*\:\/\/)*(.*?)\.(?=[^\/]*\..{2,5})/i);
+          const subdomain = regEx.exec(data[0].url);
+          console.log(subdomain)
+          pm.collectionVariables.set("FS_HOST", subdomain[1]);
+          console.log(pm.collectionVariables.get("FS_HOST"))
+
+
+          var template = `
+              <table bgcolor="#FFFFFF">
+                  <tr>
+                      <th>Feature service</th>
+                      <th>URL</th>
+                  </tr>
+
+                  {{#each response.results}}
+                      <tr>
+                          <td>{{title}}</td>
+                          <td><a href="https://{{../urlKey}}.maps.arcgis.com/home/item.html?id={{id}}" target="_blank">https://{{../urlKey}}.maps.arcgis.com/home/item.html?id={{id}}</a></td>
+                      </tr>
+                  {{/each}}
+              </table>
+          `;
+
+          // Set visualizer
+          pm.visualizer.set(template, {
+              // Pass the response body parsed as JSON as `data`
+              response: pm.response.json(),
+              urlKey
+          });
+
+          pm.sendRequest(`https://${urlKey}.maps.arcgis.com/sharing/rest/content/items/${data[0].id}?f=json&token=${access_token}`, (error, response) => {
+              if (error) throw new Error(error);
+              const service_name= data[0].url.split("/")[7];
+              pm.collectionVariables.set("FS_NAME", service_name);
+              pm.collectionVariables.set("FS_LYR_ID", 0);    
+          });
+      }
+    language: text/javascript
+examples: ./.resources/2. Set environment vars- host, service_name, layer_id.resources/examples
+order: 2000

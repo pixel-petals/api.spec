@@ -1,0 +1,144 @@
+$kind: http-example
+request:
+  url: https://{{geoenrich-service}}.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/Enrich?studyareas=[{"geometry":{"x":-117.1042,"y":32.7671}}]&analysisvariables=["TravelCEX.X7003_X"]&addDerivativeVariables=index&f=pjson&token={{access_token}}
+  method: GET
+  queryParams:
+    studyareas: '[{"geometry":{"x":-117.1042,"y":32.7671}}]'
+    analysisvariables: '["TravelCEX.X7003_X"]'
+    addDerivativeVariables: index
+    f: pjson
+    token: "{{access_token}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 11:25:03 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    ETag: '"-26385013"'
+    Content-Language: en
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+        "results" : [ {
+          "paramName" : "GeoEnrichmentResult",
+          "dataType" : "GeoEnrichmentResult",
+          "value" : {
+            "version" : "2.0",
+            "FeatureSet" : [ {
+              "displayFieldName" : "",
+              "fieldAliases" : {
+                "ID" : "Id",
+                "OBJECTID" : "Object ID",
+                "sourceCountry" : "Country code",
+                "areaType" : "Area type",
+                "bufferUnits" : "Buffer units",
+                "bufferUnitsAlias" : "Buffer units alias",
+                "bufferRadii" : "Buffer radii",
+                "aggregationMethod" : "Aggregation method",
+                "populationToPolygonSizeRating" : "Population to polygon size rating for the country",
+                "apportionmentConfidence" : "Apportionment confidence for the country",
+                "HasData" : "Has data",
+                "X7003_X" : "2021 Airline Fares",
+                "X7003_X_I" : "2021 Airline Fares: Index"
+              },
+              "spatialReference" : {
+                "wkid" : 4326,
+                "latestWkid" : 4326
+              },
+              "fields" : [ {
+                "name" : "ID",
+                "alias" : "Id",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "OBJECTID",
+                "alias" : "Object ID",
+                "type" : "esriFieldTypeOID"
+              }, {
+                "name" : "sourceCountry",
+                "alias" : "Country code",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "areaType",
+                "alias" : "Area type",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferUnits",
+                "alias" : "Buffer units",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferUnitsAlias",
+                "alias" : "Buffer units alias",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferRadii",
+                "alias" : "Buffer radii",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "aggregationMethod",
+                "alias" : "Aggregation method",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "populationToPolygonSizeRating",
+                "alias" : "Population to polygon size rating for the country",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "apportionmentConfidence",
+                "alias" : "Apportionment confidence for the country",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "HasData",
+                "alias" : "Has data",
+                "type" : "esriFieldTypeInteger"
+              }, {
+                "name" : "X7003_X",
+                "alias" : "2021 Airline Fares",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "TravelCEX.X7003_X",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "currency",
+                "currency" : "$"
+              }, {
+                "name" : "X7003_X_I",
+                "alias" : "2021 Airline Fares: Index",
+                "type" : "esriFieldTypeInteger",
+                "fullName" : "TravelCEX.X7003_X_I",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              } ],
+              "features" : [ {
+                "attributes" : {
+                  "ID" : "0",
+                  "OBJECTID" : 1,
+                  "sourceCountry" : "US",
+                  "areaType" : "RingBuffer",
+                  "bufferUnits" : "esriMiles",
+                  "bufferUnitsAlias" : "Miles",
+                  "bufferRadii" : 1,
+                  "aggregationMethod" : "BlockApportionment:US.BlockGroups;PointsLayer:US.BlockPoints",
+                  "populationToPolygonSizeRating" : 2.191,
+                  "apportionmentConfidence" : 2.576,
+                  "HasData" : 1,
+                  "X7003_X" : 7742969,
+                  "X7003_X_I" : 125
+                }
+              } ]
+            } ]
+          }
+        } ],
+        "messages" : [ ]
+      }
+order: 1000

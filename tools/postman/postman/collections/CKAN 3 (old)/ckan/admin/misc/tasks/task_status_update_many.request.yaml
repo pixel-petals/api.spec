@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{CKAN_API}}/task_status_update_many"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: data
+      value: ""
+      description: (list of dictionaries) – the task_status dictionaries to update, for the format of task status dictionaries see task_status_update()
+order: 4000

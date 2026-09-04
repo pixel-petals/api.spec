@@ -1,0 +1,3 @@
+$kind: collection
+description: The `ExtractData` operation selects and exports features that satisfy a SQL or spatial expression and creates new feature data stored as a file in a new item. The output features can be downloaded as a CSV, KML, FileGeoDatabase, or Shapefile. Multifile formats are stored in a zipfile.
+order: 4000

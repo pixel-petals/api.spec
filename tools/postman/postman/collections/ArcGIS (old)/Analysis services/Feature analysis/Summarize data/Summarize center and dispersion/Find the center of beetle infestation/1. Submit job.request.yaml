@@ -1,0 +1,28 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/summarize-data/summarize-center-and-dispersion/#find-the-center-of-beetle-infestation)
+url: "{{ANALYSIS_URL}}/SummarizeCenterAndDispersion/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    token: "{{ACCESS_TOKEN}}"
+    f: json
+    analysisLayer: "{\"url\":\"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/PST_IF_PT_point/FeatureServer/0\",\"filter\":\"(PST_CMN_NM = 'Douglas-fir Beetle') AND (CPTR_YR >= 2020)\"}"
+    summarizeType: '["CentralFeature","MeanCenter","MedianCenter","Ellipse"]'
+    weightField: NUM_TREES
+    ellipseSize: 1 standard deviation
+    context: '{"extent":{"xmin":-15034729.266472297,"ymin":5716733.479048933,"xmax":-12070195.56146081,"ymax":7808050.572930799,"spatialReference":{"wkid":102100,"latestWkid":3857}}}'
+    outputName: '{"serviceProperties":{"name":"{{UNIQUE_NAME}}"}}'
+scripts:
+  - type: beforeRequest
+    code: |-
+      // Creates a unique name for the output service
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/ /g, "_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+  - type: afterResponse
+    code: |
+      pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

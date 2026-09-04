@@ -1,0 +1,6 @@
+$kind: collection
+description: |-
+  Geocoding is the process of converting text to an address and a location. To perform geocoding operations, you use the geocoding service. The service API allows you to search for an address (geocode), reverse geocode, find candidate matches, get suggestions, and batch geocode.
+
+  To Learn more go to [Developer guide > Geocoding]([https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/](https://developers.arcgis.com/documentation/mapping-and-location-services/geocoding/))
+order: 3000

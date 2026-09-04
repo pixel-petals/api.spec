@@ -1,0 +1,37 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/notes/:id/close?text=string"
+  method: POST
+  headers:
+    - key: Accept
+      value: application/xml
+    - key: Authorization
+      value: <token>
+      description: "Added as a part of security scheme: oauth2"
+  queryParams:
+    - key: text
+      value: string
+      description: Optional closing comment
+  pathVariables:
+    - key: id
+      value: "6776"
+      description: The numeric ID of the element
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/xml
+  body:
+    type: xml
+    content: |-
+      <?xml version="1.0" encoding="UTF-8"?>
+      <element>(string)</element>
+    $type: |-
+      {
+        "type": "string",
+        "description": "OSM XML document, content wrapped in an <osm> root element"
+      }
+order: 1000

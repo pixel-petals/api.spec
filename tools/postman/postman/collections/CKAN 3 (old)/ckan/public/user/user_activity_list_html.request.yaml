@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{CKAN_API}}/user_activity_list_html?id"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: id
+    value: null
+    description: (string) – The id or name of the user
+  - key: offset
+    value: null
+    disabled: true
+    description: "(int) – where to start getting activity items from (optional, default: 0)"
+  - key: limit
+    value: null
+    disabled: true
+    description: "(int) – the maximum number of activities to return (optional, default: 31, the default value is configurable via the ckan.activity_list_limit setting)"
+order: 14000

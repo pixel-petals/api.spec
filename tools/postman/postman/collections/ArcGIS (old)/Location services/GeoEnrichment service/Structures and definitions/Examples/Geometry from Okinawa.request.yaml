@@ -1,0 +1,25 @@
+$kind: http-request
+description: Example requests using the GeoEnrichment service.
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/GeoEnrichmentServer/StandardGeographyQuery?sourceCountry=JP&optionalCountryDataset=JPN_EsriJapan_2020&geographyLayers=JP.Prefectures&geographyIDs=['47']&f=pjson&returnGeometry=True&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  - key: sourceCountry
+    value: JP
+    description: Japan
+  - key: optionalCountryDataset
+    value: JPN_EsriJapan_2020
+    description: Esri Japan data is Japan's Ministry of Internal Affairs and Communications. Vintage 2020
+  - key: geographyLayers
+    value: JP.Prefectures
+    description: Prefecture (territorial jurisdiction)
+  - key: geographyIDs
+    value: "['47']"
+    description: Okinawa
+  - key: f
+    value: pjson
+  - key: returnGeometry
+    value: "True"
+  - key: token
+    value: "{{ACCESS_TOKEN}}"
+examples: ./.resources/Geometry from Okinawa.resources/examples
+order: 2000

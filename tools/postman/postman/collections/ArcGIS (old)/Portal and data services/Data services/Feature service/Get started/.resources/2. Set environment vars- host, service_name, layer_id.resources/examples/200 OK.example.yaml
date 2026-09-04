@@ -1,0 +1,1336 @@
+$kind: http-example
+request:
+  url: 'https://{{url_key}}.maps.arcgis.com/sharing/rest/search?token={{access_token}}&f=json&q=owner: "{{username}}" type:""Feature Service""&num=20&start=1&sortField=modified&sortOrder=desc'
+  method: GET
+  headers:
+    authority: tomellosotech.maps.arcgis.com
+    pragma: no-cache
+    cache-control: no-cache
+    sec-ch-ua: '" Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98"'
+    sec-ch-ua-mobile: ?0
+    user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36
+    sec-ch-ua-platform: '"macOS"'
+    accept: "*/*"
+    sec-fetch-site: same-origin
+    sec-fetch-mode: cors
+    sec-fetch-dest: empty
+    referer: https://tomellosotech.maps.arcgis.com/home/content.html?view=table&sortOrder=desc&sortField=modified&folder=TomellosoTech&focus=layers-weblayers-features
+    accept-language: en-US,en;q=0.9
+    cookie: dmdbase_cdc=DBSET; esri_gdpr=oneTrust; _biz_uid=0c72270452384c15975baae1646c22e2; _biz_sid=8038d8; _biz_nA=1; _biz_pendingA=%5B%5D; _biz_flagsA=%7B%22Version%22%3A1%2C%22ViewThrough%22%3A%221%22%2C%22XDomain%22%3A%221%22%7D; esri_locale=en; sat_track=true; pi_opt_in82202=true; OptanonConsent=isGpcEnabled=0&datestamp=Fri+Mar+04+2022+09%3A57%3A02+GMT%2B0100+(Central+European+Standard+Time)&version=6.29.0&isIABGlobal=false&hosts=&consentId=bc0be671-4257-4a36-9ab8-b0be66420e17&interactionCount=1&landingPath=NotLandingPage&groups=1%3A1%2C2%3A0%2C3%3A0%2C4%3A0&AwaitingReconsent=false; esri_aopc=a_2c_DttvoHMtNgxRt5HeyA..zf6D3gWtPlK8uDhrLQCcMeiLtmMcdmc6K5cfo72Lq0SJAYWO4Xgl2A-37VqWl3We4g-lm37Byb6Il-6jEZImgpWnSXaIIKjjgISP6RrAxwD5lKc65mL5sqE6l2w7_u87QhC1ag86-IhgCmMytfHyDgcl2vVKF_6F3-RH05g_9yEH1qoEIlv9qEATRvxQi5kXjAoBZ-y_yfBf4qIwT6nz4u4Mxl7BYXXIpGTuVLEb7R-7VFvVx2BghKqjOqsr0w..; APSW-query=%7B%22expires%22%3A1646402358457%7D; esri_whatsnew=%7B%22switchHomePage2%22%3Atrue%7D; ESRI_Content=%7B%22folderId%22%3A%22%2F%22%2C%22isAll%22%3Afalse%2C%22isHome%22%3Atrue%7D
+  queryParams:
+    token: "{{access_token}}"
+    f: json
+    q: 'owner: "{{username}}" type:""Feature Service""'
+    num: "20"
+    start: "1"
+    sortField: modified
+    sortOrder: desc
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Fri, 04 Mar 2022 09:44:32 GMT
+    - key: Content-Type
+      value: application/json;charset=utf-8
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Origin
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Cache-Control
+      value: no-cache
+    - key: Pragma
+      value: no-cache
+    - key: Expires
+      value: "-1"
+    - key: Strict-Transport-Security
+      value: max-age=31536000
+    - key: Content-Encoding
+      value: gzip
+  body:
+    type: json
+    content: |-
+      {
+          "query": "owner: \"linusTorlvalds\" type:\"\"Feature Service\"\"",
+          "total": 19,
+          "start": 1,
+          "num": 20,
+          "nextStart": -1,
+          "results": [
+              {
+                  "id": "fb58cf9458f84475bb4c6c004ed4352b",
+                  "owner": "linusTorlvalds",
+                  "created": 1585372119000,
+                  "isOrgItem": true,
+                  "modified": 1585372230000,
+                  "guid": null,
+                  "name": "testapirest",
+                  "title": "TestAPIREST",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "fs"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/thumbnail1585372124375.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -18.16127603165451,
+                          27.63742654116704
+                      ],
+                      [
+                          4.32805608942904,
+                          43.791105615871615
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": "4326",
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": null,
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/testapirest/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 13,
+                  "scoreCompleteness": 16,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "c098e12a94634fcfb48dafbe60f2a7db",
+                  "owner": "linusTorlvalds",
+                  "created": 1582817831000,
+                  "isOrgItem": true,
+                  "modified": 1584363433000,
+                  "guid": null,
+                  "name": "indoor_esri",
+                  "title": "indoor_esri",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "indoor"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/thumbnail1582817836273.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -18.16127603165451,
+                          27.63742654116704
+                      ],
+                      [
+                          4.32805608942904,
+                          43.791105615871615
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": "4326",
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-gb",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/indoor_esri/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 12,
+                  "scoreCompleteness": 33,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "254246bd53874496b9b31f1562205031",
+                  "owner": "linusTorlvalds",
+                  "created": 1582818642000,
+                  "isOrgItem": true,
+                  "modified": 1582820373000,
+                  "guid": null,
+                  "name": "areas_indoor_esri_spain",
+                  "title": "areas_indoor_esri_spain",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "indoor"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -18.16127603165451,
+                          27.63742654116704
+                      ],
+                      [
+                          4.32805608942904,
+                          43.791105615871615
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": "4326",
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": null,
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/areas_indoor_esri_spain/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "private",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 7,
+                  "scoreCompleteness": 33,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "311c5ae890024e53a1660c21f347848d",
+                  "owner": "linusTorlvalds",
+                  "created": 1582817420000,
+                  "isOrgItem": true,
+                  "modified": 1582817434000,
+                  "guid": null,
+                  "name": "indoors",
+                  "title": "Indoors",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "indoors"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/thumbnail1582817424788.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -18.16127603165451,
+                          27.63742654116704
+                      ],
+                      [
+                          4.32805608942904,
+                          43.791105615871615
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": "4326",
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": null,
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/indoors/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "private",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 4,
+                  "scoreCompleteness": 16,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "a70de08f35f548aa81b42aeb207d0546",
+                  "owner": "linusTorlvalds",
+                  "created": 1574772793000,
+                  "isOrgItem": true,
+                  "modified": 1574772915000,
+                  "guid": null,
+                  "name": "Awarded_beaches",
+                  "title": "Awarded_beaches",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Multi Services View",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service",
+                      "View Service"
+                  ],
+                  "description": null,
+                  "tags": [],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -17.982073000008956,
+                          21.943045533474194
+                      ],
+                      [
+                          22.49999999994922,
+                          43.742924400006494
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": "102100",
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": null,
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/Awarded_beaches/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "private",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 3,
+                  "scoreCompleteness": 33,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "06a1ab07a478417b94498ab443ba8f46",
+                  "owner": "linusTorlvalds",
+                  "created": 1574772646000,
+                  "isOrgItem": true,
+                  "modified": 1574772692000,
+                  "guid": null,
+                  "name": "Awards",
+                  "title": "Awards",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Table",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": null,
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/Awards/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "private",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 1,
+                  "scoreCompleteness": 16,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "bcbcffca57a64b75b970f7ded31f8e7b",
+                  "owner": "linusTorlvalds",
+                  "created": 1574771788000,
+                  "isOrgItem": true,
+                  "modified": 1574772213000,
+                  "guid": null,
+                  "name": "Beaches",
+                  "title": "Beaches",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "Tourism",
+                      "Beach",
+                      "Nature"
+                  ],
+                  "snippet": "List of spanish beaches",
+                  "thumbnail": "thumbnail/ago_downloaded.jpg",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -4.480943700060394e-11,
+                          21.943045533474194
+                      ],
+                      [
+                          22.49999999994922,
+                          40.979898069644925
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": "102100",
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": null,
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/Beaches/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 16,
+                  "scoreCompleteness": 40,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "a2b57e55d34b415aa2bd915def85a47f",
+                  "owner": "linusTorlvalds",
+                  "created": 1511267855000,
+                  "isOrgItem": true,
+                  "modified": 1511268038000,
+                  "guid": null,
+                  "name": "Aggregation of Gasolineras España to Límites de Comunidades Autónomas (IGN)",
+                  "title": "Aggregation of Gasolineras España to Límites de Comunidades Autónomas (IGN)",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": "Feature layer generated from running the Aggregate Points solutions. Points from Gasolineras España were aggregated to Límites de Comunidades Autónomas (IGN)",
+                  "tags": [
+                      "Analysis Result",
+                      "Aggregate Points",
+                      "Gasolineras España",
+                      "Límites de Comunidades Autónomas (IGN)"
+                  ],
+                  "snippet": "Feature layer generated from Aggregate Points",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -18.16130952983266,
+                          27.637838969189943
+                      ],
+                      [
+                          4.327784729941553,
+                          43.792379569024604
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "english (united states)",
+                  "properties": {
+                      "jobUrl": "http://analysis3.arcgis.com/arcgis/rest/services/tasks/GPServer/AggregatePoints/jobs/jc9ca1a5857c5492b8c39ae66dac7a53a",
+                      "jobType": "GPServer",
+                      "jobId": "jc9ca1a5857c5492b8c39ae66dac7a53a",
+                      "jobStatus": "completed"
+                  },
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/Aggregation of Gasolineras España to Límites de Comunidades Autónomas (IGN)/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 336,
+                  "scoreCompleteness": 70,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "80eda5822bf24048a205ceaefd22aab9",
+                  "owner": "linusTorlvalds",
+                  "created": 1493497793000,
+                  "isOrgItem": true,
+                  "modified": 1511265798000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Gasolineras España",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "gasolinera",
+                      "españa"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -18.01194400000003,
+                          27.70533299999999
+                      ],
+                      [
+                          4.2794999999999845,
+                          43.731806000000006
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "es-es",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/Gasolineras_España/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 588,
+                  "scoreCompleteness": 41,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "ebdf6a9a5c6b4200b7487db4f33d65a2",
+                  "owner": "linusTorlvalds",
+                  "created": 1493646782000,
+                  "isOrgItem": true,
+                  "modified": 1493646819000,
+                  "guid": null,
+                  "name": null,
+                  "title": "candidatos",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "candidatos"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.gif",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -16.857113399338402,
+                          28.011697000000083
+                      ],
+                      [
+                          -16.191842642803177,
+                          28.571172999999984
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "es-es",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/candidatos/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 32,
+                  "scoreCompleteness": 16,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "da05b47362b0430c9541205a312e232c",
+                  "owner": "linusTorlvalds",
+                  "created": 1493645996000,
+                  "isOrgItem": true,
+                  "modified": 1493646021000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Gasolineras_tenerife",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "gasolineras",
+                      "tenerife"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -16.848250000000007,
+                          28.00708300000002
+                      ],
+                      [
+                          -16.208639000000005,
+                          28.552250000000008
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "es-es",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/Gasolineras_tenerife/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 73,
+                  "scoreCompleteness": 41,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "5f0a1fc960d7428d9fb13c1ea2a27602",
+                  "owner": "linusTorlvalds",
+                  "created": 1493499336000,
+                  "isOrgItem": true,
+                  "modified": 1493499378000,
+                  "guid": null,
+                  "name": "Gasolineras España Density",
+                  "title": "Gasolineras España Density",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": "Feature layer generated from running the Calculate Density solution.",
+                  "tags": [
+                      "Analysis Result",
+                      "Calculate Density",
+                      "Gasolineras España"
+                  ],
+                  "snippet": "Feature layer generated from Calculate Density",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -18.011944000206995,
+                          27.705332999818122
+                      ],
+                      [
+                          4.276666840159952,
+                          43.7318059998516
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "english (united states)",
+                  "properties": {
+                      "jobUrl": "http://analysis3.arcgis.com/arcgis/rest/services/tasks/GPServer/CalculateDensity/jobs/jd192737541d64131b2e1014561fad04a",
+                      "jobType": "GPServer",
+                      "jobId": "jd192737541d64131b2e1014561fad04a",
+                      "jobStatus": "completed"
+                  },
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/Gasolineras España Density/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "private",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 2,
+                  "scoreCompleteness": 66,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "3a2d1c29296846aab108544a6d5c1992",
+                  "owner": "linusTorlvalds",
+                  "created": 1493498838000,
+                  "isOrgItem": true,
+                  "modified": 1493499011000,
+                  "guid": null,
+                  "name": "Buffer of Gasolineras España",
+                  "title": "Buffer of Gasolineras España",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": "Feature layer generated from running the Buffer Features solution. Input from Gasolineras España were buffered by [1] Kilometers",
+                  "tags": [
+                      "Analysis Result",
+                      "Buffer",
+                      "Gasolineras España"
+                  ],
+                  "snippet": "Feature layer generated from Buffer",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -18.02208715116782,
+                          27.696309817144652
+                      ],
+                      [
+                          4.29119020573948,
+                          43.74080632521501
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": null,
+                  "properties": {
+                      "jobUrl": "http://analysis3.arcgis.com/arcgis/rest/services/tasks/GPServer/CreateBuffers/jobs/j2efaefa9b4a54ae2a745a818ff07faf8",
+                      "jobType": "GPServer",
+                      "jobId": "j2efaefa9b4a54ae2a745a818ff07faf8",
+                      "jobStatus": "completed"
+                  },
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/Buffer of Gasolineras España/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "private",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 1,
+                  "scoreCompleteness": 68,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "defd4bd8a07548b3a740050ceb52551c",
+                  "owner": "linusTorlvalds",
+                  "created": 1493496950000,
+                  "isOrgItem": true,
+                  "modified": 1493496961000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Barrios Airbnb",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "barrio",
+                      "airbnb"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.gif",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -3.8888710000000004,
+                          40.312077
+                      ],
+                      [
+                          -3.517962,
+                          40.64327799999999
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "es-es",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/Barrios_Airbnb/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 36,
+                  "scoreCompleteness": 41,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "28abfcdde8ea44bca9172a9f5e0a3a8d",
+                  "owner": "linusTorlvalds",
+                  "created": 1493495105000,
+                  "isOrgItem": true,
+                  "modified": 1493495139000,
+                  "guid": null,
+                  "name": "Enriched A diez minutos de ZARA",
+                  "title": "Enriched A diez minutos de ZARA",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": "Feature layer generated from running the Enrich layer solution. A diez minutos de ZARA were enriched",
+                  "tags": [
+                      "Analysis Result",
+                      "Enrich Layer",
+                      "A diez minutos de ZARA"
+                  ],
+                  "snippet": "Feature layer generated from Enrich layer",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -3.8423595432566153,
+                          40.351217270049574
+                      ],
+                      [
+                          -3.511106491008285,
+                          40.53200340302771
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": null,
+                  "properties": {
+                      "jobUrl": "https://analysis3.arcgis.com/arcgis/rest/services/tasks/GPServer/EnrichLayer/jobs/jb72553e4a0d048e199bad20c76a5720f",
+                      "jobType": "GPServer",
+                      "jobId": "jb72553e4a0d048e199bad20c76a5720f",
+                      "jobStatus": "completed"
+                  },
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/Enriched A diez minutos de ZARA/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 56,
+                  "scoreCompleteness": 70,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "7c098ac52c5b458e8c0b5909c3a7f0e1",
+                  "owner": "linusTorlvalds",
+                  "created": 1493494988000,
+                  "isOrgItem": true,
+                  "modified": 1493495044000,
+                  "guid": null,
+                  "name": "A diez minutos de ZARA",
+                  "title": "A diez minutos de ZARA",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": "Feature layer generated from running the Create Drive Times solution.",
+                  "tags": [
+                      "Analysis Result",
+                      "Drive Times",
+                      "Zara"
+                  ],
+                  "snippet": "Feature layer generated from Create Drive Times",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -3.8423595432566153,
+                          40.351217270049574
+                      ],
+                      [
+                          -3.511106491008285,
+                          40.53200340302771
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "english (united states)",
+                  "properties": {
+                      "jobUrl": "https://analysis3.arcgis.com/arcgis/rest/services/tasks/GPServer/CreateDriveTimeAreas/jobs/j51bf94182ddf48c68bd8962ed49c87f1",
+                      "jobType": "GPServer",
+                      "jobId": "j51bf94182ddf48c68bd8962ed49c87f1",
+                      "jobStatus": "completed"
+                  },
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/A diez minutos de ZARA/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 63,
+                  "scoreCompleteness": 70,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "4ca209966ecf4606bcf3d49df6ee291a",
+                  "owner": "linusTorlvalds",
+                  "created": 1493410947000,
+                  "isOrgItem": true,
+                  "modified": 1493410961000,
+                  "guid": null,
+                  "name": null,
+                  "title": "$A$1:$K$24 por VENTAS",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "ventas",
+                      "sevilla"
+                  ],
+                  "snippet": null,
+                  "thumbnail": null,
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -6.066588863167931,
+                          37.34235389264784
+                      ],
+                      [
+                          -6.0307006663074425,
+                          37.4023425279329
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "es-es",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/KS0fe/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 26,
+                  "scoreCompleteness": 25,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "16a11badbec743a78314c3f6b92bbe7c",
+                  "owner": "linusTorlvalds",
+                  "created": 1493324166000,
+                  "isOrgItem": true,
+                  "modified": 1493324197000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Parquimetros Zonas SER",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "madrid",
+                      "parking"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -3.73668171872893,
+                          40.383837550362095
+                      ],
+                      [
+                          -3.6609473480588,
+                          40.4888643827455
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "es-es",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/Parquimetros_Zonas_SER/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 40,
+                  "scoreCompleteness": 41,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              },
+              {
+                  "id": "6204605d35804f5386d94c279194bbb4",
+                  "owner": "linusTorlvalds",
+                  "created": 1493186488000,
+                  "isOrgItem": true,
+                  "modified": 1493241046000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Pisos Airbnb Madrid",
+                  "type": "Feature Service",
+                  "typeKeywords": [
+                      "ArcGIS Server",
+                      "Data",
+                      "Feature Access",
+                      "Feature Service",
+                      "Service",
+                      "Singlelayer",
+                      "Hosted Service"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "test"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -3.863907266766835,
+                          40.33188827449475
+                      ],
+                      [
+                          -3.5268214016469366,
+                          40.56273629126758
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": "https://services3.arcgis.com/dZPVKZjpIJj1FMgY/arcgis/rest/services/listings/FeatureServer",
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "ownerFolder": null,
+                  "protected": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 127,
+                  "scoreCompleteness": 33,
+                  "groupDesignations": null,
+                  "contentOrigin": "self"
+              }
+          ]
+      }
+order: 1000

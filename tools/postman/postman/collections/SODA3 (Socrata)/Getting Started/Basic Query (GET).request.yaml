@@ -1,0 +1,11 @@
+$kind: http-request
+description: Fetch the first 10 rows from a dataset. Replace {{datasetId}} with your 8-character Socrata dataset identifier (e.g. ydr8-5enu). Find it on any Socrata dataset page under Export → API.
+url: "{{baseUrl}}/api/v3/views/{{datasetId}}/query.json?$select=*&$limit=10"
+method: GET
+headers:
+  X-App-Token: "{{appToken}}"
+  Accept: application/json
+queryParams:
+  $select: "*"
+  $limit: "10"
+order: 3000

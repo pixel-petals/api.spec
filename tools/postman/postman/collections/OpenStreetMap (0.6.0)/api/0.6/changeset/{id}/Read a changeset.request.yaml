@@ -1,0 +1,34 @@
+$kind: http-request
+url: "{{baseUrl}}/api/0.6/changeset/:id?include_discussion=string"
+method: GET
+headers:
+  Accept: application/xml
+queryParams:
+  - key: include_discussion
+    value: string
+    description: If set to any value, includes discussion comments in the response
+    $type: string
+pathVariables:
+  - key: id
+    value: "6776"
+    description: The numeric ID of the changeset
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: text
+  content: ""
+auth:
+  type: noauth
+examples: ./.resources/Read a changeset.resources/examples
+order: 1000

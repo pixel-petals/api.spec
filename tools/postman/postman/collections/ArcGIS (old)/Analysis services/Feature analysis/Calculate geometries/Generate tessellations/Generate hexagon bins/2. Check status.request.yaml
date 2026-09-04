@@ -1,0 +1,60 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/calculate-geometries/generate-tessellations/#generate-hexagon-bins)
+url: "{{ANALYSIS_URL}}/GenerateTessellations/jobs/:JOB_ID"
+method: POST
+pathVariables:
+  JOB_ID: "{{JOB_ID}}"
+body:
+  type: urlencoded
+  content:
+    f: json
+    token: "{{ACCESS_TOKEN}}"
+scripts:
+  - type: afterResponse
+    code: |-
+      var template = `
+      <link
+        rel="stylesheet"
+        href="https://js.arcgis.com/4.31/esri/themes/light/main.css"
+      />
+      <script src="https://js.arcgis.com/4.31/"></script>
+      <style>
+        #viewDiv, body, html {
+          padding: 0;
+          margin: 0;
+          height: 100%;
+          width: 100%;
+        }
+      </style>
+      <div id="viewDiv"></div>
+      <script>
+        require([
+          "esri/Map",
+          "esri/views/MapView",
+          "esri/layers/FeatureLayer"
+        ], (
+          EsriMap,
+          EsriMapView,
+          EsriFeatureLayer
+        ) => {
+          const m = new EsriMap({basemap: "gray-vector"});
+          const mv = new EsriMapView({map:m, container: "viewDiv"});
+          mv.when(()=>{
+            pm.getData((err, data)=>{
+              const lyr = new EsriFeatureLayer({url: data.response.value.url, apiKey: data.token});
+              lyr.when(()=>{return lyr.queryExtent();}).then((resp)=>{mv.goTo(resp.extent);})
+              m.add(lyr)
+            });
+          })
+        })
+      </script>
+      `;
+
+      // Set visualizer
+      pm.visualizer.set(template, {
+        token: pm.globals.get("ACCESS_TOKEN"),
+        response: pm.response.json()
+      });
+    language: text/javascript
+examples: ./.resources/2. Check status.resources/examples
+order: 2000

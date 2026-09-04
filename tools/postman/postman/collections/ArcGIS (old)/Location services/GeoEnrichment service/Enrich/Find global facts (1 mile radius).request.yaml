@@ -1,0 +1,18 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/enrich
+method: POST
+body:
+  type: urlencoded
+  content:
+    - key: f
+      value: pjson
+      description: (Required) The format of the data returned. The value can be json, csv, or geojson.
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      description: (Required) You need a valid access token. To learn more, read the collection's documentation.
+    - key: studyAreas
+      value: "[{'geometry':{'x': -117.1956, 'y': 34.0572}}]"
+      description: (Required) An array of input points, polygons, administrative boundaries, or addresses.
+examples: ./.resources/Find global facts (1 mile radius).resources/examples
+order: 1000

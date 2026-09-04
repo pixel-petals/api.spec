@@ -1,0 +1,29 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/summarize-data/summarize-within/#calculate-the-length-of-bike-routes)
+url: "{{ANALYSIS_URL}}/SummarizeWithin/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    token: "{{ACCESS_TOKEN}}"
+    f: json
+    summaryLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Summarize_Within/FeatureServer/1","name":"Bike Routes"}'
+    sumWithinLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Summarize_Within/FeatureServer/2","name":"Maintenance Assessment District"}'
+    sumShape: "true"
+    shapeUnits: Miles
+    groupByField: ROUTE
+    minorityMajority: "false"
+    outputName: '{"serviceProperties":{"name":"{{UNIQUE_NAME}}"}}'
+scripts:
+  - type: beforeRequest
+    code: |
+      // Creates a unique name for the output service
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/ /g, "_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+  - type: afterResponse
+    code: |
+      pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

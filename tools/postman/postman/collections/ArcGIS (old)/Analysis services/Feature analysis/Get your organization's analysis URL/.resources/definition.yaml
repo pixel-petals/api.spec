@@ -1,0 +1,4 @@
+$kind: collection
+description: |
+  To learn more go to the [Developer Guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/how-to-perform-feature-analysis/#arcgis-rest-api)
+order: 1000

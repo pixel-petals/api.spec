@@ -1,0 +1,30 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/routing-and-directions/location-allocation/#job-find-new-restaurant-location)
+url: https://logistics.arcgis.com/arcgis/rest/services/World/LocationAllocation/GPServer/SolveLocationAllocation/submitJob
+method: POST
+body:
+  type: urlencoded
+  content:
+    - key: f
+      value: json
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      description: Automatically sent by "Params"
+    - key: facilities
+      value: "{'features':[{'attributes':{'Name':'Existing Location','FacilityType':1},'geometry':{'x':-122.333906,'y':47.609152}},{'attributes':{'Name':'Candidate 1','FacilityType':0},'geometry':{'x':-122.333585,'y':47.604501}},{'attributes':{'Name':'Candidate 2','FacilityType':0},'geometry':{'x':-122.334550,'y':47.605557}},{'attributes':{'Name':'Candidate 3','FacilityType':0},'geometry':{'x':-122.337753,'y':47.609442}},{'attributes':{'Name':'Candidate 4','FacilityType':0},'geometry':{'x':-122.335319,'y':47.607317}}]}"
+    - key: demand_points
+      value: "{'features':[{'attributes':{'Name':'Colman Building','Weight':1573},'geometry':{'x':-122.335583,'y':47.603495}},{'attributes':{'Name':'Norton Parking Garage','Weight':1262},'geometry':{'x':-122.33482,'y':47.603745}},{'attributes':{'Name':'DocuSign Tower','Weight':2385},'geometry':{'x':-122.334151,'y':47.605060}},{'attributes':{'Name':'Fourth and Madison Building','Weight':1096},'geometry':{'x':-122.333227,'y':47.605493}},{'attributes':{'Name':'Safeco Plaza','Weight':3618},'geometry':{'x':-122.333899,'y':47.606190}},{'attributes':{'Name':'1201 Third Avenue','Weight':1782},'geometry':{'x':-122.336163,'y':47.607204}},{'attributes':{'Name':'Puget Sound Plaza','Weight':2165},'geometry':{'x':-122.335796,'y':47.608602}},{'attributes':{'Name':'Rainier Square','Weight':1316},'geometry':{'x':-122.334881,'y':47.609021}},{'attributes':{'Name':'Century Square','Weight':1974},'geometry':{'x':-122.337503,'y':47.610273}},{'attributes':{'Name':'Miken Building','Weight':3920},'geometry':{'x':-122.336516,'y':47.609510}},{'attributes':{'Name':'Westlake Park','Weight':2467},'geometry':{'x':-122.336353,'y':47.6110466}},{'attributes':{'Name':'U.S. Bank Centre','Weight':3997},'geometry':{'x':-122.334571,'y':47.610492}},{'attributes':{'Name':'Westlake Center','Weight':2440},'geometry':{'x':-122.337406,'y':47.611980}},{'attributes':{'Name':'Nordstrom Flagship Store','Weight':2438},'geometry':{'x':-122.336295,'y':47.6123047}},{'attributes':{'Name':'Columbia Center','Weight':5400},'geometry':{'x':-122.330746,'y':47.604502}},{'attributes':{'Name':'800 Fifth Avenue','Weight':3697},'geometry':{'x':-122.330228,'y':47.605698}},{'attributes':{'Name':'Seattle Municipal Tower','Weight':2025},'geometry':{'x':-122.329605,'y':47.605143}},{'attributes':{'Name':'Washington State Convention Center','Weight':1076},'geometry':{'x':-122.331520,'y':47.611664}}]}"
+    - key: travel_mode
+      value: "{'attributeParameterValues':[{'attributeName':'Avoid Private Roads','parameterName':'Restriction Usage','value':'AVOID_MEDIUM'},{'attributeName':'Walking','parameterName':'Restriction Usage','value':'PROHIBITED'},{'attributeName':'Preferred for Pedestrians','parameterName':'Restriction Usage','value':'PREFER_LOW'},{'attributeName':'WalkTime','parameterName':'Walking Speed (km/h)','value':5},{'attributeName':'Avoid Roads Unsuitable for Pedestrians','parameterName':'Restriction Usage','value':'AVOID_HIGH'}],'description':'Follows paths and roads that allow pedestrian traffic and finds solutions that optimize travel time. The walking speed is set to 5 kilometers per hour.','distanceAttributeName':'Kilometers','id':'caFAgoThrvUpkFBW','impedanceAttributeName':'WalkTime','name':'Walking Time','restrictionAttributeNames':['Avoid Private Roads','Avoid Roads Unsuitable for Pedestrians','Preferred for Pedestrians','Walking'],'simplificationTolerance':2,'simplificationToleranceUnits':'esriMeters','timeAttributeName':'WalkTime','type':'WALK','useHierarchy':false,'uturnAtJunctions':'esriNFSBAllowBacktrack'}"
+    - key: problem_type
+      value: Maximize Attendance
+    - key: number_of_facilities_to_find
+      value: "2"
+    - key: travel_direction
+      value: Demand to Facility
+scripts:
+  - type: afterResponse
+    code: pm.collectionVariables.set("JOB_ID", pm.response.json().jobId);
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

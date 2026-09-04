@@ -1,0 +1,10 @@
+$kind: collection
+description: Make a request to get the JSON structure of a feature service.
+scripts:
+  - type: http:beforeRequest
+    code: |-
+      // utils.checkIfCollectionsVarsAreSet(["host", "org_id", "service_name", "layer_id"]);
+      // utils.requiredParameters(['f', 'token']);
+      // utils.checkSupportedValues('f', ['json', 'pjson', 'html']);
+    language: text/javascript
+order: 2000

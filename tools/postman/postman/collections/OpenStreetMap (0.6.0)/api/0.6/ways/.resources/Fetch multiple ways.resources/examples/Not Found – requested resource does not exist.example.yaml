@@ -1,0 +1,18 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/0.6/ways?ways=string"
+  method: GET
+  queryParams:
+    - key: ways
+      value: string
+      description: Comma-separated list of way IDs, optionally versioned
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 3000

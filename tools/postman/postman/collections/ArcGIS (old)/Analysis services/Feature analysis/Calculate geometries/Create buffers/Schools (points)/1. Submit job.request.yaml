@@ -1,0 +1,39 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/feature-analysis/calculate-geometries/create-buffers/#schools-points)
+url: "{{ANALYSIS_URL}}/CreateBuffers/submitJob"
+method: POST
+body:
+  type: urlencoded
+  content:
+    - key: f
+      value: json
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+    - key: inputLayer
+      value: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/DeriveHighSchools/FeatureServer/0"}'
+    - key: dissolveType
+      value: None
+    - key: distances
+      value: "[1000]"
+    - key: units
+      value: Feet
+    - key: ringType
+      value: Rings
+    - key: outputName
+      value: '{"serviceProperties": {"name":"{{UNIQUE_NAME}}"}}'
+    - key: ""
+      value: ""
+      disabled: true
+scripts:
+  - type: afterResponse
+    code: |
+      pm.collectionVariables.set("JOB_ID", pm.response.json().jobId)
+    language: text/javascript
+  - type: beforeRequest
+    code: |
+      // Creates a unique name for the output service
+      const un = `${pm.execution.location[pm.execution.location.length-2]}_${pm.variables.replaceIn("{{$timestamp}}")}`.replace(/[^A-Z0-9]/gi, "_")
+      pm.collectionVariables.set("UNIQUE_NAME", un)
+    language: text/javascript
+examples: ./.resources/1. Submit job.resources/examples
+order: 1000

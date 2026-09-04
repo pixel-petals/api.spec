@@ -1,0 +1,55 @@
+$kind: http-request
+url: "{{CKAN_API}}/package_search"
+method: GET
+headers:
+  Content-Type: application/json
+queryParams:
+  - key: q
+    value: null
+    disabled: true
+    description: '(string) – the solr query. Optional. Default: "*:*"'
+  - key: fq
+    value: null
+    disabled: true
+    description: "(string) – any filter queries to apply. Note: +site_id:{ckan_site_id} is added to this string prior to the query being executed"
+  - key: sort
+    value: null
+    disabled: true
+    description: "(string) – sorting of the search results. Optional. Default: 'relevance asc, metadata_modified desc'. As per the solr documentation, this is a comma-separated string of field names and sort-orderings"
+  - key: rows
+    value: null
+    disabled: true
+    description: (int) – the number of matching rows to return. There is a hard limit of 1000 datasets per query
+  - key: start
+    value: null
+    disabled: true
+    description: (int) – the offset in the complete result for where the set of returned datasets should begin
+  - key: facet
+    value: null
+    disabled: true
+    description: "(string) – whether to enable faceted results. Default: True"
+  - key: facet.mincount
+    value: null
+    disabled: true
+    description: (int) – the minimum counts for facet fields should be included in the results
+  - key: facet.limit
+    value: null
+    disabled: true
+    description: (int) – the maximum number of values the facet fields return. A negative value means unlimited. This can be set instance-wide with the search.facets.limit config option. Default is 50
+  - key: facet.field
+    value: null
+    disabled: true
+    description: (list of strings) – the fields to facet upon. Default empty. If empty, then the returned facet information is empty
+  - key: include_drafts
+    value: null
+    disabled: true
+    description: (boolean) – if True, draft datasets will be included in the results. A user will only be returned their own draft datasets, and a sysadmin will be returned all draft datasets. Optional, the default is False
+  - key: include_private
+    value: null
+    disabled: true
+    description: " if True, private datasets will be included in the results. Only private datasets from the user’s organizations will be returned and sysadmins will be returned all private datasets. Optional, the default is False"
+  - key: use_default_schema
+    value: null
+    disabled: true
+    description: "(bool) – use default package schema instead of a custom schema defined with an IDatasetForm plugin (default: False)"
+order: 18000

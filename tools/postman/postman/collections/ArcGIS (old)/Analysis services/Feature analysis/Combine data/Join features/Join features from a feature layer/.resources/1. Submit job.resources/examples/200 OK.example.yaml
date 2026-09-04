@@ -1,0 +1,34 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/JoinFeatures/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      token: "{{ACCESS_TOKEN}}"
+      f: json
+      targetLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Census_blocks_within_San_Francisco/FeatureServer/0"}'
+      joinLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Centroids_for_San_Francisco_housing/FeatureServer/0", "filter":"AVGVAL_CY > 0"}'
+      joinOperation: joinOneToOne
+      joinType: inner
+      spatialRelationship: intersects
+      outputName: '{"serviceProperties":"name":"Join features spatial result"}}'
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: "{\r
+
+      \  \"jobId\": \"<JOB_ID>\",\r
+
+      \  \"jobStatus\": \"esriJobSubmitted\",\r
+
+      \  \"results\": {},\r
+
+      \  \"inputs\": {},\r
+
+      \  \"messages\": []\r
+
+      }"
+order: 1000

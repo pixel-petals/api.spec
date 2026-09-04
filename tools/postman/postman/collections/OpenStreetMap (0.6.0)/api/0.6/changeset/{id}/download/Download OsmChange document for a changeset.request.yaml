@@ -1,0 +1,30 @@
+$kind: http-request
+description: Returns an OsmChange XML document with all changes in the changeset, sorted by timestamp and version.
+url: "{{baseUrl}}/api/0.6/changeset/:id/download"
+method: GET
+headers:
+  Accept: application/xml
+pathVariables:
+  - key: id
+    value: "6776"
+    description: The numeric ID of the changeset
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: text
+  content: ""
+auth:
+  type: noauth
+examples: ./.resources/Download OsmChange document for a changeset.resources/examples
+order: 1000

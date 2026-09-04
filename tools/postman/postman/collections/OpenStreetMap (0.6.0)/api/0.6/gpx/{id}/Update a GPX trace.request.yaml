@@ -1,0 +1,46 @@
+$kind: http-request
+url: "{{baseUrl}}/api/0.6/gpx/:id"
+method: PUT
+headers:
+  Content-Type: multipart/form-data
+pathVariables:
+  - key: id
+    value: "6776"
+    description: The numeric ID of the element
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: formdata
+  content:
+    - type: text
+      key: description
+      value: string
+      description: ""
+    - type: text
+      key: tags
+      value: string
+      description: ""
+    - type: text
+      key: visibility
+      value: trackable
+      description: ""
+auth:
+  type: oauth2
+  credentials:
+    scope: read_prefs write_prefs write_api write_changeset_comments read_gpx write_gpx write_notes write_redactions write_blocks consume_messages send_messages
+    accessTokenUrl: https://www.openstreetmap.org/oauth2/token
+    authUrl: https://www.openstreetmap.org/oauth2/authorize
+    grant_type: authorization_code
+examples: ./.resources/Update a GPX trace.resources/examples
+order: 2000

@@ -1,0 +1,3 @@
+$kind: collection
+description: The `SummarizeCenterAndDispersion` operation finds central features and directional distribution in feature data. It calculates the central, mean center, median center, and ellipse of features to determine the distribution.
+order: 2000

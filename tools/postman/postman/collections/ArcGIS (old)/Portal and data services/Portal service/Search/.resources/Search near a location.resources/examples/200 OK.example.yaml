@@ -1,0 +1,604 @@
+$kind: http-example
+request:
+  url: 'https://www.arcgis.com/sharing/rest/search?bbox=-122.6750,45.5051, -122.6750,45.5051&q="food cart" AND type: "web map"&f=pjson'
+  method: GET
+  queryParams:
+    - key: bbox
+      value: -122.6750,45.5051, -122.6750,45.5051
+      description: "Longitude, latitude "
+    - key: q
+      value: '"food cart" AND type: "web map"'
+    - key: f
+      value: pjson
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Date
+      value: Thu, 13 Jan 2022 16:17:39 GMT
+    - key: Content-Type
+      value: text/plain;charset=utf-8
+    - key: Transfer-Encoding
+      value: chunked
+    - key: Connection
+      value: keep-alive
+    - key: Vary
+      value: Origin
+    - key: Vary
+      value: Accept-Encoding
+    - key: X-Content-Type-Options
+      value: nosniff
+    - key: Cache-Control
+      value: no-cache
+    - key: Pragma
+      value: no-cache
+    - key: Expires
+      value: "-1"
+    - key: Strict-Transport-Security
+      value: max-age=31536000
+    - key: Content-Encoding
+      value: gzip
+  body:
+    type: json
+    content: |-
+      {
+          "query": "\"food cart\" AND type: \"web map\"",
+          "total": 9,
+          "start": 1,
+          "num": 10,
+          "nextStart": -1,
+          "results": [
+              {
+                  "id": "e3fc8d6a8bd44c61868d11ff7ee88978",
+                  "owner": "ross34_pdxedu",
+                  "created": 1587145924000,
+                  "modified": 1587146668000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Restaurants and Food Trucks with Free Meals for Service Industry Layoffs",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "Eater",
+                      "pdx",
+                      "covidmapspdx",
+                      "portland",
+                      "food carts",
+                      "restaurants"
+                  ],
+                  "snippet": "This is a web map containing information about the restaurants and food trucks that are now offering free food to people in the food service industry that have been laid off due to the coronavirus.  The original information for this map came from an article written by The Eater that was published March 18th, 2020.  The travel time ranges were created with help from Travel Time Technologies.\r\n\r\nOriginal Article: https://pdx.eater.com/2020/3/18/21185735/free-meals-food-industry-layoffs-coronavirus?fbclid=IwAR3KJPODaolzup-8vQ6sIVgOeIhNIiPA3uEpVQNs8DBNsdUZ4MZ1JHbuHic\r\n\r\nTravel Time: https://docs.traveltimeplatform.com/overview/introduction",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -122.790461394586,
+                          45.4404719749917
+                      ],
+                      [
+                          -122.461734394232,
+                          45.5702204826994
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "english (united states)",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 3787,
+                  "scoreCompleteness": 66,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "439f8fc32cce4c9a90f8f3b8bd96052e",
+                  "owner": "skyl7301",
+                  "created": 1372444739000,
+                  "modified": 1372459140000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Portland",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Data Editing",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "Skylar",
+                      "Food Carts",
+                      "Microbrews"
+                  ],
+                  "snippet": "A map of microbreweries and food carts in Portland, OR.",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -122.7393,
+                          45.4791
+                      ],
+                      [
+                          -122.5708,
+                          45.5734
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 58,
+                  "scoreCompleteness": 50,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "d514c33359f546beb766953a0c7f4fd3",
+                  "owner": "kovacn@co.multnomah.or.us_multco",
+                  "created": 1565276441000,
+                  "modified": 1565304626000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Food Carts Evaluation 2019",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Collector",
+                      "Data Editing",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "SPG",
+                      "Food Carts"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -122.7874,
+                          45.4345
+                      ],
+                      [
+                          -122.2863,
+                          45.6439
+                      ]
+                  ],
+                  "categories": [
+                      "/Categories/FoodCarts2019"
+                  ],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 175,
+                  "scoreCompleteness": 41,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "2ba16fa4be724703a9ba6716a58839c1",
+                  "owner": "icarter4",
+                  "created": 1506535499000,
+                  "modified": 1508519210000,
+                  "guid": null,
+                  "name": null,
+                  "title": "portland density",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "portland",
+                      "food carts"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -122.8402,
+                          45.4673
+                      ],
+                      [
+                          -122.5038,
+                          45.6017
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 182,
+                  "scoreCompleteness": 41,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "7e9580d6ba584ba3bc0f27c3266cf0eb",
+                  "owner": "PCONE_PDX",
+                  "created": 1423693689000,
+                  "modified": 1480391827000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Portland Food Carts",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Collector",
+                      "Data Editing",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "PBEM"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -122.8041,
+                          45.4312
+                      ],
+                      [
+                          -122.4875,
+                          45.6132
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 690,
+                  "scoreCompleteness": 33,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "e63bf51f1a904282bb60013f48de7b2a",
+                  "owner": "justin_org",
+                  "created": 1560989769000,
+                  "modified": 1582052019000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Oregonian - Portland food map",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": "<p>Based on two articles by Michael Russell from <i>The Oregonian/Oregonlive</i></p><p><a href='https://expo.oregonlive.com/life-and-culture/g66l-2019/06/b9826fd9cf8538/portlands-best-new-food-carts-of-2019-ranked.html' rel='nofollow ugc'>Portland's best new food carts of 2019, ranked</a></p>\n<p><a href='https://www.oregonlive.com/dining/index.ssf/2018/03/portland_cheap_eats_guide.html' rel='nofollow ugc'>The ultimate guide to Portland's 50 best inexpensive restaurants</a></p>\n<p>\nCheck out the web app version of the map here: <a href='https://arcg.is/1nmq05' rel='nofollow ugc'>https://arcg.is/1nmq05</a>\n</p>",
+                  "tags": [
+                      "pdx",
+                      "food"
+                  ],
+                  "snippet": "Portland food map",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -123.1474,
+                          45.2342
+                      ],
+                      [
+                          -122.2293,
+                          45.8134
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": "From The Oregonian/Oregonlive",
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 166,
+                  "scoreCompleteness": 60,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "66d6f9f8e7964b67a7f47ac06786aa96",
+                  "owner": "dsprick",
+                  "created": 1401402002000,
+                  "modified": 1401420261000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Car2Go Car Rental Locations",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": "This map includes where cars from the Car2Go rental car program were recently located with census data, like rental occupancy and population density, as well as points of interest, like food carts and cafés in the Portland, OR area.",
+                  "tags": [
+                      "car2go"
+                  ],
+                  "snippet": "Look at car rental locations related to city data for Portland, OR",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -122.8316,
+                          45.4317
+                      ],
+                      [
+                          -122.3884,
+                          45.627
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 127,
+                  "scoreCompleteness": 61,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "94e47d309ae54207a72ed32653d79130",
+                  "owner": "TheAmerican",
+                  "created": 1422485863000,
+                  "modified": 1422947786000,
+                  "guid": null,
+                  "name": null,
+                  "title": "William Olson Grocery Stores of Porland Stores",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": "Portland Oregon is a city with a diverse culture and a populous booming with active groups within the community trying to make Portland a better place for everyone to reside. Portland is home to some 609,456 people making this city the 29th most populous city in the United States and the third in th<span style='color: rgb(0, 0, 0);'>e <span style='color: rgb(47, 79, 79);'>Pacific Northwest</span></span>. If you have been to Portland then you know Portlanders are know for their abundance of outdoor activities, liberal political values, and beer and coffee enthusiasm. Portland is also home to a large number of independent microbreweries, distilleries, and food carts. With as much success as the population of Portland has had in turning their city into the best city that it can be, they have been addressing the issue of food deserts in the metropolitan area of Portland and how they can combat such a threat to their communities. Although Portland has many big grocery stores like Grocery outlet, Safeway, and Wal-Mart, these stores are not always close enough to the communities that need them most which tells us why there are food deserts within the city. Most of these much needed stores tend to be built around median income areas, $39,001 to $53,000 (US median: $50,157), and not close enough to areas where food deserts are more probable. Other problems contributing to these food deserts in Portland, is the fact that there aren't quite the number of major outlets needed for communities to go to as well as many people are more than a mile away from such stores that would provide them with well nourished foods instead of junk foods. Activists in Portland though are working towards eliminating these food deserts. &quot;In justifying the program [Healthy Retail Initiative], the county says that “many communities in \r\nMultnomah County do not have easy access to full-service grocery stores \r\nand instead rely on small neighborhood stores for many of their daily \r\nfood needs.” Given that many establishments receiving subsidies are \r\nlocated in neighborhoods that don’t lack full-service grocery stores, \r\nthe “providing access” explanation seems suspect.-Ethan Epstein. <br />(http://www.city-journal.org/2012/22_2_snd-portland.html) <br />Numbers contributed to by Wikipedia.",
+                  "tags": [
+                      "Grocery Stores of Portland"
+                  ],
+                  "snippet": null,
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -123.1842,
+                          45.1547
+                      ],
+                      [
+                          -121.1558,
+                          45.9108
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 74,
+                  "scoreCompleteness": 50,
+                  "groupDesignations": null
+              },
+              {
+                  "id": "f0388be531c54161a2ce013da53320a9",
+                  "owner": "eogdenfung_wesleyan",
+                  "created": 1540868218000,
+                  "modified": 1540869185000,
+                  "guid": null,
+                  "name": null,
+                  "title": "Portland Food Trucks",
+                  "type": "Web Map",
+                  "typeKeywords": [
+                      "ArcGIS Online",
+                      "Explorer Web Map",
+                      "Map",
+                      "Online Map",
+                      "Web Map"
+                  ],
+                  "description": null,
+                  "tags": [
+                      "Portland",
+                      "Oregon",
+                      "Food Trucks",
+                      "Wesleyan GIS"
+                  ],
+                  "snippet": "This map shows the top food carts in Portland, OR.",
+                  "thumbnail": "thumbnail/ago_downloaded.png",
+                  "documentation": null,
+                  "extent": [
+                      [
+                          -122.8191,
+                          45.4766
+                      ],
+                      [
+                          -122.4538,
+                          45.5736
+                      ]
+                  ],
+                  "categories": [],
+                  "spatialReference": null,
+                  "accessInformation": null,
+                  "licenseInfo": null,
+                  "culture": "en-us",
+                  "properties": null,
+                  "advancedSettings": null,
+                  "url": null,
+                  "proxyFilter": null,
+                  "access": "public",
+                  "size": -1,
+                  "subInfo": 0,
+                  "appCategories": [],
+                  "industries": [],
+                  "languages": [],
+                  "largeThumbnail": null,
+                  "banner": null,
+                  "screenshots": [],
+                  "listed": false,
+                  "numComments": 0,
+                  "numRatings": 0,
+                  "avgRating": 0,
+                  "numViews": 100,
+                  "scoreCompleteness": 66,
+                  "groupDesignations": null
+              }
+          ]
+      }
+order: 1000

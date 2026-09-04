@@ -1,0 +1,13 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/feature-services/query-features/#query-a-feature-layer-sql)
+url: https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/LA_County_Parcels/FeatureServer/0/query?where=UseType = 'Residential'&resultRecordCount=10&f=json&outFields=APN, UseType, TaxRateCity, Roll_LandValue&token={{ACCESS_TOKEN}}&orderByFields=Roll_LandValue DESC
+method: GET
+queryParams:
+  where: UseType = 'Residential'
+  resultRecordCount: "10"
+  f: json
+  outFields: APN, UseType, TaxRateCity, Roll_LandValue
+  token: "{{ACCESS_TOKEN}}"
+  orderByFields: Roll_LandValue DESC
+examples: ./.resources/Query a feature layer (SQL orderByFields).resources/examples
+order: 4000

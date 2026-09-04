@@ -1,0 +1,14 @@
+$kind: http-request
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/feature-services/query-features/#query-a-feature-layer-spatial)
+url: https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/LA_County_Parcels/FeatureServer/0/query?where=1=1&outFields=*&spatialRel=esriSpatialRelIntersects&geometryType=esriGeometryPoint&geometry={"x":-118.497,"y":34.01,"spatialReference":{"wkid":4326}}&token={{ACCESS_TOKEN}}&f=pjson
+method: GET
+queryParams:
+  where: 1=1
+  outFields: "*"
+  spatialRel: esriSpatialRelIntersects
+  geometryType: esriGeometryPoint
+  geometry: '{"x":-118.497,"y":34.01,"spatialReference":{"wkid":4326}}'
+  token: "{{ACCESS_TOKEN}}"
+  f: pjson
+examples: ./.resources/Query a feature layer (Spatial).resources/examples
+order: 2000

@@ -1,0 +1,8 @@
+$kind: collection
+name: CKAN 3 (old)
+variables:
+  CKAN_HOST: ""
+  CKAN_API_VERSION: ""
+  CKAN_API_ENDPOINT: ""
+  CKAN_API: ""
+  CKAN_API_KEY: ""

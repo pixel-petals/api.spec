@@ -1,0 +1,176 @@
+$kind: http-example
+request:
+  url: 'https://{{geoenrich-service}}.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/enrich?studyareas=[{"geometry":{"x": -122.435, "y": 37.785},"areaType": "NetworkServiceArea","bufferUnits": "Minutes","bufferRadii": [5],"travel_mode":"Driving"}]&returngeometry=true&f=pjson&token={{access_token}}'
+  method: GET
+  queryParams:
+    studyareas: '[{"geometry":{"x": -122.435, "y": 37.785},"areaType": "NetworkServiceArea","bufferUnits": "Minutes","bufferRadii": [5],"travel_mode":"Driving"}]'
+    returngeometry: "true"
+    f: pjson
+    token: "{{access_token}}"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Date: Wed, 24 Nov 2021 10:34:24 GMT
+    Content-Type: text/plain;charset=UTF-8
+    Transfer-Encoding: chunked
+    Connection: keep-alive
+    ETag: '"1496384181"'
+    Content-Language: en
+    Content-Encoding: gzip
+    Vary: Origin
+    Strict-Transport-Security: max-age=63072000
+  body:
+    type: text
+    content: |-
+      {
+        "results" : [ {
+          "paramName" : "GeoEnrichmentResult",
+          "dataType" : "GeoEnrichmentResult",
+          "value" : {
+            "version" : "2.0",
+            "FeatureSet" : [ {
+              "displayFieldName" : "",
+              "fieldAliases" : {
+                "ID" : "Id",
+                "OBJECTID" : "Object ID",
+                "sourceCountry" : "Country code",
+                "areaType" : "Area type",
+                "bufferUnits" : "Buffer units",
+                "bufferUnitsAlias" : "Buffer units alias",
+                "bufferRadii" : "Buffer radii",
+                "aggregationMethod" : "Aggregation method",
+                "populationToPolygonSizeRating" : "Population to polygon size rating for the country",
+                "apportionmentConfidence" : "Apportionment confidence for the country",
+                "HasData" : "Has data",
+                "TOTPOP" : "Total Population",
+                "TOTHH" : "Total Households",
+                "AVGHHSZ" : "Average Household Size",
+                "TOTMALES" : "Male Population",
+                "TOTFEMALES" : "Female Population"
+              },
+              "geometryType" : "esriGeometryPolygon",
+              "spatialReference" : {
+                "wkid" : 4326,
+                "latestWkid" : 4326
+              },
+              "fields" : [ {
+                "name" : "ID",
+                "alias" : "Id",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "OBJECTID",
+                "alias" : "Object ID",
+                "type" : "esriFieldTypeOID"
+              }, {
+                "name" : "sourceCountry",
+                "alias" : "Country code",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "areaType",
+                "alias" : "Area type",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferUnits",
+                "alias" : "Buffer units",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferUnitsAlias",
+                "alias" : "Buffer units alias",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "bufferRadii",
+                "alias" : "Buffer radii",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "aggregationMethod",
+                "alias" : "Aggregation method",
+                "type" : "esriFieldTypeString",
+                "length" : 256
+              }, {
+                "name" : "populationToPolygonSizeRating",
+                "alias" : "Population to polygon size rating for the country",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "apportionmentConfidence",
+                "alias" : "Apportionment confidence for the country",
+                "type" : "esriFieldTypeDouble"
+              }, {
+                "name" : "HasData",
+                "alias" : "Has data",
+                "type" : "esriFieldTypeInteger"
+              }, {
+                "name" : "TOTPOP",
+                "alias" : "Total Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyGlobalFacts.TOTPOP",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "TOTHH",
+                "alias" : "Total Households",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyGlobalFacts.TOTHH",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "AVGHHSZ",
+                "alias" : "Average Household Size",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyGlobalFacts.AVGHHSZ",
+                "component" : "scripts",
+                "decimals" : 2,
+                "units" : "count"
+              }, {
+                "name" : "TOTMALES",
+                "alias" : "Male Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyGlobalFacts.TOTMALES",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              }, {
+                "name" : "TOTFEMALES",
+                "alias" : "Female Population",
+                "type" : "esriFieldTypeDouble",
+                "fullName" : "KeyGlobalFacts.TOTFEMALES",
+                "component" : "demographics",
+                "decimals" : 0,
+                "units" : "count"
+              } ],
+              "features" : [ {
+                "attributes" : {
+                  "ID" : "0",
+                  "OBJECTID" : 1,
+                  "sourceCountry" : "US",
+                  "areaType" : "NetworkServiceArea",
+                  "bufferUnits" : "Minutes",
+                  "bufferUnitsAlias" : "Drive Time Minutes",
+                  "bufferRadii" : 5,
+                  "aggregationMethod" : "BlockApportionment:US.BlockGroups;PointsLayer:US.BlockPoints",
+                  "populationToPolygonSizeRating" : 2.191,
+                  "apportionmentConfidence" : 2.576,
+                  "HasData" : 1,
+                  "TOTPOP" : 112914,
+                  "TOTHH" : 59005,
+                  "AVGHHSZ" : 1.83,
+                  "TOTMALES" : 55541,
+                  "TOTFEMALES" : 57373
+                },
+                "geometry" : {
+                  "rings" : [ [ [ -122.43756715085125, 37.79978286014445 ], [ -122.43666883916039, 37.799333704946946 ], [ -122.43666883916039, 37.798884549147786 ], [ -122.43554595044512, 37.798659971288814 ], [ -122.43464763875427, 37.79731250399329 ], [ -122.43352475003903, 37.79731250399329 ], [ -122.43195270637663, 37.79821081565193 ], [ -122.4312789717102, 37.797761660123356 ], [ -122.43105439468577, 37.79686334868146 ], [ -122.42993150597053, 37.79686334868146 ], [ -122.42925777220239, 37.79596503767338 ], [ -122.4279103046661, 37.79596503767338 ], [ -122.4276857276417, 37.79686334868146 ], [ -122.42701199387355, 37.79731250399329 ], [ -122.42633826100374, 37.79708792703363 ], [ -122.426113683081, 37.79641419276824 ], [ -122.42386790475217, 37.79641419276824 ], [ -122.42364332682946, 37.79574046016668 ], [ -122.42252043811422, 37.795291303815034 ], [ -122.42117297237456, 37.79237179302057 ], [ -122.42027465978539, 37.79237179302057 ], [ -122.42005008276097, 37.79169805975887 ], [ -122.41892719404572, 37.79214721523942 ], [ -122.41780430533046, 37.79147348205956 ], [ -122.41757972740776, 37.7907997477057 ], [ -122.41847803820029, 37.78967686002873 ], [ -122.41780430533046, 37.789452281865536 ], [ -122.41757972740776, 37.78810481488093 ], [ -122.41600768194874, 37.78810481488093 ], [ -122.41555852700164, 37.7865327696566 ], [ -122.41488479323351, 37.78675734817337 ], [ -122.41353732659552, 37.785634458704 ], [ -122.41376190361991, 37.78496072577829 ], [ -122.41510937115619, 37.784511569922124 ], [ -122.41555852700164, 37.783613259250274 ], [ -122.41645683779416, 37.783613259250274 ], [ -122.4169059936396, 37.78226579229481 ], [ -122.41780430533046, 37.781816637100526 ], [ -122.41802888325317, 37.780693747823435 ], [ -122.418702616123, 37.78046917005103 ], [ -122.41847803820029, 37.780020013879174 ], [ -122.41960092691555, 37.7784479699254 ], [ -122.42027465978539, 37.77822339172011 ], [ -122.42094839355354, 37.778672548158525 ], [ -122.42117297237456, 37.77732508130641 ], [ -122.42229586108982, 37.77687592520118 ], [ -122.42252043811422, 37.776202191961964 ], [ -122.42319417188237, 37.775977614034495 ], [ -122.42386790475217, 37.776426769917265 ], [ -122.42409248267488, 37.775753036134866 ], [ -122.42521537228845, 37.77552845826303 ], [ -122.42543995021119, 37.774854724814766 ], [ -122.42656283892644, 37.774854724814766 ], [ -122.42633826100374, 37.77373183629176 ], [ -122.42723657179626, 37.77283352526564 ], [ -122.4279103046661, 37.773058102802764 ], [ -122.4276857276417, 37.772159792111786 ], [ -122.42813488258881, 37.77148605778945 ], [ -122.42948235012508, 37.77148605778945 ], [ -122.43015608299491, 37.77058774717163 ], [ -122.43082981676307, 37.770812325139175 ], [ -122.43105439468577, 37.76991401414738 ], [ -122.43195270637663, 37.76946485775455 ], [ -122.43464763875427, 37.77148605778945 ], [ -122.43644426213598, 37.77171063586892 ], [ -122.43644426213598, 37.77126147973799 ], [ -122.43734257292854, 37.770812325139175 ], [ -122.43801630579836, 37.77126147973799 ], [ -122.4382408837211, 37.772159792111786 ], [ -122.43913919541193, 37.77171063586892 ], [ -122.43981292828177, 37.772608947046315 ], [ -122.44183412868787, 37.772608947046315 ], [ -122.44340617324858, 37.77373183629176 ], [ -122.44497821780925, 37.773058102802764 ], [ -122.44520279573199, 37.772384368855 ], [ -122.44610110742282, 37.77193521397636 ], [ -122.44677484029266, 37.77283352526564 ], [ -122.4478977290079, 37.77283352526564 ], [ -122.45036808525947, 37.77418099232735 ], [ -122.45261386268997, 37.774405570031966 ], [ -122.45306301763708, 37.77507930331306 ], [ -122.45283844061268, 37.775753036134866 ], [ -122.45373675230356, 37.775977614034495 ], [ -122.45396133022628, 37.776651347190295 ], [ -122.4553087959659, 37.775977614034495 ], [ -122.45732999637205, 37.776651347190295 ], [ -122.45777915221747, 37.77754965869067 ], [ -122.45867746301, 37.77710050323989 ], [ -122.45957577380253, 37.77822339172011 ], [ -122.46069866341612, 37.778672548158525 ], [ -122.46114781926154, 37.7795708592381 ], [ -122.4622707079768, 37.7795708592381 ], [ -122.46406732956191, 37.78046917005103 ], [ -122.46429190838293, 37.78159205918979 ], [ -122.46384275163918, 37.78226579229481 ], [ -122.46182155213138, 37.78226579229481 ], [ -122.46114781926154, 37.78271494830955 ], [ -122.46092324133883, 37.78383783669943 ], [ -122.45980035172526, 37.784286991680354 ], [ -122.45957577380253, 37.78496072577829 ], [ -122.45755457429473, 37.78496072577829 ], [ -122.45643168468119, 37.78698192600769 ], [ -122.4553087959659, 37.787655658965356 ], [ -122.45441048517338, 37.78743108175865 ], [ -122.45441048517338, 37.78788023690945 ], [ -122.45328759555981, 37.78832939287983 ], [ -122.45171555189744, 37.790350593262794 ], [ -122.45036808525947, 37.79057517082553 ], [ -122.45014350733673, 37.79214721523942 ], [ -122.44946977356861, 37.79259637082902 ], [ -122.44879603980046, 37.79237179302057 ], [ -122.44924519564587, 37.79327010370801 ], [ -122.44879603980046, 37.79416841483124 ], [ -122.4478977290079, 37.79439299285755 ], [ -122.44677484029266, 37.79349468233533 ], [ -122.44565195067908, 37.7948421489918 ], [ -122.4445290619638, 37.79506672709966 ], [ -122.44430448404113, 37.79574046016668 ], [ -122.44363075117128, 37.79596503767338 ], [ -122.44273244037873, 37.79798623787413 ], [ -122.43846546164377, 37.798659971288814 ], [ -122.43801630579836, 37.799558282177294 ], [ -122.43756715085125, 37.799558282177294 ], [ -122.43756715085125, 37.79978286014445 ] ] ]
+                }
+              } ]
+            } ]
+          }
+        } ],
+        "messages" : [ ]
+      }
+order: 1000

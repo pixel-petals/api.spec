@@ -1,0 +1,28 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/FindExistingLocations/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      f: json
+      token: "{{ACCESS_TOKEN}}"
+      expressions: '[{"operator":"","layer":0,"selectingLayer":1,"spatialRel":"withinDistance","distance":0.5,"units":"Miles"}]'
+      inputLayers: '[{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/SF_Neighborhoods/FeatureServer/0","name":"SF Neighborhoods"},{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Police_Stations/FeatureServer/0","name":"Police Stations"}]'
+      outputName: '{"serviceProperties":{"name":"Find locations results"}}'
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+          "jobId": "<JOB_ID>",
+          "jobStatus": "esriJobSubmitted",
+          "results": {},
+          "inputs": {},
+          "messages": []
+      }
+order: 1000

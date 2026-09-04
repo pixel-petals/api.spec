@@ -1,0 +1,22 @@
+$kind: http-request
+url: "{{CKAN_API}}/package_relationship_delete"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+body:
+  type: formdata
+  content:
+    - type: text
+      key: subject
+      value: ""
+      description: (string) – the id or name of the dataset that is the subject of the relationship
+    - type: text
+      key: object
+      value: ""
+      description: (string) – the id or name of the dataset that is the object of the relationship
+    - type: text
+      key: type
+      value: ""
+      description: (string) – the type of the relationship
+order: 5000

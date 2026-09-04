@@ -1,0 +1,3 @@
+$kind: collection
+description: The `JoinFeatures` operation combines attributes from one feature datasets to another based on spatial and/or attribute relationships and returns new feature data.
+order: 2000

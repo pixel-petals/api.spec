@@ -1,0 +1,17 @@
+$kind: http-example
+request:
+  url: https://example.com/api/infographic/export/12345.pdf?reportId=12345
+  method: GET
+  headers:
+    Authorization: Bearer <ACCESS_TOKEN>
+  queryParams:
+    reportId: "12345"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Authorization: Bearer <ACCESS_TOKEN>
+  body:
+    type: text
+    content: <binary PDF data>
+order: 1000

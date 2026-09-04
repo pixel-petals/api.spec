@@ -1,0 +1,31 @@
+$kind: http-request
+description: |-
+  Make a `/self` request to access your organizations Raster Analysis Service URL.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/spatial-analysis-services/raster-analysis/introduction/#how-to-access-the-raster-analysis-service)
+url: https://www.arcgis.com/sharing/rest/portals/self?f=json&token={{ACCESS_TOKEN}}
+method: GET
+queryParams:
+  f: json
+  token: "{{ACCESS_TOKEN}}"
+scripts:
+  - type: afterResponse
+    code: |
+      const selfResponse = pm.response.json()
+
+      pm.test("Has helper services", ()=>{
+          pm.expect(selfResponse).to.have.property("helperServices")
+      })
+
+      pm.test("Has raster analysis URL", ()=>{
+          pm.expect(selfResponse.helperServices).to.have.property("rasterAnalytics")
+      })
+
+
+      if (selfResponse.helperServices && selfResponse.helperServices.rasterAnalytics.url){
+          pm.collectionVariables.set("RASTER_ANALYSIS_URL", selfResponse.helperServices.rasterAnalytics.url)
+      		console.log(`Raster analysis URL set to ${selfResponse.helperServices.rasterAnalytics.url}`)
+      }
+    language: text/javascript
+examples: ./.resources/Get self.resources/examples
+order: 1000

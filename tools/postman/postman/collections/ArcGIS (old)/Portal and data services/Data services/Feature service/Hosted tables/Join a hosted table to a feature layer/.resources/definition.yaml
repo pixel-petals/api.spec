@@ -1,0 +1,3 @@
+$kind: collection
+description: To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/portal-and-data-services/data-services/feature-services/query-table-features/#join-a-table-to-a-feature-layer)
+order: 1000

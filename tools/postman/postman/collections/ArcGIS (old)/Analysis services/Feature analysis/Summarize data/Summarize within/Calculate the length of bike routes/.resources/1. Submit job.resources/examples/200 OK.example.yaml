@@ -1,0 +1,35 @@
+$kind: http-example
+request:
+  url: "{{ANALYSIS_URL}}/SummarizeWithin/submitJob"
+  method: POST
+  body:
+    type: urlencoded
+    content:
+      token: "{{ACCESS_TOKEN}}"
+      f: json
+      summaryLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Summarize_Within/FeatureServer/1","name":"Bike Routes"}'
+      sumWithinLayer: '{"url":"https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Summarize_Within/FeatureServer/2","name":"Maintenance Assessment District"}'
+      sumShape: "true"
+      shapeUnits: Miles
+      groupByField: ROUTE
+      minorityMajority: "false"
+      outputName: '{"serviceProperties":{"name":"Summarize within results"}}'
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: "{\r
+
+      \  \"jobId\": \"<JOB_ID>\",\r
+
+      \  \"jobStatus\": \"esriJobSubmitted\",\r
+
+      \  \"results\": {},\r
+
+      \  \"inputs\": {},\r
+
+      \  \"messages\": []\r
+
+      }"
+order: 1000

@@ -1,0 +1,54 @@
+$kind: http-request
+description: |-
+  Performs a GeoEnrichment analysis to retrieve population education data for Brazil. Use this endpoint to obtain demographic and educational statistics for a specified location in Brazil.
+
+  To learn more go to the [Developer guide](https://developers.arcgis.com/documentation/mapping-and-location-services/data-enrichment/)
+url: https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/Geoenrichment/enrich
+method: POST
+body:
+  type: urlencoded
+  content:
+    - key: f
+      value: json
+      description: (Required) Specify the response format.
+    - key: token
+      value: "{{ACCESS_TOKEN}}"
+      description: (Required) You need a valid access token. To learn more, read the collection's documentation.
+    - key: studyAreas
+      value: '[ { "geometry": { "rings": [ [ [ -45.13427734376267, -22.921864697924345 ], [ -44.892578125012584, -22.82443615799114 ], [ -44.58084106446558, -23.273035376461706 ], [ -45.319671630872115, -23.35375006543189 ], [ -45.13427734376267, -22.921864697924345 ] ] ], "spatialReference": { "wkid": 4326 } }, "attributes": { "id": "1", "name": "Somewhere near Sao Paulo" } } ]'
+      description: (Required) Study areas may be defined by input points, polygons, administrative boundaries or addresses.
+    - key: dataCollections
+      value: '["EducationalAttainment"]'
+      description: Specify a list of Data Collections.
+    - key: analysisVariables
+      value: '["EDUC03_CY","EDUC04_CY"]'
+      description: Specify a subset of variables to be returned from one or more data collections. Check the documentation of this Postman request for more info.
+    - key: addDerivativeVariables
+      value: <string>
+      disabled: true
+      description: Specify an array of string values that describe what derivative variables to include in the output.
+    - key: studyAreasOptions
+      value: <StudyAreasOptions>
+      disabled: true
+      description: Specify the properties for the study area buffer.
+    - key: useData
+      value: <UseData>
+      disabled: true
+      description: Specify the country or dataset to query.
+    - key: intersectingGeographies
+      value: <string>
+      disabled: true
+      description: Define the geographic layers used to provide geographic context during the enrichment process.
+    - key: returnGeometry
+      value: "true"
+      description: Request the output geometries in the response.
+    - key: inSR
+      value: <integer>
+      disabled: true
+      description: Input geometries in the studyAreas parameter in a specified spatial reference system.
+    - key: outSR
+      value: <integer>
+      disabled: true
+      description: Output geometries in a specified spatial reference system
+examples: ./.resources/Population education in Brazil.resources/examples
+order: 17000

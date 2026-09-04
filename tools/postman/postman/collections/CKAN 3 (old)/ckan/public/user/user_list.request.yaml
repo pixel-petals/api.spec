@@ -1,0 +1,17 @@
+$kind: http-request
+description: "[API Documentation 2.6.3](http://docs.ckan.org/en/ckan-2.6.3/api/index.html#ckan.logic.action.get.organization_list_for_user)"
+url: "{{CKAN_API}}/user_list"
+method: GET
+headers:
+  Content-Type: application/json
+  Authorization: "{{api-key}}"
+queryParams:
+  - key: q
+    value: null
+    disabled: true
+    description: (string) – restrict the users returned to those whose names contain a string (optional)
+  - key: order_by
+    value: null
+    disabled: true
+    description: "(string) – which field to sort the list by (optional, default: 'name'). Can be any user field or edits (i.e. number_of_edits)"
+order: 24000
