@@ -173,7 +173,11 @@ export interface OpenApi {
   securityDefinitions?: SecurityDefinitions;
   tags?: Tag[];
   externalDocs?: ExternalDocs;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `OpenApi`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * General information about the API.
@@ -200,7 +204,11 @@ export interface Info {
   termsOfService?: string;
   contact?: Contact;
   license?: License;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `Info`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * Contact information for the owners of the API.
@@ -221,96 +229,10 @@ export interface Contact {
    * The email address of the contact person/organization.
    */
   email?: string;
-  [k: string]: VendorExtension;
-}
-/**
- * Any property starting with x- is valid.
- *
- * This interface was referenced by `Contact`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `License`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `Info`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `Paths`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `ExternalDocs`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `Xml`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `Schema`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `BodyParameter`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `PrimitivesItems`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `HeaderParameterSubSchema`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `FormDataParameterSubSchema`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `QueryParameterSubSchema`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `PathParameterSubSchema`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `FileSchema`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `Header`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `Response`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `Responses`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `Operation`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `PathItem`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `BasicAuthenticationSecurity`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `ApiKeySecurity`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `Oauth2ImplicitSecurity`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `Oauth2PasswordSecurity`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `Oauth2ApplicationSecurity`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `Oauth2AccessCodeSecurity`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `Tag`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `OpenApi`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `OpenApi`'s JSON-Schema
- * via the `definition` "vendorExtension".
- */
-export interface VendorExtension {
+  /**
+   * This interface was referenced by `Contact`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
   [k: string]: unknown;
 }
 /**
@@ -326,7 +248,11 @@ export interface License {
    * The URL pointing to the license.
    */
   url?: string;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `License`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * Relative paths to the individual endpoints. They must be relative to the 'basePath'.
@@ -335,6 +261,21 @@ export interface License {
  * via the `definition` "paths".
  */
 export interface Paths {}
+/**
+ * Any property starting with x- is valid.
+ *
+ * This interface was referenced by `Paths`'s JSON-Schema definition
+ * via the `patternProperty` "^x-".
+ *
+ * This interface was referenced by `Responses`'s JSON-Schema definition
+ * via the `patternProperty` "^x-".
+ *
+ * This interface was referenced by `OpenApi`'s JSON-Schema
+ * via the `definition` "vendorExtension".
+ */
+export interface VendorExtension {
+  [k: string]: unknown;
+}
 /**
  * This interface was referenced by `Paths`'s JSON-Schema definition
  * via the `patternProperty` "^/".
@@ -352,7 +293,11 @@ export interface PathItem {
   head?: Operation;
   patch?: Operation;
   parameters?: ParametersList;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `PathItem`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -386,7 +331,11 @@ export interface Operation {
   schemes?: SchemesList;
   deprecated?: boolean;
   security?: Security;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `Operation`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * information about external documentation
@@ -397,7 +346,11 @@ export interface Operation {
 export interface ExternalDocs {
   description?: string;
   url: string;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `ExternalDocs`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -421,7 +374,11 @@ export interface BodyParameter {
    */
   required?: boolean;
   schema: Schema;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `BodyParameter`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * A deterministic version of a JSON Schema object.
@@ -465,7 +422,11 @@ export interface Schema {
   xml?: Xml;
   externalDocs?: ExternalDocs;
   example?: unknown;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `Schema`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -477,7 +438,11 @@ export interface Xml {
   prefix?: string;
   attribute?: boolean;
   wrapped?: boolean;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `Xml`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -517,7 +482,11 @@ export interface HeaderParameterSubSchema {
   uniqueItems?: UniqueItems;
   enum?: Enum;
   multipleOf?: MultipleOf;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `HeaderParameterSubSchema`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -541,7 +510,11 @@ export interface PrimitivesItems {
   uniqueItems?: UniqueItems;
   enum?: Enum;
   multipleOf?: MultipleOf;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `PrimitivesItems`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -585,7 +558,11 @@ export interface FormDataParameterSubSchema {
   uniqueItems?: UniqueItems;
   enum?: Enum;
   multipleOf?: MultipleOf;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `FormDataParameterSubSchema`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -629,7 +606,11 @@ export interface QueryParameterSubSchema {
   uniqueItems?: UniqueItems;
   enum?: Enum;
   multipleOf?: MultipleOf;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `QueryParameterSubSchema`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -669,7 +650,11 @@ export interface PathParameterSubSchema {
   uniqueItems?: UniqueItems;
   enum?: Enum;
   multipleOf?: MultipleOf;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `PathParameterSubSchema`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -694,7 +679,11 @@ export interface Response {
   schema?: Schema | FileSchema;
   headers?: Headers;
   examples?: Examples;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `Response`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * A deterministic version of a JSON Schema object.
@@ -712,7 +701,11 @@ export interface FileSchema {
   readOnly?: boolean;
   externalDocs?: ExternalDocs;
   example?: unknown;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `FileSchema`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -744,7 +737,11 @@ export interface Header {
   enum?: Enum;
   multipleOf?: MultipleOf;
   description?: string;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `Header`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -807,7 +804,11 @@ export interface SecurityDefinitions {
 export interface BasicAuthenticationSecurity {
   type: "basic";
   description?: string;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `BasicAuthenticationSecurity`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -818,7 +819,11 @@ export interface ApiKeySecurity {
   name: string;
   in: "header" | "query";
   description?: string;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `ApiKeySecurity`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -830,7 +835,11 @@ export interface Oauth2ImplicitSecurity {
   scopes?: Oauth2Scopes;
   authorizationUrl: string;
   description?: string;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `Oauth2ImplicitSecurity`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -849,7 +858,11 @@ export interface Oauth2PasswordSecurity {
   scopes?: Oauth2Scopes;
   tokenUrl: string;
   description?: string;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `Oauth2PasswordSecurity`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -861,7 +874,11 @@ export interface Oauth2ApplicationSecurity {
   scopes?: Oauth2Scopes;
   tokenUrl: string;
   description?: string;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `Oauth2ApplicationSecurity`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -874,7 +891,11 @@ export interface Oauth2AccessCodeSecurity {
   authorizationUrl: string;
   tokenUrl: string;
   description?: string;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `Oauth2AccessCodeSecurity`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `OpenApi`'s JSON-Schema
@@ -884,5 +905,9 @@ export interface Tag {
   name: string;
   description?: string;
   externalDocs?: ExternalDocs;
-  [k: string]: VendorExtension;
+  /**
+   * This interface was referenced by `Tag`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }

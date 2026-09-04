@@ -1,7 +1,22 @@
 # TypeScript declarations
 
 ```sh
-<name> types <version>     # writes schema/<version>/schema.d.ts
+<name> types <version>
+```
+
+Writes `schema/<version>/schema.d.ts` — every object in the schema, as one file — and a declaration beside every fragment:
+
+```text
+schema/3.2/
+  schema.d.ts                          42 types
+  defs/info.d.ts                       export type { Info } from '../schema.js'
+  defs/components/responses.d.ts       export type { ResponseOrReference as Response } from '../../schema.js'
+```
+
+A fragment's declaration is a **re-export**, not a second generation. The root already holds a type for every object, so re-exporting means no duplicated shapes and no way for the two to drift. The exported name follows the fragment — the file is `components/responses`, so the type is `Response`, whatever the definition behind it is spelled.
+
+```ts
+import type { Response } from '@pixelpetals/openapi/3.2/defs/components/responses.js'
 ```
 
 `json-schema-to-typescript` does the generating. What lives here is everything needed to hand it a meta-schema, which is not what it was built for.
@@ -35,6 +50,12 @@ Leaving references in place is always tried first because it keeps each definiti
 `unreachableDefinitions` is the important one. Without it only what the root reaches gets a type — and MCP's root reaches nothing at all, since the document is a bag of `$defs` a consumer points into. Every named object would be dropped.
 
 The root type is named from the descriptor rather than the document. The generator prefers `$id` when there is one, which turns a release URL into an identifier like `HttpsSpecOpenapisOrgOas32Schema20251123`.
+
+## Widened index signatures
+
+`patternProperties` becomes a string index signature, and TypeScript requires every declared property to satisfy it. Since `^x-` extensions sit beside real fields in nearly all of these specifications, that produced 3060 errors on its own.
+
+Where a node has both a pattern and named properties, the signature is widened to `unknown`. The type system cannot say "these keys match a pattern and those do not", and a wrong narrow type is worse than an honest wide one.
 
 ## What is not covered
 

@@ -9,14 +9,14 @@
 /**
  * @minItems 1
  *
- * This interface was referenced by `HttpJsonSchemaOrgDraft04Schema`'s JSON-Schema
+ * This interface was referenced by `JsonSchemaDraft07Schema`'s JSON-Schema
  * via the `definition` "schemaArray".
  */
-export type SchemaArray = [HttpJsonSchemaOrgDraft04Schema, ...HttpJsonSchemaOrgDraft04Schema[]];
+export type SchemaArray = [JsonSchemaDraft07Schema, ...JsonSchemaDraft07Schema[]];
 /**
  * @minItems 1
  *
- * This interface was referenced by `HttpJsonSchemaOrgDraft04Schema`'s JSON-Schema
+ * This interface was referenced by `JsonSchemaDraft07Schema`'s JSON-Schema
  * via the `definition` "stringArray".
  */
 export type StringArray = [string, ...string[]];
@@ -24,18 +24,18 @@ export type StringArray = [string, ...string[]];
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "SecurityScheme".
  */
-export type HttpAsyncapiComDefinitions100SecuritySchemeJson =
+export type SecurityScheme =
   | HttpAsyncapiComDefinitions100UserPasswordJson
   | HttpAsyncapiComDefinitions100ApiKeyJson
   | HttpAsyncapiComDefinitions100X509Json
   | HttpAsyncapiComDefinitions100SymmetricEncryptionJson
   | HttpAsyncapiComDefinitions100AsymmetricEncryptionJson
-  | HttpAsyncapiComDefinitions100HTTPSecuritySchemeJson;
+  | HTTPSecurityScheme;
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "HTTPSecurityScheme".
  */
-export type HttpAsyncapiComDefinitions100HTTPSecuritySchemeJson =
+export type HTTPSecurityScheme =
   | HttpAsyncapiComDefinitions100NonBearerHTTPSecuritySchemeJson
   | HttpAsyncapiComDefinitions100BearerHTTPSecuritySchemeJson
   | HttpAsyncapiComDefinitions100APIKeyHTTPSecuritySchemeJson;
@@ -58,9 +58,13 @@ export interface AsyncApi {
   topics: HttpAsyncapiComDefinitions100TopicsJson;
   components?: HttpAsyncapiComDefinitions100ComponentsJson;
   tags?: HttpAsyncapiComDefinitions100TagJson[];
-  security?: HttpAsyncapiComDefinitions100SecurityRequirementJson[];
+  security?: SecurityRequirement[];
   externalDocs?: HttpAsyncapiComDefinitions100ExternalDocsJson;
-  [k: string]: HttpAsyncapiComDefinitions100VendorExtensionJson;
+  /**
+   * This interface was referenced by `AsyncApi`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * General information about the API.
@@ -87,7 +91,11 @@ export interface HttpAsyncapiComDefinitions100InfoJson {
   termsOfService?: string;
   contact?: HttpAsyncapiComDefinitions100ContactJson;
   license?: HttpAsyncapiComDefinitions100LicenseJson;
-  [k: string]: HttpAsyncapiComDefinitions100VendorExtensionJson;
+  /**
+   * This interface was referenced by `HttpAsyncapiComDefinitions100InfoJson`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * Contact information for the owners of the API.
@@ -108,51 +116,10 @@ export interface HttpAsyncapiComDefinitions100ContactJson {
    * The email address of the contact person/organization.
    */
   email?: string;
-  [k: string]: HttpAsyncapiComDefinitions100VendorExtensionJson;
-}
-/**
- * Any property starting with x- is valid.
- *
- * This interface was referenced by `HttpAsyncapiComDefinitions100ContactJson`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `HttpAsyncapiComDefinitions100LicenseJson`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `HttpAsyncapiComDefinitions100InfoJson`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `HttpAsyncapiComDefinitions100ServerVariableJson`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `HttpAsyncapiComDefinitions100ServerJson`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `HttpAsyncapiComDefinitions100TopicsJson`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `HttpAsyncapiComDefinitions100ExternalDocsJson`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `HttpAsyncapiComDefinitions100SchemaJson`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `HttpAsyncapiComDefinitions100TagJson`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `HttpAsyncapiComDefinitions100MessageJson`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `HttpAsyncapiComDefinitions100TopicItemJson`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `AsyncApi`'s JSON-Schema definition
- * via the `patternProperty` "^x-".
- *
- * This interface was referenced by `AsyncApi`'s JSON-Schema
- * via the `definition` "vendorExtension".
- */
-export interface HttpAsyncapiComDefinitions100VendorExtensionJson {
+  /**
+   * This interface was referenced by `HttpAsyncapiComDefinitions100ContactJson`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
   [k: string]: unknown;
 }
 /**
@@ -168,7 +135,11 @@ export interface HttpAsyncapiComDefinitions100LicenseJson {
    * The URL pointing to the license.
    */
   url?: string;
-  [k: string]: HttpAsyncapiComDefinitions100VendorExtensionJson;
+  /**
+   * This interface was referenced by `HttpAsyncapiComDefinitions100LicenseJson`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * An object representing a Server.
@@ -185,14 +156,18 @@ export interface HttpAsyncapiComDefinitions100ServerJson {
   scheme:
     "kafka" | "kafka-secure" | "amqp" | "amqps" | "mqtt" | "mqtts" | "secure-mqtt" | "ws" | "wss" | "stomp" | "stomps";
   schemeVersion?: string;
-  variables?: HttpAsyncapiComDefinitions100ServerVariablesJson;
-  [k: string]: HttpAsyncapiComDefinitions100VendorExtensionJson;
+  variables?: ServerVariables;
+  /**
+   * This interface was referenced by `HttpAsyncapiComDefinitions100ServerJson`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "serverVariables".
  */
-export interface HttpAsyncapiComDefinitions100ServerVariablesJson {
+export interface ServerVariables {
   [k: string]: HttpAsyncapiComDefinitions100ServerVariableJson;
 }
 /**
@@ -205,7 +180,11 @@ export interface HttpAsyncapiComDefinitions100ServerVariableJson {
   enum?: string[];
   default?: string;
   description?: string;
-  [k: string]: HttpAsyncapiComDefinitions100VendorExtensionJson;
+  /**
+   * This interface was referenced by `HttpAsyncapiComDefinitions100ServerVariableJson`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * Relative paths to the individual topics. They must be relative to the 'baseTopic'.
@@ -214,6 +193,18 @@ export interface HttpAsyncapiComDefinitions100ServerVariableJson {
  * via the `definition` "topics".
  */
 export interface HttpAsyncapiComDefinitions100TopicsJson {}
+/**
+ * Any property starting with x- is valid.
+ *
+ * This interface was referenced by `HttpAsyncapiComDefinitions100TopicsJson`'s JSON-Schema definition
+ * via the `patternProperty` "^x-".
+ *
+ * This interface was referenced by `AsyncApi`'s JSON-Schema
+ * via the `definition` "vendorExtension".
+ */
+export interface VendorExtension {
+  [k: string]: unknown;
+}
 /**
  * This interface was referenced by `HttpAsyncapiComDefinitions100TopicsJson`'s JSON-Schema definition
  * via the `patternProperty` "^[^.]".
@@ -226,7 +217,11 @@ export interface HttpAsyncapiComDefinitions100TopicItemJson {
   publish?: HttpAsyncapiComDefinitions100MessageJson;
   subscribe?: HttpAsyncapiComDefinitions100MessageJson;
   deprecated?: boolean;
-  [k: string]: HttpAsyncapiComDefinitions100VendorExtensionJson;
+  /**
+   * This interface was referenced by `HttpAsyncapiComDefinitions100TopicItemJson`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -248,7 +243,11 @@ export interface HttpAsyncapiComDefinitions100MessageJson {
   externalDocs?: HttpAsyncapiComDefinitions100ExternalDocsJson;
   deprecated?: boolean;
   example?: unknown;
-  [k: string]: HttpAsyncapiComDefinitions100VendorExtensionJson;
+  /**
+   * This interface was referenced by `HttpAsyncapiComDefinitions100MessageJson`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * A deterministic version of a JSON Schema object.
@@ -259,26 +258,26 @@ export interface HttpAsyncapiComDefinitions100MessageJson {
 export interface HttpAsyncapiComDefinitions100SchemaJson {
   $ref?: string;
   format?: string;
-  title?: HttpJsonSchemaOrgDraft04Schema;
-  description?: HttpJsonSchemaOrgDraft04Schema;
-  default?: HttpJsonSchemaOrgDraft04Schema;
-  multipleOf?: HttpJsonSchemaOrgDraft04Schema;
-  maximum?: HttpJsonSchemaOrgDraft04Schema;
-  exclusiveMaximum?: HttpJsonSchemaOrgDraft04Schema;
-  minimum?: HttpJsonSchemaOrgDraft04Schema;
-  exclusiveMinimum?: HttpJsonSchemaOrgDraft04Schema;
-  maxLength?: HttpJsonSchemaOrgDraft04Schema;
-  minLength?: HttpJsonSchemaOrgDraft04Schema;
-  pattern?: HttpJsonSchemaOrgDraft04Schema;
-  maxItems?: HttpJsonSchemaOrgDraft04Schema;
-  minItems?: HttpJsonSchemaOrgDraft04Schema;
-  uniqueItems?: HttpJsonSchemaOrgDraft04Schema;
-  maxProperties?: HttpJsonSchemaOrgDraft04Schema;
-  minProperties?: HttpJsonSchemaOrgDraft04Schema;
-  required?: HttpJsonSchemaOrgDraft04Schema;
-  enum?: HttpJsonSchemaOrgDraft04Schema;
+  title?: JsonSchemaDraft07Schema;
+  description?: JsonSchemaDraft07Schema;
+  default?: JsonSchemaDraft07Schema;
+  multipleOf?: JsonSchemaDraft07Schema;
+  maximum?: JsonSchemaDraft07Schema;
+  exclusiveMaximum?: JsonSchemaDraft07Schema;
+  minimum?: JsonSchemaDraft07Schema;
+  exclusiveMinimum?: JsonSchemaDraft07Schema;
+  maxLength?: JsonSchemaDraft07Schema;
+  minLength?: JsonSchemaDraft07Schema;
+  pattern?: JsonSchemaDraft07Schema;
+  maxItems?: JsonSchemaDraft07Schema;
+  minItems?: JsonSchemaDraft07Schema;
+  uniqueItems?: JsonSchemaDraft07Schema;
+  maxProperties?: JsonSchemaDraft07Schema;
+  minProperties?: JsonSchemaDraft07Schema;
+  required?: JsonSchemaDraft07Schema;
+  enum?: JsonSchemaDraft07Schema;
   additionalProperties?: HttpAsyncapiComDefinitions100SchemaJson | boolean;
-  type?: HttpJsonSchemaOrgDraft04Schema;
+  type?: JsonSchemaDraft07Schema;
   items?:
     | HttpAsyncapiComDefinitions100SchemaJson
     | [HttpAsyncapiComDefinitions100SchemaJson, ...HttpAsyncapiComDefinitions100SchemaJson[]];
@@ -294,7 +293,11 @@ export interface HttpAsyncapiComDefinitions100SchemaJson {
   xml?: HttpAsyncapiComDefinitions100XmlJson;
   externalDocs?: HttpAsyncapiComDefinitions100ExternalDocsJson;
   example?: unknown;
-  [k: string]: HttpAsyncapiComDefinitions100VendorExtensionJson;
+  /**
+   * This interface was referenced by `HttpAsyncapiComDefinitions100SchemaJson`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * Core schema meta-schema
@@ -302,7 +305,7 @@ export interface HttpAsyncapiComDefinitions100SchemaJson {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "json-schema-draft-07-schema".
  */
-export interface HttpJsonSchemaOrgDraft04Schema {
+export interface JsonSchemaDraft07Schema {
   id?: string;
   $schema?: string;
   title?: string;
@@ -314,48 +317,48 @@ export interface HttpJsonSchemaOrgDraft04Schema {
   minimum?: number;
   exclusiveMinimum?: boolean;
   /**
-   * This interface was referenced by `HttpJsonSchemaOrgDraft04Schema`'s JSON-Schema
+   * This interface was referenced by `JsonSchemaDraft07Schema`'s JSON-Schema
    * via the `definition` "positiveInteger".
    */
   maxLength?: number;
   minLength?: unknown;
   pattern?: string;
-  additionalItems?: boolean | HttpJsonSchemaOrgDraft04Schema;
-  items?: HttpJsonSchemaOrgDraft04Schema | SchemaArray;
+  additionalItems?: boolean | JsonSchemaDraft07Schema;
+  items?: JsonSchemaDraft07Schema | SchemaArray;
   /**
-   * This interface was referenced by `HttpJsonSchemaOrgDraft04Schema`'s JSON-Schema
+   * This interface was referenced by `JsonSchemaDraft07Schema`'s JSON-Schema
    * via the `definition` "positiveInteger".
    */
   maxItems?: number;
   /**
-   * This interface was referenced by `HttpJsonSchemaOrgDraft04Schema`'s JSON-Schema
+   * This interface was referenced by `JsonSchemaDraft07Schema`'s JSON-Schema
    * via the `definition` "positiveIntegerDefault0".
    */
   minItems?: number & unknown;
   uniqueItems?: boolean;
   /**
-   * This interface was referenced by `HttpJsonSchemaOrgDraft04Schema`'s JSON-Schema
+   * This interface was referenced by `JsonSchemaDraft07Schema`'s JSON-Schema
    * via the `definition` "positiveInteger".
    */
   maxProperties?: number;
   /**
-   * This interface was referenced by `HttpJsonSchemaOrgDraft04Schema`'s JSON-Schema
+   * This interface was referenced by `JsonSchemaDraft07Schema`'s JSON-Schema
    * via the `definition` "positiveIntegerDefault0".
    */
   minProperties?: number & unknown;
   required?: StringArray;
-  additionalProperties?: boolean | HttpJsonSchemaOrgDraft04Schema;
+  additionalProperties?: boolean | JsonSchemaDraft07Schema;
   definitions?: {
-    [k: string]: HttpJsonSchemaOrgDraft04Schema;
+    [k: string]: JsonSchemaDraft07Schema;
   };
   properties?: {
-    [k: string]: HttpJsonSchemaOrgDraft04Schema;
+    [k: string]: JsonSchemaDraft07Schema;
   };
   patternProperties?: {
-    [k: string]: HttpJsonSchemaOrgDraft04Schema;
+    [k: string]: JsonSchemaDraft07Schema;
   };
   dependencies?: {
-    [k: string]: HttpJsonSchemaOrgDraft04Schema | StringArray;
+    [k: string]: JsonSchemaDraft07Schema | StringArray;
   };
   /**
    * @minItems 1
@@ -371,7 +374,7 @@ export interface HttpJsonSchemaOrgDraft04Schema {
   allOf?: SchemaArray;
   anyOf?: SchemaArray;
   oneOf?: SchemaArray;
-  not?: HttpJsonSchemaOrgDraft04Schema;
+  not?: JsonSchemaDraft07Schema;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -393,7 +396,11 @@ export interface HttpAsyncapiComDefinitions100XmlJson {
 export interface HttpAsyncapiComDefinitions100ExternalDocsJson {
   description?: string;
   url: string;
-  [k: string]: HttpAsyncapiComDefinitions100VendorExtensionJson;
+  /**
+   * This interface was referenced by `HttpAsyncapiComDefinitions100ExternalDocsJson`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -403,7 +410,11 @@ export interface HttpAsyncapiComDefinitions100TagJson {
   name: string;
   description?: string;
   externalDocs?: HttpAsyncapiComDefinitions100ExternalDocsJson;
-  [k: string]: HttpAsyncapiComDefinitions100VendorExtensionJson;
+  /**
+   * This interface was referenced by `HttpAsyncapiComDefinitions100TagJson`'s JSON-Schema definition
+   * via the `patternProperty` "^x-".
+   */
+  [k: string]: unknown;
 }
 /**
  * An object to hold a set of reusable objects for different aspects of the AsyncAPI Specification.
@@ -412,14 +423,14 @@ export interface HttpAsyncapiComDefinitions100TagJson {
  * via the `definition` "components".
  */
 export interface HttpAsyncapiComDefinitions100ComponentsJson {
-  schemas?: HttpAsyncapiComDefinitions100SchemasJson;
-  messages?: HttpAsyncapiComDefinitions100MessagesJson;
+  schemas?: Schemas;
+  messages?: Messages;
   securitySchemes?: {
     /**
      * This interface was referenced by `undefined`'s JSON-Schema definition
      * via the `patternProperty` "^[a-zA-Z0-9\.\-_]+$".
      */
-    [k: string]: HttpAsyncapiComDefinitions100ReferenceJson | HttpAsyncapiComDefinitions100SecuritySchemeJson;
+    [k: string]: HttpAsyncapiComDefinitions100ReferenceJson | SecurityScheme;
   };
 }
 /**
@@ -428,7 +439,7 @@ export interface HttpAsyncapiComDefinitions100ComponentsJson {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "schemas".
  */
-export interface HttpAsyncapiComDefinitions100SchemasJson {
+export interface Schemas {
   [k: string]: HttpAsyncapiComDefinitions100SchemaJson;
 }
 /**
@@ -437,7 +448,7 @@ export interface HttpAsyncapiComDefinitions100SchemasJson {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "messages".
  */
-export interface HttpAsyncapiComDefinitions100MessagesJson {
+export interface Messages {
   [k: string]: HttpAsyncapiComDefinitions100MessageJson;
 }
 /**
@@ -561,6 +572,6 @@ export interface HttpAsyncapiComDefinitions100APIKeyHTTPSecuritySchemeJson {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "SecurityRequirement".
  */
-export interface HttpAsyncapiComDefinitions100SecurityRequirementJson {
+export interface SecurityRequirement {
   [k: string]: string[];
 }

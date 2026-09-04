@@ -1,0 +1,6 @@
+/**
+ * Tag — re-exported from the vendored schema's declarations.
+ *
+ * Do not edit by hand.
+ */
+export type { Tag } from '../../schema.js'

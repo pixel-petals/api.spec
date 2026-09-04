@@ -1159,12 +1159,6 @@ export interface RequestBodyOrReference {
   [k: string]: unknown;
 }
 /**
- * This interface was referenced by `undefined`'s JSON-Schema definition
- * via the `patternProperty` "^[1-5](?:[0-9]{2}|XX)$".
- *
- * This interface was referenced by `Responses`'s JSON-Schema definition
- * via the `patternProperty` "^[1-5](?:[0-9]{2}|XX)$".
- *
  * This interface was referenced by `undefined`'s JSON-Schema
  * via the `definition` "response-or-reference".
  */

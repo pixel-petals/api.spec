@@ -29,6 +29,30 @@ const OPTIONS = {
 
 const RESOLVE = { resolve: { external: false } }
 
+/** `response-or-reference` is the key; `ResponseOrReference` is the type. */
+export function typeNameFor(key) {
+  return key.replace(/(^|[-_$])(.)/g, (_, __, letter) => letter.toUpperCase()).replace(/\W/g, '')
+}
+
+/**
+ * Names every definition after its own key, and records what it chose.
+ *
+ * The generator is free to invent a name when it cannot derive one, and the
+ * fragment declarations have to name these types from another file — so the
+ * mapping is fixed here rather than recovered from the output afterwards.
+ */
+function namer(into) {
+  return (_schema, key) => {
+    if (!key) return undefined
+
+    const name = typeNameFor(key)
+
+    into.set(key, name)
+
+    return name
+  }
+}
+
 /**
  * How to hand the schema over, best first.
  *
@@ -68,7 +92,7 @@ function banner(name, id, strategy) {
  * @param   {object} options
  * @param   {string} options.name  the root type's name
  * @param   {string} options.id    what to cite in the banner
- * @returns {Promise<{typescript: string, types: string[], strategy: string}>}
+ * @returns {Promise<{typescript: string, types: string[], strategy: string, names: Map<string,string>}>}
  */
 export async function generate(schema, { name, id }) {
   // the generator names the root type after `$id` when there is one, which
@@ -78,12 +102,19 @@ export async function generate(schema, { name, id }) {
   const failures = []
 
   for (const strategy of STRATEGIES) {
+    const names = new Map()
+
     try {
-      const compiled = await compile(await strategy.build(structuredClone(prepared)), name, OPTIONS)
+      const built = await strategy.build(structuredClone(prepared))
+      const compiled = await compile(built, name, { ...OPTIONS, customName: namer(names) })
       const typescript = `${banner(name, id, strategy.name)}${restore(compiled)}`
       const types = [ ...typescript.matchAll(/^export (?:interface|type) (\w+)/gm) ].map(match => match[ 1 ])
 
-      return { typescript, types, strategy: strategy.name }
+      // only names the output actually declares are usable from another file
+      const declared = new Set(types)
+      const usable = new Map([ ...names ].filter(([ , type ]) => declared.has(type)))
+
+      return { typescript, types, strategy: strategy.name, names: usable }
     } catch (error) {
       failures.push(`${strategy.name}: ${error.message || '(no message)'}`)
     }

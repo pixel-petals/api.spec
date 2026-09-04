@@ -19,7 +19,7 @@ export type ReferenceObject = string;
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "schema".
  */
-export type Schema = CoreSchemaMetaSchema & {
+export type Schema = JsonSchemaDraft07Schema & {
   additionalProperties?: Schema | boolean;
   items?: Schema | [Schema, ...Schema[]];
   /**
@@ -52,13 +52,17 @@ export type Schema = CoreSchemaMetaSchema & {
    * Specifies that a schema is deprecated and SHOULD be transitioned out of usage
    */
   deprecated?: boolean;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `undefined`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 };
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "json-schema-draft-07-schema".
  */
-export type CoreSchemaMetaSchema =
+export type JsonSchemaDraft07Schema =
   | {
       $id?: string;
       $schema?: string;
@@ -82,8 +86,8 @@ export type CoreSchemaMetaSchema =
       maxLength?: number;
       minLength?: unknown;
       pattern?: string;
-      additionalItems?: CoreSchemaMetaSchema;
-      items?: CoreSchemaMetaSchema | SchemaArray;
+      additionalItems?: JsonSchemaDraft07Schema;
+      items?: JsonSchemaDraft07Schema | SchemaArray;
       /**
        * This interface was referenced by `undefined`'s JSON-Schema
        * via the `definition` "nonNegativeInteger".
@@ -95,7 +99,7 @@ export type CoreSchemaMetaSchema =
        */
       minItems?: number & unknown;
       uniqueItems?: boolean;
-      contains?: CoreSchemaMetaSchema;
+      contains?: JsonSchemaDraft07Schema;
       /**
        * This interface was referenced by `undefined`'s JSON-Schema
        * via the `definition` "nonNegativeInteger".
@@ -107,24 +111,21 @@ export type CoreSchemaMetaSchema =
        */
       minProperties?: number & unknown;
       required?: StringArray;
-      additionalProperties?: CoreSchemaMetaSchema;
+      additionalProperties?: JsonSchemaDraft07Schema;
       definitions?: {
-        [k: string]: CoreSchemaMetaSchema;
+        [k: string]: JsonSchemaDraft07Schema;
       };
       properties?: {
-        [k: string]: CoreSchemaMetaSchema;
+        [k: string]: JsonSchemaDraft07Schema;
       };
       patternProperties?: {
-        [k: string]: CoreSchemaMetaSchema;
+        [k: string]: JsonSchemaDraft07Schema;
       };
       dependencies?: {
-        [k: string]: CoreSchemaMetaSchema | StringArray;
+        [k: string]: JsonSchemaDraft07Schema | StringArray;
       };
-      propertyNames?: CoreSchemaMetaSchema;
-      /**
-       * @minItems 1
-       */
-      enum?: [unknown, ...unknown[]];
+      propertyNames?: JsonSchemaDraft07Schema;
+      enum?: [true];
       type?:
         | ("array" | "boolean" | "integer" | "null" | "number" | "object" | "string")
         | [
@@ -134,14 +135,13 @@ export type CoreSchemaMetaSchema =
       format?: string;
       contentMediaType?: string;
       contentEncoding?: string;
-      if?: CoreSchemaMetaSchema;
-      then?: CoreSchemaMetaSchema;
-      else?: CoreSchemaMetaSchema;
+      if?: JsonSchemaDraft07Schema;
+      then?: JsonSchemaDraft07Schema;
+      else?: JsonSchemaDraft07Schema;
       allOf?: SchemaArray;
       anyOf?: SchemaArray;
       oneOf?: SchemaArray;
-      not?: CoreSchemaMetaSchema;
-      enum?: [true];
+      not?: JsonSchemaDraft07Schema;
     }
   | boolean;
 /**
@@ -150,7 +150,7 @@ export type CoreSchemaMetaSchema =
  * This interface was referenced by `undefined`'s JSON-Schema
  * via the `definition` "schemaArray".
  */
-export type SchemaArray = [CoreSchemaMetaSchema, ...CoreSchemaMetaSchema[]];
+export type SchemaArray = [JsonSchemaDraft07Schema, ...JsonSchemaDraft07Schema[]];
 /**
  * This interface was referenced by `undefined`'s JSON-Schema
  * via the `definition` "stringArray".
@@ -204,7 +204,7 @@ export type SaslSecurityScheme = SaslPlainSecurityScheme | SaslScramSecuritySche
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "avroSchema_v1".
  */
-export type AvroSchemaDefinition = AvroSchema;
+export type AvroSchemaV1 = AvroSchema;
 /**
  * Root Schema
  */
@@ -249,7 +249,11 @@ export interface AsyncApi {
   components?: Components;
   tags?: Tag[];
   externalDocs?: ExternalDocs2;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `AsyncApi`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * The object provides metadata about the API. The metadata can be used by the clients if needed.
@@ -276,7 +280,11 @@ export interface Info {
   termsOfService?: string;
   contact?: Contact;
   license?: License;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Info`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Contact information for the exposed API.
@@ -297,111 +305,10 @@ export interface Contact {
    * The email address of the contact person/organization.
    */
   email?: string;
-  [k: string]: SpecificationExtension;
-}
-/**
- * Any property starting with x- is valid.
- *
- * This interface was referenced by `Contact`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `License`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Info`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ServerVariable`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ExternalDocs`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Tag`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Server`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ExternalDocs1`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `undefined`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Parameter`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ExternalDocs2`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `OperationTrait`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Operation`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ChannelItem`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `UserPassword`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ApiKey`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `X509`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `SymmetricEncryption`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `AsymmetricEncryption`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `NonBearerHTTPSecurityScheme`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `BearerHTTPSecurityScheme`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `APIKeyHTTPSecurityScheme`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Oauth2Flow`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Oauth2Flows`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `OpenIdConnect`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `SaslPlainSecurityScheme`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `SaslScramSecurityScheme`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `SaslGssapiSecurityScheme`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `CorrelationId`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `MessageTrait`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Components`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `AsyncApi`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `AsyncApi`'s JSON-Schema
- * via the `definition` "specificationExtension".
- */
-export interface SpecificationExtension {
+  /**
+   * This interface was referenced by `Contact`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
   [k: string]: unknown;
 }
 /**
@@ -419,7 +326,11 @@ export interface License {
    * The URL pointing to the license.
    */
   url?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `License`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * The Servers Object is a map of Server Objects.
@@ -470,7 +381,11 @@ export interface Server {
    * A list of tags for logical grouping and categorization of servers.
    */
   tags?: Tag[];
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Server`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * A map between a variable name and its value. The value is used for substitution in the server's URL template.
@@ -501,7 +416,11 @@ export interface ServerVariable {
    * An array of examples of the server variable.
    */
   examples?: string[];
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `ServerVariable`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Lists of the required security schemes that can be used to execute an operation
@@ -552,7 +471,11 @@ export interface Tag {
    */
   description?: string;
   externalDocs?: ExternalDocs;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Tag`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Additional external documentation for this tag.
@@ -566,7 +489,17 @@ export interface ExternalDocs {
    * The URL for the target documentation. This MUST be in the form of an absolute URL.
    */
   url: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `ExternalDocs`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `ExternalDocs1`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `ExternalDocs2`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Holds the relative paths to the individual channel and their operations. Channel paths are relative to servers.
@@ -598,7 +531,11 @@ export interface ChannelItem {
   subscribe?: Operation;
   deprecated?: boolean;
   bindings?: BindingsObject1;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `ChannelItem`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * JSON objects describing reusable channel parameters.
@@ -625,7 +562,11 @@ export interface Parameter {
    * A runtime expression that specifies the location of the parameter value
    */
   location?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Parameter`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Additional external documentation for this schema.
@@ -639,7 +580,17 @@ export interface ExternalDocs1 {
    * The URL for the target documentation. This MUST be in the form of an absolute URL.
    */
   url: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `ExternalDocs`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `ExternalDocs1`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `ExternalDocs2`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Describes a publish or a subscribe operation. This provides a place to document how and why messages are sent and received.
@@ -672,7 +623,11 @@ export interface Operation {
   operationId?: string;
   bindings?: BindingsObject1;
   message?: Message;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Operation`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Describes a trait that MAY be applied to an Operation Object.
@@ -703,7 +658,11 @@ export interface OperationTrait {
    */
   security?: SecurityRequirement[];
   bindings?: BindingsObject1;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `OperationTrait`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Allows referencing an external resource for extended documentation.
@@ -720,7 +679,17 @@ export interface ExternalDocs2 {
    * The URL for the target documentation. This MUST be in the form of an absolute URL.
    */
   url: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `ExternalDocs`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `ExternalDocs1`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `ExternalDocs2`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Map describing protocol-specific definitions for a server.
@@ -794,7 +763,11 @@ export interface Components {
   messageBindings?: {
     [k: string]: BindingsObject1;
   };
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Components`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * JSON objects describing schemas the API uses.
@@ -836,7 +809,11 @@ export interface UserPassword {
    * A short description for security scheme.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `UserPassword`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -855,7 +832,11 @@ export interface ApiKey {
    * A short description for security scheme.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `ApiKey`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -870,7 +851,11 @@ export interface X509 {
    * A short description for security scheme.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `X509`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -885,7 +870,11 @@ export interface SymmetricEncryption {
    * A short description for security scheme.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `SymmetricEncryption`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -900,7 +889,11 @@ export interface AsymmetricEncryption {
    * A short description for security scheme.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `AsymmetricEncryption`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -919,7 +912,11 @@ export interface NonBearerHTTPSecurityScheme {
    * The type of the security scheme.
    */
   type: "http";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `NonBearerHTTPSecurityScheme`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -942,7 +939,11 @@ export interface BearerHTTPSecurityScheme {
    * A short description for security scheme.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BearerHTTPSecurityScheme`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -965,7 +966,11 @@ export interface APIKeyHTTPSecurityScheme {
    * A short description for security scheme.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `APIKeyHTTPSecurityScheme`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Allows configuration of the supported OAuth Flows.
@@ -1008,7 +1013,11 @@ export interface Oauth2Flows {
       [k: string]: unknown;
     };
   };
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Oauth2Flows`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Configuration details for a supported OAuth Flow
@@ -1030,7 +1039,11 @@ export interface Oauth2Flow {
    */
   refreshUrl?: string;
   scopes?: Oauth2Scopes;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Oauth2Flow`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * The available scopes for the OAuth2 security scheme. A map between the scope name and a short description for it.
@@ -1046,7 +1059,11 @@ export interface OpenIdConnect {
   type: "openIdConnect";
   description?: string;
   openIdConnectUrl: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `OpenIdConnect`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -1061,7 +1078,11 @@ export interface SaslPlainSecurityScheme {
    * A short description for security scheme.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `SaslPlainSecurityScheme`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -1076,7 +1097,11 @@ export interface SaslScramSecurityScheme {
    * A short description for security scheme.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `SaslScramSecurityScheme`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -1091,7 +1116,11 @@ export interface SaslGssapiSecurityScheme {
    * A short description for security scheme.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `SaslGssapiSecurityScheme`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * An object that specifies an identifier at design time that can used for message tracing and correlation.
@@ -1108,7 +1137,11 @@ export interface CorrelationId {
    * A runtime expression that specifies the location of the correlation ID
    */
   location: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `CorrelationId`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Describes a trait that MAY be applied to a Message Object.
@@ -1168,7 +1201,20 @@ export interface MessageTrait {
     [k: string]: unknown;
   }[];
   bindings?: BindingsObject1;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `MessageTrait`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
+}
+/**
+ * Any property starting with x- is valid.
+ *
+ * This interface was referenced by `AsyncApi`'s JSON-Schema
+ * via the `definition` "specificationExtension".
+ */
+export interface SpecificationExtension {
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema

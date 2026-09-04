@@ -36,7 +36,11 @@ export type Info = {
    */
   tags?: (Reference | Tag)[];
   externalDocs?: Reference | ExternalDocs;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `undefined`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 } & InfoExtensions;
 /**
  * This extension allows you to provide the Twitter username of the account representing the team/company of the API.
@@ -129,7 +133,7 @@ export type ReferenceObject = string;
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "schema".
  */
-export type Schema = CoreSchemaMetaSchema & {
+export type Schema = JsonSchemaDraft07Schema & {
   additionalProperties?: Schema | boolean;
   items?: Schema | [Schema, ...Schema[]];
   /**
@@ -162,13 +166,17 @@ export type Schema = CoreSchemaMetaSchema & {
    * Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.
    */
   deprecated?: boolean;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `undefined`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 };
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "json-schema-draft-07-schema".
  */
-export type CoreSchemaMetaSchema =
+export type JsonSchemaDraft07Schema =
   | {
       $id?: string;
       $schema?: string;
@@ -192,8 +200,8 @@ export type CoreSchemaMetaSchema =
       maxLength?: number;
       minLength?: unknown;
       pattern?: string;
-      additionalItems?: CoreSchemaMetaSchema;
-      items?: CoreSchemaMetaSchema | SchemaArray;
+      additionalItems?: JsonSchemaDraft07Schema;
+      items?: JsonSchemaDraft07Schema | SchemaArray;
       /**
        * This interface was referenced by `undefined`'s JSON-Schema
        * via the `definition` "nonNegativeInteger".
@@ -205,7 +213,7 @@ export type CoreSchemaMetaSchema =
        */
       minItems?: number & unknown;
       uniqueItems?: boolean;
-      contains?: CoreSchemaMetaSchema;
+      contains?: JsonSchemaDraft07Schema;
       /**
        * This interface was referenced by `undefined`'s JSON-Schema
        * via the `definition` "nonNegativeInteger".
@@ -217,24 +225,21 @@ export type CoreSchemaMetaSchema =
        */
       minProperties?: number & unknown;
       required?: StringArray;
-      additionalProperties?: CoreSchemaMetaSchema;
+      additionalProperties?: JsonSchemaDraft07Schema;
       definitions?: {
-        [k: string]: CoreSchemaMetaSchema;
+        [k: string]: JsonSchemaDraft07Schema;
       };
       properties?: {
-        [k: string]: CoreSchemaMetaSchema;
+        [k: string]: JsonSchemaDraft07Schema;
       };
       patternProperties?: {
-        [k: string]: CoreSchemaMetaSchema;
+        [k: string]: JsonSchemaDraft07Schema;
       };
       dependencies?: {
-        [k: string]: CoreSchemaMetaSchema | StringArray;
+        [k: string]: JsonSchemaDraft07Schema | StringArray;
       };
-      propertyNames?: CoreSchemaMetaSchema;
-      /**
-       * @minItems 1
-       */
-      enum?: [unknown, ...unknown[]];
+      propertyNames?: JsonSchemaDraft07Schema;
+      enum?: [true];
       type?:
         | ("array" | "boolean" | "integer" | "null" | "number" | "object" | "string")
         | [
@@ -244,14 +249,13 @@ export type CoreSchemaMetaSchema =
       format?: string;
       contentMediaType?: string;
       contentEncoding?: string;
-      if?: CoreSchemaMetaSchema;
-      then?: CoreSchemaMetaSchema;
-      else?: CoreSchemaMetaSchema;
+      if?: JsonSchemaDraft07Schema;
+      then?: JsonSchemaDraft07Schema;
+      else?: JsonSchemaDraft07Schema;
       allOf?: SchemaArray;
       anyOf?: SchemaArray;
       oneOf?: SchemaArray;
-      not?: CoreSchemaMetaSchema;
-      enum?: [true];
+      not?: JsonSchemaDraft07Schema;
     }
   | boolean;
 /**
@@ -260,7 +264,7 @@ export type CoreSchemaMetaSchema =
  * This interface was referenced by `undefined`'s JSON-Schema
  * via the `definition` "schemaArray".
  */
-export type SchemaArray = [CoreSchemaMetaSchema, ...CoreSchemaMetaSchema[]];
+export type SchemaArray = [JsonSchemaDraft07Schema, ...JsonSchemaDraft07Schema[]];
 /**
  * This interface was referenced by `undefined`'s JSON-Schema
  * via the `definition` "stringArray".
@@ -272,7 +276,7 @@ export type StringArray = string[];
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "avroSchema_v1".
  */
-export type AvroSchemaDefinition = AvroSchema;
+export type AvroSchemaV1 = AvroSchema;
 /**
  * Root Schema
  */
@@ -302,7 +306,7 @@ export type Union = [AvroSchema, ...AvroSchema[]];
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-ibmmq-0.1.0-message".
  */
-export type IBMMQMessageBindingsObject =
+export type BindingsIbmmq010Message =
   | {
       type?: "binary";
     }
@@ -318,7 +322,7 @@ export type IBMMQMessageBindingsObject =
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-amqp-0.3.0-channel".
  */
-export type AMQPChannelBindingsObject =
+export type BindingsAmqp030Channel =
   | {
       is?: "routingKey";
     }
@@ -331,7 +335,7 @@ export type AMQPChannelBindingsObject =
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-ibmmq-0.1.0-channel".
  */
-export type IBMMQChannelBindingsObject =
+export type BindingsIbmmq010Channel =
   | {
       destinationType?: "topic";
     }
@@ -361,7 +365,11 @@ export interface AsyncApi {
   channels?: Channels;
   operations?: Operations;
   components?: Components;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `AsyncApi`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Contact information for the exposed API.
@@ -382,324 +390,10 @@ export interface Contact {
    * The email address of the contact person/organization.
    */
   email?: string;
-  [k: string]: SpecificationExtension;
-}
-/**
- * Any property starting with x- is valid.
- *
- * This interface was referenced by `Contact`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `License`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ExternalDocs`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Tag`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `undefined`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ServerVariable`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `UserPassword`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ApiKey`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `X509`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `SymmetricEncryption`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `AsymmetricEncryption`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `NonBearerHTTPSecurityScheme`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `BearerHTTPSecurityScheme`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `APIKeyHTTPSecurityScheme`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Oauth2Flow`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Oauth2Flows`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `OpenIdConnect`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `SaslPlainSecurityScheme`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `SaslScramSecurityScheme`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `SaslGssapiSecurityScheme`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ServerBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Server`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `CorrelationId`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `MessageBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `MessageTrait`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `MessageObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Parameter`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ChannelBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Channel`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `OperationReplyAddress`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `OperationReply`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `OperationBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `OperationTrait`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Operation`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Components`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `AsyncApi`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `AsyncApi`'s JSON-Schema
- * via the `definition` "specificationExtension".
- *
- * This interface was referenced by `undefined`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ServerSchema`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ServerSchema1`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ServerSchema2`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ServerSchema3`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ServerSchema4`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `IBMMQServerBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `SolaceServerBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `SolaceServerBindingsObject1`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `SolaceServerBindingsObject2`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ServerSchema5`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `MultiFormatSchema`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `HTTPMessageBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `HTTPMessageBindingsObject1`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `AMQPMessageBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `MQTTMessageBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `MessageSchema`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `MessageSchema1`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `MessageSchema2`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `AnypointMQMessageBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `MessageSchema3`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `CloudPubSubChannelSchema`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `WebSocketsChannelBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ChannelSchema`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ChannelSchema1`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ChannelSchema2`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `AnypointMQChannelBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ChannelSchema3`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Ordering`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Statement`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Policy`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ChannelSchema4`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Identifier`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `RedrivePolicy`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Statement1`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Policy1`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Queue`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Queue1`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ChannelSchema5`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `undefined`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `CloudPubSubChannelSchema1`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `ChannelSchema6`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `HTTPOperationBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `HTTPOperationBindingsObject1`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `AMQPOperationBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `MQTTOperationBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `OperationSchema`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `OperationSchema1`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `OperationSchema2`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `NATSOperationBindingsObject`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Identifier1`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Identifier2`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `undefined`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Identifier3`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `RedrivePolicy1`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `DeliveryPolicy`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Consumer`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `DeliveryPolicy1`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `OperationSchema3`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `undefined`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `undefined`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Identifier4`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `RedrivePolicy2`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Statement2`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Policy2`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `Queue2`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- *
- * This interface was referenced by `OperationSchema4`'s JSON-Schema definition
- * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
- */
-export interface SpecificationExtension {
+  /**
+   * This interface was referenced by `Contact`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
   [k: string]: unknown;
 }
 /**
@@ -715,7 +409,11 @@ export interface License {
    * The URL pointing to the license.
    */
   url?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `License`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * A simple object to allow referencing other components in the specification, internally and externally.
@@ -745,7 +443,11 @@ export interface Tag {
    */
   description?: string;
   externalDocs?: Reference | ExternalDocs;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Tag`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Allows referencing an external resource for extended documentation.
@@ -762,7 +464,11 @@ export interface ExternalDocs {
    * The URL for the target documentation. This MUST be in the form of an absolute URL.
    */
   url: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `ExternalDocs`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * The object that lists all the extensions of Info
@@ -823,7 +529,11 @@ export interface Server {
   tags?: (Reference | Tag)[];
   externalDocs?: Reference | ExternalDocs;
   bindings?: Reference | ServerBindingsObject;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Server`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -855,7 +565,11 @@ export interface ServerVariable {
    * An array of examples of the server variable.
    */
   examples?: string[];
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `ServerVariable`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -864,7 +578,11 @@ export interface ServerVariable {
 export interface UserPassword {
   type: "userPassword";
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `UserPassword`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -883,7 +601,11 @@ export interface ApiKey {
    * A short description for security scheme. CommonMark syntax MAY be used for rich text representation.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `ApiKey`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -892,7 +614,11 @@ export interface ApiKey {
 export interface X509 {
   type: "X509";
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `X509`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -901,7 +627,11 @@ export interface X509 {
 export interface SymmetricEncryption {
   type: "symmetricEncryption";
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `SymmetricEncryption`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -916,7 +646,11 @@ export interface AsymmetricEncryption {
    * A short description for security scheme.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `AsymmetricEncryption`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -935,7 +669,11 @@ export interface NonBearerHTTPSecurityScheme {
    * The type of the security scheme.
    */
   type: "http";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `NonBearerHTTPSecurityScheme`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -958,7 +696,11 @@ export interface BearerHTTPSecurityScheme {
    * A short description for security scheme. CommonMark syntax MAY be used for rich text representation.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BearerHTTPSecurityScheme`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -981,7 +723,11 @@ export interface APIKeyHTTPSecurityScheme {
    * A short description for security scheme. CommonMark syntax MAY be used for rich text representation.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `APIKeyHTTPSecurityScheme`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Allows configuration of the supported OAuth Flows.
@@ -1028,7 +774,11 @@ export interface Oauth2Flows {
    * List of the needed scope names.
    */
   scopes?: string[];
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Oauth2Flows`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Configuration details for a supported OAuth Flow
@@ -1050,7 +800,11 @@ export interface Oauth2Flow {
    */
   refreshUrl?: string;
   availableScopes?: Oauth2Scopes;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Oauth2Flow`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * The available scopes for the OAuth2 security scheme. A map between the scope name and a short description for it.
@@ -1079,7 +833,11 @@ export interface OpenIdConnect {
    * List of the needed scope names. An empty array means no scopes are needed.
    */
   scopes?: string[];
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `OpenIdConnect`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -1094,7 +852,11 @@ export interface SaslPlainSecurityScheme {
    * A short description for security scheme.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `SaslPlainSecurityScheme`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -1109,7 +871,11 @@ export interface SaslScramSecurityScheme {
    * A short description for security scheme.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `SaslScramSecurityScheme`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -1124,7 +890,11 @@ export interface SaslGssapiSecurityScheme {
    * A short description for security scheme.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `SaslGssapiSecurityScheme`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Map describing protocol-specific definitions for a server.
@@ -1162,7 +932,11 @@ export interface ServerBindingsObject {
   pulsar?: {
     [k: string]: unknown;
   };
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `ServerBindingsObject`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * An object containing all the Channel Object definitions the Application MUST use during runtime.
@@ -1208,7 +982,11 @@ export interface Channel {
   tags?: (Reference | Tag)[];
   externalDocs?: Reference | ExternalDocs;
   bindings?: Reference | ChannelBindingsObject;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Channel`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * A map of the messages that will be sent to this channel by any application at any time. **Every message sent to this channel MUST be valid against one, and only one, of the message objects defined in this map.**
@@ -1261,7 +1039,11 @@ export interface MessageObject {
    * A list of traits to apply to the message object. Traits MUST be merged using traits merge mechanism. The resulting object MUST be a valid Message Object.
    */
   traits?: (Reference | MessageTrait | [] | [Reference | MessageTrait] | [Reference | MessageTrait, {}])[];
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `MessageObject`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * An object representing either a schema or a multiFormatSchema based on the existence of the 'schema' property. If the property 'schema' is present, use the multi-format schema. Use the default AsyncAPI Schema otherwise.
@@ -1290,7 +1072,11 @@ export interface CorrelationId {
    * A runtime expression that specifies the location of the correlation ID
    */
   location: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `CorrelationId`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Map describing protocol-specific definitions for a message.
@@ -1331,7 +1117,11 @@ export interface MessageBindingsObject {
   googlepubsub?: {
     [k: string]: unknown;
   };
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `MessageBindingsObject`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Describes a trait that MAY be applied to a Message Object. This object MAY contain any property from the Message Object, except payload and traits.
@@ -1370,7 +1160,11 @@ export interface MessageTrait {
    */
   examples?: MessageExampleObject[];
   bindings?: Reference | MessageBindingsObject;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `MessageTrait`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * JSON objects describing re-usable channel parameters.
@@ -1408,7 +1202,11 @@ export interface Parameter {
    * A runtime expression that specifies the location of the parameter value
    */
   location?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Parameter`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Map describing protocol-specific definitions for a channel.
@@ -1454,7 +1252,11 @@ export interface ChannelBindingsObject {
   pulsar?: {
     [k: string]: unknown;
   };
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `ChannelBindingsObject`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Holds a dictionary with all the operations this application MUST implement.
@@ -1505,7 +1307,11 @@ export interface Operation {
   tags?: (Reference | Tag)[];
   externalDocs?: Reference | ExternalDocs;
   bindings?: Reference | OperationBindingsObject;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Operation`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Describes the reply part that MAY be applied to an Operation Object. If an operation implements the request/reply pattern, the reply object represents the response message.
@@ -1520,7 +1326,11 @@ export interface OperationReply {
    * A list of $ref pointers pointing to the supported Message Objects that can be processed by this operation as reply. It MUST contain a subset of the messages defined in the channel referenced in this operation reply. Every message processed by this operation MUST be valid against one, and only one, of the message objects referenced in this list. Please note the messages property value MUST be a list of Reference Objects and, therefore, MUST NOT contain Message Objects. However, it is RECOMMENDED that parsers (or other software) dereference this property for a better development experience.
    */
   messages?: Reference[];
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `OperationReply`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * An object that specifies where an operation has to send the reply
@@ -1537,7 +1347,11 @@ export interface OperationReplyAddress {
    * An optional description of the address. CommonMark is allowed.
    */
   description?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `OperationReplyAddress`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Describes a trait that MAY be applied to an Operation Object. This object MAY contain any property from the Operation Object, except the action, channel and traits ones.
@@ -1568,7 +1382,11 @@ export interface OperationTrait {
    * A map where the keys describe the name of the protocol and the values describe protocol-specific definitions for the operation.
    */
   bindings?: Reference | OperationBindingsObject;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `OperationTrait`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Map describing protocol-specific definitions for an operation.
@@ -1609,7 +1427,11 @@ export interface OperationBindingsObject {
     [k: string]: unknown;
   };
   googlepubsub?: unknown;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `OperationBindingsObject`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * An object to hold a set of reusable objects for different aspects of the AsyncAPI specification. All objects defined within the components object will have no effect on the API unless they are explicitly referenced from properties outside the components object.
@@ -1801,7 +1623,26 @@ export interface Components {
      */
     [k: string]: Reference | ExternalDocs;
   };
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Components`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
+}
+/**
+ * Any property starting with x- is valid.
+ *
+ * This interface was referenced by `AsyncApi`'s JSON-Schema
+ * via the `definition` "specificationExtension".
+ *
+ * This interface was referenced by `MultiFormatSchema`'s JSON-Schema definition
+ * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+ *
+ * This interface was referenced by `undefined`'s JSON-Schema definition
+ * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+ */
+export interface SpecificationExtension {
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
@@ -1816,7 +1657,7 @@ export interface Oauth2Scopes1 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-mqtt-0.2.0-server".
  */
-export interface ServerSchema {
+export interface BindingsMqtt020Server {
   /**
    * The client identifier.
    */
@@ -1862,7 +1703,11 @@ export interface ServerSchema {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.2.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsMqtt020Server`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains server connection information to a Kafka broker. This object contains additional information not possible to represent within the core AsyncAPI specification.
@@ -1870,7 +1715,7 @@ export interface ServerSchema {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-kafka-0.5.0-server".
  */
-export interface ServerSchema1 {
+export interface BindingsKafka050Server {
   /**
    * API URL for the Schema Registry used when producing Kafka messages (if a Schema Registry was used).
    */
@@ -1883,7 +1728,11 @@ export interface ServerSchema1 {
    * The version of this binding.
    */
   bindingVersion?: "0.5.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsKafka050Server`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains server connection information to a Kafka broker. This object contains additional information not possible to represent within the core AsyncAPI specification.
@@ -1891,7 +1740,7 @@ export interface ServerSchema1 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-kafka-0.4.0-server".
  */
-export interface ServerSchema2 {
+export interface BindingsKafka040Server {
   /**
    * API URL for the Schema Registry used when producing Kafka messages (if a Schema Registry was used).
    */
@@ -1904,7 +1753,11 @@ export interface ServerSchema2 {
    * The version of this binding.
    */
   bindingVersion?: "0.4.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsKafka040Server`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains server connection information to a Kafka broker. This object contains additional information not possible to represent within the core AsyncAPI specification.
@@ -1912,7 +1765,7 @@ export interface ServerSchema2 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-kafka-0.3.0-server".
  */
-export interface ServerSchema3 {
+export interface BindingsKafka030Server {
   /**
    * API URL for the Schema Registry used when producing Kafka messages (if a Schema Registry was used).
    */
@@ -1925,7 +1778,11 @@ export interface ServerSchema3 {
    * The version of this binding.
    */
   bindingVersion?: "0.3.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsKafka030Server`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains configuration for describing a JMS broker as an AsyncAPI server. This objects only contains configuration that can not be provided in the AsyncAPI standard server object.
@@ -1933,7 +1790,7 @@ export interface ServerSchema3 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-jms-0.0.1-server".
  */
-export interface ServerSchema4 {
+export interface BindingsJms001Server {
   /**
    * The classname of the ConnectionFactory implementation for the JMS Provider.
    */
@@ -1950,10 +1807,14 @@ export interface ServerSchema4 {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.0.1";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsJms001Server`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
- * This interface was referenced by `ServerSchema4`'s JSON-Schema
+ * This interface was referenced by `BindingsJms001Server`'s JSON-Schema
  * via the `definition` "property".
  */
 export interface Property {
@@ -1972,7 +1833,7 @@ export interface Property {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-ibmmq-0.1.0-server".
  */
-export interface IBMMQServerBindingsObject {
+export interface BindingsIbmmq010Server {
   /**
    * Defines a logical group of IBM MQ server objects. This is necessary to specify multi-endpoint configurations used in high availability deployments. If omitted, the server object is not part of a group.
    */
@@ -1997,7 +1858,11 @@ export interface IBMMQServerBindingsObject {
    * The version of this binding.
    */
   bindingVersion?: "0.1.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsIbmmq010Server`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains server connection information about the Solace broker. This object contains additional connectivity information not possible to represent within the core AsyncAPI specification.
@@ -2005,7 +1870,7 @@ export interface IBMMQServerBindingsObject {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-solace-0.4.0-server".
  */
-export interface SolaceServerBindingsObject {
+export interface BindingsSolace040Server {
   /**
    * The name of the Virtual Private Network to connect to on the Solace broker.
    */
@@ -2018,7 +1883,11 @@ export interface SolaceServerBindingsObject {
    * The version of this binding.
    */
   bindingVersion?: "0.4.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsSolace040Server`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains server connection information about the Solace broker. This object contains additional connectivity information not possible to represent within the core AsyncAPI specification.
@@ -2026,7 +1895,7 @@ export interface SolaceServerBindingsObject {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-solace-0.3.0-server".
  */
-export interface SolaceServerBindingsObject1 {
+export interface BindingsSolace030Server {
   /**
    * The name of the Virtual Private Network to connect to on the Solace broker.
    */
@@ -2035,7 +1904,11 @@ export interface SolaceServerBindingsObject1 {
    * The version of this binding.
    */
   bindingVersion?: "0.3.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsSolace030Server`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains server connection information about the Solace broker. This object contains additional connectivity information not possible to represent within the core AsyncAPI specification.
@@ -2043,7 +1916,7 @@ export interface SolaceServerBindingsObject1 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-solace-0.2.0-server".
  */
-export interface SolaceServerBindingsObject2 {
+export interface BindingsSolace020Server {
   /**
    * The name of the Virtual Private Network to connect to on the Solace broker.
    */
@@ -2052,7 +1925,11 @@ export interface SolaceServerBindingsObject2 {
    * The version of this binding.
    */
   bindingVersion?: "0.2.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsSolace020Server`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains server information of Pulsar broker, which covers cluster and tenant admin configuration. This object contains additional information not possible to represent within the core AsyncAPI specification.
@@ -2060,7 +1937,7 @@ export interface SolaceServerBindingsObject2 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-pulsar-0.1.0-server".
  */
-export interface ServerSchema5 {
+export interface BindingsPulsar010Server {
   /**
    * The pulsar tenant. If omitted, 'public' MUST be assumed.
    */
@@ -2069,7 +1946,11 @@ export interface ServerSchema5 {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.1.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsPulsar010Server`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * The Multi Format Schema Object represents a schema definition. It differs from the Schema Object in that it supports multiple schema formats or languages (e.g., JSON Schema, Avro, etc.).
@@ -2262,11 +2143,11 @@ export interface Fixed {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-http-0.3.0-message".
  */
-export interface HTTPMessageBindingsObject {
+export interface BindingsHttp030Message {
   /**
    * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. This object is a superset of the JSON Schema Specification Draft 07. The empty schema (which allows any instance to validate) MAY be represented by the boolean value true and a schema which allows no instance to validate MAY be represented by the boolean value false.
    */
-  headers?: CoreSchemaMetaSchema & {
+  headers?: JsonSchemaDraft07Schema & {
     additionalProperties?: Schema | boolean;
     items?: Schema | [Schema, ...Schema[]];
     /**
@@ -2299,7 +2180,11 @@ export interface HTTPMessageBindingsObject {
      * Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.
      */
     deprecated?: boolean;
-    [k: string]: SpecificationExtension;
+    /**
+     * This interface was referenced by `undefined`'s JSON-Schema definition
+     * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+     */
+    [k: string]: unknown;
   };
   /**
    * The HTTP response status code according to [RFC 9110](https://httpwg.org/specs/rfc9110.html#overview.of.status.codes). `statusCode` is only relevant for messages referenced by the [Operation Reply Object](https://www.asyncapi.com/docs/reference/specification/v3.0.0#operationReplyObject), as it defines the status code for the response. In all other cases, this value can be safely ignored.
@@ -2309,7 +2194,11 @@ export interface HTTPMessageBindingsObject {
    * The version of this binding. If omitted, "latest" MUST be assumed.
    */
   bindingVersion?: "0.3.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsHttp030Message`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the message representation in HTTP.
@@ -2317,11 +2206,11 @@ export interface HTTPMessageBindingsObject {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-http-0.2.0-message".
  */
-export interface HTTPMessageBindingsObject1 {
+export interface BindingsHttp020Message {
   /**
    * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. This object is a superset of the JSON Schema Specification Draft 07. The empty schema (which allows any instance to validate) MAY be represented by the boolean value true and a schema which allows no instance to validate MAY be represented by the boolean value false.
    */
-  headers?: CoreSchemaMetaSchema & {
+  headers?: JsonSchemaDraft07Schema & {
     additionalProperties?: Schema | boolean;
     items?: Schema | [Schema, ...Schema[]];
     /**
@@ -2354,13 +2243,21 @@ export interface HTTPMessageBindingsObject1 {
      * Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.
      */
     deprecated?: boolean;
-    [k: string]: SpecificationExtension;
+    /**
+     * This interface was referenced by `undefined`'s JSON-Schema definition
+     * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+     */
+    [k: string]: unknown;
   };
   /**
    * The version of this binding. If omitted, "latest" MUST be assumed.
    */
   bindingVersion?: "0.2.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsHttp020Message`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the message representation in AMQP.
@@ -2368,7 +2265,7 @@ export interface HTTPMessageBindingsObject1 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-amqp-0.3.0-message".
  */
-export interface AMQPMessageBindingsObject {
+export interface BindingsAmqp030Message {
   /**
    * A MIME encoding for the message content.
    */
@@ -2381,7 +2278,11 @@ export interface AMQPMessageBindingsObject {
    * The version of this binding. If omitted, "latest" MUST be assumed.
    */
   bindingVersion?: "0.3.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsAmqp030Message`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the message representation in MQTT.
@@ -2389,7 +2290,7 @@ export interface AMQPMessageBindingsObject {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-mqtt-0.2.0-message".
  */
-export interface MQTTMessageBindingsObject {
+export interface BindingsMqtt020Message {
   /**
    * 1 indicates that the payload is UTF-8 encoded character data.  0 indicates that the payload format is unspecified.
    */
@@ -2410,13 +2311,17 @@ export interface MQTTMessageBindingsObject {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.2.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsMqtt020Message`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-kafka-0.5.0-message".
  */
-export interface MessageSchema {
+export interface BindingsKafka050Message {
   /**
    * The message key.
    */
@@ -2437,17 +2342,21 @@ export interface MessageSchema {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.5.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsKafka050Message`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-kafka-0.4.0-message".
  */
-export interface MessageSchema1 {
+export interface BindingsKafka040Message {
   /**
    * The message key.
    */
-  key?: Reference | Schema | AvroSchemaDefinition;
+  key?: Reference | Schema | AvroSchemaV1;
   /**
    * If a Schema Registry is used when performing this operation, tells where the id of schema is stored.
    */
@@ -2464,17 +2373,21 @@ export interface MessageSchema1 {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.4.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsKafka040Message`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-kafka-0.3.0-message".
  */
-export interface MessageSchema2 {
+export interface BindingsKafka030Message {
   /**
    * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. This object is a superset of the JSON Schema Specification Draft 07. The empty schema (which allows any instance to validate) MAY be represented by the boolean value true and a schema which allows no instance to validate MAY be represented by the boolean value false.
    */
-  key?: CoreSchemaMetaSchema & {
+  key?: JsonSchemaDraft07Schema & {
     additionalProperties?: Schema | boolean;
     items?: Schema | [Schema, ...Schema[]];
     /**
@@ -2507,7 +2420,11 @@ export interface MessageSchema2 {
      * Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.
      */
     deprecated?: boolean;
-    [k: string]: SpecificationExtension;
+    /**
+     * This interface was referenced by `undefined`'s JSON-Schema definition
+     * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+     */
+    [k: string]: unknown;
   };
   /**
    * If a Schema Registry is used when performing this operation, tells where the id of schema is stored.
@@ -2525,7 +2442,11 @@ export interface MessageSchema2 {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.3.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsKafka030Message`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains configuration for describing an Anypoint MQ message as an AsyncAPI message. This objects only contains configuration that can not be provided in the AsyncAPI standard message object.
@@ -2533,7 +2454,7 @@ export interface MessageSchema2 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-anypointmq-0.0.1-message".
  */
-export interface AnypointMQMessageBindingsObject {
+export interface BindingsAnypointmq001Message {
   /**
    * A Schema object containing the definitions for Anypoint MQ-specific headers (protocol headers). This schema MUST be of type 'object' and have a 'properties' key. Examples of Anypoint MQ protocol headers are 'messageId' and 'messageGroupId'.
    */
@@ -2542,7 +2463,11 @@ export interface AnypointMQMessageBindingsObject {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.0.1";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsAnypointmq001Message`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains configuration for describing a JMS message as an AsyncAPI message. This objects only contains configuration that can not be provided in the AsyncAPI standard message object.
@@ -2550,11 +2475,11 @@ export interface AnypointMQMessageBindingsObject {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-jms-0.0.1-message".
  */
-export interface MessageSchema3 {
+export interface BindingsJms001Message {
   /**
    * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. This object is a superset of the JSON Schema Specification Draft 07. The empty schema (which allows any instance to validate) MAY be represented by the boolean value true and a schema which allows no instance to validate MAY be represented by the boolean value false.
    */
-  headers?: CoreSchemaMetaSchema & {
+  headers?: JsonSchemaDraft07Schema & {
     additionalProperties?: Schema | boolean;
     items?: Schema | [Schema, ...Schema[]];
     /**
@@ -2587,13 +2512,21 @@ export interface MessageSchema3 {
      * Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.
      */
     deprecated?: boolean;
-    [k: string]: SpecificationExtension;
+    /**
+     * This interface was referenced by `undefined`'s JSON-Schema definition
+     * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+     */
+    [k: string]: unknown;
   };
   /**
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.0.1";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsJms001Message`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the message representation for Google Cloud Pub/Sub.
@@ -2601,7 +2534,7 @@ export interface MessageSchema3 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-googlepubsub-0.2.0-message".
  */
-export interface CloudPubSubChannelSchema {
+export interface BindingsGooglepubsub020Message {
   /**
    * The version of this binding.
    */
@@ -2611,7 +2544,11 @@ export interface CloudPubSubChannelSchema {
   schema?: {
     name: string;
   };
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsGooglepubsub020Message`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * When using WebSockets, the channel represents the connection. Unlike other protocols that support multiple virtual channels (topics, routing keys, etc.) per connection, WebSockets doesn't support virtual channels or, put it another way, there's only one channel and its characteristics are strongly related to the protocol used for the handshake, i.e., HTTP.
@@ -2619,7 +2556,7 @@ export interface CloudPubSubChannelSchema {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-websockets-0.1.0-channel".
  */
-export interface WebSocketsChannelBindingsObject {
+export interface BindingsWebsockets010Channel {
   /**
    * The HTTP method to use when establishing the connection. Its value MUST be either 'GET' or 'POST'.
    */
@@ -2636,7 +2573,11 @@ export interface WebSocketsChannelBindingsObject {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.1.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsWebsockets010Channel`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the channel representation in Kafka.
@@ -2644,7 +2585,7 @@ export interface WebSocketsChannelBindingsObject {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-kafka-0.5.0-channel".
  */
-export interface ChannelSchema {
+export interface BindingsKafka050Channel {
   /**
    * Kafka topic name if different from channel name.
    */
@@ -2703,7 +2644,11 @@ export interface ChannelSchema {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.5.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsKafka050Channel`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the channel representation in Kafka.
@@ -2711,7 +2656,7 @@ export interface ChannelSchema {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-kafka-0.4.0-channel".
  */
-export interface ChannelSchema1 {
+export interface BindingsKafka040Channel {
   /**
    * Kafka topic name if different from channel name.
    */
@@ -2753,7 +2698,11 @@ export interface ChannelSchema1 {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.4.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsKafka040Channel`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the channel representation in Kafka.
@@ -2761,7 +2710,7 @@ export interface ChannelSchema1 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-kafka-0.3.0-channel".
  */
-export interface ChannelSchema2 {
+export interface BindingsKafka030Channel {
   /**
    * Kafka topic name if different from channel name.
    */
@@ -2778,7 +2727,11 @@ export interface ChannelSchema2 {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.3.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsKafka030Channel`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains configuration for describing an Anypoint MQ exchange, queue, or FIFO queue as an AsyncAPI channel. This objects only contains configuration that can not be provided in the AsyncAPI standard channel object.
@@ -2786,7 +2739,7 @@ export interface ChannelSchema2 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-anypointmq-0.0.1-channel".
  */
-export interface AnypointMQChannelBindingsObject {
+export interface BindingsAnypointmq001Channel {
   /**
    * The destination (queue or exchange) name for this channel. SHOULD only be specified if the channel name differs from the actual destination name, such as when the channel name is not a valid destination name in Anypoint MQ. Defaults to the channel name.
    */
@@ -2799,7 +2752,11 @@ export interface AnypointMQChannelBindingsObject {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.0.1";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsAnypointmq001Channel`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains configuration for describing a JMS queue, or FIFO queue as an AsyncAPI channel. This objects only contains configuration that can not be provided in the AsyncAPI standard channel object.
@@ -2807,7 +2764,7 @@ export interface AnypointMQChannelBindingsObject {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-jms-0.0.1-channel".
  */
-export interface ChannelSchema3 {
+export interface BindingsJms001Channel {
   /**
    * The destination (queue) name for this channel. SHOULD only be specified if the channel name differs from the actual destination name, such as when the channel name is not a valid destination name according to the JMS Provider. Defaults to the channel name.
    */
@@ -2820,7 +2777,11 @@ export interface ChannelSchema3 {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.0.1";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsJms001Channel`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the channel representation in SNS.
@@ -2828,7 +2789,7 @@ export interface ChannelSchema3 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-sns-0.1.0-channel".
  */
-export interface ChannelSchema4 {
+export interface BindingsSns010Channel {
   /**
    * The name of the topic. Can be different from the channel name to allow flexibility around AWS resource naming limitations.
    */
@@ -2843,12 +2804,16 @@ export interface ChannelSchema4 {
    * The version of this binding.
    */
   bindingVersion?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsSns010Channel`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * By default, we assume an unordered SNS topic. This field allows configuration of a FIFO SNS Topic.
  *
- * This interface was referenced by `ChannelSchema4`'s JSON-Schema
+ * This interface was referenced by `BindingsSns010Channel`'s JSON-Schema
  * via the `definition` "ordering".
  */
 export interface Ordering {
@@ -2860,12 +2825,16 @@ export interface Ordering {
    * True to turn on de-duplication of messages for a channel.
    */
   contentBasedDeduplication?: boolean;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Ordering`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * The security policy for the SNS Topic.
  *
- * This interface was referenced by `ChannelSchema4`'s JSON-Schema
+ * This interface was referenced by `BindingsSns010Channel`'s JSON-Schema
  * via the `definition` "policy".
  */
 export interface Policy {
@@ -2873,10 +2842,14 @@ export interface Policy {
    * An array of statement objects, each of which controls a permission for this topic
    */
   statements: Statement[];
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Policy`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
- * This interface was referenced by `ChannelSchema4`'s JSON-Schema
+ * This interface was referenced by `BindingsSns010Channel`'s JSON-Schema
  * via the `definition` "statement".
  */
 export interface Statement {
@@ -2889,7 +2862,11 @@ export interface Statement {
    * The SNS permission being allowed or denied e.g. sns:Publish
    */
   action: string | string[];
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Statement`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the channel representation in SQS.
@@ -2897,14 +2874,18 @@ export interface Statement {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-sqs-0.2.0-channel".
  */
-export interface ChannelSchema5 {
+export interface BindingsSqs020Channel {
   queue: Queue;
   deadLetterQueue?: Queue1;
   /**
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.1.0" | "0.2.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsSqs020Channel`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * A definition of the queue that will be used as the channel.
@@ -2948,12 +2929,22 @@ export interface Queue {
    * Key-value pairs that represent AWS tags on the queue.
    */
   tags?: {};
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Queue`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `Queue1`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `undefined`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Prevent poison pill messages by moving un-processable messages to an SQS dead letter queue.
  *
- * This interface was referenced by `ChannelSchema5`'s JSON-Schema
+ * This interface was referenced by `BindingsSqs020Channel`'s JSON-Schema
  * via the `definition` "redrivePolicy".
  */
 export interface RedrivePolicy {
@@ -2962,12 +2953,16 @@ export interface RedrivePolicy {
    * The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
    */
   maxReceiveCount?: number;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `RedrivePolicy`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * The SQS queue to use as a dead letter queue (DLQ).
  *
- * This interface was referenced by `ChannelSchema5`'s JSON-Schema
+ * This interface was referenced by `BindingsSqs020Channel`'s JSON-Schema
  * via the `definition` "identifier".
  */
 export interface Identifier {
@@ -2979,12 +2974,16 @@ export interface Identifier {
    * The endpoint is identified by a name, which corresponds to an identifying field called 'name' of a binding for that protocol on this publish Operation Object. For example, if the protocol is 'sqs' then the name refers to the name field sqs binding.
    */
   name?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Identifier`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * The security policy for the SQS Queue
  *
- * This interface was referenced by `ChannelSchema5`'s JSON-Schema
+ * This interface was referenced by `BindingsSqs020Channel`'s JSON-Schema
  * via the `definition` "policy".
  */
 export interface Policy1 {
@@ -2992,10 +2991,14 @@ export interface Policy1 {
    * An array of statement objects, each of which controls a permission for this queue.
    */
   statements: Statement1[];
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Policy1`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
- * This interface was referenced by `ChannelSchema5`'s JSON-Schema
+ * This interface was referenced by `BindingsSqs020Channel`'s JSON-Schema
  * via the `definition` "statement".
  */
 export interface Statement1 {
@@ -3008,7 +3011,11 @@ export interface Statement1 {
    * The SQS permission being allowed or denied e.g. sqs:ReceiveMessage
    */
   action: string | string[];
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Statement1`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * A definition of the queue that will be used for un-processable messages.
@@ -3052,7 +3059,17 @@ export interface Queue1 {
    * Key-value pairs that represent AWS tags on the queue.
    */
   tags?: {};
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Queue`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `Queue1`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `undefined`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the channel representation for Google Cloud Pub/Sub.
@@ -3060,7 +3077,7 @@ export interface Queue1 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-googlepubsub-0.2.0-channel".
  */
-export interface CloudPubSubChannelSchema1 {
+export interface BindingsGooglepubsub020Channel {
   /**
    * The version of this binding.
    */
@@ -3076,7 +3093,11 @@ export interface CloudPubSubChannelSchema1 {
     lastRevisionId?: string;
     name: string;
   };
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsGooglepubsub020Channel`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the channel representation in Pulsar, which covers namespace and topic level admin configuration. This object contains additional information not possible to represent within the core AsyncAPI specification.
@@ -3084,7 +3105,7 @@ export interface CloudPubSubChannelSchema1 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-pulsar-0.1.0-channel".
  */
-export interface ChannelSchema6 {
+export interface BindingsPulsar010Channel {
   /**
    * The namespace, the channel is associated with.
    */
@@ -3123,7 +3144,11 @@ export interface ChannelSchema6 {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.1.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsPulsar010Channel`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the operation representation in HTTP.
@@ -3131,7 +3156,7 @@ export interface ChannelSchema6 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-http-0.3.0-operation".
  */
-export interface HTTPOperationBindingsObject {
+export interface BindingsHttp030Operation {
   /**
    * When 'type' is 'request', this is the HTTP method, otherwise it MUST be ignored. Its value MUST be one of 'GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS', 'CONNECT', and 'TRACE'.
    */
@@ -3139,7 +3164,7 @@ export interface HTTPOperationBindingsObject {
   /**
    * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. This object is a superset of the JSON Schema Specification Draft 07. The empty schema (which allows any instance to validate) MAY be represented by the boolean value true and a schema which allows no instance to validate MAY be represented by the boolean value false.
    */
-  query?: CoreSchemaMetaSchema & {
+  query?: JsonSchemaDraft07Schema & {
     additionalProperties?: Schema | boolean;
     items?: Schema | [Schema, ...Schema[]];
     /**
@@ -3172,13 +3197,21 @@ export interface HTTPOperationBindingsObject {
      * Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.
      */
     deprecated?: boolean;
-    [k: string]: SpecificationExtension;
+    /**
+     * This interface was referenced by `undefined`'s JSON-Schema definition
+     * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+     */
+    [k: string]: unknown;
   };
   /**
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.3.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsHttp030Operation`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the operation representation in HTTP.
@@ -3186,7 +3219,7 @@ export interface HTTPOperationBindingsObject {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-http-0.2.0-operation".
  */
-export interface HTTPOperationBindingsObject1 {
+export interface BindingsHttp020Operation {
   /**
    * When 'type' is 'request', this is the HTTP method, otherwise it MUST be ignored. Its value MUST be one of 'GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS', 'CONNECT', and 'TRACE'.
    */
@@ -3194,7 +3227,7 @@ export interface HTTPOperationBindingsObject1 {
   /**
    * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. This object is a superset of the JSON Schema Specification Draft 07. The empty schema (which allows any instance to validate) MAY be represented by the boolean value true and a schema which allows no instance to validate MAY be represented by the boolean value false.
    */
-  query?: CoreSchemaMetaSchema & {
+  query?: JsonSchemaDraft07Schema & {
     additionalProperties?: Schema | boolean;
     items?: Schema | [Schema, ...Schema[]];
     /**
@@ -3227,13 +3260,21 @@ export interface HTTPOperationBindingsObject1 {
      * Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.
      */
     deprecated?: boolean;
-    [k: string]: SpecificationExtension;
+    /**
+     * This interface was referenced by `undefined`'s JSON-Schema definition
+     * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+     */
+    [k: string]: unknown;
   };
   /**
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.2.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsHttp020Operation`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the operation representation in AMQP.
@@ -3241,7 +3282,7 @@ export interface HTTPOperationBindingsObject1 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-amqp-0.3.0-operation".
  */
-export interface AMQPOperationBindingsObject {
+export interface BindingsAmqp030Operation {
   /**
    * TTL (Time-To-Live) for the message. It MUST be greater than or equal to zero.
    */
@@ -3282,7 +3323,11 @@ export interface AMQPOperationBindingsObject {
    * The version of this binding. If omitted, "latest" MUST be assumed.
    */
   bindingVersion?: "0.3.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsAmqp030Operation`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the operation representation in MQTT.
@@ -3290,7 +3335,7 @@ export interface AMQPOperationBindingsObject {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-mqtt-0.2.0-operation".
  */
-export interface MQTTOperationBindingsObject {
+export interface BindingsMqtt020Operation {
   /**
    * Defines the Quality of Service (QoS) levels for the message flow between client and server. Its value MUST be either 0 (At most once delivery), 1 (At least once delivery), or 2 (Exactly once delivery).
    */
@@ -3307,7 +3352,11 @@ export interface MQTTOperationBindingsObject {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.2.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsMqtt020Operation`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the operation representation in Kafka.
@@ -3315,11 +3364,11 @@ export interface MQTTOperationBindingsObject {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-kafka-0.5.0-operation".
  */
-export interface OperationSchema {
+export interface BindingsKafka050Operation {
   /**
    * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. This object is a superset of the JSON Schema Specification Draft 07. The empty schema (which allows any instance to validate) MAY be represented by the boolean value true and a schema which allows no instance to validate MAY be represented by the boolean value false.
    */
-  groupId?: CoreSchemaMetaSchema & {
+  groupId?: JsonSchemaDraft07Schema & {
     additionalProperties?: Schema | boolean;
     items?: Schema | [Schema, ...Schema[]];
     /**
@@ -3352,12 +3401,16 @@ export interface OperationSchema {
      * Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.
      */
     deprecated?: boolean;
-    [k: string]: SpecificationExtension;
+    /**
+     * This interface was referenced by `undefined`'s JSON-Schema definition
+     * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+     */
+    [k: string]: unknown;
   };
   /**
    * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. This object is a superset of the JSON Schema Specification Draft 07. The empty schema (which allows any instance to validate) MAY be represented by the boolean value true and a schema which allows no instance to validate MAY be represented by the boolean value false.
    */
-  clientId?: CoreSchemaMetaSchema & {
+  clientId?: JsonSchemaDraft07Schema & {
     additionalProperties?: Schema | boolean;
     items?: Schema | [Schema, ...Schema[]];
     /**
@@ -3390,13 +3443,21 @@ export interface OperationSchema {
      * Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.
      */
     deprecated?: boolean;
-    [k: string]: SpecificationExtension;
+    /**
+     * This interface was referenced by `undefined`'s JSON-Schema definition
+     * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+     */
+    [k: string]: unknown;
   };
   /**
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.5.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsKafka050Operation`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the operation representation in Kafka.
@@ -3404,11 +3465,11 @@ export interface OperationSchema {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-kafka-0.4.0-operation".
  */
-export interface OperationSchema1 {
+export interface BindingsKafka040Operation {
   /**
    * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. This object is a superset of the JSON Schema Specification Draft 07. The empty schema (which allows any instance to validate) MAY be represented by the boolean value true and a schema which allows no instance to validate MAY be represented by the boolean value false.
    */
-  groupId?: CoreSchemaMetaSchema & {
+  groupId?: JsonSchemaDraft07Schema & {
     additionalProperties?: Schema | boolean;
     items?: Schema | [Schema, ...Schema[]];
     /**
@@ -3441,12 +3502,16 @@ export interface OperationSchema1 {
      * Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.
      */
     deprecated?: boolean;
-    [k: string]: SpecificationExtension;
+    /**
+     * This interface was referenced by `undefined`'s JSON-Schema definition
+     * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+     */
+    [k: string]: unknown;
   };
   /**
    * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. This object is a superset of the JSON Schema Specification Draft 07. The empty schema (which allows any instance to validate) MAY be represented by the boolean value true and a schema which allows no instance to validate MAY be represented by the boolean value false.
    */
-  clientId?: CoreSchemaMetaSchema & {
+  clientId?: JsonSchemaDraft07Schema & {
     additionalProperties?: Schema | boolean;
     items?: Schema | [Schema, ...Schema[]];
     /**
@@ -3479,13 +3544,21 @@ export interface OperationSchema1 {
      * Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.
      */
     deprecated?: boolean;
-    [k: string]: SpecificationExtension;
+    /**
+     * This interface was referenced by `undefined`'s JSON-Schema definition
+     * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+     */
+    [k: string]: unknown;
   };
   /**
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.4.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsKafka040Operation`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the operation representation in Kafka.
@@ -3493,11 +3566,11 @@ export interface OperationSchema1 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-kafka-0.3.0-operation".
  */
-export interface OperationSchema2 {
+export interface BindingsKafka030Operation {
   /**
    * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. This object is a superset of the JSON Schema Specification Draft 07. The empty schema (which allows any instance to validate) MAY be represented by the boolean value true and a schema which allows no instance to validate MAY be represented by the boolean value false.
    */
-  groupId?: CoreSchemaMetaSchema & {
+  groupId?: JsonSchemaDraft07Schema & {
     additionalProperties?: Schema | boolean;
     items?: Schema | [Schema, ...Schema[]];
     /**
@@ -3530,12 +3603,16 @@ export interface OperationSchema2 {
      * Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.
      */
     deprecated?: boolean;
-    [k: string]: SpecificationExtension;
+    /**
+     * This interface was referenced by `undefined`'s JSON-Schema definition
+     * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+     */
+    [k: string]: unknown;
   };
   /**
    * The Schema Object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. This object is a superset of the JSON Schema Specification Draft 07. The empty schema (which allows any instance to validate) MAY be represented by the boolean value true and a schema which allows no instance to validate MAY be represented by the boolean value false.
    */
-  clientId?: CoreSchemaMetaSchema & {
+  clientId?: JsonSchemaDraft07Schema & {
     additionalProperties?: Schema | boolean;
     items?: Schema | [Schema, ...Schema[]];
     /**
@@ -3568,13 +3645,21 @@ export interface OperationSchema2 {
      * Specifies that a schema is deprecated and SHOULD be transitioned out of usage. Default value is false.
      */
     deprecated?: boolean;
-    [k: string]: SpecificationExtension;
+    /**
+     * This interface was referenced by `undefined`'s JSON-Schema definition
+     * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+     */
+    [k: string]: unknown;
   };
   /**
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.3.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsKafka030Operation`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the operation representation in NATS.
@@ -3582,7 +3667,7 @@ export interface OperationSchema2 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-nats-0.1.0-operation".
  */
-export interface NATSOperationBindingsObject {
+export interface BindingsNats010Operation {
   /**
    * Defines the name of the queue to use. It MUST NOT exceed 255 characters.
    */
@@ -3591,7 +3676,11 @@ export interface NATSOperationBindingsObject {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.1.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsNats010Operation`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the operation representation in SNS.
@@ -3599,7 +3688,7 @@ export interface NATSOperationBindingsObject {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-sns-0.1.0-operation".
  */
-export interface OperationSchema3 {
+export interface BindingsSns010Operation {
   topic?: Identifier1;
   /**
    * The protocols that listen to this topic and their endpoints.
@@ -3612,7 +3701,11 @@ export interface OperationSchema3 {
    * The version of this binding.
    */
   bindingVersion?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsSns010Operation`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Often we can assume that the SNS Topic is the channel name-we provide this field in case the you need to supply the ARN, or the Topic name is not the channel name in the AsyncAPI document.
@@ -3638,10 +3731,23 @@ export interface Identifier1 {
    * The endpoint is identified by a name, which corresponds to an identifying field called 'name' of a binding for that protocol on this publish Operation Object. For example, if the protocol is 'sqs' then the name refers to the name field sqs binding. We don't use $ref because we are referring, not including.
    */
   name?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Identifier1`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `Identifier2`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `Identifier3`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `undefined`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
- * This interface was referenced by `OperationSchema3`'s JSON-Schema
+ * This interface was referenced by `BindingsSns010Operation`'s JSON-Schema
  * via the `definition` "consumer".
  */
 export interface Consumer {
@@ -3670,7 +3776,11 @@ export interface Consumer {
    * The display name to use with an SNS subscription
    */
   displayName?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Consumer`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * The endpoint messages are delivered to.
@@ -3696,12 +3806,25 @@ export interface Identifier2 {
    * The endpoint is identified by a name, which corresponds to an identifying field called 'name' of a binding for that protocol on this publish Operation Object. For example, if the protocol is 'sqs' then the name refers to the name field sqs binding. We don't use $ref because we are referring, not including.
    */
   name?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Identifier1`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `Identifier2`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `Identifier3`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `undefined`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Prevent poison pill messages by moving un-processable messages to an SQS dead letter queue.
  *
- * This interface was referenced by `OperationSchema3`'s JSON-Schema
+ * This interface was referenced by `BindingsSns010Operation`'s JSON-Schema
  * via the `definition` "redrivePolicy".
  */
 export interface RedrivePolicy1 {
@@ -3710,7 +3833,11 @@ export interface RedrivePolicy1 {
    * The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
    */
   maxReceiveCount?: number;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `RedrivePolicy1`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * The SQS queue to use as a dead letter queue (DLQ).
@@ -3736,7 +3863,20 @@ export interface Identifier3 {
    * The endpoint is identified by a name, which corresponds to an identifying field called 'name' of a binding for that protocol on this publish Operation Object. For example, if the protocol is 'sqs' then the name refers to the name field sqs binding. We don't use $ref because we are referring, not including.
    */
   name?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Identifier1`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `Identifier2`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `Identifier3`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `undefined`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Policy for retries to HTTP. The parameter is for that SNS Subscription and overrides any policy on the SNS Topic.
@@ -3774,7 +3914,17 @@ export interface DeliveryPolicy {
    * The maximum number of deliveries per second, per subscription.
    */
   maxReceivesPerSecond?: number;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `DeliveryPolicy`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `DeliveryPolicy1`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `undefined`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Policy for retries to HTTP. The field is the default for HTTP receivers of the SNS Topic which may be overridden by a specific consumer.
@@ -3812,7 +3962,17 @@ export interface DeliveryPolicy1 {
    * The maximum number of deliveries per second, per subscription.
    */
   maxReceivesPerSecond?: number;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `DeliveryPolicy`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `DeliveryPolicy1`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   *
+   * This interface was referenced by `undefined`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the operation representation in SQS.
@@ -3820,7 +3980,7 @@ export interface DeliveryPolicy1 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-sqs-0.2.0-operation".
  */
-export interface OperationSchema4 {
+export interface BindingsSqs020Operation {
   /**
    * Queue objects that are either the endpoint for an SNS Operation Binding Object, or the deadLetterQueue of the SQS Operation Binding Object.
    */
@@ -3829,12 +3989,16 @@ export interface OperationSchema4 {
    * The version of this binding. If omitted, 'latest' MUST be assumed.
    */
   bindingVersion?: "0.1.0" | "0.2.0";
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `BindingsSqs020Operation`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * A definition of a queue.
  *
- * This interface was referenced by `OperationSchema4`'s JSON-Schema
+ * This interface was referenced by `BindingsSqs020Operation`'s JSON-Schema
  * via the `definition` "queue".
  */
 export interface Queue2 {
@@ -3880,12 +4044,16 @@ export interface Queue2 {
    * Key-value pairs that represent AWS tags on the queue.
    */
   tags?: {};
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Queue2`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * Prevent poison pill messages by moving un-processable messages to an SQS dead letter queue.
  *
- * This interface was referenced by `OperationSchema4`'s JSON-Schema
+ * This interface was referenced by `BindingsSqs020Operation`'s JSON-Schema
  * via the `definition` "redrivePolicy".
  */
 export interface RedrivePolicy2 {
@@ -3894,12 +4062,16 @@ export interface RedrivePolicy2 {
    * The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
    */
   maxReceiveCount?: number;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `RedrivePolicy2`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * The SQS queue to use as a dead letter queue (DLQ).
  *
- * This interface was referenced by `OperationSchema4`'s JSON-Schema
+ * This interface was referenced by `BindingsSqs020Operation`'s JSON-Schema
  * via the `definition` "identifier".
  */
 export interface Identifier4 {
@@ -3911,12 +4083,16 @@ export interface Identifier4 {
    * The endpoint is identified by a name, which corresponds to an identifying field called 'name' of a binding for that protocol on this publish Operation Object. For example, if the protocol is 'sqs' then the name refers to the name field sqs binding.
    */
   name?: string;
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Identifier4`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * The security policy for the SQS Queue
  *
- * This interface was referenced by `OperationSchema4`'s JSON-Schema
+ * This interface was referenced by `BindingsSqs020Operation`'s JSON-Schema
  * via the `definition` "policy".
  */
 export interface Policy2 {
@@ -3924,10 +4100,14 @@ export interface Policy2 {
    * An array of statement objects, each of which controls a permission for this queue.
    */
   statements: Statement2[];
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Policy2`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
- * This interface was referenced by `OperationSchema4`'s JSON-Schema
+ * This interface was referenced by `BindingsSqs020Operation`'s JSON-Schema
  * via the `definition` "statement".
  */
 export interface Statement2 {
@@ -3940,7 +4120,11 @@ export interface Statement2 {
    * The SQS permission being allowed or denied e.g. sqs:ReceiveMessage
    */
   action: string | string[];
-  [k: string]: SpecificationExtension;
+  /**
+   * This interface was referenced by `Statement2`'s JSON-Schema definition
+   * via the `patternProperty` "^x-[\w\d\.\x2d_]+$".
+   */
+  [k: string]: unknown;
 }
 /**
  * This object contains information about the operation representation in Solace.
@@ -3948,7 +4132,7 @@ export interface Statement2 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-solace-0.4.0-operation".
  */
-export interface SolaceOperationBindingsObject {
+export interface BindingsSolace040Operation {
   /**
    * The version of this binding. If omitted, "latest" MUST be assumed.
    */
@@ -4012,7 +4196,7 @@ export interface SolaceOperationBindingsObject {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-solace-0.3.0-operation".
  */
-export interface SolaceOperationBindingsObject1 {
+export interface BindingsSolace030Operation {
   /**
    * The list of Solace destinations referenced in the operation.
    */
@@ -4064,7 +4248,7 @@ export interface SolaceOperationBindingsObject1 {
  * This interface was referenced by `AsyncApi`'s JSON-Schema
  * via the `definition` "bindings-solace-0.2.0-operation".
  */
-export interface SolaceOperationBindingsObject2 {
+export interface BindingsSolace020Operation {
   /**
    * The list of Solace destinations referenced in the operation.
    */

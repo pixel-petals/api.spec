@@ -46,17 +46,18 @@ const ANNOTATIONS = new Set([ 'examples', 'example', 'default' ])
  * names as structure — `anyOf` as an array to iterate, `$ref` as a reference
  * to resolve — and fails on the schema sitting there instead.
  *
- * Every keyword that carries structure is renamed, rather than only the ones
- * seen to break so far, because which of them appears is a property of the
- * specification being read and not of this list.
+ * Only keywords that carry *structure* are renamed — the ones the generator
+ * would follow into. A keyword like `enum` or `type` holds no schema, so it is
+ * left alone: renaming it and restoring it afterwards is what produced two
+ * `enum` members in one interface, since AsyncAPI's embedded draft-07
+ * metaschema declares a property by that name beside the keyword itself.
  */
 const RESERVED = [
   '$ref', '$defs', 'definitions', 'deprecated',
   'allOf', 'anyOf', 'oneOf', 'not', 'if', 'then', 'else',
   'items', 'additionalItems', 'unevaluatedItems', 'prefixItems', 'contains',
   'properties', 'patternProperties', 'additionalProperties', 'unevaluatedProperties',
-  'propertyNames', 'dependentSchemas', 'required', 'enum', 'type',
-  'maxItems', 'minItems', 'tsEnumNames',
+  'propertyNames', 'dependentSchemas',
 ]
 
 const placeholder = name => `__property_${name.replace(/\W/g, '')}__`
@@ -115,6 +116,16 @@ export function prepare(node) {
     }
 
     out[ key ] = value
+  }
+
+  // A pattern alongside named properties becomes a string index signature, and
+  // TypeScript requires every declared property to satisfy it. `^x-` extensions
+  // sit beside real fields in almost every one of these specifications, so the
+  // signature is widened to `unknown` — the type system cannot say "these keys
+  // match a pattern and those do not", and a wrong narrow type is worse than an
+  // honest wide one.
+  if (out.patternProperties && out.properties) {
+    out.patternProperties = Object.fromEntries(Object.keys(out.patternProperties).map(pattern => [ pattern, {} ]))
   }
 
   // `required` names properties, so a renamed one has to be renamed here too
