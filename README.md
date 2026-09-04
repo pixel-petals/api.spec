@@ -13,7 +13,7 @@ Each package downloads a published specification document, keeps it verbatim, an
 | [arazzo](packages/arazzo) | Arazzo — 2 of 2 | JSON, YAML | pointers |
 | [mcp](packages/mcp) | MCP — 6 of 6 | JSON, YAML | pointers |
 | [typeapi](packages/typeapi) | TypeAPI — 1 of 2 | JSON, YAML | whole documents |
-| [protobuf](packages/protobuf) | Protobuf — 14 of 59 | proto, JSON | JSON descriptors |
+| [protobuf](packages/protobuf) | Protobuf — 83 of 83 | proto, JSON | JSON descriptors |
 | [graphql](packages/graphql) | GraphQL — 8 of 8 | graphql, JSON | SDL + introspection |
 
 Every package has the same four commands:

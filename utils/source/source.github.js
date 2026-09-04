@@ -17,16 +17,31 @@ async function api(path) {
   return response.json()
 }
 
+/** GitHub caps a page at 100; anything past that needs asking for. */
+const PAGE = 100
+
 /**
- * Release tags, newest first as GitHub returns them.
+ * Every release tag, newest first as GitHub returns them.
+ *
+ * Paged to exhaustion rather than taking the first hundred. A long-lived
+ * repository carries far more than that — protobuf has 467 — and stopping at
+ * one page silently reports an old release as the oldest that exists.
  *
  * @returns {Promise<string[]>}
  */
-export async function tags(repo, { per_page = 100 } = {}) {
-  /** @type {{name: string}[]} */
-  const found = await api(`${repo}/tags?per_page=${per_page}`)
+export async function tags(repo, { limit = 1000 } = {}) {
+  const found = []
 
-  return found.map(tag => tag.name)
+  for (let page = 1; found.length < limit; page++) {
+    /** @type {{name: string}[]} */
+    const batch = await api(`${repo}/tags?per_page=${PAGE}&page=${page}`)
+
+    found.push(...batch.map(tag => tag.name))
+
+    if (batch.length < PAGE) break
+  }
+
+  return found
 }
 
 /**

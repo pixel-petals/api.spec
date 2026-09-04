@@ -113,6 +113,8 @@ The CLI is wired here rather than built by `utils/spec/spec.cli`, which is drive
 
 ## Versions
 
-The repository publishes 59 `vMAJOR.MINOR` releases. Vendored here is the latest patch of each major — 36.1, 35.1, 34.2, 33.6, 32.1, 31.1, 30.2, 29.6, 28.3, 27.5, 26.1, 25.9, 24.4, 23.4 — because `descriptor.proto` changes across majors and rarely within one: the fragment count moves from 21 at 23.4 to 25 at 36.1, but not between patches of the same major.
+All 83 `vMAJOR.MINOR` releases the repository publishes, from 16.2 to 36.1.
 
-Any other release is one command away, and `protobuf releases` lists them all against what is on disk.
+Protobuf has no patch component — `v33.6` is major 33, minor 6 — so every one of these is a distinct minor version rather than a rebuild of its neighbour. The descriptor grows across them: 21 declarations at 16.2, 24 by 25.0, 25 by 33.0.
+
+`protobuf releases` lists them against what is on disk.
