@@ -1,9 +1,13 @@
 {
   "name": "@pixelpetals/openapi",
+  "type": "module",
   "bin": {
-    "schema-fragments": "bin/schema-fragments.mjs"
+    "openapi": "bin/cmd.js"
   },
   "exports": {
     "./*": "./schema/*.json"
+  },
+  "dependencies": {
+    "commander": "15.0.0"
   }
 }

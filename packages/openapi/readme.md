@@ -1,47 +1,100 @@
-# openapi-schemas
+# @pixelpetals/openapi
 
-Regenerates `.vscode/schemas/` — the wrapper schemas that give the `$ref`-linked fragment files under `apps/cms/schema/bundle/` validation and completion in the editor.
+The OpenAPI JSON Schema, vendored per version, plus one fragment schema for every object a `$ref` can point at.
 
+```sh
+openapi fetch 3.2 2025-11-23     # vendor schema/3.2/schema.json
+openapi split 3.2                # generate the fragments beside it
+openapi generate 3.2 2025-11-23  # both, in one step
+openapi list                     # versions already vendored
 ```
-npm run schemas:openapi              # OpenAPI 3.2, the pinned dated release
-npm run schemas:openapi -- 3.2 2026-03-01
+
+`split` reads only what is on disk, so it works offline and always matches the vendored copy. `fetch` is the one command that touches the network.
+
+## Versions
+
+| version | release | fragments |
+| --- | --- | --- |
+| 2.0 | 2017-08-27 | 46 |
+| 3.0 | 2024-10-18 | 36 |
+| 3.1 | 2025-11-23 | 28 |
+| 3.2 | 2025-11-23 | 29 |
+
+One dated release is vendored per version — the newest at the time of writing. `openapi fetch 3.1 2022-10-07` replaces it with any other; the spec lists them under [Schema Iterations](https://spec.openapis.org/oas/).
+
+## Layout
+
+```text
+schema/3.2/
+  schema.json                      the published schema, verbatim
+  info.json  paths.json  components.json  externalDocs.json
+  servers/server.json
+  security/securityRequirement.json
+  tags/tag.json
+  components/
+    schemas.json  responses.json  parameters.json  examples.json
+    requestBodies.json  headers.json  securitySchemes.json
+    links.json  callbacks.json  mediaTypes.json
+  fragments/
+    contact.json  license.json  serverVariable.json  operation.json
+    pathItem.json  parameters.json  content.json  encoding.json
+    responses.json  oauthFlows.json  reference.json  mapOfStrings.json
 ```
 
-Output is editor-only. Nothing here reaches the built spec, and the bundler never reads it.
+Directories mirror the document: a fragment sits where a bundle author could point at that location and say the file goes there. An object with no such location — or with several, like a Path Item, which is equally at home under `webhooks` and `components.pathItems` — sits flat in `fragments/` instead. One file per object, always. The full rule is in [bin/lib/fragments/fragments.md](bin/lib/fragments/fragments.md).
 
-## Why wrappers exist at all
+Everything is derived from the schema — root keys, component groups, which objects tolerate a `$ref`, and the dialect. A version bump changes the list upstream rather than drifting against a literal here.
 
-Each fragment file is a single *component object*, not a spec, so the document-level schema rejects it outright.
+## Why fragments exist
 
-OpenAPI publishes only four URLs per version — `meta`, `dialect`, `schema`, `schema-base` — and none addresses an individual component. The component types exist only as `$defs` inside the 40KB `schema` document, reachable by JSON pointer.
+Each file in a bundle is a single *component object*, not a document, so the document-level schema rejects it outright.
 
-A pointer cannot go in the `json.schemas` association URL. VS Code loads that URL and parses the response body as the root schema; the fragment is dropped, so `…/schema#/$defs/response` silently validates the file as a whole OpenAPI document. `$ref` *does* resolve pointers — hence one wrapper file per component type.
+OpenAPI publishes only four URLs per version — `meta`, `dialect`, `schema`, `schema-base` — and none addresses an individual component. The component types exist only as defs inside the schema document, reachable by JSON pointer.
 
-## Why it derives rather than hardcodes
+A pointer cannot go in a `json.schemas` association URL: VS Code loads that URL and parses the response body as the root schema, dropping the fragment, so `…/schema#/$defs/response` silently validates the file as a whole OpenAPI document. `$ref` *does* resolve pointers — hence one wrapper file per object type.
 
-The set of things worth splitting out is the spec's own `components` map, so the script reads that map instead of restating it. A version bump changes the list in one place — upstream — rather than drifting against a literal here.
+Each wrapper points at the vendored copy rather than the published URL, so editor validation needs no network and stays pinned to the schema in the repo:
 
-Two things it reads rather than assumes:
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "../schema.json#/$defs/response-or-reference"
+}
+```
 
-- **The dialect URL** comes from `schema-base`'s `$defs.dialect.const`. That is the only place the spec states its own default dialect, and it moves on a different release cadence — 3.2's schema is dated 2025-11-23 while its dialect is 2025-09-17.
-- **The `-or-reference` variant** is preferred wherever one exists. The plain defs set `unevaluatedProperties: false`, which rejects a fragment file that is itself a bare `{"$ref": "./other.json"}` — routine in a bundle. The variant branches on that and validates inline content identically otherwise. `path-item` has no variant because it declares `$ref` as a property already.
+A bundle file is often itself a bare `{"$ref": "./other.json"}`, so fragments use whichever reference-tolerant form their version offers — a `-or-reference` def in 3.1+, an inline `oneOf` against the Reference Object in 3.0. In 3.1+, `components/schemas.json` is a further exception: its def is a deliberately empty stub, because those versions let a document pick its own dialect, so the fragment targets the dialect URL instead. See [bin/lib/normalize/normalize.md](bin/lib/normalize/normalize.md).
 
-`components.schemas` is the one component with a real published URL, so it maps to the dialect rather than a pointer. Its `#/$defs/schema` is a deliberately empty stub — `{"$dynamicAnchor": "meta", "type": ["object", "boolean"]}` — because OpenAPI 3.1+ lets a document choose its own JSON Schema dialect via `jsonSchemaDialect`.
+## Use
 
-## Conventions
+Fragments resolve through the package exports, so an editor association can name one directly:
 
-One wrapper per `components` key, named after the bundle subdirectory it validates. `DIRECTORIES` lists only the deviations: OpenAPI calls them schemas, the bundle has always called them `types`.
+```json
+{ "fileMatch": ["**/bundle/responses/*.json"], "url": "./node_modules/@pixelpetals/openapi/3.2/components/responses.json" }
+```
 
-Unlike [scaffold-block](scaffold-block.md), this overwrites without asking. The wrappers are derived artefacts with nothing hand-written in them; refusing to overwrite would only make version bumps annoying.
+Generated files are overwritten without asking. Nothing in them is hand-written, and refusing to overwrite would only make version bumps annoying.
 
-Associations in `.vscode/settings.json` are edited by hand, for the same reason the block barrel is — it is a shared file, and a script that rewrote it would clobber unrelated settings for the sake of a few lines. The script prints the block to paste.
+## Layout of the tool
+
+`external source -> normalize -> process`, one directory per stage:
+
+```text
+bin/
+  cmd.js                 commander wiring
+  commands/              one file per subcommand, plus output formatting
+  lib/source/            fetching, locating and reading a vendored schema
+  lib/normalize/         per-draft modules, to one version-agnostic shape
+  lib/fragments/         deciding where files go, and writing them
+```
+
+Only `lib/normalize/` knows that 2.0 and 3.0 are draft-04 while 3.1 and 3.2 are 2020-12. Everything downstream works on the normalized shape, which is why the same layout code serves Swagger 2.0 and OpenAPI 3.2. Adding a version means adding a normalizer, or often nothing at all — see [normalize.md](bin/lib/normalize/normalize.md).
 
 ## Limits
 
-`spec.json` uses `schema`, not `schema-base`. The latter would extend validation into schema objects written inline, but VS Code mis-resolves its internal `#/$defs/dialect` pointer against the dialect's base URI, and the resulting error *replaces* every real diagnostic in the file. Keeping schema objects in `types/` sidesteps this — they get full validation there.
+Validation sees each file alone. It cannot tell that a `$ref` target is missing or is the wrong kind of object, and it stays silent on an empty file rather than flagging it. That needs a resolving linter:
 
-Editor validation sees each file alone. It cannot tell that a `$ref` target is missing or is the wrong kind of object, and it stays silent on an empty file rather than flagging it. That needs a resolving linter:
+```sh
+npx @redocly/cli lint bundle/spec.json
+```
 
-```
-npx @redocly/cli lint apps/cms/schema/bundle/spec.json
-```
+In 3.1+, `components.json` — the whole Components map — cannot validate inline schema objects. `components.schemas` reaches the Schema Object through `$dynamicRef: "#meta"`, which falls back to the empty stub, and the surrounding `unevaluatedProperties: false` then rejects every real schema keyword. Keeping schema objects in their own files under `components/schemas.json` sidesteps this, because that fragment targets the dialect and validates them properly. 3.0 and 2.0 are unaffected — they define a real Schema Object.
