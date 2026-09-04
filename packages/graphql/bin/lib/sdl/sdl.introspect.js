@@ -68,6 +68,15 @@ function vendored(introspected) {
   }
 }
 
+/** Asks a schema to describe itself, reporting a refusal as one error. */
+function execute(schema) {
+  const result = graphqlSync({ schema, source: getIntrospectionQuery() })
+
+  if (result.errors) throw new Error(result.errors.map(error => error.message).join('\n'))
+
+  return result.data.__schema
+}
+
 /** Restores the reserved names, wherever the result names a type. */
 function restore(value, names) {
   if (Array.isArray(value)) return value.map(item => restore(item, names))
@@ -96,9 +105,29 @@ export function introspect(sdl) {
   if (!names.has(root)) throw new Error(`no ${ROOT} type — the SDL is not an introspection schema`)
 
   const schema = buildSchema(rooted(unprefixed, root))
-  const result = graphqlSync({ schema, source: getIntrospectionQuery() })
 
-  if (result.errors) throw new Error(result.errors.map(error => error.message).join('\n'))
+  return { __schema: restore(vendored(execute(schema)), names) }
+}
 
-  return { __schema: restore(vendored(result.data.__schema), names) }
+/**
+ * The introspection result for an ordinary schema — what `bundle` writes when
+ * asked for JSON.
+ *
+ * None of the detour above applies here. A bundled schema is someone's own,
+ * so its names are not the reserved ones graphql-js owns, and the meta-types
+ * and built-in directives a result carries are exactly what a client reading
+ * it expects to find.
+ *
+ * @param   {string} sdl  a complete schema
+ * @returns {object} the introspection result
+ */
+export function introspectSchema(sdl) {
+  const schema = buildSchema(sdl)
+
+  // a partial tree merges and prints fine; only introspection needs an entry point
+  if (!schema.getQueryType()) {
+    throw new Error('the schema declares no query root, so it cannot be introspected — write SDL instead')
+  }
+
+  return { __schema: execute(schema) }
 }

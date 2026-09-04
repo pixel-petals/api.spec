@@ -15,10 +15,14 @@ import protobuf from 'protobufjs'
  * of it. `alternateCommentMode` reads the `//` doc comments the schema is
  * mostly made of; without it they are dropped on the floor.
  *
- * @returns {Root}
+ * Shared with the multi-file load so a bundle and a `split` read the same
+ * document out of the same bytes.
  */
+export const PARSE_OPTIONS = { keepCase: true, alternateCommentMode: true }
+
+/** @returns {Root} */
 export function parseIdl(source) {
-  return protobuf.parse(source, { keepCase: true, alternateCommentMode: true }).root
+  return protobuf.parse(source, PARSE_OPTIONS).root
 }
 
 /**

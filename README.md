@@ -24,7 +24,12 @@ Every package has the same four commands:
 <name> generate <version> [date]  # both
 <name> list                       # what is vendored
 <name> releases                   # what upstream publishes, and which are vendored
+
+<name> bundle <document>          # many files -> one
+<name> unbundle <document>        # one -> many
 ```
+
+`bundle` and `unbundle` take paths rather than versions: they work on any document of that specification, not only the vendored copies. What they mean depends on how the specification references other files — `$ref` for most, `import` for TypeAPI and protobuf, and plain concatenation for GraphQL, which has no reference mechanism at all. See [utils/bundle](utils/bundle/bundle.md).
 
 `releases` is how the table above stays honest — it asks each specification's own registry, so a gap between what exists and what is vendored is visible rather than assumed.
 

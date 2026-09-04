@@ -11,12 +11,20 @@ import { Command } from 'commander'
 
 import { releasesCommand } from 'utils/spec/spec.releases'
 
+import { bundleCommand, unbundleCommand } from '#lib/graphql.bundle'
 import { fetchCommand, listCommand, splitCommand } from '#lib/graphql.commands'
 
 /** @import { SpecDescriptor } from 'utils/spec/spec.descriptor' */
 
 /** @type {[string, string]} */
 const QUIET = [ '-q, --quiet', 'print the summary only' ]
+
+/**
+ * Bundling takes a path rather than a version, and either end of a tree.
+ *
+ * @type {[string, string]}
+ */
+const SOURCE = [ '<source>', 'a .graphql file, or a directory of them' ]
 
 /** @param {SpecDescriptor} spec */
 export function createCli(spec) {
@@ -56,6 +64,18 @@ export function createCli(spec) {
   program.command('releases')
     .description('the versions upstream publishes, and which are vendored')
     .action(releasesCommand(spec))
+
+  program.command('bundle')
+    .description('merge a tree of SDL files into one document')
+    .argument(...SOURCE)
+    .option('-o, --out <file>', 'where to write it')
+    .action(bundleCommand)
+
+  program.command('unbundle')
+    .description('split a schema into one file per definition')
+    .argument(...SOURCE)
+    .option('-o, --out <directory>', 'where to write the tree')
+    .action(unbundleCommand)
 
   return program
 }

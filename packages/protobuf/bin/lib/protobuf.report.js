@@ -6,6 +6,11 @@ function fromRoot(file, root) {
   return relative(root, file).replaceAll('\\', '/')
 }
 
+/** "1 file", "4 files" — a count reads badly with a bracketed plural. */
+function count(total, noun) {
+  return `${total} ${noun}${total === 1 ? '' : 's'}`
+}
+
 export function reportVendored(url, files, root) {
   console.log(`fetched ${url}`)
 
@@ -20,4 +25,16 @@ export function reportFragments(written, root) {
   written.forEach((fragment, index) => {
     console.log(`  ${paths[ index ].padEnd(width)}  ${fragment.kind} ${fragment.name}`)
   })
+}
+
+/** `bundle`: how many files went in, and the one that came out. */
+export function reportBundled(source, files, written) {
+  console.log(`bundled ${source} from ${count(files.length, 'file')}`)
+  console.log(`  -> ${written}`)
+}
+
+/** `unbundle`: how much came out, and where it went. */
+export function reportUnbundled(source, files, pieces, into) {
+  console.log(`unbundled ${source} into ${count(files.length, 'file')} (${count(pieces.length, 'declaration')} lifted out)`)
+  console.log(`  -> ${into}`)
 }

@@ -9,7 +9,7 @@ graphql generate 2025-09  # both, in one step
 graphql list              # versions already vendored
 ```
 
-`split` reads only what is on disk, so it works offline and always matches the vendored copy. `fetch` is the one command that touches the network.
+`split` reads only what is on disk, so it works offline and always matches the vendored copy. `fetch` is the one command that touches the network. There are two more commands, `bundle` and `unbundle`, which take paths rather than versions and work on any schema — see [Bundling](#bundling).
 
 ## Versions
 
@@ -52,26 +52,74 @@ Everything under `defs/` is generated. Fragments sit flat: nothing in an introsp
 
 The `__` prefix stays in a file name — it is part of the type's name — and only the letter after it is lowered, which lands on the same camelCase the sibling packages use.
 
+## Bundling
+
+```sh
+graphql unbundle ./api.graphql --out ./tree/   # one schema -> a file per definition
+graphql bundle ./tree --out ./api.graphql      # a tree -> one schema
+```
+
+Unlike the rest of the CLI these take paths, not versions. They work on whatever you point them at — usually someone's own schema, though a vendored release works too — and either one accepts a file or a directory.
+
+GraphQL has no `$ref`. A large schema is kept as many `.graphql` files and concatenated, so bundling is a merge of definitions and unbundling is a split of them, and none of the shared [bundling machinery](../../utils/bundle/bundle.md) applies. Nothing in a file says which others belong with it; the directory is the only statement of that, and reading it is the whole of reference resolution here.
+
+### What survives a round trip
+
+Both directions cut and join text rather than reprinting an AST, because `print()` drops every comment — and comments are where SDL states what it cannot declare, which is exactly how Section 4 uses them. A comment above a definition is carried with it, provided it sits on the line directly above and does not share a line with the code before it, which would make it a trailing comment on the previous definition instead.
+
+Type extensions are definitions in their own right and get their own files, suffixed `.extension`: `extend type Query` lands in `query.extension.graphql` rather than being folded into `query.graphql` or quietly dropped. A type extended more than once gets a file per extension.
+
+Order is the one thing that does not survive. A directory states which files belong together and nothing else, so a bundle comes out in name order rather than in the order the original document happened to be written. Every definition, comment and extension is there; the sequence is not.
+
+### What fails
+
+A name defined twice is an error naming both files, rather than a silent pick of one. graphql-js catches the same thing by name, but by then the files are gone, and they are the useful half of the answer. Types, directives and the schema block are three namespaces, so a `Skip` type and a `@skip` directive are not a collision.
+
+The merged document is then built. A tree missing one of its files still concatenates — it just references a type nothing defines — and building is what turns that into a message instead of a `.graphql` nobody can load.
+
+### The tree
+
+Flat, one file per definition, named the way fragments are: the definition's name with its first letter lowered, `__` prefix and all. Nothing has to reverse this, because bundling reads whatever SDL a directory holds under any name, recursively and in name order, so a stem only has to be stable, readable and unique among its siblings.
+
+### Introspection JSON
+
+`bundle` writes SDL unless the output is named `.json`, in which case it writes the merged schema as an introspection result instead:
+
+```sh
+graphql bundle ./tree --out ./api.json
+```
+
+That is the same `{ "__schema": … }` shape as a vendored `schema.json`, but produced plainly — built, introspected, nothing renamed and nothing removed. The [detour a vendored release needs](bin/lib/sdl/sdl.introspect.md) is specific to Section 4, whose names graphql-js owns; applied to an ordinary schema it would strip prefixes that are not reserved and delete the directives the schema really defines.
+
+It is opt-in rather than a second default because an introspection result needs a query root and SDL does not. A tree holding half a schema merges and prints fine, and says so and stops when asked for JSON. The vendored introspection schema is itself such a case — Section 4 describes a meta-system, not a service — so `graphql bundle schema/2025-09 --out x.json` fails by design, and `schema.json` is what `fetch` writes for it instead.
+
+`unbundle` writes SDL only. A single definition is not a schema, so there is no introspection result to put beside it.
+
 ## Why this package is not like the others
 
 `openapi`, `asyncapi`, `arazzo` and `mcp` all vendor a published JSON Schema document and split it on `$ref`. GraphQL publishes no schema document at all. The specification is prose Markdown, and the introspection type system exists in it as SDL inside a fenced code block in Section 4 — around 100 lines of it, next to worked examples in the same language.
 
-So none of the shared pipeline applies. There is no JSON to fetch, no dialect to normalize, no `$ref` graph to walk, and no fragment that could usefully be a pointer wrapper. What this package shares with its siblings is the command surface and the directory layout, and the code says so: `bin/lib/graphql.cli.js` builds the same four commands with the same options that `utils/spec/spec.cli.js` builds, rather than calling it.
+So none of the shared pipeline applies. There is no JSON to fetch, no dialect to normalize, no `$ref` graph to walk, and no fragment that could usefully be a pointer wrapper. What this package shares with its siblings is the command surface and the directory layout, and the code says so: `bin/lib/graphql.cli.js` builds the same commands with the same options that `utils/spec/spec.cli.js` builds, rather than calling it.
 
 The steps are still `external source -> normalize -> process`:
 
 ```text
 bin/
-  cmd.js                    the entry point
-  lib/graphql.spec.js       where a release lives, and what a version may be called
-  lib/graphql.cli.js        commander wiring
-  lib/graphql.commands.js   fetch, split and list
-  lib/sdl/sdl.extract.js    Markdown -> the introspection SDL
-  lib/sdl/sdl.types.js      SDL -> one definition per type
-  lib/sdl/sdl.introspect.js SDL -> an introspection result
-  lib/sdl/sdl.name.js       type name -> file name
-  lib/sdl/sdl.files.js      where a version's files live
-  lib/sdl/sdl.write.js      writing them
+  cmd.js                       the entry point
+  lib/graphql.spec.js          where a release lives, and what a version may be called
+  lib/graphql.cli.js           commander wiring
+  lib/graphql.commands.js      fetch, split and list
+  lib/graphql.bundle.js        bundle and unbundle
+  lib/sdl/sdl.extract.js       Markdown -> the introspection SDL
+  lib/sdl/sdl.types.js         SDL -> one piece per definition
+  lib/sdl/sdl.introspect.js    SDL -> an introspection result
+  lib/sdl/sdl.name.js          type name -> file name
+  lib/sdl/sdl.files.js         where a version's files live
+  lib/sdl/sdl.write.js         writing them
+  lib/bundle/bundle.sources.js a path -> the SDL files under it
+  lib/bundle/bundle.merge.js   many files -> one document
+  lib/bundle/bundle.explode.js one document -> many files
+  lib/bundle/bundle.name.js    a definition -> its file name
 ```
 
 Extraction picks its code block by what the block declares, not by its info string: releases before 2018-06 tag no fence at all, and the ones that do tag examples and schemas alike. Splitting cuts each definition at its own AST boundaries, so a fragment is a definition the parser agreed to — and it is cut rather than reprinted, because printing drops the comments Section 4 uses to state the constraints SDL cannot, such as which `__Type` fields are non-null for which kind.

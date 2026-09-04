@@ -1,7 +1,7 @@
 /**
  * The specification CLI, wired locally.
  *
- * Same four commands, arguments and options as the shared builder — the shared
+ * The same commands, arguments and options as the shared builder — the shared
  * one is driven by a descriptor whose every stage assumes a JSON Schema
  * document, and protobuf has none to give it.
  */
@@ -10,6 +10,7 @@ import { Command } from 'commander'
 
 import { releasesCommand } from 'utils/spec/spec.releases'
 
+import { bundleCommand, unbundleCommand } from '#lib/protobuf.bundle'
 import { fetchCommand, listCommand, splitCommand } from '#lib/protobuf.commands'
 import { protobuf } from '#lib/protobuf.spec'
 
@@ -51,6 +52,19 @@ export function createCli() {
   program.command('releases')
     .description('the versions upstream publishes, and which are vendored')
     .action(releasesCommand(protobuf))
+
+  program.command('bundle')
+    .description('resolve a .proto and its imports into one JSON descriptor')
+    .argument('<entry>', 'the entry .proto file')
+    .option('-o, --out <file>', 'where to write it')
+    .action(bundleCommand)
+
+  program.command('unbundle')
+    .description('split a bundled descriptor into one file per declaration')
+    .argument('<descriptor>', 'a bundled descriptor, or the .proto it came from')
+    .option('-o, --out <directory>', 'where to write the tree')
+    .option('--stem <name>', 'basename for the root document', 'spec')
+    .action(unbundleCommand)
 
   return program
 }
