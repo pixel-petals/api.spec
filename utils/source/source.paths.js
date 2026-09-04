@@ -28,13 +28,19 @@ export function documentPath(root, version, format = 'json') {
   return `${documentStem(root, version)}.${format}`
 }
 
-/** The versions already vendored, by the presence of a JSON document. */
-export function versions(root) {
+/**
+ * The versions already vendored.
+ *
+ * Keyed on the format a specification actually fetches, not always JSON: a
+ * protobuf release is vendored the moment its IDL is on disk, and the JSON
+ * beside it is derived.
+ */
+export function versions(root, format = 'json') {
   if (!existsSync(root)) return []
 
   return readdirSync(root, { withFileTypes: true })
     .filter(entry => entry.isDirectory())
     .map(entry => entry.name)
-    .filter(name => existsSync(documentPath(root, name)))
+    .filter(name => existsSync(documentPath(root, name, format)))
     .sort()
 }

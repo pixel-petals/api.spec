@@ -3,12 +3,24 @@
 import { documentStem } from '#source/source.paths'
 import { writeDocument } from '#serialize/serialize.write'
 
-export async function fetchJson(url) {
+async function request(url) {
   const response = await fetch(url)
 
   if (!response.ok) throw new Error(`${response.status} ${response.statusText} — ${url}`)
 
-  return response.json()
+  return response
+}
+
+export async function fetchJson(url) {
+  return (await request(url)).json()
+}
+
+/**
+ * For sources that are a language rather than an object encoding — protobuf
+ * IDL, GraphQL SDL — where the response is the artefact.
+ */
+export async function fetchText(url) {
+  return (await request(url)).text()
 }
 
 /**

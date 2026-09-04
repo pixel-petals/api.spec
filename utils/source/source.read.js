@@ -4,6 +4,10 @@ import { readFileSync } from 'node:fs'
 
 import { DOCUMENT, documentPath } from '#source/source.paths'
 
+/** What to tell the user when nothing is vendored. */
+const missing = (format, version, hint) =>
+  new Error(`no ${DOCUMENT}.${format} for ${version}${hint ? ` — run \`${hint}\` first` : ''}`)
+
 /**
  * Reads the JSON copy — the vendored formats are the same document, and JSON
  * is the one every version is guaranteed to have.
@@ -16,6 +20,20 @@ export function readDocument(root, version, hint) {
   } catch (error) {
     if (error.code !== 'ENOENT') throw error
 
-    throw new Error(`no ${DOCUMENT}.json for ${version}${hint ? ` — run \`${hint}\` first` : ''}`)
+    throw missing('json', version, hint)
+  }
+}
+
+/**
+ * Reads a vendored source that is a language rather than an object encoding —
+ * protobuf IDL, GraphQL SDL — where there is nothing to parse on the way in.
+ */
+export function readSource(root, version, format, hint) {
+  try {
+    return readFileSync(documentPath(root, version, format), 'utf8')
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error
+
+    throw missing(format, version, hint)
   }
 }
