@@ -1,4 +1,8 @@
 {
+  "explorer.fileNesting.patterns": {
+    "*.json": "${capture}.*"
+  },
+
   /**
    * JSON
    * ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ */
