@@ -105,17 +105,47 @@ function assertBuildable(sdl) {
 }
 
 /**
- * One document from many, in the order the files were given.
+ * Files holding only extensions, moved after the rest.
+ *
+ * A type has to be defined before it is extended. Sorted by name alone,
+ * `query.extension.graphql` comes before `query.graphql` and the schema
+ * arrives in an order nobody wrote. graphql-js merges a whole document at
+ * once and does not mind, but a pipeline walking definitions in order would
+ * see something different, and the output should say what the author said.
+ *
+ * A file mixing both stays with the definitions: separating them would mean
+ * reprinting its text, which is what loses the comments.
+ *
+ * @param {SdlSource[]} sources
+ */
+function byKind(sources) {
+  const extensions = []
+  const definitions = []
+
+  for (const source of sources) {
+    const declarations = declared(source)
+    const extendsOnly = declarations.length > 0 && declarations.every(one => isExtension(one.kind))
+
+    if (extendsOnly) extensions.push(source)
+    else definitions.push(source)
+  }
+
+  return [ ...definitions, ...extensions ]
+}
+
+/**
+ * One document from many: definitions in file order, then extensions.
  *
  * @param   {SdlSource[]} sources
  * @returns {{sdl: string, definitions: number}}
  */
 export function merge(sources) {
-  const definitions = sources.flatMap(declared)
+  const ordered = byKind(sources)
+  const definitions = ordered.flatMap(declared)
 
   assertUnique(definitions)
 
-  const bodies = sources.map(source => source.sdl.trim()).filter(Boolean)
+  const bodies = ordered.map(source => source.sdl.trim()).filter(Boolean)
   const sdl = `${bodies.join('\n\n')}\n`
 
   assertBuildable(sdl)

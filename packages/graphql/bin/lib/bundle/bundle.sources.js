@@ -3,7 +3,9 @@
  *
  * GraphQL has no `$ref`, so no file says which others belong with it — the
  * directory is the only statement of that, and reading it is the whole of
- * reference resolution here. Files are taken in sorted order, so the same
+ * reference resolution here. Files are taken in code-point order — not
+ * `localeCompare`, whose collation reorders punctuation and put
+ * `query.extension_2` ahead of `query.extension` — so the same
  * tree bundles to the same document every time.
  */
 
@@ -21,7 +23,7 @@ import { SDL } from '#lib/sdl/sdl.files'
 /** Every SDL file under a directory, depth first, siblings in name order. */
 function walk(directory) {
   const entries = readdirSync(directory, { withFileTypes: true })
-    .sort((a, b) => a.name.localeCompare(b.name))
+    .sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0))
 
   return entries.flatMap(entry => {
     const path = resolve(directory, entry.name)

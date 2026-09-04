@@ -54,6 +54,16 @@ The `__` prefix stays in a file name — it is part of the type's name — and o
 
 ## Bundling
 
+Order is preserved everywhere it carries meaning.
+
+Within a definition it is exact: enum values, union members and the directives on a field come back in the order they were written, because a definition is cut from its source text rather than reprinted.
+
+Across definitions, a type is always emitted before the extensions that extend it, and repeated `extend type` blocks keep their original sequence. Sorted by filename alone they would not — `query.extension.graphql` precedes `query.graphql` — and while graphql-js merges a whole document at once and does not care, a pipeline that walks definitions in order would see a different schema.
+
+What is *not* preserved is the relative order of unrelated top-level definitions: a bundle emits them in filename order. That is the one case the specification says carries no meaning, and a directory records no order to restore.
+
+
+
 ```sh
 graphql unbundle ./api.graphql --out ./tree/   # one schema -> a file per definition
 graphql bundle ./tree --out ./api.graphql      # a tree -> one schema
