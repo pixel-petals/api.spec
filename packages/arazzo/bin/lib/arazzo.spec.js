@@ -52,6 +52,8 @@ export const arazzo = {
   releaseOf,
 
   dated: true,
+  typeName: 'Arazzo',
+
   versionHint: '1.1',
   dateHint: '2026-04-15',
 }

@@ -37,5 +37,7 @@ export const mcp = {
   url,
   releases,
 
+  typeName: 'Mcp',
+
   versionHint: '2026-07-28',
 }

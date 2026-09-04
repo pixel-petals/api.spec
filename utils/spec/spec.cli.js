@@ -10,6 +10,7 @@ import { Command } from 'commander'
 import { fetchCommand, listCommand, splitCommand } from '#spec/spec.commands'
 import { bundleCommand, unbundleCommand } from '#spec/spec.bundle'
 import { releasesCommand } from '#spec/spec.releases'
+import { typesCommand } from '#spec/spec.types'
 
 /** @import { SpecDescriptor } from '#spec/spec.descriptor' */
 
@@ -62,6 +63,11 @@ export function createCli(spec) {
   program.command('releases')
     .description('the versions upstream publishes, and which are vendored')
     .action(releasesCommand(spec))
+
+  program.command('types')
+    .description('generate TypeScript declarations beside a vendored schema')
+    .argument('<version>', `version, e.g. ${spec.versionHint ?? '3.2'}`)
+    .action(typesCommand(spec))
 
   program.command('bundle')
     .description('inline every external reference into one file')

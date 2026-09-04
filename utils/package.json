@@ -10,12 +10,14 @@
     "#schema/*": "./schema/*.js",
     "#serialize/*": "./serialize/*.js",
     "#source/*": "./source/*.js",
-    "#spec/*": "./spec/*.js"
+    "#spec/*": "./spec/*.js",
+    "#types/*": "./types/*.js"
   },
   "dependencies": {
     "@apidevtools/json-schema-ref-parser": "^16.0.1",
     "@redocly/openapi-core": "^2.51.1",
     "commander": "^15.0.0",
+    "json-schema-to-typescript": "^15.0.4",
     "yaml": "^2.8.1"
   }
 }

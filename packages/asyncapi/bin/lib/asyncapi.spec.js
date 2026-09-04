@@ -51,5 +51,7 @@ export const asyncapi = {
   url,
   releases,
 
+  typeName: 'AsyncApi',
+
   versionHint: '3.1.0',
 }

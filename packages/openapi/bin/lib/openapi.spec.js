@@ -51,6 +51,8 @@ export const openapi = {
   releaseOf,
 
   dated: true,
+  typeName: 'OpenApi',
+
   versionHint: '3.2',
   dateHint: '2025-11-23',
 }
