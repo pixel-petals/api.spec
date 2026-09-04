@@ -7,7 +7,7 @@
  * spelled as an inline `oneOf: [Reference, X]`.
  */
 
-import { contained, groups, isShaped, pointerTarget } from '#schema/schema.walk'
+import { groups, isShaped, isUnionOfObjects, pointerTarget } from '#schema/schema.walk'
 
 export const DRAFTS = [
   'http://json-schema.org/draft-07/schema#',
@@ -75,6 +75,25 @@ function referencable(document, reference) {
   return found
 }
 
+/**
+ * Objects the document defines purely as a choice between other objects.
+ *
+ * MCP's `ClientRequest` is an `anyOf` over ten request types, and OpenAPI
+ * 3.0's `SecurityScheme` a `oneOf` over four concrete forms. Either way the
+ * union is the document naming a group, which is exactly what a directory is.
+ */
+function unionsIn(defs, exclude) {
+  return Object.entries(defs)
+    .filter(([ , def ]) => isUnionOfObjects(def))
+    .map(([ key, def ]) => ({
+      key,
+      holds: (def.oneOf ?? def.anyOf)
+        .map(branch => pointerTarget(branch.$ref))
+        .filter(name => name !== exclude),
+    }))
+    .filter(union => union.holds.length > 1)
+}
+
 export function normalize(document, { componentsKey }) {
   const defs = document.definitions
   const reference = referenceDef(defs)
@@ -100,6 +119,7 @@ export function normalize(document, { componentsKey }) {
         targets: unioned.has(name) ? [ reference, name ] : [ name ],
       })),
 
+    unions: unionsIn(defs, reference),
     roots: groups(document.properties, read),
     components: groups(components ? defs[ components ]?.properties : null, read),
   }

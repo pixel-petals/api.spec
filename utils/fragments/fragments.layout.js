@@ -32,6 +32,11 @@ function homes(normalized) {
     for (const name of holds) place(name, [ normalized.componentsKey, key ])
   }
 
+  // a document that defines a union names a group; MCP has nothing else
+  for (const { key, holds } of normalized.unions ?? []) {
+    for (const name of holds) place(name, [ camel(key), camel(name) ])
+  }
+
   return placed
 }
 

@@ -7,7 +7,7 @@
  * as a named `-or-reference` object.
  */
 
-import { contained, groups, isShaped, pointerTarget } from '#schema/schema.walk'
+import { groups, isShaped, isUnionOfObjects, pointerTarget } from '#schema/schema.walk'
 
 const VARIANT_SUFFIX = '-or-reference'
 
@@ -70,6 +70,24 @@ function targetsFor(defs, name) {
   return defs[ variant ] ? [ variant ] : [ name ]
 }
 
+/**
+ * Objects the document defines purely as a choice between other objects.
+ *
+ * MCP's `ClientRequest` is an `anyOf` over ten request types, and OpenAPI
+ * 3.0's `SecurityScheme` a `oneOf` over four concrete forms. Either way the
+ * union is the document naming a group, which is exactly what a directory is.
+ */
+function unionsIn(defs) {
+  return Object.entries(defs)
+    .filter(([ , def ]) => isUnionOfObjects(def))
+    .map(([ key, def ]) => ({
+      key,
+      holds: (def.oneOf ?? def.anyOf)
+        .map(branch => baseName(pointerTarget(branch.$ref))),
+    }))
+    .filter(union => union.holds.length > 1)
+}
+
 export function normalize(document, { componentsKey }) {
   const defs = document.$defs
   const read = reader(defs)
@@ -91,6 +109,7 @@ export function normalize(document, { componentsKey }) {
       .filter(name => !name.endsWith(VARIANT_SUFFIX) && isShaped(defs[ name ]))
       .map(name => ({ name, targets: targetsFor(defs, name) })),
 
+    unions: unionsIn(defs),
     roots: groups(document.properties, read),
     components: groups(components ? defs[ components ]?.properties : null, read),
   }
