@@ -2,6 +2,7 @@
 
 import { readFileSync } from 'node:fs'
 
+import { SOURCE_FORMAT, parser } from '#serialize/serialize.format'
 import { DOCUMENT, documentPath } from '#source/source.paths'
 
 /** What to tell the user when nothing is vendored. */
@@ -9,18 +10,22 @@ const missing = (format, version, hint) =>
   new Error(`no ${DOCUMENT}.${format} for ${version}${hint ? ` — run \`${hint}\` first` : ''}`)
 
 /**
- * Reads the JSON copy — the vendored formats are the same document, and JSON
- * is the one every version is guaranteed to have.
+ * Reads a vendored copy back as a plain object, through the same format
+ * normalization the fetch used.
+ *
+ * Every vendored format holds the same document, so which one is read is a
+ * free choice; JSON is the default because it is the copy every version is
+ * guaranteed to have.
  *
  * @param {string} hint  what to tell the user to run when nothing is vendored
  */
-export function readDocument(root, version, hint) {
+export function readDocument(root, version, hint, format = SOURCE_FORMAT) {
   try {
-    return JSON.parse(readFileSync(documentPath(root, version), 'utf8'))
+    return parser(format)(readFileSync(documentPath(root, version, format), 'utf8'))
   } catch (error) {
     if (error.code !== 'ENOENT') throw error
 
-    throw missing('json', version, hint)
+    throw missing(format, version, hint)
   }
 }
 

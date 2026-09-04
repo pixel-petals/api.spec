@@ -42,6 +42,17 @@ A root key holding a collection becomes a directory, because the files under it 
 
 ## Formats
 
+A format is two-way. `serialize.format.js` holds one entry per object encoding, each with a `parse` and a `render`, and every crossing of the boundary goes through it:
+
+```text
+fetch  ->  parse   ->  a plain object  ->  render  ->  disk
+read   ->  parse   ->                                       
+```
+
+That is the normalize step for formats, and it is why `sourceFormat` (what upstream publishes) and `formats` (what we republish it as) are independent settings on a descriptor. A specification that served YAML would need no new code path — only `sourceFormat: 'yaml'`.
+
+Languages are deliberately not formats in this sense. GraphQL SDL and protobuf IDL carry no object to normalize into, so they live in `serialize.text.js`, which writes verbatim and never parses. Turning SDL into an object is a package's own concern, not an encoding.
+
 Every document is written in each format a specification accepts — JSON and YAML for the JSON Schema ones. Each format points at its own copy of the source, so `defs/paths.yaml` references `../schema.yaml` while `defs/paths.json` references `../schema.json`, and a toolchain never crosses formats to resolve a pointer.
 
 A fragment declares the draft of the document it points into, not a fixed one: a 2020-12 wrapper around a draft-04 target is a cross-draft reference, and validators disagree about what that means.

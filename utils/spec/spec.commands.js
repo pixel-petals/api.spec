@@ -24,6 +24,7 @@ export function fetchCommand(spec) {
       version,
       url: spec.url(version, date),
       formats: spec.formats ?? DEFAULT_FORMATS,
+      sourceFormat: spec.sourceFormat,
     })
 
     reportVendored(url, files, spec.root)
@@ -33,7 +34,7 @@ export function fetchCommand(spec) {
 /** @param {SpecDescriptor} spec */
 export function splitCommand(spec) {
   return (version, options) => {
-    const document = readDocument(spec.root, version, `${spec.name} fetch ${version}`)
+    const document = readDocument(spec.root, version, `${spec.name} fetch ${version}`, spec.sourceFormat)
     const normalized = normalizeDocument(document, { componentsKey: spec.componentsKey })
     const written = writeFragments(normalized, versionDir(spec.root, version), spec.formats ?? DEFAULT_FORMATS)
 

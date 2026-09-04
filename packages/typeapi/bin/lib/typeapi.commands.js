@@ -10,7 +10,7 @@ import { resolve } from 'node:path'
 
 import { DEFAULT_FORMATS } from 'utils/serialize/serialize.format'
 import { writeDocument } from 'utils/serialize/serialize.write'
-import { fetchJson, vendorDocument } from 'utils/source/source.fetch'
+import { fetchDocument, vendorDocument } from 'utils/source/source.fetch'
 import { readDocument } from 'utils/source/source.read'
 import { versionDir, versions } from 'utils/source/source.paths'
 import { reportVendored } from 'utils/spec/spec.report'
@@ -31,7 +31,7 @@ export async function fetchCommand(version) {
 
   // the specification is a TypeSchema document that inherits from TypeSchema
   // itself; without its base beside it, `typeschema:` targets reach nothing
-  const base = await fetchJson(typeapi.baseUrl)
+  const base = await fetchDocument(typeapi.baseUrl)
   const baseFiles = writeDocument(
     resolve(versionDir(typeapi.root, version), IMPORTS, 'typeschema'),
     base,

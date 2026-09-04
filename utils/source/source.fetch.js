@@ -1,5 +1,6 @@
 /** Fetching a specification document and vendoring it. */
 
+import { SOURCE_FORMAT, parser } from '#serialize/serialize.format'
 import { documentStem } from '#source/source.paths'
 import { writeDocument } from '#serialize/serialize.write'
 
@@ -11,8 +12,15 @@ async function request(url) {
   return response
 }
 
-export async function fetchJson(url) {
-  return (await request(url)).json()
+/**
+ * Downloads a document and normalizes it into a plain object.
+ *
+ * The encoding is named rather than assumed — this is the normalize step for
+ * formats, the mirror of what `serializer` does on the way out — so a
+ * specification that publishes YAML needs no new code path.
+ */
+export async function fetchDocument(url, format = SOURCE_FORMAT) {
+  return parser(format)(await (await request(url)).text())
 }
 
 /**
@@ -26,13 +34,14 @@ export async function fetchText(url) {
 /**
  * Downloads a document and writes it into `<root>/<version>/schema.<format>`.
  *
- * The source is JSON in every case we vendor; the formats are what we publish
- * it as, so a YAML toolchain never has to convert on the way in.
+ * `sourceFormat` is the encoding upstream publishes; `formats` are the ones we
+ * republish it as. They are independent — the document is normalized once on
+ * arrival, so a YAML toolchain never has to convert on the way in.
  *
  * @returns {Promise<{document: unknown, url: string, files: string[]}>}
  */
-export async function vendorDocument({ root, version, url, formats }) {
-  const document = await fetchJson(url)
+export async function vendorDocument({ root, version, url, formats, sourceFormat = SOURCE_FORMAT }) {
+  const document = await fetchDocument(url, sourceFormat)
   const files = writeDocument(documentStem(root, version), document, formats)
 
   return { document, url, files }

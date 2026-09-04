@@ -16,6 +16,7 @@ import { fileURLToPath } from 'node:url'
  * @property {Function} url            (version, date) => the release URL
  * @property {boolean}  [dated]        true when a release is addressed by date
  * @property {string}   [componentsKey] root key naming the reusable-object map
+ * @property {string}   [sourceFormat] the encoding upstream publishes, defaulting to JSON
  * @property {string[]} [formats]      what to write, defaulting to JSON and YAML
  * @property {string}   [versionHint]  example version, shown in `--help`
  * @property {string}   [dateHint]     example date, shown in `--help`
