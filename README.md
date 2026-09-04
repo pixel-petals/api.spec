@@ -14,6 +14,7 @@ Each package downloads a published specification document, keeps it verbatim, an
 | [mcp](packages/mcp) | MCP 2025-06-18, 2026-07-28 | JSON, YAML | pointers |
 | [typeapi](packages/typeapi) | TypeAPI 0.1.1 | JSON, YAML | whole documents |
 | [protobuf](packages/protobuf) | Protobuf 36.1 | proto, JSON | JSON descriptors |
+| [graphql](packages/graphql) | GraphQL 2015-07 … 2025-09, draft | graphql, JSON | SDL + introspection |
 
 Every package has the same four commands:
 
@@ -31,7 +32,7 @@ Four of these publish a JSON Schema describing themselves, so they share one pip
 - **TypeAPI** documents are TypeSchema, not JSON Schema — no `$schema`, no `$ref`, references are typed nodes. TypeSchema imports whole documents and cannot address a definition inside another file, so a pointer fragment would have nothing to point with. Each fragment is instead a valid standalone document carrying its own transitive closure.
 - **Protobuf** has a genuine object library in `descriptor.proto`, but it is protobuf IDL. Fragments are JSON descriptors only: a message is not a compilation unit, so an extracted `.proto` would not compile.
 
-**GraphQL has no machine-readable schema of itself at all.** Its specification is prose Markdown, its grammar a bespoke BNF notation, and its introspection schema exists only as SDL inside code fences in `Section 4 -- Introspection.md`. See [packages/graphql](packages/graphql) for what is vendored instead.
+- **GraphQL** publishes no schema of itself. Its specification is prose Markdown and its grammar a bespoke BNF notation; the introspection schema exists only as SDL inside code fences in `Section 4 -- Introspection.md`. SDL is GraphQL's first-class schema language, so that is what the package builds from — extracted per release, with the introspection result beside it.
 
 ## Shared machinery
 
