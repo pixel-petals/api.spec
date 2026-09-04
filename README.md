@@ -27,11 +27,10 @@ Every package has the same four commands:
 
 ## Not every specification fits
 
-Four of these publish a JSON Schema describing themselves, so they share one pipeline and a package is barely thirty lines. The other two do not, and their differences are the interesting part:
+Four of these publish a JSON Schema describing themselves, so they share one pipeline and a package is barely thirty lines. The other three do not, and their differences are the interesting part:
 
 - **TypeAPI** documents are TypeSchema, not JSON Schema — no `$schema`, no `$ref`, references are typed nodes. TypeSchema imports whole documents and cannot address a definition inside another file, so a pointer fragment would have nothing to point with. Each fragment is instead a valid standalone document carrying its own transitive closure.
 - **Protobuf** has a genuine object library in `descriptor.proto`, but it is protobuf IDL. Fragments are JSON descriptors only: a message is not a compilation unit, so an extracted `.proto` would not compile.
-
 - **GraphQL** publishes no schema of itself. Its specification is prose Markdown and its grammar a bespoke BNF notation; the introspection schema exists only as SDL inside code fences in `Section 4 -- Introspection.md`. SDL is GraphQL's first-class schema language, so that is what the package builds from — extracted per release, with the introspection result beside it.
 
 ## Shared machinery
