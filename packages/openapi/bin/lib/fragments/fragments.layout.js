@@ -7,6 +7,13 @@
  * See fragments.md.
  */
 
+/**
+ * Everything generated lives under this directory, leaving `schema.json` alone
+ * at the version root — the one hand-fetched file, not mixed in with derived
+ * ones.
+ */
+const DEFS = 'defs'
+
 const FRAGMENTS = 'fragments'
 
 /**
@@ -64,9 +71,9 @@ export function layout(normalized) {
     .map(({ name, targets }) => {
       // one home is a location; several is a guess, and none is a fragment
       const homed = placed.get(name)?.length === 1
-      const path = homed ? placed.get(name)[ 0 ] : [ FRAGMENTS, camel(name) ]
+      const home = homed ? placed.get(name)[ 0 ] : [ FRAGMENTS, camel(name) ]
 
-      return { path, def: name, defs: targets, homed }
+      return { path: [ DEFS, ...home ], def: name, defs: targets, homed }
     })
     .sort((a, b) => a.path.join('/').localeCompare(b.path.join('/')))
 }
@@ -85,8 +92,8 @@ export function layout(normalized) {
 export function targets(normalized, fragment, schemaFile) {
   if (normalized.dialect && normalized.isDelegated(fragment.def)) return [ normalized.dialect ]
 
-  const depth = fragment.path.length - 1
-  const up = depth ? '../'.repeat(depth) : './'
+  // every fragment sits at least one level down, under defs/
+  const up = '../'.repeat(fragment.path.length - 1)
 
   return fragment.defs.map(name => `${up}${schemaFile}${normalized.pointer(name)}`)
 }

@@ -26,20 +26,23 @@ One dated release is vendored per version — the newest at the time of writing.
 
 ```text
 schema/3.2/
-  schema.json                      the published schema, verbatim
-  info.json  paths.json  components.json  externalDocs.json
-  servers/server.json
-  security/securityRequirement.json
-  tags/tag.json
-  components/
-    schemas.json  responses.json  parameters.json  examples.json
-    requestBodies.json  headers.json  securitySchemes.json
-    links.json  callbacks.json  mediaTypes.json
-  fragments/
-    contact.json  license.json  serverVariable.json  operation.json
-    pathItem.json  parameters.json  content.json  encoding.json
-    responses.json  oauthFlows.json  reference.json  mapOfStrings.json
+  schema.json                        the published schema, verbatim
+  defs/
+    info.json  paths.json  components.json  externalDocs.json
+    servers/server.json
+    security/securityRequirement.json
+    tags/tag.json
+    components/
+      schemas.json  responses.json  parameters.json  examples.json
+      requestBodies.json  headers.json  securitySchemes.json
+      links.json  callbacks.json  mediaTypes.json
+    fragments/
+      contact.json  license.json  serverVariable.json  operation.json
+      pathItem.json  parameters.json  content.json  encoding.json
+      responses.json  oauthFlows.json  reference.json  mapOfStrings.json
 ```
+
+`schema.json` is the only fetched file, and it sits alone at the version root. Everything under `defs/` is generated.
 
 Directories mirror the document: a fragment sits where a bundle author could point at that location and say the file goes there. An object with no such location — or with several, like a Path Item, which is equally at home under `webhooks` and `components.pathItems` — sits flat in `fragments/` instead. One file per object, always. The full rule is in [bin/lib/fragments/fragments.md](bin/lib/fragments/fragments.md).
 
@@ -58,7 +61,7 @@ Each wrapper points at the vendored copy rather than the published URL, so edito
 ```json
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../schema.json#/$defs/response-or-reference"
+  "$ref": "../../schema.json#/$defs/response-or-reference"
 }
 ```
 
@@ -69,7 +72,7 @@ A bundle file is often itself a bare `{"$ref": "./other.json"}`, so fragments us
 Fragments resolve through the package exports, so an editor association can name one directly:
 
 ```json
-{ "fileMatch": ["**/bundle/responses/*.json"], "url": "./node_modules/@pixelpetals/openapi/3.2/components/responses.json" }
+{ "fileMatch": ["**/bundle/responses/*.json"], "url": "./node_modules/@pixelpetals/openapi/3.2/defs/components/responses.json" }
 ```
 
 Generated files are overwritten without asking. Nothing in them is hand-written, and refusing to overwrite would only make version bumps annoying.

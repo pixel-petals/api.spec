@@ -1,6 +1,6 @@
 # Fragment layout
 
-Where each fragment file goes. This stage sees only a normalized schema — it has no idea which OpenAPI version or JSON Schema draft produced it. See [normalize.md](../normalize/normalize.md) for what it is handed.
+Where each fragment file goes. Everything described here sits under `defs/` in a version directory, so the one fetched file — `schema.json` — stays alone at the root and is never mixed in with derived ones. This stage sees only a normalized schema — it has no idea which OpenAPI version or JSON Schema draft produced it. See [normalize.md](../normalize/normalize.md) for what it is handed.
 
 ## The rule
 
@@ -13,15 +13,15 @@ Both are addressable positions in a real document. Everything deeper is only rea
 
 ## Directory or file
 
-A root key that holds a collection becomes a directory, because the files under it are named by the author: `servers/server.json` validates each entry of the `servers` array. A root key holding a single object becomes a file, because there is only ever one: `info.json`, `paths.json`, `externalDocs.json`.
+A root key that holds a collection becomes a directory, because the files under it are named by the author: `defs/servers/server.json` validates each entry of the `servers` array. A root key holding a single object becomes a file, because there is only ever one: `defs/info.json`, `defs/paths.json`, `defs/externalDocs.json`.
 
 ## Defs with more than one home
 
 The objects form a graph, not a tree. A Path Item is reachable from `webhooks`, from `paths`, from `components.pathItems` and from a callback, so no single location is *the* one.
 
-One home is a location. Several is two guesses wearing a directory name, and picking a winner would make the tree assert something the document does not. So an object that lands in more than one home falls through to `fragments/` exactly like an object with none — `path-item` is written once, as `fragments/pathItem.json`.
+One home is a location. Several is two guesses wearing a directory name, and picking a winner would make the tree assert something the document does not. So an object that lands in more than one home falls through to `fragments/` exactly like an object with none — `path-item` is written once, as `defs/fragments/pathItem.json`.
 
-That is why 3.2 has no `webhooks/` directory and no `components/pathItems.json`, even though both are real positions in a document. Every fragment file corresponds to exactly one object, and every object to exactly one file.
+That is why 3.2 has no `defs/webhooks/` directory and no `defs/components/pathItems.json`, even though both are real positions in a document. Every fragment file corresponds to exactly one object, and every object to exactly one file.
 
 ## Naming
 

@@ -2,7 +2,7 @@
 
 Generated. Do not edit by hand — run `openapi split <version>`.
 
-One directory per OpenAPI version. `schema.json` in each is the published schema, verbatim; everything beside it is a fragment schema — a pointer back into `schema.json` that lets an editor validate a single `$ref`-linked bundle file.
+One directory per OpenAPI version. `schema.json` in each is the published schema, verbatim, and is the only file not generated. Everything under `defs/` is a fragment schema — a pointer back into `schema.json` that lets an editor validate a single `$ref`-linked bundle file.
 
 | version | release | fragments |
 | --- | --- | --- |
