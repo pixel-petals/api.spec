@@ -1,0 +1,9 @@
+{
+  "name": "@pixelpetals/openapi",
+  "bin": {
+    "schema-fragments": "bin/schema-fragments.mjs"
+  },
+  "exports": {
+    "./*": "./schema/*.json"
+  }
+}
