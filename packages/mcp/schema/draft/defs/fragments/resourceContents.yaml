@@ -1,2 +1,15 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ResourceContents
+description: The contents of a specific resource or sub-resource.
+properties:
+  _meta:
+    $ref: ./metaObject.yaml
+  mimeType:
+    description: The MIME type of this resource, if known.
+    type: string
+  uri:
+    description: The URI of this resource.
+    format: uri
+    type: string
+required:
+  - uri
+type: object

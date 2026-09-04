@@ -1,2 +1,8 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/channels
+type: object
+propertyNames:
+  type: string
+  format: uri-template
+  minLength: 1
+additionalProperties:
+  $ref: ./channelItem.yaml

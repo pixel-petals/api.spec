@@ -1,4 +1,30 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/PrimitiveSchemaDefinition"
+  "anyOf": [
+    {
+      "$ref": "../primitiveSchemaDefinition/stringSchema.json"
+    },
+    {
+      "$ref": "../primitiveSchemaDefinition/numberSchema.json"
+    },
+    {
+      "$ref": "../primitiveSchemaDefinition/booleanSchema.json"
+    },
+    {
+      "$ref": "./untitledSingleSelectEnumSchema.json"
+    },
+    {
+      "$ref": "./titledSingleSelectEnumSchema.json"
+    },
+    {
+      "$ref": "./untitledMultiSelectEnumSchema.json"
+    },
+    {
+      "$ref": "./titledMultiSelectEnumSchema.json"
+    },
+    {
+      "$ref": "./legacyTitledEnumSchema.json"
+    }
+  ],
+  "description": "Restricted schema definitions that only allow primitive types\nwithout nested objects or arrays."
 }

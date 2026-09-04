@@ -1,4 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/JSONRPCResponse"
+  "anyOf": [
+    {
+      "$ref": "./jsonrpcResultResponse.json"
+    },
+    {
+      "$ref": "./jsonrpcErrorResponse.json"
+    }
+  ],
+  "description": "A response to a request, containing either the result or error."
 }

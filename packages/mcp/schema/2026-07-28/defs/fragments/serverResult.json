@@ -1,4 +1,41 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ServerResult"
+  "anyOf": [
+    {
+      "$ref": "../serverResult/result.json"
+    },
+    {
+      "$ref": "../serverResult/inputRequiredResult.json"
+    },
+    {
+      "$ref": "../serverResult/discoverResult.json"
+    },
+    {
+      "$ref": "../serverResult/listResourcesResult.json"
+    },
+    {
+      "$ref": "../serverResult/listResourceTemplatesResult.json"
+    },
+    {
+      "$ref": "../serverResult/readResourceResult.json"
+    },
+    {
+      "$ref": "../serverResult/subscriptionsListenResult.json"
+    },
+    {
+      "$ref": "../serverResult/listPromptsResult.json"
+    },
+    {
+      "$ref": "../serverResult/getPromptResult.json"
+    },
+    {
+      "$ref": "../serverResult/listToolsResult.json"
+    },
+    {
+      "$ref": "../serverResult/callToolResult.json"
+    },
+    {
+      "$ref": "../serverResult/completeResult.json"
+    }
+  ]
 }

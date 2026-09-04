@@ -1,4 +1,27 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ListPromptsRequest"
+  "description": "Sent from the client to request a list of prompts and prompt templates the server has.",
+  "properties": {
+    "id": {
+      "$ref": "../fragments/requestId.json"
+    },
+    "jsonrpc": {
+      "const": "2.0",
+      "type": "string"
+    },
+    "method": {
+      "const": "prompts/list",
+      "type": "string"
+    },
+    "params": {
+      "$ref": "../fragments/paginatedRequestParams.json"
+    }
+  },
+  "required": [
+    "id",
+    "jsonrpc",
+    "method",
+    "params"
+  ],
+  "type": "object"
 }

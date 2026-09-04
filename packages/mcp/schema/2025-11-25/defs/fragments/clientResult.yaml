@@ -1,2 +1,12 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ClientResult
+anyOf:
+  - $ref: ./result.yaml
+  - $ref: ../../schema.yaml#/$defs/GetTaskResult
+    description: The response to a tasks/get request.
+  - $ref: ./getTaskPayloadResult.yaml
+  - $ref: ../../schema.yaml#/$defs/CancelTaskResult
+    description: The response to a tasks/cancel request.
+  - $ref: ./listTasksResult.yaml
+  - $ref: ../clientResult/createMessageResult.yaml
+  - $ref: ../clientResult/listRootsResult.yaml
+  - $ref: ../clientResult/elicitResult.yaml

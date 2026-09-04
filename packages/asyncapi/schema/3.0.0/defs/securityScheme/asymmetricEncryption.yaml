@@ -1,2 +1,17 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/asymmetricEncryption
+type: object
+required:
+  - type
+properties:
+  type:
+    type: string
+    description: The type of the security scheme.
+    enum:
+      - asymmetricEncryption
+  description:
+    type: string
+    description: A short description for security scheme.
+patternProperties:
+  ^x-[\w\d\.\x2d_]+$:
+    $ref: ../fragments/specificationExtension.yaml
+additionalProperties: false

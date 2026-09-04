@@ -1,2 +1,40 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/CreateMessageResult
+description: |-
+  The result returned by the client for a {@link CreateMessageRequestsampling/createMessage} request.
+  The client should inform the user before returning the sampled message, to allow them
+  to inspect the response (human in the loop) and decide whether to allow the server to see it.
+properties:
+  _meta:
+    $ref: ../fragments/metaObject.yaml
+  content:
+    anyOf:
+      - $ref: ../fragments/textContent.yaml
+      - $ref: ../fragments/imageContent.yaml
+      - $ref: ../fragments/audioContent.yaml
+      - $ref: ../samplingMessageContentBlock/toolUseContent.yaml
+      - $ref: ../samplingMessageContentBlock/toolResultContent.yaml
+      - items:
+          $ref: ../fragments/samplingMessageContentBlock.yaml
+        type: array
+  model:
+    description: The name of the model that generated the message.
+    type: string
+  role:
+    $ref: ../fragments/role.yaml
+  stopReason:
+    description: |-
+      The reason why sampling stopped, if known.
+
+      Standard values:
+      - `"endTurn"`: Natural end of the assistant's turn
+      - `"stopSequence"`: A stop sequence was encountered
+      - `"maxTokens"`: Maximum token limit was reached
+      - `"toolUse"`: The model wants to use one or more tools
+
+      This field is an open string to allow for provider-specific stop reasons.
+    type: string
+required:
+  - content
+  - model
+  - role
+type: object

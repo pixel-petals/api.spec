@@ -1,2 +1,9 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/operation-step-parameters
+type: array
+uniqueItems: true
+items:
+  oneOf:
+    - $ref: ./reusableObject.yaml
+    - $ref: ../components/parameters.yaml
+      required:
+        - in

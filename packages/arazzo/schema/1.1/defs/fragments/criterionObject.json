@@ -1,4 +1,44 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/criterion-object"
+  "$comment": "https://spec.openapis.org/arazzo/v1.1#criterion-object",
+  "description": "An object used to specify the context, conditions, and condition types\nthat can be used to prove or satisfy assertions specified in Step Object successCriteria,\nSuccess Action Object criteria, and Failure Action Object criteria",
+  "type": "object",
+  "properties": {
+    "context": {
+      "description": "A runtime expression used to set the context for the condition to be applied on",
+      "type": "string"
+    },
+    "condition": {
+      "description": "The condition to apply",
+      "type": "string"
+    },
+    "type": {
+      "description": "The type of condition to be applied or a reference to an expression type object",
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": [
+            "simple",
+            "regex",
+            "jsonpath",
+            "xpath"
+          ],
+          "default": "simple"
+        },
+        {
+          "$ref": "./expressionTypeObject.json"
+        }
+      ]
+    }
+  },
+  "required": [
+    "condition"
+  ],
+  "dependentRequired": {
+    "type": [
+      "context"
+    ]
+  },
+  "$ref": "../../schema.json#/$defs/specification-extensions",
+  "unevaluatedProperties": false
 }

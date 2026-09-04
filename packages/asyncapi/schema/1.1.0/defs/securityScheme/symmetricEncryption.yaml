@@ -1,2 +1,15 @@
 $schema: http://json-schema.org/draft-04/schema
-$ref: ../../schema.yaml#/definitions/symmetricEncryption
+id: http://asyncapi.com/definitions/1.1.0/symmetricEncryption.json
+type: object
+required:
+  - type
+properties:
+  type:
+    type: string
+    enum:
+      - symmetricEncryption
+  description:
+    type: string
+patternProperties:
+  ^x-: {}
+additionalProperties: false

@@ -1,2 +1,8 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../schema.yaml#/$defs/paths
+$comment: https://spec.openapis.org/oas/v3.1#paths-object
+type: object
+patternProperties:
+  ^/:
+    $ref: ./fragments/pathItem.yaml
+$ref: ../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false

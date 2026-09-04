@@ -1,2 +1,46 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/operation
+type: object
+additionalProperties: false
+patternProperties:
+  ^x-[\w\d\.\x2d_]+$:
+    $ref: ./specificationExtension.yaml
+properties:
+  traits:
+    type: array
+    items:
+      oneOf:
+        - $ref: ./schema.yaml
+        - $ref: ./operationTrait.yaml
+  summary:
+    type: string
+  description:
+    type: string
+  tags:
+    type: array
+    items:
+      $ref: ../tags/tag.yaml
+    uniqueItems: true
+  externalDocs:
+    $ref: ../externalDocs.yaml
+  operationId:
+    type: string
+  protocolInfo:
+    type: object
+    additionalProperties:
+      type: object
+  message:
+    oneOf:
+      - $ref: ./message.yaml
+      - type: object
+        required:
+          - oneOf
+        additionalProperties: false
+        patternProperties:
+          ^x-[\w\d\.\x2d_]+$:
+            $ref: ./specificationExtension.yaml
+        properties:
+          oneOf:
+            type: array
+            minItems: 2
+            items:
+              $ref: ./message.yaml

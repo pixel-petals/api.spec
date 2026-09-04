@@ -1,4 +1,39 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/pathItem"
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^x-": {
+      "$ref": "./vendorExtension.json"
+    }
+  },
+  "properties": {
+    "$ref": {
+      "type": "string"
+    },
+    "get": {
+      "$ref": "./operation.json"
+    },
+    "put": {
+      "$ref": "./operation.json"
+    },
+    "post": {
+      "$ref": "./operation.json"
+    },
+    "delete": {
+      "$ref": "./operation.json"
+    },
+    "options": {
+      "$ref": "./operation.json"
+    },
+    "head": {
+      "$ref": "./operation.json"
+    },
+    "patch": {
+      "$ref": "./operation.json"
+    },
+    "parameters": {
+      "$ref": "./parametersList.json"
+    }
+  }
 }

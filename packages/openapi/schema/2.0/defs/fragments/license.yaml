@@ -1,2 +1,16 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/license
+type: object
+required:
+  - name
+additionalProperties: false
+properties:
+  name:
+    type: string
+    description: The name of the license type. It's encouraged to use an OSI compatible license.
+  url:
+    type: string
+    description: The URL pointing to the license.
+    format: uri
+patternProperties:
+  ^x-:
+    $ref: ./vendorExtension.yaml

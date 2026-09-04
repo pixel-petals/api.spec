@@ -1,4 +1,45 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema",
-  "$ref": "../../schema.json#/definitions/message"
+  "id": "http://asyncapi.com/definitions/1.0.0/message.json",
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^x-": {
+      "$ref": "./vendorExtension.json"
+    }
+  },
+  "properties": {
+    "$ref": {
+      "type": "string"
+    },
+    "headers": {
+      "$ref": "./schema.json"
+    },
+    "payload": {
+      "$ref": "./schema.json"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "$ref": "../tags/tag.json"
+      },
+      "uniqueItems": true
+    },
+    "summary": {
+      "type": "string",
+      "description": "A brief summary of the message."
+    },
+    "description": {
+      "type": "string",
+      "description": "A longer description of the message. CommonMark is allowed."
+    },
+    "externalDocs": {
+      "$ref": "../externalDocs.json"
+    },
+    "deprecated": {
+      "type": "boolean",
+      "default": false
+    },
+    "example": {}
+  }
 }

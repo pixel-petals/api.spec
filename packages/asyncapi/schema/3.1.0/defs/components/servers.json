@@ -1,11 +1,110 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "oneOf": [
-    {
-      "$ref": "../../schema.json#/definitions/Reference"
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "../fragments/reference.json"
+  },
+  "else": {
+    "description": "An object representing a message broker, a server or any other kind of computer program capable of sending and/or receiving data.",
+    "type": "object",
+    "required": [
+      "host",
+      "protocol"
+    ],
+    "properties": {
+      "title": {
+        "description": "A human-friendly title for the server.",
+        "type": "string"
+      },
+      "description": {
+        "description": "A longer description of the server. CommonMark is allowed.",
+        "type": "string"
+      },
+      "bindings": {
+        "oneOf": [
+          {
+            "$ref": "../fragments/reference.json"
+          },
+          {
+            "$ref": "./serverBindings.json"
+          }
+        ]
+      },
+      "externalDocs": {
+        "oneOf": [
+          {
+            "$ref": "../fragments/reference.json"
+          },
+          {
+            "$ref": "./externalDocs.json"
+          }
+        ]
+      },
+      "host": {
+        "description": "The server host name. It MAY include the port. This field supports Server Variables. Variable substitutions will be made when a variable is named in {braces}.",
+        "type": "string"
+      },
+      "pathname": {
+        "description": "The path to a resource in the host. This field supports Server Variables. Variable substitutions will be made when a variable is named in {braces}.",
+        "type": "string"
+      },
+      "protocol": {
+        "description": "The protocol this server supports for connection.",
+        "type": "string"
+      },
+      "protocolVersion": {
+        "description": "An optional string describing the server. CommonMark syntax MAY be used for rich text representation.",
+        "type": "string"
+      },
+      "security": {
+        "$ref": "../fragments/securityRequirements.json"
+      },
+      "summary": {
+        "description": "A brief summary of the server.",
+        "type": "string"
+      },
+      "tags": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "oneOf": [
+            {
+              "$ref": "../fragments/reference.json"
+            },
+            {
+              "$ref": "./tags.json"
+            }
+          ]
+        }
+      },
+      "variables": {
+        "$ref": "../fragments/serverVariables.json"
+      }
     },
-    {
-      "$ref": "../../schema.json#/definitions/server"
-    }
-  ]
+    "patternProperties": {
+      "^x-[\\w\\d\\.\\x2d_]+$": {
+        "$ref": "../fragments/specificationExtension.json"
+      }
+    },
+    "additionalProperties": false,
+    "examples": [
+      {
+        "host": "kafka.in.mycompany.com:9092",
+        "description": "Production Kafka broker.",
+        "protocol": "kafka",
+        "protocolVersion": "3.2"
+      },
+      {
+        "host": "rabbitmq.in.mycompany.com:5672",
+        "pathname": "/production",
+        "protocol": "amqp",
+        "description": "Production RabbitMQ broker (uses the `production` vhost)."
+      }
+    ]
+  }
 }

@@ -1,2 +1,11 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/InputResponseRequestParams
+properties:
+  _meta:
+    $ref: ./requestMetaObject.yaml
+  inputResponses:
+    $ref: ./inputResponses.yaml
+  requestState:
+    type: string
+required:
+  - _meta
+type: object

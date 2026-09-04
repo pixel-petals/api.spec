@@ -1,2 +1,30 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/CallToolRequestParams
+description: Parameters for a `tools/call` request.
+properties:
+  _meta:
+    additionalProperties: {}
+    description: "See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage."
+    properties:
+      progressToken:
+        $ref: ./progressToken.yaml
+        description: If specified, the caller is requesting out-of-band progress notifications for this request (as represented by notifications/progress). The value of this parameter is an opaque token that will be attached to any subsequent notifications. The receiver is not obligated to provide these notifications.
+    type: object
+  arguments:
+    additionalProperties: {}
+    description: Arguments to use for the tool call.
+    type: object
+  name:
+    description: The name of the tool.
+    type: string
+  task:
+    $ref: ./taskMetadata.yaml
+    description: |-
+      If specified, the caller is requesting task-augmented execution for this request.
+      The request will return a CreateTaskResult immediately, and the actual result can be
+      retrieved later via tasks/result.
+
+      Task augmentation is subject to capability negotiation - receivers MUST declare support
+      for task augmentation of specific request types in their capabilities.
+required:
+  - name
+type: object

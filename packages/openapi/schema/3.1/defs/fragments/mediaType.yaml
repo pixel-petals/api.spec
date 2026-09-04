@@ -1,2 +1,14 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/media-type
+$comment: https://spec.openapis.org/oas/v3.1#media-type-object
+type: object
+properties:
+  schema:
+    $dynamicRef: "#meta"
+  encoding:
+    type: object
+    additionalProperties:
+      $ref: ./encoding.yaml
+allOf:
+  - $ref: ../../schema.yaml#/$defs/specification-extensions
+  - $ref: ../../schema.yaml#/$defs/examples
+unevaluatedProperties: false

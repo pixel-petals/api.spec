@@ -1,2 +1,25 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/InitializeResult
+description: After receiving an initialize request from the client, the server sends this response.
+properties:
+  _meta:
+    additionalProperties: {}
+    description: This result property is reserved by the protocol to allow clients and servers to attach additional metadata to their responses.
+    type: object
+  capabilities:
+    $ref: ../fragments/serverCapabilities.yaml
+  instructions:
+    description: |-
+      Instructions describing how to use the server and its features.
+
+      This can be used by clients to improve the LLM's understanding of available tools, resources, etc. It can be thought of like a "hint" to the model. For example, this information MAY be added to the system prompt.
+    type: string
+  protocolVersion:
+    description: The version of the Model Context Protocol that the server wants to use. This may not match the version that the client requested. If the client cannot support this version, it MUST disconnect.
+    type: string
+  serverInfo:
+    $ref: ../fragments/implementation.yaml
+required:
+  - capabilities
+  - protocolVersion
+  - serverInfo
+type: object

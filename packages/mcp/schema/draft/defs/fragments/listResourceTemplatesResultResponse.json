@@ -1,4 +1,22 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ListResourceTemplatesResultResponse"
+  "description": "A successful response from the server for a {@link ListResourceTemplatesRequestresources/templates/list} request.",
+  "properties": {
+    "id": {
+      "$ref": "./requestId.json"
+    },
+    "jsonrpc": {
+      "const": "2.0",
+      "type": "string"
+    },
+    "result": {
+      "$ref": "../serverResult/listResourceTemplatesResult.json"
+    }
+  },
+  "required": [
+    "id",
+    "jsonrpc",
+    "result"
+  ],
+  "type": "object"
 }

@@ -1,2 +1,39 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/PathItem
+type: object
+properties:
+  $ref:
+    type: string
+  summary:
+    type: string
+  description:
+    type: string
+  get:
+    $ref: ./operation.yaml
+  put:
+    $ref: ./operation.yaml
+  post:
+    $ref: ./operation.yaml
+  delete:
+    $ref: ./operation.yaml
+  options:
+    $ref: ./operation.yaml
+  head:
+    $ref: ./operation.yaml
+  patch:
+    $ref: ./operation.yaml
+  trace:
+    $ref: ./operation.yaml
+  servers:
+    type: array
+    items:
+      $ref: ../servers/server.yaml
+  parameters:
+    type: array
+    items:
+      oneOf:
+        - $ref: ../components/parameters.yaml
+        - $ref: ./reference.yaml
+    uniqueItems: true
+patternProperties:
+  ^x-: {}
+additionalProperties: false

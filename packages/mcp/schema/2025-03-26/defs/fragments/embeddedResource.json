@@ -1,4 +1,29 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/EmbeddedResource"
+  "description": "The contents of a resource, embedded into a prompt or tool call result.\n\nIt is up to the client how best to render embedded resources for the benefit\nof the LLM and/or the user.",
+  "properties": {
+    "annotations": {
+      "$ref": "./annotations.json",
+      "description": "Optional annotations for the client."
+    },
+    "resource": {
+      "anyOf": [
+        {
+          "$ref": "./textResourceContents.json"
+        },
+        {
+          "$ref": "./blobResourceContents.json"
+        }
+      ]
+    },
+    "type": {
+      "const": "resource",
+      "type": "string"
+    }
+  },
+  "required": [
+    "resource",
+    "type"
+  ],
+  "type": "object"
 }

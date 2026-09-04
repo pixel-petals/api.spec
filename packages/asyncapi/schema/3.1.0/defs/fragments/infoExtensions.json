@@ -1,4 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../../schema.json#/definitions/infoExtensions"
+  "description": "The object that lists all the extensions of Info",
+  "type": "object",
+  "properties": {
+    "x-linkedin": {
+      "$ref": "./extensionsLinkedin0.1.0Schema.json"
+    },
+    "x-x": {
+      "$ref": "./extensionsX0.1.0Schema.json"
+    }
+  }
 }

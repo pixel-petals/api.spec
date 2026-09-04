@@ -1,11 +1,90 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "oneOf": [
-    {
-      "$ref": "../../schema.json#/definitions/Reference"
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "../fragments/reference.json"
+  },
+  "else": {
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string"
+      },
+      "required": {
+        "type": "boolean",
+        "default": false
+      },
+      "deprecated": {
+        "type": "boolean",
+        "default": false
+      },
+      "allowEmptyValue": {
+        "type": "boolean",
+        "default": false
+      },
+      "style": {
+        "type": "string",
+        "enum": [
+          "simple"
+        ],
+        "default": "simple"
+      },
+      "explode": {
+        "type": "boolean"
+      },
+      "allowReserved": {
+        "type": "boolean",
+        "default": false
+      },
+      "schema": {
+        "oneOf": [
+          {
+            "$ref": "./schemas.json"
+          },
+          {
+            "$ref": "../fragments/reference.json"
+          }
+        ]
+      },
+      "content": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "../fragments/mediaType.json"
+        },
+        "minProperties": 1,
+        "maxProperties": 1
+      },
+      "example": {},
+      "examples": {
+        "type": "object",
+        "additionalProperties": {
+          "oneOf": [
+            {
+              "$ref": "./examples.json"
+            },
+            {
+              "$ref": "../fragments/reference.json"
+            }
+          ]
+        }
+      }
     },
-    {
-      "$ref": "../../schema.json#/definitions/Header"
-    }
-  ]
+    "patternProperties": {
+      "^x-": {}
+    },
+    "additionalProperties": false,
+    "allOf": [
+      {
+        "$ref": "../../schema.json#/definitions/ExampleXORExamples"
+      },
+      {
+        "$ref": "../../schema.json#/definitions/SchemaXORContent"
+      }
+    ]
+  }
 }

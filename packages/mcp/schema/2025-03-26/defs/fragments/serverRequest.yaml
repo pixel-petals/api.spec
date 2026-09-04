@@ -1,2 +1,5 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/ServerRequest
+anyOf:
+  - $ref: ./pingRequest.yaml
+  - $ref: ../serverRequest/createMessageRequest.yaml
+  - $ref: ../serverRequest/listRootsRequest.yaml

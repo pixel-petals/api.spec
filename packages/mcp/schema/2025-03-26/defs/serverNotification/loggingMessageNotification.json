@@ -1,4 +1,35 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/LoggingMessageNotification"
+  "description": "Notification of a log message passed from server to client. If no logging/setLevel request has been sent from the client, the server MAY decide which messages to send automatically.",
+  "properties": {
+    "method": {
+      "const": "notifications/message",
+      "type": "string"
+    },
+    "params": {
+      "properties": {
+        "data": {
+          "description": "The data to be logged, such as a string message or an object. Any JSON serializable type is allowed here."
+        },
+        "level": {
+          "$ref": "../fragments/loggingLevel.json",
+          "description": "The severity of this log message."
+        },
+        "logger": {
+          "description": "An optional name of the logger issuing this message.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "level"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "method",
+    "params"
+  ],
+  "type": "object"
 }

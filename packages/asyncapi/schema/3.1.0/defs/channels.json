@@ -1,4 +1,27 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../schema.json#/definitions/channels"
+  "description": "An object containing all the Channel Object definitions the Application MUST use during runtime.",
+  "type": "object",
+  "additionalProperties": {
+    "oneOf": [
+      {
+        "$ref": "./fragments/reference.json"
+      },
+      {
+        "$ref": "./components/channels.json"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "userSignedUp": {
+        "address": "user.signedup",
+        "messages": {
+          "userSignedUp": {
+            "$ref": "#/components/messages/userSignedUp"
+          }
+        }
+      }
+    }
+  ]
 }

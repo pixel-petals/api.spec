@@ -1,4 +1,16 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ListRootsResult"
+  "description": "The result returned by the client for a {@link ListRootsRequestroots/list} request.\nThis result contains an array of {@link Root} objects, each representing a root directory\nor file that the server can operate on.",
+  "properties": {
+    "roots": {
+      "items": {
+        "$ref": "../fragments/root.json"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "roots"
+  ],
+  "type": "object"
 }

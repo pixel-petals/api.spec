@@ -1,4 +1,42 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/Encoding"
+  "type": "object",
+  "properties": {
+    "contentType": {
+      "type": "string"
+    },
+    "headers": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "$ref": "../components/headers.json"
+          },
+          {
+            "$ref": "./reference.json"
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "string",
+      "enum": [
+        "form",
+        "spaceDelimited",
+        "pipeDelimited",
+        "deepObject"
+      ]
+    },
+    "explode": {
+      "type": "boolean"
+    },
+    "allowReserved": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "patternProperties": {
+    "^x-": {}
+  },
+  "additionalProperties": false
 }

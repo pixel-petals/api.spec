@@ -1,2 +1,15 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/SubscriptionsAcknowledgedNotificationParams
+description: Parameters for a {@link SubscriptionsAcknowledgedNotificationnotifications/subscriptions/acknowledged} notification.
+properties:
+  _meta:
+    $ref: ./notificationMetaObject.yaml
+  notifications:
+    $ref: ./subscriptionFilter.yaml
+    description: |-
+      The subset of requested notification types the server agreed to honor.
+      Only includes notification types the server actually supports; if the
+      client requested an unsupported type (e.g., `promptsListChanged` when
+      the server has no prompts), it is omitted from this set.
+required:
+  - notifications
+type: object

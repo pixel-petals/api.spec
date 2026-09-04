@@ -1,4 +1,27 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/SamplingMessage"
+  "description": "Describes a message issued to or received from an LLM API.",
+  "properties": {
+    "content": {
+      "anyOf": [
+        {
+          "$ref": "./textContent.json"
+        },
+        {
+          "$ref": "./imageContent.json"
+        },
+        {
+          "$ref": "./audioContent.json"
+        }
+      ]
+    },
+    "role": {
+      "$ref": "./role.json"
+    }
+  },
+  "required": [
+    "content",
+    "role"
+  ],
+  "type": "object"
 }

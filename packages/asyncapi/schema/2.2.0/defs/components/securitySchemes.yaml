@@ -1,4 +1,18 @@
 $schema: http://json-schema.org/draft-07/schema
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/SecurityScheme
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  oneOf:
+    - $ref: ../securityScheme/userPassword.yaml
+    - $ref: ../securityScheme/apiKey.yaml
+    - $ref: ../securityScheme/x509.yaml
+    - $ref: ../securityScheme/symmetricEncryption.yaml
+    - $ref: ../securityScheme/asymmetricEncryption.yaml
+    - $ref: ../securityScheme/httpSecurityScheme.yaml
+    - $ref: ../securityScheme/oauth2Flows.yaml
+    - $ref: ../securityScheme/openIdConnect.yaml
+    - $ref: ../securityScheme/saslSecurityScheme.yaml

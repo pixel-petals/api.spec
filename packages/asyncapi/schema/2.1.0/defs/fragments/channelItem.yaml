@@ -1,2 +1,23 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/channelItem
+type: object
+additionalProperties: false
+patternProperties:
+  ^x-[\w\d\.\x2d_]+$:
+    $ref: ./specificationExtension.yaml
+properties:
+  $ref:
+    $ref: ./referenceObject.yaml
+  parameters:
+    $ref: ../components/parameters.yaml
+  description:
+    type: string
+    description: A description of the channel.
+  publish:
+    $ref: ./operation.yaml
+  subscribe:
+    $ref: ./operation.yaml
+  deprecated:
+    type: boolean
+    default: false
+  bindings:
+    $ref: ./bindingsObject.yaml

@@ -1,4 +1,27 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/UnsubscribeRequest"
+  "description": "Sent from the client to request cancellation of resources/updated notifications from the server. This should follow a previous resources/subscribe request.",
+  "properties": {
+    "id": {
+      "$ref": "../fragments/requestId.json"
+    },
+    "jsonrpc": {
+      "const": "2.0",
+      "type": "string"
+    },
+    "method": {
+      "const": "resources/unsubscribe",
+      "type": "string"
+    },
+    "params": {
+      "$ref": "../fragments/unsubscribeRequestParams.json"
+    }
+  },
+  "required": [
+    "id",
+    "jsonrpc",
+    "method",
+    "params"
+  ],
+  "type": "object"
 }

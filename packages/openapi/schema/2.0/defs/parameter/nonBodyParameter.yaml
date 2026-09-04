@@ -1,2 +1,11 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/nonBodyParameter
+type: object
+required:
+  - name
+  - in
+  - type
+oneOf:
+  - $ref: ../nonBodyParameter/headerParameterSubSchema.yaml
+  - $ref: ../nonBodyParameter/formDataParameterSubSchema.yaml
+  - $ref: ../nonBodyParameter/queryParameterSubSchema.yaml
+  - $ref: ../nonBodyParameter/pathParameterSubSchema.yaml

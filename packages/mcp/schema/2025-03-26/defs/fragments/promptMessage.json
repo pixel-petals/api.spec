@@ -1,4 +1,30 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/PromptMessage"
+  "description": "Describes a message returned as part of a prompt.\n\nThis is similar to `SamplingMessage`, but also supports the embedding of\nresources from the MCP server.",
+  "properties": {
+    "content": {
+      "anyOf": [
+        {
+          "$ref": "./textContent.json"
+        },
+        {
+          "$ref": "./imageContent.json"
+        },
+        {
+          "$ref": "./audioContent.json"
+        },
+        {
+          "$ref": "./embeddedResource.json"
+        }
+      ]
+    },
+    "role": {
+      "$ref": "./role.json"
+    }
+  },
+  "required": [
+    "content",
+    "role"
+  ],
+  "type": "object"
 }

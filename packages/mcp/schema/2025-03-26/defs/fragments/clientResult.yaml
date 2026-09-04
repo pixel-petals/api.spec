@@ -1,2 +1,5 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/ClientResult
+anyOf:
+  - $ref: ./result.yaml
+  - $ref: ../clientResult/createMessageResult.yaml
+  - $ref: ../clientResult/listRootsResult.yaml

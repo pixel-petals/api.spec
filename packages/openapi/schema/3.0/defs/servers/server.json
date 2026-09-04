@@ -1,4 +1,25 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/Server"
+  "type": "object",
+  "required": [
+    "url"
+  ],
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "variables": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "../fragments/serverVariable.json"
+      }
+    }
+  },
+  "patternProperties": {
+    "^x-": {}
+  },
+  "additionalProperties": false
 }

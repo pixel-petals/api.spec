@@ -1,4 +1,18 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/CreateMessageRequest"
+  "description": "A request from the server to sample an LLM via the client. The client has full discretion over which model to select. The client should also inform the user before beginning sampling, to allow them to inspect the request (human in the loop) and decide whether to approve it.",
+  "properties": {
+    "method": {
+      "const": "sampling/createMessage",
+      "type": "string"
+    },
+    "params": {
+      "$ref": "../fragments/createMessageRequestParams.json"
+    }
+  },
+  "required": [
+    "method",
+    "params"
+  ],
+  "type": "object"
 }

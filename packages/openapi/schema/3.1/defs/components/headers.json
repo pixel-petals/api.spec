@@ -1,4 +1,66 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/header-or-reference"
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "../fragments/reference.json"
+  },
+  "else": {
+    "$comment": "https://spec.openapis.org/oas/v3.1#header-object",
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string"
+      },
+      "required": {
+        "default": false,
+        "type": "boolean"
+      },
+      "deprecated": {
+        "default": false,
+        "type": "boolean"
+      },
+      "schema": {
+        "$dynamicRef": "#meta"
+      },
+      "content": {
+        "$ref": "../fragments/content.json",
+        "minProperties": 1,
+        "maxProperties": 1
+      }
+    },
+    "oneOf": [
+      {
+        "required": [
+          "schema"
+        ]
+      },
+      {
+        "required": [
+          "content"
+        ]
+      }
+    ],
+    "dependentSchemas": {
+      "schema": {
+        "properties": {
+          "style": {
+            "default": "simple",
+            "const": "simple"
+          },
+          "explode": {
+            "default": false,
+            "type": "boolean"
+          }
+        },
+        "$ref": "../../schema.json#/$defs/examples"
+      }
+    },
+    "$ref": "../../schema.json#/$defs/specification-extensions",
+    "unevaluatedProperties": false
+  }
 }

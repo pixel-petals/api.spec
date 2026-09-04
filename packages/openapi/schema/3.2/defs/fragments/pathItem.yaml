@@ -1,2 +1,55 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/path-item
+$comment: https://spec.openapis.org/oas/v3.2#path-item-object
+type: object
+properties:
+  $ref:
+    type: string
+    format: uri-reference
+  summary:
+    type: string
+  description:
+    type: string
+  servers:
+    type: array
+    items:
+      $ref: ../servers/server.yaml
+  parameters:
+    $ref: ./parameters.yaml
+  additionalOperations:
+    type: object
+    additionalProperties:
+      $ref: ./operation.yaml
+    propertyNames:
+      $comment: RFC9110 restricts methods to "1*tchar" in ABNF
+      pattern: ^[a-zA-Z0-9!#$%&'*+.^_`|~-]+$
+      not:
+        enum:
+          - GET
+          - PUT
+          - POST
+          - DELETE
+          - OPTIONS
+          - HEAD
+          - PATCH
+          - TRACE
+          - QUERY
+  get:
+    $ref: ./operation.yaml
+  put:
+    $ref: ./operation.yaml
+  post:
+    $ref: ./operation.yaml
+  delete:
+    $ref: ./operation.yaml
+  options:
+    $ref: ./operation.yaml
+  head:
+    $ref: ./operation.yaml
+  patch:
+    $ref: ./operation.yaml
+  trace:
+    $ref: ./operation.yaml
+  query:
+    $ref: ./operation.yaml
+$ref: ../../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false

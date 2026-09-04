@@ -119,6 +119,9 @@ export function normalize(document, { componentsKey }) {
         targets: unioned.has(name) ? [ reference, name ] : [ name ],
       })),
 
+    defs,
+    reference,
+
     unions: unionsIn(defs, reference),
     roots: groups(document.properties, read),
     components: groups(components ? defs[ components ]?.properties : null, read),

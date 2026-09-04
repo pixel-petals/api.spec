@@ -1,4 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../schema.json#/definitions/security"
+  "type": "array",
+  "items": {
+    "$ref": "./fragments/securityRequirement.json"
+  },
+  "uniqueItems": true
 }

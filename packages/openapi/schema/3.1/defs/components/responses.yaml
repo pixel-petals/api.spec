@@ -1,2 +1,27 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/response-or-reference
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  $comment: https://spec.openapis.org/oas/v3.1#response-object
+  type: object
+  properties:
+    description:
+      type: string
+    headers:
+      type: object
+      additionalProperties:
+        $ref: ./headers.yaml
+    content:
+      $ref: ../fragments/content.yaml
+    links:
+      type: object
+      additionalProperties:
+        $ref: ./links.yaml
+  required:
+    - description
+  $ref: ../../schema.yaml#/$defs/specification-extensions
+  unevaluatedProperties: false

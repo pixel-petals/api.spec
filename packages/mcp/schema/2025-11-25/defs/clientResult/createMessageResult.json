@@ -1,4 +1,53 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/CreateMessageResult"
+  "description": "The client's response to a sampling/createMessage request from the server.\nThe client should inform the user before returning the sampled message, to allow them\nto inspect the response (human in the loop) and decide whether to allow the server to see it.",
+  "properties": {
+    "_meta": {
+      "additionalProperties": {},
+      "description": "See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage.",
+      "type": "object"
+    },
+    "content": {
+      "anyOf": [
+        {
+          "$ref": "../fragments/textContent.json"
+        },
+        {
+          "$ref": "../fragments/imageContent.json"
+        },
+        {
+          "$ref": "../fragments/audioContent.json"
+        },
+        {
+          "$ref": "../samplingMessageContentBlock/toolUseContent.json"
+        },
+        {
+          "$ref": "../samplingMessageContentBlock/toolResultContent.json"
+        },
+        {
+          "items": {
+            "$ref": "../fragments/samplingMessageContentBlock.json"
+          },
+          "type": "array"
+        }
+      ]
+    },
+    "model": {
+      "description": "The name of the model that generated the message.",
+      "type": "string"
+    },
+    "role": {
+      "$ref": "../fragments/role.json"
+    },
+    "stopReason": {
+      "description": "The reason why sampling stopped, if known.\n\nStandard values:\n- \"endTurn\": Natural end of the assistant's turn\n- \"stopSequence\": A stop sequence was encountered\n- \"maxTokens\": Maximum token limit was reached\n- \"toolUse\": The model wants to use one or more tools\n\nThis field is an open string to allow for provider-specific stop reasons.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "content",
+    "model",
+    "role"
+  ],
+  "type": "object"
 }

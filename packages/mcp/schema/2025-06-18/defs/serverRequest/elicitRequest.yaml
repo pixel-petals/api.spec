@@ -1,2 +1,39 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/ElicitRequest
+description: A request from the server to elicit additional information from the user via the client.
+properties:
+  method:
+    const: elicitation/create
+    type: string
+  params:
+    properties:
+      message:
+        description: The message to present to the user.
+        type: string
+      requestedSchema:
+        description: |-
+          A restricted subset of JSON Schema.
+          Only top-level properties are allowed, without nesting.
+        properties:
+          properties:
+            additionalProperties:
+              $ref: ../fragments/primitiveSchemaDefinition.yaml
+            type: object
+          required:
+            items:
+              type: string
+            type: array
+          type:
+            const: object
+            type: string
+        required:
+          - properties
+          - type
+        type: object
+    required:
+      - message
+      - requestedSchema
+    type: object
+required:
+  - method
+  - params
+type: object

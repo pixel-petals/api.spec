@@ -1,2 +1,13 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/callbacks-or-reference
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  $comment: https://spec.openapis.org/oas/v3.1#callback-object
+  type: object
+  $ref: ../../schema.yaml#/$defs/specification-extensions
+  additionalProperties:
+    $ref: ../fragments/pathItem.yaml

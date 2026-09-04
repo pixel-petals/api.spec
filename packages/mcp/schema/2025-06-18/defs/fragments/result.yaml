@@ -1,2 +1,8 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/Result
+additionalProperties: {}
+properties:
+  _meta:
+    additionalProperties: {}
+    description: "See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage."
+    type: object
+type: object

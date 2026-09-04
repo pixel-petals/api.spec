@@ -1,2 +1,35 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/Resource
+description: A known resource that the server is capable of reading.
+properties:
+  annotations:
+    $ref: ./annotations.yaml
+    description: Optional annotations for the client.
+  description:
+    description: |-
+      A description of what this resource represents.
+
+      This can be used by clients to improve the LLM's understanding of available resources. It can be thought of like a "hint" to the model.
+    type: string
+  mimeType:
+    description: The MIME type of this resource, if known.
+    type: string
+  name:
+    description: |-
+      A human-readable name for this resource.
+
+      This can be used by clients to populate UI elements.
+    type: string
+  size:
+    description: |-
+      The size of the raw resource content, in bytes (i.e., before base64 encoding or any tokenization), if known.
+
+      This can be used by Hosts to display file sizes and estimate context window usage.
+    type: integer
+  uri:
+    description: The URI of this resource.
+    format: uri
+    type: string
+required:
+  - name
+  - uri
+type: object

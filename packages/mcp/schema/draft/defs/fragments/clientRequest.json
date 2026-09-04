@@ -1,4 +1,35 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ClientRequest"
+  "anyOf": [
+    {
+      "$ref": "../clientRequest/discoverRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/listResourcesRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/listResourceTemplatesRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/readResourceRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/subscriptionsListenRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/listPromptsRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/getPromptRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/listToolsRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/callToolRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/completeRequest.json"
+    }
+  ]
 }

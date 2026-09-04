@@ -1,4 +1,13 @@
 $schema: http://json-schema.org/draft-04/schema#
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/SecurityScheme
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  oneOf:
+    - $ref: ../securityScheme/apiKeySecurityScheme.yaml
+    - $ref: ../securityScheme/httpSecurityScheme.yaml
+    - $ref: ../securityScheme/oAuth2SecurityScheme.yaml
+    - $ref: ../securityScheme/openIdConnectSecurityScheme.yaml

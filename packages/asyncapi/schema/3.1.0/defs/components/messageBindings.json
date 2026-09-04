@@ -1,11 +1,392 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "oneOf": [
-    {
-      "$ref": "../../schema.json#/definitions/Reference"
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "../fragments/reference.json"
+  },
+  "else": {
+    "description": "Map describing protocol-specific definitions for a message.",
+    "type": "object",
+    "properties": {
+      "amqp": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsAmqp0.3.0Message.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.3.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsAmqp0.3.0Message.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.3.0"
+            ]
+          }
+        }
+      },
+      "amqp1": {},
+      "anypointmq": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsAnypointmq0.0.1Message.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.0.1"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsAnypointmq0.0.1Message.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.0.1"
+            ]
+          }
+        }
+      },
+      "googlepubsub": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsGooglepubsub0.2.0Message.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.2.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsGooglepubsub0.2.0Message.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.2.0"
+            ]
+          }
+        }
+      },
+      "http": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsHttp0.3.0Message.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.2.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsHttp0.2.0Message.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.3.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsHttp0.3.0Message.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.2.0",
+              "0.3.0"
+            ]
+          }
+        }
+      },
+      "ibmmq": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsIbmmq0.1.0Message.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.1.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsIbmmq0.1.0Message.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.1.0"
+            ]
+          }
+        }
+      },
+      "jms": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsJms0.0.1Message.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.0.1"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsJms0.0.1Message.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.0.1"
+            ]
+          }
+        }
+      },
+      "kafka": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsKafka0.5.0Message.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.5.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsKafka0.5.0Message.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.4.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsKafka0.4.0Message.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.3.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsKafka0.3.0Message.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.5.0",
+              "0.4.0",
+              "0.3.0"
+            ]
+          }
+        }
+      },
+      "mqtt": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsMqtt0.2.0Message.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.2.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsMqtt0.2.0Message.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.2.0"
+            ]
+          }
+        }
+      },
+      "nats": {},
+      "redis": {},
+      "sns": {},
+      "solace": {},
+      "sqs": {},
+      "stomp": {},
+      "ws": {}
     },
-    {
-      "$ref": "../../schema.json#/definitions/messageBindingsObject"
-    }
-  ]
+    "patternProperties": {
+      "^x-[\\w\\d\\.\\x2d_]+$": {
+        "$ref": "../fragments/specificationExtension.json"
+      }
+    },
+    "additionalProperties": false
+  }
 }

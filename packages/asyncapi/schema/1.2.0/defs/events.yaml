@@ -1,2 +1,29 @@
 $schema: http://json-schema.org/draft-04/schema
-$ref: ../schema.yaml#/definitions/events
+id: http://asyncapi.com/definitions/1.2.0/events.json
+title: Events Object
+type: object
+additionalProperties: false
+patternProperties:
+  ^x-:
+    $ref: ./fragments/vendorExtension.yaml
+minProperties: 1
+anyOf:
+  - required:
+      - receive
+  - required:
+      - send
+properties:
+  receive:
+    title: Events Receive Object
+    type: array
+    uniqueItems: true
+    minItems: 1
+    items:
+      $ref: ./fragments/message.yaml
+  send:
+    title: Events Send Object
+    type: array
+    uniqueItems: true
+    minItems: 1
+    items:
+      $ref: ./fragments/message.yaml

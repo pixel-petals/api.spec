@@ -1,4 +1,30 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/tag"
+  "$comment": "https://spec.openapis.org/oas/v3.2#tag-object",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "externalDocs": {
+      "$ref": "../externalDocs.json"
+    },
+    "parent": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "$ref": "../../schema.json#/$defs/specification-extensions",
+  "unevaluatedProperties": false
 }

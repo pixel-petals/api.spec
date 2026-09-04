@@ -1,4 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/Reference"
+  "type": "object",
+  "required": [
+    "$ref"
+  ],
+  "patternProperties": {
+    "^\\$ref$": {
+      "type": "string",
+      "format": "uri-reference"
+    }
+  }
 }

@@ -1,4 +1,24 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/PaginatedRequest"
+  "properties": {
+    "id": {
+      "$ref": "./requestId.json"
+    },
+    "jsonrpc": {
+      "const": "2.0",
+      "type": "string"
+    },
+    "method": {
+      "type": "string"
+    },
+    "params": {
+      "$ref": "./paginatedRequestParams.json"
+    }
+  },
+  "required": [
+    "id",
+    "jsonrpc",
+    "method"
+  ],
+  "type": "object"
 }

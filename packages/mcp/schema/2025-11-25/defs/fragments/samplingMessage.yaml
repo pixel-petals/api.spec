@@ -1,2 +1,23 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/SamplingMessage
+description: Describes a message issued to or received from an LLM API.
+properties:
+  _meta:
+    additionalProperties: {}
+    description: "See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage."
+    type: object
+  content:
+    anyOf:
+      - $ref: ./textContent.yaml
+      - $ref: ./imageContent.yaml
+      - $ref: ./audioContent.yaml
+      - $ref: ../samplingMessageContentBlock/toolUseContent.yaml
+      - $ref: ../samplingMessageContentBlock/toolResultContent.yaml
+      - items:
+          $ref: ./samplingMessageContentBlock.yaml
+        type: array
+  role:
+    $ref: ./role.yaml
+required:
+  - content
+  - role
+type: object

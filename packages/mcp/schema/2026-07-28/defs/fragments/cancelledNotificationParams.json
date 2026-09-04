@@ -1,4 +1,21 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/CancelledNotificationParams"
+  "description": "Parameters for a `notifications/cancelled` notification.",
+  "properties": {
+    "_meta": {
+      "$ref": "./notificationMetaObject.json"
+    },
+    "reason": {
+      "description": "An optional string describing the reason for the cancellation. This MAY be logged or presented to the user.",
+      "type": "string"
+    },
+    "requestId": {
+      "$ref": "./requestId.json",
+      "description": "The ID of the request to cancel.\n\nThis MUST correspond to the ID of a request the client previously issued."
+    }
+  },
+  "required": [
+    "requestId"
+  ],
+  "type": "object"
 }

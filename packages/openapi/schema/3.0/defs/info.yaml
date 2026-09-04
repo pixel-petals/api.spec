@@ -1,2 +1,22 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../schema.yaml#/definitions/Info
+type: object
+required:
+  - title
+  - version
+properties:
+  title:
+    type: string
+  description:
+    type: string
+  termsOfService:
+    type: string
+    format: uri-reference
+  contact:
+    $ref: ./fragments/contact.yaml
+  license:
+    $ref: ./fragments/license.yaml
+  version:
+    type: string
+patternProperties:
+  ^x-: {}
+additionalProperties: false

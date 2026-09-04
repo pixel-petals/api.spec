@@ -1,2 +1,10 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ServerRequest
+anyOf:
+  - $ref: ./pingRequest.yaml
+  - $ref: ./getTaskRequest.yaml
+  - $ref: ./getTaskPayloadRequest.yaml
+  - $ref: ./cancelTaskRequest.yaml
+  - $ref: ./listTasksRequest.yaml
+  - $ref: ../serverRequest/createMessageRequest.yaml
+  - $ref: ../serverRequest/listRootsRequest.yaml
+  - $ref: ../serverRequest/elicitRequest.yaml

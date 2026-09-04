@@ -1,2 +1,20 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/bindings-pulsar-0.1.0-server
+title: Server Schema
+description: This object contains server information of Pulsar broker, which covers cluster and tenant admin configuration. This object contains additional information not possible to represent within the core AsyncAPI specification.
+type: object
+additionalProperties: false
+patternProperties:
+  ^x-[\w\d\.\x2d_]+$:
+    $ref: ./specificationExtension.yaml
+properties:
+  tenant:
+    type: string
+    description: The pulsar tenant. If omitted, 'public' MUST be assumed.
+  bindingVersion:
+    type: string
+    enum:
+      - 0.1.0
+    description: The version of this binding. If omitted, 'latest' MUST be assumed.
+examples:
+  - tenant: contoso
+    bindingVersion: 0.1.0

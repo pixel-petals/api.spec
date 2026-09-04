@@ -1,2 +1,4 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/SingleSelectEnumSchema
+anyOf:
+  - $ref: ./untitledSingleSelectEnumSchema.yaml
+  - $ref: ./titledSingleSelectEnumSchema.yaml

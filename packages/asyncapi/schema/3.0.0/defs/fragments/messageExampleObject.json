@@ -1,4 +1,42 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../../schema.json#/definitions/messageExampleObject"
+  "type": "object",
+  "additionalProperties": false,
+  "anyOf": [
+    {
+      "required": [
+        "payload"
+      ]
+    },
+    {
+      "required": [
+        "headers"
+      ]
+    }
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Machine readable name of the message example."
+    },
+    "summary": {
+      "type": "string",
+      "description": "A brief summary of the message example."
+    },
+    "headers": {
+      "type": "object",
+      "description": "Example of the application headers. It MUST be a map of key-value pairs."
+    },
+    "payload": {
+      "type": [
+        "number",
+        "string",
+        "boolean",
+        "object",
+        "array",
+        "null"
+      ],
+      "description": "Example of the message payload. It can be of any type."
+    }
+  }
 }

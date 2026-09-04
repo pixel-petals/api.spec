@@ -1,4 +1,34 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/EmbeddedResource"
+  "description": "The contents of a resource, embedded into a prompt or tool call result.\n\nIt is up to the client how best to render embedded resources for the benefit\nof the LLM and/or the user.",
+  "properties": {
+    "_meta": {
+      "additionalProperties": {},
+      "description": "See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage.",
+      "type": "object"
+    },
+    "annotations": {
+      "$ref": "../fragments/annotations.json",
+      "description": "Optional annotations for the client."
+    },
+    "resource": {
+      "anyOf": [
+        {
+          "$ref": "../fragments/textResourceContents.json"
+        },
+        {
+          "$ref": "../fragments/blobResourceContents.json"
+        }
+      ]
+    },
+    "type": {
+      "const": "resource",
+      "type": "string"
+    }
+  },
+  "required": [
+    "resource",
+    "type"
+  ],
+  "type": "object"
 }

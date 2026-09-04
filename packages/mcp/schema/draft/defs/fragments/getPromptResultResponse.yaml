@@ -1,2 +1,17 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/GetPromptResultResponse
+description: A successful response from the server for a {@link GetPromptRequestprompts/get} request.
+properties:
+  id:
+    $ref: ./requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+  result:
+    anyOf:
+      - $ref: ../serverResult/inputRequiredResult.yaml
+      - $ref: ../serverResult/getPromptResult.yaml
+required:
+  - id
+  - jsonrpc
+  - result
+type: object

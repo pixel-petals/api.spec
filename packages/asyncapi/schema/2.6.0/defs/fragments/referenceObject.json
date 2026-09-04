@@ -1,4 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../../schema.json#/definitions/ReferenceObject"
+  "type": "string",
+  "description": "A simple object to allow referencing other components in the specification, internally and externally.",
+  "format": "uri-reference",
+  "examples": [
+    {
+      "$ref": "#/components/schemas/Pet"
+    }
+  ]
 }

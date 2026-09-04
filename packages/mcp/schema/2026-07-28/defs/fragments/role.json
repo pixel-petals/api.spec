@@ -1,4 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/Role"
+  "description": "The sender or recipient of messages and data in a conversation.",
+  "enum": [
+    "assistant",
+    "user"
+  ],
+  "type": "string"
 }

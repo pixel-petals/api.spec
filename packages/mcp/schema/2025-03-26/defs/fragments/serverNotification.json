@@ -1,4 +1,26 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/ServerNotification"
+  "anyOf": [
+    {
+      "$ref": "./cancelledNotification.json"
+    },
+    {
+      "$ref": "./progressNotification.json"
+    },
+    {
+      "$ref": "../serverNotification/resourceListChangedNotification.json"
+    },
+    {
+      "$ref": "../serverNotification/resourceUpdatedNotification.json"
+    },
+    {
+      "$ref": "../serverNotification/promptListChangedNotification.json"
+    },
+    {
+      "$ref": "../serverNotification/toolListChangedNotification.json"
+    },
+    {
+      "$ref": "../serverNotification/loggingMessageNotification.json"
+    }
+  ]
 }

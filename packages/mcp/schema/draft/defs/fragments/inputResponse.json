@@ -1,4 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/InputResponse"
+  "anyOf": [
+    {
+      "$ref": "../inputResponse/createMessageResult.json"
+    },
+    {
+      "$ref": "../inputResponse/listRootsResult.json"
+    },
+    {
+      "$ref": "../inputResponse/elicitResult.json"
+    }
+  ]
 }

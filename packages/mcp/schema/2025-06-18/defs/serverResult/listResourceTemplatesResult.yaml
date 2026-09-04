@@ -1,2 +1,19 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/ListResourceTemplatesResult
+description: The server's response to a resources/templates/list request from the client.
+properties:
+  _meta:
+    additionalProperties: {}
+    description: "See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage."
+    type: object
+  nextCursor:
+    description: |-
+      An opaque token representing the pagination position after the last returned result.
+      If present, there may be more results available.
+    type: string
+  resourceTemplates:
+    items:
+      $ref: ../fragments/resourceTemplate.yaml
+    type: array
+required:
+  - resourceTemplates
+type: object

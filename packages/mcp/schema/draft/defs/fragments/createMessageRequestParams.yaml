@@ -1,2 +1,58 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/CreateMessageRequestParams
+description: Parameters for a `sampling/createMessage` request.
+properties:
+  includeContext:
+    description: |-
+      A request to include context from one or more MCP servers (including the caller), to be attached to the prompt.
+      The client MAY ignore this request.
+
+      Default is `"none"`. The values `"thisServer"` and `"allServers"` are deprecated (SEP-2596): servers SHOULD
+      omit this field or use `"none"`, and SHOULD only use the deprecated values if the client declares
+      {@link ClientCapabilities.sampling.context}.
+    enum:
+      - allServers
+      - none
+      - thisServer
+    type: string
+  maxTokens:
+    description: |-
+      The requested maximum number of tokens to sample (to prevent runaway completions).
+
+      The client MAY choose to sample fewer tokens than the requested maximum.
+    type: integer
+  messages:
+    items:
+      $ref: ./samplingMessage.yaml
+    type: array
+  metadata:
+    $ref: ./jsonObject.yaml
+    description: Optional metadata to pass through to the LLM provider. The format of this metadata is provider-specific.
+  modelPreferences:
+    $ref: ./modelPreferences.yaml
+    description: The server's preferences for which model to select. The client MAY ignore these preferences.
+  stopSequences:
+    items:
+      type: string
+    type: array
+  systemPrompt:
+    description: An optional system prompt the server wants to use for sampling. The client MAY modify or omit this prompt.
+    type: string
+  temperature:
+    type: number
+  toolChoice:
+    $ref: ./toolChoice.yaml
+    description: |-
+      Controls how the model uses tools.
+      The client MUST return an error if this field is provided but {@link ClientCapabilities.sampling.tools} is not declared.
+      Default is `{ mode: "auto" }`.
+  tools:
+    description: |-
+      Tools that the model may use during generation.
+      The client MUST return an error if this field is provided but {@link ClientCapabilities.sampling.tools} is not declared.
+    items:
+      $ref: ./tool.yaml
+    type: array
+required:
+  - maxTokens
+  - messages
+type: object

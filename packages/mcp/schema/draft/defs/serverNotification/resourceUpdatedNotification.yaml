@@ -1,2 +1,16 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ResourceUpdatedNotification
+description: A notification from the server to the client, informing it that a resource has changed and may need to be read again. This is only sent for resources the client opted in to via the `resourceSubscriptions` field of a {@link SubscriptionsListenRequestsubscriptions/listen} request.
+properties:
+  jsonrpc:
+    const: "2.0"
+    type: string
+  method:
+    const: notifications/resources/updated
+    type: string
+  params:
+    $ref: ../fragments/resourceUpdatedNotificationParams.yaml
+required:
+  - jsonrpc
+  - method
+  - params
+type: object

@@ -1,4 +1,42 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/SamplingMessage"
+  "description": "Describes a message issued to or received from an LLM API.",
+  "properties": {
+    "_meta": {
+      "$ref": "./metaObject.json"
+    },
+    "content": {
+      "anyOf": [
+        {
+          "$ref": "./textContent.json"
+        },
+        {
+          "$ref": "./imageContent.json"
+        },
+        {
+          "$ref": "./audioContent.json"
+        },
+        {
+          "$ref": "../samplingMessageContentBlock/toolUseContent.json"
+        },
+        {
+          "$ref": "../samplingMessageContentBlock/toolResultContent.json"
+        },
+        {
+          "items": {
+            "$ref": "./samplingMessageContentBlock.json"
+          },
+          "type": "array"
+        }
+      ]
+    },
+    "role": {
+      "$ref": "./role.json"
+    }
+  },
+  "required": [
+    "content",
+    "role"
+  ],
+  "type": "object"
 }

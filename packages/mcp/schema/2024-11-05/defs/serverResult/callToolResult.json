@@ -1,4 +1,35 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/CallToolResult"
+  "description": "The server's response to a tool call.\n\nAny errors that originate from the tool SHOULD be reported inside the result\nobject, with `isError` set to true, _not_ as an MCP protocol-level error\nresponse. Otherwise, the LLM would not be able to see that an error occurred\nand self-correct.\n\nHowever, any errors in _finding_ the tool, an error indicating that the\nserver does not support tool calls, or any other exceptional conditions,\nshould be reported as an MCP error response.",
+  "properties": {
+    "_meta": {
+      "additionalProperties": {},
+      "description": "This result property is reserved by the protocol to allow clients and servers to attach additional metadata to their responses.",
+      "type": "object"
+    },
+    "content": {
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "../fragments/textContent.json"
+          },
+          {
+            "$ref": "../fragments/imageContent.json"
+          },
+          {
+            "$ref": "../fragments/embeddedResource.json"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "isError": {
+      "description": "Whether the tool call ended in an error.\n\nIf not set, this is assumed to be false (the call was successful).",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "content"
+  ],
+  "type": "object"
 }

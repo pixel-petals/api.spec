@@ -1,2 +1,18 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/JSONRPCRequest
+description: A request that expects a response.
+properties:
+  id:
+    $ref: ../fragments/requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+  method:
+    type: string
+  params:
+    additionalProperties: {}
+    type: object
+required:
+  - id
+  - jsonrpc
+  - method
+type: object

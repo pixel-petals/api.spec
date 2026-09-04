@@ -1,2 +1,22 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/SubscriptionsListenRequest
+description: |-
+  Sent from the client to open a long-lived channel for receiving notifications
+  outside the context of a specific request. Replaces the previous HTTP GET
+  endpoint and ensures consistent behavior between HTTP and STDIO.
+properties:
+  id:
+    $ref: ../fragments/requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+  method:
+    const: subscriptions/listen
+    type: string
+  params:
+    $ref: ../fragments/subscriptionsListenRequestParams.yaml
+required:
+  - id
+  - jsonrpc
+  - method
+  - params
+type: object

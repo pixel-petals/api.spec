@@ -1,2 +1,25 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/NonBearerHTTPSecurityScheme
+not:
+  type: object
+  properties:
+    scheme:
+      type: string
+      enum:
+        - bearer
+type: object
+required:
+  - scheme
+  - type
+properties:
+  scheme:
+    type: string
+  description:
+    type: string
+  type:
+    type: string
+    enum:
+      - http
+patternProperties:
+  ^x-[\w\d\.\x2d_]+$:
+    $ref: ../fragments/specificationExtension.yaml
+additionalProperties: false

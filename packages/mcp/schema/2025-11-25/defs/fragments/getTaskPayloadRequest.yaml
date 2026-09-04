@@ -1,2 +1,25 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/GetTaskPayloadRequest
+description: A request to retrieve the result of a completed task.
+properties:
+  id:
+    $ref: ./requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+  method:
+    const: tasks/result
+    type: string
+  params:
+    properties:
+      taskId:
+        description: The task identifier to retrieve results for.
+        type: string
+    required:
+      - taskId
+    type: object
+required:
+  - id
+  - jsonrpc
+  - method
+  - params
+type: object

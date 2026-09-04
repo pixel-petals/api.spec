@@ -1,2 +1,243 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../schema.yaml#/definitions/components
+type: object
+description: An object to hold a set of reusable objects for different aspects of the AsyncAPI specification. All objects defined within the components object will have no effect on the API unless they are explicitly referenced from properties outside the components object.
+additionalProperties: false
+patternProperties:
+  ^x-[\w\d\.\x2d_]+$:
+    $ref: ./fragments/specificationExtension.yaml
+properties:
+  schemas:
+    type: object
+    description: An object to hold reusable Schema Object. If this is a Schema Object, then the schemaFormat will be assumed to be 'application/vnd.aai.asyncapi+json;version=asyncapi' where the version is equal to the AsyncAPI Version String.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        $ref: ../schema.yaml#/definitions/anySchema
+  servers:
+    type: object
+    description: An object to hold reusable Server Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/servers.yaml
+  channels:
+    type: object
+    description: An object to hold reusable Channel Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/channels.yaml
+  serverVariables:
+    type: object
+    description: An object to hold reusable Server Variable Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/serverVariables.yaml
+  operations:
+    type: object
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/operations.yaml
+  messages:
+    type: object
+    description: An object to hold reusable Message Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/messages.yaml
+  securitySchemes:
+    type: object
+    description: An object to hold reusable Security Scheme Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/securitySchemes.yaml
+  parameters:
+    type: object
+    description: An object to hold reusable Parameter Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/parameters.yaml
+  correlationIds:
+    type: object
+    description: An object to hold reusable Correlation ID Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/correlationIds.yaml
+  operationTraits:
+    type: object
+    description: An object to hold reusable Operation Trait Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/operationTraits.yaml
+  messageTraits:
+    type: object
+    description: An object to hold reusable Message Trait Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/messageTraits.yaml
+  replies:
+    type: object
+    description: An object to hold reusable Operation Reply Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/replies.yaml
+  replyAddresses:
+    type: object
+    description: An object to hold reusable Operation Reply Address Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/replyAddresses.yaml
+  serverBindings:
+    type: object
+    description: An object to hold reusable Server Bindings Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/serverBindings.yaml
+  channelBindings:
+    type: object
+    description: An object to hold reusable Channel Bindings Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/channelBindings.yaml
+  operationBindings:
+    type: object
+    description: An object to hold reusable Operation Bindings Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/operationBindings.yaml
+  messageBindings:
+    type: object
+    description: An object to hold reusable Message Bindings Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/messageBindings.yaml
+  tags:
+    type: object
+    description: An object to hold reusable Tag Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/tags.yaml
+  externalDocs:
+    type: object
+    description: An object to hold reusable External Documentation Objects.
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/externalDocs.yaml
+examples:
+  - components:
+      schemas:
+        Category:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+        Tag:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+        AvroExample:
+          schemaFormat: application/vnd.apache.avro+json;version=1.9.0
+          schema:
+            $ref: path/to/user-create.avsc#/UserCreate
+      servers:
+        development:
+          host: "{stage}.in.mycompany.com:{port}"
+          description: RabbitMQ broker
+          protocol: amqp
+          protocolVersion: 0-9-1
+          variables:
+            stage:
+              $ref: "#/components/serverVariables/stage"
+            port:
+              $ref: "#/components/serverVariables/port"
+      serverVariables:
+        stage:
+          default: demo
+          description: This value is assigned by the service provider, in this example `mycompany.com`
+        port:
+          enum:
+            - "5671"
+            - "5672"
+          default: "5672"
+      channels:
+        user/signedup:
+          subscribe:
+            message:
+              $ref: "#/components/messages/userSignUp"
+      messages:
+        userSignUp:
+          summary: Action to sign a user up.
+          description: |
+            Multiline description of what this action does.
+            Here you have another line.
+          tags:
+            - name: user
+            - name: signup
+          headers:
+            type: object
+            properties:
+              applicationInstanceId:
+                description: Unique identifier for a given instance of the publishing application
+                type: string
+          payload:
+            type: object
+            properties:
+              user:
+                $ref: "#/components/schemas/userCreate"
+              signup:
+                $ref: "#/components/schemas/signup"
+      parameters:
+        userId:
+          description: Id of the user.
+      correlationIds:
+        default:
+          description: Default Correlation ID
+          location: $message.header#/correlationId
+      messageTraits:
+        commonHeaders:
+          headers:
+            type: object
+            properties:
+              my-app-header:
+                type: integer
+                minimum: 0
+                maximum: 100

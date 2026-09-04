@@ -1,2 +1,12 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/SecurityRequirement
+type: object
+description: Lists of the required security schemes that can be used to execute an operation
+additionalProperties:
+  type: array
+  items:
+    type: string
+  uniqueItems: true
+examples:
+  - petstore_auth:
+      - write:pets
+      - read:pets

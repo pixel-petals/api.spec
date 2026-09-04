@@ -1,2 +1,23 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ImageContent
+description: An image provided to or from an LLM.
+properties:
+  _meta:
+    $ref: ./metaObject.yaml
+  annotations:
+    $ref: ./annotations.yaml
+    description: Optional annotations for the client.
+  data:
+    description: The base64-encoded image data.
+    format: byte
+    type: string
+  mimeType:
+    description: The MIME type of the image. Different providers may support different image types.
+    type: string
+  type:
+    const: image
+    type: string
+required:
+  - data
+  - mimeType
+  - type
+type: object

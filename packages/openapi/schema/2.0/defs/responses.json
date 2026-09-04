@@ -1,4 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../schema.json#/definitions/responseDefinitions"
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "./fragments/response.json"
+  },
+  "description": "One or more JSON representations for responses"
 }

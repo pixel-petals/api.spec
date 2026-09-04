@@ -1,4 +1,23 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema",
-  "$ref": "../../schema.json#/definitions/asymmetricEncryption"
+  "id": "http://asyncapi.com/definitions/1.1.0/asymmetricEncryption.json",
+  "type": "object",
+  "required": [
+    "type"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "asymmetricEncryption"
+      ]
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "patternProperties": {
+    "^x-": {}
+  },
+  "additionalProperties": false
 }

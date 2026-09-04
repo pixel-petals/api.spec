@@ -1,2 +1,11 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../schema.yaml#/definitions/schemesList
+type: array
+description: The transfer protocol of the API.
+items:
+  type: string
+  enum:
+    - http
+    - https
+    - ws
+    - wss
+uniqueItems: true

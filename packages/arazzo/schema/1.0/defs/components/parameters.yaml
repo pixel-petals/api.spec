@@ -1,2 +1,29 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/parameter-object
+$comment: https://spec.openapis.org/arazzo/v1.0#parameter-object
+description: Describes a single step parameter
+type: object
+properties:
+  name:
+    description: The name of the parameter
+    type: string
+  in:
+    description: The named location of the parameter
+    enum:
+      - path
+      - query
+      - header
+      - cookie
+  value:
+    description: The value to pass in the parameter
+    type:
+      - string
+      - boolean
+      - object
+      - array
+      - number
+      - "null"
+required:
+  - name
+  - value
+$ref: ../../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false

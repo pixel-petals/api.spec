@@ -1,2 +1,12 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ResourceUpdatedNotificationParams
+description: Parameters for a `notifications/resources/updated` notification.
+properties:
+  _meta:
+    $ref: ./notificationMetaObject.yaml
+  uri:
+    description: The URI of the resource that has been updated. This might be a sub-resource of the one that the client actually subscribed to.
+    format: uri
+    type: string
+required:
+  - uri
+type: object

@@ -1,2 +1,6 @@
 $schema: http://json-schema.org/draft-04/schema
-$ref: ../../schema.yaml#/definitions/HTTPSecurityScheme
+id: http://asyncapi.com/definitions/1.2.0/HTTPSecurityScheme.json
+oneOf:
+  - $ref: ../httpSecurityScheme/nonBearerHTTPSecurityScheme.yaml
+  - $ref: ../httpSecurityScheme/bearerHTTPSecurityScheme.yaml
+  - $ref: ../httpSecurityScheme/apiKeyHTTPSecurityScheme.yaml

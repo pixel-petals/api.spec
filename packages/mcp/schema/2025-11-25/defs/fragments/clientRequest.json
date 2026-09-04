@@ -1,4 +1,56 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ClientRequest"
+  "anyOf": [
+    {
+      "$ref": "../clientRequest/initializeRequest.json"
+    },
+    {
+      "$ref": "./pingRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/listResourcesRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/listResourceTemplatesRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/readResourceRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/subscribeRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/unsubscribeRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/listPromptsRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/getPromptRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/listToolsRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/callToolRequest.json"
+    },
+    {
+      "$ref": "./getTaskRequest.json"
+    },
+    {
+      "$ref": "./getTaskPayloadRequest.json"
+    },
+    {
+      "$ref": "./cancelTaskRequest.json"
+    },
+    {
+      "$ref": "./listTasksRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/setLevelRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/completeRequest.json"
+    }
+  ]
 }

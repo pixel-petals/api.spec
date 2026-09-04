@@ -1,2 +1,22 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../schema.yaml#/$defs/info
+$comment: https://spec.openapis.org/arazzo/v1.1#info-object
+description: Provides metadata about the Arazzo description
+type: object
+properties:
+  title:
+    description: A human readable title of the Arazzo Description
+    type: string
+  summary:
+    description: A short summary of the Arazzo Description
+    type: string
+  description:
+    description: A description of the purpose of the workflows defined. CommonMark syntax MAY be used for rich text representation
+    type: string
+  version:
+    description: The version identifier of the Arazzo document (which is distinct from the Arazzo Specification version)
+    type: string
+required:
+  - title
+  - version
+$ref: ../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false

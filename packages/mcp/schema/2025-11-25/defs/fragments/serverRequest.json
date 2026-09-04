@@ -1,4 +1,29 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ServerRequest"
+  "anyOf": [
+    {
+      "$ref": "./pingRequest.json"
+    },
+    {
+      "$ref": "./getTaskRequest.json"
+    },
+    {
+      "$ref": "./getTaskPayloadRequest.json"
+    },
+    {
+      "$ref": "./cancelTaskRequest.json"
+    },
+    {
+      "$ref": "./listTasksRequest.json"
+    },
+    {
+      "$ref": "../serverRequest/createMessageRequest.json"
+    },
+    {
+      "$ref": "../serverRequest/listRootsRequest.json"
+    },
+    {
+      "$ref": "../serverRequest/elicitRequest.json"
+    }
+  ]
 }

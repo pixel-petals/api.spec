@@ -1,4 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ProgressToken"
+  "description": "A progress token, used to associate progress notifications with the original request.",
+  "type": [
+    "string",
+    "integer"
+  ]
 }

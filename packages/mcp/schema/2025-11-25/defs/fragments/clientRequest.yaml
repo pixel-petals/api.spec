@@ -1,2 +1,19 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ClientRequest
+anyOf:
+  - $ref: ../clientRequest/initializeRequest.yaml
+  - $ref: ./pingRequest.yaml
+  - $ref: ../clientRequest/listResourcesRequest.yaml
+  - $ref: ../clientRequest/listResourceTemplatesRequest.yaml
+  - $ref: ../clientRequest/readResourceRequest.yaml
+  - $ref: ../clientRequest/subscribeRequest.yaml
+  - $ref: ../clientRequest/unsubscribeRequest.yaml
+  - $ref: ../clientRequest/listPromptsRequest.yaml
+  - $ref: ../clientRequest/getPromptRequest.yaml
+  - $ref: ../clientRequest/listToolsRequest.yaml
+  - $ref: ../clientRequest/callToolRequest.yaml
+  - $ref: ./getTaskRequest.yaml
+  - $ref: ./getTaskPayloadRequest.yaml
+  - $ref: ./cancelTaskRequest.yaml
+  - $ref: ./listTasksRequest.yaml
+  - $ref: ../clientRequest/setLevelRequest.yaml
+  - $ref: ../clientRequest/completeRequest.yaml

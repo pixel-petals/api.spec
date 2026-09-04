@@ -1,2 +1,30 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/fileSchema
+type: object
+description: A deterministic version of a JSON Schema object.
+patternProperties:
+  ^x-:
+    $ref: ./vendorExtension.yaml
+required:
+  - type
+properties:
+  format:
+    type: string
+  title:
+    $ref: http://json-schema.org/draft-04/schema#/properties/title
+  description:
+    $ref: http://json-schema.org/draft-04/schema#/properties/description
+  default:
+    $ref: http://json-schema.org/draft-04/schema#/properties/default
+  required:
+    $ref: http://json-schema.org/draft-04/schema#/definitions/stringArray
+  type:
+    type: string
+    enum:
+      - file
+  readOnly:
+    type: boolean
+    default: false
+  externalDocs:
+    $ref: ../externalDocs.yaml
+  example: {}
+additionalProperties: false

@@ -1,4 +1,38 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema",
-  "$ref": "../../schema.json#/definitions/NonBearerHTTPSecurityScheme"
+  "id": "http://asyncapi.com/definitions/1.2.0/NonBearerHTTPSecurityScheme.json",
+  "not": {
+    "type": "object",
+    "properties": {
+      "scheme": {
+        "type": "string",
+        "enum": [
+          "bearer"
+        ]
+      }
+    }
+  },
+  "type": "object",
+  "required": [
+    "scheme",
+    "type"
+  ],
+  "properties": {
+    "scheme": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "http"
+      ]
+    }
+  },
+  "patternProperties": {
+    "^x-": {}
+  },
+  "additionalProperties": false
 }

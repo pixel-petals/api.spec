@@ -1,4 +1,20 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ClientNotification"
+  "anyOf": [
+    {
+      "$ref": "./cancelledNotification.json"
+    },
+    {
+      "$ref": "../clientNotification/initializedNotification.json"
+    },
+    {
+      "$ref": "./progressNotification.json"
+    },
+    {
+      "$ref": "./taskStatusNotification.json"
+    },
+    {
+      "$ref": "../clientNotification/rootsListChangedNotification.json"
+    }
+  ]
 }

@@ -1,4 +1,81 @@
 $schema: http://json-schema.org/draft-07/schema
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/channel
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  description: Describes a shared communication channel.
+  type: object
+  properties:
+    title:
+      description: A human-friendly title for the channel.
+      type: string
+    description:
+      description: A longer description of the channel. CommonMark is allowed.
+      type: string
+    address:
+      description: An optional string representation of this channel's address. The address is typically the "topic name", "routing key", "event type", or "path". When `null` or absent, it MUST be interpreted as unknown. This is useful when the address is generated dynamically at runtime or can't be known upfront. It MAY contain Channel Address Expressions.
+      type:
+        - string
+        - "null"
+    bindings:
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ./channelBindings.yaml
+    externalDocs:
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ./externalDocs.yaml
+    messages:
+      $ref: ../fragments/channelMessages.yaml
+    parameters:
+      $ref: ../fragments/parameters.yaml
+    servers:
+      description: The references of the servers on which this channel is available. If absent or empty then this channel must be available on all servers.
+      type: array
+      uniqueItems: true
+      items:
+        $ref: ../fragments/reference.yaml
+    summary:
+      description: A brief summary of the channel.
+      type: string
+    tags:
+      description: A list of tags for logical grouping of channels.
+      type: array
+      uniqueItems: true
+      items:
+        oneOf:
+          - $ref: ../fragments/reference.yaml
+          - $ref: ./tags.yaml
+  patternProperties:
+    ^x-[\w\d\.\x2d_]+$:
+      $ref: ../fragments/specificationExtension.yaml
+  additionalProperties: false
+  examples:
+    - address: users.{userId}
+      title: Users channel
+      description: This channel is used to exchange messages about user events.
+      messages:
+        userSignedUp:
+          $ref: "#/components/messages/userSignedUp"
+        userCompletedOrder:
+          $ref: "#/components/messages/userCompletedOrder"
+      parameters:
+        userId:
+          $ref: "#/components/parameters/userId"
+      servers:
+        - $ref: "#/servers/rabbitmqInProd"
+        - $ref: "#/servers/rabbitmqInStaging"
+      bindings:
+        amqp:
+          is: queue
+          queue:
+            exclusive: true
+      tags:
+        - name: user
+          description: User-related messages
+      externalDocs:
+        description: Find more info here
+        url: https://example.com

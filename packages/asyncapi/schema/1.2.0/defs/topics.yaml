@@ -1,2 +1,10 @@
 $schema: http://json-schema.org/draft-04/schema
-$ref: ../schema.yaml#/definitions/topics
+id: http://asyncapi.com/definitions/1.2.0/topics.json
+type: object
+description: Relative paths to the individual topics. They must be relative to the 'baseTopic'.
+patternProperties:
+  ^x-:
+    $ref: ./fragments/vendorExtension.yaml
+  ^[^.]:
+    $ref: ./fragments/topicItem.yaml
+additionalProperties: false

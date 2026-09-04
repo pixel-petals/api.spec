@@ -1,2 +1,17 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/SubscriptionsListenResultResponse
+description: |-
+  A successful response from the server for a {@link SubscriptionsListenRequestsubscriptions/listen}
+  request, sent when the server tears the subscription down gracefully.
+properties:
+  id:
+    $ref: ./requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+  result:
+    $ref: ../serverResult/subscriptionsListenResult.yaml
+required:
+  - id
+  - jsonrpc
+  - result
+type: object

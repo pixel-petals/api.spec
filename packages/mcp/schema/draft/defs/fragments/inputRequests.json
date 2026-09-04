@@ -1,4 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/InputRequests"
+  "additionalProperties": {
+    "$ref": "./inputRequest.json"
+  },
+  "description": "A map of server-initiated requests that the client must fulfill.\nKeys are server-assigned identifiers; values are the request objects.",
+  "type": "object"
 }

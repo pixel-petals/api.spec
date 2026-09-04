@@ -1,4 +1,98 @@
 $schema: http://json-schema.org/draft-07/schema
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/operation
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  type: object
+  description: Describes a specific operation.
+  additionalProperties: false
+  patternProperties:
+    ^x-[\w\d\.\x2d_]+$:
+      $ref: ../fragments/specificationExtension.yaml
+  required:
+    - action
+    - channel
+  properties:
+    action:
+      type: string
+      description: Allowed values are send and receive. Use send when it's expected that the application will send a message to the given channel, and receive when the application should expect receiving messages from the given channel.
+      enum:
+        - send
+        - receive
+    channel:
+      $ref: ../fragments/reference.yaml
+    messages:
+      type: array
+      description: A list of $ref pointers pointing to the supported Message Objects that can be processed by this operation. It MUST contain a subset of the messages defined in the channel referenced in this operation. Every message processed by this operation MUST be valid against one, and only one, of the message objects referenced in this list. Please note the messages property value MUST be a list of Reference Objects and, therefore, MUST NOT contain Message Objects. However, it is RECOMMENDED that parsers (or other software) dereference this property for a better development experience.
+      items:
+        $ref: ../fragments/reference.yaml
+    reply:
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ./replies.yaml
+    traits:
+      type: array
+      description: A list of traits to apply to the operation object. Traits MUST be merged using traits merge mechanism. The resulting object MUST be a valid Operation Object.
+      items:
+        oneOf:
+          - $ref: ../fragments/reference.yaml
+          - $ref: ./operationTraits.yaml
+    title:
+      type: string
+      description: A human-friendly title for the operation.
+    summary:
+      type: string
+      description: A brief summary of the operation.
+    description:
+      type: string
+      description: A longer description of the operation. CommonMark is allowed.
+    security:
+      $ref: ../fragments/securityRequirements.yaml
+    tags:
+      type: array
+      description: A list of tags for logical grouping and categorization of operations.
+      items:
+        oneOf:
+          - $ref: ../fragments/reference.yaml
+          - $ref: ./tags.yaml
+      uniqueItems: true
+    externalDocs:
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ./externalDocs.yaml
+    bindings:
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ./operationBindings.yaml
+  examples:
+    - title: User sign up
+      summary: Action to sign a user up.
+      description: A longer description
+      channel:
+        $ref: "#/channels/userSignup"
+      action: send
+      security:
+        - petstore_auth:
+            - write:pets
+            - read:pets
+      tags:
+        - name: user
+        - name: signup
+        - name: register
+      bindings:
+        amqp:
+          ack: false
+      traits:
+        - $ref: "#/components/operationTraits/kafka"
+      messages:
+        - $ref: "#/components/messages/userSignedUp"
+      reply:
+        address:
+          location: $message.header#/replyTo
+        channel:
+          $ref: "#/channels/userSignupReply"
+        messages:
+          - $ref: "#/components/messages/userSignedUpReply"

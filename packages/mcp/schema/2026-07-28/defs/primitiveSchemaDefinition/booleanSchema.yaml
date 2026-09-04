@@ -1,2 +1,14 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/BooleanSchema
+properties:
+  default:
+    type: boolean
+  description:
+    type: string
+  title:
+    type: string
+  type:
+    const: boolean
+    type: string
+required:
+  - type
+type: object

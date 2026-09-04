@@ -1,2 +1,16 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/SaslScramSecurityScheme
+type: object
+required:
+  - type
+properties:
+  type:
+    type: string
+    enum:
+      - scramSha256
+      - scramSha512
+  description:
+    type: string
+patternProperties:
+  ^x-[\w\d\.\x2d_]+$:
+    $ref: ../fragments/specificationExtension.yaml
+additionalProperties: false

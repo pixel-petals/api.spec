@@ -1,4 +1,444 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../schema.json#/definitions/components"
+  "description": "An object to hold a set of reusable objects for different aspects of the AsyncAPI specification. All objects defined within the components object will have no effect on the API unless they are explicitly referenced from properties outside the components object.",
+  "type": "object",
+  "properties": {
+    "channelBindings": {
+      "description": "An object to hold reusable Channel Bindings Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/channelBindings.json"
+            }
+          ]
+        }
+      }
+    },
+    "channels": {
+      "description": "An object to hold reusable Channel Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/channels.json"
+            }
+          ]
+        }
+      }
+    },
+    "correlationIds": {
+      "description": "An object to hold reusable Correlation ID Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/correlationIds.json"
+            }
+          ]
+        }
+      }
+    },
+    "externalDocs": {
+      "description": "An object to hold reusable External Documentation Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/externalDocs.json"
+            }
+          ]
+        }
+      }
+    },
+    "messageBindings": {
+      "description": "An object to hold reusable Message Bindings Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/messageBindings.json"
+            }
+          ]
+        }
+      }
+    },
+    "messageTraits": {
+      "description": "An object to hold reusable Message Trait Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/messageTraits.json"
+            }
+          ]
+        }
+      }
+    },
+    "messages": {
+      "description": "An object to hold reusable Message Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/messages.json"
+            }
+          ]
+        }
+      }
+    },
+    "operationBindings": {
+      "description": "An object to hold reusable Operation Bindings Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/operationBindings.json"
+            }
+          ]
+        }
+      }
+    },
+    "operationTraits": {
+      "description": "An object to hold reusable Operation Trait Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/operationTraits.json"
+            }
+          ]
+        }
+      }
+    },
+    "operations": {
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/operations.json"
+            }
+          ]
+        }
+      }
+    },
+    "parameters": {
+      "description": "An object to hold reusable Parameter Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/parameters.json"
+            }
+          ]
+        }
+      }
+    },
+    "replies": {
+      "description": "An object to hold reusable Operation Reply Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/replies.json"
+            }
+          ]
+        }
+      }
+    },
+    "replyAddresses": {
+      "description": "An object to hold reusable Operation Reply Address Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/replyAddresses.json"
+            }
+          ]
+        }
+      }
+    },
+    "schemas": {
+      "description": "An object to hold reusable Schema Object. If this is a Schema Object, then the schemaFormat will be assumed to be 'application/vnd.aai.asyncapi+json;version=asyncapi' where the version is equal to the AsyncAPI Version String.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "$ref": "../schema.json#/definitions/anySchema"
+        }
+      }
+    },
+    "securitySchemes": {
+      "description": "An object to hold reusable Security Scheme Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/securitySchemes.json"
+            }
+          ]
+        }
+      }
+    },
+    "serverBindings": {
+      "description": "An object to hold reusable Server Bindings Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/serverBindings.json"
+            }
+          ]
+        }
+      }
+    },
+    "serverVariables": {
+      "description": "An object to hold reusable Server Variable Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/serverVariables.json"
+            }
+          ]
+        }
+      }
+    },
+    "servers": {
+      "description": "An object to hold reusable Server Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/servers.json"
+            }
+          ]
+        }
+      }
+    },
+    "tags": {
+      "description": "An object to hold reusable Tag Objects.",
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/tags.json"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "patternProperties": {
+    "^x-[\\w\\d\\.\\x2d_]+$": {
+      "$ref": "./fragments/specificationExtension.json"
+    }
+  },
+  "additionalProperties": false,
+  "examples": [
+    {
+      "components": {
+        "schemas": {
+          "Category": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "Tag": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "AvroExample": {
+            "schemaFormat": "application/vnd.apache.avro+json;version=1.9.0",
+            "schema": {
+              "$ref": "path/to/user-create.avsc#/UserCreate"
+            }
+          }
+        },
+        "servers": {
+          "development": {
+            "host": "{stage}.in.mycompany.com:{port}",
+            "description": "RabbitMQ broker",
+            "protocol": "amqp",
+            "protocolVersion": "0-9-1",
+            "variables": {
+              "stage": {
+                "$ref": "#/components/serverVariables/stage"
+              },
+              "port": {
+                "$ref": "#/components/serverVariables/port"
+              }
+            }
+          }
+        },
+        "serverVariables": {
+          "stage": {
+            "default": "demo",
+            "description": "This value is assigned by the service provider, in this example `mycompany.com`"
+          },
+          "port": {
+            "enum": [
+              "5671",
+              "5672"
+            ],
+            "default": "5672"
+          }
+        },
+        "channels": {
+          "user/signedup": {
+            "subscribe": {
+              "message": {
+                "$ref": "#/components/messages/userSignUp"
+              }
+            }
+          }
+        },
+        "messages": {
+          "userSignUp": {
+            "summary": "Action to sign a user up.",
+            "description": "Multiline description of what this action does.\nHere you have another line.\n",
+            "tags": [
+              {
+                "name": "user"
+              },
+              {
+                "name": "signup"
+              }
+            ],
+            "headers": {
+              "type": "object",
+              "properties": {
+                "applicationInstanceId": {
+                  "description": "Unique identifier for a given instance of the publishing application",
+                  "type": "string"
+                }
+              }
+            },
+            "payload": {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "$ref": "#/components/schemas/userCreate"
+                },
+                "signup": {
+                  "$ref": "#/components/schemas/signup"
+                }
+              }
+            }
+          }
+        },
+        "parameters": {
+          "userId": {
+            "description": "Id of the user."
+          }
+        },
+        "correlationIds": {
+          "default": {
+            "description": "Default Correlation ID",
+            "location": "$message.header#/correlationId"
+          }
+        },
+        "messageTraits": {
+          "commonHeaders": {
+            "headers": {
+              "type": "object",
+              "properties": {
+                "my-app-header": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 100
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
 }

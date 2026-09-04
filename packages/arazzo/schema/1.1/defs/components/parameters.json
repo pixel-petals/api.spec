@@ -1,4 +1,46 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/parameter-object"
+  "$comment": "https://spec.openapis.org/arazzo/v1.1#parameter-object",
+  "description": "Describes a single step parameter",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the parameter",
+      "type": "string"
+    },
+    "in": {
+      "description": "The named location of the parameter",
+      "enum": [
+        "path",
+        "query",
+        "querystring",
+        "header",
+        "cookie",
+        "channel"
+      ]
+    },
+    "value": {
+      "description": "The value to pass in the parameter",
+      "oneOf": [
+        {
+          "type": [
+            "string",
+            "boolean",
+            "array",
+            "number",
+            "null"
+          ]
+        },
+        {
+          "$ref": "../fragments/selectorObject.json"
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "value"
+  ],
+  "$ref": "../../schema.json#/$defs/specification-extensions",
+  "unevaluatedProperties": false
 }

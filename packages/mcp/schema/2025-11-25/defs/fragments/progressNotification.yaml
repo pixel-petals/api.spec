@@ -1,2 +1,16 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ProgressNotification
+description: An out-of-band notification used to inform the receiver of a progress update for a long-running request.
+properties:
+  jsonrpc:
+    const: "2.0"
+    type: string
+  method:
+    const: notifications/progress
+    type: string
+  params:
+    $ref: ./progressNotificationParams.yaml
+required:
+  - jsonrpc
+  - method
+  - params
+type: object

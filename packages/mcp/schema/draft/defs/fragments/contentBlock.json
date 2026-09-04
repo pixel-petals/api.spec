@@ -1,4 +1,20 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ContentBlock"
+  "anyOf": [
+    {
+      "$ref": "./textContent.json"
+    },
+    {
+      "$ref": "./imageContent.json"
+    },
+    {
+      "$ref": "./audioContent.json"
+    },
+    {
+      "$ref": "../contentBlock/resourceLink.json"
+    },
+    {
+      "$ref": "../contentBlock/embeddedResource.json"
+    }
+  ]
 }

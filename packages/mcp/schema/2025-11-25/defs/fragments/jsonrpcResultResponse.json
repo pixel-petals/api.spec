@@ -1,4 +1,22 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/JSONRPCResultResponse"
+  "description": "A successful (non-error) response to a request.",
+  "properties": {
+    "id": {
+      "$ref": "./requestId.json"
+    },
+    "jsonrpc": {
+      "const": "2.0",
+      "type": "string"
+    },
+    "result": {
+      "$ref": "./result.json"
+    }
+  },
+  "required": [
+    "id",
+    "jsonrpc",
+    "result"
+  ],
+  "type": "object"
 }

@@ -1,2 +1,20 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/RootsListChangedNotification
+description: |-
+  A notification from the client to the server, informing it that the list of roots has changed.
+  This notification should be sent whenever the client adds, removes, or modifies any root.
+  The server should then request an updated list of roots using the ListRootsRequest.
+properties:
+  method:
+    const: notifications/roots/list_changed
+    type: string
+  params:
+    additionalProperties: {}
+    properties:
+      _meta:
+        additionalProperties: {}
+        description: "See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage."
+        type: object
+    type: object
+required:
+  - method
+type: object

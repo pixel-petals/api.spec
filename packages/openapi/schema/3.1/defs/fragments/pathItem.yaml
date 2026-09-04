@@ -1,2 +1,37 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/path-item
+$comment: https://spec.openapis.org/oas/v3.1#path-item-object
+type: object
+properties:
+  $ref:
+    type: string
+    format: uri-reference
+  summary:
+    type: string
+  description:
+    type: string
+  servers:
+    type: array
+    items:
+      $ref: ../servers/server.yaml
+  parameters:
+    type: array
+    items:
+      $ref: ../components/parameters.yaml
+  get:
+    $ref: ./operation.yaml
+  put:
+    $ref: ./operation.yaml
+  post:
+    $ref: ./operation.yaml
+  delete:
+    $ref: ./operation.yaml
+  options:
+    $ref: ./operation.yaml
+  head:
+    $ref: ./operation.yaml
+  patch:
+    $ref: ./operation.yaml
+  trace:
+    $ref: ./operation.yaml
+$ref: ../../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false

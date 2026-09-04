@@ -1,4 +1,29 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ReadResourceResultResponse"
+  "description": "A successful response from the server for a {@link ReadResourceRequestresources/read} request.",
+  "properties": {
+    "id": {
+      "$ref": "./requestId.json"
+    },
+    "jsonrpc": {
+      "const": "2.0",
+      "type": "string"
+    },
+    "result": {
+      "anyOf": [
+        {
+          "$ref": "../serverResult/inputRequiredResult.json"
+        },
+        {
+          "$ref": "../serverResult/readResourceResult.json"
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "jsonrpc",
+    "result"
+  ],
+  "type": "object"
 }

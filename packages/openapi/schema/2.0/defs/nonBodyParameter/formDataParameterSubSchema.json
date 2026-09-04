@@ -1,4 +1,95 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/formDataParameterSubSchema"
+  "additionalProperties": false,
+  "patternProperties": {
+    "^x-": {
+      "$ref": "../fragments/vendorExtension.json"
+    }
+  },
+  "properties": {
+    "required": {
+      "type": "boolean",
+      "description": "Determines whether or not this parameter is required or optional.",
+      "default": false
+    },
+    "in": {
+      "type": "string",
+      "description": "Determines the location of the parameter.",
+      "enum": [
+        "formData"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the parameter. This could contain examples of use.  GitHub Flavored Markdown is allowed."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the parameter."
+    },
+    "allowEmptyValue": {
+      "type": "boolean",
+      "default": false,
+      "description": "allows sending a parameter by name only or with an empty value."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "string",
+        "number",
+        "boolean",
+        "integer",
+        "array",
+        "file"
+      ]
+    },
+    "format": {
+      "type": "string"
+    },
+    "items": {
+      "$ref": "../fragments/primitivesItems.json"
+    },
+    "collectionFormat": {
+      "$ref": "../fragments/collectionFormatWithMulti.json"
+    },
+    "default": {
+      "$ref": "../../schema.json#/definitions/default"
+    },
+    "maximum": {
+      "$ref": "../../schema.json#/definitions/maximum"
+    },
+    "exclusiveMaximum": {
+      "$ref": "../../schema.json#/definitions/exclusiveMaximum"
+    },
+    "minimum": {
+      "$ref": "../../schema.json#/definitions/minimum"
+    },
+    "exclusiveMinimum": {
+      "$ref": "../../schema.json#/definitions/exclusiveMinimum"
+    },
+    "maxLength": {
+      "$ref": "../../schema.json#/definitions/maxLength"
+    },
+    "minLength": {
+      "$ref": "../../schema.json#/definitions/minLength"
+    },
+    "pattern": {
+      "$ref": "../../schema.json#/definitions/pattern"
+    },
+    "maxItems": {
+      "$ref": "../../schema.json#/definitions/maxItems"
+    },
+    "minItems": {
+      "$ref": "../../schema.json#/definitions/minItems"
+    },
+    "uniqueItems": {
+      "$ref": "../../schema.json#/definitions/uniqueItems"
+    },
+    "enum": {
+      "$ref": "../../schema.json#/definitions/enum"
+    },
+    "multipleOf": {
+      "$ref": "../../schema.json#/definitions/multipleOf"
+    }
+  }
 }

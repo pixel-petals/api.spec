@@ -1,2 +1,8 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/infoExtensions
+type: object
+description: The object that lists all the extensions of Info
+properties:
+  x-x:
+    $ref: ./extensionsX0.1.0Schema.yaml
+  x-linkedin:
+    $ref: ./extensionsLinkedin0.1.0Schema.yaml

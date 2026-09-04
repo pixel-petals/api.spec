@@ -1,2 +1,5 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../schema.yaml#/definitions/parameterDefinitions
+type: object
+additionalProperties:
+  $ref: ./fragments/parameter.yaml
+description: One or more JSON representations for parameters

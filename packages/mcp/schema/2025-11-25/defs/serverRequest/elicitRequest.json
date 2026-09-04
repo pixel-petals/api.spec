@@ -1,4 +1,27 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ElicitRequest"
+  "description": "A request from the server to elicit additional information from the user via the client.",
+  "properties": {
+    "id": {
+      "$ref": "../fragments/requestId.json"
+    },
+    "jsonrpc": {
+      "const": "2.0",
+      "type": "string"
+    },
+    "method": {
+      "const": "elicitation/create",
+      "type": "string"
+    },
+    "params": {
+      "$ref": "../fragments/elicitRequestParams.json"
+    }
+  },
+  "required": [
+    "id",
+    "jsonrpc",
+    "method",
+    "params"
+  ],
+  "type": "object"
 }

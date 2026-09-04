@@ -1,2 +1,3 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/Cursor
+description: An opaque token used to represent a cursor for pagination.
+type: string

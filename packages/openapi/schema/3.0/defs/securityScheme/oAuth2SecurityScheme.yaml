@@ -1,2 +1,17 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/OAuth2SecurityScheme
+type: object
+required:
+  - type
+  - flows
+properties:
+  type:
+    type: string
+    enum:
+      - oauth2
+  flows:
+    $ref: ../fragments/oAuthFlows.yaml
+  description:
+    type: string
+patternProperties:
+  ^x-: {}
+additionalProperties: false

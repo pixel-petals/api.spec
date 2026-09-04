@@ -1,4 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../../schema.json#/definitions/ReferenceObject"
+  "type": "string",
+  "format": "uri-reference"
 }

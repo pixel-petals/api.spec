@@ -1,2 +1,24 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/InitializeRequest
+description: This request is sent from the client to the server when it first connects, asking it to begin initialization.
+properties:
+  method:
+    const: initialize
+    type: string
+  params:
+    properties:
+      capabilities:
+        $ref: ../fragments/clientCapabilities.yaml
+      clientInfo:
+        $ref: ../fragments/implementation.yaml
+      protocolVersion:
+        description: The latest version of the Model Context Protocol that the client supports. The client MAY decide to support older versions as well.
+        type: string
+    required:
+      - capabilities
+      - clientInfo
+      - protocolVersion
+    type: object
+required:
+  - method
+  - params
+type: object

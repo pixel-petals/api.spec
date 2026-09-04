@@ -1,2 +1,11 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/Discriminator
+type: object
+required:
+  - propertyName
+properties:
+  propertyName:
+    type: string
+  mapping:
+    type: object
+    additionalProperties:
+      type: string

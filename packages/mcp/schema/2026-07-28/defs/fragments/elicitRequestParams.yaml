@@ -1,2 +1,5 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ElicitRequestParams
+anyOf:
+  - $ref: ../elicitRequestParams/elicitRequestFormParams.yaml
+  - $ref: ../elicitRequestParams/elicitRequestURLParams.yaml
+description: The parameters for a request to elicit additional information from the user via the client.

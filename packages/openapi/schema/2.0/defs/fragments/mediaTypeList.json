@@ -1,4 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/mediaTypeList"
+  "type": "array",
+  "items": {
+    "$ref": "./mimeType.json"
+  },
+  "uniqueItems": true
 }

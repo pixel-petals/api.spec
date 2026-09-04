@@ -1,2 +1,44 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ToolResultContent
+description: The result of a tool use, provided by the user back to the assistant.
+properties:
+  _meta:
+    $ref: ../fragments/metaObject.yaml
+    description: |-
+      Optional metadata about the tool result. Clients SHOULD preserve this field when
+      including tool results in subsequent sampling requests to enable caching optimizations.
+  content:
+    description: |-
+      The unstructured result content of the tool use.
+
+      This has the same format as {@link CallToolResult.content} and can include text, images,
+      audio, resource links, and embedded resources.
+    items:
+      $ref: ../fragments/contentBlock.yaml
+    type: array
+  isError:
+    description: |-
+      Whether the tool use resulted in an error.
+
+      If true, the content typically describes the error that occurred.
+      Default: false
+    type: boolean
+  structuredContent:
+    description: |-
+      An optional structured result value.
+
+      This can be any JSON value (object, array, string, number, boolean, or null).
+      If the tool defined an {@link Tool.outputSchema}, this SHOULD conform to that schema.
+  toolUseId:
+    description: |-
+      The ID of the tool use this result corresponds to.
+
+      This MUST match the ID from a previous {@link ToolUseContent}.
+    type: string
+  type:
+    const: tool_result
+    type: string
+required:
+  - content
+  - toolUseId
+  - type
+type: object

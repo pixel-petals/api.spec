@@ -1,4 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema",
-  "$ref": "../schema.json#/definitions/topics"
+  "id": "http://asyncapi.com/definitions/1.1.0/topics.json",
+  "type": "object",
+  "description": "Relative paths to the individual topics. They must be relative to the 'baseTopic'.",
+  "patternProperties": {
+    "^x-": {
+      "$ref": "./fragments/vendorExtension.json"
+    },
+    "^[^.]": {
+      "$ref": "./fragments/topicItem.json"
+    }
+  },
+  "additionalProperties": false
 }

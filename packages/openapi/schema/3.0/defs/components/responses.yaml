@@ -1,4 +1,33 @@
 $schema: http://json-schema.org/draft-04/schema#
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/Response
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  type: object
+  required:
+    - description
+  properties:
+    description:
+      type: string
+    headers:
+      type: object
+      additionalProperties:
+        oneOf:
+          - $ref: ./headers.yaml
+          - $ref: ../fragments/reference.yaml
+    content:
+      type: object
+      additionalProperties:
+        $ref: ../fragments/mediaType.yaml
+    links:
+      type: object
+      additionalProperties:
+        oneOf:
+          - $ref: ./links.yaml
+          - $ref: ../fragments/reference.yaml
+  patternProperties:
+    ^x-: {}
+  additionalProperties: false

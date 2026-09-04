@@ -1,11 +1,37 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "oneOf": [
-    {
-      "$ref": "../../schema.json#/definitions/Reference"
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "../fragments/reference.json"
+  },
+  "else": {
+    "type": "object",
+    "required": [
+      "content"
+    ],
+    "properties": {
+      "description": {
+        "type": "string"
+      },
+      "content": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "../fragments/mediaType.json"
+        }
+      },
+      "required": {
+        "type": "boolean",
+        "default": false
+      }
     },
-    {
-      "$ref": "../../schema.json#/definitions/RequestBody"
-    }
-  ]
+    "patternProperties": {
+      "^x-": {}
+    },
+    "additionalProperties": false
+  }
 }

@@ -1,2 +1,15 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/DiscoverResultResponse
+description: A successful response from the server for a {@link DiscoverRequestserver/discover} request.
+properties:
+  id:
+    $ref: ./requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+  result:
+    $ref: ../serverResult/discoverResult.yaml
+required:
+  - id
+  - jsonrpc
+  - result
+type: object

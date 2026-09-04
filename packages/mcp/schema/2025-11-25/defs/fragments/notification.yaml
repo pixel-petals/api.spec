@@ -1,2 +1,10 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/Notification
+properties:
+  method:
+    type: string
+  params:
+    additionalProperties: {}
+    type: object
+required:
+  - method
+type: object

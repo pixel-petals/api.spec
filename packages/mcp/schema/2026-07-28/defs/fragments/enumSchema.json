@@ -1,4 +1,20 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/EnumSchema"
+  "anyOf": [
+    {
+      "$ref": "./untitledSingleSelectEnumSchema.json"
+    },
+    {
+      "$ref": "./titledSingleSelectEnumSchema.json"
+    },
+    {
+      "$ref": "./untitledMultiSelectEnumSchema.json"
+    },
+    {
+      "$ref": "./titledMultiSelectEnumSchema.json"
+    },
+    {
+      "$ref": "./legacyTitledEnumSchema.json"
+    }
+  ]
 }

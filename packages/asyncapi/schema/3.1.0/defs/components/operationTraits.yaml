@@ -1,4 +1,42 @@
 $schema: http://json-schema.org/draft-07/schema
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/operationTrait
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  description: Describes a trait that MAY be applied to an Operation Object. This object MAY contain any property from the Operation Object, except the action, channel and traits ones.
+  type: object
+  properties:
+    title:
+      description: A human-friendly title for the operation.
+      $ref: ../../schema.yaml#/definitions/operation/properties/title
+    description:
+      description: A verbose explanation of the operation. CommonMark syntax can be used for rich text representation.
+      $ref: ../../schema.yaml#/definitions/operation/properties/description
+    bindings:
+      description: A map where the keys describe the name of the protocol and the values describe protocol-specific definitions for the operation.
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ./operationBindings.yaml
+    externalDocs:
+      description: Additional external documentation for this operation.
+      $ref: ../../schema.yaml#/definitions/operation/properties/externalDocs
+    security:
+      description: A declaration of which security schemes are associated with this operation. Only one of the security scheme objects MUST be satisfied to authorize an operation. In cases where Server Security also applies, it MUST also be satisfied.
+      $ref: ../../schema.yaml#/definitions/operation/properties/security
+    summary:
+      description: A short summary of what the operation is about.
+      $ref: ../../schema.yaml#/definitions/operation/properties/summary
+    tags:
+      description: A list of tags for logical grouping and categorization of operations.
+      $ref: ../../schema.yaml#/definitions/operation/properties/tags
+  patternProperties:
+    ^x-[\w\d\.\x2d_]+$:
+      $ref: ../fragments/specificationExtension.yaml
+  additionalProperties: false
+  examples:
+    - bindings:
+        amqp:
+          ack: false

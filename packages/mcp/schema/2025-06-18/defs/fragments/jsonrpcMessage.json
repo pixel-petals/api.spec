@@ -1,4 +1,18 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/JSONRPCMessage"
+  "anyOf": [
+    {
+      "$ref": "../jsonrpcMessage/jsonrpcRequest.json"
+    },
+    {
+      "$ref": "../jsonrpcMessage/jsonrpcNotification.json"
+    },
+    {
+      "$ref": "../jsonrpcMessage/jsonrpcResponse.json"
+    },
+    {
+      "$ref": "../jsonrpcMessage/jsonrpcError.json"
+    }
+  ],
+  "description": "Refers to any valid JSON-RPC object that can be decoded off the wire, or encoded to be sent."
 }

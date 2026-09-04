@@ -1,2 +1,64 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/pathParameterSubSchema
+additionalProperties: false
+patternProperties:
+  ^x-:
+    $ref: ../fragments/vendorExtension.yaml
+required:
+  - required
+properties:
+  required:
+    type: boolean
+    enum:
+      - true
+    description: Determines whether or not this parameter is required or optional.
+  in:
+    type: string
+    description: Determines the location of the parameter.
+    enum:
+      - path
+  description:
+    type: string
+    description: A brief description of the parameter. This could contain examples of use.  GitHub Flavored Markdown is allowed.
+  name:
+    type: string
+    description: The name of the parameter.
+  type:
+    type: string
+    enum:
+      - string
+      - number
+      - boolean
+      - integer
+      - array
+  format:
+    type: string
+  items:
+    $ref: ../fragments/primitivesItems.yaml
+  collectionFormat:
+    $ref: ../fragments/collectionFormat.yaml
+  default:
+    $ref: ../../schema.yaml#/definitions/default
+  maximum:
+    $ref: ../../schema.yaml#/definitions/maximum
+  exclusiveMaximum:
+    $ref: ../../schema.yaml#/definitions/exclusiveMaximum
+  minimum:
+    $ref: ../../schema.yaml#/definitions/minimum
+  exclusiveMinimum:
+    $ref: ../../schema.yaml#/definitions/exclusiveMinimum
+  maxLength:
+    $ref: ../../schema.yaml#/definitions/maxLength
+  minLength:
+    $ref: ../../schema.yaml#/definitions/minLength
+  pattern:
+    $ref: ../../schema.yaml#/definitions/pattern
+  maxItems:
+    $ref: ../../schema.yaml#/definitions/maxItems
+  minItems:
+    $ref: ../../schema.yaml#/definitions/minItems
+  uniqueItems:
+    $ref: ../../schema.yaml#/definitions/uniqueItems
+  enum:
+    $ref: ../../schema.yaml#/definitions/enum
+  multipleOf:
+    $ref: ../../schema.yaml#/definitions/multipleOf

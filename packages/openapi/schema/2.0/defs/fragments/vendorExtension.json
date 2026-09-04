@@ -1,4 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/vendorExtension"
+  "description": "Any property starting with x- is valid.",
+  "additionalProperties": true,
+  "additionalItems": true
 }

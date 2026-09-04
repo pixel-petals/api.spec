@@ -1,4 +1,32 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ServerNotification"
+  "anyOf": [
+    {
+      "$ref": "./cancelledNotification.json"
+    },
+    {
+      "$ref": "./progressNotification.json"
+    },
+    {
+      "$ref": "../serverNotification/resourceListChangedNotification.json"
+    },
+    {
+      "$ref": "../serverNotification/resourceUpdatedNotification.json"
+    },
+    {
+      "$ref": "../serverNotification/promptListChangedNotification.json"
+    },
+    {
+      "$ref": "../serverNotification/toolListChangedNotification.json"
+    },
+    {
+      "$ref": "./taskStatusNotification.json"
+    },
+    {
+      "$ref": "../serverNotification/loggingMessageNotification.json"
+    },
+    {
+      "$ref": "../serverNotification/elicitationCompleteNotification.json"
+    }
+  ]
 }

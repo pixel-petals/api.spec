@@ -1,2 +1,82 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/oauth-flows
+type: object
+properties:
+  implicit:
+    $ref: ../../schema.yaml#/$defs/oauth-flows/$defs/implicit
+  password:
+    $ref: ../../schema.yaml#/$defs/oauth-flows/$defs/password
+  clientCredentials:
+    $ref: ../../schema.yaml#/$defs/oauth-flows/$defs/client-credentials
+  authorizationCode:
+    $ref: ../../schema.yaml#/$defs/oauth-flows/$defs/authorization-code
+$ref: ../../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false
+$defs:
+  implicit:
+    type: object
+    properties:
+      authorizationUrl:
+        type: string
+        format: uri-reference
+      refreshUrl:
+        type: string
+        format: uri-reference
+      scopes:
+        $ref: ./mapOfStrings.yaml
+    required:
+      - authorizationUrl
+      - scopes
+    $ref: ../../schema.yaml#/$defs/specification-extensions
+    unevaluatedProperties: false
+  password:
+    type: object
+    properties:
+      tokenUrl:
+        type: string
+        format: uri-reference
+      refreshUrl:
+        type: string
+        format: uri-reference
+      scopes:
+        $ref: ./mapOfStrings.yaml
+    required:
+      - tokenUrl
+      - scopes
+    $ref: ../../schema.yaml#/$defs/specification-extensions
+    unevaluatedProperties: false
+  client-credentials:
+    type: object
+    properties:
+      tokenUrl:
+        type: string
+        format: uri-reference
+      refreshUrl:
+        type: string
+        format: uri-reference
+      scopes:
+        $ref: ./mapOfStrings.yaml
+    required:
+      - tokenUrl
+      - scopes
+    $ref: ../../schema.yaml#/$defs/specification-extensions
+    unevaluatedProperties: false
+  authorization-code:
+    type: object
+    properties:
+      authorizationUrl:
+        type: string
+        format: uri-reference
+      tokenUrl:
+        type: string
+        format: uri-reference
+      refreshUrl:
+        type: string
+        format: uri-reference
+      scopes:
+        $ref: ./mapOfStrings.yaml
+    required:
+      - authorizationUrl
+      - tokenUrl
+      - scopes
+    $ref: ../../schema.yaml#/$defs/specification-extensions
+    unevaluatedProperties: false

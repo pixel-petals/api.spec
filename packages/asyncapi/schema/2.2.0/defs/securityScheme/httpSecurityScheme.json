@@ -1,4 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../../schema.json#/definitions/HTTPSecurityScheme"
+  "oneOf": [
+    {
+      "$ref": "../httpSecurityScheme/nonBearerHTTPSecurityScheme.json"
+    },
+    {
+      "$ref": "../httpSecurityScheme/bearerHTTPSecurityScheme.json"
+    },
+    {
+      "$ref": "../httpSecurityScheme/apiKeyHTTPSecurityScheme.json"
+    }
+  ]
 }

@@ -1,2 +1,9 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/parametersList
+type: array
+description: The parameters needed to send a valid API call.
+additionalItems: false
+items:
+  oneOf:
+    - $ref: ./parameter.yaml
+    - $ref: ./response.yaml
+uniqueItems: true

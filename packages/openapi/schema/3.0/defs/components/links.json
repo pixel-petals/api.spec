@@ -1,11 +1,46 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "oneOf": [
-    {
-      "$ref": "../../schema.json#/definitions/Reference"
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "../fragments/reference.json"
+  },
+  "else": {
+    "type": "object",
+    "properties": {
+      "operationId": {
+        "type": "string"
+      },
+      "operationRef": {
+        "type": "string",
+        "format": "uri-reference"
+      },
+      "parameters": {
+        "type": "object",
+        "additionalProperties": {}
+      },
+      "requestBody": {},
+      "description": {
+        "type": "string"
+      },
+      "server": {
+        "$ref": "../servers/server.json"
+      }
     },
-    {
-      "$ref": "../../schema.json#/definitions/Link"
+    "patternProperties": {
+      "^x-": {}
+    },
+    "additionalProperties": false,
+    "not": {
+      "description": "Operation Id and Operation Ref are mutually exclusive",
+      "required": [
+        "operationId",
+        "operationRef"
+      ]
     }
-  ]
+  }
 }

@@ -1,4 +1,46 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../../schema.json#/definitions/bindings-kafka-0.5.0-operation"
+  "title": "Operation Schema",
+  "description": "This object contains information about the operation representation in Kafka.",
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^x-[\\w\\d\\.\\x2d_]+$": {
+      "$ref": "./specificationExtension.json"
+    }
+  },
+  "properties": {
+    "groupId": {
+      "$ref": "../../schema.json#/definitions/schema",
+      "description": "Id of the consumer group."
+    },
+    "clientId": {
+      "$ref": "../../schema.json#/definitions/schema",
+      "description": "Id of the consumer inside a consumer group."
+    },
+    "bindingVersion": {
+      "type": "string",
+      "enum": [
+        "0.5.0"
+      ],
+      "description": "The version of this binding. If omitted, 'latest' MUST be assumed."
+    }
+  },
+  "examples": [
+    {
+      "groupId": {
+        "type": "string",
+        "enum": [
+          "myGroupId"
+        ]
+      },
+      "clientId": {
+        "type": "string",
+        "enum": [
+          "myClientId"
+        ]
+      },
+      "bindingVersion": "0.5.0"
+    }
+  ]
 }

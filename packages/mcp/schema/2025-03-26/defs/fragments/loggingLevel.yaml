@@ -1,2 +1,16 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/LoggingLevel
+description: |-
+  The severity of a log message.
+
+  These map to syslog message severities, as specified in RFC-5424:
+  https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1
+enum:
+  - alert
+  - critical
+  - debug
+  - emergency
+  - error
+  - info
+  - notice
+  - warning
+type: string

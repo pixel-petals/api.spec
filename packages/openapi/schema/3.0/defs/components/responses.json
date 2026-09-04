@@ -1,11 +1,59 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "oneOf": [
-    {
-      "$ref": "../../schema.json#/definitions/Reference"
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "../fragments/reference.json"
+  },
+  "else": {
+    "type": "object",
+    "required": [
+      "description"
+    ],
+    "properties": {
+      "description": {
+        "type": "string"
+      },
+      "headers": {
+        "type": "object",
+        "additionalProperties": {
+          "oneOf": [
+            {
+              "$ref": "./headers.json"
+            },
+            {
+              "$ref": "../fragments/reference.json"
+            }
+          ]
+        }
+      },
+      "content": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "../fragments/mediaType.json"
+        }
+      },
+      "links": {
+        "type": "object",
+        "additionalProperties": {
+          "oneOf": [
+            {
+              "$ref": "./links.json"
+            },
+            {
+              "$ref": "../fragments/reference.json"
+            }
+          ]
+        }
+      }
     },
-    {
-      "$ref": "../../schema.json#/definitions/Response"
-    }
-  ]
+    "patternProperties": {
+      "^x-": {}
+    },
+    "additionalProperties": false
+  }
 }

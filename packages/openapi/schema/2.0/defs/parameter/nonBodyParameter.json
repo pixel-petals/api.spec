@@ -1,4 +1,23 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/nonBodyParameter"
+  "type": "object",
+  "required": [
+    "name",
+    "in",
+    "type"
+  ],
+  "oneOf": [
+    {
+      "$ref": "../nonBodyParameter/headerParameterSubSchema.json"
+    },
+    {
+      "$ref": "../nonBodyParameter/formDataParameterSubSchema.json"
+    },
+    {
+      "$ref": "../nonBodyParameter/queryParameterSubSchema.json"
+    },
+    {
+      "$ref": "../nonBodyParameter/pathParameterSubSchema.json"
+    }
+  ]
 }

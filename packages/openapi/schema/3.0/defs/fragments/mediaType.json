@@ -1,4 +1,45 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/MediaType"
+  "type": "object",
+  "properties": {
+    "schema": {
+      "oneOf": [
+        {
+          "$ref": "../components/schemas.json"
+        },
+        {
+          "$ref": "./reference.json"
+        }
+      ]
+    },
+    "example": {},
+    "examples": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "$ref": "../components/examples.json"
+          },
+          {
+            "$ref": "./reference.json"
+          }
+        ]
+      }
+    },
+    "encoding": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "./encoding.json"
+      }
+    }
+  },
+  "patternProperties": {
+    "^x-": {}
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$ref": "../../schema.json#/definitions/ExampleXORExamples"
+    }
+  ]
 }

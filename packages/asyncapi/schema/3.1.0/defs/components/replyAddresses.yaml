@@ -1,4 +1,27 @@
 $schema: http://json-schema.org/draft-07/schema
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/operationReplyAddress
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  description: An object that specifies where an operation has to send the reply
+  type: object
+  required:
+    - location
+  properties:
+    description:
+      description: An optional description of the address. CommonMark is allowed.
+      type: string
+    location:
+      description: A runtime expression that specifies the location of the reply address.
+      type: string
+      pattern: ^\$message\.(header|payload)#(\/(([^\/~])|(~[01]))*)*
+  patternProperties:
+    ^x-[\w\d\.\x2d_]+$:
+      $ref: ../fragments/specificationExtension.yaml
+  additionalProperties: false
+  examples:
+    - description: Consumer inbox
+      location: $message.header#/replyTo

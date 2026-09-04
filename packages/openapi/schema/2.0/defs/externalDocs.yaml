@@ -1,2 +1,15 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../schema.yaml#/definitions/externalDocs
+type: object
+additionalProperties: false
+description: information about external documentation
+required:
+  - url
+properties:
+  description:
+    type: string
+  url:
+    type: string
+    format: uri
+patternProperties:
+  ^x-:
+    $ref: ./fragments/vendorExtension.yaml

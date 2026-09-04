@@ -1,4 +1,21 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/PaginatedRequest"
+  "properties": {
+    "method": {
+      "type": "string"
+    },
+    "params": {
+      "properties": {
+        "cursor": {
+          "description": "An opaque token representing the current pagination position.\nIf provided, the server should return results starting after this cursor.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "method"
+  ],
+  "type": "object"
 }

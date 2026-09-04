@@ -1,2 +1,19 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ListToolsResult
+description: The server's response to a tools/list request from the client.
+properties:
+  _meta:
+    additionalProperties: {}
+    description: "See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage."
+    type: object
+  nextCursor:
+    description: |-
+      An opaque token representing the pagination position after the last returned result.
+      If present, there may be more results available.
+    type: string
+  tools:
+    items:
+      $ref: ../fragments/tool.yaml
+    type: array
+required:
+  - tools
+type: object

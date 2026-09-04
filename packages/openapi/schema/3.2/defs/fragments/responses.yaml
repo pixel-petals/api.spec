@@ -1,2 +1,19 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/responses
+$comment: https://spec.openapis.org/oas/v3.2#responses-object
+type: object
+properties:
+  default:
+    $ref: ../components/responses.yaml
+patternProperties:
+  ^[1-5](?:[0-9]{2}|XX)$:
+    $ref: ../components/responses.yaml
+minProperties: 1
+$ref: ../../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false
+if:
+  $comment: either default, or at least one response code property must exist
+  patternProperties:
+    ^[1-5](?:[0-9]{2}|XX)$: false
+then:
+  required:
+    - default

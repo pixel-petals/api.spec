@@ -1,2 +1,25 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/example-or-reference
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  $comment: https://spec.openapis.org/oas/v3.1#example-object
+  type: object
+  properties:
+    summary:
+      type: string
+    description:
+      type: string
+    value: true
+    externalValue:
+      type: string
+      format: uri-reference
+  not:
+    required:
+      - value
+      - externalValue
+  $ref: ../../schema.yaml#/$defs/specification-extensions
+  unevaluatedProperties: false

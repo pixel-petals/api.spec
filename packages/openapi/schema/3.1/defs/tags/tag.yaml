@@ -1,2 +1,14 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/tag
+$comment: https://spec.openapis.org/oas/v3.1#tag-object
+type: object
+properties:
+  name:
+    type: string
+  description:
+    type: string
+  externalDocs:
+    $ref: ../externalDocs.yaml
+required:
+  - name
+$ref: ../../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false

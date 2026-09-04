@@ -1,4 +1,56 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/CompleteRequestParams"
+  "description": "Parameters for a `completion/complete` request.",
+  "properties": {
+    "_meta": {
+      "$ref": "./requestMetaObject.json"
+    },
+    "argument": {
+      "description": "The argument's information",
+      "properties": {
+        "name": {
+          "description": "The name of the argument",
+          "type": "string"
+        },
+        "value": {
+          "description": "The value of the argument to use for completion matching.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "value"
+      ],
+      "type": "object"
+    },
+    "context": {
+      "description": "Additional, optional context for completions",
+      "properties": {
+        "arguments": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Previously-resolved variables in a URI template or prompt.",
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "ref": {
+      "anyOf": [
+        {
+          "$ref": "./promptReference.json"
+        },
+        {
+          "$ref": "./resourceTemplateReference.json"
+        }
+      ]
+    }
+  },
+  "required": [
+    "_meta",
+    "argument",
+    "ref"
+  ],
+  "type": "object"
 }

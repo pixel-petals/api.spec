@@ -1,2 +1,18 @@
 $schema: http://json-schema.org/draft-04/schema
-$ref: ../../schema.yaml#/definitions/topicItem
+id: http://asyncapi.com/definitions/1.0.0/topicItem.json
+type: object
+additionalProperties: false
+patternProperties:
+  ^x-:
+    $ref: ./vendorExtension.yaml
+minProperties: 1
+properties:
+  $ref:
+    type: string
+  publish:
+    $ref: ./message.yaml
+  subscribe:
+    $ref: ./message.yaml
+  deprecated:
+    type: boolean
+    default: false

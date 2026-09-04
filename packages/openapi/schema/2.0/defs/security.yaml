@@ -1,2 +1,5 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../schema.yaml#/definitions/security
+type: array
+items:
+  $ref: ./fragments/securityRequirement.yaml
+uniqueItems: true

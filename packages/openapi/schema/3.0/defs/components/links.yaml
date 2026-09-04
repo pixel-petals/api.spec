@@ -1,4 +1,31 @@
 $schema: http://json-schema.org/draft-04/schema#
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/Link
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  type: object
+  properties:
+    operationId:
+      type: string
+    operationRef:
+      type: string
+      format: uri-reference
+    parameters:
+      type: object
+      additionalProperties: {}
+    requestBody: {}
+    description:
+      type: string
+    server:
+      $ref: ../servers/server.yaml
+  patternProperties:
+    ^x-: {}
+  additionalProperties: false
+  not:
+    description: Operation Id and Operation Ref are mutually exclusive
+    required:
+      - operationId
+      - operationRef

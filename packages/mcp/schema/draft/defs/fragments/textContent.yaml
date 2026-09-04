@@ -1,2 +1,18 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/TextContent
+description: Text provided to or from an LLM.
+properties:
+  _meta:
+    $ref: ./metaObject.yaml
+  annotations:
+    $ref: ./annotations.yaml
+    description: Optional annotations for the client.
+  text:
+    description: The text content of the message.
+    type: string
+  type:
+    const: text
+    type: string
+required:
+  - text
+  - type
+type: object

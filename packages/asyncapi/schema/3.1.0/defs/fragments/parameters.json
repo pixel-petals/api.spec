@@ -1,4 +1,25 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../../schema.json#/definitions/parameters"
+  "description": "JSON objects describing re-usable channel parameters.",
+  "type": "object",
+  "additionalProperties": {
+    "oneOf": [
+      {
+        "$ref": "./reference.json"
+      },
+      {
+        "$ref": "../components/parameters.json"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "address": "user/{userId}/signedup",
+      "parameters": {
+        "userId": {
+          "description": "Id of the user."
+        }
+      }
+    }
+  ]
 }

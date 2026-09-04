@@ -1,2 +1,9 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/step-object
+$comment: https://spec.openapis.org/arazzo/v1.1#step-object'
+description: |-
+  Describes a single workflow step which MAY be a call to an
+  API operation (OpenAPI Operation Object or AsyncAPI Operation Object or another Workflow Object)
+oneOf:
+  - $ref: ../../schema.yaml#/$defs/openapi-step-object
+  - $ref: ../../schema.yaml#/$defs/asyncapi-step-object
+  - $ref: ../../schema.yaml#/$defs/workflow-step-object

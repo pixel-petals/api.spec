@@ -1,2 +1,17 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/CancelledNotificationParams
+description: Parameters for a `notifications/cancelled` notification.
+properties:
+  _meta:
+    $ref: ./notificationMetaObject.yaml
+  reason:
+    description: An optional string describing the reason for the cancellation. This MAY be logged or presented to the user.
+    type: string
+  requestId:
+    $ref: ./requestId.yaml
+    description: |-
+      The ID of the request to cancel.
+
+      This MUST correspond to the ID of a request the client previously issued.
+required:
+  - requestId
+type: object

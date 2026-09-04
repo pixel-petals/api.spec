@@ -1,4 +1,23 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/ListResourceTemplatesRequest"
+  "description": "Sent from the client to request a list of resource templates the server has.",
+  "properties": {
+    "method": {
+      "const": "resources/templates/list",
+      "type": "string"
+    },
+    "params": {
+      "properties": {
+        "cursor": {
+          "description": "An opaque token representing the current pagination position.\nIf provided, the server should return results starting after this cursor.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "method"
+  ],
+  "type": "object"
 }

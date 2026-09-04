@@ -1,4 +1,16 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/step-object"
+  "$comment": "https://spec.openapis.org/arazzo/v1.1#step-object'",
+  "description": "Describes a single workflow step which MAY be a call to an\nAPI operation (OpenAPI Operation Object or AsyncAPI Operation Object or another Workflow Object)",
+  "oneOf": [
+    {
+      "$ref": "../../schema.json#/$defs/openapi-step-object"
+    },
+    {
+      "$ref": "../../schema.json#/$defs/asyncapi-step-object"
+    },
+    {
+      "$ref": "../../schema.json#/$defs/workflow-step-object"
+    }
+  ]
 }

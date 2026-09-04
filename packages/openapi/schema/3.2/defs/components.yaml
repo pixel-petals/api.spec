@@ -1,2 +1,55 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../schema.yaml#/$defs/components
+$comment: https://spec.openapis.org/oas/v3.2#components-object
+type: object
+properties:
+  schemas:
+    type: object
+    additionalProperties:
+      $dynamicRef: "#meta"
+  responses:
+    type: object
+    additionalProperties:
+      $ref: ./components/responses.yaml
+  parameters:
+    type: object
+    additionalProperties:
+      $ref: ./components/parameters.yaml
+  examples:
+    type: object
+    additionalProperties:
+      $ref: ./components/examples.yaml
+  requestBodies:
+    type: object
+    additionalProperties:
+      $ref: ./components/requestBodies.yaml
+  headers:
+    type: object
+    additionalProperties:
+      $ref: ./components/headers.yaml
+  securitySchemes:
+    type: object
+    additionalProperties:
+      $ref: ./components/securitySchemes.yaml
+  links:
+    type: object
+    additionalProperties:
+      $ref: ./components/links.yaml
+  callbacks:
+    type: object
+    additionalProperties:
+      $ref: ./components/callbacks.yaml
+  pathItems:
+    type: object
+    additionalProperties:
+      $ref: ./fragments/pathItem.yaml
+  mediaTypes:
+    type: object
+    additionalProperties:
+      $ref: ./components/mediaTypes.yaml
+patternProperties:
+  ^(?:schemas|responses|parameters|examples|requestBodies|headers|securitySchemes|links|callbacks|pathItems|mediaTypes)$:
+    $comment: Enumerating all of the property names in the regex above is necessary for unevaluatedProperties to work as expected
+    propertyNames:
+      pattern: ^[a-zA-Z0-9._-]+$
+$ref: ../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false

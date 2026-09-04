@@ -1,2 +1,15 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/SubscriptionsListenRequestParams
+description: Parameters for a {@link SubscriptionsListenRequestsubscriptions/listen} request.
+properties:
+  _meta:
+    $ref: ./requestMetaObject.yaml
+  notifications:
+    $ref: ./subscriptionFilter.yaml
+    description: |-
+      The notifications the client opts in to on this stream. The server
+      **MUST NOT** send notification types the client has not explicitly
+      requested.
+required:
+  - _meta
+  - notifications
+type: object

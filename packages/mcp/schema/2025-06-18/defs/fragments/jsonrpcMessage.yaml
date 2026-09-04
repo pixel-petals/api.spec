@@ -1,2 +1,7 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/JSONRPCMessage
+anyOf:
+  - $ref: ../jsonrpcMessage/jsonrpcRequest.yaml
+  - $ref: ../jsonrpcMessage/jsonrpcNotification.yaml
+  - $ref: ../jsonrpcMessage/jsonrpcResponse.yaml
+  - $ref: ../jsonrpcMessage/jsonrpcError.yaml
+description: Refers to any valid JSON-RPC object that can be decoded off the wire, or encoded to be sent.

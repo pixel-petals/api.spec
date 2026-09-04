@@ -1,4 +1,105 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../../schema.json#/definitions/channelItem"
+  "type": "object",
+  "description": "Describes the operations available on a single channel.",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^x-[\\w\\d\\.\\x2d_]+$": {
+      "$ref": "./specificationExtension.json"
+    }
+  },
+  "properties": {
+    "$ref": {
+      "$ref": "./referenceObject.json"
+    },
+    "parameters": {
+      "$ref": "../components/parameters.json"
+    },
+    "description": {
+      "type": "string",
+      "description": "A description of the channel."
+    },
+    "servers": {
+      "type": "array",
+      "description": "The names of the servers on which this channel is available. If absent or empty then this channel must be available on all servers.",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "publish": {
+      "$ref": "./operation.json"
+    },
+    "subscribe": {
+      "$ref": "./operation.json"
+    },
+    "deprecated": {
+      "type": "boolean",
+      "default": false
+    },
+    "bindings": {
+      "$ref": "./bindingsObject.json"
+    }
+  },
+  "examples": [
+    {
+      "description": "This channel is used to exchange messages about users signing up",
+      "subscribe": {
+        "summary": "A user signed up.",
+        "message": {
+          "description": "A longer description of the message",
+          "payload": {
+            "type": "object",
+            "properties": {
+              "user": {
+                "$ref": "#/components/schemas/user"
+              },
+              "signup": {
+                "$ref": "#/components/schemas/signup"
+              }
+            }
+          }
+        }
+      },
+      "bindings": {
+        "amqp": {
+          "is": "queue",
+          "queue": {
+            "exclusive": true
+          }
+        }
+      }
+    },
+    {
+      "subscribe": {
+        "message": {
+          "oneOf": [
+            {
+              "$ref": "#/components/messages/signup"
+            },
+            {
+              "$ref": "#/components/messages/login"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "description": "This application publishes WebUICommand messages to an AMQP queue on RabbitMQ brokers in the Staging and Production environments.",
+      "servers": [
+        "rabbitmqBrokerInProd",
+        "rabbitmqBrokerInStaging"
+      ],
+      "subscribe": {
+        "message": {
+          "$ref": "#/components/messages/WebUICommand"
+        }
+      },
+      "bindings": {
+        "amqp": {
+          "is": "queue"
+        }
+      }
+    }
+  ]
 }

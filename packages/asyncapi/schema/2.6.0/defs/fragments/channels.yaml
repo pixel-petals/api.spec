@@ -1,2 +1,14 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/channels
+type: object
+description: Holds the relative paths to the individual channel and their operations. Channel paths are relative to servers.
+propertyNames:
+  type: string
+  format: uri-template
+  minLength: 1
+additionalProperties:
+  $ref: ./channelItem.yaml
+examples:
+  - user/signedup:
+      subscribe:
+        message:
+          $ref: "#/components/messages/userSignedUp"

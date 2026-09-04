@@ -1,2 +1,4 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/MultiSelectEnumSchema
+anyOf:
+  - $ref: ./untitledMultiSelectEnumSchema.yaml
+  - $ref: ./titledMultiSelectEnumSchema.yaml

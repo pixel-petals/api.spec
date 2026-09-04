@@ -1,4 +1,39 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/oauth2ApplicationSecurity"
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "flow",
+    "tokenUrl"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "oauth2"
+      ]
+    },
+    "flow": {
+      "type": "string",
+      "enum": [
+        "application"
+      ]
+    },
+    "scopes": {
+      "$ref": "./oauth2Scopes.json"
+    },
+    "tokenUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "patternProperties": {
+    "^x-": {
+      "$ref": "./vendorExtension.json"
+    }
+  }
 }

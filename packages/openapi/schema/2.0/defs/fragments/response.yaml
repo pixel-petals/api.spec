@@ -1,4 +1,26 @@
 $schema: http://json-schema.org/draft-04/schema#
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/jsonReference
-  - $ref: ../../schema.yaml#/definitions/response
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ./response.yaml
+else:
+  type: object
+  required:
+    - description
+  properties:
+    description:
+      type: string
+    schema:
+      oneOf:
+        - $ref: ./schema.yaml
+        - $ref: ./fileSchema.yaml
+    headers:
+      $ref: ./headers.yaml
+    examples:
+      $ref: ./examples.yaml
+  additionalProperties: false
+  patternProperties:
+    ^x-:
+      $ref: ./vendorExtension.yaml

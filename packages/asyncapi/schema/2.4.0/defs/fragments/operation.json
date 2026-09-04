@@ -1,4 +1,56 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../../schema.json#/definitions/operation"
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^x-[\\w\\d\\.\\x2d_]+$": {
+      "$ref": "./specificationExtension.json"
+    }
+  },
+  "properties": {
+    "traits": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "./server.json"
+          },
+          {
+            "$ref": "../components/operationTraits.json"
+          }
+        ]
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "security": {
+      "type": "array",
+      "items": {
+        "$ref": "./securityRequirement.json"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "$ref": "../tags/tag.json"
+      },
+      "uniqueItems": true
+    },
+    "externalDocs": {
+      "$ref": "../externalDocs.json"
+    },
+    "operationId": {
+      "type": "string"
+    },
+    "bindings": {
+      "$ref": "./bindingsObject.json"
+    },
+    "message": {
+      "$ref": "../../schema.json#/definitions/message"
+    }
+  }
 }

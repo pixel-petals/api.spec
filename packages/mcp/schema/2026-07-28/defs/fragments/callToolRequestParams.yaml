@@ -1,2 +1,20 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/CallToolRequestParams
+description: Parameters for a `tools/call` request.
+properties:
+  _meta:
+    $ref: ./requestMetaObject.yaml
+  arguments:
+    additionalProperties: {}
+    description: Arguments to use for the tool call.
+    type: object
+  inputResponses:
+    $ref: ./inputResponses.yaml
+  name:
+    description: The name of the tool.
+    type: string
+  requestState:
+    type: string
+required:
+  - _meta
+  - name
+type: object

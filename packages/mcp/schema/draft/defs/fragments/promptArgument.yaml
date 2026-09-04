@@ -1,2 +1,24 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/PromptArgument
+description: Describes an argument that a prompt can accept.
+properties:
+  description:
+    description: A human-readable description of the argument.
+    type: string
+  name:
+    description: Intended for programmatic or logical use, but used as a display name in past specs or fallback (if title isn't present).
+    type: string
+  required:
+    description: Whether this argument must be provided.
+    type: boolean
+  title:
+    description: |-
+      Intended for UI and end-user contexts — optimized to be human-readable and easily understood,
+      even by those unfamiliar with domain-specific terminology.
+
+      If not provided, the name should be used for display (except for {@link Tool},
+      where `annotations.title` should be given precedence over using `name`,
+      if present).
+    type: string
+required:
+  - name
+type: object

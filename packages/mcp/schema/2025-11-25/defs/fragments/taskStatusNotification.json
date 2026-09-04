@@ -1,4 +1,23 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/TaskStatusNotification"
+  "description": "An optional notification from the receiver to the requestor, informing them that a task's status has changed. Receivers are not required to send these notifications.",
+  "properties": {
+    "jsonrpc": {
+      "const": "2.0",
+      "type": "string"
+    },
+    "method": {
+      "const": "notifications/tasks/status",
+      "type": "string"
+    },
+    "params": {
+      "$ref": "../../schema.json#/$defs/TaskStatusNotificationParams"
+    }
+  },
+  "required": [
+    "jsonrpc",
+    "method",
+    "params"
+  ],
+  "type": "object"
 }

@@ -1,4 +1,54 @@
 $schema: http://json-schema.org/draft-07/schema
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/messageTrait
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  type: object
+  additionalProperties: false
+  patternProperties:
+    ^x-[\w\d\.\x2d_]+$:
+      $ref: ../fragments/specificationExtension.yaml
+  properties:
+    schemaFormat:
+      type: string
+    contentType:
+      type: string
+    headers:
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ../../schema.yaml#/definitions/schema
+    correlationId:
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ./correlationIds.yaml
+    tags:
+      type: array
+      items:
+        $ref: ../tags/tag.yaml
+      uniqueItems: true
+    summary:
+      type: string
+      description: A brief summary of the message.
+    name:
+      type: string
+      description: Name of the message.
+    title:
+      type: string
+      description: A human-friendly title for the message.
+    description:
+      type: string
+      description: A longer description of the message. CommonMark is allowed.
+    externalDocs:
+      $ref: ../externalDocs.yaml
+    deprecated:
+      type: boolean
+      default: false
+    examples:
+      type: array
+      items:
+        type: object
+    bindings:
+      $ref: ../fragments/bindingsObject.yaml

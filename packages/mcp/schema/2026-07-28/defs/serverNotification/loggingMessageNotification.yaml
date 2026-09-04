@@ -1,2 +1,16 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/LoggingMessageNotification
+description: JSONRPCNotification of a log message passed from server to client. The client opts in by setting `"io.modelcontextprotocol/logLevel"` in a request's `_meta`.
+properties:
+  jsonrpc:
+    const: "2.0"
+    type: string
+  method:
+    const: notifications/message
+    type: string
+  params:
+    $ref: ../fragments/loggingMessageNotificationParams.yaml
+required:
+  - jsonrpc
+  - method
+  - params
+type: object

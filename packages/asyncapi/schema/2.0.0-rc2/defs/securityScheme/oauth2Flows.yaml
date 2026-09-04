@@ -1,2 +1,54 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/oauth2Flows
+type: object
+required:
+  - type
+  - flows
+properties:
+  type:
+    type: string
+    enum:
+      - oauth2
+  description:
+    type: string
+  flows:
+    type: object
+    properties:
+      implicit:
+        allOf:
+          - $ref: ../fragments/oauth2Flow.yaml
+          - required:
+              - authorizationUrl
+              - scopes
+          - not:
+              required:
+                - tokenUrl
+      password:
+        allOf:
+          - $ref: ../fragments/oauth2Flow.yaml
+          - required:
+              - tokenUrl
+              - scopes
+          - not:
+              required:
+                - authorizationUrl
+      clientCredentials:
+        allOf:
+          - $ref: ../fragments/oauth2Flow.yaml
+          - required:
+              - tokenUrl
+              - scopes
+          - not:
+              required:
+                - authorizationUrl
+      authorizationCode:
+        allOf:
+          - $ref: ../fragments/oauth2Flow.yaml
+          - required:
+              - authorizationUrl
+              - tokenUrl
+              - scopes
+    additionalProperties: false
+    minProperties: 1
+patternProperties:
+  ^x-[\w\d\.\x2d_]+$:
+    $ref: ../fragments/specificationExtension.yaml

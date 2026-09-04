@@ -1,2 +1,18 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ResultMetaObject
+description: Extends {@link MetaObject} with additional result-specific fields. All key naming rules from `MetaObject` apply.
+properties:
+  io.modelcontextprotocol/serverInfo:
+    $ref: ./implementation.yaml
+    description: |-
+      Identifies the server software producing the response. Servers SHOULD
+      include this field on every response unless specifically configured not
+      to do so.
+
+      The {@link Implementation} schema requires `name` and `version`; other
+      fields are optional.
+
+      The value is self-reported by the server and is not verified by the
+      protocol. It is intended for display, logging, and debugging. Clients
+      SHOULD NOT use it to change their behavior, and SHOULD NOT rely on it for
+      security decisions.
+type: object

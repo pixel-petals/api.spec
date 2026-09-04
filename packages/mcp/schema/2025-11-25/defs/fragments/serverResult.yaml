@@ -1,2 +1,18 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ServerResult
+anyOf:
+  - $ref: ./result.yaml
+  - $ref: ../serverResult/initializeResult.yaml
+  - $ref: ../serverResult/listResourcesResult.yaml
+  - $ref: ../serverResult/listResourceTemplatesResult.yaml
+  - $ref: ../serverResult/readResourceResult.yaml
+  - $ref: ../serverResult/listPromptsResult.yaml
+  - $ref: ../serverResult/getPromptResult.yaml
+  - $ref: ../serverResult/listToolsResult.yaml
+  - $ref: ../serverResult/callToolResult.yaml
+  - $ref: ../../schema.yaml#/$defs/GetTaskResult
+    description: The response to a tasks/get request.
+  - $ref: ./getTaskPayloadResult.yaml
+  - $ref: ../../schema.yaml#/$defs/CancelTaskResult
+    description: The response to a tasks/cancel request.
+  - $ref: ./listTasksResult.yaml
+  - $ref: ../serverResult/completeResult.yaml

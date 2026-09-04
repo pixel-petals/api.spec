@@ -1,4 +1,61 @@
 $schema: http://json-schema.org/draft-07/schema
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/messageTrait
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  description: Describes a trait that MAY be applied to a Message Object. This object MAY contain any property from the Message Object, except payload and traits.
+  type: object
+  properties:
+    title:
+      description: A human-friendly title for the message.
+      type: string
+    description:
+      description: A longer description of the message. CommonMark is allowed.
+      type: string
+    examples:
+      description: List of examples.
+      type: array
+      items:
+        $ref: ../fragments/messageExampleObject.yaml
+    deprecated:
+      default: false
+      type: boolean
+    bindings:
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ./messageBindings.yaml
+    contentType:
+      description: The content type to use when encoding/decoding a message's payload. The value MUST be a specific media type (e.g. application/json). When omitted, the value MUST be the one specified on the defaultContentType field.
+      type: string
+    correlationId:
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ./correlationIds.yaml
+    externalDocs:
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ./externalDocs.yaml
+    headers:
+      $ref: ../../schema.yaml#/definitions/anySchema
+    name:
+      description: Name of the message.
+      type: string
+    summary:
+      description: A brief summary of the message.
+      type: string
+    tags:
+      type: array
+      uniqueItems: true
+      items:
+        oneOf:
+          - $ref: ../fragments/reference.yaml
+          - $ref: ./tags.yaml
+  patternProperties:
+    ^x-[\w\d\.\x2d_]+$:
+      $ref: ../fragments/specificationExtension.yaml
+  additionalProperties: false
+  examples:
+    - contentType: application/json

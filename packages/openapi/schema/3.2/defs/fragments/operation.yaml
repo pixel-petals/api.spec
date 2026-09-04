@@ -1,2 +1,39 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/operation
+$comment: https://spec.openapis.org/oas/v3.2#operation-object
+type: object
+properties:
+  tags:
+    type: array
+    items:
+      type: string
+  summary:
+    type: string
+  description:
+    type: string
+  externalDocs:
+    $ref: ../externalDocs.yaml
+  operationId:
+    type: string
+  parameters:
+    $ref: ./parameters.yaml
+  requestBody:
+    $ref: ../components/requestBodies.yaml
+  responses:
+    $ref: ./responses.yaml
+  callbacks:
+    type: object
+    additionalProperties:
+      $ref: ../components/callbacks.yaml
+  deprecated:
+    default: false
+    type: boolean
+  security:
+    type: array
+    items:
+      $ref: ../security/securityRequirement.yaml
+  servers:
+    type: array
+    items:
+      $ref: ../servers/server.yaml
+$ref: ../../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false

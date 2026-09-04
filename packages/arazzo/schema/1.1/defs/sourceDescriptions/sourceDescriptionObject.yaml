@@ -1,2 +1,27 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/source-description-object
+$comment: https://spec.openapis.org/arazzo/v1.1#source-description-object
+description: |-
+  Describes a source description (such as an OpenAPI description)
+  that will be referenced by one or more workflows described within
+  an Arazzo description
+type: object
+properties:
+  name:
+    description: A unique name for the source description
+    type: string
+    pattern: ^[A-Za-z0-9_\-]+$
+  url:
+    description: A URL to a source description to be used by a workflow
+    type: string
+    format: uri-reference
+  type:
+    description: The type of source description
+    enum:
+      - arazzo
+      - openapi
+      - asyncapi
+required:
+  - name
+  - url
+$ref: ../../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false

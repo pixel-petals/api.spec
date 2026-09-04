@@ -1,4 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../schema.json#/definitions/paths"
+  "type": "object",
+  "description": "Relative paths to the individual endpoints. They must be relative to the 'basePath'.",
+  "patternProperties": {
+    "^x-": {
+      "$ref": "./fragments/vendorExtension.json"
+    },
+    "^/": {
+      "$ref": "./fragments/pathItem.json"
+    }
+  },
+  "additionalProperties": false
 }

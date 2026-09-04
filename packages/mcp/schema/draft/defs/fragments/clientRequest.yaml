@@ -1,2 +1,12 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ClientRequest
+anyOf:
+  - $ref: ../clientRequest/discoverRequest.yaml
+  - $ref: ../clientRequest/listResourcesRequest.yaml
+  - $ref: ../clientRequest/listResourceTemplatesRequest.yaml
+  - $ref: ../clientRequest/readResourceRequest.yaml
+  - $ref: ../clientRequest/subscriptionsListenRequest.yaml
+  - $ref: ../clientRequest/listPromptsRequest.yaml
+  - $ref: ../clientRequest/getPromptRequest.yaml
+  - $ref: ../clientRequest/listToolsRequest.yaml
+  - $ref: ../clientRequest/callToolRequest.yaml
+  - $ref: ../clientRequest/completeRequest.yaml

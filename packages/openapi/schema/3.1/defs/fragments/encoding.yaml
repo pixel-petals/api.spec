@@ -1,2 +1,40 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/encoding
+$comment: https://spec.openapis.org/oas/v3.1#encoding-object
+type: object
+properties:
+  contentType:
+    type: string
+    format: media-range
+  headers:
+    type: object
+    additionalProperties:
+      $ref: ../components/headers.yaml
+  style:
+    enum:
+      - form
+      - spaceDelimited
+      - pipeDelimited
+      - deepObject
+  explode:
+    type: boolean
+  allowReserved:
+    type: boolean
+dependentSchemas:
+  style:
+    properties:
+      allowReserved:
+        default: false
+    $ref: ../../schema.yaml#/$defs/explode-for-form
+  explode:
+    properties:
+      style:
+        default: form
+      allowReserved:
+        default: false
+  allowReserved:
+    properties:
+      style:
+        default: form
+    $ref: ../../schema.yaml#/$defs/explode-for-form
+$ref: ../../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false

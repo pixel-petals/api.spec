@@ -1,4 +1,118 @@
 $schema: http://json-schema.org/draft-07/schema
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/messageObject
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  description: Describes a message received on a given channel and operation.
+  type: object
+  properties:
+    title:
+      description: A human-friendly title for the message.
+      type: string
+    description:
+      description: A longer description of the message. CommonMark is allowed.
+      type: string
+    examples:
+      description: List of examples.
+      type: array
+      items:
+        $ref: ../fragments/messageExampleObject.yaml
+    deprecated:
+      default: false
+      type: boolean
+    bindings:
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ./messageBindings.yaml
+    contentType:
+      description: The content type to use when encoding/decoding a message's payload. The value MUST be a specific media type (e.g. application/json). When omitted, the value MUST be the one specified on the defaultContentType field.
+      type: string
+    correlationId:
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ./correlationIds.yaml
+    externalDocs:
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ./externalDocs.yaml
+    headers:
+      $ref: ../../schema.yaml#/definitions/anySchema
+    name:
+      description: Name of the message.
+      type: string
+    payload:
+      $ref: ../../schema.yaml#/definitions/anySchema
+    summary:
+      description: A brief summary of the message.
+      type: string
+    tags:
+      type: array
+      uniqueItems: true
+      items:
+        oneOf:
+          - $ref: ../fragments/reference.yaml
+          - $ref: ./tags.yaml
+    traits:
+      description: A list of traits to apply to the message object. Traits MUST be merged using traits merge mechanism. The resulting object MUST be a valid Message Object.
+      type: array
+      items:
+        oneOf:
+          - $ref: ../fragments/reference.yaml
+          - $ref: ./messageTraits.yaml
+          - type: array
+            items:
+              - oneOf:
+                  - $ref: ../fragments/reference.yaml
+                  - $ref: ./messageTraits.yaml
+              - type: object
+                additionalItems: true
+  patternProperties:
+    ^x-[\w\d\.\x2d_]+$:
+      $ref: ../fragments/specificationExtension.yaml
+  additionalProperties: false
+  examples:
+    - messageId: userSignup
+      name: UserSignup
+      title: User signup
+      summary: Action to sign a user up.
+      description: A longer description
+      contentType: application/json
+      tags:
+        - name: user
+        - name: signup
+        - name: register
+      headers:
+        type: object
+        properties:
+          correlationId:
+            description: Correlation ID set by application
+            type: string
+          applicationInstanceId:
+            description: Unique identifier for a given instance of the publishing application
+            type: string
+      payload:
+        type: object
+        properties:
+          user:
+            $ref: "#/components/schemas/userCreate"
+          signup:
+            $ref: "#/components/schemas/signup"
+      correlationId:
+        description: Default Correlation ID
+        location: $message.header#/correlationId
+      traits:
+        - $ref: "#/components/messageTraits/commonHeaders"
+      examples:
+        - name: SimpleSignup
+          summary: A simple UserSignup example message
+          headers:
+            correlationId: my-correlation-id
+            applicationInstanceId: myInstanceId
+          payload:
+            user:
+              someUserKey: someUserValue
+            signup:
+              someSignupKey: someSignupValue

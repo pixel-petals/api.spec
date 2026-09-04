@@ -1,2 +1,9 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/TaskMetadata
+description: |-
+  Metadata for augmenting a request with task execution.
+  Include this in the `task` field of the request parameters.
+properties:
+  ttl:
+    description: Requested duration in milliseconds to retain task from creation.
+    type: integer
+type: object

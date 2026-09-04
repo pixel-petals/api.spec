@@ -1,2 +1,96 @@
 $schema: http://json-schema.org/draft-04/schema
-$ref: ../../schema.yaml#/definitions/schema
+id: http://asyncapi.com/definitions/1.1.0/schema.json
+type: object
+description: A deterministic version of a JSON Schema object.
+patternProperties:
+  ^x-:
+    $ref: ./vendorExtension.yaml
+properties:
+  $ref:
+    type: string
+  format:
+    type: string
+  title:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  description:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  default:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  multipleOf:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  maximum:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  exclusiveMaximum:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  minimum:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  exclusiveMinimum:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  maxLength:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  minLength:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  pattern:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  maxItems:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  minItems:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  uniqueItems:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  maxProperties:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  minProperties:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  required:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  enum:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  additionalProperties:
+    anyOf:
+      - $ref: ./schema.yaml
+      - type: boolean
+    default: {}
+  type:
+    $ref: ./jsonSchemaDraft07Schema.yaml
+  items:
+    anyOf:
+      - $ref: ./schema.yaml
+      - type: array
+        minItems: 1
+        items:
+          $ref: ./schema.yaml
+    default: {}
+  allOf:
+    type: array
+    minItems: 1
+    items:
+      $ref: ./schema.yaml
+  oneOf:
+    type: array
+    minItems: 2
+    items:
+      $ref: ./schema.yaml
+  anyOf:
+    type: array
+    minItems: 2
+    items:
+      $ref: ./schema.yaml
+  not:
+    $ref: ./schema.yaml
+  properties:
+    type: object
+    additionalProperties:
+      $ref: ./schema.yaml
+    default: {}
+  discriminator:
+    type: string
+  readOnly:
+    type: boolean
+    default: false
+  xml:
+    $ref: ./xml.yaml
+  externalDocs:
+    $ref: ../externalDocs.yaml
+  example: {}
+additionalProperties: false

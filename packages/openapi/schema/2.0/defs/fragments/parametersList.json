@@ -1,4 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/parametersList"
+  "type": "array",
+  "description": "The parameters needed to send a valid API call.",
+  "additionalItems": false,
+  "items": {
+    "oneOf": [
+      {
+        "$ref": "./parameter.json"
+      },
+      {
+        "$ref": "./response.json"
+      }
+    ]
+  },
+  "uniqueItems": true
 }

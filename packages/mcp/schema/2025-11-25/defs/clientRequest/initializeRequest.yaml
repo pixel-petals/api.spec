@@ -1,2 +1,19 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/InitializeRequest
+description: This request is sent from the client to the server when it first connects, asking it to begin initialization.
+properties:
+  id:
+    $ref: ../fragments/requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+  method:
+    const: initialize
+    type: string
+  params:
+    $ref: ../fragments/initializeRequestParams.yaml
+required:
+  - id
+  - jsonrpc
+  - method
+  - params
+type: object

@@ -1,11 +1,35 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema",
-  "oneOf": [
-    {
-      "$ref": "../../schema.json#/definitions/Reference"
-    },
-    {
-      "$ref": "../../schema.json#/definitions/SecurityScheme"
-    }
-  ]
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "../fragments/reference.json"
+  },
+  "else": {
+    "id": "http://asyncapi.com/definitions/1.2.0/SecurityScheme.json",
+    "oneOf": [
+      {
+        "$ref": "../securityScheme/userPassword.json"
+      },
+      {
+        "$ref": "../securityScheme/apiKey.json"
+      },
+      {
+        "$ref": "../securityScheme/x509.json"
+      },
+      {
+        "$ref": "../securityScheme/symmetricEncryption.json"
+      },
+      {
+        "$ref": "../securityScheme/asymmetricEncryption.json"
+      },
+      {
+        "$ref": "../securityScheme/httpSecurityScheme.json"
+      }
+    ]
+  }
 }

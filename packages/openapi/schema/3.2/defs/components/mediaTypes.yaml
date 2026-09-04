@@ -1,2 +1,36 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/media-type-or-reference
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  $comment: https://spec.openapis.org/oas/v3.2#media-type-object
+  type: object
+  properties:
+    description:
+      type: string
+    schema:
+      $dynamicRef: "#meta"
+    itemSchema:
+      $dynamicRef: "#meta"
+    encoding:
+      type: object
+      additionalProperties:
+        $ref: ../fragments/encoding.yaml
+    prefixEncoding:
+      type: array
+      items:
+        $ref: ../fragments/encoding.yaml
+    itemEncoding:
+      $ref: ../fragments/encoding.yaml
+  dependentSchemas:
+    encoding:
+      properties:
+        prefixEncoding: false
+        itemEncoding: false
+  allOf:
+    - $ref: ../../schema.yaml#/$defs/examples
+    - $ref: ../../schema.yaml#/$defs/specification-extensions
+  unevaluatedProperties: false

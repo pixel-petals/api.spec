@@ -1,4 +1,34 @@
 $schema: http://json-schema.org/draft-07/schema
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/parameter
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ./serverVariable.yaml
+else:
+  description: Describes a parameter included in a channel name.
+  additionalProperties: false
+  patternProperties:
+    ^x-[\w\d\.\x2d_]+$:
+      $ref: ./specificationExtension.yaml
+  properties:
+    description:
+      type: string
+      description: A brief description of the parameter. This could contain examples of use. GitHub Flavored Markdown is allowed.
+    schema:
+      $ref: ../../schema.yaml#/definitions/schema
+    location:
+      type: string
+      description: A runtime expression that specifies the location of the parameter value
+      pattern: ^\$message\.(header|payload)#(\/(([^\/~])|(~[01]))*)*
+  examples:
+    - user/{userId}/signup:
+        parameters:
+          userId:
+            description: Id of the user.
+            schema:
+              type: string
+            location: $message.payload#/user/id
+        subscribe:
+          message:
+            $ref: "#/components/messages/userSignedUp"

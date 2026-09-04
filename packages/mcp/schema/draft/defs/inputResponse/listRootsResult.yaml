@@ -1,2 +1,13 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ListRootsResult
+description: |-
+  The result returned by the client for a {@link ListRootsRequestroots/list} request.
+  This result contains an array of {@link Root} objects, each representing a root directory
+  or file that the server can operate on.
+properties:
+  roots:
+    items:
+      $ref: ../fragments/root.yaml
+    type: array
+required:
+  - roots
+type: object

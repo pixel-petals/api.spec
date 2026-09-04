@@ -1,4 +1,22 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/OAuthFlows"
+  "type": "object",
+  "properties": {
+    "implicit": {
+      "$ref": "./implicitOAuthFlow.json"
+    },
+    "password": {
+      "$ref": "./passwordOAuthFlow.json"
+    },
+    "clientCredentials": {
+      "$ref": "./clientCredentialsFlow.json"
+    },
+    "authorizationCode": {
+      "$ref": "./authorizationCodeOAuthFlow.json"
+    }
+  },
+  "patternProperties": {
+    "^x-": {}
+  },
+  "additionalProperties": false
 }

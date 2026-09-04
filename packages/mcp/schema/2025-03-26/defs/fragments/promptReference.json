@@ -1,4 +1,19 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/PromptReference"
+  "description": "Identifies a prompt.",
+  "properties": {
+    "name": {
+      "description": "The name of the prompt or prompt template",
+      "type": "string"
+    },
+    "type": {
+      "const": "ref/prompt",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "type"
+  ],
+  "type": "object"
 }

@@ -1,4 +1,67 @@
 $schema: http://json-schema.org/draft-07/schema
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/server
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  type: object
+  description: An object representing a message broker, a server or any other kind of computer program capable of sending and/or receiving data.
+  required:
+    - host
+    - protocol
+  additionalProperties: false
+  patternProperties:
+    ^x-[\w\d\.\x2d_]+$:
+      $ref: ../fragments/specificationExtension.yaml
+  properties:
+    host:
+      type: string
+      description: The server host name. It MAY include the port. This field supports Server Variables. Variable substitutions will be made when a variable is named in {braces}.
+    pathname:
+      type: string
+      description: The path to a resource in the host. This field supports Server Variables. Variable substitutions will be made when a variable is named in {braces}.
+    title:
+      type: string
+      description: A human-friendly title for the server.
+    summary:
+      type: string
+      description: A brief summary of the server.
+    description:
+      type: string
+      description: A longer description of the server. CommonMark is allowed.
+    protocol:
+      type: string
+      description: The protocol this server supports for connection.
+    protocolVersion:
+      type: string
+      description: An optional string describing the server. CommonMark syntax MAY be used for rich text representation.
+    variables:
+      $ref: ../fragments/serverVariables.yaml
+    security:
+      $ref: ../fragments/securityRequirements.yaml
+    tags:
+      type: array
+      items:
+        oneOf:
+          - $ref: ../fragments/reference.yaml
+          - $ref: ./tags.yaml
+      uniqueItems: true
+    externalDocs:
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ./externalDocs.yaml
+    bindings:
+      oneOf:
+        - $ref: ../fragments/reference.yaml
+        - $ref: ./serverBindings.yaml
+  examples:
+    - host: kafka.in.mycompany.com:9092
+      description: Production Kafka broker.
+      protocol: kafka
+      protocolVersion: "3.2"
+    - host: rabbitmq.in.mycompany.com:5672
+      pathname: /production
+      protocol: amqp
+      description: Production RabbitMQ broker (uses the `production` vhost).

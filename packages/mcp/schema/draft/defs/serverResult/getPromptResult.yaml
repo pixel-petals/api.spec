@@ -1,2 +1,26 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/GetPromptResult
+description: The result returned by the server for a {@link GetPromptRequestprompts/get} request.
+properties:
+  _meta:
+    $ref: ../fragments/resultMetaObject.yaml
+  description:
+    description: An optional description for the prompt.
+    type: string
+  messages:
+    items:
+      $ref: ../fragments/promptMessage.yaml
+    type: array
+  resultType:
+    description: |-
+      Indicates the type of the result, which allows the client to determine
+      how to parse the result object.
+
+      Servers implementing this protocol version MUST include this field.
+      For backward compatibility, when a client receives a result from a
+      server implementing an earlier protocol version (which does not include
+      `resultType`), the client MUST treat the absent field as `"complete"`.
+    type: string
+required:
+  - messages
+  - resultType
+type: object

@@ -1,2 +1,5 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/mediaTypeList
+type: array
+items:
+  $ref: ./mimeType.yaml
+uniqueItems: true

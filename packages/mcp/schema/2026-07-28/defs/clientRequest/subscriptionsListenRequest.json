@@ -1,4 +1,27 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/SubscriptionsListenRequest"
+  "description": "Sent from the client to open a long-lived channel for receiving notifications\noutside the context of a specific request. Replaces the previous HTTP GET\nendpoint and ensures consistent behavior between HTTP and STDIO.",
+  "properties": {
+    "id": {
+      "$ref": "../fragments/requestId.json"
+    },
+    "jsonrpc": {
+      "const": "2.0",
+      "type": "string"
+    },
+    "method": {
+      "const": "subscriptions/listen",
+      "type": "string"
+    },
+    "params": {
+      "$ref": "../fragments/subscriptionsListenRequestParams.json"
+    }
+  },
+  "required": [
+    "id",
+    "jsonrpc",
+    "method",
+    "params"
+  ],
+  "type": "object"
 }

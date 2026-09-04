@@ -1,4 +1,145 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../schema.json#/definitions/Components"
+  "type": "object",
+  "properties": {
+    "schemas": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./components/schemas.json"
+            },
+            {
+              "$ref": "./fragments/reference.json"
+            }
+          ]
+        }
+      }
+    },
+    "responses": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/responses.json"
+            }
+          ]
+        }
+      }
+    },
+    "parameters": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/parameters.json"
+            }
+          ]
+        }
+      }
+    },
+    "examples": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/examples.json"
+            }
+          ]
+        }
+      }
+    },
+    "requestBodies": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/requestBodies.json"
+            }
+          ]
+        }
+      }
+    },
+    "headers": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/headers.json"
+            }
+          ]
+        }
+      }
+    },
+    "securitySchemes": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/securitySchemes.json"
+            }
+          ]
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/links.json"
+            }
+          ]
+        }
+      }
+    },
+    "callbacks": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/callbacks.json"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "patternProperties": {
+    "^x-": {}
+  },
+  "additionalProperties": false
 }

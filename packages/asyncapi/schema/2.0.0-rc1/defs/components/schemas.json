@@ -1,4 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../../schema.json#/definitions/schemas"
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "../fragments/schema.json"
+  },
+  "description": "JSON objects describing schemas the API uses."
 }

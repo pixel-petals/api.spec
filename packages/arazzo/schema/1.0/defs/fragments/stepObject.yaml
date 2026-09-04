@@ -1,2 +1,96 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/step-object
+$comment: https://spec.openapis.org/arazzo/v1.0#step-object'
+description: |-
+  Describes a single workflow step which MAY be a call to an
+  API operation (OpenAPI Operation Object or another Workflow Object)
+type: object
+properties:
+  stepId:
+    description: Unique string to represent the step
+    $anchor: stepId
+    type: string
+  description:
+    description: A description of the step. CommonMark syntax MAY be used for rich text representation
+    type: string
+  operationId:
+    description: The name of an existing, resolvable operation, as defined with a unique operationId and existing within one of the sourceDescriptions
+    type: string
+  operationPath:
+    description: A reference to a Source combined with a JSON Pointer to reference an operation
+    type: string
+  workflowId:
+    description: The workflowId referencing an existing workflow within the Arazzo description
+    $ref: ../../schema.yaml#workflowId
+  parameters:
+    description: A list of parameters that MUST be passed to an operation or workflow as referenced by operationId, operationPath, or workflowId
+    type: array
+    uniqueItems: true
+    items: true
+  requestBody:
+    $ref: ./requestBodyObject.yaml
+  successCriteria:
+    description: A list of assertions to determine the success of the step
+    type: array
+    uniqueItems: true
+    minItems: 1
+    items:
+      $ref: ./criterionObject.yaml
+  onSuccess:
+    description: An array of success action objects that specify what to do upon step success
+    type: array
+    uniqueItems: true
+    items:
+      oneOf:
+        - $ref: ../components/successActions.yaml
+        - $ref: ./reusableObject.yaml
+  onFailure:
+    description: An array of failure action objects that specify what to do upon step failure
+    type: array
+    uniqueItems: true
+    items:
+      oneOf:
+        - $ref: ../components/failureActions.yaml
+        - $ref: ./reusableObject.yaml
+  outputs:
+    description: A map between a friendly name and a dynamic output value defined using a runtime expression
+    type: object
+    patternProperties:
+      ^[a-zA-Z0-9\.\-_]+$:
+        type: string
+required:
+  - stepId
+oneOf:
+  - required:
+      - operationId
+  - required:
+      - operationPath
+  - required:
+      - workflowId
+allOf:
+  - if:
+      oneOf:
+        - required:
+            - operationPath
+        - required:
+            - operationId
+    then:
+      properties:
+        parameters:
+          items:
+            oneOf:
+              - $ref: ./reusableObject.yaml
+              - $ref: ../components/parameters.yaml
+                required:
+                  - in
+  - if:
+      required:
+        - workflowId
+    then:
+      properties:
+        parameters:
+          items:
+            oneOf:
+              - $ref: ../components/parameters.yaml
+              - $ref: ./reusableObject.yaml
+$ref: ../../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false

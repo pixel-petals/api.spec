@@ -1,4 +1,102 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/workflow-object"
+  "$comment": "https://spec.openapis.org/arazzo/v1.0#workflow-object",
+  "description": "Describes the steps to be taken across one or more APIs to achieve an objective",
+  "type": "object",
+  "properties": {
+    "workflowId": {
+      "description": "Unique string to represent the workflow",
+      "$anchor": "workflowId",
+      "type": "string"
+    },
+    "summary": {
+      "description": "A summary of the purpose or objective of the workflow",
+      "type": "string"
+    },
+    "description": {
+      "description": "A description of the workflow. CommonMark syntax MAY be used for rich text representation",
+      "type": "string"
+    },
+    "inputs": {
+      "description": "A JSON Schema 2020-12 object representing the input parameters used by this workflow",
+      "$ref": "../../schema.json#/$defs/schema"
+    },
+    "dependsOn": {
+      "description": "A list of workflows that MUST be completed before this workflow can be processed",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "steps": {
+      "description": "An ordered list of steps where each step represents a call to an API operation or to another workflow",
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "$ref": "../fragments/stepObject.json"
+      }
+    },
+    "successActions": {
+      "description": "A list of success actions that are applicable for all steps described under this workflow",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "../components/successActions.json"
+          },
+          {
+            "$ref": "../fragments/reusableObject.json"
+          }
+        ]
+      }
+    },
+    "failureActions": {
+      "description": "A list of failure actions that are applicable for all steps described under this workflow",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "../components/failureActions.json"
+          },
+          {
+            "$ref": "../fragments/reusableObject.json"
+          }
+        ]
+      }
+    },
+    "outputs": {
+      "description": "A map between a friendly name and a dynamic output value",
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9\\.\\-_]+$": {
+          "type": "string"
+        }
+      }
+    },
+    "parameters": {
+      "description": "A list of parameters that are applicable for all steps described under this workflow",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "../components/parameters.json"
+          },
+          {
+            "$ref": "../fragments/reusableObject.json"
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "workflowId",
+    "steps"
+  ],
+  "$ref": "../../schema.json#/$defs/specification-extensions",
+  "unevaluatedProperties": false
 }

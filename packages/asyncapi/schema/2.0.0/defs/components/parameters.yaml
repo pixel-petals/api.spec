@@ -1,2 +1,7 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/parameters
+type: object
+additionalProperties:
+  oneOf:
+    - $ref: ../fragments/reference.yaml
+    - $ref: ../fragments/parameter.yaml
+description: JSON objects describing re-usable channel parameters.

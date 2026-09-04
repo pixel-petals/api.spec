@@ -1,4 +1,33 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/payload-replacement-object"
+  "$comment": "https://spec.openapis.org/arazzo/v1.1#payload-replacement-object",
+  "description": "Describes a location within a payload (e.g., a request body) and a value to set within the location",
+  "type": "object",
+  "properties": {
+    "target": {
+      "description": "A JSONPath, JSON Pointer, or XPath Expression which MUST be resolved against the request body",
+      "type": "string"
+    },
+    "targetSelectorType": {
+      "description": "The selector expression type to use (e.g., `jsonpath`, `xpath`, or `jsonpointer`). Should an alternate version be required, the Expression Type Object may be used instead. If omitted, defaults to JSON Pointer for `application/json` or XPath for XML-based media types.\n",
+      "$ref": "../../schema.json#/$defs/selector-type"
+    },
+    "value": {
+      "description": "The value to set at the location defined by the target. May be a literal, a runtime expression string, or a selector object.\n",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "./selectorObject.json"
+        }
+      ]
+    }
+  },
+  "required": [
+    "target",
+    "value"
+  ],
+  "unevaluatedProperties": false,
+  "$ref": "../../schema.json#/$defs/specification-extensions"
 }

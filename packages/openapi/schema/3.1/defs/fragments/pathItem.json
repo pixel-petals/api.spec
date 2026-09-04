@@ -1,4 +1,55 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/path-item"
+  "$comment": "https://spec.openapis.org/oas/v3.1#path-item-object",
+  "type": "object",
+  "properties": {
+    "$ref": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "servers": {
+      "type": "array",
+      "items": {
+        "$ref": "../servers/server.json"
+      }
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "$ref": "../components/parameters.json"
+      }
+    },
+    "get": {
+      "$ref": "./operation.json"
+    },
+    "put": {
+      "$ref": "./operation.json"
+    },
+    "post": {
+      "$ref": "./operation.json"
+    },
+    "delete": {
+      "$ref": "./operation.json"
+    },
+    "options": {
+      "$ref": "./operation.json"
+    },
+    "head": {
+      "$ref": "./operation.json"
+    },
+    "patch": {
+      "$ref": "./operation.json"
+    },
+    "trace": {
+      "$ref": "./operation.json"
+    }
+  },
+  "$ref": "../../schema.json#/$defs/specification-extensions",
+  "unevaluatedProperties": false
 }

@@ -1,2 +1,17 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/request-body-object
+$comment: https://spec.openapis.org/arazzo/v1.0#request-body-object
+description: The request body to pass to an operation as referenced by operationId or operationPath
+type: object
+properties:
+  contentType:
+    description: The Content-Type for the request content
+    type: string
+  payload: true
+  replacements:
+    description: A list of locations and values to set within a payload
+    type: array
+    uniqueItems: true
+    items:
+      $ref: ./payloadReplacementObject.yaml
+$ref: ../../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false

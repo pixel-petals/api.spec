@@ -1,4 +1,49 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../schema.json#/definitions/operations"
+  "type": "object",
+  "description": "Holds a dictionary with all the operations this application MUST implement.",
+  "additionalProperties": {
+    "oneOf": [
+      {
+        "$ref": "./fragments/reference.json"
+      },
+      {
+        "$ref": "./components/operations.json"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "onUserSignUp": {
+        "title": "User sign up",
+        "summary": "Action to sign a user up.",
+        "description": "A longer description",
+        "channel": {
+          "$ref": "#/channels/userSignup"
+        },
+        "action": "send",
+        "tags": [
+          {
+            "name": "user"
+          },
+          {
+            "name": "signup"
+          },
+          {
+            "name": "register"
+          }
+        ],
+        "bindings": {
+          "amqp": {
+            "ack": false
+          }
+        },
+        "traits": [
+          {
+            "$ref": "#/components/operationTraits/kafka"
+          }
+        ]
+      }
+    }
+  ]
 }

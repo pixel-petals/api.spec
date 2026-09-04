@@ -1,4 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/RequestParams"
+  "description": "Common params for any request.",
+  "properties": {
+    "_meta": {
+      "$ref": "./requestMetaObject.json"
+    }
+  },
+  "required": [
+    "_meta"
+  ],
+  "type": "object"
 }

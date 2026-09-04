@@ -1,2 +1,23 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/MediaType
+type: object
+properties:
+  schema:
+    oneOf:
+      - $ref: ../components/schemas.yaml
+      - $ref: ./reference.yaml
+  example: {}
+  examples:
+    type: object
+    additionalProperties:
+      oneOf:
+        - $ref: ../components/examples.yaml
+        - $ref: ./reference.yaml
+  encoding:
+    type: object
+    additionalProperties:
+      $ref: ./encoding.yaml
+patternProperties:
+  ^x-: {}
+additionalProperties: false
+allOf:
+  - $ref: ../../schema.yaml#/definitions/ExampleXORExamples

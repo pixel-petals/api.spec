@@ -1,4 +1,43 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/EmbeddedResource"
+  "description": "The contents of a resource, embedded into a prompt or tool call result.\n\nIt is up to the client how best to render embedded resources for the benefit\nof the LLM and/or the user.",
+  "properties": {
+    "annotations": {
+      "properties": {
+        "audience": {
+          "description": "Describes who the intended customer of this object or data is.\n\nIt can include multiple entries to indicate content useful for multiple audiences (e.g., `[\"user\", \"assistant\"]`).",
+          "items": {
+            "$ref": "./role.json"
+          },
+          "type": "array"
+        },
+        "priority": {
+          "description": "Describes how important this data is for operating the server.\n\nA value of 1 means \"most important,\" and indicates that the data is\neffectively required, while 0 means \"least important,\" and indicates that\nthe data is entirely optional.",
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "resource": {
+      "anyOf": [
+        {
+          "$ref": "./textResourceContents.json"
+        },
+        {
+          "$ref": "./blobResourceContents.json"
+        }
+      ]
+    },
+    "type": {
+      "const": "resource",
+      "type": "string"
+    }
+  },
+  "required": [
+    "resource",
+    "type"
+  ],
+  "type": "object"
 }

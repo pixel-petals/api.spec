@@ -1,4 +1,25 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema",
-  "$ref": "../../schema.json#/definitions/tag"
+  "id": "http://asyncapi.com/definitions/1.0.0/tag.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "externalDocs": {
+      "$ref": "../externalDocs.json"
+    }
+  },
+  "patternProperties": {
+    "^x-": {
+      "$ref": "../fragments/vendorExtension.json"
+    }
+  }
 }

@@ -1,4 +1,21 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/ListRootsResult"
+  "description": "The client's response to a roots/list request from the server.\nThis result contains an array of Root objects, each representing a root directory\nor file that the server can operate on.",
+  "properties": {
+    "_meta": {
+      "additionalProperties": {},
+      "description": "This result property is reserved by the protocol to allow clients and servers to attach additional metadata to their responses.",
+      "type": "object"
+    },
+    "roots": {
+      "items": {
+        "$ref": "../fragments/root.json"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "roots"
+  ],
+  "type": "object"
 }

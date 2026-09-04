@@ -1,4 +1,61 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/operation"
+  "$comment": "https://spec.openapis.org/oas/v3.1#operation-object",
+  "type": "object",
+  "properties": {
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "externalDocs": {
+      "$ref": "../externalDocs.json"
+    },
+    "operationId": {
+      "type": "string"
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "$ref": "../components/parameters.json"
+      }
+    },
+    "requestBody": {
+      "$ref": "../components/requestBodies.json"
+    },
+    "responses": {
+      "$ref": "./responses.json"
+    },
+    "callbacks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "../components/callbacks.json"
+      }
+    },
+    "deprecated": {
+      "default": false,
+      "type": "boolean"
+    },
+    "security": {
+      "type": "array",
+      "items": {
+        "$ref": "../security/securityRequirement.json"
+      }
+    },
+    "servers": {
+      "type": "array",
+      "items": {
+        "$ref": "../servers/server.json"
+      }
+    }
+  },
+  "$ref": "../../schema.json#/$defs/specification-extensions",
+  "unevaluatedProperties": false
 }

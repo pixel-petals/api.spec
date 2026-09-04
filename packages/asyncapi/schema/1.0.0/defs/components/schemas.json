@@ -1,4 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema",
-  "$ref": "../../schema.json#/definitions/schemas"
+  "id": "http://asyncapi.com/definitions/1.0.0/schemas.json",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "../fragments/schema.json"
+  },
+  "description": "JSON objects describing schemas the API uses."
 }

@@ -1,2 +1,6 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/JSONRPCMessage
+anyOf:
+  - $ref: ../jsonrpcMessage/jsonrpcRequest.yaml
+  - $ref: ../jsonrpcMessage/jsonrpcNotification.yaml
+  - $ref: ../jsonrpcMessage/jsonrpcResponse.yaml
+  - $ref: ../jsonrpcMessage/jsonrpcError.yaml

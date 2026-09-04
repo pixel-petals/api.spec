@@ -1,2 +1,50 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/Operation
+type: object
+required:
+  - responses
+properties:
+  tags:
+    type: array
+    items:
+      type: string
+  summary:
+    type: string
+  description:
+    type: string
+  externalDocs:
+    $ref: ../externalDocs.yaml
+  operationId:
+    type: string
+  parameters:
+    type: array
+    items:
+      oneOf:
+        - $ref: ../components/parameters.yaml
+        - $ref: ./reference.yaml
+    uniqueItems: true
+  requestBody:
+    oneOf:
+      - $ref: ../components/requestBodies.yaml
+      - $ref: ./reference.yaml
+  responses:
+    $ref: ./responses.yaml
+  callbacks:
+    type: object
+    additionalProperties:
+      oneOf:
+        - $ref: ../components/callbacks.yaml
+        - $ref: ./reference.yaml
+  deprecated:
+    type: boolean
+    default: false
+  security:
+    type: array
+    items:
+      $ref: ../security/securityRequirement.yaml
+  servers:
+    type: array
+    items:
+      $ref: ../servers/server.yaml
+patternProperties:
+  ^x-: {}
+additionalProperties: false

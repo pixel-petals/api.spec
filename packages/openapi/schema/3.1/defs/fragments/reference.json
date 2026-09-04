@@ -1,4 +1,17 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/reference"
+  "$comment": "https://spec.openapis.org/oas/v3.1#reference-object",
+  "type": "object",
+  "properties": {
+    "$ref": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
 }

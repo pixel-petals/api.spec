@@ -1,2 +1,19 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/CallToolRequest
+description: Used by the client to invoke a tool provided by the server.
+properties:
+  id:
+    $ref: ../fragments/requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+  method:
+    const: tools/call
+    type: string
+  params:
+    $ref: ../fragments/callToolRequestParams.yaml
+required:
+  - id
+  - jsonrpc
+  - method
+  - params
+type: object

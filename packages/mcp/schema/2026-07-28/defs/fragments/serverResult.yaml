@@ -1,2 +1,14 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ServerResult
+anyOf:
+  - $ref: ../serverResult/result.yaml
+  - $ref: ../serverResult/inputRequiredResult.yaml
+  - $ref: ../serverResult/discoverResult.yaml
+  - $ref: ../serverResult/listResourcesResult.yaml
+  - $ref: ../serverResult/listResourceTemplatesResult.yaml
+  - $ref: ../serverResult/readResourceResult.yaml
+  - $ref: ../serverResult/subscriptionsListenResult.yaml
+  - $ref: ../serverResult/listPromptsResult.yaml
+  - $ref: ../serverResult/getPromptResult.yaml
+  - $ref: ../serverResult/listToolsResult.yaml
+  - $ref: ../serverResult/callToolResult.yaml
+  - $ref: ../serverResult/completeResult.yaml

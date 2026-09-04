@@ -1,2 +1,19 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/CompleteRequest
+description: A request from the client to the server, to ask for completion options.
+properties:
+  id:
+    $ref: ../fragments/requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+  method:
+    const: completion/complete
+    type: string
+  params:
+    $ref: ../fragments/completeRequestParams.yaml
+required:
+  - id
+  - jsonrpc
+  - method
+  - params
+type: object

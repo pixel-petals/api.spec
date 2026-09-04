@@ -1,4 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../schema.json#/definitions/Paths"
+  "type": "object",
+  "patternProperties": {
+    "^\\/": {
+      "$ref": "./fragments/pathItem.json"
+    },
+    "^x-": {}
+  },
+  "additionalProperties": false
 }

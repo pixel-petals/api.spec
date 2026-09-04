@@ -1,4 +1,41 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/response-or-reference"
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "../fragments/reference.json"
+  },
+  "else": {
+    "$comment": "https://spec.openapis.org/oas/v3.1#response-object",
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string"
+      },
+      "headers": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "./headers.json"
+        }
+      },
+      "content": {
+        "$ref": "../fragments/content.json"
+      },
+      "links": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "./links.json"
+        }
+      }
+    },
+    "required": [
+      "description"
+    ],
+    "$ref": "../../schema.json#/$defs/specification-extensions",
+    "unevaluatedProperties": false
+  }
 }

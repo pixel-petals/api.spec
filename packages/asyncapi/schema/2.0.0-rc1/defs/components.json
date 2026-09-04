@@ -1,4 +1,50 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../schema.json#/definitions/components"
+  "type": "object",
+  "description": "An object to hold a set of reusable objects for different aspects of the AsyncAPI Specification.",
+  "additionalProperties": false,
+  "properties": {
+    "schemas": {
+      "$ref": "./components/schemas.json"
+    },
+    "messages": {
+      "$ref": "./components/messages.json"
+    },
+    "securitySchemes": {
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/schema.json"
+            },
+            {
+              "$ref": "./components/securitySchemes.json"
+            }
+          ]
+        }
+      }
+    },
+    "parameters": {
+      "$ref": "./components/parameters.json"
+    },
+    "correlationIds": {
+      "type": "object",
+      "patternProperties": {
+        "^[\\w\\d\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/schema.json"
+            },
+            {
+              "$ref": "./components/correlationIds.json"
+            }
+          ]
+        }
+      }
+    },
+    "traits": {
+      "$ref": "./components/traits.json"
+    }
+  }
 }

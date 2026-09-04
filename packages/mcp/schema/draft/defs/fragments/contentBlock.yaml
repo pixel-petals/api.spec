@@ -1,2 +1,7 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ContentBlock
+anyOf:
+  - $ref: ./textContent.yaml
+  - $ref: ./imageContent.yaml
+  - $ref: ./audioContent.yaml
+  - $ref: ../contentBlock/resourceLink.yaml
+  - $ref: ../contentBlock/embeddedResource.yaml

@@ -1,2 +1,24 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/apiKeySecurity
+type: object
+additionalProperties: false
+required:
+  - type
+  - name
+  - in
+properties:
+  type:
+    type: string
+    enum:
+      - apiKey
+  name:
+    type: string
+  in:
+    type: string
+    enum:
+      - header
+      - query
+  description:
+    type: string
+patternProperties:
+  ^x-:
+    $ref: ./vendorExtension.yaml

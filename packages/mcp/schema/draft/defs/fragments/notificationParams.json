@@ -1,4 +1,10 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/NotificationParams"
+  "description": "Common params for any notification.",
+  "properties": {
+    "_meta": {
+      "$ref": "./notificationMetaObject.json"
+    }
+  },
+  "type": "object"
 }

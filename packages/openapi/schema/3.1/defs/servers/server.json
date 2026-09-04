@@ -1,4 +1,24 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/server"
+  "$comment": "https://spec.openapis.org/oas/v3.1#server-object",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "variables": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "../fragments/serverVariable.json"
+      }
+    }
+  },
+  "required": [
+    "url"
+  ],
+  "$ref": "../../schema.json#/$defs/specification-extensions",
+  "unevaluatedProperties": false
 }

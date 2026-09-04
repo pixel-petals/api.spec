@@ -1,4 +1,26 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../schema.json#/definitions/securityDefinitions"
+  "type": "object",
+  "additionalProperties": {
+    "oneOf": [
+      {
+        "$ref": "./fragments/basicAuthenticationSecurity.json"
+      },
+      {
+        "$ref": "./fragments/apiKeySecurity.json"
+      },
+      {
+        "$ref": "./fragments/oauth2ImplicitSecurity.json"
+      },
+      {
+        "$ref": "./fragments/oauth2PasswordSecurity.json"
+      },
+      {
+        "$ref": "./fragments/oauth2ApplicationSecurity.json"
+      },
+      {
+        "$ref": "./fragments/oauth2AccessCodeSecurity.json"
+      }
+    ]
+  }
 }

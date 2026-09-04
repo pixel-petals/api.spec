@@ -1,4 +1,36 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/CancelTaskRequest"
+  "description": "A request to cancel a task.",
+  "properties": {
+    "id": {
+      "$ref": "./requestId.json"
+    },
+    "jsonrpc": {
+      "const": "2.0",
+      "type": "string"
+    },
+    "method": {
+      "const": "tasks/cancel",
+      "type": "string"
+    },
+    "params": {
+      "properties": {
+        "taskId": {
+          "description": "The task identifier to cancel.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "taskId"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "jsonrpc",
+    "method",
+    "params"
+  ],
+  "type": "object"
 }

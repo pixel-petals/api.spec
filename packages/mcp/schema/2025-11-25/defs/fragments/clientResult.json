@@ -1,4 +1,31 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ClientResult"
+  "anyOf": [
+    {
+      "$ref": "./result.json"
+    },
+    {
+      "$ref": "../../schema.json#/$defs/GetTaskResult",
+      "description": "The response to a tasks/get request."
+    },
+    {
+      "$ref": "./getTaskPayloadResult.json"
+    },
+    {
+      "$ref": "../../schema.json#/$defs/CancelTaskResult",
+      "description": "The response to a tasks/cancel request."
+    },
+    {
+      "$ref": "./listTasksResult.json"
+    },
+    {
+      "$ref": "../clientResult/createMessageResult.json"
+    },
+    {
+      "$ref": "../clientResult/listRootsResult.json"
+    },
+    {
+      "$ref": "../clientResult/elicitResult.json"
+    }
+  ]
 }

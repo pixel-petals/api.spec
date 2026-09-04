@@ -1,2 +1,4 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/headers
+type: object
+additionalProperties:
+  $ref: ./header.yaml

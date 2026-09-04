@@ -1,2 +1,3 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/ReferenceObject
+type: string
+format: uri

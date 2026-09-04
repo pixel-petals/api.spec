@@ -1,4 +1,83 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../schema.json#/$defs/components"
+  "$comment": "https://spec.openapis.org/oas/v3.2#components-object",
+  "type": "object",
+  "properties": {
+    "schemas": {
+      "type": "object",
+      "additionalProperties": {
+        "$dynamicRef": "#meta"
+      }
+    },
+    "responses": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "./components/responses.json"
+      }
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "./components/parameters.json"
+      }
+    },
+    "examples": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "./components/examples.json"
+      }
+    },
+    "requestBodies": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "./components/requestBodies.json"
+      }
+    },
+    "headers": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "./components/headers.json"
+      }
+    },
+    "securitySchemes": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "./components/securitySchemes.json"
+      }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "./components/links.json"
+      }
+    },
+    "callbacks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "./components/callbacks.json"
+      }
+    },
+    "pathItems": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "./fragments/pathItem.json"
+      }
+    },
+    "mediaTypes": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "./components/mediaTypes.json"
+      }
+    }
+  },
+  "patternProperties": {
+    "^(?:schemas|responses|parameters|examples|requestBodies|headers|securitySchemes|links|callbacks|pathItems|mediaTypes)$": {
+      "$comment": "Enumerating all of the property names in the regex above is necessary for unevaluatedProperties to work as expected",
+      "propertyNames": {
+        "pattern": "^[a-zA-Z0-9._-]+$"
+      }
+    }
+  },
+  "$ref": "../schema.json#/$defs/specification-extensions",
+  "unevaluatedProperties": false
 }

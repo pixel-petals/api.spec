@@ -1,2 +1,10 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ServerNotification
+anyOf:
+  - $ref: ../serverNotification/cancelledNotification.yaml
+  - $ref: ../serverNotification/progressNotification.yaml
+  - $ref: ../serverNotification/resourceListChangedNotification.yaml
+  - $ref: ../serverNotification/subscriptionsAcknowledgedNotification.yaml
+  - $ref: ../serverNotification/resourceUpdatedNotification.yaml
+  - $ref: ../serverNotification/promptListChangedNotification.yaml
+  - $ref: ../serverNotification/toolListChangedNotification.yaml
+  - $ref: ../serverNotification/loggingMessageNotification.yaml

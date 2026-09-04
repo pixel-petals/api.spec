@@ -1,2 +1,142 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../schema.yaml#/definitions/components
+type: object
+description: Holds a set of reusable objects for different aspects of the AsyncAPI specification. All objects defined within the components object will have no effect on the API unless they are explicitly referenced from properties outside the components object.
+additionalProperties: false
+patternProperties:
+  ^x-[\w\d\.\x2d_]+$:
+    $ref: ./fragments/specificationExtension.yaml
+properties:
+  schemas:
+    $ref: ./components/schemas.yaml
+  servers:
+    $ref: ./fragments/servers.yaml
+  channels:
+    $ref: ./fragments/channels.yaml
+  serverVariables:
+    $ref: ./components/serverVariables.yaml
+  messages:
+    $ref: ./components/messages.yaml
+  securitySchemes:
+    type: object
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/serverVariable.yaml
+          - $ref: ./components/securitySchemes.yaml
+  parameters:
+    $ref: ./components/parameters.yaml
+  correlationIds:
+    type: object
+    patternProperties:
+      ^[\w\d\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/serverVariable.yaml
+          - $ref: ./components/correlationIds.yaml
+  operationTraits:
+    type: object
+    additionalProperties:
+      $ref: ./components/operationTraits.yaml
+  messageTraits:
+    type: object
+    additionalProperties:
+      $ref: ./components/messageTraits.yaml
+  serverBindings:
+    type: object
+    additionalProperties:
+      $ref: ./fragments/bindingsObject.yaml
+  channelBindings:
+    type: object
+    additionalProperties:
+      $ref: ./fragments/bindingsObject.yaml
+  operationBindings:
+    type: object
+    additionalProperties:
+      $ref: ./fragments/bindingsObject.yaml
+  messageBindings:
+    type: object
+    additionalProperties:
+      $ref: ./fragments/bindingsObject.yaml
+examples:
+  - components:
+      schemas:
+        Category:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+        Tag:
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int64
+            name:
+              type: string
+      servers:
+        development:
+          url: "{stage}.gigantic-server.com:{port}"
+          description: Development server
+          protocol: amqp
+          protocolVersion: 0.9.1
+          variables:
+            stage:
+              $ref: "#/components/serverVariables/stage"
+            port:
+              $ref: "#/components/serverVariables/port"
+      serverVariables:
+        stage:
+          default: demo
+          description: This value is assigned by the service provider, in this example `gigantic-server.com`
+        port:
+          enum:
+            - "8883"
+            - "8884"
+          default: "8883"
+      channels:
+        user/signedup:
+          subscribe:
+            message:
+              $ref: "#/components/messages/userSignUp"
+      messages:
+        userSignUp:
+          summary: Action to sign a user up.
+          description: |
+            Multiline description of what this action does.
+            Here you have another line.
+          tags:
+            - name: user
+            - name: signup
+          headers:
+            type: object
+            properties:
+              applicationInstanceId:
+                description: Unique identifier for a given instance of the publishing application
+                type: string
+          payload:
+            type: object
+            properties:
+              user:
+                $ref: "#/components/schemas/userCreate"
+              signup:
+                $ref: "#/components/schemas/signup"
+      parameters:
+        userId:
+          description: Id of the user.
+          schema:
+            type: string
+      correlationIds:
+        default:
+          description: Default Correlation ID
+          location: $message.header#/correlationId
+      messageTraits:
+        commonHeaders:
+          headers:
+            type: object
+            properties:
+              my-app-header:
+                type: integer
+                minimum: 0
+                maximum: 100

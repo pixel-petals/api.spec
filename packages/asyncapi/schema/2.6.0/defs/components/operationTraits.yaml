@@ -1,4 +1,43 @@
 $schema: http://json-schema.org/draft-07/schema
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/operationTrait
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/serverVariable.yaml
+else:
+  type: object
+  description: Describes a trait that MAY be applied to an Operation Object.
+  additionalProperties: false
+  patternProperties:
+    ^x-[\w\d\.\x2d_]+$:
+      $ref: ../fragments/specificationExtension.yaml
+  properties:
+    summary:
+      type: string
+      description: A short summary of what the operation is about.
+    description:
+      type: string
+      description: A verbose explanation of the operation.
+    tags:
+      type: array
+      description: A list of tags for logical grouping and categorization of operations.
+      items:
+        $ref: ../tags/tag.yaml
+      uniqueItems: true
+    externalDocs:
+      $ref: ../externalDocs.yaml
+    operationId:
+      type: string
+      description: Unique string used to identify the operation. The id MUST be unique among all operations described in the API.
+    security:
+      type: array
+      description: "A declaration of which security mechanisms are associated with this operation. "
+      items:
+        $ref: ../fragments/securityRequirement.yaml
+    bindings:
+      $ref: ../fragments/bindingsObject.yaml
+  examples:
+    - bindings:
+        amqp:
+          ack: false

@@ -1,2 +1,9 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/PrimitiveSchemaDefinition
+anyOf:
+  - $ref: ../primitiveSchemaDefinition/stringSchema.yaml
+  - $ref: ../primitiveSchemaDefinition/numberSchema.yaml
+  - $ref: ../primitiveSchemaDefinition/booleanSchema.yaml
+  - $ref: ../primitiveSchemaDefinition/enumSchema.yaml
+description: |-
+  Restricted schema definitions that only allow primitive types
+  without nested objects or arrays.

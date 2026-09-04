@@ -1,4 +1,17 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/SubscriptionsAcknowledgedNotificationParams"
+  "description": "Parameters for a {@link SubscriptionsAcknowledgedNotificationnotifications/subscriptions/acknowledged} notification.",
+  "properties": {
+    "_meta": {
+      "$ref": "./notificationMetaObject.json"
+    },
+    "notifications": {
+      "$ref": "./subscriptionFilter.json",
+      "description": "The subset of requested notification types the server agreed to honor.\nOnly includes notification types the server actually supports; if the\nclient requested an unsupported type (e.g., `promptsListChanged` when\nthe server has no prompts), it is omitted from this set."
+    }
+  },
+  "required": [
+    "notifications"
+  ],
+  "type": "object"
 }

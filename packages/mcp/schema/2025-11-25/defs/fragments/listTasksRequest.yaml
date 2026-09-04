@@ -1,2 +1,18 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ListTasksRequest
+description: A request to retrieve a list of tasks.
+properties:
+  id:
+    $ref: ./requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+  method:
+    const: tasks/list
+    type: string
+  params:
+    $ref: ./paginatedRequestParams.yaml
+required:
+  - id
+  - jsonrpc
+  - method
+type: object

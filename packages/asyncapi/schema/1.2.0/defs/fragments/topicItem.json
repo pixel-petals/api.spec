@@ -1,4 +1,35 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema",
-  "$ref": "../../schema.json#/definitions/topicItem"
+  "id": "http://asyncapi.com/definitions/1.2.0/topicItem.json",
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^x-": {
+      "$ref": "./vendorExtension.json"
+    }
+  },
+  "minProperties": 1,
+  "properties": {
+    "$ref": {
+      "type": "string"
+    },
+    "parameters": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "$ref": "./parameter.json"
+      }
+    },
+    "publish": {
+      "$ref": "../../schema.json#/definitions/operation"
+    },
+    "subscribe": {
+      "$ref": "../../schema.json#/definitions/operation"
+    },
+    "deprecated": {
+      "type": "boolean",
+      "default": false
+    }
+  }
 }

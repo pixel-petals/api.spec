@@ -1,2 +1,19 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/PromptMessage
+description: |-
+  Describes a message returned as part of a prompt.
+
+  This is similar to `SamplingMessage`, but also supports the embedding of
+  resources from the MCP server.
+properties:
+  content:
+    anyOf:
+      - $ref: ./textContent.yaml
+      - $ref: ./imageContent.yaml
+      - $ref: ./audioContent.yaml
+      - $ref: ./embeddedResource.yaml
+  role:
+    $ref: ./role.yaml
+required:
+  - content
+  - role
+type: object

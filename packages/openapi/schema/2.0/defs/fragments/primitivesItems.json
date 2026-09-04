@@ -1,4 +1,70 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/primitivesItems"
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array"
+      ]
+    },
+    "format": {
+      "type": "string"
+    },
+    "items": {
+      "$ref": "./primitivesItems.json"
+    },
+    "collectionFormat": {
+      "$ref": "./collectionFormat.json"
+    },
+    "default": {
+      "$ref": "../../schema.json#/definitions/default"
+    },
+    "maximum": {
+      "$ref": "../../schema.json#/definitions/maximum"
+    },
+    "exclusiveMaximum": {
+      "$ref": "../../schema.json#/definitions/exclusiveMaximum"
+    },
+    "minimum": {
+      "$ref": "../../schema.json#/definitions/minimum"
+    },
+    "exclusiveMinimum": {
+      "$ref": "../../schema.json#/definitions/exclusiveMinimum"
+    },
+    "maxLength": {
+      "$ref": "../../schema.json#/definitions/maxLength"
+    },
+    "minLength": {
+      "$ref": "../../schema.json#/definitions/minLength"
+    },
+    "pattern": {
+      "$ref": "../../schema.json#/definitions/pattern"
+    },
+    "maxItems": {
+      "$ref": "../../schema.json#/definitions/maxItems"
+    },
+    "minItems": {
+      "$ref": "../../schema.json#/definitions/minItems"
+    },
+    "uniqueItems": {
+      "$ref": "../../schema.json#/definitions/uniqueItems"
+    },
+    "enum": {
+      "$ref": "../../schema.json#/definitions/enum"
+    },
+    "multipleOf": {
+      "$ref": "../../schema.json#/definitions/multipleOf"
+    }
+  },
+  "patternProperties": {
+    "^x-": {
+      "$ref": "./vendorExtension.json"
+    }
+  }
 }

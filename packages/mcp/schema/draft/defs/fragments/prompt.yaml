@@ -1,2 +1,42 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/Prompt
+description: A prompt or prompt template that the server offers.
+properties:
+  _meta:
+    $ref: ./metaObject.yaml
+  arguments:
+    description: A list of arguments to use for templating the prompt.
+    items:
+      $ref: ./promptArgument.yaml
+    type: array
+  description:
+    description: An optional description of what this prompt provides
+    type: string
+  icons:
+    description: |-
+      Optional set of sized icons that the client can display in a user interface.
+
+      Clients that support rendering icons MUST support at least the following MIME types:
+      - `image/png` - PNG images (safe, universal compatibility)
+      - `image/jpeg` (and `image/jpg`) - JPEG images (safe, universal compatibility)
+
+      Clients that support rendering icons SHOULD also support:
+      - `image/svg+xml` - SVG images (scalable but requires security precautions)
+      - `image/webp` - WebP images (modern, efficient format)
+    items:
+      $ref: ./icon.yaml
+    type: array
+  name:
+    description: Intended for programmatic or logical use, but used as a display name in past specs or fallback (if title isn't present).
+    type: string
+  title:
+    description: |-
+      Intended for UI and end-user contexts — optimized to be human-readable and easily understood,
+      even by those unfamiliar with domain-specific terminology.
+
+      If not provided, the name should be used for display (except for {@link Tool},
+      where `annotations.title` should be given precedence over using `name`,
+      if present).
+    type: string
+required:
+  - name
+type: object

@@ -1,11 +1,36 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "oneOf": [
-    {
-      "$ref": "../../schema.json#/definitions/Reference"
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "./schema.json"
+  },
+  "else": {
+    "additionalProperties": false,
+    "patternProperties": {
+      "^x-[\\w\\d\\.\\x2d_]+$": {
+        "$ref": "./specificationExtension.json"
+      }
     },
-    {
-      "$ref": "../../schema.json#/definitions/parameter"
+    "properties": {
+      "description": {
+        "type": "string",
+        "description": "A brief description of the parameter. This could contain examples of use. GitHub Flavored Markdown is allowed."
+      },
+      "name": {
+        "type": "string",
+        "description": "The name of the parameter."
+      },
+      "schema": {
+        "$ref": "./schema.json"
+      },
+      "$ref": {
+        "$ref": "./referenceObject.json"
+      }
     }
-  ]
+  }
 }

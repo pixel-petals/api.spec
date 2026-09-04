@@ -1,4 +1,31 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/Responses"
+  "type": "object",
+  "properties": {
+    "default": {
+      "oneOf": [
+        {
+          "$ref": "../components/responses.json"
+        },
+        {
+          "$ref": "./reference.json"
+        }
+      ]
+    }
+  },
+  "patternProperties": {
+    "^[1-5](?:\\d{2}|XX)$": {
+      "oneOf": [
+        {
+          "$ref": "../components/responses.json"
+        },
+        {
+          "$ref": "./reference.json"
+        }
+      ]
+    },
+    "^x-": {}
+  },
+  "minProperties": 1,
+  "additionalProperties": false
 }

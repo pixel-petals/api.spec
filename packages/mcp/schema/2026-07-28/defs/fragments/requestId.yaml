@@ -1,2 +1,5 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/RequestId
+description: A uniquely identifying ID for a request in JSON-RPC.
+type:
+  - string
+  - integer

@@ -1,4 +1,18 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/SubscriptionsListenRequestParams"
+  "description": "Parameters for a {@link SubscriptionsListenRequestsubscriptions/listen} request.",
+  "properties": {
+    "_meta": {
+      "$ref": "./requestMetaObject.json"
+    },
+    "notifications": {
+      "$ref": "./subscriptionFilter.json",
+      "description": "The notifications the client opts in to on this stream. The server\n**MUST NOT** send notification types the client has not explicitly\nrequested."
+    }
+  },
+  "required": [
+    "_meta",
+    "notifications"
+  ],
+  "type": "object"
 }

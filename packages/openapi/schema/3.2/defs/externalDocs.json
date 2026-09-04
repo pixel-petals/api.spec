@@ -1,4 +1,19 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../schema.json#/$defs/external-documentation"
+  "$comment": "https://spec.openapis.org/oas/v3.2#external-documentation-object",
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri-reference"
+    }
+  },
+  "required": [
+    "url"
+  ],
+  "$ref": "../schema.json#/$defs/specification-extensions",
+  "unevaluatedProperties": false
 }

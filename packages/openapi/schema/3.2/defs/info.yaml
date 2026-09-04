@@ -1,2 +1,24 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../schema.yaml#/$defs/info
+$comment: https://spec.openapis.org/oas/v3.2#info-object
+type: object
+properties:
+  title:
+    type: string
+  summary:
+    type: string
+  description:
+    type: string
+  termsOfService:
+    type: string
+    format: uri-reference
+  contact:
+    $ref: ./fragments/contact.yaml
+  license:
+    $ref: ./fragments/license.yaml
+  version:
+    type: string
+required:
+  - title
+  - version
+$ref: ../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false

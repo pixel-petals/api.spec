@@ -1,4 +1,16 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/Request"
+  "properties": {
+    "method": {
+      "type": "string"
+    },
+    "params": {
+      "additionalProperties": {},
+      "type": "object"
+    }
+  },
+  "required": [
+    "method"
+  ],
+  "type": "object"
 }

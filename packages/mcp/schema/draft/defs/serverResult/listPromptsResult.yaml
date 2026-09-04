@@ -1,2 +1,58 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ListPromptsResult
+description: The result returned by the server for a {@link ListPromptsRequestprompts/list} request.
+properties:
+  _meta:
+    $ref: ../fragments/resultMetaObject.yaml
+  cacheScope:
+    description: |-
+      Indicates the intended scope of the cached response, analogous to HTTP
+      `Cache-Control: public` vs `Cache-Control: private`.
+
+      - `"public"`: The response does not contain user-specific data. Any
+        client or intermediary (e.g., shared gateway, caching proxy) MAY cache
+        the response and serve it across authorization contexts.
+      - `"private"`: The response MAY be cached and reused only within the
+        same authorization context. Caches MUST NOT be shared across
+        authorization contexts (e.g., a different access token requires a
+        different cache).
+    enum:
+      - private
+      - public
+    type: string
+  nextCursor:
+    description: |-
+      An opaque token representing the pagination position after the last returned result.
+      If present, there may be more results available.
+    type: string
+  prompts:
+    items:
+      $ref: ../fragments/prompt.yaml
+    type: array
+  resultType:
+    description: |-
+      Indicates the type of the result, which allows the client to determine
+      how to parse the result object.
+
+      Servers implementing this protocol version MUST include this field.
+      For backward compatibility, when a client receives a result from a
+      server implementing an earlier protocol version (which does not include
+      `resultType`), the client MUST treat the absent field as `"complete"`.
+    type: string
+  ttlMs:
+    description: |-
+      A hint from the server indicating how long (in milliseconds) the
+      client MAY cache this response before re-fetching. Semantics are
+      analogous to HTTP Cache-Control max-age.
+
+      - If 0, The response SHOULD be considered immediately stale,
+        The client MAY re-fetch every time the result is needed.
+      - If positive, the client SHOULD consider the result fresh for this many
+        milliseconds after receiving the response.
+    minimum: 0
+    type: integer
+required:
+  - cacheScope
+  - prompts
+  - resultType
+  - ttlMs
+type: object

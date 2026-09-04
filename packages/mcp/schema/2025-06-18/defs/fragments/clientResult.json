@@ -1,4 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/ClientResult"
+  "anyOf": [
+    {
+      "$ref": "./result.json"
+    },
+    {
+      "$ref": "../clientResult/createMessageResult.json"
+    },
+    {
+      "$ref": "../clientResult/listRootsResult.json"
+    },
+    {
+      "$ref": "../clientResult/elicitResult.json"
+    }
+  ]
 }

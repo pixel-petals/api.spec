@@ -1,2 +1,31 @@
 $schema: http://json-schema.org/draft-04/schema
-$ref: ../../schema.yaml#/definitions/message
+id: http://asyncapi.com/definitions/1.1.0/message.json
+type: object
+additionalProperties: false
+patternProperties:
+  ^x-:
+    $ref: ./vendorExtension.yaml
+properties:
+  $ref:
+    type: string
+  headers:
+    $ref: ./schema.yaml
+  payload:
+    $ref: ./schema.yaml
+  tags:
+    type: array
+    items:
+      $ref: ../tags/tag.yaml
+    uniqueItems: true
+  summary:
+    type: string
+    description: A brief summary of the message.
+  description:
+    type: string
+    description: A longer description of the message. CommonMark is allowed.
+  externalDocs:
+    $ref: ../externalDocs.yaml
+  deprecated:
+    type: boolean
+    default: false
+  example: {}

@@ -1,11 +1,35 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "oneOf": [
-    {
-      "$ref": "../../schema.json#/definitions/Reference"
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "../fragments/server.json"
+  },
+  "else": {
+    "type": "object",
+    "required": [
+      "location"
+    ],
+    "additionalProperties": false,
+    "patternProperties": {
+      "^x-[\\w\\d\\.\\x2d_]+$": {
+        "$ref": "../fragments/specificationExtension.json"
+      }
     },
-    {
-      "$ref": "../../schema.json#/definitions/correlationId"
+    "properties": {
+      "description": {
+        "type": "string",
+        "description": "A optional description of the correlation ID. GitHub Flavored Markdown is allowed."
+      },
+      "location": {
+        "type": "string",
+        "description": "A runtime expression that specifies the location of the correlation ID",
+        "pattern": "^\\$message\\.(header|payload)#(\\/(([^\\/~])|(~[01]))*)*"
+      }
     }
-  ]
+  }
 }

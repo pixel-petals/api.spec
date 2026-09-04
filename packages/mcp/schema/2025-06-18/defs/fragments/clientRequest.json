@@ -1,4 +1,44 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/ClientRequest"
+  "anyOf": [
+    {
+      "$ref": "../clientRequest/initializeRequest.json"
+    },
+    {
+      "$ref": "./pingRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/listResourcesRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/listResourceTemplatesRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/readResourceRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/subscribeRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/unsubscribeRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/listPromptsRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/getPromptRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/listToolsRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/callToolRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/setLevelRequest.json"
+    },
+    {
+      "$ref": "../clientRequest/completeRequest.json"
+    }
+  ]
 }

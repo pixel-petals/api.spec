@@ -1,4 +1,16 @@
 $schema: http://json-schema.org/draft-04/schema
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/SecurityScheme
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  id: http://asyncapi.com/definitions/1.0.0/SecurityScheme.json
+  oneOf:
+    - $ref: ../securityScheme/userPassword.yaml
+    - $ref: ../securityScheme/apiKey.yaml
+    - $ref: ../securityScheme/x509.yaml
+    - $ref: ../securityScheme/symmetricEncryption.yaml
+    - $ref: ../securityScheme/asymmetricEncryption.yaml
+    - $ref: ../securityScheme/httpSecurityScheme.yaml

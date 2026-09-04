@@ -1,11 +1,463 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "oneOf": [
-    {
-      "$ref": "../../schema.json#/definitions/Reference"
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "../fragments/reference.json"
+  },
+  "else": {
+    "description": "Map describing protocol-specific definitions for an operation.",
+    "type": "object",
+    "properties": {
+      "amqp": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsAmqp0.3.0Operation.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.3.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsAmqp0.3.0Operation.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.3.0"
+            ]
+          }
+        }
+      },
+      "amqp1": {},
+      "anypointmq": {},
+      "googlepubsub": {},
+      "http": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsHttp0.3.0Operation.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.2.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsHttp0.2.0Operation.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.3.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsHttp0.3.0Operation.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.2.0",
+              "0.3.0"
+            ]
+          }
+        }
+      },
+      "ibmmq": {},
+      "jms": {},
+      "kafka": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsKafka0.5.0Operation.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.5.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsKafka0.5.0Operation.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.4.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsKafka0.4.0Operation.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.3.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsKafka0.3.0Operation.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.5.0",
+              "0.4.0",
+              "0.3.0"
+            ]
+          }
+        }
+      },
+      "mqtt": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsMqtt0.2.0Operation.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.2.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsMqtt0.2.0Operation.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.2.0"
+            ]
+          }
+        }
+      },
+      "nats": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsNats0.1.0Operation.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.1.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsNats0.1.0Operation.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.1.0"
+            ]
+          }
+        }
+      },
+      "redis": {},
+      "ros2": {
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.1.0"
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsRos20.1.0Operation.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.1.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsRos20.1.0Operation.json"
+            }
+          }
+        ]
+      },
+      "sns": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsSns0.1.0Operation.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.1.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsSns0.1.0Operation.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.1.0"
+            ]
+          }
+        }
+      },
+      "solace": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsSolace0.4.0Operation.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.4.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsSolace0.4.0Operation.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.3.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsSolace0.3.0Operation.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.2.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsSolace0.2.0Operation.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.4.0",
+              "0.3.0",
+              "0.2.0"
+            ]
+          }
+        }
+      },
+      "sqs": {
+        "allOf": [
+          {
+            "description": "If no bindingVersion specified, use the latest binding",
+            "if": {
+              "not": {
+                "required": [
+                  "bindingVersion"
+                ]
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsSqs0.2.0Operation.json"
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "bindingVersion"
+              ],
+              "properties": {
+                "bindingVersion": {
+                  "const": "0.2.0"
+                }
+              }
+            },
+            "then": {
+              "$ref": "../fragments/bindingsSqs0.2.0Operation.json"
+            }
+          }
+        ],
+        "properties": {
+          "bindingVersion": {
+            "enum": [
+              "0.2.0"
+            ]
+          }
+        }
+      },
+      "stomp": {},
+      "ws": {}
     },
-    {
-      "$ref": "../../schema.json#/definitions/operationBindingsObject"
-    }
-  ]
+    "patternProperties": {
+      "^x-[\\w\\d\\.\\x2d_]+$": {
+        "$ref": "../fragments/specificationExtension.json"
+      }
+    },
+    "additionalProperties": false
+  }
 }

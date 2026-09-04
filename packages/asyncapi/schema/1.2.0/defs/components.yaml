@@ -1,2 +1,19 @@
 $schema: http://json-schema.org/draft-04/schema
-$ref: ../schema.yaml#/definitions/components
+id: http://asyncapi.com/definitions/1.2.0/components.json
+type: object
+description: An object to hold a set of reusable objects for different aspects of the AsyncAPI Specification.
+additionalProperties: false
+properties:
+  schemas:
+    $ref: ./components/schemas.yaml
+  messages:
+    $ref: ./components/messages.yaml
+  securitySchemes:
+    type: object
+    patternProperties:
+      ^[a-zA-Z0-9\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/securitySchemes.yaml
+  parameters:
+    $ref: ./components/parameters.yaml

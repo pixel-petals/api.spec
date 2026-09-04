@@ -1,4 +1,108 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/step-object-base"
+  "type": "object",
+  "properties": {
+    "stepId": {
+      "description": "Unique string to represent the step",
+      "$anchor": "stepId",
+      "type": "string"
+    },
+    "description": {
+      "description": "A description of the step. CommonMark syntax MAY be used for rich text representation",
+      "type": "string"
+    },
+    "timeout": {
+      "description": "The duration in milliseconds to wait before timing out the step",
+      "type": "integer"
+    },
+    "dependsOn": {
+      "description": "Specifies a list of step identifiers that must complete (or be waited for) before the current step can begin execution. `dependsOn` only establishes a prerequisite relationship for the current step and does not trigger execution of the referenced steps. Steps referred by dependsOn SHOULD be non-blocking/async steps. Steps in the current workflow MUST be referenced directly by stepId. Steps in another workflow in the same Arazzo document MUST use $workflows.<workflowId>.steps.<stepId>. Steps in another Arazzo document MUST use $sourceDescriptions.<name>.<workflowId>.steps.<stepId>.",
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          {
+            "type": "string",
+            "pattern": "^(?!\\$).+$"
+          },
+          {
+            "type": "string",
+            "pattern": "^\\$workflows\\.[^.]+\\.steps\\.[^.]+$"
+          },
+          {
+            "type": "string",
+            "pattern": "^\\$sourceDescriptions\\.[^.]+\\.[^.]+\\.steps\\.[^.]+$"
+          }
+        ]
+      }
+    },
+    "parameters": {
+      "description": "A list of parameters that MUST be passed to an operation or workflow as referenced by operationId, operationPath, or workflowId",
+      "type": "array",
+      "uniqueItems": true,
+      "items": true
+    },
+    "requestBody": {
+      "$ref": "./requestBodyObject.json"
+    },
+    "successCriteria": {
+      "description": "A list of assertions to determine the success of the step",
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "$ref": "./criterionObject.json"
+      }
+    },
+    "onSuccess": {
+      "description": "An array of success action objects that specify what to do upon step success",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "../components/successActions.json"
+          },
+          {
+            "$ref": "./reusableObject.json"
+          }
+        ]
+      }
+    },
+    "onFailure": {
+      "description": "An array of failure action objects that specify what to do upon step failure",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "../components/failureActions.json"
+          },
+          {
+            "$ref": "./reusableObject.json"
+          }
+        ]
+      }
+    },
+    "outputs": {
+      "description": "A map between a friendly name and a dynamic output value defined using a Runtime Expression or Selector Object. Keys must match the regex: ^[a-zA-Z0-9\\.\\-_]+$\n",
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "./selectorObject.json"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "stepId"
+  ]
 }

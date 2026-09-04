@@ -1,4 +1,27 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/reusable-object"
+  "$comment": "https://spec.openapis.org/arazzo/v1.1#reusable-object",
+  "description": "A simple object to allow referencing of objects contained within the Components Object",
+  "type": "object",
+  "properties": {
+    "reference": {
+      "description": "A runtime expression used to reference the desired object",
+      "type": "string"
+    },
+    "value": {
+      "description": "Sets a value of the referenced parameter",
+      "type": [
+        "string",
+        "boolean",
+        "object",
+        "array",
+        "number",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "reference"
+  ],
+  "unevaluatedProperties": false
 }

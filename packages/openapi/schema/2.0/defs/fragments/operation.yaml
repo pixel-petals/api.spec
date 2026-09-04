@@ -1,2 +1,44 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/operation
+type: object
+required:
+  - responses
+additionalProperties: false
+patternProperties:
+  ^x-:
+    $ref: ./vendorExtension.yaml
+properties:
+  tags:
+    type: array
+    items:
+      type: string
+    uniqueItems: true
+  summary:
+    type: string
+    description: A brief summary of the operation.
+  description:
+    type: string
+    description: A longer description of the operation, GitHub Flavored Markdown is allowed.
+  externalDocs:
+    $ref: ../externalDocs.yaml
+  operationId:
+    type: string
+    description: A unique identifier of the operation.
+  produces:
+    description: A list of MIME types the API can produce.
+    allOf:
+      - $ref: ./mediaTypeList.yaml
+  consumes:
+    description: A list of MIME types the API can consume.
+    allOf:
+      - $ref: ./mediaTypeList.yaml
+  parameters:
+    $ref: ./parametersList.yaml
+  responses:
+    $ref: ./responses.yaml
+  schemes:
+    $ref: ../schemes.yaml
+  deprecated:
+    type: boolean
+    default: false
+  security:
+    $ref: ../security.yaml

@@ -1,2 +1,6 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/traits
+type: object
+additionalProperties:
+  anyOf:
+    - $ref: ../fragments/operationTrait.yaml
+    - $ref: ../fragments/messageTrait.yaml

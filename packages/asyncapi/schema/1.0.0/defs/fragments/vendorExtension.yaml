@@ -1,2 +1,5 @@
 $schema: http://json-schema.org/draft-04/schema
-$ref: ../../schema.yaml#/definitions/vendorExtension
+id: http://asyncapi.com/definitions/1.0.0/vendorExtension.json
+description: Any property starting with x- is valid.
+additionalProperties: true
+additionalItems: true

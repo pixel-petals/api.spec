@@ -1,2 +1,12 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/CreateTaskResult
+description: A response to a task-augmented request.
+properties:
+  _meta:
+    additionalProperties: {}
+    description: "See [General fields: `_meta`](/specification/2025-11-25/basic/index#meta) for notes on `_meta` usage."
+    type: object
+  task:
+    $ref: ./task.yaml
+required:
+  - task
+type: object

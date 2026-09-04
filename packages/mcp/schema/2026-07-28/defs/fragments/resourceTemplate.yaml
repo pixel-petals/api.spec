@@ -1,2 +1,51 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ResourceTemplate
+description: A template description for resources available on the server.
+properties:
+  _meta:
+    $ref: ./metaObject.yaml
+  annotations:
+    $ref: ./annotations.yaml
+    description: Optional annotations for the client.
+  description:
+    description: |-
+      A description of what this template is for.
+
+      This can be used by clients to improve the LLM's understanding of available resources. It can be thought of like a "hint" to the model.
+    type: string
+  icons:
+    description: |-
+      Optional set of sized icons that the client can display in a user interface.
+
+      Clients that support rendering icons MUST support at least the following MIME types:
+      - `image/png` - PNG images (safe, universal compatibility)
+      - `image/jpeg` (and `image/jpg`) - JPEG images (safe, universal compatibility)
+
+      Clients that support rendering icons SHOULD also support:
+      - `image/svg+xml` - SVG images (scalable but requires security precautions)
+      - `image/webp` - WebP images (modern, efficient format)
+    items:
+      $ref: ./icon.yaml
+    type: array
+  mimeType:
+    description: The MIME type for all resources that match this template. This should only be included if all resources matching this template have the same type.
+    type: string
+  name:
+    description: Intended for programmatic or logical use, but used as a display name in past specs or fallback (if title isn't present).
+    type: string
+  title:
+    description: |-
+      Intended for UI and end-user contexts — optimized to be human-readable and easily understood,
+      even by those unfamiliar with domain-specific terminology.
+
+      If not provided, the name should be used for display (except for {@link Tool},
+      where `annotations.title` should be given precedence over using `name`,
+      if present).
+    type: string
+  uriTemplate:
+    description: A URI template (according to RFC 6570) that can be used to construct resource URIs.
+    format: uri-template
+    type: string
+required:
+  - name
+  - uriTemplate
+type: object

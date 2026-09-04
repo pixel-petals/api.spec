@@ -1,2 +1,18 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/Icons
+description: Base interface to add `icons` property.
+properties:
+  icons:
+    description: |-
+      Optional set of sized icons that the client can display in a user interface.
+
+      Clients that support rendering icons MUST support at least the following MIME types:
+      - `image/png` - PNG images (safe, universal compatibility)
+      - `image/jpeg` (and `image/jpg`) - JPEG images (safe, universal compatibility)
+
+      Clients that support rendering icons SHOULD also support:
+      - `image/svg+xml` - SVG images (scalable but requires security precautions)
+      - `image/webp` - WebP images (modern, efficient format)
+    items:
+      $ref: ./icon.yaml
+    type: array
+type: object

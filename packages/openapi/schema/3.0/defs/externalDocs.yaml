@@ -1,2 +1,13 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../schema.yaml#/definitions/ExternalDocumentation
+type: object
+required:
+  - url
+properties:
+  description:
+    type: string
+  url:
+    type: string
+    format: uri-reference
+patternProperties:
+  ^x-: {}
+additionalProperties: false

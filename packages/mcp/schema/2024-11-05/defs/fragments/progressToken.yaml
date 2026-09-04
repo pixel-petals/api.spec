@@ -1,2 +1,5 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/ProgressToken
+description: A progress token, used to associate progress notifications with the original request.
+type:
+  - string
+  - integer

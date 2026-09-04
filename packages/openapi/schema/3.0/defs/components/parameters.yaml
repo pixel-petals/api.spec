@@ -1,4 +1,63 @@
 $schema: http://json-schema.org/draft-04/schema#
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/Parameter
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  type: object
+  properties:
+    name:
+      type: string
+    in:
+      type: string
+    description:
+      type: string
+    required:
+      type: boolean
+      default: false
+    deprecated:
+      type: boolean
+      default: false
+    allowEmptyValue:
+      type: boolean
+      default: false
+    style:
+      type: string
+    explode:
+      type: boolean
+    allowReserved:
+      type: boolean
+      default: false
+    schema:
+      oneOf:
+        - $ref: ./schemas.yaml
+        - $ref: ../fragments/reference.yaml
+    content:
+      type: object
+      additionalProperties:
+        $ref: ../fragments/mediaType.yaml
+      minProperties: 1
+      maxProperties: 1
+    example: {}
+    examples:
+      type: object
+      additionalProperties:
+        oneOf:
+          - $ref: ./examples.yaml
+          - $ref: ../fragments/reference.yaml
+  patternProperties:
+    ^x-: {}
+  additionalProperties: false
+  required:
+    - name
+    - in
+  allOf:
+    - $ref: ../../schema.yaml#/definitions/ExampleXORExamples
+    - $ref: ../../schema.yaml#/definitions/SchemaXORContent
+  oneOf:
+    - $ref: ../../schema.yaml#/definitions/PathParameter
+    - $ref: ../../schema.yaml#/definitions/QueryParameter
+    - $ref: ../../schema.yaml#/definitions/HeaderParameter
+    - $ref: ../../schema.yaml#/definitions/CookieParameter

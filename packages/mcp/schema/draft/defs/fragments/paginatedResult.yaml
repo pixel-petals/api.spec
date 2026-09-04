@@ -1,2 +1,22 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/PaginatedResult
+properties:
+  _meta:
+    $ref: ./resultMetaObject.yaml
+  nextCursor:
+    description: |-
+      An opaque token representing the pagination position after the last returned result.
+      If present, there may be more results available.
+    type: string
+  resultType:
+    description: |-
+      Indicates the type of the result, which allows the client to determine
+      how to parse the result object.
+
+      Servers implementing this protocol version MUST include this field.
+      For backward compatibility, when a client receives a result from a
+      server implementing an earlier protocol version (which does not include
+      `resultType`), the client MUST treat the absent field as `"complete"`.
+    type: string
+required:
+  - resultType
+type: object

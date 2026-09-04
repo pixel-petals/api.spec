@@ -1,4 +1,35 @@
 $schema: http://json-schema.org/draft-07/schema
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/server
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ./server.yaml
+else:
+  type: object
+  description: An object representing a Server.
+  required:
+    - url
+    - protocol
+  additionalProperties: false
+  patternProperties:
+    ^x-[\w\d\.\x2d_]+$:
+      $ref: ./specificationExtension.yaml
+  properties:
+    url:
+      type: string
+    description:
+      type: string
+    protocol:
+      type: string
+      description: The transfer protocol.
+    protocolVersion:
+      type: string
+    variables:
+      $ref: ./serverVariables.yaml
+    security:
+      type: array
+      items:
+        $ref: ./securityRequirement.yaml
+    bindings:
+      $ref: ./bindingsObject.yaml

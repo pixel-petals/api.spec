@@ -1,2 +1,21 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/EmbeddedResource
+description: |-
+  The contents of a resource, embedded into a prompt or tool call result.
+
+  It is up to the client how best to render embedded resources for the benefit
+  of the LLM and/or the user.
+properties:
+  annotations:
+    $ref: ./annotations.yaml
+    description: Optional annotations for the client.
+  resource:
+    anyOf:
+      - $ref: ./textResourceContents.yaml
+      - $ref: ./blobResourceContents.yaml
+  type:
+    const: resource
+    type: string
+required:
+  - resource
+  - type
+type: object

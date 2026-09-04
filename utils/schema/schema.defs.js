@@ -109,6 +109,9 @@ export function normalize(document, { componentsKey }) {
       .filter(name => !name.endsWith(VARIANT_SUFFIX) && isShaped(defs[ name ]))
       .map(name => ({ name, targets: targetsFor(defs, name) })),
 
+    defs,
+    reference: defs.reference ? 'reference' : null,
+
     unions: unionsIn(defs),
     roots: groups(document.properties, read),
     components: groups(components ? defs[ components ]?.properties : null, read),

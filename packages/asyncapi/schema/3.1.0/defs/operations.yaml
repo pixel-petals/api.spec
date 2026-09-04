@@ -1,2 +1,24 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../schema.yaml#/definitions/operations
+description: Holds a dictionary with all the operations this application MUST implement.
+type: object
+additionalProperties:
+  oneOf:
+    - $ref: ./fragments/reference.yaml
+    - $ref: ./components/operations.yaml
+examples:
+  - onUserSignUp:
+      title: User sign up
+      summary: Action to sign a user up.
+      description: A longer description
+      channel:
+        $ref: "#/channels/userSignup"
+      action: send
+      tags:
+        - name: user
+        - name: signup
+        - name: register
+      bindings:
+        amqp:
+          ack: false
+      traits:
+        - $ref: "#/components/operationTraits/kafka"

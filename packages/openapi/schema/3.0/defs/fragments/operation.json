@@ -1,4 +1,87 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/Operation"
+  "type": "object",
+  "required": [
+    "responses"
+  ],
+  "properties": {
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "externalDocs": {
+      "$ref": "../externalDocs.json"
+    },
+    "operationId": {
+      "type": "string"
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "../components/parameters.json"
+          },
+          {
+            "$ref": "./reference.json"
+          }
+        ]
+      },
+      "uniqueItems": true
+    },
+    "requestBody": {
+      "oneOf": [
+        {
+          "$ref": "../components/requestBodies.json"
+        },
+        {
+          "$ref": "./reference.json"
+        }
+      ]
+    },
+    "responses": {
+      "$ref": "./responses.json"
+    },
+    "callbacks": {
+      "type": "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "$ref": "../components/callbacks.json"
+          },
+          {
+            "$ref": "./reference.json"
+          }
+        ]
+      }
+    },
+    "deprecated": {
+      "type": "boolean",
+      "default": false
+    },
+    "security": {
+      "type": "array",
+      "items": {
+        "$ref": "../security/securityRequirement.json"
+      }
+    },
+    "servers": {
+      "type": "array",
+      "items": {
+        "$ref": "../servers/server.json"
+      }
+    }
+  },
+  "patternProperties": {
+    "^x-": {}
+  },
+  "additionalProperties": false
 }

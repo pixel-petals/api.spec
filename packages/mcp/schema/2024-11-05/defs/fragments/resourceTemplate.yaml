@@ -1,2 +1,47 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/ResourceTemplate
+description: A template description for resources available on the server.
+properties:
+  annotations:
+    properties:
+      audience:
+        description: |-
+          Describes who the intended customer of this object or data is.
+
+          It can include multiple entries to indicate content useful for multiple audiences (e.g., `["user", "assistant"]`).
+        items:
+          $ref: ./role.yaml
+        type: array
+      priority:
+        description: |-
+          Describes how important this data is for operating the server.
+
+          A value of 1 means "most important," and indicates that the data is
+          effectively required, while 0 means "least important," and indicates that
+          the data is entirely optional.
+        maximum: 1
+        minimum: 0
+        type: number
+    type: object
+  description:
+    description: |-
+      A description of what this template is for.
+
+      This can be used by clients to improve the LLM's understanding of available resources. It can be thought of like a "hint" to the model.
+    type: string
+  mimeType:
+    description: The MIME type for all resources that match this template. This should only be included if all resources matching this template have the same type.
+    type: string
+  name:
+    description: |-
+      A human-readable name for the type of resource this template refers to.
+
+      This can be used by clients to populate UI elements.
+    type: string
+  uriTemplate:
+    description: A URI template (according to RFC 6570) that can be used to construct resource URIs.
+    format: uri-template
+    type: string
+required:
+  - name
+  - uriTemplate
+type: object

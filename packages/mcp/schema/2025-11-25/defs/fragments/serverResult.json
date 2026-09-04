@@ -1,4 +1,49 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ServerResult"
+  "anyOf": [
+    {
+      "$ref": "./result.json"
+    },
+    {
+      "$ref": "../serverResult/initializeResult.json"
+    },
+    {
+      "$ref": "../serverResult/listResourcesResult.json"
+    },
+    {
+      "$ref": "../serverResult/listResourceTemplatesResult.json"
+    },
+    {
+      "$ref": "../serverResult/readResourceResult.json"
+    },
+    {
+      "$ref": "../serverResult/listPromptsResult.json"
+    },
+    {
+      "$ref": "../serverResult/getPromptResult.json"
+    },
+    {
+      "$ref": "../serverResult/listToolsResult.json"
+    },
+    {
+      "$ref": "../serverResult/callToolResult.json"
+    },
+    {
+      "$ref": "../../schema.json#/$defs/GetTaskResult",
+      "description": "The response to a tasks/get request."
+    },
+    {
+      "$ref": "./getTaskPayloadResult.json"
+    },
+    {
+      "$ref": "../../schema.json#/$defs/CancelTaskResult",
+      "description": "The response to a tasks/cancel request."
+    },
+    {
+      "$ref": "./listTasksResult.json"
+    },
+    {
+      "$ref": "../serverResult/completeResult.json"
+    }
+  ]
 }

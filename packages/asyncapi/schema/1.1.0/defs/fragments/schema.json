@@ -1,4 +1,148 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema",
-  "$ref": "../../schema.json#/definitions/schema"
+  "id": "http://asyncapi.com/definitions/1.1.0/schema.json",
+  "type": "object",
+  "description": "A deterministic version of a JSON Schema object.",
+  "patternProperties": {
+    "^x-": {
+      "$ref": "./vendorExtension.json"
+    }
+  },
+  "properties": {
+    "$ref": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string"
+    },
+    "title": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "description": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "default": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "multipleOf": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "maximum": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "exclusiveMaximum": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "minimum": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "exclusiveMinimum": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "maxLength": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "minLength": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "pattern": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "maxItems": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "minItems": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "uniqueItems": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "maxProperties": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "minProperties": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "required": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "enum": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "additionalProperties": {
+      "anyOf": [
+        {
+          "$ref": "./schema.json"
+        },
+        {
+          "type": "boolean"
+        }
+      ],
+      "default": {}
+    },
+    "type": {
+      "$ref": "./jsonSchemaDraft07Schema.json"
+    },
+    "items": {
+      "anyOf": [
+        {
+          "$ref": "./schema.json"
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "./schema.json"
+          }
+        }
+      ],
+      "default": {}
+    },
+    "allOf": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "./schema.json"
+      }
+    },
+    "oneOf": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "$ref": "./schema.json"
+      }
+    },
+    "anyOf": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "$ref": "./schema.json"
+      }
+    },
+    "not": {
+      "$ref": "./schema.json"
+    },
+    "properties": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "./schema.json"
+      },
+      "default": {}
+    },
+    "discriminator": {
+      "type": "string"
+    },
+    "readOnly": {
+      "type": "boolean",
+      "default": false
+    },
+    "xml": {
+      "$ref": "./xml.json"
+    },
+    "externalDocs": {
+      "$ref": "../externalDocs.json"
+    },
+    "example": {}
+  },
+  "additionalProperties": false
 }

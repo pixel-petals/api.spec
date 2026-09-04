@@ -1,4 +1,28 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/ResourceUpdatedNotification"
+  "description": "A notification from the server to the client, informing it that a resource has changed and may need to be read again. This should only be sent if the client previously sent a resources/subscribe request.",
+  "properties": {
+    "method": {
+      "const": "notifications/resources/updated",
+      "type": "string"
+    },
+    "params": {
+      "properties": {
+        "uri": {
+          "description": "The URI of the resource that has been updated. This might be a sub-resource of the one that the client actually subscribed to.",
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "uri"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "method",
+    "params"
+  ],
+  "type": "object"
 }

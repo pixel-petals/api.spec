@@ -1,4 +1,97 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/failure-action-object"
+  "$comment": "https://spec.openapis.org/arazzo/v1.1#failure-action-object",
+  "description": "A single failure action which describes an action to take upon failure of a workflow step",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the failure action",
+      "type": "string"
+    },
+    "type": {
+      "description": "The type of action to take",
+      "enum": [
+        "end",
+        "goto",
+        "retry"
+      ]
+    },
+    "workflowId": {
+      "description": "The workflowId referencing an existing workflow within the Arazzo description to transfer to upon failure of the step",
+      "$ref": "../../schema.json#workflowId"
+    },
+    "stepId": {
+      "description": "The stepId to transfer to upon failure of the step",
+      "$ref": "../../schema.json#stepId"
+    },
+    "parameters": {
+      "description": "A list of parameters that MUST be passed to a workflow as referenced by workflowId",
+      "type": "array",
+      "uniqueItems": true,
+      "items": true
+    },
+    "retryAfter": {
+      "description": "A non-negative decimal indicating the seconds to delay after the step failure before another attempt SHALL be made",
+      "type": "number",
+      "minimum": 0
+    },
+    "retryLimit": {
+      "description": "A non-negative integer indicating how many attempts to retry the step MAY be attempted before failing the overall step",
+      "type": "integer",
+      "minimum": 0
+    },
+    "criteria": {
+      "description": "A list of assertions to determine if this action SHALL be executed",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "../fragments/criterionObject.json"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "goto"
+            ]
+          }
+        }
+      },
+      "then": {
+        "oneOf": [
+          {
+            "required": [
+              "workflowId"
+            ]
+          },
+          {
+            "required": [
+              "stepId"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "parameters"
+        ]
+      },
+      "then": {
+        "required": [
+          "workflowId"
+        ]
+      }
+    }
+  ],
+  "required": [
+    "name",
+    "type"
+  ],
+  "$ref": "../../schema.json#/$defs/specification-extensions",
+  "unevaluatedProperties": false
 }

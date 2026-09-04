@@ -1,4 +1,59 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/media-type-or-reference"
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "../fragments/reference.json"
+  },
+  "else": {
+    "$comment": "https://spec.openapis.org/oas/v3.2#media-type-object",
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string"
+      },
+      "schema": {
+        "$dynamicRef": "#meta"
+      },
+      "itemSchema": {
+        "$dynamicRef": "#meta"
+      },
+      "encoding": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "../fragments/encoding.json"
+        }
+      },
+      "prefixEncoding": {
+        "type": "array",
+        "items": {
+          "$ref": "../fragments/encoding.json"
+        }
+      },
+      "itemEncoding": {
+        "$ref": "../fragments/encoding.json"
+      }
+    },
+    "dependentSchemas": {
+      "encoding": {
+        "properties": {
+          "prefixEncoding": false,
+          "itemEncoding": false
+        }
+      }
+    },
+    "allOf": [
+      {
+        "$ref": "../../schema.json#/$defs/examples"
+      },
+      {
+        "$ref": "../../schema.json#/$defs/specification-extensions"
+      }
+    ],
+    "unevaluatedProperties": false
+  }
 }

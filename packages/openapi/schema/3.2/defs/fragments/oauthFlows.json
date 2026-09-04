@@ -1,4 +1,145 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/oauth-flows"
+  "type": "object",
+  "properties": {
+    "implicit": {
+      "$ref": "../../schema.json#/$defs/oauth-flows/$defs/implicit"
+    },
+    "password": {
+      "$ref": "../../schema.json#/$defs/oauth-flows/$defs/password"
+    },
+    "clientCredentials": {
+      "$ref": "../../schema.json#/$defs/oauth-flows/$defs/client-credentials"
+    },
+    "authorizationCode": {
+      "$ref": "../../schema.json#/$defs/oauth-flows/$defs/authorization-code"
+    },
+    "deviceAuthorization": {
+      "$ref": "../../schema.json#/$defs/oauth-flows/$defs/device-authorization"
+    }
+  },
+  "$ref": "../../schema.json#/$defs/specification-extensions",
+  "unevaluatedProperties": false,
+  "$defs": {
+    "implicit": {
+      "type": "object",
+      "properties": {
+        "authorizationUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "refreshUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "scopes": {
+          "$ref": "./mapOfStrings.json"
+        }
+      },
+      "required": [
+        "authorizationUrl",
+        "scopes"
+      ],
+      "$ref": "../../schema.json#/$defs/specification-extensions",
+      "unevaluatedProperties": false
+    },
+    "password": {
+      "type": "object",
+      "properties": {
+        "tokenUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "refreshUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "scopes": {
+          "$ref": "./mapOfStrings.json"
+        }
+      },
+      "required": [
+        "tokenUrl",
+        "scopes"
+      ],
+      "$ref": "../../schema.json#/$defs/specification-extensions",
+      "unevaluatedProperties": false
+    },
+    "client-credentials": {
+      "type": "object",
+      "properties": {
+        "tokenUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "refreshUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "scopes": {
+          "$ref": "./mapOfStrings.json"
+        }
+      },
+      "required": [
+        "tokenUrl",
+        "scopes"
+      ],
+      "$ref": "../../schema.json#/$defs/specification-extensions",
+      "unevaluatedProperties": false
+    },
+    "authorization-code": {
+      "type": "object",
+      "properties": {
+        "authorizationUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "tokenUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "refreshUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "scopes": {
+          "$ref": "./mapOfStrings.json"
+        }
+      },
+      "required": [
+        "authorizationUrl",
+        "tokenUrl",
+        "scopes"
+      ],
+      "$ref": "../../schema.json#/$defs/specification-extensions",
+      "unevaluatedProperties": false
+    },
+    "device-authorization": {
+      "type": "object",
+      "properties": {
+        "deviceAuthorizationUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "tokenUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "refreshUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "scopes": {
+          "$ref": "./mapOfStrings.json"
+        }
+      },
+      "required": [
+        "deviceAuthorizationUrl",
+        "tokenUrl",
+        "scopes"
+      ],
+      "$ref": "../../schema.json#/$defs/specification-extensions",
+      "unevaluatedProperties": false
+    }
+  }
 }

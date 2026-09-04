@@ -1,2 +1,15 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/JSONRPCResponse
+description: A successful (non-error) response to a request.
+properties:
+  id:
+    $ref: ./requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+  result:
+    $ref: ./result.yaml
+required:
+  - id
+  - jsonrpc
+  - result
+type: object

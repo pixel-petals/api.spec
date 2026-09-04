@@ -1,2 +1,13 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/PaginatedRequestParams
+description: Common params for paginated requests.
+properties:
+  _meta:
+    $ref: ./requestMetaObject.yaml
+  cursor:
+    description: |-
+      An opaque token representing the current pagination position.
+      If provided, the server should return results starting after this cursor.
+    type: string
+required:
+  - _meta
+type: object

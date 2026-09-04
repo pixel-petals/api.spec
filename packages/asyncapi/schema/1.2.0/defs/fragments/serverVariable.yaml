@@ -1,2 +1,19 @@
 $schema: http://json-schema.org/draft-04/schema
-$ref: ../../schema.yaml#/definitions/serverVariable
+id: http://asyncapi.com/definitions/1.2.0/serverVariable.json
+type: object
+description: An object representing a Server Variable for server URL template substitution.
+minProperties: 1
+additionalProperties: false
+patternProperties:
+  ^x-:
+    $ref: ./vendorExtension.yaml
+properties:
+  enum:
+    type: array
+    items:
+      type: string
+    uniqueItems: true
+  default:
+    type: string
+  description:
+    type: string

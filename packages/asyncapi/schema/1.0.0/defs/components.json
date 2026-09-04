@@ -1,4 +1,30 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema",
-  "$ref": "../schema.json#/definitions/components"
+  "id": "http://asyncapi.com/definitions/1.0.0/components.json",
+  "type": "object",
+  "description": "An object to hold a set of reusable objects for different aspects of the AsyncAPI Specification.",
+  "additionalProperties": false,
+  "properties": {
+    "schemas": {
+      "$ref": "./components/schemas.json"
+    },
+    "messages": {
+      "$ref": "./components/messages.json"
+    },
+    "securitySchemes": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9\\.\\-_]+$": {
+          "oneOf": [
+            {
+              "$ref": "./fragments/reference.json"
+            },
+            {
+              "$ref": "./components/securitySchemes.json"
+            }
+          ]
+        }
+      }
+    }
+  }
 }

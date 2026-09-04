@@ -1,4 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/ServerRequest"
+  "anyOf": [
+    {
+      "$ref": "./pingRequest.json"
+    },
+    {
+      "$ref": "../serverRequest/createMessageRequest.json"
+    },
+    {
+      "$ref": "../serverRequest/listRootsRequest.json"
+    }
+  ]
 }

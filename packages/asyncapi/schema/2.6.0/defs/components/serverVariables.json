@@ -1,4 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../../schema.json#/definitions/serverVariables"
+  "type": "object",
+  "description": "A map between a variable name and its value. The value is used for substitution in the server's URL template.",
+  "additionalProperties": {
+    "oneOf": [
+      {
+        "$ref": "../fragments/serverVariable.json"
+      },
+      {
+        "$ref": "../fragments/serverVariable.json"
+      }
+    ]
+  }
 }

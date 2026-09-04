@@ -1,4 +1,39 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/oauth2ImplicitSecurity"
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "type",
+    "flow",
+    "authorizationUrl"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "oauth2"
+      ]
+    },
+    "flow": {
+      "type": "string",
+      "enum": [
+        "implicit"
+      ]
+    },
+    "scopes": {
+      "$ref": "./oauth2Scopes.json"
+    },
+    "authorizationUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "patternProperties": {
+    "^x-": {
+      "$ref": "./vendorExtension.json"
+    }
+  }
 }

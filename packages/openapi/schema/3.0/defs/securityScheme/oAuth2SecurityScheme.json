@@ -1,4 +1,26 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/OAuth2SecurityScheme"
+  "type": "object",
+  "required": [
+    "type",
+    "flows"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "oauth2"
+      ]
+    },
+    "flows": {
+      "$ref": "../fragments/oAuthFlows.json"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "patternProperties": {
+    "^x-": {}
+  },
+  "additionalProperties": false
 }

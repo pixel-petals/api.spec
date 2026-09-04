@@ -1,11 +1,22 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "oneOf": [
-    {
-      "$ref": "../../schema.json#/definitions/jsonReference"
-    },
-    {
-      "$ref": "../../schema.json#/definitions/parameter"
-    }
-  ]
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "./response.json"
+  },
+  "else": {
+    "oneOf": [
+      {
+        "$ref": "../parameter/bodyParameter.json"
+      },
+      {
+        "$ref": "../parameter/nonBodyParameter.json"
+      }
+    ]
+  }
 }

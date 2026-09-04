@@ -1,4 +1,22 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/PromptArgument"
+  "description": "Describes an argument that a prompt can accept.",
+  "properties": {
+    "description": {
+      "description": "A human-readable description of the argument.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the argument.",
+      "type": "string"
+    },
+    "required": {
+      "description": "Whether this argument must be provided.",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "type": "object"
 }

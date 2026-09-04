@@ -1,4 +1,26 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ListToolsRequest"
+  "description": "Sent from the client to request a list of tools the server has.",
+  "properties": {
+    "id": {
+      "$ref": "../fragments/requestId.json"
+    },
+    "jsonrpc": {
+      "const": "2.0",
+      "type": "string"
+    },
+    "method": {
+      "const": "tools/list",
+      "type": "string"
+    },
+    "params": {
+      "$ref": "../fragments/paginatedRequestParams.json"
+    }
+  },
+  "required": [
+    "id",
+    "jsonrpc",
+    "method"
+  ],
+  "type": "object"
 }

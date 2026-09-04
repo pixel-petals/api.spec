@@ -1,2 +1,16 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/server
+$comment: https://spec.openapis.org/oas/v3.1#server-object
+type: object
+properties:
+  url:
+    type: string
+  description:
+    type: string
+  variables:
+    type: object
+    additionalProperties:
+      $ref: ../fragments/serverVariable.yaml
+required:
+  - url
+$ref: ../../schema.yaml#/$defs/specification-extensions
+unevaluatedProperties: false

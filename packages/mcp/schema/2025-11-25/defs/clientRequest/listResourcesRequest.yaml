@@ -1,2 +1,18 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ListResourcesRequest
+description: Sent from the client to request a list of resources the server has.
+properties:
+  id:
+    $ref: ../fragments/requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+  method:
+    const: resources/list
+    type: string
+  params:
+    $ref: ../fragments/paginatedRequestParams.yaml
+required:
+  - id
+  - jsonrpc
+  - method
+type: object

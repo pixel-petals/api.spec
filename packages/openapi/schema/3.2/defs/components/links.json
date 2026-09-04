@@ -1,4 +1,49 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/link-or-reference"
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "../fragments/reference.json"
+  },
+  "else": {
+    "$comment": "https://spec.openapis.org/oas/v3.2#link-object",
+    "type": "object",
+    "properties": {
+      "operationRef": {
+        "type": "string",
+        "format": "uri-reference"
+      },
+      "operationId": {
+        "type": "string"
+      },
+      "parameters": {
+        "$ref": "../fragments/mapOfStrings.json"
+      },
+      "requestBody": true,
+      "description": {
+        "type": "string"
+      },
+      "server": {
+        "$ref": "../servers/server.json"
+      }
+    },
+    "oneOf": [
+      {
+        "required": [
+          "operationRef"
+        ]
+      },
+      {
+        "required": [
+          "operationId"
+        ]
+      }
+    ],
+    "$ref": "../../schema.json#/$defs/specification-extensions",
+    "unevaluatedProperties": false
+  }
 }

@@ -1,2 +1,14 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/Tag
+type: object
+required:
+  - name
+properties:
+  name:
+    type: string
+  description:
+    type: string
+  externalDocs:
+    $ref: ../externalDocs.yaml
+patternProperties:
+  ^x-: {}
+additionalProperties: false

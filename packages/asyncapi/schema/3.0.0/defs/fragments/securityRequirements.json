@@ -1,4 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$ref": "../../schema.json#/definitions/securityRequirements"
+  "description": "An array representing security requirements.",
+  "type": "array",
+  "items": {
+    "oneOf": [
+      {
+        "$ref": "./reference.json"
+      },
+      {
+        "$ref": "../components/securitySchemes.json"
+      }
+    ]
+  }
 }

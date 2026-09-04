@@ -1,4 +1,22 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/JSONRPCResponse"
+  "description": "A successful (non-error) response to a request.",
+  "properties": {
+    "id": {
+      "$ref": "../fragments/requestId.json"
+    },
+    "jsonrpc": {
+      "const": "2.0",
+      "type": "string"
+    },
+    "result": {
+      "$ref": "../fragments/result.json"
+    }
+  },
+  "required": [
+    "id",
+    "jsonrpc",
+    "result"
+  ],
+  "type": "object"
 }

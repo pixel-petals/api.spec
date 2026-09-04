@@ -1,2 +1,7 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ClientNotification
+anyOf:
+  - $ref: ./cancelledNotification.yaml
+  - $ref: ../clientNotification/initializedNotification.yaml
+  - $ref: ./progressNotification.yaml
+  - $ref: ./taskStatusNotification.yaml
+  - $ref: ../clientNotification/rootsListChangedNotification.yaml

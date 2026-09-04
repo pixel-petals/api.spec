@@ -1,2 +1,6 @@
 $schema: http://json-schema.org/draft-04/schema
-$ref: ../../schema.yaml#/definitions/schemas
+id: http://asyncapi.com/definitions/1.0.0/schemas.json
+type: object
+additionalProperties:
+  $ref: ../fragments/schema.yaml
+description: JSON objects describing schemas the API uses.

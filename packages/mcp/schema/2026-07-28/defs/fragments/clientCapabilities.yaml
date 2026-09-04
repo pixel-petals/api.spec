@@ -1,2 +1,44 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ClientCapabilities
+description: "Capabilities a client may support. Known capabilities are defined here, in this schema, but this is not a closed set: any client can define its own, additional capabilities."
+properties:
+  elicitation:
+    description: Present if the client supports elicitation from the server.
+    properties:
+      form:
+        $ref: ./jsonObject.yaml
+      url:
+        $ref: ./jsonObject.yaml
+    type: object
+  experimental:
+    additionalProperties:
+      $ref: ./jsonObject.yaml
+    description: Experimental, non-standard capabilities that the client supports.
+    type: object
+  extensions:
+    additionalProperties:
+      $ref: ./jsonObject.yaml
+    description: |-
+      Optional MCP extensions that the client supports. Keys are extension identifiers
+      (e.g., "io.modelcontextprotocol/oauth-client-credentials"), and values are
+      per-extension settings objects. An empty object indicates support with no settings.
+
+      Keys MUST follow the {@link MetaObject`_meta` key naming rules}, with a
+      mandatory prefix.
+    type: object
+  roots:
+    description: Present if the client supports listing roots.
+    properties: {}
+    type: object
+  sampling:
+    description: Present if the client supports sampling from an LLM.
+    properties:
+      context:
+        $ref: ./jsonObject.yaml
+        description: |-
+          Whether the client supports context inclusion via `includeContext` parameter.
+          If not declared, servers SHOULD only use `includeContext: "none"` (or omit it).
+      tools:
+        $ref: ./jsonObject.yaml
+        description: Whether the client supports tool use via `tools` and `toolChoice` parameters.
+    type: object
+type: object

@@ -1,2 +1,10 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../schema.yaml#/definitions/securityDefinitions
+type: object
+additionalProperties:
+  oneOf:
+    - $ref: ./fragments/basicAuthenticationSecurity.yaml
+    - $ref: ./fragments/apiKeySecurity.yaml
+    - $ref: ./fragments/oauth2ImplicitSecurity.yaml
+    - $ref: ./fragments/oauth2PasswordSecurity.yaml
+    - $ref: ./fragments/oauth2ApplicationSecurity.yaml
+    - $ref: ./fragments/oauth2AccessCodeSecurity.yaml

@@ -1,4 +1,25 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/ListResourcesResult"
+  "description": "The server's response to a resources/list request from the client.",
+  "properties": {
+    "_meta": {
+      "additionalProperties": {},
+      "description": "See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage.",
+      "type": "object"
+    },
+    "nextCursor": {
+      "description": "An opaque token representing the pagination position after the last returned result.\nIf present, there may be more results available.",
+      "type": "string"
+    },
+    "resources": {
+      "items": {
+        "$ref": "../fragments/resource.json"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "resources"
+  ],
+  "type": "object"
 }

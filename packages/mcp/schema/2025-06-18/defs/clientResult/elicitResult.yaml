@@ -1,2 +1,31 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/ElicitResult
+description: The client's response to an elicitation request.
+properties:
+  _meta:
+    additionalProperties: {}
+    description: "See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage."
+    type: object
+  action:
+    description: |-
+      The user action in response to the elicitation.
+      - "accept": User submitted the form/confirmed the action
+      - "decline": User explicitly declined the action
+      - "cancel": User dismissed without making an explicit choice
+    enum:
+      - accept
+      - cancel
+      - decline
+    type: string
+  content:
+    additionalProperties:
+      type:
+        - string
+        - integer
+        - boolean
+    description: |-
+      The submitted form data, only present when action is "accept".
+      Contains values matching the requested schema.
+    type: object
+required:
+  - action
+type: object

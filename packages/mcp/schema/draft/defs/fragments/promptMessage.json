@@ -1,4 +1,17 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/PromptMessage"
+  "description": "Describes a message returned as part of a prompt.\n\nThis is similar to {@link SamplingMessage}, but also supports the embedding of\nresources from the MCP server.",
+  "properties": {
+    "content": {
+      "$ref": "./contentBlock.json"
+    },
+    "role": {
+      "$ref": "./role.json"
+    }
+  },
+  "required": [
+    "content",
+    "role"
+  ],
+  "type": "object"
 }

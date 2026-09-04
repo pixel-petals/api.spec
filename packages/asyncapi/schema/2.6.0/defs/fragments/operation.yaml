@@ -1,2 +1,45 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/operation
+type: object
+description: Describes a publish or a subscribe operation. This provides a place to document how and why messages are sent and received.
+additionalProperties: false
+patternProperties:
+  ^x-[\w\d\.\x2d_]+$:
+    $ref: ./specificationExtension.yaml
+properties:
+  traits:
+    type: array
+    description: A list of traits to apply to the operation object.
+    items:
+      oneOf:
+        - $ref: ./serverVariable.yaml
+        - $ref: ../components/operationTraits.yaml
+  summary:
+    type: string
+    description: A short summary of what the operation is about.
+  description:
+    type: string
+    description: A verbose explanation of the operation.
+  security:
+    type: array
+    description: A declaration of which security mechanisms are associated with this operation.
+    items:
+      $ref: ./securityRequirement.yaml
+  tags:
+    type: array
+    description: A list of tags for logical grouping and categorization of operations.
+    items:
+      $ref: ../tags/tag.yaml
+    uniqueItems: true
+  externalDocs:
+    $ref: ../externalDocs.yaml
+  operationId:
+    type: string
+  bindings:
+    $ref: ./bindingsObject.yaml
+  message:
+    $ref: ../../schema.yaml#/definitions/message
+examples:
+  - user/signedup:
+      subscribe:
+        message:
+          $ref: "#/components/messages/userSignedUp"

@@ -1,2 +1,6 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/NotificationParams
+description: Common params for any notification.
+properties:
+  _meta:
+    $ref: ./notificationMetaObject.yaml
+type: object

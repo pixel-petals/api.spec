@@ -1,4 +1,85 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/success-action-object"
+  "$comment": "https://spec.openapis.org/arazzo/v1.1#success-action-object",
+  "description": "A single success action which describes an action to take upon success of a workflow step",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the success action",
+      "type": "string"
+    },
+    "type": {
+      "description": "The type of action to take",
+      "enum": [
+        "end",
+        "goto"
+      ]
+    },
+    "workflowId": {
+      "description": "The workflowId referencing an existing workflow within the Arazzo description to transfer to upon success of the step",
+      "$ref": "../../schema.json#workflowId"
+    },
+    "stepId": {
+      "description": "The stepId to transfer to upon success of the step",
+      "$ref": "../../schema.json#stepId"
+    },
+    "parameters": {
+      "description": "A list of parameters that MUST be passed to a workflow as referenced by workflowId",
+      "type": "array",
+      "uniqueItems": true,
+      "items": true
+    },
+    "criteria": {
+      "description": "A list of assertions to determine if this action SHALL be executed",
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "$ref": "../fragments/criterionObject.json"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "goto"
+          }
+        }
+      },
+      "then": {
+        "oneOf": [
+          {
+            "required": [
+              "workflowId"
+            ]
+          },
+          {
+            "required": [
+              "stepId"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "parameters"
+        ]
+      },
+      "then": {
+        "required": [
+          "workflowId"
+        ]
+      }
+    }
+  ],
+  "required": [
+    "name",
+    "type"
+  ],
+  "$ref": "../../schema.json#/$defs/specification-extensions",
+  "unevaluatedProperties": false
 }

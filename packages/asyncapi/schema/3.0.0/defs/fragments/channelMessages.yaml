@@ -1,2 +1,7 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/channelMessages
+type: object
+additionalProperties:
+  oneOf:
+    - $ref: ./reference.yaml
+    - $ref: ../components/messages.yaml
+description: A map of the messages that will be sent to this channel by any application at any time. **Every message sent to this channel MUST be valid against one, and only one, of the message objects defined in this map.**

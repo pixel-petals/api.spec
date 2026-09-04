@@ -1,2 +1,18 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/PingRequest
+description: A ping, issued by either the server or the client, to check that the other party is still alive. The receiver must promptly respond, or else may be disconnected.
+properties:
+  id:
+    $ref: ./requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+  method:
+    const: ping
+    type: string
+  params:
+    $ref: ./requestParams.yaml
+required:
+  - id
+  - jsonrpc
+  - method
+type: object

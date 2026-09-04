@@ -1,4 +1,22 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/SubscriptionsListenResultResponse"
+  "description": "A successful response from the server for a {@link SubscriptionsListenRequestsubscriptions/listen}\nrequest, sent when the server tears the subscription down gracefully.",
+  "properties": {
+    "id": {
+      "$ref": "./requestId.json"
+    },
+    "jsonrpc": {
+      "const": "2.0",
+      "type": "string"
+    },
+    "result": {
+      "$ref": "../serverResult/subscriptionsListenResult.json"
+    }
+  },
+  "required": [
+    "id",
+    "jsonrpc",
+    "result"
+  ],
+  "type": "object"
 }

@@ -1,4 +1,11 @@
 $schema: http://json-schema.org/draft-04/schema#
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/jsonReference
-  - $ref: ../../schema.yaml#/definitions/parameter
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ./response.yaml
+else:
+  oneOf:
+    - $ref: ../parameter/bodyParameter.yaml
+    - $ref: ../parameter/nonBodyParameter.yaml

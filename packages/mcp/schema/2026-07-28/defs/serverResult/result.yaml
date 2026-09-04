@@ -1,2 +1,19 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/Result
+additionalProperties: {}
+description: Common result fields.
+properties:
+  _meta:
+    $ref: ../fragments/resultMetaObject.yaml
+  resultType:
+    description: |-
+      Indicates the type of the result, which allows the client to determine
+      how to parse the result object.
+
+      Servers implementing this protocol version MUST include this field.
+      For backward compatibility, when a client receives a result from a
+      server implementing an earlier protocol version (which does not include
+      `resultType`), the client MUST treat the absent field as `"complete"`.
+    type: string
+required:
+  - resultType
+type: object

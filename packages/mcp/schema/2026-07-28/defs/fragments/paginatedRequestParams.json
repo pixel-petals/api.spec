@@ -1,4 +1,17 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/PaginatedRequestParams"
+  "description": "Common params for paginated requests.",
+  "properties": {
+    "_meta": {
+      "$ref": "./requestMetaObject.json"
+    },
+    "cursor": {
+      "description": "An opaque token representing the current pagination position.\nIf provided, the server should return results starting after this cursor.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "_meta"
+  ],
+  "type": "object"
 }

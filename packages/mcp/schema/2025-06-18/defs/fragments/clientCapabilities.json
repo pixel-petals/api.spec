@@ -1,4 +1,38 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$ref": "../../schema.json#/definitions/ClientCapabilities"
+  "description": "Capabilities a client may support. Known capabilities are defined here, in this schema, but this is not a closed set: any client can define its own, additional capabilities.",
+  "properties": {
+    "elicitation": {
+      "additionalProperties": true,
+      "description": "Present if the client supports elicitation from the server.",
+      "properties": {},
+      "type": "object"
+    },
+    "experimental": {
+      "additionalProperties": {
+        "additionalProperties": true,
+        "properties": {},
+        "type": "object"
+      },
+      "description": "Experimental, non-standard capabilities that the client supports.",
+      "type": "object"
+    },
+    "roots": {
+      "description": "Present if the client supports listing roots.",
+      "properties": {
+        "listChanged": {
+          "description": "Whether the client supports notifications for changes to the roots list.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "sampling": {
+      "additionalProperties": true,
+      "description": "Present if the client supports sampling from an LLM.",
+      "properties": {},
+      "type": "object"
+    }
+  },
+  "type": "object"
 }

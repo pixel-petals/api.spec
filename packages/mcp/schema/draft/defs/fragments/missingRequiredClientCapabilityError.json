@@ -1,4 +1,50 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/MissingRequiredClientCapabilityError"
+  "description": "Returned when processing a request requires a capability the client did not\ndeclare in `clientCapabilities`. For HTTP, the response status code MUST be\n`400 Bad Request`.",
+  "properties": {
+    "error": {
+      "allOf": [
+        {
+          "$ref": "./error.json"
+        },
+        {
+          "properties": {
+            "code": {
+              "const": -32021,
+              "type": "integer"
+            },
+            "data": {
+              "properties": {
+                "requiredCapabilities": {
+                  "$ref": "./clientCapabilities.json",
+                  "description": "The capabilities the server requires from the client to process this request."
+                }
+              },
+              "required": [
+                "requiredCapabilities"
+              ],
+              "type": "object"
+            }
+          },
+          "required": [
+            "code",
+            "data"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "id": {
+      "$ref": "./requestId.json"
+    },
+    "jsonrpc": {
+      "const": "2.0",
+      "type": "string"
+    }
+  },
+  "required": [
+    "error",
+    "jsonrpc"
+  ],
+  "type": "object"
 }

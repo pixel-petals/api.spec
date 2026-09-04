@@ -1,4 +1,63 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/PathItem"
+  "type": "object",
+  "properties": {
+    "$ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "get": {
+      "$ref": "./operation.json"
+    },
+    "put": {
+      "$ref": "./operation.json"
+    },
+    "post": {
+      "$ref": "./operation.json"
+    },
+    "delete": {
+      "$ref": "./operation.json"
+    },
+    "options": {
+      "$ref": "./operation.json"
+    },
+    "head": {
+      "$ref": "./operation.json"
+    },
+    "patch": {
+      "$ref": "./operation.json"
+    },
+    "trace": {
+      "$ref": "./operation.json"
+    },
+    "servers": {
+      "type": "array",
+      "items": {
+        "$ref": "../servers/server.json"
+      }
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "../components/parameters.json"
+          },
+          {
+            "$ref": "./reference.json"
+          }
+        ]
+      },
+      "uniqueItems": true
+    }
+  },
+  "patternProperties": {
+    "^x-": {}
+  },
+  "additionalProperties": false
 }

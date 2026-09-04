@@ -1,2 +1,15 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/CompleteResultResponse
+description: A successful response from the server for a {@link CompleteRequestcompletion/complete} request.
+properties:
+  id:
+    $ref: ./requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+  result:
+    $ref: ../serverResult/completeResult.yaml
+required:
+  - id
+  - jsonrpc
+  - result
+type: object

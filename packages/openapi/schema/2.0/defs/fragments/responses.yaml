@@ -1,2 +1,16 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/responses
+type: object
+description: Response objects names can either be any valid HTTP status code or 'default'.
+minProperties: 1
+additionalProperties: false
+patternProperties:
+  ^([0-9]{3})$|^(default)$:
+    $ref: ./responseValue.yaml
+  ^x-:
+    $ref: ./vendorExtension.yaml
+not:
+  type: object
+  additionalProperties: false
+  patternProperties:
+    ^x-:
+      $ref: ./vendorExtension.yaml

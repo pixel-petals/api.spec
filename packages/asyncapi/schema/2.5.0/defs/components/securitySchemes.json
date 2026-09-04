@@ -1,11 +1,43 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "oneOf": [
-    {
-      "$ref": "../../schema.json#/definitions/Reference"
-    },
-    {
-      "$ref": "../../schema.json#/definitions/SecurityScheme"
-    }
-  ]
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "../fragments/serverVariable.json"
+  },
+  "else": {
+    "oneOf": [
+      {
+        "$ref": "../securityScheme/userPassword.json"
+      },
+      {
+        "$ref": "../securityScheme/apiKey.json"
+      },
+      {
+        "$ref": "../securityScheme/x509.json"
+      },
+      {
+        "$ref": "../securityScheme/symmetricEncryption.json"
+      },
+      {
+        "$ref": "../securityScheme/asymmetricEncryption.json"
+      },
+      {
+        "$ref": "../securityScheme/httpSecurityScheme.json"
+      },
+      {
+        "$ref": "../securityScheme/oauth2Flows.json"
+      },
+      {
+        "$ref": "../securityScheme/openIdConnect.json"
+      },
+      {
+        "$ref": "../securityScheme/saslSecurityScheme.json"
+      }
+    ]
+  }
 }

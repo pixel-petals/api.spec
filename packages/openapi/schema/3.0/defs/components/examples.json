@@ -1,11 +1,32 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "oneOf": [
-    {
-      "$ref": "../../schema.json#/definitions/Reference"
+  "if": {
+    "type": "object",
+    "required": [
+      "$ref"
+    ]
+  },
+  "then": {
+    "$ref": "../fragments/reference.json"
+  },
+  "else": {
+    "type": "object",
+    "properties": {
+      "summary": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "value": {},
+      "externalValue": {
+        "type": "string",
+        "format": "uri-reference"
+      }
     },
-    {
-      "$ref": "../../schema.json#/definitions/Example"
-    }
-  ]
+    "patternProperties": {
+      "^x-": {}
+    },
+    "additionalProperties": false
+  }
 }

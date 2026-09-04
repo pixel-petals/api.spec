@@ -1,2 +1,15 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ListResourcesResultResponse
+description: A successful response from the server for a {@link ListResourcesRequestresources/list} request.
+properties:
+  id:
+    $ref: ./requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+  result:
+    $ref: ../serverResult/listResourcesResult.yaml
+required:
+  - id
+  - jsonrpc
+  - result
+type: object

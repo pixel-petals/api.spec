@@ -1,4 +1,27 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/selector-object"
+  "$comment": "https://spec.openapis.org/arazzo/v1.1#selector-object",
+  "description": "An object which enables fine-grained traversal and precise data selection from structured data",
+  "type": "object",
+  "properties": {
+    "context": {
+      "description": "A valid Runtime Expression which MUST evaluate to structured data (e.g., `$response.body`), and sets the context for the selector to be applied on",
+      "type": "string"
+    },
+    "selector": {
+      "description": "A selector expression (e.g., `$.items[0].id`, `/Envelope/Item`) in the form of JSONPath expression, XPath expression, or JSON Pointer expression",
+      "type": "string"
+    },
+    "type": {
+      "description": "The selector expression type to use (e.g., `jsonpath`, `xpath`, or `jsonpointer`) or an Expression Type Object for older version support",
+      "$ref": "../../schema.json#/$defs/selector-type"
+    }
+  },
+  "required": [
+    "context",
+    "selector",
+    "type"
+  ],
+  "unevaluatedProperties": false,
+  "$ref": "../../schema.json#/$defs/specification-extensions"
 }

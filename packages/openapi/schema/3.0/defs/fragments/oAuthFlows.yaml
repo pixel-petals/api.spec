@@ -1,2 +1,14 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/OAuthFlows
+type: object
+properties:
+  implicit:
+    $ref: ./implicitOAuthFlow.yaml
+  password:
+    $ref: ./passwordOAuthFlow.yaml
+  clientCredentials:
+    $ref: ./clientCredentialsFlow.yaml
+  authorizationCode:
+    $ref: ./authorizationCodeOAuthFlow.yaml
+patternProperties:
+  ^x-: {}
+additionalProperties: false

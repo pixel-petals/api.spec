@@ -1,4 +1,47 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema",
-  "$ref": "../../schema.json#/definitions/server"
+  "id": "http://asyncapi.com/definitions/1.0.0/server.json",
+  "type": "object",
+  "description": "An object representing a Server.",
+  "required": [
+    "url",
+    "scheme"
+  ],
+  "additionalProperties": false,
+  "patternProperties": {
+    "^x-": {
+      "$ref": "../fragments/vendorExtension.json"
+    }
+  },
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "scheme": {
+      "type": "string",
+      "description": "The transfer protocol.",
+      "enum": [
+        "kafka",
+        "kafka-secure",
+        "amqp",
+        "amqps",
+        "mqtt",
+        "mqtts",
+        "secure-mqtt",
+        "ws",
+        "wss",
+        "stomp",
+        "stomps"
+      ]
+    },
+    "schemeVersion": {
+      "type": "string"
+    },
+    "variables": {
+      "$ref": "../fragments/serverVariables.json"
+    }
+  }
 }

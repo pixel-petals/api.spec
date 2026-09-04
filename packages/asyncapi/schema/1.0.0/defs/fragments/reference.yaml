@@ -1,2 +1,9 @@
 $schema: http://json-schema.org/draft-04/schema
-$ref: ../../schema.yaml#/definitions/Reference
+id: http://asyncapi.com/definitions/1.0.0/Reference.json
+type: object
+required:
+  - $ref
+properties:
+  $ref:
+    type: string
+    format: uri

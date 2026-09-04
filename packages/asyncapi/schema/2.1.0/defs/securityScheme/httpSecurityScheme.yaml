@@ -1,2 +1,5 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/HTTPSecurityScheme
+oneOf:
+  - $ref: ../httpSecurityScheme/nonBearerHTTPSecurityScheme.yaml
+  - $ref: ../httpSecurityScheme/bearerHTTPSecurityScheme.yaml
+  - $ref: ../httpSecurityScheme/apiKeyHTTPSecurityScheme.yaml

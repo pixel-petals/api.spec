@@ -1,4 +1,236 @@
 $schema: http://json-schema.org/draft-07/schema
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/operationBindingsObject
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  type: object
+  description: Map describing protocol-specific definitions for an operation.
+  additionalProperties: false
+  patternProperties:
+    ^x-[\w\d\.\x2d_]+$:
+      $ref: ../fragments/specificationExtension.yaml
+  properties:
+    http:
+      properties:
+        bindingVersion:
+          enum:
+            - 0.2.0
+            - 0.3.0
+      allOf:
+        - description: If no bindingVersion specified, use the latest binding
+          if:
+            not:
+              required:
+                - bindingVersion
+          then:
+            $ref: ../fragments/bindingsHttp0.3.0Operation.yaml
+        - if:
+            required:
+              - bindingVersion
+            properties:
+              bindingVersion:
+                const: 0.2.0
+          then:
+            $ref: ../fragments/bindingsHttp0.2.0Operation.yaml
+        - if:
+            required:
+              - bindingVersion
+            properties:
+              bindingVersion:
+                const: 0.3.0
+          then:
+            $ref: ../fragments/bindingsHttp0.3.0Operation.yaml
+    ws: {}
+    amqp:
+      properties:
+        bindingVersion:
+          enum:
+            - 0.3.0
+      allOf:
+        - description: If no bindingVersion specified, use the latest binding
+          if:
+            not:
+              required:
+                - bindingVersion
+          then:
+            $ref: ../fragments/bindingsAmqp0.3.0Operation.yaml
+        - if:
+            required:
+              - bindingVersion
+            properties:
+              bindingVersion:
+                const: 0.3.0
+          then:
+            $ref: ../fragments/bindingsAmqp0.3.0Operation.yaml
+    amqp1: {}
+    mqtt:
+      properties:
+        bindingVersion:
+          enum:
+            - 0.2.0
+      allOf:
+        - description: If no bindingVersion specified, use the latest binding
+          if:
+            not:
+              required:
+                - bindingVersion
+          then:
+            $ref: ../fragments/bindingsMqtt0.2.0Operation.yaml
+        - if:
+            required:
+              - bindingVersion
+            properties:
+              bindingVersion:
+                const: 0.2.0
+          then:
+            $ref: ../fragments/bindingsMqtt0.2.0Operation.yaml
+    kafka:
+      properties:
+        bindingVersion:
+          enum:
+            - 0.5.0
+            - 0.4.0
+            - 0.3.0
+      allOf:
+        - description: If no bindingVersion specified, use the latest binding
+          if:
+            not:
+              required:
+                - bindingVersion
+          then:
+            $ref: ../fragments/bindingsKafka0.5.0Operation.yaml
+        - if:
+            required:
+              - bindingVersion
+            properties:
+              bindingVersion:
+                const: 0.5.0
+          then:
+            $ref: ../fragments/bindingsKafka0.5.0Operation.yaml
+        - if:
+            required:
+              - bindingVersion
+            properties:
+              bindingVersion:
+                const: 0.4.0
+          then:
+            $ref: ../fragments/bindingsKafka0.4.0Operation.yaml
+        - if:
+            required:
+              - bindingVersion
+            properties:
+              bindingVersion:
+                const: 0.3.0
+          then:
+            $ref: ../fragments/bindingsKafka0.3.0Operation.yaml
+    anypointmq: {}
+    nats:
+      properties:
+        bindingVersion:
+          enum:
+            - 0.1.0
+      allOf:
+        - description: If no bindingVersion specified, use the latest binding
+          if:
+            not:
+              required:
+                - bindingVersion
+          then:
+            $ref: ../fragments/bindingsNats0.1.0Operation.yaml
+        - if:
+            required:
+              - bindingVersion
+            properties:
+              bindingVersion:
+                const: 0.1.0
+          then:
+            $ref: ../fragments/bindingsNats0.1.0Operation.yaml
+    jms: {}
+    sns:
+      properties:
+        bindingVersion:
+          enum:
+            - 0.1.0
+      allOf:
+        - description: If no bindingVersion specified, use the latest binding
+          if:
+            not:
+              required:
+                - bindingVersion
+          then:
+            $ref: ../fragments/bindingsSns0.1.0Operation.yaml
+        - if:
+            required:
+              - bindingVersion
+            properties:
+              bindingVersion:
+                const: 0.1.0
+          then:
+            $ref: ../fragments/bindingsSns0.1.0Operation.yaml
+    sqs:
+      properties:
+        bindingVersion:
+          enum:
+            - 0.2.0
+      allOf:
+        - description: If no bindingVersion specified, use the latest binding
+          if:
+            not:
+              required:
+                - bindingVersion
+          then:
+            $ref: ../fragments/bindingsSqs0.2.0Operation.yaml
+        - if:
+            required:
+              - bindingVersion
+            properties:
+              bindingVersion:
+                const: 0.2.0
+          then:
+            $ref: ../fragments/bindingsSqs0.2.0Operation.yaml
+    stomp: {}
+    redis: {}
+    ibmmq: {}
+    solace:
+      properties:
+        bindingVersion:
+          enum:
+            - 0.4.0
+            - 0.3.0
+            - 0.2.0
+      allOf:
+        - description: If no bindingVersion specified, use the latest binding
+          if:
+            not:
+              required:
+                - bindingVersion
+          then:
+            $ref: ../fragments/bindingsSolace0.4.0Operation.yaml
+        - if:
+            required:
+              - bindingVersion
+            properties:
+              bindingVersion:
+                const: 0.4.0
+          then:
+            $ref: ../fragments/bindingsSolace0.4.0Operation.yaml
+        - if:
+            required:
+              - bindingVersion
+            properties:
+              bindingVersion:
+                const: 0.3.0
+          then:
+            $ref: ../fragments/bindingsSolace0.3.0Operation.yaml
+        - if:
+            required:
+              - bindingVersion
+            properties:
+              bindingVersion:
+                const: 0.2.0
+          then:
+            $ref: ../fragments/bindingsSolace0.2.0Operation.yaml
+    googlepubsub: {}

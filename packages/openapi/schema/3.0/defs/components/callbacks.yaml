@@ -1,4 +1,13 @@
 $schema: http://json-schema.org/draft-04/schema#
-oneOf:
-  - $ref: ../../schema.yaml#/definitions/Reference
-  - $ref: ../../schema.yaml#/definitions/Callback
+if:
+  type: object
+  required:
+    - $ref
+then:
+  $ref: ../fragments/reference.yaml
+else:
+  type: object
+  additionalProperties:
+    $ref: ../fragments/pathItem.yaml
+  patternProperties:
+    ^x-: {}

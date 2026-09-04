@@ -1,2 +1,6 @@
 $schema: http://json-schema.org/draft-04/schema
-$ref: ../../schema.yaml#/definitions/messages
+id: http://asyncapi.com/definitions/1.0.0/messages.json
+type: object
+additionalProperties:
+  $ref: ../fragments/message.yaml
+description: JSON objects describing the messages being consumed and produced by the API.

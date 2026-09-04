@@ -1,2 +1,17 @@
 $schema: http://json-schema.org/draft-07/schema
-$ref: ../../schema.yaml#/definitions/parameters
+type: object
+description: JSON objects describing reusable channel parameters.
+additionalProperties:
+  oneOf:
+    - $ref: ../fragments/serverVariable.yaml
+    - $ref: ../fragments/parameter.yaml
+examples:
+  - user/{userId}/signup:
+      parameters:
+        userId:
+          description: Id of the user.
+          schema:
+            type: string
+      subscribe:
+        message:
+          $ref: "#/components/messages/userSignedUp"

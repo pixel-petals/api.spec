@@ -1,4 +1,37 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/HeaderMismatchError"
+  "description": "Returned when a server rejects a request because the values in the HTTP\nheaders do not match the corresponding values in the request body, or\nbecause required headers are missing or malformed. For HTTP, the response\nstatus code MUST be `400 Bad Request`.",
+  "properties": {
+    "error": {
+      "allOf": [
+        {
+          "$ref": "./error.json"
+        },
+        {
+          "properties": {
+            "code": {
+              "const": -32020,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "code"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "id": {
+      "$ref": "./requestId.json"
+    },
+    "jsonrpc": {
+      "const": "2.0",
+      "type": "string"
+    }
+  },
+  "required": [
+    "error",
+    "jsonrpc"
+  ],
+  "type": "object"
 }

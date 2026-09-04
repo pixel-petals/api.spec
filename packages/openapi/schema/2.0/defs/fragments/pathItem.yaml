@@ -1,2 +1,25 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/pathItem
+type: object
+additionalProperties: false
+patternProperties:
+  ^x-:
+    $ref: ./vendorExtension.yaml
+properties:
+  $ref:
+    type: string
+  get:
+    $ref: ./operation.yaml
+  put:
+    $ref: ./operation.yaml
+  post:
+    $ref: ./operation.yaml
+  delete:
+    $ref: ./operation.yaml
+  options:
+    $ref: ./operation.yaml
+  head:
+    $ref: ./operation.yaml
+  patch:
+    $ref: ./operation.yaml
+  parameters:
+    $ref: ./parametersList.yaml

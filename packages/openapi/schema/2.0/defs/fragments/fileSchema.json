@@ -1,4 +1,45 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "$ref": "../../schema.json#/definitions/fileSchema"
+  "type": "object",
+  "description": "A deterministic version of a JSON Schema object.",
+  "patternProperties": {
+    "^x-": {
+      "$ref": "./vendorExtension.json"
+    }
+  },
+  "required": [
+    "type"
+  ],
+  "properties": {
+    "format": {
+      "type": "string"
+    },
+    "title": {
+      "$ref": "http://json-schema.org/draft-04/schema#/properties/title"
+    },
+    "description": {
+      "$ref": "http://json-schema.org/draft-04/schema#/properties/description"
+    },
+    "default": {
+      "$ref": "http://json-schema.org/draft-04/schema#/properties/default"
+    },
+    "required": {
+      "$ref": "http://json-schema.org/draft-04/schema#/definitions/stringArray"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "file"
+      ]
+    },
+    "readOnly": {
+      "type": "boolean",
+      "default": false
+    },
+    "externalDocs": {
+      "$ref": "../externalDocs.json"
+    },
+    "example": {}
+  },
+  "additionalProperties": false
 }

@@ -1,4 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/ElicitRequestParams"
+  "anyOf": [
+    {
+      "$ref": "../elicitRequestParams/elicitRequestFormParams.json"
+    },
+    {
+      "$ref": "../elicitRequestParams/elicitRequestURLParams.json"
+    }
+  ],
+  "description": "The parameters for a request to elicit additional information from the user via the client."
 }

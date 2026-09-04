@@ -1,2 +1,28 @@
 $schema: http://json-schema.org/draft-07/schema#
-$ref: ../../schema.yaml#/definitions/ListRootsRequest
+description: |-
+  Sent from the server to request a list of root URIs from the client. Roots allow
+  servers to ask for specific directories or files to operate on. A common example
+  for roots is providing a set of repositories or directories a server should operate
+  on.
+
+  This request is typically used when the server needs to understand the file system
+  structure or access specific locations that the client has permission to read from.
+properties:
+  method:
+    const: roots/list
+    type: string
+  params:
+    additionalProperties: {}
+    properties:
+      _meta:
+        additionalProperties: {}
+        description: "See [General fields: `_meta`](/specification/2025-06-18/basic/index#meta) for notes on `_meta` usage."
+        properties:
+          progressToken:
+            $ref: ../fragments/progressToken.yaml
+            description: If specified, the caller is requesting out-of-band progress notifications for this request (as represented by notifications/progress). The value of this parameter is an opaque token that will be attached to any subsequent notifications. The receiver is not obligated to provide these notifications.
+        type: object
+    type: object
+required:
+  - method
+type: object

@@ -1,4 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$ref": "../../schema.json#/$defs/InputResponses"
+  "additionalProperties": {
+    "$ref": "./inputResponse.json"
+  },
+  "description": "A map of client responses to server-initiated requests.\nKeys correspond to the keys in the {@link InputRequests} map;\nvalues are the client's result for each request.",
+  "type": "object"
 }

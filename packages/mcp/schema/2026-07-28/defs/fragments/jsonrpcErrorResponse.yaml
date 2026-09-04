@@ -1,2 +1,14 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/JSONRPCErrorResponse
+description: A response to a request that indicates an error occurred.
+properties:
+  error:
+    $ref: ./error.yaml
+  id:
+    $ref: ./requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+required:
+  - error
+  - jsonrpc
+type: object

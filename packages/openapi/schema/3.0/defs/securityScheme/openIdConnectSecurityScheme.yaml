@@ -1,2 +1,18 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/OpenIdConnectSecurityScheme
+type: object
+required:
+  - type
+  - openIdConnectUrl
+properties:
+  type:
+    type: string
+    enum:
+      - openIdConnect
+  openIdConnectUrl:
+    type: string
+    format: uri-reference
+  description:
+    type: string
+patternProperties:
+  ^x-: {}
+additionalProperties: false

@@ -1,2 +1,13 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/PrimitiveSchemaDefinition
+anyOf:
+  - $ref: ../primitiveSchemaDefinition/stringSchema.yaml
+  - $ref: ../primitiveSchemaDefinition/numberSchema.yaml
+  - $ref: ../primitiveSchemaDefinition/booleanSchema.yaml
+  - $ref: ./untitledSingleSelectEnumSchema.yaml
+  - $ref: ./titledSingleSelectEnumSchema.yaml
+  - $ref: ./untitledMultiSelectEnumSchema.yaml
+  - $ref: ./titledMultiSelectEnumSchema.yaml
+  - $ref: ./legacyTitledEnumSchema.yaml
+description: |-
+  Restricted schema definitions that only allow primitive types
+  without nested objects or arrays.

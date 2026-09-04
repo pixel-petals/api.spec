@@ -1,2 +1,49 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/RequestMetaObject
+description: Extends {@link MetaObject} with additional request-specific fields. All key naming rules from `MetaObject` apply.
+properties:
+  io.modelcontextprotocol/clientCapabilities:
+    $ref: ./clientCapabilities.yaml
+    description: |-
+      The client's capabilities for this specific request. Required.
+
+      Capabilities are declared per-request rather than once at initialization;
+      an empty object means the client supports no optional capabilities.
+      Servers MUST NOT infer capabilities from prior requests.
+  io.modelcontextprotocol/clientInfo:
+    $ref: ./implementation.yaml
+    description: |-
+      Identifies the client software making the request. Clients SHOULD
+      include this field on every request unless specifically configured not
+      to do so.
+
+      The {@link Implementation} schema requires `name` and `version`; other
+      fields are optional.
+
+      The value is self-reported by the client and is not verified by the
+      protocol. It is intended for display, logging, and debugging. Servers
+      SHOULD NOT use it to change their behavior, and SHOULD NOT rely on it for
+      security decisions.
+  io.modelcontextprotocol/logLevel:
+    $ref: ./loggingLevel.yaml
+    description: |-
+      The desired log level for this request. Optional.
+
+      If absent, the server MUST NOT send any {@link LoggingMessageNotificationnotifications/message}
+      notifications for this request. The client opts in to log messages by
+      explicitly setting a level. Replaces the former `logging/setLevel` RPC.
+  io.modelcontextprotocol/protocolVersion:
+    description: |-
+      The MCP Protocol Version being used for this request. Required.
+
+      For the HTTP transport, this value MUST match the `MCP-Protocol-Version`
+      header; otherwise the server MUST return a `400 Bad Request`. If the
+      server does not support the requested version, it MUST return an
+      {@link UnsupportedProtocolVersionError}.
+    type: string
+  progressToken:
+    $ref: ./progressToken.yaml
+    description: If specified, the caller is requesting out-of-band progress notifications for this request (as represented by {@link ProgressNotificationnotifications/progress}). The value of this parameter is an opaque token that will be attached to any subsequent notifications. The receiver is not obligated to provide these notifications.
+required:
+  - io.modelcontextprotocol/clientCapabilities
+  - io.modelcontextprotocol/protocolVersion
+type: object

@@ -1,2 +1,69 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../schema.yaml#/definitions/Components
+type: object
+properties:
+  schemas:
+    type: object
+    patternProperties:
+      ^[a-zA-Z0-9\.\-_]+$:
+        oneOf:
+          - $ref: ./components/schemas.yaml
+          - $ref: ./fragments/reference.yaml
+  responses:
+    type: object
+    patternProperties:
+      ^[a-zA-Z0-9\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/responses.yaml
+  parameters:
+    type: object
+    patternProperties:
+      ^[a-zA-Z0-9\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/parameters.yaml
+  examples:
+    type: object
+    patternProperties:
+      ^[a-zA-Z0-9\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/examples.yaml
+  requestBodies:
+    type: object
+    patternProperties:
+      ^[a-zA-Z0-9\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/requestBodies.yaml
+  headers:
+    type: object
+    patternProperties:
+      ^[a-zA-Z0-9\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/headers.yaml
+  securitySchemes:
+    type: object
+    patternProperties:
+      ^[a-zA-Z0-9\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/securitySchemes.yaml
+  links:
+    type: object
+    patternProperties:
+      ^[a-zA-Z0-9\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/links.yaml
+  callbacks:
+    type: object
+    patternProperties:
+      ^[a-zA-Z0-9\.\-_]+$:
+        oneOf:
+          - $ref: ./fragments/reference.yaml
+          - $ref: ./components/callbacks.yaml
+patternProperties:
+  ^x-: {}
+additionalProperties: false

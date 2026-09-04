@@ -1,2 +1,33 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/URLElicitationRequiredError
+description: An error response that indicates that the server requires the client to provide additional information via an elicitation request.
+properties:
+  error:
+    allOf:
+      - $ref: ./error.yaml
+      - properties:
+          code:
+            const: -32042
+            type: integer
+          data:
+            additionalProperties: {}
+            properties:
+              elicitations:
+                items:
+                  $ref: ../elicitRequestParams/elicitRequestURLParams.yaml
+                type: array
+            required:
+              - elicitations
+            type: object
+        required:
+          - code
+          - data
+        type: object
+  id:
+    $ref: ./requestId.yaml
+  jsonrpc:
+    const: "2.0"
+    type: string
+required:
+  - error
+  - jsonrpc
+type: object

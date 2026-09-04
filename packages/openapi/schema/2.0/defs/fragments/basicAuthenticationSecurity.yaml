@@ -1,2 +1,15 @@
 $schema: http://json-schema.org/draft-04/schema#
-$ref: ../../schema.yaml#/definitions/basicAuthenticationSecurity
+type: object
+additionalProperties: false
+required:
+  - type
+properties:
+  type:
+    type: string
+    enum:
+      - basic
+  description:
+    type: string
+patternProperties:
+  ^x-:
+    $ref: ./vendorExtension.yaml

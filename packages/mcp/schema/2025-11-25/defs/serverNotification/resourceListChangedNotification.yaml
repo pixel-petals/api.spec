@@ -1,2 +1,15 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../../schema.yaml#/$defs/ResourceListChangedNotification
+description: An optional notification from the server to the client, informing it that the list of resources it can read from has changed. This may be issued by servers without any previous subscription from the client.
+properties:
+  jsonrpc:
+    const: "2.0"
+    type: string
+  method:
+    const: notifications/resources/list_changed
+    type: string
+  params:
+    $ref: ../fragments/notificationParams.yaml
+required:
+  - jsonrpc
+  - method
+type: object

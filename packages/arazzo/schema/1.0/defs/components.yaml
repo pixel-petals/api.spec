@@ -1,2 +1,32 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$ref: ../schema.yaml#/$defs/components-object
+$comment: https://spec.openapis.org/arazzo/v1.0#components-object
+description: Holds a set of reusable objects for different aspects of the Arazzo Specification
+type: object
+properties:
+  inputs:
+    description: An object to hold reusable JSON Schema 2020-12 schemas to be referenced from workflow inputs
+    type: object
+    additionalProperties:
+      $ref: ../schema.yaml#/$defs/schema
+  parameters:
+    description: An object to hold reusable Parameter Objects
+    type: object
+    additionalProperties:
+      $ref: ./components/parameters.yaml
+  successActions:
+    description: An object to hold reusable Success Actions Objects
+    type: object
+    additionalProperties:
+      $ref: ./components/successActions.yaml
+  failureActions:
+    description: An object to hold reusable Failure Actions Objects
+    type: object
+    additionalProperties:
+      $ref: ./components/failureActions.yaml
+patternProperties:
+  ^(inputs|parameters|successActions|failureActions)$:
+    $comment: Enumerating all of the property names in the regex is necessary for unevaluatedProperties to work as expected
+    propertyNames:
+      pattern: ^[a-zA-Z0-9\.\-_]+$
+unevaluatedProperties: false
+$ref: ../schema.yaml#/$defs/specification-extensions
