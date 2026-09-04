@@ -26,6 +26,38 @@ Splitting this way meant draft-06 and draft-07 arrived for free, which is what A
 
 A normalizer returns `{ id, draft, pointer, dialect, isDelegated, objects, roots, components, unions }`. Nothing downstream knows more than that.
 
+## What a fragment holds
+
+The definition's own body, so it can be read on its own. Every reference inside it is repointed at the sibling file holding what it names, so following one lands you in another readable fragment rather than back in the vendored document.
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "https://spec.openapis.org/oas/v3.2#response-object",
+  "type": "object",
+  "properties": {
+    "headers": { "type": "object", "additionalProperties": { "$ref": "./headers.json" } },
+    "content": { "$ref": "../fragments/content.json" }
+  }
+}
+```
+
+References with no fragment of their own stay pointers into the vendored document — the constraint mixins describe nothing alone, so a file for them would hold nothing worth reading. An `$anchor` reference gets the same treatment when its anchor is defined elsewhere: Arazzo's `#workflowId` lives on the Workflow Object and is used from Failure Action, so it becomes `../../schema.json#workflowId` rather than dangling.
+
+An object that may be replaced by a reference keeps that, spelled the way the specification spells it — a branch on whether `$ref` is present:
+
+```json
+{
+  "if": { "type": "object", "required": [ "$ref" ] },
+  "then": { "$ref": "../fragments/reference.json" },
+  "else": { "…the object's own body…" }
+}
+```
+
+A plain `oneOf` will not do, which testing found and reasoning had not. A Reference Object requires nothing at all in some versions, so it matches an ordinary object too: `{"description": "ok"}` satisfies both branches and fails `oneOf`, while `{"nope": 1}` satisfies the reference branch and passes. Discriminating on `$ref` keeps the two exclusive.
+
+A Schema Object that delegates to a dialect has no body to carry and stays a pointer at that dialect.
+
 ## Where a fragment goes
 
 A fragment file belongs somewhere only if the document itself puts it there. Three things qualify:
