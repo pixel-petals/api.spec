@@ -1,5 +1,6 @@
 /** What the shared specification tooling needs to know about OpenAPI. */
 
+import { bundleOai } from 'utils/bundle/bundle.oai'
 import { oaiReleases } from 'utils/source/source.registry'
 import { schemaRoot } from 'utils/spec/spec.descriptor'
 
@@ -29,12 +30,22 @@ function releaseOf(document) {
   return (document.$id ?? document.id)?.match(/(\d{4}-\d{2}-\d{2})$/)?.[ 1 ] ?? null
 }
 
+/**
+ * The vendored version a document declares, which is how unbundling learns
+ * which of its top-level keys hold collections.
+ */
+function versionOf(document) {
+  return document.openapi?.split('.').slice(0, 2).join('.') ?? null
+}
+
 /** @type {SpecDescriptor} */
 export const openapi = {
   name: 'openapi',
   description: 'Vendor the OpenAPI schema and split it into $ref-able fragments',
 
   root: schemaRoot(import.meta.url),
+  versionOf,
+  bundle: bundleOai,
   url,
   releases: () => oaiReleases('oas'),
   releaseOf,

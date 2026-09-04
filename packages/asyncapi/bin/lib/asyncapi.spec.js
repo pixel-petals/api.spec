@@ -33,12 +33,21 @@ async function releases() {
     .sort((a, b) => b.version.localeCompare(a.version, undefined, { numeric: true }))
 }
 
+/**
+ * The vendored version a document declares, which is how unbundling learns
+ * which of its top-level keys hold collections.
+ */
+function versionOf(document) {
+  return document.asyncapi ?? null
+}
+
 /** @type {SpecDescriptor} */
 export const asyncapi = {
   name: 'asyncapi',
   description: 'Vendor the AsyncAPI schema and split it into $ref-able fragments',
 
   root: schemaRoot(import.meta.url),
+  versionOf,
   url,
   releases,
 

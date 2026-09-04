@@ -8,6 +8,7 @@
 import { Command } from 'commander'
 
 import { fetchCommand, listCommand, splitCommand } from '#spec/spec.commands'
+import { bundleCommand, unbundleCommand } from '#spec/spec.bundle'
 import { releasesCommand } from '#spec/spec.releases'
 
 /** @import { SpecDescriptor } from '#spec/spec.descriptor' */
@@ -61,6 +62,19 @@ export function createCli(spec) {
   program.command('releases')
     .description('the versions upstream publishes, and which are vendored')
     .action(releasesCommand(spec))
+
+  program.command('bundle')
+    .description('inline every external reference into one file')
+    .argument('<document>', 'the root document')
+    .option('-o, --out <file>', 'where to write it')
+    .action(bundleCommand(spec))
+
+  program.command('unbundle')
+    .description('split a document into a tree of files linked by $ref')
+    .argument('<document>', 'the root document')
+    .option('-o, --out <directory>', 'where to write the tree')
+    .option('--stem <name>', 'basename for the root document', 'spec')
+    .action(unbundleCommand(spec))
 
   return program
 }

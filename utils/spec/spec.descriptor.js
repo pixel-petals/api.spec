@@ -16,6 +16,8 @@ import { fileURLToPath } from 'node:url'
  * @property {Function} url            (version, date) => the release URL
  * @property {Function} releases       () => the releases upstream publishes
  * @property {Function} [releaseOf]    (document) => which release a vendored copy holds
+ * @property {Function} [bundle]       (file) => a bundler of the specification's own
+ * @property {Function} [versionOf]    (document) => the vendored version it declares
  * @property {boolean}  [dated]        true when a release is addressed by date
  * @property {string}   [componentsKey] root key naming the reusable-object map
  * @property {string}   [sourceFormat] the encoding upstream publishes, defaulting to JSON
