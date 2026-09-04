@@ -15,7 +15,9 @@ import { Command } from 'commander'
 import { fetchCommand, listCommand, splitCommand } from '#lib/typeapi.commands'
 import { typeapi } from '#lib/typeapi.spec'
 
+/** @type {[string, string]} */
 const VERSION = [ '<version>', `version, e.g. ${typeapi.versionHint}` ]
+/** @type {[string, string]} */
 const QUIET = [ '-q, --quiet', 'print the summary only' ]
 
 const program = new Command()

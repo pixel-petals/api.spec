@@ -11,6 +11,7 @@ import { fetchCommand, listCommand, splitCommand } from '#spec/spec.commands'
 
 /** @import { SpecDescriptor } from '#spec/spec.descriptor' */
 
+/** @type {[string, string]} */
 const QUIET = [ '-q, --quiet', 'print the summary only' ]
 
 /** A dated specification addresses a release by version and date, e.g. OpenAPI. */

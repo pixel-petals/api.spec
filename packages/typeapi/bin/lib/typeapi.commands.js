@@ -25,7 +25,7 @@ export async function fetchCommand(version) {
   const { url, files } = await vendorDocument({
     root: typeapi.root,
     version,
-    url: typeapi.url(version),
+    url: typeapi.url(),
     formats: DEFAULT_FORMATS,
   })
 

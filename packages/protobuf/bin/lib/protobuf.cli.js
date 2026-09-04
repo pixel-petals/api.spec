@@ -11,8 +11,10 @@ import { Command } from 'commander'
 import { fetchCommand, listCommand, splitCommand } from '#lib/protobuf.commands'
 import { protobuf } from '#lib/protobuf.spec'
 
+/** @type {[string, string]} */
 const QUIET = [ '-q, --quiet', 'print the summary only' ]
 
+/** @type {[string, string]} */
 const VERSION = [ '<version>', `version, e.g. ${protobuf.versionHint}` ]
 
 export function createCli() {
