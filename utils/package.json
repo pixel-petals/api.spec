@@ -1,4 +1,18 @@
 {
   "name": "utils",
-  "bin": {}
+  "type": "module",
+  "exports": {
+    "./*": "./*.js"
+  },
+  "imports": {
+    "#serialize/*": "./serialize/*.js",
+    "#source/*": "./source/*.js",
+    "#schema/*": "./schema/*.js",
+    "#fragments/*": "./fragments/*.js",
+    "#spec/*": "./spec/*.js"
+  },
+  "dependencies": {
+    "yaml": "^2.8.1",
+    "commander": "^15.0.0"
+  }
 }

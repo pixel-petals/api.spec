@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "strict": false,
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
+
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "utils/**/*.js",
+    "packages/*/bin/**/*.js"
+  ],
+  "exclude": [
+    "**/node_modules"
+  ]
+}

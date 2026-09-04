@@ -5,9 +5,12 @@
     "openapi": "bin/cmd.js"
   },
   "exports": {
-    "./*": "./schema/*.json"
+    "./*": "./schema/*"
   },
   "dependencies": {
-    "commander": "15.0.0"
+    "utils": "*"
+  },
+  "imports": {
+    "#lib/*": "./bin/lib/*.js"
   }
 }
