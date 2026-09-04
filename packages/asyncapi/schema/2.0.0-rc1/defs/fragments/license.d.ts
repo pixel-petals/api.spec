@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type License = unknown
+export type { License } from '../../schema.js'

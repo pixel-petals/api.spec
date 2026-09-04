@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Icon = unknown
+export type { Icon } from '../../schema.js'

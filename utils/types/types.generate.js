@@ -72,6 +72,44 @@ const STRATEGIES = [
   },
 ]
 
+/**
+ * Which type each definition ended up as.
+ *
+ * `customName` is asked first but fires for only a fraction of them — four of
+ * OpenAPI 3.0's thirty-six — because the generator only calls it where it
+ * needs to invent a name. For everything else it derives the same name this
+ * does, so the derived one is tried against what the output actually declares.
+ *
+ * A definition with no declaration left — inlined into its only user, say —
+ * gets no entry, and the fragment that names it falls back to `unknown`.
+ */
+function resolveNames(schema, captured, types) {
+  const declared = new Set(types)
+  const library = schema.$defs ?? schema.definitions ?? {}
+  const names = new Map()
+
+  // the generator keeps separators this does not — `openapiSchema_3_0` stays
+  // `OpenapiSchema_3_0` — so a last pass compares the two with punctuation and
+  // case removed, which is enough to tell them apart
+  const loose = new Map()
+
+  for (const type of types) {
+    const key = type.replace(/\W|_/g, '').toLowerCase()
+
+    if (!loose.has(key)) loose.set(key, type)
+  }
+
+  for (const key of new Set([ ...Object.keys(library), ...captured.keys() ])) {
+    const derived = typeNameFor(key)
+    const candidate = [ captured.get(key), derived ].find(name => name && declared.has(name))
+      ?? loose.get(derived.replace(/\W|_/g, '').toLowerCase())
+
+    if (candidate) names.set(key, candidate)
+  }
+
+  return names
+}
+
 /** A comment saying where the file came from and that editing it is pointless. */
 function banner(name, id, strategy) {
   return [
@@ -110,11 +148,7 @@ export async function generate(schema, { name, id }) {
       const typescript = `${banner(name, id, strategy.name)}${restore(compiled)}`
       const types = [ ...typescript.matchAll(/^export (?:interface|type) (\w+)/gm) ].map(match => match[ 1 ])
 
-      // only names the output actually declares are usable from another file
-      const declared = new Set(types)
-      const usable = new Map([ ...names ].filter(([ , type ]) => declared.has(type)))
-
-      return { typescript, types, strategy: strategy.name, names: usable }
+      return { typescript, types, strategy: strategy.name, names: resolveNames(prepared, names, types) }
     } catch (error) {
       failures.push(`${strategy.name}: ${error.message || '(no message)'}`)
     }

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type RootsListChangedNotification = unknown
+export type { RootsListChangedNotification } from '../../schema.js'

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ListResourceTemplatesResult = unknown
+export type { ListResourceTemplatesResult } from '../../schema.js'

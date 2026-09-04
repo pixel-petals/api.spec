@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ImplicitOAuthFlow = unknown
+export type { ImplicitOAuthFlow } from '../../schema.js'

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ResourceTemplateReference = unknown
+export type { ResourceTemplateReference } from '../../schema.js'

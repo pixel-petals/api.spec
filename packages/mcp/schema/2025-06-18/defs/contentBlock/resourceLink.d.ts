@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ResourceLink = unknown
+export type { ResourceLink } from '../../schema.js'

@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type OperationReply = unknown
+import type * as Schema from '../../schema.js'
+
+export type OperationReply = Schema.Reference | Schema.OperationReply

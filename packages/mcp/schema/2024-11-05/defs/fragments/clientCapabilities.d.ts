@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ClientCapabilities = unknown
+export type { ClientCapabilities } from '../../schema.js'

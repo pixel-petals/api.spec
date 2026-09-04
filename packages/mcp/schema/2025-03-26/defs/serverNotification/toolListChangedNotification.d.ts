@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ToolListChangedNotification = unknown
+export type { ToolListChangedNotification } from '../../schema.js'

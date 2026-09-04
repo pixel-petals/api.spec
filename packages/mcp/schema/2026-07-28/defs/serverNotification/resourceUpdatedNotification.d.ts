@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ResourceUpdatedNotification = unknown
+export type { ResourceUpdatedNotification } from '../../schema.js'

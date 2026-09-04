@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ServerCapabilities = unknown
+export type { ServerCapabilities } from '../../schema.js'

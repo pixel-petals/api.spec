@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type SubscriptionsListenResultMetaObject = unknown
+export type { SubscriptionsListenResultMetaObject } from '../../schema.js'

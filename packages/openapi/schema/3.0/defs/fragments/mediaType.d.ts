@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type MediaType = unknown
+export type { MediaType } from '../../schema.js'

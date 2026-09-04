@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ExternalDocs = unknown
+export type { ExternalDocs } from '../schema.js'

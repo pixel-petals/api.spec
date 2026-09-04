@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type Response = unknown
+import type * as Schema from '../../schema.js'
+
+export type Response = Schema.JsonReference | Schema.Response

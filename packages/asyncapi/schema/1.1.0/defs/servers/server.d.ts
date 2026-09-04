@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Server = unknown
+export type { Server } from '../../schema.js'

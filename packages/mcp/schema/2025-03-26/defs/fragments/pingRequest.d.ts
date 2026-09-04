@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type PingRequest = unknown
+export type { PingRequest } from '../../schema.js'

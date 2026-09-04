@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type SaslGssapiSecurityScheme = unknown
+export type { SaslGssapiSecurityScheme } from '../../schema.js'

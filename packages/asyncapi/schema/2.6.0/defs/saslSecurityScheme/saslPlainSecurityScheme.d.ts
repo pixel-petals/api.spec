@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type SaslPlainSecurityScheme = unknown
+export type { SaslPlainSecurityScheme } from '../../schema.js'

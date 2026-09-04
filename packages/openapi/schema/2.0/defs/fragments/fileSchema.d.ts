@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type FileSchema = unknown
+export type { FileSchema } from '../../schema.js'

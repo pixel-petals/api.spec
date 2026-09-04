@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type CorrelationId = unknown
+import type * as Schema from '../../schema.js'
+
+export type CorrelationId = Schema.Reference | Schema.CorrelationId

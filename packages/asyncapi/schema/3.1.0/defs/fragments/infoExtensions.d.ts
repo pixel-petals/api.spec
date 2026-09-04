@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type InfoExtensions = unknown
+export type { InfoExtensions } from '../../schema.js'

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ElicitRequestURLParams = unknown
+export type { ElicitRequestURLParams } from '../../schema.js'

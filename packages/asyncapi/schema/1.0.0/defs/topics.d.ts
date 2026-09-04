@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Topics = unknown
+export type { Topics } from '../schema.js'

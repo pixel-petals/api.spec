@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ServerVariable = unknown
+export type { ServerVariable } from '../../schema.js'

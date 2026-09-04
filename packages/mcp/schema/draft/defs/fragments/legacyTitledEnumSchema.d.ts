@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type LegacyTitledEnumSchema = unknown
+export type { LegacyTitledEnumSchema } from '../../schema.js'

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type TaskStatusNotification = unknown
+export type { TaskStatusNotification } from '../../schema.js'

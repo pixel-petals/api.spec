@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type AudioContent = unknown
+export type { AudioContent } from '../../schema.js'

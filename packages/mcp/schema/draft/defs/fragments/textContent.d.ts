@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type TextContent = unknown
+export type { TextContent } from '../../schema.js'

@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type Callback = unknown
+import type * as Schema from '../../schema.js'
+
+export type Callback = Schema.Reference | Schema.Callback

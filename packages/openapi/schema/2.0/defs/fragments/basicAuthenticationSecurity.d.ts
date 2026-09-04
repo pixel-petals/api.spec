@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type BasicAuthenticationSecurity = unknown
+export type { BasicAuthenticationSecurity } from '../../schema.js'

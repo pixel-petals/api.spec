@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type JsonReference = unknown
+export type { JsonReference } from '../../schema.js'

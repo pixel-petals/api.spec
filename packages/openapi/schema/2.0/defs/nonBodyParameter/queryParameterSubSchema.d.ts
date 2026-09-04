@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type QueryParameterSubSchema = unknown
+export type { QueryParameterSubSchema } from '../../schema.js'

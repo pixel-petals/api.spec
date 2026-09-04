@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Implementation = unknown
+export type { Implementation } from '../../schema.js'

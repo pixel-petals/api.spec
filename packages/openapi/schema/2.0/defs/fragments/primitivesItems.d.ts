@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type PrimitivesItems = unknown
+export type { PrimitivesItems } from '../../schema.js'

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type CallToolRequestParams = unknown
+export type { CallToolRequestParams } from '../../schema.js'

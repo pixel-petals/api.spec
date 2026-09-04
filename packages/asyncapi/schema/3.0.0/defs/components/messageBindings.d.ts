@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type MessageBindingsObject = unknown
+import type * as Schema from '../../schema.js'
+
+export type MessageBindingsObject = Schema.Reference | Schema.MessageBindingsObject

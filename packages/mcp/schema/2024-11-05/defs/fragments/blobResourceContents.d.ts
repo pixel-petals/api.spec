@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type BlobResourceContents = unknown
+export type { BlobResourceContents } from '../../schema.js'

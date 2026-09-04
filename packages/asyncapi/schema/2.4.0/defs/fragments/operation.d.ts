@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Operation = unknown
+export type { Operation } from '../../schema.js'

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type PaginatedRequestParams = unknown
+export type { PaginatedRequestParams } from '../../schema.js'

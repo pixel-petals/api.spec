@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ElicitRequestFormParams = unknown
+export type { ElicitRequestFormParams } from '../../schema.js'

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Contact = unknown
+export type { Contact } from '../../schema.js'

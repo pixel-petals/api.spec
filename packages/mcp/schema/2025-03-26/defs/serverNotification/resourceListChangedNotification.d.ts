@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ResourceListChangedNotification = unknown
+export type { ResourceListChangedNotification } from '../../schema.js'

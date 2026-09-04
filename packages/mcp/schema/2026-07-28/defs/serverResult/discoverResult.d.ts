@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type DiscoverResult = unknown
+export type { DiscoverResult } from '../../schema.js'

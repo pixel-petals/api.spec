@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type BodyParameter = unknown
+export type { BodyParameter } from '../../schema.js'

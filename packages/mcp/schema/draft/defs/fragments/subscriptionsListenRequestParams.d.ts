@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type SubscriptionsListenRequestParams = unknown
+export type { SubscriptionsListenRequestParams } from '../../schema.js'

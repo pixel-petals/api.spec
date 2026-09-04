@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type Example = unknown
+import type * as Schema from '../../schema.js'
+
+export type Example = Schema.Reference | Schema.Example

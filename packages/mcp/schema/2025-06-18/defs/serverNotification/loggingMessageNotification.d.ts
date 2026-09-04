@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type LoggingMessageNotification = unknown
+export type { LoggingMessageNotification } from '../../schema.js'

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ChannelItem = unknown
+export type { ChannelItem } from '../../schema.js'

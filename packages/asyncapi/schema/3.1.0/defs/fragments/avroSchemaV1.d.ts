@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type { AvroSchemaV1 } from '../../schema.js'
+import type * as Schema from '../../schema.js'
+
+export type AvroSchemaV1 = Schema.Reference | Schema.AvroSchemaV1

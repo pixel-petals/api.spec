@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type OAuth2SecurityScheme = unknown
+export type { OAuth2SecurityScheme } from '../../schema.js'

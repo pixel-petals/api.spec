@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ListResourceTemplatesRequest = unknown
+export type { ListResourceTemplatesRequest } from '../../schema.js'

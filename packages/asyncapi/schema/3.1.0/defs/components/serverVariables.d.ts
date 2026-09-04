@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type ServerVariable = unknown
+import type * as Schema from '../../schema.js'
+
+export type ServerVariable = Schema.Reference | Schema.ServerVariable

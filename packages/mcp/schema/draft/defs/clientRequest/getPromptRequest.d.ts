@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type GetPromptRequest = unknown
+export type { GetPromptRequest } from '../../schema.js'

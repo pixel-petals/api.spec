@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type { SecurityScheme } from '../../schema.js'
+import type * as Schema from '../../schema.js'
+
+export type SecurityScheme = Schema.Reference | Schema.SecurityScheme

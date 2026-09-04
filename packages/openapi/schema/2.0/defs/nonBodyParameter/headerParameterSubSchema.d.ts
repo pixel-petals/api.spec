@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type HeaderParameterSubSchema = unknown
+export type { HeaderParameterSubSchema } from '../../schema.js'

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type X509 = unknown
+export type { X509 } from '../../schema.js'

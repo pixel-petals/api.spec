@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type Link = unknown
+import type * as Schema from '../../schema.js'
+
+export type Link = Schema.Reference | Schema.Link

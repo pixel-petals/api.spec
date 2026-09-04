@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type SubscriptionsAcknowledgedNotificationParams = unknown
+export type { SubscriptionsAcknowledgedNotificationParams } from '../../schema.js'

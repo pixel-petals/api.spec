@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type InitializedNotification = unknown
+export type { InitializedNotification } from '../../schema.js'

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type CompleteResult = unknown
+export type { CompleteResult } from '../../schema.js'

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type PasswordOAuthFlow = unknown
+export type { PasswordOAuthFlow } from '../../schema.js'

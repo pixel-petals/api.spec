@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type Header = unknown
+import type * as Schema from '../../schema.js'
+
+export type Header = Schema.Reference | Schema.Header

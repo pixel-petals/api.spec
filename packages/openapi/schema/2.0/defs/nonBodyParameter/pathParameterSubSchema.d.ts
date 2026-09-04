@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type PathParameterSubSchema = unknown
+export type { PathParameterSubSchema } from '../../schema.js'

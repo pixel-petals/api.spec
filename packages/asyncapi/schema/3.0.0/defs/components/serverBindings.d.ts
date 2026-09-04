@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type ServerBindingsObject = unknown
+import type * as Schema from '../../schema.js'
+
+export type ServerBindingsObject = Schema.Reference | Schema.ServerBindingsObject

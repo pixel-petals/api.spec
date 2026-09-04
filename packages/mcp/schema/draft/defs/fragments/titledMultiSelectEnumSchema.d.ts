@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type TitledMultiSelectEnumSchema = unknown
+export type { TitledMultiSelectEnumSchema } from '../../schema.js'

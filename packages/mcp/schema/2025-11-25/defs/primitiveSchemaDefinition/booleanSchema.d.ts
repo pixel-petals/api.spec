@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type BooleanSchema = unknown
+export type { BooleanSchema } from '../../schema.js'

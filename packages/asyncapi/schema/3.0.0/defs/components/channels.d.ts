@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type Channel = unknown
+import type * as Schema from '../../schema.js'
+
+export type Channel = Schema.Reference | Schema.Channel

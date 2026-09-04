@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type GetPromptRequestParams = unknown
+export type { GetPromptRequestParams } from '../../schema.js'

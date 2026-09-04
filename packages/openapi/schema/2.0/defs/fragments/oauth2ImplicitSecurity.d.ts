@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Oauth2ImplicitSecurity = unknown
+export type { Oauth2ImplicitSecurity } from '../../schema.js'

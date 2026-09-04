@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type CancelTaskRequest = unknown
+export type { CancelTaskRequest } from '../../schema.js'

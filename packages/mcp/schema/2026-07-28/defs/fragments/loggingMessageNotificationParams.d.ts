@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type LoggingMessageNotificationParams = unknown
+export type { LoggingMessageNotificationParams } from '../../schema.js'

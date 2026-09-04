@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Error = unknown
+export type { Error } from '../../schema.js'

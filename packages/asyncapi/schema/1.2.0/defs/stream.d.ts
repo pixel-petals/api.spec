@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Stream = unknown
+export type { Stream } from '../schema.js'

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type CompleteRequest = unknown
+export type { CompleteRequest } from '../../schema.js'

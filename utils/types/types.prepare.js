@@ -37,6 +37,19 @@ const SCHEMA_LISTS = new Set([ 'allOf', 'anyOf', 'oneOf', 'prefixItems' ])
 const ANNOTATIONS = new Set([ 'examples', 'example', 'default' ])
 
 /**
+ * Identifiers on a nested definition.
+ *
+ * The generator names a type after one when it finds it, so AsyncAPI 1.x —
+ * whose definitions each carry `id` in the draft-04 spelling — produced
+ * `HttpAsyncapiComDefinitions100ContactJson` where `Contact` was meant, and
+ * nothing downstream could work out which definition that was. References here
+ * are path-based, so the identifiers earn nothing and cost the names.
+ *
+ * The root keeps its own: it is named from the descriptor instead.
+ */
+const IDENTIFIERS = new Set([ 'id', '$id' ])
+
+/**
  * Property names the generator would read as keywords.
  *
  * A meta-schema declares properties named after the very keywords it
@@ -74,17 +87,19 @@ const isAnchor = ref => ref.startsWith('#') && !ref.startsWith('#/')
 function mapOfSchemas(value, renameKeys) {
   return Object.fromEntries(Object.entries(value).map(([ name, schema ]) => [
     renameKeys && RESERVED.includes(name) ? placeholder(name) : name,
-    prepare(schema),
+    prepare(schema, { nested: true }),
   ]))
 }
 
 /**
  * A schema the generator can work on.
  *
- * @param {*} node  arbitrary JSON, walked as a schema
+ * @param {*}       node  arbitrary JSON, walked as a schema
+ * @param {object}  [options]
+ * @param {boolean} [options.nested]  true below the root, where identifiers go
  */
-export function prepare(node) {
-  if (Array.isArray(node)) return node.map(prepare)
+export function prepare(node, { nested = false } = {}) {
+  if (Array.isArray(node)) return node.map(value => prepare(value, { nested }))
 
   if (!node || typeof node !== 'object') return node
 
@@ -100,18 +115,20 @@ export function prepare(node) {
   for (const [ key, value ] of Object.entries(node)) {
     if (ANNOTATIONS.has(key)) continue
 
+    if (nested && IDENTIFIERS.has(key)) continue
+
     if (SCHEMA_MAPS.has(key) && value && typeof value === 'object') {
       out[ key ] = mapOfSchemas(value, key === 'properties')
       continue
     }
 
     if (SCHEMA_VALUES.has(key) && value && typeof value === 'object') {
-      out[ key ] = prepare(value)
+      out[ key ] = prepare(value, { nested: true })
       continue
     }
 
     if (SCHEMA_LISTS.has(key) && Array.isArray(value)) {
-      out[ key ] = value.map(prepare)
+      out[ key ] = value.map(item => prepare(item, { nested: true }))
       continue
     }
 

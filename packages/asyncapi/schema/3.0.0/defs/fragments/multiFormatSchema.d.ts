@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type MultiFormatSchema = unknown
+export type { MultiFormatSchema } from '../../schema.js'

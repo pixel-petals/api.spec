@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type StringSchema = unknown
+export type { StringSchema } from '../../schema.js'

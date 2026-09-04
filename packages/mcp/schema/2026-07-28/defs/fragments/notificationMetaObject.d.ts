@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type NotificationMetaObject = unknown
+export type { NotificationMetaObject } from '../../schema.js'

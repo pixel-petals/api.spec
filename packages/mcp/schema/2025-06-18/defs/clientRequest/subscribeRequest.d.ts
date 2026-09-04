@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type SubscribeRequest = unknown
+export type { SubscribeRequest } from '../../schema.js'

@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type OperationTrait = unknown
+import type * as Schema from '../../schema.js'
+
+export type OperationTrait = Schema.Reference | Schema.OperationTrait

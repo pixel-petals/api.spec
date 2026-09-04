@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type JSONRPCErrorResponse = unknown
+export type { JSONRPCErrorResponse } from '../../schema.js'

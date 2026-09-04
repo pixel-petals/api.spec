@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type PromptReference = unknown
+export type { PromptReference } from '../../schema.js'

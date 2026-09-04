@@ -55,10 +55,13 @@ function declaration(fragment, names, root) {
     return `export type { ${targets[ 0 ]} as ${exported} } from '${root}'\n`
   }
 
+  // a namespace import, because a union's own name is often one of its members
+  // — `Channel` is `Reference | Channel` — and importing that by name would
+  // collide with the type being declared here
   return [
-    `import type { ${targets.join(', ')} } from '${root}'`,
+    `import type * as Schema from '${root}'`,
     '',
-    `export type ${exported} = ${targets.join(' | ')}`,
+    `export type ${exported} = ${targets.map(name => `Schema.${name}`).join(' | ')}`,
     '',
   ].join('\n')
 }

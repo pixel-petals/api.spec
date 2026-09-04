@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ModelHint = unknown
+export type { ModelHint } from '../../schema.js'

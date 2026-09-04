@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ListRootsResult = unknown
+export type { ListRootsResult } from '../../schema.js'

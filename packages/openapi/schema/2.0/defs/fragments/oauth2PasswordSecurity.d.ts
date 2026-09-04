@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Oauth2PasswordSecurity = unknown
+export type { Oauth2PasswordSecurity } from '../../schema.js'

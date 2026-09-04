@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type OpenapiSchema30 = unknown
+export type { OpenapiSchema_3_0 as OpenapiSchema30 } from '../../schema.js'

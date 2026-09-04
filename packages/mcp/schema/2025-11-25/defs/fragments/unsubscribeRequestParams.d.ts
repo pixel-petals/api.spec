@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type UnsubscribeRequestParams = unknown
+export type { UnsubscribeRequestParams } from '../../schema.js'

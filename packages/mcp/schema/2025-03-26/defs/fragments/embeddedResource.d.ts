@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type EmbeddedResource = unknown
+export type { EmbeddedResource } from '../../schema.js'

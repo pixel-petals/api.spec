@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Root = unknown
+export type { Root } from '../../schema.js'

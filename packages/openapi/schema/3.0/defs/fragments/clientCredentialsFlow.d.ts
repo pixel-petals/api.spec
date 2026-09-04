@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ClientCredentialsFlow = unknown
+export type { ClientCredentialsFlow } from '../../schema.js'

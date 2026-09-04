@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ListPromptsResult = unknown
+export type { ListPromptsResult } from '../../schema.js'

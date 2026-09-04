@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type RequestBody = unknown
+import type * as Schema from '../../schema.js'
+
+export type RequestBody = Schema.Reference | Schema.RequestBody

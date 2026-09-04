@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type UserPassword = unknown
+export type { UserPassword } from '../../schema.js'

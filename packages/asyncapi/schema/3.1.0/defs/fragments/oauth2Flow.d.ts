@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Oauth2Flow = unknown
+export type { Oauth2Flow } from '../../schema.js'

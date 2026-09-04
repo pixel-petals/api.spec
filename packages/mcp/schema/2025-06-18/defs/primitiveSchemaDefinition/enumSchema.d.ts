@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type EnumSchema = unknown
+export type { EnumSchema } from '../../schema.js'

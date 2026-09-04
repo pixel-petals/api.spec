@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type AsymmetricEncryption = unknown
+export type { AsymmetricEncryption } from '../../schema.js'

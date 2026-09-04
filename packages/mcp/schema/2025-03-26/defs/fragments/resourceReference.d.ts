@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ResourceReference = unknown
+export type { ResourceReference } from '../../schema.js'

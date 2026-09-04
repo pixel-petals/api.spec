@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type Tag = unknown
+import type * as Schema from '../../schema.js'
+
+export type Tag = Schema.Reference | Schema.Tag

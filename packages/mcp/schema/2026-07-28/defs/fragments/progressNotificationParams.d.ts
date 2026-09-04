@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ProgressNotificationParams = unknown
+export type { ProgressNotificationParams } from '../../schema.js'

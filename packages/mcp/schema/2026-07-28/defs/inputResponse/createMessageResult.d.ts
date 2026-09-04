@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type CreateMessageResult = unknown
+export type { CreateMessageResult } from '../../schema.js'

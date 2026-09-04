@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type InitializeRequest = unknown
+export type { InitializeRequest } from '../../schema.js'

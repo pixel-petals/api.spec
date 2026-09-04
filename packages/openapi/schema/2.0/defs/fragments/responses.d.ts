@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Responses = unknown
+export type { Responses } from '../../schema.js'

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Paths = unknown
+export type { Paths } from '../schema.js'

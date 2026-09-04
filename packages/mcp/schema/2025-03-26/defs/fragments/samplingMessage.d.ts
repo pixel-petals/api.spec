@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type SamplingMessage = unknown
+export type { SamplingMessage } from '../../schema.js'

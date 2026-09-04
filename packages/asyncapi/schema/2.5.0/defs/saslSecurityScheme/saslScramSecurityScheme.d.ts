@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type SaslScramSecurityScheme = unknown
+export type { SaslScramSecurityScheme } from '../../schema.js'

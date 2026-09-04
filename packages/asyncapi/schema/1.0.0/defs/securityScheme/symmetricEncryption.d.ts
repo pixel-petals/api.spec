@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type SymmetricEncryption = unknown
+export type { SymmetricEncryption } from '../../schema.js'

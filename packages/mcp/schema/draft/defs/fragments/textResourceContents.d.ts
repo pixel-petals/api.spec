@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type TextResourceContents = unknown
+export type { TextResourceContents } from '../../schema.js'

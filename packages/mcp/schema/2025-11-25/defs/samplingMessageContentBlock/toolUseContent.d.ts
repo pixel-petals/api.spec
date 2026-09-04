@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ToolUseContent = unknown
+export type { ToolUseContent } from '../../schema.js'

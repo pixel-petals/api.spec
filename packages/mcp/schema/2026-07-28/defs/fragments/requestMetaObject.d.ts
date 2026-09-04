@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type RequestMetaObject = unknown
+export type { RequestMetaObject } from '../../schema.js'

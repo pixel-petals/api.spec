@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Header = unknown
+export type { Header } from '../../schema.js'

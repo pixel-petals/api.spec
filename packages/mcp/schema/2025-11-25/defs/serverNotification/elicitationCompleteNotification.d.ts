@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ElicitationCompleteNotification = unknown
+export type { ElicitationCompleteNotification } from '../../schema.js'

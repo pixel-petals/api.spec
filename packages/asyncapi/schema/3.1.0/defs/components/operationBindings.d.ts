@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type OperationBindingsObject = unknown
+import type * as Schema from '../../schema.js'
+
+export type OperationBindingsObject = Schema.Reference | Schema.OperationBindingsObject

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ResultMetaObject = unknown
+export type { ResultMetaObject } from '../../schema.js'

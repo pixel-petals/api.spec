@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type JSONRPCNotification = unknown
+export type { JSONRPCNotification } from '../../schema.js'

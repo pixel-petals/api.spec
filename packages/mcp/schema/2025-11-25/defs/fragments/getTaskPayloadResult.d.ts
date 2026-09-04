@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type GetTaskPayloadResult = unknown
+export type { GetTaskPayloadResult } from '../../schema.js'

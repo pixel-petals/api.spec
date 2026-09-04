@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type OpenIdConnectSecurityScheme = unknown
+export type { OpenIdConnectSecurityScheme } from '../../schema.js'

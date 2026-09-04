@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type Parameter = unknown
+import type * as Schema from '../../schema.js'
+
+export type Parameter = Schema.Reference | Schema.Parameter

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type NonBearerHTTPSecurityScheme = unknown
+export type { NonBearerHTTPSecurityScheme } from '../../schema.js'

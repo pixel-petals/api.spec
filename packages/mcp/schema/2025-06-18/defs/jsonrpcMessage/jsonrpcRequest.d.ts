@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type JSONRPCRequest = unknown
+export type { JSONRPCRequest } from '../../schema.js'

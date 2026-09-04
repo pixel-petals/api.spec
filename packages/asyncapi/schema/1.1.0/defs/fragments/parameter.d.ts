@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Parameter = unknown
+export type { Parameter } from '../../schema.js'

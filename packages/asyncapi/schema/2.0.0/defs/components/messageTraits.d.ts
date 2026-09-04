@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type MessageTrait = unknown
+import type * as Schema from '../../schema.js'
+
+export type MessageTrait = Schema.Reference | Schema.MessageTrait

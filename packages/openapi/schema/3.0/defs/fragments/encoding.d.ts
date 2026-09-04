@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Encoding = unknown
+export type { Encoding } from '../../schema.js'

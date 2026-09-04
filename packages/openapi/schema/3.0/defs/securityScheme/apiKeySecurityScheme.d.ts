@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type APIKeySecurityScheme = unknown
+export type { APIKeySecurityScheme } from '../../schema.js'

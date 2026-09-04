@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type InitializeResult = unknown
+export type { InitializeResult } from '../../schema.js'

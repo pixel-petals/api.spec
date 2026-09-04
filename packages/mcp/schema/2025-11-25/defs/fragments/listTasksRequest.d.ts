@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ListTasksRequest = unknown
+export type { ListTasksRequest } from '../../schema.js'

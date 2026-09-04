@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Schema = unknown
+export type { Schema } from '../../schema.js'

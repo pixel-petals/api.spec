@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type CreateMessageRequestParams = unknown
+export type { CreateMessageRequestParams } from '../../schema.js'

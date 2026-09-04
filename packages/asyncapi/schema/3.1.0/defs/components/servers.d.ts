@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type Server = unknown
+import type * as Schema from '../../schema.js'
+
+export type Server = Schema.Reference | Schema.Server

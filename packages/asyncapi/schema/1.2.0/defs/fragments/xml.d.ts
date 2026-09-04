@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Xml = unknown
+export type { Xml } from '../../schema.js'

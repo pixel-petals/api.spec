@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type JSONRPCResponse = unknown
+export type { JSONRPCResponse } from '../../schema.js'

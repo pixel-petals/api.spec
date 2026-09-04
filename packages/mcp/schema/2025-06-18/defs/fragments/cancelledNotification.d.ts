@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type CancelledNotification = unknown
+export type { CancelledNotification } from '../../schema.js'

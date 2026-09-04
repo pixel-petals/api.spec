@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type PromptArgument = unknown
+export type { PromptArgument } from '../../schema.js'

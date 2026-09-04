@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ImageContent = unknown
+export type { ImageContent } from '../../schema.js'

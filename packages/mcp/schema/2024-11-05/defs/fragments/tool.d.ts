@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Tool = unknown
+export type { Tool } from '../../schema.js'

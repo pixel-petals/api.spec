@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type InitializeRequestParams = unknown
+export type { InitializeRequestParams } from '../../schema.js'

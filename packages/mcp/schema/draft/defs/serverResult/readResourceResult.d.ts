@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ReadResourceResult = unknown
+export type { ReadResourceResult } from '../../schema.js'

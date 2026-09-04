@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type OpenapiSchema30 = unknown
+import type * as Schema from '../../schema.js'
+
+export type OpenapiSchema30 = Schema.Reference | Schema.OpenapiSchema_3_0

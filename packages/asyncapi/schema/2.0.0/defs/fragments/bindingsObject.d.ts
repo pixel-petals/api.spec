@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type BindingsObject = unknown
+export type { BindingsObject } from '../../schema.js'

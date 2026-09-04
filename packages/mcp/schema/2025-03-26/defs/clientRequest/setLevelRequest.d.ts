@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type SetLevelRequest = unknown
+export type { SetLevelRequest } from '../../schema.js'

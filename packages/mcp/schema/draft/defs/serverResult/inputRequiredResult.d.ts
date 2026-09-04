@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type InputRequiredResult = unknown
+export type { InputRequiredResult } from '../../schema.js'

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type GetTaskRequest = unknown
+export type { GetTaskRequest } from '../../schema.js'

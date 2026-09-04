@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Tag = unknown
+export type { Tag } from '../../schema.js'

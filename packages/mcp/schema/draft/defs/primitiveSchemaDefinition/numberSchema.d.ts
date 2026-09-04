@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type NumberSchema = unknown
+export type { NumberSchema } from '../../schema.js'

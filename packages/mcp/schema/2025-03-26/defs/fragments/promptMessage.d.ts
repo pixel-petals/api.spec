@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type PromptMessage = unknown
+export type { PromptMessage } from '../../schema.js'

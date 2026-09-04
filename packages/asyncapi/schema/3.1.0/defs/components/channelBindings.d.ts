@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type ChannelBindingsObject = unknown
+import type * as Schema from '../../schema.js'
+
+export type ChannelBindingsObject = Schema.Reference | Schema.ChannelBindingsObject

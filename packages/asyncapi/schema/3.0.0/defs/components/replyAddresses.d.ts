@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type OperationReplyAddress = unknown
+import type * as Schema from '../../schema.js'
+
+export type OperationReplyAddress = Schema.Reference | Schema.OperationReplyAddress

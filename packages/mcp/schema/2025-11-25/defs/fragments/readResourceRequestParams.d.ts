@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ReadResourceRequestParams = unknown
+export type { ReadResourceRequestParams } from '../../schema.js'

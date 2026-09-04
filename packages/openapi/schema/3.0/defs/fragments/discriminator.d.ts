@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Discriminator = unknown
+export type { Discriminator } from '../../schema.js'

@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type FormDataParameterSubSchema = unknown
+export type { FormDataParameterSubSchema } from '../../schema.js'

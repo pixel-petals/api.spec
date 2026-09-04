@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type ElicitRequest = unknown
+export type { ElicitRequest } from '../../schema.js'

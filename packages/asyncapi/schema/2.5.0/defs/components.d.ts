@@ -3,4 +3,4 @@
  *
  * Do not edit by hand.
  */
-export type Components = unknown
+export type { Components } from '../schema.js'

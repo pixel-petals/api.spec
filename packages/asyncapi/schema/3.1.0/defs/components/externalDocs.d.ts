@@ -3,4 +3,6 @@
  *
  * Do not edit by hand.
  */
-export type ExternalDocs = unknown
+import type * as Schema from '../../schema.js'
+
+export type ExternalDocs = Schema.Reference | Schema.ExternalDocs
