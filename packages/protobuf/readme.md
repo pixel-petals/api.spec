@@ -110,3 +110,9 @@ bin/
 ```
 
 The CLI is wired here rather than built by `utils/spec/spec.cli`, which is driven by a descriptor whose every stage assumes a JSON Schema document. The commands, their arguments and their output are still the siblings' — same four names, same `-q, --quiet`, same summary — so the package behaves like one from the outside.
+
+## Versions
+
+The repository publishes 59 `vMAJOR.MINOR` releases. Vendored here is the latest patch of each major — 36.1, 35.1, 34.2, 33.6, 32.1, 31.1, 30.2, 29.6, 28.3, 27.5, 26.1, 25.9, 24.4, 23.4 — because `descriptor.proto` changes across majors and rarely within one: the fragment count moves from 21 at 23.4 to 25 at 36.1, but not between patches of the same major.
+
+Any other release is one command away, and `protobuf releases` lists them all against what is on disk.

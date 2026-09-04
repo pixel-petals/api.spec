@@ -17,6 +17,10 @@ The default file — the one `asyncapi.com/definitions/<version>.json` also serv
 
 So this vendors the `-without-$id` variant from the schema repository, whose definitions are plain names and whose 499 references are local `#/definitions/...` pointers.
 
+## Versions
+
+All 14 the schema repository publishes: 1.0.0–1.2.0 (draft-04), 2.0.0-rc1 through 2.6.0 and 3.0.0–3.1.0 (draft-07). `asyncapi releases` lists them against what is on disk.
+
 ## Notes
 
 Versions 1.x are draft-04 and 2.x/3.x are draft-07. Both are read without configuration — the normalizer picks its rules off the document's own `$schema`.

@@ -46,7 +46,9 @@ export function createCli(spec) {
     .description('fetch then split, in one step')
     .option(...QUIET)
     .action(async (...args) => {
-      const options = args.pop()
+      // commander appends two things after the declared arguments: the parsed
+      // options, then the command itself
+      const [ options ] = args.splice(-2, 2)
 
       await fetch(...args)
       split(args[ 0 ], options)

@@ -8,13 +8,13 @@ Each package downloads a published specification document, keeps it verbatim, an
 
 | package | vendors | formats | fragments |
 | --- | --- | --- | --- |
-| [openapi](packages/openapi) | OpenAPI 2.0, 3.0, 3.1, 3.2 | JSON, YAML | pointers |
-| [asyncapi](packages/asyncapi) | AsyncAPI 2.6.0, 3.1.0 | JSON, YAML | pointers |
-| [arazzo](packages/arazzo) | Arazzo 1.0, 1.1 | JSON, YAML | pointers |
-| [mcp](packages/mcp) | MCP 2025-06-18, 2026-07-28 | JSON, YAML | pointers |
-| [typeapi](packages/typeapi) | TypeAPI 0.1.1 | JSON, YAML | whole documents |
-| [protobuf](packages/protobuf) | Protobuf 36.1 | proto, JSON | JSON descriptors |
-| [graphql](packages/graphql) | GraphQL 2015-07 … 2025-09, draft | graphql, JSON | SDL + introspection |
+| [openapi](packages/openapi) | OpenAPI — 4 of 4 versions | JSON, YAML | pointers |
+| [asyncapi](packages/asyncapi) | AsyncAPI — 14 of 14 | JSON, YAML | pointers |
+| [arazzo](packages/arazzo) | Arazzo — 2 of 2 | JSON, YAML | pointers |
+| [mcp](packages/mcp) | MCP — 6 of 6 | JSON, YAML | pointers |
+| [typeapi](packages/typeapi) | TypeAPI — 1 of 2 | JSON, YAML | whole documents |
+| [protobuf](packages/protobuf) | Protobuf — 14 of 59 | proto, JSON | JSON descriptors |
+| [graphql](packages/graphql) | GraphQL — 8 of 8 | graphql, JSON | SDL + introspection |
 
 Every package has the same four commands:
 
@@ -23,7 +23,10 @@ Every package has the same four commands:
 <name> split <version>            # derive fragments from it, offline
 <name> generate <version> [date]  # both
 <name> list                       # what is vendored
+<name> releases                   # what upstream publishes, and which are vendored
 ```
+
+`releases` is how the table above stays honest — it asks each specification's own registry, so a gap between what exists and what is vendored is visible rather than assumed.
 
 ## Not every specification fits
 

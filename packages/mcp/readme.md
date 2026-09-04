@@ -11,6 +11,10 @@ mcp list
 
 MCP versions *are* dates, so a release takes no second argument.
 
+## Versions
+
+All six: 2024-11-05, 2025-03-26, 2025-06-18, 2025-11-25, 2026-07-28, and `draft`, which tracks main and therefore moves.
+
 ## The dialect changes mid-history
 
 Releases up to and including `2025-06-18` are draft-07 with `definitions`. From `2025-11-25` onward they are 2020-12 with `$defs`. Both are read without configuration — the normalizer picks its rules off the document's own `$schema` — so the two eras split with the same command.
