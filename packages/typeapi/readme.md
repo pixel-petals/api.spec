@@ -31,6 +31,19 @@ The root type is not written as a fragment — it is the vendored document itsel
 
 Definitions land where the document puts them: a property of the root struct, or a branch of a discriminated base. `Security` is reached from `TypeAPI.security`, so it is a file, and its four mapped forms sit under it.
 
+## Bundling
+
+```sh
+typeapi bundle ./schema/0.1.1/schema.json --out ./standalone.json
+typeapi unbundle ./standalone.json --out ./tree/
+```
+
+TypeSchema has no `$ref`. A document imports whole other documents under an alias and refers into them with `alias:Name`, so bundling folds an imported document's definitions in and rewrites those qualified targets to local ones. Imported names keep their alias as a prefix — `typeschema:PropertyType` becomes `typeschema_PropertyType` — because two imports are free to define the same name and a flattened document has one namespace.
+
+The specification's own import is `typehub://typehub:typeschema@0.1.1`, which names a registry that serves no document export. `fetch` vendors that document to `imports/typeschema.json` for this reason, and `bundle` looks there first, so the vendored copy folds to 27 definitions offline. An alias with nothing readable behind it is left in place with its targets still qualified — an honest partial bundle rather than a broken whole one.
+
+`unbundle` is `split` pointed at any document instead of a vendored version.
+
 ## Versions
 
 TypeAPI publishes no per-version URL. Its repository carries no tags or releases, and TypeHub — where 0.1.0 and 0.1.1 are registered — exposes no public export endpoint. A fetch therefore reads the default branch, and the version argument names what that branch currently is rather than addressing a release. Re-fetching the same version can produce different content.

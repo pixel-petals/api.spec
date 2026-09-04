@@ -6,9 +6,10 @@
  * underneath differs.
  */
 
-import { resolve } from 'node:path'
+import { readFileSync } from 'node:fs'
+import { basename, resolve } from 'node:path'
 
-import { DEFAULT_FORMATS } from 'utils/serialize/serialize.format'
+import { DEFAULT_FORMATS, parser } from 'utils/serialize/serialize.format'
 import { writeDocument } from 'utils/serialize/serialize.write'
 import { fetchDocument, vendorDocument } from 'utils/source/source.fetch'
 import { readDocument } from 'utils/source/source.read'
@@ -16,6 +17,7 @@ import { versionDir, versions } from 'utils/source/source.paths'
 import { reportVendored } from 'utils/spec/spec.report'
 
 import { typeapi } from '#lib/typeapi.spec'
+import { baseOf, bundle, vendoredImports } from '#lib/typeschema/typeschema.bundle'
 import { writeFragments } from '#lib/typeschema/typeschema.split'
 
 /** The alias the specification imports its base document under. */
@@ -67,4 +69,43 @@ export function listCommand() {
   if (!found.length) return console.log('nothing vendored yet — run `typeapi fetch <version>`')
 
   for (const version of found) console.log(`  ${version}`)
+}
+
+/**
+ * `bundle <document> --out <file>`
+ *
+ * Folds imported documents in, so the result stands alone. The vendored copy
+ * has its base beside it under `imports/`, which is what makes the
+ * specification itself bundleable offline.
+ */
+export async function bundleCommand(document, options) {
+  const source = resolve(document)
+  const parsed = parser('json')(readFileSync(source, 'utf8'))
+  const from = baseOf(source)
+
+  const bundled = await bundle(parsed, { from, imports: vendoredImports(parsed, from) })
+
+  const out = options.out ?? source.replace(/\.json$/, '.bundled')
+  const files = writeDocument(out.replace(/\.(json|yaml)$/, ''), bundled, DEFAULT_FORMATS)
+
+  console.log(`bundled ${basename(source)} — ${Object.keys(bundled.definitions).length} definitions`)
+
+  for (const file of files) console.log(`  -> ${file}`)
+}
+
+/**
+ * `unbundle <document> --out <directory>`
+ *
+ * The same extraction `split` performs on a vendored version, pointed at any
+ * document instead.
+ */
+export function unbundleCommand(document, options) {
+  const source = resolve(document)
+  const parsed = parser('json')(readFileSync(source, 'utf8'))
+  const into = resolve(options.out ?? source.replace(/\.(json|yaml)$/, '.unbundled'))
+
+  const written = writeFragments(parsed, into)
+
+  console.log(`unbundled ${basename(source)} into ${written.length} documents`)
+  console.log(`  -> ${into}`)
 }

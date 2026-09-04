@@ -14,7 +14,7 @@ import { Command } from 'commander'
 
 import { releasesCommand } from 'utils/spec/spec.releases'
 
-import { fetchCommand, listCommand, splitCommand } from '#lib/typeapi.commands'
+import { bundleCommand, fetchCommand, listCommand, splitCommand, unbundleCommand } from '#lib/typeapi.commands'
 import { typeapi } from '#lib/typeapi.spec'
 
 /** @type {[string, string]} */
@@ -49,6 +49,18 @@ program.command('generate')
 program.command('list')
   .description('the versions already vendored')
   .action(listCommand)
+
+program.command('bundle')
+  .description('fold imported documents in, so the result stands alone')
+  .argument('<document>', 'the root document')
+  .option('-o, --out <file>', 'where to write it')
+  .action(bundleCommand)
+
+program.command('unbundle')
+  .description('split a document into one standalone document per definition')
+  .argument('<document>', 'the root document')
+  .option('-o, --out <directory>', 'where to write the tree')
+  .action(unbundleCommand)
 
 program.command('releases')
   .description('the versions upstream publishes, and which are vendored')
