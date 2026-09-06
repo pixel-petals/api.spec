@@ -1,0 +1,11 @@
+{
+  "name": "yaak-human-ids",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "yaak plugin build",
+    "dev": "yaak plugin dev"
+  },
+  "dependencies": {
+    "@yaakapp/api": "^0.8.3"
+  }
+}

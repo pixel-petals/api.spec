@@ -1,3 +1,0 @@
-$kind: collection
-description: The `FindOutliers` operation find spatial and statistical anomalies in clusters of feature data and returns new feature data.
-order: 2000

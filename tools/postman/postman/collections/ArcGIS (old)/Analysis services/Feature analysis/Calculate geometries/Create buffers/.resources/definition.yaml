@@ -1,3 +1,0 @@
-$kind: collection
-description: The `CreateBuffers` operation creates areas at a specified distances around a point, line, or polygon feature and returns new feature data.
-order: 1000

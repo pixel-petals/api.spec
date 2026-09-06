@@ -1,3 +1,0 @@
-$kind: collection
-description: The `DeriveNewLocations` operation selects and can modify features to satisfy one or more SQL and/or spatial expressions and returns new feature data.
-order: 3000

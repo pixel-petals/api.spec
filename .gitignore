@@ -64,8 +64,14 @@
 !/apps/
 !/apps/**
 
+!/collections/
+!/collections/**
+
 !/packages/
 !/packages/**
+
+!/plugins/
+!/plugins/**
 
 !/tools/
 !/tools/**
