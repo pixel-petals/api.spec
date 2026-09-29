@@ -1,5 +1,5 @@
 {
-  "name": "@px-petals/graphql",
+  "name": "@px-petals/api.graphql",
   "type": "module",
   "bin": {
     "graphql": "bin/cmd.js"
@@ -10,7 +10,7 @@
   "dependencies": {
     "commander": "^15.0.0",
     "graphql": "^17.0.2",
-    "utils": "*"
+    "@px-petals/api.utils": "*"
   },
   "imports": {
     "#lib/*": "./bin/lib/*.js"

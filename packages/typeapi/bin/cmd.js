@@ -12,7 +12,7 @@
 
 import { Command } from 'commander'
 
-import { releasesCommand } from 'utils/spec/spec.releases'
+import { releasesCommand } from '@px-petals/api.utils/spec/spec.releases'
 
 import { bundleCommand, fetchCommand, listCommand, splitCommand, unbundleCommand } from '#lib/typeapi.commands'
 import { typeapi } from '#lib/typeapi.spec'

@@ -10,8 +10,8 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 
-import { parser } from 'utils/serialize/serialize.format'
-import { fetchDocument } from 'utils/source/source.fetch'
+import { parser } from '@px-petals/api.utils/serialize/serialize.format'
+import { fetchDocument } from '@px-petals/api.utils/source/source.fetch'
 
 /** Where `fetch` puts the documents a specification imports. */
 const IMPORTS = 'imports'

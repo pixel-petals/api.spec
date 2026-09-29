@@ -9,7 +9,7 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 
-import { DEFS, DOCUMENT, documentPath, versionDir } from 'utils/source/source.paths'
+import { DEFS, DOCUMENT, documentPath, versionDir } from '@px-petals/api.utils/source/source.paths'
 
 import { fileStem } from '#lib/sdl/sdl.name'
 

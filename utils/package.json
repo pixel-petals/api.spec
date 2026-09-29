@@ -1,5 +1,5 @@
 {
-  "name": "utils",
+  "name": "@px-petals/api.utils",
   "type": "module",
   "exports": {
     "./*": "./*.js"

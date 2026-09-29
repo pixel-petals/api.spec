@@ -8,7 +8,7 @@
 
 import { Command } from 'commander'
 
-import { releasesCommand } from 'utils/spec/spec.releases'
+import { releasesCommand } from '@px-petals/api.utils/spec/spec.releases'
 
 import { bundleCommand, unbundleCommand } from '#lib/protobuf.bundle'
 import { fetchCommand, listCommand, splitCommand } from '#lib/protobuf.commands'

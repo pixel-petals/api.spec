@@ -6,9 +6,9 @@
  * and refusing to overwrite would only make version bumps annoying.
  */
 
-import { writeDocument } from 'utils/serialize/serialize.write'
-import { writeText } from 'utils/serialize/serialize.text'
-import { documentStem } from 'utils/source/source.paths'
+import { writeDocument } from '@px-petals/api.utils/serialize/serialize.write'
+import { writeText } from '@px-petals/api.utils/serialize/serialize.text'
+import { documentStem } from '@px-petals/api.utils/source/source.paths'
 
 import { INTROSPECTION, SDL, fragmentStem } from '#lib/sdl/sdl.files'
 import { introspect } from '#lib/sdl/sdl.introspect'

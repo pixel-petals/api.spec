@@ -10,8 +10,8 @@
 
 import { resolve } from 'node:path'
 
-import { DEFAULT_FORMATS } from 'utils/serialize/serialize.format'
-import { writeDocument } from 'utils/serialize/serialize.write'
+import { DEFAULT_FORMATS } from '@px-petals/api.utils/serialize/serialize.format'
+import { writeDocument } from '@px-petals/api.utils/serialize/serialize.write'
 
 import { layout } from '#lib/typeschema/typeschema.layout'
 import { closure } from '#lib/typeschema/typeschema.refs'

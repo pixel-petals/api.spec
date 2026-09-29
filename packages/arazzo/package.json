@@ -1,5 +1,5 @@
 {
-  "name": "@px-petals/arazzo",
+  "name": "@px-petals/api.arazzo",
   "type": "module",
   "bin": {
     "arazzo": "bin/cmd.js"
@@ -8,7 +8,7 @@
     "./*": "./schema/*"
   },
   "dependencies": {
-    "utils": "*"
+    "@px-petals/api.utils": "*"
   },
   "imports": {
     "#lib/*": "./bin/lib/*.js"

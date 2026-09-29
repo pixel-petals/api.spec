@@ -1,5 +1,5 @@
 {
-  "name": "@px-petals/asyncapi",
+  "name": "@px-petals/api.asyncapi",
   "type": "module",
   "bin": {
     "asyncapi": "bin/cmd.js"
@@ -8,7 +8,7 @@
     "./*": "./schema/*"
   },
   "dependencies": {
-    "utils": "*"
+    "@px-petals/api.utils": "*"
   },
   "imports": {
     "#lib/*": "./bin/lib/*.js"

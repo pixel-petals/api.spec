@@ -1,9 +1,9 @@
 /** What the shared specification tooling needs to know about asyncapi. */
 
-import { contents } from 'utils/source/source.github'
-import { schemaRoot } from 'utils/spec/spec.descriptor'
+import { contents } from '@px-petals/api.utils/source/source.github'
+import { schemaRoot } from '@px-petals/api.utils/spec/spec.descriptor'
 
-/** @import { SpecDescriptor } from 'utils/spec/spec.descriptor' */
+/** @import { SpecDescriptor } from '@px-petals/api.utils/spec/spec.descriptor' */
 
 const REPOSITORY = 'asyncapi/spec-json-schemas'
 

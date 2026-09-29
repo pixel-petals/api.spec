@@ -9,12 +9,12 @@
 import { readFileSync } from 'node:fs'
 import { basename, resolve } from 'node:path'
 
-import { DEFAULT_FORMATS, parser } from 'utils/serialize/serialize.format'
-import { writeDocument } from 'utils/serialize/serialize.write'
-import { fetchDocument, vendorDocument } from 'utils/source/source.fetch'
-import { readDocument } from 'utils/source/source.read'
-import { versionDir, versions } from 'utils/source/source.paths'
-import { reportVendored } from 'utils/spec/spec.report'
+import { DEFAULT_FORMATS, parser } from '@px-petals/api.utils/serialize/serialize.format'
+import { writeDocument } from '@px-petals/api.utils/serialize/serialize.write'
+import { fetchDocument, vendorDocument } from '@px-petals/api.utils/source/source.fetch'
+import { readDocument } from '@px-petals/api.utils/source/source.read'
+import { versionDir, versions } from '@px-petals/api.utils/source/source.paths'
+import { reportVendored } from '@px-petals/api.utils/spec/spec.report'
 
 import { typeapi } from '#lib/typeapi.spec'
 import { baseOf, bundle, vendoredImports } from '#lib/typeschema/typeschema.bundle'

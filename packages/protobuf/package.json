@@ -1,5 +1,5 @@
 {
-  "name": "@px-petals/protobuf",
+  "name": "@px-petals/api.protobuf",
   "type": "module",
   "bin": {
     "protobuf": "bin/cmd.js"
@@ -10,7 +10,7 @@
   "dependencies": {
     "commander": "^15.0.0",
     "protobufjs": "^8.8.0",
-    "utils": "*"
+    "@px-petals/api.utils": "*"
   },
   "imports": {
     "#lib/*": "./bin/lib/*.js"

@@ -8,7 +8,7 @@
 
 import { resolve } from 'node:path'
 
-import { DEFS, documentStem, versionDir } from 'utils/source/source.paths'
+import { DEFS, documentStem, versionDir } from '@px-petals/api.utils/source/source.paths'
 
 /** Protobuf's first-class format: the schema is IDL, not an object encoding. */
 export const IDL = 'proto'

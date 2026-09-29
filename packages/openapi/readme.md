@@ -1,4 +1,4 @@
-# @px-petals/openapi
+# @px-petals/api.openapi
 
 The OpenAPI JSON Schema, vendored per version, plus one fragment schema for every object a `$ref` can point at.
 
@@ -72,7 +72,7 @@ A bundle file is often itself a bare `{"$ref": "./other.json"}`, so fragments us
 Fragments resolve through the package exports, so an editor association can name one directly:
 
 ```json
-{ "fileMatch": ["**/bundle/responses/*.json"], "url": "./node_modules/@px-petals/openapi/schema/3.2/defs/components/responses.json" }
+{ "fileMatch": ["**/bundle/responses/*.json"], "url": "./node_modules/@px-petals/api.openapi/schema/3.2/defs/components/responses.json" }
 ```
 
 Generated files are overwritten without asking. Nothing in them is hand-written, and refusing to overwrite would only make version bumps annoying.
