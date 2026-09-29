@@ -1,5 +1,5 @@
 {
-  "name": "@pixelpetals/protobuf",
+  "name": "@px-petals/protobuf",
   "type": "module",
   "bin": {
     "protobuf": "bin/cmd.js"

@@ -1,4 +1,4 @@
-# @pixelpetals/asyncapi
+# @px-petals/asyncapi
 
 The AsyncAPI JSON Schema, vendored per version, plus one fragment schema for every object a `$ref` can point at.
 

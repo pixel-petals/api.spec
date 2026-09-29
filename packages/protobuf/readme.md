@@ -1,4 +1,4 @@
-# @pixelpetals/protobuf
+# @px-petals/protobuf
 
 Protobuf's self-describing schema, vendored per release, plus one JSON fragment for every declaration it makes at the top level.
 

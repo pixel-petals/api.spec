@@ -1,5 +1,5 @@
 {
-  "name": "@pixelpetals/arazzo",
+  "name": "@px-petals/arazzo",
   "type": "module",
   "bin": {
     "arazzo": "bin/cmd.js"

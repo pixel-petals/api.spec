@@ -1,5 +1,5 @@
 {
-  "name": "@pixelpetals/openapi",
+  "name": "@px-petals/openapi",
   "type": "module",
   "bin": {
     "openapi": "bin/cmd.js"

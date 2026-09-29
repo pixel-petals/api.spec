@@ -1,5 +1,5 @@
 {
-  "name": "@pixelpetals/mcp",
+  "name": "@px-petals/mcp",
   "type": "module",
   "bin": {
     "mcp": "bin/cmd.js"

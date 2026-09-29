@@ -1,5 +1,5 @@
 {
-  "name": "@pixelpetals/graphql",
+  "name": "@px-petals/graphql",
   "type": "module",
   "bin": {
     "graphql": "bin/cmd.js"

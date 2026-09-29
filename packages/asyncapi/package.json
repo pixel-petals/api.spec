@@ -1,5 +1,5 @@
 {
-  "name": "@pixelpetals/asyncapi",
+  "name": "@px-petals/asyncapi",
   "type": "module",
   "bin": {
     "asyncapi": "bin/cmd.js"

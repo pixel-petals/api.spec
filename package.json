@@ -1,5 +1,5 @@
 {
-  "name": "@pixel-petals/org.template",
+  "name": "@px-petals/api.spec",
   "version": "0.0.1",
   "workspaces": [
     "utils",

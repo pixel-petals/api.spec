@@ -1,5 +1,5 @@
 {
-  "name": "@pixelpetals/typeapi",
+  "name": "@px-petals/typeapi",
   "type": "module",
   "bin": {
     "typeapi": "bin/cmd.js"
