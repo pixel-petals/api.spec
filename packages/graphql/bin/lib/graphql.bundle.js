@@ -12,8 +12,8 @@
 
 import { basename, extname, resolve } from 'node:path'
 
-import { writeText } from 'utils/serialize/serialize.text'
-import { writeDocument } from 'utils/serialize/serialize.write'
+import { writeText } from '@px-petals/api.utils/serialize/serialize.text'
+import { writeDocument } from '@px-petals/api.utils/serialize/serialize.write'
 
 import { explode } from '#lib/bundle/bundle.explode'
 import { merge } from '#lib/bundle/bundle.merge'

@@ -1,4 +1,4 @@
-# @pixelpetals/mcp
+# @px-petals/api.mcp
 
 The Model Context Protocol schema, vendored per release, plus one fragment schema for every object a `$ref` can point at.
 

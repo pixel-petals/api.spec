@@ -8,15 +8,15 @@
 
 import { relative } from 'node:path'
 
-import { versions } from 'utils/source/source.paths'
-import { reportVendored } from 'utils/spec/spec.report'
+import { versions } from '@px-petals/api.utils/source/source.paths'
+import { reportVendored } from '@px-petals/api.utils/spec/spec.report'
 
 import { assertVersion } from '#lib/graphql.spec'
 import { extractSdl } from '#lib/sdl/sdl.extract'
 import { readSdl } from '#lib/sdl/sdl.files'
 import { writeFragments, writeSchema } from '#lib/sdl/sdl.write'
 
-/** @import { SpecDescriptor } from 'utils/spec/spec.descriptor' */
+/** @import { SpecDescriptor } from '@px-petals/api.utils/spec/spec.descriptor' */
 /** @import { WrittenType } from '#lib/sdl/sdl.write' */
 
 /**

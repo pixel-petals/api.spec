@@ -1,4 +1,4 @@
-# @pixelpetals/arazzo
+# @px-petals/api.arazzo
 
 The Arazzo workflow schema, vendored per release, plus one fragment schema for every object a `$ref` can point at.
 

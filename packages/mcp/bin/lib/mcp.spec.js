@@ -1,7 +1,7 @@
 /** What the shared specification tooling needs to know about mcp. */
 
-import { contents } from 'utils/source/source.github'
-import { schemaRoot } from 'utils/spec/spec.descriptor'
+import { contents } from '@px-petals/api.utils/source/source.github'
+import { schemaRoot } from '@px-petals/api.utils/spec/spec.descriptor'
 
 const REPOSITORY = 'modelcontextprotocol/modelcontextprotocol'
 
@@ -14,7 +14,7 @@ async function releases() {
     .map(version => ({ version, note: version === 'draft' ? 'tracks main' : '' }))
 }
 
-/** @import { SpecDescriptor } from 'utils/spec/spec.descriptor' */
+/** @import { SpecDescriptor } from '@px-petals/api.utils/spec/spec.descriptor' */
 
 /**
  * MCP versions *are* dates, so a release needs no second argument.

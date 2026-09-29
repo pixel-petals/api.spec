@@ -9,9 +9,9 @@
 
 import { basename, resolve } from 'node:path'
 
-import { writeText } from 'utils/serialize/serialize.text'
-import { fetchText } from 'utils/source/source.fetch'
-import { documentStem } from 'utils/source/source.paths'
+import { writeText } from '@px-petals/api.utils/serialize/serialize.text'
+import { fetchText } from '@px-petals/api.utils/source/source.fetch'
+import { documentStem } from '@px-petals/api.utils/source/source.paths'
 
 import { DEFS_FILES, SCHEMA, sourceUrl } from '#lib/protobuf.spec'
 import { defsDir, IDL } from '#lib/source/source.paths'

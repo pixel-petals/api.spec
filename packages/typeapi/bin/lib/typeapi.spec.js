@@ -1,7 +1,7 @@
 /** Where the TypeAPI specification lives. */
 
-import { fetchDocument } from 'utils/source/source.fetch'
-import { schemaRoot } from 'utils/spec/spec.descriptor'
+import { fetchDocument } from '@px-petals/api.utils/source/source.fetch'
+import { schemaRoot } from '@px-petals/api.utils/spec/spec.descriptor'
 
 /** TypeHub is where TypeAPI's versions are registered, though not served. */
 const TAGS = 'https://api.typehub.cloud/document/typehub/typeapi/tag'

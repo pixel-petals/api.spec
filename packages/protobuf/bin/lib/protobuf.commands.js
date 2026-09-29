@@ -7,9 +7,9 @@
  * arguments and their output are the siblings'.
  */
 
-import { writeDocument } from 'utils/serialize/serialize.write'
-import { documentStem, versions } from 'utils/source/source.paths'
-import { readSource } from 'utils/source/source.read'
+import { writeDocument } from '@px-petals/api.utils/serialize/serialize.write'
+import { documentStem, versions } from '@px-petals/api.utils/source/source.paths'
+import { readSource } from '@px-petals/api.utils/source/source.read'
 
 import { PACKAGE, protobuf } from '#lib/protobuf.spec'
 import { reportFragments, reportVendored } from '#lib/protobuf.report'

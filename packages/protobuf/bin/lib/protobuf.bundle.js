@@ -9,8 +9,8 @@
 import { readFileSync } from 'node:fs'
 import { basename, extname, resolve } from 'node:path'
 
-import { parser } from 'utils/serialize/serialize.format'
-import { writeDocument } from 'utils/serialize/serialize.write'
+import { parser } from '@px-petals/api.utils/serialize/serialize.format'
+import { writeDocument } from '@px-petals/api.utils/serialize/serialize.write'
 
 import { bundleDescriptor } from '#lib/bundle/bundle.descriptor'
 import { explodeDescriptor } from '#lib/bundle/bundle.tree'

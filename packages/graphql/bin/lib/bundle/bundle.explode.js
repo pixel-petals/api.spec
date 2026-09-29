@@ -11,7 +11,7 @@
 
 import { resolve } from 'node:path'
 
-import { writeText } from 'utils/serialize/serialize.text'
+import { writeText } from '@px-petals/api.utils/serialize/serialize.text'
 
 import { stemFor } from '#lib/bundle/bundle.name'
 import { SDL } from '#lib/sdl/sdl.files'

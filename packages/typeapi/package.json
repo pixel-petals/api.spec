@@ -1,5 +1,6 @@
 {
-  "name": "@pixelpetals/typeapi",
+  "name": "@px-petals/api.typeapi",
+  "private": true,
   "type": "module",
   "bin": {
     "typeapi": "bin/cmd.js"
@@ -8,7 +9,7 @@
     "./*": "./schema/*"
   },
   "dependencies": {
-    "utils": "*",
+    "@px-petals/api.utils": "*",
     "commander": "^15.0.0"
   },
   "imports": {
