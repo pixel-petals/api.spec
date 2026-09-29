@@ -6,8 +6,8 @@
  * than one — goes flat in fragments/.
  */
 
-import { DEFS } from 'utils/source/source.paths'
-import { camel } from 'utils/fragments/fragments.name'
+import { DEFS } from '@px-petals/api.utils/source/source.paths'
+import { camel } from '@px-petals/api.utils/fragments/fragments.name'
 
 import { isCollection, referenceTarget } from '#lib/typeschema/typeschema.refs'
 

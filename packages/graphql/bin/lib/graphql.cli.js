@@ -9,12 +9,12 @@
 
 import { Command } from 'commander'
 
-import { releasesCommand } from 'utils/spec/spec.releases'
+import { releasesCommand } from '@px-petals/api.utils/spec/spec.releases'
 
 import { bundleCommand, unbundleCommand } from '#lib/graphql.bundle'
 import { fetchCommand, listCommand, splitCommand } from '#lib/graphql.commands'
 
-/** @import { SpecDescriptor } from 'utils/spec/spec.descriptor' */
+/** @import { SpecDescriptor } from '@px-petals/api.utils/spec/spec.descriptor' */
 
 /** @type {[string, string]} */
 const QUIET = [ '-q, --quiet', 'print the summary only' ]

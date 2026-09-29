@@ -14,9 +14,9 @@
 
 import { resolve } from 'node:path'
 
-import { camel } from 'utils/fragments/fragments.name'
-import { writeDocument } from 'utils/serialize/serialize.write'
-import { DOCUMENT } from 'utils/source/source.paths'
+import { camel } from '@px-petals/api.utils/fragments/fragments.name'
+import { writeDocument } from '@px-petals/api.utils/serialize/serialize.write'
+import { DOCUMENT } from '@px-petals/api.utils/source/source.paths'
 
 /** @import { Declaration } from '#lib/proto/proto.declarations' */
 

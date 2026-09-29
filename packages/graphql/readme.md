@@ -1,4 +1,4 @@
-# @pixelpetals/graphql
+# @px-petals/api.graphql
 
 The GraphQL introspection schema, vendored per specification release, as SDL and as an introspection result, plus one fragment per introspection type.
 

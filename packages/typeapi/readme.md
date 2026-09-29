@@ -1,4 +1,4 @@
-# @pixelpetals/typeapi
+# @px-petals/api.typeapi
 
 The TypeAPI specification, vendored with the TypeSchema document it extends, plus one standalone document per definition.
 

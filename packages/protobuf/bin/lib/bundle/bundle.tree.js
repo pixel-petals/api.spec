@@ -17,9 +17,9 @@ import { resolve } from 'node:path'
 
 import protobuf from 'protobufjs'
 
-import { uniqueSlug } from 'utils/bundle/bundle.name'
-import { camel } from 'utils/fragments/fragments.name'
-import { writeDocument } from 'utils/serialize/serialize.write'
+import { uniqueSlug } from '@px-petals/api.utils/bundle/bundle.name'
+import { camel } from '@px-petals/api.utils/fragments/fragments.name'
+import { writeDocument } from '@px-petals/api.utils/serialize/serialize.write'
 
 import { topLevel } from '#lib/proto/proto.declarations'
 

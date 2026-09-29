@@ -5,8 +5,8 @@
  * a source file in the compiler's own repository, addressed by release tag.
  */
 
-import { tags } from 'utils/source/source.github'
-import { schemaRoot } from 'utils/spec/spec.descriptor'
+import { tags } from '@px-petals/api.utils/source/source.github'
+import { schemaRoot } from '@px-petals/api.utils/spec/spec.descriptor'
 
 import { IDL } from '#lib/source/source.paths'
 

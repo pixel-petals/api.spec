@@ -1,5 +1,6 @@
 {
-  "name": "@pixelpetals/mcp",
+  "name": "@px-petals/api.mcp",
+  "private": true,
   "type": "module",
   "bin": {
     "mcp": "bin/cmd.js"
@@ -8,7 +9,7 @@
     "./*": "./schema/*"
   },
   "dependencies": {
-    "utils": "*"
+    "@px-petals/api.utils": "*"
   },
   "imports": {
     "#lib/*": "./bin/lib/*.js"

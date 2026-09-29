@@ -1,9 +1,9 @@
 /** Where a release of the GraphQL introspection schema comes from. */
 
-import { tags } from 'utils/source/source.github'
-import { schemaRoot } from 'utils/spec/spec.descriptor'
+import { tags } from '@px-petals/api.utils/source/source.github'
+import { schemaRoot } from '@px-petals/api.utils/spec/spec.descriptor'
 
-/** @import { SpecDescriptor } from 'utils/spec/spec.descriptor' */
+/** @import { SpecDescriptor } from '@px-petals/api.utils/spec/spec.descriptor' */
 
 /** The prose the introspection type system is embedded in. */
 const SECTION = 'Section 4 -- Introspection.md'

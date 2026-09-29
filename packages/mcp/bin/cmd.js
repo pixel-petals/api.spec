@@ -9,7 +9,7 @@
  * See readme.md.
  */
 
-import { run } from 'utils/spec/spec.cli'
+import { run } from '@px-petals/api.utils/spec/spec.cli'
 
 import { mcp } from '#lib/mcp.spec'
 

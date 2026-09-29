@@ -1,5 +1,6 @@
 {
-  "name": "@pixelpetals/asyncapi",
+  "name": "@px-petals/api.asyncapi",
+  "private": true,
   "type": "module",
   "bin": {
     "asyncapi": "bin/cmd.js"
@@ -8,7 +9,7 @@
     "./*": "./schema/*"
   },
   "dependencies": {
-    "utils": "*"
+    "@px-petals/api.utils": "*"
   },
   "imports": {
     "#lib/*": "./bin/lib/*.js"

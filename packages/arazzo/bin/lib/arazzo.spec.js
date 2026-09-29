@@ -1,10 +1,10 @@
 /** What the shared specification tooling needs to know about arazzo. */
 
-import { bundleOai } from 'utils/bundle/bundle.oai'
-import { oaiReleases } from 'utils/source/source.registry'
-import { schemaRoot } from 'utils/spec/spec.descriptor'
+import { bundleOai } from '@px-petals/api.utils/bundle/bundle.oai'
+import { oaiReleases } from '@px-petals/api.utils/source/source.registry'
+import { schemaRoot } from '@px-petals/api.utils/spec/spec.descriptor'
 
-/** @import { SpecDescriptor } from 'utils/spec/spec.descriptor' */
+/** @import { SpecDescriptor } from '@px-petals/api.utils/spec/spec.descriptor' */
 
 /**
  * Arazzo publishes one resource per version, addressed by release date, the
