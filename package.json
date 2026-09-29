@@ -4,14 +4,12 @@
   "workspaces": [
     "utils",
     "packages/*",
-    "plugins/*",
     "tools/*",
     "apps/*"
   ],
   "devDependencies": {
     "@types/node": "26.4.1",
-    "typescript": "5.9.3",
-    "vitest": "^4.0.14"
+    "typescript": "5.9.3"
   },
   "scripts": {
     "typecheck": "tsc --noEmit -p tsconfig.json"
