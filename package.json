@@ -1,6 +1,7 @@
 {
   "name": "@px-petals/api.spec",
   "version": "0.0.1",
+  "private": true,
   "workspaces": [
     "utils",
     "packages/*",

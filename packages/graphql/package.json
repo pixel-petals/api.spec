@@ -1,5 +1,6 @@
 {
   "name": "@px-petals/api.graphql",
+  "private": true,
   "type": "module",
   "bin": {
     "graphql": "bin/cmd.js"

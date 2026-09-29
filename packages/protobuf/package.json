@@ -1,5 +1,6 @@
 {
   "name": "@px-petals/api.protobuf",
+  "private": true,
   "type": "module",
   "bin": {
     "protobuf": "bin/cmd.js"

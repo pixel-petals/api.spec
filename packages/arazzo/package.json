@@ -1,5 +1,6 @@
 {
   "name": "@px-petals/api.arazzo",
+  "private": true,
   "type": "module",
   "bin": {
     "arazzo": "bin/cmd.js"

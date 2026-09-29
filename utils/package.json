@@ -1,5 +1,6 @@
 {
   "name": "@px-petals/api.utils",
+  "private": true,
   "type": "module",
   "exports": {
     "./*": "./*.js"

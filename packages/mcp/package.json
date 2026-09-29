@@ -1,5 +1,6 @@
 {
   "name": "@px-petals/api.mcp",
+  "private": true,
   "type": "module",
   "bin": {
     "mcp": "bin/cmd.js"

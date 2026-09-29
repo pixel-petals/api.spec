@@ -1,5 +1,6 @@
 {
   "name": "@px-petals/api.asyncapi",
+  "private": true,
   "type": "module",
   "bin": {
     "asyncapi": "bin/cmd.js"

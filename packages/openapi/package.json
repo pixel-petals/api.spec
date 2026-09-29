@@ -1,5 +1,6 @@
 {
   "name": "@px-petals/api.openapi",
+  "private": true,
   "type": "module",
   "bin": {
     "openapi": "bin/cmd.js"
