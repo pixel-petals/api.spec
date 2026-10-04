@@ -9,10 +9,12 @@
     "apps/*"
   ],
   "devDependencies": {
+    "@px-petals/tools.packager": "github:pixel-petals/tools.packager",
     "@types/node": "26.4.1",
     "typescript": "5.9.3"
   },
   "scripts": {
+    "dependencies": "packager link || exit 0",
     "typecheck": "tsc --noEmit -p tsconfig.json"
   }
 }
