@@ -111,3 +111,6 @@
 
 **/agent.local.md
 **/claude.local.md
+
+# links this checkout's dependencies to sibling checkouts (packager)
+**/package-local.json
