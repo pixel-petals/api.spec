@@ -49,8 +49,8 @@ function fences(markdown) {
  * releases before 2018-06 tag no fence at all, and the ones that do tag both
  * examples and schemas `graphql`.
  *
- * @param {string} markdown  the section's source
- * @param {string} source    where it came from, for the failure message
+ * @param {string} markdown the section's source
+ * @param {string} source   where it came from, for the failure message
  */
 export function extractSdl(markdown, source) {
   const blocks = fences(markdown).filter(block => DECLARES.test(block))

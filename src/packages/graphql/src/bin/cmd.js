@@ -3,9 +3,9 @@
 /**
  * Populates the vendored GraphQL introspection schema tree.
  *
- *   schema/<version>/schema.graphql                       the introspection SDL
- *   schema/<version>/schema.json                          the same schema, introspected
- *   schema/<version>/defs/fragments/<type>.{graphql,json} one per introspection type
+ * schema/<version>/schema.graphql                       the introspection SDL
+ * schema/<version>/schema.json                          the same schema, introspected
+ * schema/<version>/defs/fragments/<type>.{graphql,json} one per introspection type
  *
  * See readme.md.
  */

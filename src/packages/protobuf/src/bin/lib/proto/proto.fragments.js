@@ -58,8 +58,8 @@ function fragment(declaration) {
  * Writes every fragment, overwriting freely — nothing in them is hand-written,
  * and refusing to overwrite would only make version bumps annoying.
  *
- * @param   {Declaration[]} found
- * @param   {string}        into   the fragments directory
+ * @param   {Declaration[]}                                found
+ * @param   {string}                                       into  the fragments directory
  * @returns {{name: string, kind: string, file: string}[]}
  */
 export function writeFragments(found, into) {

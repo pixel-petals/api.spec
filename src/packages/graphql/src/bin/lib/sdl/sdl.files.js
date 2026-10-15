@@ -35,7 +35,7 @@ export function fragmentStem(root, version, name) {
  * The vendored SDL, which is the only thing `split` reads — so it works
  * offline and always describes the copy in the repo.
  *
- * @param {string} hint  what to tell the user to run when nothing is vendored
+ * @param {string} hint what to tell the user to run when nothing is vendored
  */
 export function readSdl(root, version, hint) {
   try {

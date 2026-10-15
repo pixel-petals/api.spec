@@ -52,9 +52,9 @@ export async function tags(repo, { limit = 1000 } = {}) {
 /**
  * The entries of one directory, filtered to directories or to files.
  *
- * @param {string} repo
- * @param {string} path
- * @param {{type?: 'dir' | 'file'}} [options]
+ * @param   {string}                  repo
+ * @param   {string}                  path
+ * @param   {{type?: 'dir' | 'file'}} [options]
  * @returns {Promise<string[]>}
  */
 export async function contents(repo, path, { type } = {}) {

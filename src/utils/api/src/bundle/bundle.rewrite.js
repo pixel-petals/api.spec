@@ -32,12 +32,12 @@ function between(fromDirectory, to) {
 /**
  * Rewrites every internal reference in a node.
  *
- * @param {*}      node             arbitrary JSON, walked as it comes
+ * @param {*}      node         arbitrary JSON, walked as it comes
  * @param {object} where
- * @param {string} where.from       directory the node will be written to
- * @param {Map}    where.lifted     pointer -> the path its piece went to
- * @param {string} where.root       path of the root document, without extension
- * @param {string} where.format     extension the references should name
+ * @param {string} where.from   directory the node will be written to
+ * @param {Map}    where.lifted pointer -> the path its piece went to
+ * @param {string} where.root   path of the root document, without extension
+ * @param {string} where.format extension the references should name
  */
 export function repoint(node, { from, lifted, root, format }) {
   const rewrite = value => repoint(value, { from, lifted, root, format })
@@ -61,7 +61,7 @@ export function repoint(node, { from, lifted, root, format }) {
  * `openapi` and every unlifted branch still live there.
  *
  * @param {string} pointer
- * @param {object} where  the same shape `repoint` takes
+ * @param {object} where   the same shape `repoint` takes
  */
 function target(pointer, { from, lifted, root, format }) {
   const piece = lifted.get(pointer)

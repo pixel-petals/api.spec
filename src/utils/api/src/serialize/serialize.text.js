@@ -16,10 +16,10 @@ function terminated(text) {
 }
 
 /**
- * @param   {string} stem    absolute path without an extension
- * @param   {string} text    the content, written verbatim
- * @param   {string} format  the extension, e.g. "graphql" or "proto"
- * @returns {string} the file written
+ * @param   {string} stem   absolute path without an extension
+ * @param   {string} text   the content, written verbatim
+ * @param   {string} format the extension, e.g. "graphql" or "proto"
+ * @returns {string}        the file written
  */
 export function writeText(stem, text, format) {
   const file = `${stem}.${format}`

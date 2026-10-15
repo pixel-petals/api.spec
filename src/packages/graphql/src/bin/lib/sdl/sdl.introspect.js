@@ -95,8 +95,8 @@ function restore(value, names) {
  * Shaped as `{ __schema }` — what `buildClientSchema` reads — rather than a
  * whole GraphQL response, so a consumer never has to reach through `data`.
  *
- * @param   {string} sdl  the introspection schema
- * @returns {object} the introspection result
+ * @param   {string} sdl the introspection schema
+ * @returns {object}     the introspection result
  */
 export function introspect(sdl) {
   const { sdl: unprefixed, names } = unreserved(sdl)
@@ -118,8 +118,8 @@ export function introspect(sdl) {
  * and built-in directives a result carries are exactly what a client reading
  * it expects to find.
  *
- * @param   {string} sdl  a complete schema
- * @returns {object} the introspection result
+ * @param   {string} sdl a complete schema
+ * @returns {object}     the introspection result
  */
 export function introspectSchema(sdl) {
   const schema = buildSchema(sdl)

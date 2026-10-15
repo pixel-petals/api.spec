@@ -24,8 +24,8 @@ import { splitDefinitions } from '#lib/sdl/sdl.types'
 /**
  * Writes the tree, and says what went where.
  *
- * @param   {string} sdl   the whole document
- * @param   {string} into  directory to write into
+ * @param   {string}              sdl  the whole document
+ * @param   {string}              into directory to write into
  * @returns {WrittenDefinition[]}
  */
 export function explode(sdl, into) {

@@ -45,7 +45,7 @@ function unique(name, taken) {
  * @param {object} definition
  * @param {string} definition.name
  * @param {string} definition.kind
- * @param {Set}    taken  the stems already used in this directory
+ * @param {Set}    taken           the stems already used in this directory
  */
 export function stemFor(definition, taken) {
   const base = fileStem(definition.name)

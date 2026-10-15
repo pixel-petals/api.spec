@@ -41,9 +41,9 @@ function* positions(document, { collections, componentsKey }) {
 
 /**
  * @typedef {object} Piece
- * @property {string}  path     where the file goes, without an extension
- * @property {string}  pointer  where it sat in the whole document
- * @property {unknown} value    what was lifted
+ * @property {string}  path    where the file goes, without an extension
+ * @property {string}  pointer where it sat in the whole document
+ * @property {unknown} value   what was lifted
  */
 
 /**
@@ -81,13 +81,13 @@ function lift(document, options) {
  * `spec.yaml` points at `.yaml` pieces and `spec.json` at `.json` ones — so a
  * toolchain never has to cross formats to resolve a reference.
  *
- * @param   {object}   document
- * @param   {string}   into              directory to write the tree into
- * @param   {object}   [options]
- * @param   {Set}      [options.collections]  top-level keys holding named maps
- * @param   {string}   [options.componentsKey]
- * @param   {string}   [options.stem]    basename for the root document
- * @param   {string[]} [options.formats]
+ * @param   {object}                            document
+ * @param   {string}                            into                    directory to write the tree into
+ * @param   {object}                            [options]
+ * @param   {Set}                               [options.collections]   top-level keys holding named maps
+ * @param   {string}                            [options.componentsKey]
+ * @param   {string}                            [options.stem]          basename for the root document
+ * @param   {string[]}                          [options.formats]
  * @returns {{files: string[], pieces: number}}
  */
 export function explode(document, into, options = {}) {
@@ -121,7 +121,7 @@ export function explode(document, into, options = {}) {
 /**
  * Adds the format's extension to the bare paths `lift` left behind.
  *
- * @param {*} node  arbitrary JSON, walked as it comes
+ * @param {*} node arbitrary JSON, walked as it comes
  */
 function extend(node, format) {
   if (Array.isArray(node)) return node.map(value => extend(value, format))

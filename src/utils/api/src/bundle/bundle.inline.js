@@ -16,7 +16,7 @@ import $RefParser from '@apidevtools/json-schema-ref-parser'
  * says two places share one definition, and resolving those would both inflate
  * the output and turn a cycle into an infinite one.
  *
- * @param   {string} file  the root document
+ * @param   {string}          file the root document
  * @returns {Promise<object>}
  */
 export function inline(file) {
@@ -29,7 +29,7 @@ export function inline(file) {
  * Only safe on an acyclic document, which is why it is not the default — a
  * self-referential schema has no finite dereferenced form.
  *
- * @param   {string} file
+ * @param   {string}          file
  * @returns {Promise<object>}
  */
 export function flatten(file) {

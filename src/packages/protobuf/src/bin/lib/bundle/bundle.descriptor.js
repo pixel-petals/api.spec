@@ -17,8 +17,8 @@ import { PARSE_OPTIONS, toNamespace } from '#lib/proto/proto.parse'
 
 /**
  * @typedef {object} Bundle
- * @property {object}   descriptor  the namespace tree, self-contained
- * @property {string[]} files       every file that went into it
+ * @property {object}   descriptor the namespace tree, self-contained
+ * @property {string[]} files      every file that went into it
  */
 
 /**
@@ -64,7 +64,7 @@ function assertSelfContained(descriptor, entry) {
  * importing `timestamp.proto` bundles without an include root pointing at a
  * protobuf checkout.
  *
- * @param   {string} entry  absolute path to the entry `.proto`
+ * @param   {string} entry absolute path to the entry `.proto`
  * @returns {Bundle}
  */
 export function bundleDescriptor(entry) {

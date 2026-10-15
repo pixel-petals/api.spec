@@ -47,9 +47,9 @@ function count(total, noun) {
 /**
  * `bundle <source> --out <file>`
  *
- * @param {string} source            a file, or a directory of them
+ * @param {string} source        a file, or a directory of them
  * @param {object} options
- * @param {string} [options.out]     where to write it
+ * @param {string} [options.out] where to write it
  */
 export function bundleCommand(source, options) {
   const from = resolve(source)
@@ -75,9 +75,9 @@ export function bundleCommand(source, options) {
  * a tree becomes one document first and is split on the same rules a single
  * file would be.
  *
- * @param {string} source              a file, or a directory of them
+ * @param {string} source        a file, or a directory of them
  * @param {object} options
- * @param {string} [options.out]       where to write the tree
+ * @param {string} [options.out] where to write the tree
  */
 export function unbundleCommand(source, options) {
   const from = resolve(source)

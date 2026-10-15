@@ -15,17 +15,17 @@ import { readDocument } from '#source/source.read'
  * a package with its own CLI can supply this and nothing else.
  *
  * @typedef {object} ReleaseSource
- * @property {string}   root          absolute path to the schema directory
- * @property {Function} releases      () => the releases upstream publishes
- * @property {Function} [releaseOf]   (document) => which release a vendored copy holds
+ * @property {string}   root           absolute path to the schema directory
+ * @property {Function} releases       () => the releases upstream publishes
+ * @property {Function} [releaseOf]    (document) => which release a vendored copy holds
  * @property {string}   [sourceFormat] the encoding a release is fetched as
  */
 
 /**
  * @typedef {object} Release
- * @property {string} version  the identifier `fetch` takes
- * @property {string} [date]   the release date, where one addresses a release
- * @property {string} [note]   anything worth saying about this one
+ * @property {string} version the identifier `fetch` takes
+ * @property {string} [date]  the release date, where one addresses a release
+ * @property {string} [note]  anything worth saying about this one
  */
 
 /** A version directory holds one release at a time; this is which one. */

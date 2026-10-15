@@ -7,9 +7,9 @@ const SCHEMA = 'schema'
 
 /**
  * @typedef {object} SdlDefinition
- * @property {string} name  the definition's name, e.g. "__Schema"
- * @property {string} kind  the AST node kind, e.g. "ObjectTypeDefinition"
- * @property {string} sdl   the definition alone, verbatim
+ * @property {string} name the definition's name, e.g. "__Schema"
+ * @property {string} kind the AST node kind, e.g. "ObjectTypeDefinition"
+ * @property {string} sdl  the definition alone, verbatim
  */
 
 /**

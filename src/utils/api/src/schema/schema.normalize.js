@@ -22,9 +22,9 @@ function normalizerFor(document) {
 }
 
 /**
- * @param {object} document                    the fetched schema
+ * @param {object} document                the fetched schema
  * @param {object} [options]
- * @param {string} [options.componentsKey]     root key naming the reusable-object map
+ * @param {string} [options.componentsKey] root key naming the reusable-object map
  */
 export function normalizeDocument(document, { componentsKey = 'components' } = {}) {
   const normalizer = normalizerFor(document)

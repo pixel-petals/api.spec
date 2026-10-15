@@ -3,9 +3,9 @@
 /**
  * Populates the vendored TypeAPI specification tree.
  *
- *   schema/<version>/schema.{json,yaml}            the specification
- *   schema/<version>/imports/typeschema.{json,yaml} the document it extends
- *   schema/<version>/defs/<group>/<name>.{json,yaml} one per definition
+ * schema/<version>/schema.{json,yaml}            the specification
+ * schema/<version>/imports/typeschema.{json,yaml} the document it extends
+ * schema/<version>/defs/<group>/<name>.{json,yaml} one per definition
  *
  * See readme.md.
  */

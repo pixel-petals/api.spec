@@ -54,10 +54,10 @@ async function load(specifier, from) {
  * that can actually be read. Anything else is left alone, and its targets stay
  * qualified — an honest partial bundle rather than a broken whole one.
  *
- * @param   {object} document
- * @param   {object} options
- * @param   {string} options.from      directory relative specifiers resolve against
- * @param   {object} [options.imports] alias -> a readable path or URL
+ * @param   {object}          document
+ * @param   {object}          options
+ * @param   {string}          options.from      directory relative specifiers resolve against
+ * @param   {object}          [options.imports] alias -> a readable path or URL
  * @returns {Promise<object>}
  */
 export async function bundle(document, { from, imports = {} }) {

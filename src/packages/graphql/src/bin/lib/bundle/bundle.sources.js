@@ -16,8 +16,8 @@ import { SDL } from '#lib/sdl/sdl.files'
 
 /**
  * @typedef {object} SdlSource
- * @property {string} file  absolute path to the file
- * @property {string} sdl   what it holds
+ * @property {string} file absolute path to the file
+ * @property {string} sdl  what it holds
  */
 
 /** Every SDL file under a directory, depth first, siblings in name order. */
@@ -41,7 +41,7 @@ function walk(directory) {
  * `schema.gql` says which file you mean — while a directory is filtered,
  * because an unbundled tree carries `.json` beside the SDL as often as not.
  *
- * @param   {string} path
+ * @param   {string}      path
  * @returns {SdlSource[]}
  */
 export function readSources(path) {

@@ -35,7 +35,7 @@ const SCHEMA = 'SchemaDefinition'
  * Parsing per file rather than once over the merged text is what makes both
  * this message and the duplicate below able to say *where*.
  *
- * @param   {SdlSource} source
+ * @param   {SdlSource}           source
  * @returns {SourcedDefinition[]}
  */
 function declared(source) {
@@ -136,7 +136,7 @@ function byKind(sources) {
 /**
  * One document from many: definitions in file order, then extensions.
  *
- * @param   {SdlSource[]} sources
+ * @param   {SdlSource[]}                        sources
  * @returns {{sdl: string, definitions: number}}
  */
 export function merge(sources) {

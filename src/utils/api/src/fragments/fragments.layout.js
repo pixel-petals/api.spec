@@ -42,10 +42,10 @@ function homes(normalized) {
 
 /**
  * @typedef {object} Fragment
- * @property {string[]} path   directory segments, then the file stem
- * @property {string}   def    the object name the file describes
- * @property {string[]} defs   every object it points at; many means a union
- * @property {boolean}  homed  true when the document's shape placed it
+ * @property {string[]} path  directory segments, then the file stem
+ * @property {string}   def   the object name the file describes
+ * @property {string[]} defs  every object it points at; many means a union
+ * @property {boolean}  homed true when the document's shape placed it
  */
 
 /**

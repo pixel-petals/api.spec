@@ -17,7 +17,7 @@ const missing = (format, version, hint) =>
  * free choice; JSON is the default because it is the copy every version is
  * guaranteed to have.
  *
- * @param {string} hint  what to tell the user to run when nothing is vendored
+ * @param {string} hint what to tell the user to run when nothing is vendored
  */
 export function readDocument(root, version, hint, format = SOURCE_FORMAT) {
   try {

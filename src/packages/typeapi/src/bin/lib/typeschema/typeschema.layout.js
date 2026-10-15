@@ -42,9 +42,9 @@ function homes(definitions, root) {
 
 /**
  * @typedef {object} TypeFragment
- * @property {string[]} path   directory segments, then the file stem
- * @property {string}   def    the definition the file describes
- * @property {boolean}  homed  true when the document's shape placed it
+ * @property {string[]} path  directory segments, then the file stem
+ * @property {string}   def   the definition the file describes
+ * @property {boolean}  homed true when the document's shape placed it
  */
 
 /**

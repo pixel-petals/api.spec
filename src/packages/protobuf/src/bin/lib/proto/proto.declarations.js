@@ -12,9 +12,9 @@ import protobuf from 'protobufjs'
 
 /**
  * @typedef {object} Declaration
- * @property {string}               name      the declared name, e.g. "FileDescriptorProto"
- * @property {string}               fullName  package included, without the leading dot
- * @property {string}               kind      "message", "enum" or "service"
+ * @property {string}                name     the declared name, e.g. "FileDescriptorProto"
+ * @property {string}                fullName package included, without the leading dot
+ * @property {string}                kind     "message", "enum" or "service"
  * @property {Type | Enum | Service} node     the parsed declaration itself
  */
 

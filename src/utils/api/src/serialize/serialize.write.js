@@ -11,10 +11,10 @@ import { DEFAULT_FORMATS, serializer } from '#serialize/serialize.format'
  * The stem carries no extension — the formats decide it — so one call keeps
  * every representation of a document in step by construction.
  *
- * @param   {string}   stem     absolute path without an extension
- * @param   {unknown}  value    the document to render
- * @param   {string[]} formats  format names, defaulting to JSON and YAML
- * @returns {string[]} the files written
+ * @param   {string}   stem    absolute path without an extension
+ * @param   {unknown}  value   the document to render
+ * @param   {string[]} formats format names, defaulting to JSON and YAML
+ * @returns {string[]}         the files written
  */
 export function writeDocument(stem, value, formats = DEFAULT_FORMATS) {
   mkdirSync(dirname(stem), { recursive: true })

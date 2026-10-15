@@ -13,10 +13,10 @@ import { writeDocument } from '#serialize/serialize.write'
  * reference `schema.yaml` where its JSON twin references `schema.json`, so the
  * content is not the same document rendered twice.
  *
- * @param   {string}   stem     absolute path without an extension
- * @param   {Function} build    (format) => the document for that format
- * @param   {string[]} formats  format names, defaulting to JSON and YAML
- * @returns {string[]} the files written
+ * @param   {string}   stem    absolute path without an extension
+ * @param   {Function} build   (format) => the document for that format
+ * @param   {string[]} formats format names, defaulting to JSON and YAML
+ * @returns {string[]}         the files written
  */
 export function writeVariants(stem, build, formats = DEFAULT_FORMATS) {
   mkdirSync(dirname(stem), { recursive: true })

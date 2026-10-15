@@ -37,7 +37,7 @@ const TREE = 'protobuf-descriptor'
  * @property {string} name
  * @property {string} fullName
  * @property {string} kind
- * @property {string} file  where it was written, relative to the tree root
+ * @property {string} file     where it was written, relative to the tree root
  */
 
 /**
@@ -148,18 +148,18 @@ function writeIndex(pieces, into, { source, stem }) {
 
 /**
  * @typedef {object} Tree
- * @property {string[]} files   every file written, the root document first
- * @property {Piece[]}  pieces  the declarations lifted out
+ * @property {string[]} files  every file written, the root document first
+ * @property {Piece[]}  pieces the declarations lifted out
  */
 
 /**
  * Writes the tree.
  *
- * @param   {object} descriptor  a bundled namespace tree
- * @param   {string} into        directory to write the tree into
+ * @param   {object} descriptor       a bundled namespace tree
+ * @param   {string} into             directory to write the tree into
  * @param   {object} [options]
- * @param   {string} [options.source]  the descriptor's filename, for provenance
- * @param   {string} [options.stem]    basename for the root document
+ * @param   {string} [options.source] the descriptor's filename, for provenance
+ * @param   {string} [options.stem]   basename for the root document
  * @returns {Tree}
  */
 export function explodeDescriptor(descriptor, into, options = {}) {

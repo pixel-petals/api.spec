@@ -17,7 +17,7 @@ export function pointerTarget(ref) {
  * The objects a node contains, as opposed to composes.
  *
  * @param {object}   node
- * @param {Function} read  the draft's rule for reading one position
+ * @param {Function} read the draft's rule for reading one position
  */
 export function contained(node, read, found = []) {
   if (!node || typeof node !== 'object') return found

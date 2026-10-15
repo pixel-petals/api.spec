@@ -15,7 +15,7 @@
 import { bundle as redocly, createConfig } from '@redocly/openapi-core'
 
 /**
- * @param   {string} file  the root document
+ * @param   {string}          file the root document
  * @returns {Promise<object>}
  */
 export async function bundleOai(file) {
