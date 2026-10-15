@@ -1,7 +1,8 @@
 {
   "enabledPlugins": {
     "rules-code@pixel-petals": true,
-    "rules-git@pixel-petals": true
+    "rules-git@pixel-petals": true,
+    "skills-monorepo@pixel-petals": true
   },
   "extraKnownMarketplaces": {
     "pixel-petals": {

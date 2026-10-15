@@ -5,6 +5,9 @@
   "bin": {
     "asyncapi": "src/bin/cmd.js"
   },
+  "scripts": {
+    "typecheck": "tsc -p ."
+  },
   "exports": {
     "./*": "./src/schema/*"
   },

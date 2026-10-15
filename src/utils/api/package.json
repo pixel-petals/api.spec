@@ -2,6 +2,9 @@
   "name": "@util/api",
   "private": true,
   "type": "module",
+  "scripts": {
+    "typecheck": "tsc -p ."
+  },
   "exports": {
     "./*": "./src/*.js"
   },

@@ -8,7 +8,12 @@
 
 const API = 'https://api.github.com/repos'
 
-/** GitHub rejects an unidentified client, so every request names one. */
+/**
+ * GitHub rejects an unidentified client, so every request names one.
+ *
+ * @param   {string}       path
+ * @returns {Promise<any>}      the parsed JSON body, typed by the caller
+ */
 async function api(path) {
   const response = await fetch(`${API}/${path}`, { headers: { 'User-Agent': 'pixelpetals-api-spec' } })
 
