@@ -1,0 +1,17 @@
+{
+  "name": "@package/openapi",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "openapi": "src/bin/cmd.js"
+  },
+  "exports": {
+    "./*": "./src/schema/*"
+  },
+  "dependencies": {
+    "@util/api": "*"
+  },
+  "imports": {
+    "#lib/*": "./src/bin/lib/*.js"
+  }
+}

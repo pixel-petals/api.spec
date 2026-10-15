@@ -8,10 +8,12 @@
   "version": "0.0.1",
   "private": true,
   "workspaces": [
-    "utils",
-    "packages/*",
-    "tools/*",
-    "apps/*"
+    "src/.tests/*",
+    "src/apps/*",
+    "src/packages/*",
+    "src/plugins/*",
+    "src/tools/*",
+    "src/utils/*"
   ],
   "devDependencies": {
     "@px-petals/metapak-dependencies": "github:pixel-petals/.dependencies",

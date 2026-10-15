@@ -1,0 +1,18 @@
+{
+  "name": "@package/typeapi",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "typeapi": "src/bin/cmd.js"
+  },
+  "exports": {
+    "./*": "./src/schema/*"
+  },
+  "dependencies": {
+    "@util/api": "*",
+    "commander": "^15.0.0"
+  },
+  "imports": {
+    "#lib/*": "./src/bin/lib/*.js"
+  }
+}

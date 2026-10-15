@@ -1,0 +1,17 @@
+{
+  "name": "@package/mcp",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "mcp": "src/bin/cmd.js"
+  },
+  "exports": {
+    "./*": "./src/schema/*"
+  },
+  "dependencies": {
+    "@util/api": "*"
+  },
+  "imports": {
+    "#lib/*": "./src/bin/lib/*.js"
+  }
+}

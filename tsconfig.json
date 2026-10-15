@@ -14,8 +14,8 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "utils/**/*.js",
-    "packages/*/bin/**/*.js"
+    "src/utils/*/src/**/*.js",
+    "src/packages/*/src/bin/**/*.js"
   ],
   "exclude": [
     "**/node_modules"
